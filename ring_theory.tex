@@ -1,0 +1,39 @@
+\section{Ringtheorie}
+
+
+\begin{question}[subtitle = Urbilder von Idealen]
+  Es seien $R$ und $S$ zwei kommutative Ringe und $\phi \colon R \to S$ ein Ringhomomorphismus.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für jedes Ideal $\aideal \subseteq S$ das Urbild $\phi^{-1}(\aideal)$ ein Ideal in $R$ ist.
+    \item
+      Entscheiden Sie, ob $\phi^{-1}(\pideal)$ ein Primideal ist, wenn $\pideal \subseteq S$ ein Primideal ist.
+    \item
+      Entscheiden Sie, ob $\phi^{-1}(\mideal)$ ein maximales Ideal ist, wenn $\mideal \subseteq S$ ein maximales Ideal ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $\pi \colon S \to S/\aideal$, $s \mapsto \overline{s}$ die kanonische Projektion.
+      Dann ist $\pi \phi$ ein Ringhomomorphismus und somit $\ker (\pi \phi) = \phi^{-1}(\ker \pi) = \phi^{-1}(\aideal)$ ein Ideal in $R$.
+    \item
+      Die Aussage gilt:
+      Es sei $\pi \colon S \to S/\pideal$, $s \mapsto \overline{s}$ die kanonische Projektion und $\qideal \coloneqq \phi^{-1}(\pideal)$.
+      Der Quotient $S/\pideal$ ist ein Integritätsbereich, da $\pideal$ ein Primideal ist.
+      Nach dem vorherigen Aufgabenteil ist $\qideal$ ein Ideal in $R$, und da $\ker (\pi \phi) = \phi^{-1}(\ker \pi) = \phi^{-1}(\pideal) = \qideal$ induziert $\pi \phi$ einen injektiven Ringhomomorphismus
+      \[
+        \psi \colon R/\qideal \to S/\pideal
+        \quad
+        \overline{r} \mapsto \overline{\phi(r)}.
+      \]
+      Der Ring $\im (\pi \phi) \subseteq S/\pideal$ ist als Unterring eines Integritätsbereichs ebenfalls ein Integritätsbereich.
+      Somit ist $R/\qideal \cong \im(\pi \phi)$ ein Integritätsbereich, also $\qideal$ ein Primideal.
+    \item
+      Die Aussage gilt nicht:
+      Es sei etwa $\phi \colon \Integer \to \Rational$ die kanonische Inklusion.
+      Dann ist $\mideal \coloneqq 0$ ein maximales Ideal in $\Rational$, aber $\phi^{-1}(0) = 0$ ist kein maximales Ideal in $\Integer$.
+  \end{enumerate}
+\end{solution}
