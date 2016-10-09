@@ -1,0 +1,26 @@
+\section{Gruppentheorie}
+
+
+\begin{question}[subtitle = Ein Kriterium für maximale Untergruppen]
+  Es sei $G$ ein Gruppe und $H \subseteq G$ eine Untergruppe, so dass $[G : H]$ endlich und prim ist.
+  Zeigen Sie, dass $H$ eine maximale echte Untergruppe von $G$ ist. Entscheiden Sie, ob $H$ notwendigerweise normal in $G$ ist.
+\end{question}
+
+
+\begin{solution}
+  Es sei $p \coloneqq [G : H]$.
+  Da $p$ eine Primzahl ist gilt inbesondere $p \neq 1$, weshalb $H$ eine echte Untergruppe von $G$ ist.
+  Ist $K \subsetneq G$ eine echte Untergruppe von $G$ mit $H \subseteq K$, so gilt wegen der Multiplikativität des Index’, dass 
+  \[
+      p
+    = [G : H]
+    = [G : K] [K : H].
+  \]
+  Da $p$ eine Primzahl ist, gilt entweder $[G : K] = p$ und $[K : H] = 1$, oder $[G : K] = 1$ und $[K : H] = p$.
+  Es gilt $[G : K] > 1$, da $K$ eine echte Untergruppe von $G$ ist, und somit $[K : H] = 1$.
+  Also ist $K = H$, und somit $H$ eine maximale echte Untergruppe.
+  
+  $H$ ist nicht notwendigerweise normal in $G$:
+  Für $G = S_3$ und $H = \generate{(1\,2)} = \{\id, (1\,2)\}$ ist $H$ zwar nicht normal in $G$, aber $[G : H] = |G|/|H| = 6/2 = 3$ ist prim.
+\end{solution}
+
