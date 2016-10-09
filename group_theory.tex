@@ -24,3 +24,66 @@
   Für $G = S_3$ und $H = \generate{(1\,2)} = \{\id, (1\,2)\}$ ist $H$ zwar nicht normal in $G$, aber $[G : H] = |G|/|H| = 6/2 = 3$ ist prim.
 \end{solution}
 
+
+\begin{question}
+  Es sei $G$ eine Gruppe mit $\Aut(G) = 1$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $G$ abelsch ist.
+    \item
+      Zeigen Sie, dass $g = -g$ für alle $g \in G$.
+    \item
+      Folgern Sie, dass es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ gibt.
+    \item
+      Folgern Sie, dass $G = 0$ oder $G \cong \Integer / 2 \Integer$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für $g \in G$ sei $c_g \colon G \to G$ die Konjugation mit $g$.
+      Dies ist ein Automorphismus von $G$, weshalb $c_g = \id_G$.
+      Somit ist $g \in \Center(G)$.
+    \item
+      Wegen der Kommutativität von $G$ ist die Abbildung $n \colon G \to G$, $g \mapsto -g$ ein Automorphismus von $G$.
+      Somit ist $n = \id_G$, also $-g = g$ für alle $g \in G$.
+    \item
+      Nach dem vorherigen Aufgabenteil ist $2 g = 0$ für alle $g \in G$.
+      Deshalb gibt es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ via
+      \[
+        \overline{n} \cdot g = n \cdot g
+        \quad
+        \text{für alle $n \in \Integer$, $g \in G$},
+      \]
+      wie sich durch direktes Nachrechnen ergibt.
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $G$ als $\Field_2$-Vektorraum.
+      Ist $G \neq 0$ und $G \ncong \Integer/2$, so ist $\dim_{\Field_2} G \geq 2$.
+      Es gibt daher $i_1, i_2 \in I$ with $i_1 \neq i_2$.
+      Die Permutation
+      \[
+        \sigma \colon \{b_i\}_{i \in I} \to \{b_i\}_{i \in I},
+        \quad
+        b_j
+        \mapsto
+        \begin{cases}
+          b_{i_2} & \text{falls $j = i_1$}, \\
+          b_{i_1} & \text{falls $j = i_2$}, \\
+          b_j     & \text{sonst},
+        \end{cases}
+      \]
+      induziert einen nicht-trivialen $\Field_2$-Vek\-tor\-raum\-auto\-mor\-phis\-mus $\alpha \colon G \to G$ mit
+      \[
+          \alpha\left( \sum_{i \in I} \lambda_i b_i \right)
+        = \sum_{i \in I} \lambda_i b_{\sigma(i)}.
+      \]
+      Dann ist $\alpha$ aber insbesondere ein nicht-trivialer Gruppenautomorphismus, im Widerspruch zu $\Aut(G) = 1$.
+  \end{enumerate}
+\end{solution}
+
+
+
+
+
