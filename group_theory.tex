@@ -29,15 +29,11 @@
   Entscheiden Sie, ob die folgenden Aussagen allgemein gültig sind, und geben sie gegebenenfalls ein Gegenbeispiel an.
   \begin{enumerate}
     \item
-      Sind $G_1$ und $G_2$ zwei Gruppen und $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ normale Untergruppen, so dass $G_1 \cong G_2$ und $N_1 \cong N_2$, so gilt $G_1/N_1 \cong G_2/N_2$.
-    \item
       Ist $G$ eine Gruppe und $N \subseteq G$ eine normale Untergruppe, so gilt $G \cong (G/N) \times N$.
     \item
       Ist $G$ eine endliche Gruppe, so dass $G/N$ für jede nicht-triviale normale Untergruppe $N \subseteq G$ abelsch ist, so ist auch $G$ abelsch.
     \item
       Zwei Gruppen $G_1$ und $G_2$ sind genau dann isomorph, wenn $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$.
-    \item
-      Sind $G_1$ und $G_2$ zwei Gruppen und $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ normale Untergruppen mit $N_1 \cong N_2$ und $G_1/N_1 \cong G_2/N_2$, so gilt bereits $G_1 \cong G_2$.
     \item
       Sind $G_1$ und $G_2$ zwei Gruppen, so ist jede Untergruppe von $G_1 \times G_2$ von der Form $H_1 \times H_2$ für Untergruppen $H_1 \subseteq G_1$ und $H_2 \subseteq G_2$.
     \item
@@ -48,13 +44,6 @@
 
 \begin{solution}
   \begin{enumerate}
-    \item
-      Die Aussage ist falsch:
-      Man betrachte beispielweise die Gruppen $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$ und die Untergruppen \mbox{$N_1 = \bigoplus_{n \geq 1} \Integer$} und $N_2 = \bigoplus_{n \geq 2} \Integer$.
-      Dann gilt $N_1 \cong N_2$ aber
-      \[
-        G_1/N_1 \cong \Integer \ncong \Integer \oplus \Integer = G_2/N_2.
-      \]
     \item
       Die Aussage ist falsch:
       Es sei $G = \Integer$ und $N = 2 \Integer$.
@@ -77,32 +66,6 @@
       Gilt $G_1 \cong G_2$, so gibt es einen Isomorphismus $\phi \colon G_1 \to G_2$.
       Für jede Gruppe $H$ ist dann $\phi \times \id_H \colon G_1 \times H \to G_2 \times H$ ein Isomorphismus, und somit $G_1 \times H \cong G_2 \times H$.
       Gilt andererseits $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$, so gilt inbesondere $G_1 \cong G_1 \times 1 \cong G_2 \times 1 \cong G_2$.
-    \item
-      Die Aussage ist falsch:
-      Man betrachte die beiden abelschen Gruppen $G_1 = \Integer/4\Integer$ und $G_2 = \Integer/2\Integer \oplus \Integer/2\Integer$, sowie die jeweiligen Untergruppen $N_1 = 2\Integer/4\Integer = \{\overline{0}, \overline{2}\}$ und $N_2 = \Integer/2\Integer \oplus 0$.
-      Wegen der Kommutativität von $G_1$ und $G_2$ handelt es sich jeweils um eine normale Untergruppe.
-      Da $N_1$ und $N_2$ beide zweielementig sind, gilt
-      \[
-        N_1 \cong \Integer/2\Integer \cong N_2
-      \]
-      (denn $\Integer/2\Integer$ ist die bis auf Isomorphie eindeutige zweielementige Gruppe).
-      Nach dem zweiten (oder dritten) Isomorphiesatz gilt
-      \[
-              G_1 / N_1
-        =     (\Integer/4\Integer) / (2\Integer/4\Integer)
-        \cong \Integer/2\Integer,
-      \]
-      und für den anderen Quotienten gilt
-      \begin{align*}
-                G_2 / N_2
-        &=      (\Integer/2\Integer \oplus \Integer/2\Integer) / (\Integer/2\Integer \oplus 0)
-        \\
-        &\cong  ((\Integer/2\Integer)/(\Integer/2\Integer)) \oplus ((\Integer/2\Integer)/0)
-        \cong   0 \oplus \Integer/2\Integer
-        \cong   \Integer/2\Integer.
-      \end{align*}
-      Also gilt auch $G_1/N_1 \cong G_2/N_2$.
-      Es gilt aber $G_1 \ncong G_2$, da $G_1$ ein Element der Ordnung $4$ enthält, $G_2$ jedoch nicht.
     \item
       Die Aussage ist falsch:
       Ist $G$ eine Gruppe mit $G \neq 1$ und $G_1 = G_2 = G$, so ist $\Delta = \{(g,g) \mid g \in G\}$ eine Untergruppe von $G_1 \times G_2 = G \times G$, die sich nicht als ein solches Produkt schreiben lässt.
@@ -135,6 +98,73 @@
       Es gilt aber $G_1 \ncong G_2$, denn $G_2$ enthält ein Element der Ordnung $2$, $G_1$ jedoch nicht.
   \end{enumerate}
 \end{solution}
+
+
+\begin{question}
+  Es seien $G_1$ und $G_2$ zwei Gruppen, $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ zwei normale Untergruppen.
+  Geben Sie jeweils Beispiele für die folgenden Situationen:
+  \begin{enumerate}
+    \item
+      Es gilt $G_1 \cong G_2$ und $N_1 \cong N_2$, aber $G_1/N_1 \ncong G_2/N_2$.
+    \item
+      Es gilt $G_1 \cong G_2$ und $G_1/N_1 \cong G_2/N_2$, aber $N_1 \ncong N_2$.
+    \item
+      Es gilt $G_1/N_1 \cong G_2/N_2$ und $N_1 \cong N_2$, aber $G_1 \ncong G_2$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$, sowie \mbox{$N_1 = \bigoplus_{n \geq 1} \Integer$} und $N_2 = \bigoplus_{n \geq 2} \Integer$.
+      Dann gilt $G_1 = G_2 \cong N_1 \cong N_2$ aber
+      \[
+        G_1/N_1 \cong \Integer \ncong \Integer \oplus \Integer = G_2/N_2.
+      \]
+    \item
+      Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$ und
+      \begin{gather*}
+        N_1 \coloneqq \Integer \oplus 0 \oplus 0 \oplus 0 \oplus \dotsb
+      \shortintertext{und}
+        N_2 \coloneqq \Integer \oplus \Integer \oplus 0 \oplus 0 \oplus \dotsb
+      \end{gather*}
+      Dann gilt
+      \[
+              G_1/N_1
+        \cong \bigoplus_{n \geq 1} \Integer
+        \cong \bigoplus_{n \geq 2} \Integer
+        =     G_2/N_2.
+      \]
+      Es gilt aber $N_1 \ncong N_2$, denn $N_1 \cong \Integer$ ist zyklisch, $\Integer \oplus \Integer$ aber nicht.
+    \item
+      Es seien $G_1 = \Integer/4\Integer$ und $G_2 = \Integer/2\Integer \oplus \Integer/2\Integer$, sowie $N_1 = 2\Integer/4\Integer = \{\overline{0}, \overline{2}\}$ und $N_2 = \Integer/2\Integer \oplus 0$.
+      Wegen der Kommutativität von $G_1$ und $G_2$ handelt es sich jeweils um eine normale Untergruppe.
+      Da $N_1$ und $N_2$ beide zweielementig sind, gilt
+      \[
+        N_1 \cong \Integer/2\Integer \cong N_2
+      \]
+      (denn $\Integer/2\Integer$ ist die bis auf Isomorphie eindeutige zweielementige Gruppe).
+      Nach dem zweiten (oder dritten) Isomorphiesatz gilt
+      \[
+              G_1 / N_1
+        =     (\Integer/4\Integer) / (2\Integer/4\Integer)
+        \cong \Integer/2\Integer,
+      \]
+      und für den anderen Quotienten gilt
+      \begin{align*}
+                G_2 / N_2
+        &=      (\Integer/2\Integer \oplus \Integer/2\Integer) / (\Integer/2\Integer \oplus 0)
+        \\
+        &\cong  ((\Integer/2\Integer)/(\Integer/2\Integer)) \oplus ((\Integer/2\Integer)/0)
+        \cong   0 \oplus \Integer/2\Integer
+        \cong   \Integer/2\Integer.
+      \end{align*}
+      Also gilt auch $G_1/N_1 \cong G_2/N_2$.
+      Es gilt aber $G_1 \ncong G_2$, da $G_1$ ein Element der Ordnung $4$ enthält, $G_2$ jedoch nicht.
+  \end{enumerate}
+\end{solution}
+
 
 
 \begin{question}
