@@ -38,6 +38,10 @@
       Zwei Gruppen $G_1$ und $G_2$ sind genau dann isomorph, wenn $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$.
     \item
       Sind $G_1$ und $G_2$ zwei Gruppen und $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ normale Untergruppen mit $N_1 \cong N_2$ und $G_1/N_1 \cong G_2/N_2$, so gilt bereits $G_1 \cong G_2$.
+    \item
+      Sind $G_1$ und $G_2$ zwei Gruppen, so ist jede Untergruppe von $G_1 \times G_2$ von der Form $H_1 \times H_2$ für Untergruppen $H_1 \subseteq G_1$ und $H_2 \subseteq G_2$.
+    \item
+      Sind $G_1$ und $G_2$ zwei Gruppen, so dass es Gruppenepimorphismen $G_1 \to G_2$ und $G_2 \to G_1$ gibt, so gilt $G_1 \cong G_2$.
   \end{enumerate}
 \end{question}
 
@@ -99,6 +103,36 @@
       \end{align*}
       Also gilt auch $G_1/N_1 \cong G_2/N_2$.
       Es gilt aber $G_1 \ncong G_2$, da $G_1$ ein Element der Ordnung $4$ enthält, $G_2$ jedoch nicht.
+    \item
+      Die Aussage ist falsch:
+      Ist $G$ eine Gruppe mit $G \neq 1$ und $G_1 = G_2 = G$, so ist $\Delta = \{(g,g) \mid g \in G\}$ eine Untergruppe von $G_1 \times G_2 = G \times G$, die sich nicht als ein solches Produkt schreiben lässt.
+    \item
+      Die Aussage ist falsch:
+      Für die Gruppen
+      \begin{gather*}
+        G_1
+      = \bigoplus_{n \in \Natural} \Integer
+      = \Integer \oplus \Integer \oplus \Integer \oplus \dotsb
+      \shortintertext{und}
+        G_2
+      = \Integer/2\Integer \oplus \bigoplus_{n \in \Natural} \Integer
+      = \Integer/2\Integer \oplus \Integer \oplus \Integer \oplus \dotsb
+      \end{gather*}
+      gibt es Gruppenepimorphismen
+      \begin{gather*}
+        G_1 \to G_2,
+        \quad
+        (n_1, n_2, n_3, \dotsc)
+        \mapsto
+        (\overline{n_1}, n_2, n_3, \dotsc)
+      \shortintertext{und}
+        G_2 \to G_1,
+        \quad
+        (\overline{n_1}, n_2, n_3, \dotsc),
+        \mapsto
+        (n_2, n_3, \dotsc).
+      \end{gather*}
+      Es gilt aber $G_1 \ncong G_2$, denn $G_2$ enthält ein Element der Ordnung $2$, $G_1$ jedoch nicht.
   \end{enumerate}
 \end{solution}
 
