@@ -1,6 +1,50 @@
 \section{Ringtheorie}
 
 
+\begin{question}
+  Es sei $R$ ein Ring.
+  Zeigen Sie, dass es einen eindeutigen Ringhomomorphismus $\Integer \to R$ gibt.
+  (Dies bedeutet, dass der Ring $\Integer$ ein Initialobjekt in der Kategorie der Ringe ist.)
+\end{question}
+
+
+\begin{solution}
+  Ist $\phi \colon \Integer \to R$ ein Ringhomomorphismus, so ist $\phi(1_\Integer) = 1_R$.
+  Für alle $n \in \Integer$ ist damit
+  \[
+      \phi(n)
+    = \phi(n \cdot 1_\Integer)
+    = n \cdot \phi(1_\Integer)
+    = n \cdot 1_R.
+  \]
+  Also ist $\phi$ eindeutig.
+  Durch direktes Nachrechnen ergibt sich auch, dass $\psi \colon \Integer \to R$ mit
+  \[
+    \psi(n) \coloneqq n \cdot 1_R
+    \quad
+    \text{für alle $n \in \Integer$}
+  \]
+  ein Ringhomomorphismus ist.
+\end{solution}
+
+
+\begin{question}
+  Es sei $R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass ein Ideal $\pideal \subseteq R$ genau dann prim ist, wenn $R/\pideal$ ein Integritätsbereich ist.
+    \item
+      Zeigen Sie, dass ein Ideal $\mideal \subseteq R$ genau dann maximal ist, wenn $R/\mideal$ ein Körper ist. 
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  Dies ist eine Standardaussage, deren Beweis sich in jedem Algebra-Buch findet.
+\end{solution}
+
+
+
 \begin{question}[subtitle = Urbilder von Idealen]
   Es seien $R$ und $S$ zwei kommutative Ringe und $\phi \colon R \to S$ ein Ringhomomorphismus.
   \begin{enumerate}
@@ -34,6 +78,28 @@
     \item
       Die Aussage gilt nicht:
       Es sei etwa $\phi \colon \Integer \to \Rational$ die kanonische Inklusion.
-      Dann ist $\mideal \coloneqq 0$ ein maximales Ideal in $\Rational$, aber $\phi^{-1}(0) = 0$ ist kein maximales Ideal in $\Integer$.
+      Dann ist $\mideal \coloneqq 0$ ein maximales Ideal in $\Rational$, aber $\phi^{-1}(0) = 0$ ist kein maximales Ideal in $\Integer$, da $\Integer/\mideal \cong \Integer$ kein Körper ist.
   \end{enumerate}
 \end{solution}
+
+
+\begin{question}
+  Geben Sie ein Beispiel für einen kommutativen Ring $R$ und eine Teilmenge $S \subseteq R$ mit den folgenden Eigenschaften:
+  \begin{itemize}
+    \item
+      $S$ ist abgeschlossen unter der Addition und Multiplikation von $R$, d.h.\ für alle $s_1, s_2 \in S$ ist auch $s_1 + s_2 \in S$ und $s_1 s_2 \in S$.
+    \item
+      Zusammen mit der Einschränkung der Addition und Multiplikation aus $R$ ist $S$ ebenfalls ein (notwendigerweise kommutativer) Ring.
+    \item
+      $S$ ist kein Unterring von $R$.
+  \end{itemize}
+\end{question}
+
+
+\begin{solution}
+  Es sei $R = \Integer \times \Integer$ und $S = \Integer \times 0 = \{(n,0) \mid n \in \Integer\}$.
+  Offenbar ist $S$ unter der Addition und Multiplikation abgeschlossen.
+  Zusammen mit der Einschränkung dieser Operationen bildet $S$ einen kommutativen Ring, für den $S \cong \Integer$ gilt.
+  Da $1_R = (1,1) \notin S$ ist $S$ allerdings kein Unterring von $R$.
+\end{solution}
+

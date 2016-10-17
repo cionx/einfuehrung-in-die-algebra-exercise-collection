@@ -36,6 +36,8 @@
       Ist $G$ eine endliche Gruppe, so dass $G/N$ für jede nicht-triviale normale Untergruppe $N \subseteq G$ abelsch ist, so ist auch $G$ abelsch.
     \item
       Zwei Gruppen $G_1$ und $G_2$ sind genau dann isomorph, wenn $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$.
+    \item
+      Sind $G_1$ und $G_2$ zwei Gruppen und $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ normale Untergruppen mit $N_1 \cong N_2$ und $G_1/N_1 \cong G_2/N_2$, so gilt bereits $G_1 \cong G_2$.
   \end{enumerate}
 \end{question}
 
@@ -71,6 +73,32 @@
       Gilt $G_1 \cong G_2$, so gibt es einen Isomorphismus $\phi \colon G_1 \to G_2$.
       Für jede Gruppe $H$ ist dann $\phi \times \id_H \colon G_1 \times H \to G_2 \times H$ ein Isomorphismus, und somit $G_1 \times H \cong G_2 \times H$.
       Gilt andererseits $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$, so gilt inbesondere $G_1 \cong G_1 \times 1 \cong G_2 \times 1 \cong G_2$.
+    \item
+      Die Aussage ist falsch:
+      Man betrachte die beiden abelschen Gruppen $G_1 = \Integer/4\Integer$ und $G_2 = \Integer/2\Integer \oplus \Integer/2\Integer$, sowie die jeweiligen Untergruppen $N_1 = 2\Integer/4\Integer = \{\overline{0}, \overline{2}\}$ und $N_2 = \Integer/2\Integer \oplus 0$.
+      Wegen der Kommutativität von $G_1$ und $G_2$ handelt es sich jeweils um eine normale Untergruppe.
+      Da $N_1$ und $N_2$ beide zweielementig sind, gilt
+      \[
+        N_1 \cong \Integer/2\Integer \cong N_2
+      \]
+      (denn $\Integer/2\Integer$ ist die bis auf Isomorphie eindeutige zweielementige Gruppe).
+      Nach dem zweiten (oder dritten) Isomorphiesatz gilt
+      \[
+              G_1 / N_1
+        =     (\Integer/4\Integer) / (2\Integer/4\Integer)
+        \cong \Integer/2\Integer,
+      \]
+      und für den anderen Quotienten gilt
+      \begin{align*}
+                G_2 / N_2
+        &=      (\Integer/2\Integer \oplus \Integer/2\Integer) / (\Integer/2\Integer \oplus 0)
+        \\
+        &\cong  ((\Integer/2\Integer)/(\Integer/2\Integer)) \oplus ((\Integer/2\Integer)/0)
+        \cong   0 \oplus \Integer/2\Integer
+        \cong   \Integer/2\Integer.
+      \end{align*}
+      Also gilt auch $G_1/N_1 \cong G_2/N_2$.
+      Es gilt aber $G_1 \ncong G_2$, da $G_1$ ein Element der Ordnung $4$ enthält, $G_2$ jedoch nicht.
   \end{enumerate}
 \end{solution}
 
