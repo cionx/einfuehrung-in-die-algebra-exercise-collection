@@ -1,30 +1,45 @@
 \section{Ringtheorie}
 
 
-\begin{question}
-  Es sei $R$ ein Ring.
-  Zeigen Sie, dass es einen eindeutigen Ringhomomorphismus $\Integer \to R$ gibt.
-  (Dies bedeutet, dass der Ring $\Integer$ ein Initialobjekt in der Kategorie der Ringe ist.)
+\begin{question}[subtitle = Initialobjekte in der Kategorie der Ringe]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass es für jeden Ring $R$ einen eindeutigen Ringhomomorphismus $\Integer \to R$ gibt.
+      (Dies bedeutet, dass der Ring $\Integer$ ein Initialobjekt in der Kategorie der Ringe ist.)
+    \item
+      Es sei $Z$ ein Ring, so dass es für jeden Ring $R$ einen eindeutigen Ringhomomorphismus $Z \to R$ gibt.
+      Zeigen Sie, dass $Z \cong \Integer$.
+  \end{enumerate}
 \end{question}
 
 
 \begin{solution}
-  Ist $\phi \colon \Integer \to R$ ein Ringhomomorphismus, so ist $\phi(1_\Integer) = 1_R$.
-  Für alle $n \in \Integer$ ist damit
-  \[
-      \phi(n)
-    = \phi(n \cdot 1_\Integer)
-    = n \cdot \phi(1_\Integer)
-    = n \cdot 1_R.
-  \]
-  Also ist $\phi$ eindeutig.
-  Durch direktes Nachrechnen ergibt sich auch, dass $\psi \colon \Integer \to R$ mit
-  \[
-    \psi(n) \coloneqq n \cdot 1_R
-    \quad
-    \text{für alle $n \in \Integer$}
-  \]
-  ein Ringhomomorphismus ist.
+  \begin{enumerate}
+    \item
+      Ist $\phi \colon \Integer \to R$ ein Ringhomomorphismus, so ist $\phi(1_\Integer) = 1_R$.
+      Für alle $n \in \Integer$ ist damit
+      \[
+          \phi(n)
+        = \phi(n \cdot 1_\Integer)
+        = n \cdot \phi(1_\Integer)
+        = n \cdot 1_R.
+      \]
+      Also ist $\phi$ eindeutig.
+      Durch direktes Nachrechnen ergibt sich auch, dass $\psi \colon \Integer \to R$ mit
+      \[
+        \psi(n) \coloneqq n \cdot 1_R
+        \quad
+        \text{für alle $n \in \Integer$}
+      \]
+      ein Ringhomomorphismus ist.
+    \item
+      Es gibt einen eindeutigen Ringhomomorphismus $\phi \colon \Integer \to Z$ sowie einen eindeutigen Ringhomomorphismus $\psi \colon Z \to \Integer$.
+      Es ist auch $\psi \circ \phi \colon \Integer \to \Integer$ ein Ringhomomorphismus.
+      Die Identität $\id_\Integer \colon \Integer \to \Integer$ ebenfalls ein Ringhomomorphismus ist.
+      Da es genau einen Ringhomomorphismus $\Integer \to \Integer$ gibt, muss sowohl $\psi \circ \phi$ als auch $\id_\Integer$  dieser eindeutige Ringhomomorphismus $\Integer \to \Integer$ sein.
+      Folglich ist $\psi \circ \phi = \id_\Integer$.
+      Analog ergibt sich, dass $\phi \circ \psi = \id_Z$.
+  \end{enumerate}
 \end{solution}
 
 
