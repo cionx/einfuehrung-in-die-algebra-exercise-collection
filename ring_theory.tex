@@ -60,6 +60,31 @@
 
 
 \begin{question}
+  Es sei $R$ ein kommutativer Ring und $\pideal \subseteq R$ ein Ideal.
+  Zeigen Sie, dass $\pideal$ genau dann ein Primideal ist, wenn es einen Körper $K$ und einen Ringhomomorphismus $\phi \colon R \to K$ mit $\ker \phi = \pideal$ gibt.
+\end{question}
+
+
+\begin{proof}
+  Ist $\pideal$ ein Primideal, so ist $R/\pideal$ ein Integritätsbereich.
+  Da die kanonische Inklusion $R/\pideal \to Q(R/\pideal)$ ein injektiver Ringhomomorphismus ist, folgt für die Komposition
+  \[
+    \phi \colon R \xrightarrow{\pi} R/\pideal \to Q(R/\pideal),
+  \]
+  dass $\ker \phi = \ker \pi = \pideal$.
+  (Hier bezeichnet $\pi \colon R \to R/\pideal$ die kanonische Projektion.)
+  Da $Q(R/\pideal)$ ein Körper ist, zeigt dies eine Implikation.
+  
+  Gibt es andererseits einen Körper $K$ und einen Ringhomomorphismus $\phi \colon R \to K$ mit $\pideal = \ker \phi$, so ist
+  $
+    R/\pideal \cong \im \phi \subseteq K.
+  $
+  Der Körper $K$ ist insbesondere ein Integritätsbereich, weshalb auch der Unterring $\im \phi$ ein Integritätsbereich ist.
+  Der Quotient $R/\pideal$ ist also ein Integritätsbereich und $\pideal$ somit eine Primideal.
+\end{proof}
+
+
+\begin{question}
   Ist $R$ ein Ring, so ist
   \[
               R^\times
