@@ -379,3 +379,30 @@
 
 
 % TODO: Adding a solution.
+
+
+\begin{question}
+  Bestimmen Sie die Einheitengruppe $\Integer[i]^\times$.
+\end{question}
+
+
+\begin{solution}
+  Ein Element $z \in \Integer[i]$ ist genau dann eine Einheit in $\Integer[i]$, wenn $z \neq 0$ und $z^{-1} \in \Integer[i]$ (hier bezeichnet $z^{-1} = 1/z$ das Inverse von $z$ in $\Complex$).
+  Für die Elemente $1, -1, i, -i \in \Integer[i]$ ist dies erfüllt.
+  Ist $z \in \Integer[i]$ mit $z \neq 0$ und $z^{-1} \in \Integer[i]$, so ist
+  \begin{equation}
+    \label{eqn: units in the gaussian integers}
+      1
+    = |1|^2
+    = |z z^{-1}|^2
+    = |z|^2 |z^{-1}|.
+  \end{equation}
+  Für alle $w \in \Integer[i]$ mit $w = a + ib$ gilt $a, b \in \Integer$ und deshalb $|w|^2 = a^2 + b^2 \in \Integer$.
+  In \eqref{eqn: units in the gaussian integers} gilt deshalb, dass $|z|^2, |z^{-1}|^2 \in \Integer$, und somit $|z|^2 \in \Integer^\times = \{1,-1\}$.
+  Also gilt $|z|^2 = 1$.
+  Ist $z = a + ib$ mit $a,b \in \Integer$ so ist also $a^2 + b^2 = 1$ und somit entweder $a = 0$ und $b = \pm 1$, oder $a = \pm 1$ und $b = 0$.
+  Es ist also $z \in \{1, -1, i, -i\}$.
+  Insgesamt zeigt dies, dass $\Integer[i]^\times = \{1, -1, i, -i\}$.
+\end{solution}
+
+
