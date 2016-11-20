@@ -380,6 +380,62 @@
 
 
 \begin{question}
+  Es sei $R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für jedes Ideal $\aideal \subseteq R$ die Teilmenge
+      \[
+                  \aideal[X]
+        \coloneqq \left\{
+                    \sum_i f_i X^i \in R[X]
+                  \,\middle|\,
+                    \text{$f_i \in \aideal$ für alle $i$}
+                  \right\}
+      \]
+      ein Ideal in $R[X]$ ist.
+    \item
+      Zeigen Sie, dass $\pideal[X]$ ein Primideal in $R[X]$, wenn $\pideal \subseteq R$ ein Primideal ist.
+    \item
+      Zeigen oder widerlegen Sie, dass $\mideal[X]$ notwendigerweise ein maximales Ideal in $R[X]$ ist, wenn $\mideal \subseteq R$ ein maximales Ideal ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die kanonische Projektion $\pi \colon R \to R/\aideal$, $x \mapsto \overline{x}$ induziert nach der universellen Eigenschaft des Polynomrings $R[X]$ einen Ringhomomorphismus $\varphi \colon R[X] \to (R/\aideal)[X]$ mit $\varphi|_R = \pi$ und $\varphi(X) = \pi(X)$, und dieser ist gegeben durch
+      \[
+          \varphi\left( \sum_i f_i X^i \right)
+        = \sum_i \pi(f_i) X^i
+        = \sum_i \overline{f_i} X^i.
+      \]
+      Für $f = \sum_i f_i X^i \in R[X]$ ist genau dann $f \in \ker \varphi$, wenn $\overline{f_i} = 0$ für alle $i$, also genau dann, wenn $f_i \in \ker \pi = \aideal$ für alle $i$.
+      Somit ist $\ker \varphi = \aideal[X]$ ein Ideal in $R[X]$.
+    \item
+      Es seien $\pi$ und $\varphi$ wie zuvor.
+      Wegen der Surjektivität von $\pi$ ist auch $\varphi$ surjektiv.
+      Somit induziert $\varphi$ einen Ringisomorphismus
+      \[
+        \psi \colon R[X]/\pideal[X] \to (R/\pideal)[X],
+        \quad
+        \overline{\sum_i f_i X^i} \mapsto \sum_i \overline{f_i} X^i.
+      \]
+      Der Quotient $R/\pideal$ ist ein Integritätsbereich, da $\pideal$ ein Primideal in $R$ ist.
+      Somit ist auch $(R/\pideal)[X]$ ein Integritätsbereich.
+      Da der Quotient $R[X]/\aideal[X]$ ein Integritätsbereich ist, folgt, dass $\pideal[X]$ ein Primideal in $R[X]$ ist.
+    \item
+      Ist $K$ ein Körper, so ist $0 \subseteq K$ ein maximales Ideal, und es gilt $\mideal[X] = 0$.
+      Der Quotient $K[X]/\mideal[X] \cong (K/0)[X] \cong K[X]$ ist kein Körper, da $0 \neq X \in K[X]$ keine Einheit ist.
+      Also ist $\mideal[X]$ nicht maximal in $K[X]$.
+      
+      Tatsächlich kann $\mideal[X]$ nicht maximal in $R[X]$ sein, da $R[X]/\mideal[X] \cong (R/\mideal)[X]$, aber es keinen Ring $R'$ gibt, so dass $R'[X]$ ein Körper ist (siehe Übung~\ref{qst: polynomial rings are not fields}).
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  \label{qst: polynomial rings are not fields}
   Zeigen Sie, dass es keinen Ring $R$ gibt, so dass $R[X]$ ein Körper ist.
 \end{question}
 
