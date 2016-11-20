@@ -461,7 +461,58 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Das Element $\overline{f} \in R[X]/(fX-1)$ ist eine Einheit mit $\overline{f}^{-1} = \overline{X}$ da
+  \[
+      \overline{f} \, \overline{X}
+    = \overline{fX}
+    = \overline{1}
+    = 1.
+  \]
+  Nach der universellen Eigenschaft der Lokalisierung $R_f$ induziert der Ringhomomorphismus $R \to R[X] \to R[X]/(fX-1)$ einen Ringhomomorphismus $\varphi \colon R_f \to R[X]/(fX-1)$ mit
+  \[
+      \varphi\left( \frac{r}{f^k} \right)
+    = \frac{\overline{r}}{\overline{f}^k}
+    = \overline{r} \overline{X}^k
+    = \overline{r X^k}.
+  \]
+  
+  Andererseits induziert der kanonische Ringhomomorphismus $i \colon R \to R_f$, $r \mapsto r/1$ nach der universellen Eigenschaft des Polynomrings $R[X]$ einen eindeutigen Ringhomomorphismus $\tilde{\psi} \colon R[X] \to R_f$ mit $\tilde{\psi}|_R = i$ und $\tilde{\psi}(X) = 1/f$, und dieser ist gegeben durch
+  \[
+      \tilde{\psi}\left( \sum_i r_i X^i \right)
+    = \sum_i \frac{r_i}{f^i}.
+  \]
+  Dann gilt insbesondere
+  \[
+      \tilde{\psi}(fX-1)
+    = \tilde{\psi}(f) \tilde{\psi}(X) - \tilde{\psi}(1)
+    = \frac{f}{1} \frac{1}{f} - \frac{1}{1}
+    = 0.
+  \]
+  Also faktorisiert $\tilde{\psi}$ über einen eindeutigen Ringhomomorphismus $\psi \colon R[X]/(fX-1) \to R_f$ mit $\psi(\overline{p}) = \tilde{\psi}(p)$ für alle $p \in R[X]$, d.h.\ es ist
+  \[
+      \psi\left( \overline{ \sum_i r_i X^i } \right)
+    = \sum_i \frac{r_i}{f^i}
+    \qquad
+    \text{für alle $\sum_i r_i X^i \in R[X]$}.
+  \]
+  
+  Die beiden Ringhomomorphismen $\varphi$ und $\psi$ sind invers zueinander:
+  Für alle $r/f^k \in R_f$ gilt
+  \[
+      \psi\left( \varphi\left( \frac{r}{f^k} \right) \right)
+    = \psi\left( \overline{r X^k} \right)
+    = \frac{r}{f^k},
+  \]
+  und für alle $\sum_i r_i X^i \in R[X]$ gilt
+  \[
+      \varphi\left( \psi\left( \overline{\sum_i r_i X^i} \right) \right)
+    = \varphi\left( \sum_i \frac{r_i}{f^i} \right)
+    = \sum_i \varphi\left( \frac{r_i}{f^i} \right)
+    = \overline{\sum_i r_i X^i}.
+  \]
+  Also ist $\varphi$ ein Isomorphismus mit $\varphi^{-1} = \psi$.
+\end{solution}
 
 
 \begin{question}
