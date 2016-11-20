@@ -277,13 +277,44 @@
     \item
       Definieren Sie, wann zwei Elemente von $R$ assoziiert sind.
     \item
+      Zeigen Sie, dass Assoziiertheit eine Äquivalenzrelation ist.
+    \item
       Es sei nun $R$ ein Integritätsbereich.
       Zeigen Sie, dass zwei Elemente $a, b \in R$ genau dann assoziiert sind, wenn $(a) = (b)$.
   \end{enumerate}
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{question}
+  \begin{enumerate}
+    \item
+      Ein Element $y \in R$ ist assoziiert zu einem Element $x \in R$, wenn es eine Einheit $\varepsilon \in R^\times$ mit $y = \varepsilon x$ gibt.
+  \end{enumerate}
+  Für $x, y \in R$ schreiben wir im Folgenden $x \sim y$, wenn $y$ assoziiert zu $x$ ist.
+  \begin{enumerate}[resume]
+    \item
+      Für jedes $x \in R$ ist $x \sim x$ da $x = 1 \cdot x$ mit $1 \in R^\times$.
+      Für $x, y \in R$ mit $x \sim y$ gibt es $\varepsilon \in R^\times$ mit $y = \varepsilon x$;
+      dann ist $\varepsilon^{-1} \in R^\times$ mit $x = \varepsilon^{-1} y$ und deshalb $y \sim x$.
+      Für $x, y, z \in R$ mit $x \sim y$ und $y \sim z$ gibt es $\varepsilon_1, \varepsilon_2 \in R^\times$ mit $y = \varepsilon_1 x$ und $z = \varepsilon_2 y$;
+      dann ist $\varepsilon_2 \varepsilon_1 \in R^\times$ mit $z = \varepsilon_2 y = \varepsilon_2 \varepsilon_1 x$ und somit $x \sim z$.
+    \item
+      Für $x, y \in R$ mit $x \sim y$ gibt es $\varepsilon \in R^\times$ mit $x = \varepsilon y$.
+      Dann ist $R \varepsilon = R$ und deshalb
+      \[
+          (x)
+        = \{r x \mid r \in R\}
+        = \{r \varepsilon y \mid r \in R\}
+        = \{r' y \mid r' \in R \varepsilon\}
+        = \{r' y \mid r' \in R\}
+        = (y).
+      \]
+      Ist andererseits $(x) = (y)$ so ist $x \in (y)$ und $y \in (x)$, also gibt es $\varepsilon_1, \varepsilon_2 \in R$ mit $y = \varepsilon_1 x$ und $x = \varepsilon_2 y$.
+      Dann ist $y = \varepsilon_1 x = \varepsilon_1 \varepsilon_2 y$, und da $R$ ein Integritätsbereich ist, somit $\varepsilon_1 \varepsilon_2 = 1$.
+      Also ist $\varepsilon_1$ eine Einheit mit $\varepsilon_1^{-1} = \varepsilon_2$.
+      Da $y = \varepsilon_1 x$ ist $x \sim y$.
+  \end{enumerate}
+\end{question}
 
 
 \begin{question}
