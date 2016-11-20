@@ -2,6 +2,40 @@
 
 
 \begin{question}
+  Zeigen Sie, dass für einen kommutativen Ring $K$ die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      \label{enum: K is a field}
+      $K$ ist ein Körper.
+    \item
+      \label{enum: K has exactly two ideals}
+      $K$ hat genau zwei Ideale.
+    \item
+      \label{enum: The zero ideal is maximal}
+      Das Nullideal in $K$ ist maximal.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  (\ref{enum: K is a field} $\implies$ \ref{enum: K has exactly two ideals})
+  Da $K$ ein Körper ist gilt $0 \neq K$, also hat $K$ mindestens zwei Ideale.
+  Ist $I \subseteq K$ ein Ideal mit $I \neq 0$, so gibt es ein $x \in I$ mit $x \neq 0$.
+  Dann ist $x$ eine Einheit in $K$, somit $K = (x) \subseteq I$ und deshalb $I = K$.
+  Also sind $0$ und $K$ die einzigen Ideale in $K$.
+  
+  (\ref{enum: K has exactly two ideals} $\implies$ \ref{enum: The zero ideal is maximal})
+  Es muss $0 \neq K$, denn sonst wäre $0$ das einzige Ideal in $K$.
+  Also sind $0$ und $K$ die einzigen beiden Ideale in $K$.
+  Ist $I \subseteq K$ ein Ideal mit $0 \subsetneq I$, so muss bereits $I = K$.
+  Also ist $0$ ein maximales Ideal.
+  
+  (\ref{enum: The zero ideal is maximal} $\implies$ \ref{enum: K is a field})
+  Da $0 \subseteq K$ maximal ist, ergibt sich, dass $K \cong K/0$ ein Körper ist.
+\end{solution}
+
+
+\begin{question}
   Es sei $K$ ein algebraisch abgeschlossener Körper.
   Zeigen Sie, dass $K$ unendlich ist.
 \end{question}
