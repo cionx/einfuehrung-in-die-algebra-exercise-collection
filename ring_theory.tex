@@ -343,7 +343,16 @@
 \end{question}
 
 
-% TODO: Adding a solution
+\begin{solution}
+  Als euklidischer Ring ist $R$ insbesondere ein Integritätsbereich.
+  Es sei $g \colon R \to \Natural$ die Gradabbildung und $I \subseteq R$ ein Ideal.
+  Ist $I = 0$ so ist $I = (0)$, wir betrachten daher den Fall $I \neq 0$.
+  Dann gibt es ein bezüglich $g$ minimales $a \in I$, d.h.\ $a \in I$ mit $a \neq 0$ und $g(a) \leq g(x)$ für alle $x \in I$ mit $x \neq 0$.
+  Es gilt $(a) \subseteq I$ und es handelt sich bereits um Gleichheit:
+  Ist $x \in I$ so gibt es $b, r \in R$ mit $x = ab + r$, und entweder $r = 0$ oder $g(r) < g(a)$.
+  Da $r = x - ab \in I$ kann $g(r) < g(a)$ wegen der Minimalität von $a$ nicht eintretten.
+  Also ist $r = 0$ und somit $x = ab \in (a)$.
+\end{solution}
 
 
 \begin{question}
