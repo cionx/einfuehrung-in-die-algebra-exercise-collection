@@ -375,8 +375,31 @@
 \end{question}
 
 
-
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Da $1 \in S$ ist $1 = f(1) \in f(S) = S'$.
+      Für $s'_1, s'_2 \in S'$ gibt es $s_1, s_2 \in S$ mit $s'_1 = f(s_1)$ und $s'_2 = f(s_2)$, und damit ist auch $s'_1 s'_2 = f(s_1) f(s_2) = f(s_1 s_2) \in f(S) = S'$.
+    \item
+      Es seien $i \colon R \to R_S$, $r \mapsto r/1$ und $i' \colon R' \to R'_{S'}$, $r' \mapsto r'/1$ die kanonischen Ringhomomorphismen.
+      Die Komposition $i' \circ f \colon R \mapsto R'_{S'}$ bildet $s \in S$ auf die Einheit $f(s)/1 \in R'_{S'}$
+      ab.
+      Nach der universellen Eigenschaft der Lokalisierung induziert $i' \circ f$ einen eindeutigen Ringhomomorphismus $f_S \colon R_S \to R'_{S'}$ mit $f_S i = i' f$, d.h.\ so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              R
+              \arrow{r}{f}
+              \arrow{d}{i}
+          \&  R'
+              \arrow{d}{i'}
+          \\
+              R_S
+              \arrow{r}{f_S}
+          \&  R'_{S'}
+        \end{tikzcd}
+      \]
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
