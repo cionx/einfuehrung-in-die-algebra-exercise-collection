@@ -24,6 +24,25 @@
 
 % TODO: Adding a solution.
 
+\begin{question}
+  Es sei $M$ ein endlich erzeugter $R$-Modul.
+  Zeigen Sie, dass jedes Erzeugendensystem $S \subseteq M$ ein endliches Erzeugendensystem enthält.
+\end{question}
+
+
+\begin{solution}
+  Es sei $\{m_1, \dotsc, m_s\} \subseteq M$ ein endliches Erzeugendensystem.
+  Da $S$ ein Erzeugendensystem ist, lässt sich jedes $m_i$ als $m_i = r_{i,1} s_{i,1} + \dotsb + r_{i,t_i} s_{i,t_i}$ mit $t_i \geq 0$, $s_{i,1}, \dotsc, s_{i,t_i} \in S$ und $r_{i,1}, \dotsc, r_{i,t_i} \in R$ schreiben.
+  Für $S' \coloneqq \{s_{i,j} \mid i = 1, \dotsc, s, j = 1, \dotsc, t_i\}$ gilt dann $m_i \in \generate{S}$ für alle $i = 1, \dotsc, s$ und deshalb
+  \[
+              M
+    =         \generate{m_1, \dotsc, m_s}
+    \subseteq \generate{S'}
+    \subseteq M.
+  \]
+  Also ist $\generate{S'} = M$ und somit $S'$ ein endliches Erzeugendensystem von $M$.
+\end{solution}
+
 
 \begin{question}
   Es sei $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Folge von $R$-Moduln.
