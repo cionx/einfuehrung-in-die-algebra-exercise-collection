@@ -246,7 +246,7 @@
 
 
 \begin{question}[subtitle = Funktorialität der Einheitengruppe]
-  Ist $R$ ein Ring, so ist
+  Ist $R$ ein kommutativer Ring, so ist
   \[
               R^\times
     \coloneqq \{x \in R \mid \text{$x$ ist eine Einheit}\}
@@ -255,20 +255,20 @@
   Zeigen Sie:
   \begin{enumerate}
     \item
-      Ist $R$ ein Ring, so bildet $R^\times$ bezüglich der Multiplikation aus $R$ eine Gruppe.
+      Ist $R$ ein kommutativer Ring, so bildet $R^\times$ mit der Multiplikation aus $R$ eine abelsche Gruppe.
     \item
-      Sind $R$ und $S$ zwei Ringe und ist $\phi \colon R \to S$ ein Ringhomomorphismus, so induziert $\phi$ per Einschränkung einen Gruppenhomomorphismus
+      Sind $R$ und $S$ zwei kommutativer Ringe und ist $\phi \colon R \to S$ ein Ringhomomorphismus, so induziert $\phi$ per Einschränkung einen Gruppenhomomorphismus
       \[
         \phi^\times \colon R^\times \to S^\times,
         \quad
         x \mapsto \phi(x).
       \]
     \item
-      Für jeden Ring $R$ gilt $\id_R^\times = \id_{R^\times}$, und für alle Ringhomomorphismen $\phi \colon R_1 \to R_2$ und $\psi \colon R_2 \to R_3$ gilt $(\psi \phi)^\times = \psi^\times \phi^\times$.
+      Für jeden Ring kommutativen $R$ gilt $\id_R^\times = \id_{R^\times}$, und für alle kommutativen Ringe $R_1$, $R_2$ und $R_3$ und Ringhomomorphismen $\phi \colon R_1 \to R_2$ und $\psi \colon R_2 \to R_3$ gilt $(\psi \phi)^\times = \psi^\times \phi^\times$.
   \end{enumerate}
-  (\emph{Hinweis}:
-   Zum Verständnis genügt es kommutative Ringe zu betrachten.
-   Die Aussage ist aber auch für nicht-kommutative Ringe von Bedeutung.)
+  (Die Aussagen gelten auch für nichtkommutative Ringe, wobei $R^\times$ dann im Allgemeinen nicht abelsch ist.
+   Dabei ist ein Element $r \in R$ eines nichtkommutativen Rings $R$ eine Einheit, wenn es $s \in R$ mit $rs = 1 = sr$ gibt.
+   Es genügt auch, dass es $s, t \in R$ mit $rs = 1 = tr$ gibt; dann gilt bereits $s = t$.)
 \end{question}
 
 
