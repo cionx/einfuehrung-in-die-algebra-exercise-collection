@@ -101,11 +101,16 @@
   Es sei $R$ ein kommutativer Ring und $I \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
-      Definieren Sie das Radikal $\radicalideal{I}$ und zeigen Sie, dass $\radicalideal{I}$ ebenfalls ein Ideal ist.
+      Definieren Sie das Radikal $\radicalideal{I}$ und zeigen Sie, dass $\radicalideal{I}$ ein Ideal mit $I \subseteq \sqrt{I}$ ist.
     \item
       Zeigen Sie, dass $\radicalideal{\radicalideal{I}} = \radicalideal{I}$.
     \item
       Zeigen Sie, dass $\radicalideal{I}$ genau dann ein echtes Ideal ist, wenn $I$ ein echtes Ideal ist.
+  \end{enumerate}
+  Ein Ideal $I$ ist ein \emph{Radikalideal}, wenn $I = \radicalideal{J}$ für ein Ideal $J \subseteq I$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $I$ genau dann ein Radikalideal ist, wenn $\radicalideal{I} = I$.
   \end{enumerate}
   Ein Ring $S$ heißt \emph{reduziert}, falls $0$ das einzige nilpotente Element von $S$ ist.
   \begin{enumerate}[resume]
@@ -117,7 +122,88 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Das Radikal $\radicalideal{I}$ ist als
+      \[
+          \radicalideal{I}
+        = \{ r \in R \mid \text{es gibt $n \in \Natural$ mit $r^n \in I$} \}
+      \]
+      definiert.
+      Für alle $x \in I$ gilt $x^1 = x \in I$, weshalb $I \subseteq \radicalideal{I}$.
+      
+      Insbesondere ist somit $0 \in \radicalideal{I}$, da $0 \in I$.
+      Für $x, y \in \radicalideal{I}$ gibt es $n, m \in \Natural$ mit $x^n, y^m \in I$.
+      Für alle $k = 0, \dotsc, n+m$ gilt deshalb $x^k \in I$ oder $y^{n+m-k} \in I$, und somit auch
+      \[
+          (x + y)^{n+m}
+        = \sum_{k=0}^{n+m} \binom{n+m}{k} x^k y^{n+m-k} \in I.
+      \]
+      Deshalb ist auch $x + y \in \radicalideal{I}$.
+      Für $r \in R$ und $x \in I$ gibt es $n \in \Natural$ mit $x^n \in I$, weshalb auch
+      \[
+        (r x)^n = r^n x^n \in I.
+      \]
+      Somit ist auch $r x \in \radicalideal{I}$.
+      
+    \item
+      Wir wissen bereits, dass $\radicalideal{I} \subseteq \radicalideal{\radicalideal{I}}$.
+      Für $x \in \radicalideal{\radicalideal{I}}$ gibt es $n \in \Natural$ mit $x^n \in \radicalideal{I}$, und somit auch noch $m \in \Natural$ mit $(x^n)^m \in I$.
+      Damit ist $x^{nm} \in I$, weshalb auch $\radicalideal{\radicalideal{I}} \subseteq \radicalideal{I}$.
+    
+    \item
+      $I$ ist genau dann ein echtes Ideal, wenn $1 \notin I$.
+      Da $1^n = 1$ für alle $n \in \Natural$ ist genau dann $1 \notin I$, wenn $1 \notin \radicalideal{I}$.
+      Dies ist wiederum äquivalent dazu, dass $\radicalideal{I}$ ein echtes Ideal ist.
+    
+    \item
+      Gilt $I = \radicalideal{I}$ so erfüllt $I$ die definierende Eigenschaft eines Radikalideals (mit $J = I$).
+      Ist andererseits $I = \radicalideal{J}$ für ein Ideal $J \subseteq R$, so gilt
+      \[
+          \radicalideal{I}
+        = \radicalideal{\radicalideal{J}}
+        = \radicalideal{J}
+        = I.
+      \]
+
+    \item
+      Der Quotient $R/I$ ist genau reduziert, wenn
+      \begin{equation}
+        \label{eqn: reduced first equation}
+        \text{es gibt $n \in \Natural$ mit $\overline{x}^n = 0$}
+        \implies
+        \overline{x} = 0
+        \qquad
+        \text{für alle $x \in R$}.
+      \end{equation}
+      Dabei gilt $\overline{x}^n = \overline{x^n}$ für alle $x \in R$ und $n \in \Natural$, und für alle $y \in R$ gilt genau dann $\overline{y} = 0$, wenn $y \in I$.
+      Daher ist \eqref{eqn: reduced first equation} äquivalent dazu, dass
+      \begin{equation}
+        \label{eqn: reduced second equation}
+        \text{es gibt $n \in \Natural$ mit $x^n \in I$}
+        \implies
+        x \in I
+        \qquad
+        \text{für alle $x \in R$}.
+      \end{equation}
+      Durch Einsetzen der Definition von $\radicalideal{I}$ ergibt sich aus \eqref{eqn: reduced second equation} die äquivalente Bedingung
+      \[
+        x \in \radicalideal{I}
+        \implies
+        x \in I
+        \qquad
+        \text{für alle $x \in R$}.
+      \]
+      Dies bedeutet gerade, dass $\radicalideal{I} \subseteq I$.
+      Da $I \subseteq \radicalideal{I}$ ist dies äquivalent dazu, dass $I = \sqrt{I}$, dass also $I$ ein Radikalideal ist.
+      
+    \item
+      Der Quotient $R/\pideal$ ist ein Integritatsbereich, da $\pideal$ ein Primideal ist.
+      Nach dem vorherigen Aufgabenteil genügt es zu zeigen, dass jeder Integritätsbereich $S$ reduziert ist.
+      Dies folgt direkt daraus, dass für jedes $x \in S$ mit $x^n = 0$ aus der Nullteilerfreiheit von $S$ folgt, dass $x = 0$.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
