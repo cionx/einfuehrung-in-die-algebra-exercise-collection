@@ -6,7 +6,29 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Es sei $A$ eine abelsche Gruppe.
+  Aus der Vorlesung ist die Bijektion
+  \begin{align*}
+    \{\text{$\Integer$-Modulstrukturen $\Integer \times A \to A$}\}
+    &\longleftrightarrow
+    \{\text{Ringhomomorphismen $\Integer \to \End(A)$}\},
+    \\
+                    \mu
+    &\longmapsto    (n \mapsto (a \mapsto \mu(n,a))),
+    \\
+                    ( (n,a) \mapsto \phi(n)(a) )
+    &\longmapsfrom  \phi.
+  \end{align*}
+  bekannt.
+  Dabei ist
+  \[
+      \End(A)
+    = \{f \colon A \to A \mid \text{$f$ ist additiv}\}
+  \]
+  ein Ring unter punktweiser Adddition und Komposition.
+  Da es genau einen Ringhomomorphismus $\Integer \to \End(A)$ gibt (siehe Übung~\ref{qst: Z is inital}) folgt die Aussage.
+\end{solution}
 
 
 \begin{question}
