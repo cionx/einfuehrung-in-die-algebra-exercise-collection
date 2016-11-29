@@ -388,12 +388,88 @@
 
 
 \begin{question}
-  Es sei $R$ ein kommutativer Ring, so dass $R[X]$ ein Hauptidealring ist.
-  Zeigen Sie, dass $R$ bereits ein Körper ist.
+  Es sei $K$ ein kommutativer Ring, so dass $K[X]$ ein Hauptidealring ist.
+  Zeigen Sie, dass $K$ bereits ein Körper ist.
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Wir geben zwei mögliche Beweise:
+  
+  \begin{enumerate}
+    \item
+      Es sei $a \in K$ mit $a \neq 0$.
+      Das Ideal $(a, X)$ ist nach Annahme ein Hauptideal.
+      Also gibt es ein Polynom $f \in K[X]$ mit
+      \begin{equation}
+        \label{eqn: ideal is principal}
+        (a, X) = (f).
+      \end{equation}
+      Wegen Gleichung \eqref{eqn: ideal is principal} gilt $f \mid a$, d.h.\ es gibt $g \in K[X]$ mit $fg = a$.
+      Entscheident ist nun die folgende Beobachtung:
+      
+      \begin{claim}
+        \label{claim: degree is additive}
+        Die übliche Gradabbildung $\deg \colon K[X] \to \Natural$ ist additiv.
+      \end{claim}
+      \begin{proof}
+        As Hauptidealring ist $K[X]$ inbesondere ein Integritätsbereich.
+        Also ist auch der Unterring $K \subseteq K[X]$ ein Integritätsbereich, woraus die Aussage folgt.
+      \end{proof}
+      Aus Behauptung~\ref{claim: degree is additive} erhalten wir, dass
+      \[
+          0
+        = \deg(a)
+        = \deg(fg)
+        = \deg(f) + \deg(g).
+      \]
+      Es muss $\deg(f) = \deg(g) = 0$ gelten und somit bereits $f, g \in K$.
+      
+      Da $f \in (a, X)$ gibt es $p, q \in K[X]$ mit $f = a p + X q$.
+      Da $f \in K$ und $\deg(X q) \geq 1$ ergibt sich durch Vergleich des $0$-ten Koeffizienten, dass $f = f_0 = a_0 p_0 = a p_0$.
+      Deshalb gilt bereits $f = a p_0 \in (a)$.
+      Wir haben also
+      \[
+                  (a, X)
+        =         (f)
+        \subseteq (a)
+        \subseteq (a, X)
+      \]
+      und somit $(a, X) = (a)$.
+      
+      Es gibt deshalb $h \in K[X]$ mit $X = a h$.
+      Durch Gradvergleich erhalten wir, dass
+      \[
+          1
+        = \deg(X)
+        = \deg(a h)
+        = \deg(a) + \deg(h)
+        = 0 + \deg(h)
+        = \deg(h)
+      \]
+      und deshalb $h(X) = b_1 X + b_0$ für $b_1, b_0 \in K$.
+      Durch Koeffizientenvergleich erhalten wir aus der Gleichung
+      \[
+          X
+        = a h(X)
+        = a (b_1 X + b_0)
+        = a b_1 X + a b_0,
+      \]
+      dass $a b_1 = 1$.
+      Das zeigt, dass $a \in A$ eine Einheit ist.
+      
+    \item
+      Der obige Beweis lässt sich leicht ändern.
+      Wir zeigen, dass das Ideal $(X)$ maximal ist.
+      Ansonsonsten gebe es $a \in K[X]$, so dass $(X) \subsetneq (a, X) \subsetneq K[X]$.
+      Da $(a, X) = (a_0, X)$ können o.B.d.A.\ davon ausgehen, dass $a \in K$.
+      Wie zuvor ergibt sich, dass $(a, X) = (X)$, was $(X) \subsetneq (a,X)$ widerspricht.
+      Also ist $(X)$ maximal, und $K \cong K[X]/(X)$ somit ein Körper.
+  \end{enumerate}
+  Der erste Beweis hat den Vorteil, dass er für einen beliebigen kommutativen Ring $R$ zeigt, dass $(a, X)$ für $a \in R$ genau dann ein Hauptidealring ist, wenn $a \in R^\times$.
+  Somit ist beispielsweise $(2, X) \subseteq \Integer[X]$ kein Hauptideal.
+\end{solution}
+
 
 
 \begin{question}
