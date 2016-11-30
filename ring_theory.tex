@@ -265,6 +265,8 @@
       \]
     \item
       Für jeden Ring kommutativen $R$ gilt $\id_R^\times = \id_{R^\times}$, und für alle kommutativen Ringe $R_1$, $R_2$ und $R_3$ und Ringhomomorphismen $\phi \colon R_1 \to R_2$ und $\psi \colon R_2 \to R_3$ gilt $(\psi \phi)^\times = \psi^\times \phi^\times$.
+    \item
+      Ist $R$ ein kommutativer Ring und $\phi \colon R \to S$ ein Isomorphismus von Ringen, so ist $\phi^\times \colon R^\times \to S^\times$ ein Isomorphismus von Gruppen.
   \end{enumerate}
   (Die Aussagen gelten auch für nichtkommutative Ringe, wobei $R^\times$ dann im Allgemeinen nicht abelsch ist.
    Dabei ist ein Element $r \in R$ eines nichtkommutativen Rings $R$ eine Einheit, wenn es $s \in R$ mit $rs = 1 = sr$ gibt.
@@ -272,7 +274,50 @@
 \end{question}
 
 
-% TODO: Lösung hinzufügen
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Multiplikation in $R^\times$ ist assoziativ, da sie es in $R$ ist.
+      Dass $R^\times$ abelsch ist ergibt sich aus der Kommutativität von $R$.
+      Es gilt $1 \in R^\times$, und da $1$ in ganz $R$ neutral bezüglich der Multiplikation ist, gilt dies auch in $R^\times$.
+      Für jedes $x \in R^\times$ gibt es ein $y \in R$ mit $xy = 1$.
+      Dann gilt auch $y \in R^\times$ und $y$ ist auch in $R^\times$ invers zu $x$.
+    \item
+      Für $x \in R^\times$ gilt
+      \[
+          1
+        = \phi(1)
+        = \phi(x x^{-1})
+        = \phi(x) \phi(x^{-1}).
+      \]
+      Deshalb ist $\phi(x)$ eine Einheit in $S$ (mit $\phi(x)^{-1} = \phi(x^{-1})$), und somit $\phi(x) \in S^\times$.
+      Das zeigt, dass die Einschränkung $\phi^\times$ wohldefiniert ist.
+      Da $\phi$ mulitplikativ ist, gilt dies auch für $\phi^\times$, weshalb $\phi^\times$ ein Gruppenhomomorphismus ist.
+    \item
+      Da $\id_R^\times(x) = \id_R(x) = x = \id_{R^\times}(x)$ für alle $x \in X$ gilt, ist $\id_R^\times = \id_{R^\times}$.
+      Für alle $x \in R_1$ gilt
+      \[
+          (\psi^\times \phi^\times)(x)
+        = \psi^\times(\phi^\times(x))
+        = \psi(\phi(x))
+        = (\psi \phi)(x)
+        = (\psi \phi)^\times(x).
+      \]
+      Deshalb ist $(\psi^\times \phi^\times) = (\psi \phi)^\times$.
+    \item
+      Es sei $\psi \coloneqq \phi^{-1} \colon S \to R$.
+      Es gilt
+      \[
+          \phi^\times \psi^\times
+        = (\phi \psi)^\times
+        = \left( \phi \phi^{-1} \right)^\times
+        = \id_S^\times
+        = \id_{S^\times}
+      \]
+      und analog auch $\psi^\times \phi^\times = \id_{R^\times}$.
+      Also ist der Gruppenhomomorphismus $\phi^\times$ bijektiv mit $(\phi^\times)^{-1} = (\phi^{-1})^\times$, und somit ein Gruppenisomorphismus.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}[subtitle = Urbilder von Idealen]
