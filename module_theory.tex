@@ -130,3 +130,48 @@
 \end{solution}
 
 
+
+\begin{question}[subtitle=Torsionsuntermoduln]
+  Es sei $R$ ein Integritätsbereich.
+  \begin{enumerate}
+    \item
+      Definieren Sie den Torsionsuntermodul $\torsion(M)$ eines $R$-Moduls $M$, und zeigen Sie, dass es sich um einen $R$-Untermodul von $M$ handelt.
+    \item
+      Zeigen Sie, dass $\torsion(M \oplus N) = \torsion(M) \oplus \torsion(N)$ für alle $R$-Moduln $M$ und $N$.
+    \item
+      Zeigen Sie, dass jeder freie $R$-Modul torsionsfrei ist.
+    \item
+      Zeigen Sie für jeden $R$-Moduln $M$, dass $M/T(M)$ torsionsfrei ist.
+    \item
+      Es sei $f \colon M \to N$ ein $R$-Modulhomomorphismus.
+      Zeigen Sie, dass $f(\torsion(M)) \subseteq \torsion(N)$.
+  \end{enumerate}
+  Wir bezeichnen die Einschränkung von $f \colon M \to N$ auf die entsprechenden Torsionsuntermoduln mit $\torsion(f) \colon \torsion(M) \to \torsion(N)$, $m \mapsto f(m)$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass
+      \begin{enumerate}
+        \item
+          $\torsion(\id_M) = \id_{\torsion(M)}$ für jeden $R$-Modul $M$, und
+        \item
+          $\torsion(g \circ f) = \torsion(g) \circ \torsion(f)$ für alle $R$-Modulhomomorphismen $N \xrightarrow{f} M \xrightarrow{g} P$.
+      \end{enumerate}
+    \item
+      Zeigen Sie für jede exakte Sequenz von $R$-Moduln $0 \to M \xrightarrow{f} N \xrightarrow{g} P \to 0$ die Exaktheit der Sequenz
+      \[
+                                  0
+        \to                       \torsion(M)
+        \xrightarrow{\torsion(f)} \torsion(N)
+        \xrightarrow{\torsion(g)} \torsion(P).
+      \]
+    \item
+      Zeigen Sie ferner, dass $\torsion(g)$ surjektiv ist, falls $P$ projektiv ist.
+    \item
+      Geben Sie ein Beispiel für einen surjektiven $R$-Modulhomomorphismus $g \colon M \to P$ an, so dass $T(g)$ nicht surjektiv ist.
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
