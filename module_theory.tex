@@ -78,8 +78,50 @@
 \end{question}
 
 
-% TODO: Adding a solution.
-
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es seien $m_1, \dotsc, m_t \in M$ mit $M = \generate{m_1, \dotsc, m_t}_R$.
+      Wegen der Surjektivität von $g$ gilt dann
+      \[
+          P
+        = g(M)
+        = g(\generate{m_1, \dotsc, m_t}_R)
+        = \generate{g(m_1), \dotsc, g(m_t)}_R,
+      \]
+      weshalb $P$ endlich erzeugt ist.
+    \item
+      Es seien $n_1, \dotsc, n_s \in N$ und $p_{s+1}, \dotsc, p_t \in P$ endliche Erzeugendensysteme.
+      Für alle $i = 1, \dotsc, s$ sei $m_i \coloneqq f(n_i) \in M$;
+      wegen der Surjektivität gibt es für jedes $i = s+1, \dotsc, t$ ein $m_i \in M$ mit $g(m_i) = p_i$.
+      Dann gilt $\generate{m_1, \dotsc, m_s, m_{s+1}, \dotsc, m_t}_R = M$:
+      
+      Für $m \in M$ ist $g(m) \in P$ und deshalb $g(m) = r_{s+1} p_{s+1} + \dotsb + r_t p_t$ für passende $r_{s+1}, \dotsc, r_t \in R$.
+      Es sei $m' \coloneqq r_{s+1} m_{s+1} + \dotsb + r_t m_t \in M$.
+      Es gilt
+      \[
+          g(m')
+        = r_{s+1} g(m_{s+1}) + \dotsb + r_t g(m_t)
+        = r_{s+1} p_{s+1} + \dotsb + r_t p_t
+        = g(m)
+      \]
+      und somit $m - m' \in \ker g = \im N$.
+      Es sei $n \in N$ mit $f(n) = m - m'$.
+      Dann gilt $n = r_1 n_1 + \dotsb + r_s n_s$ für passende $r_1, \dotsc, r_s \in R$, und somit
+      \[
+          m - m'
+        = f(n)
+        = r_1 f(n_1) + \dotsb + r_s f(n_s)
+        = r_1 m_1 + \dotsb + r_s m_s.
+      \]
+      Ingesamt erhalten wir, dass
+      \[
+          m
+        = m - m' + m'
+        = r_1 m_1 + \dotsb + r_s m_s + r_{s+1} m_{s+1} + \dotsb + r_t m_t.
+      \]
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}[subtitle=Charakterisierungen noetherscher Moduln]
