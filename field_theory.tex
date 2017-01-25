@@ -185,4 +185,27 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $L/K$ eine endliche Körpererweiterung mit $[L : K] = 2^k$ für ein $k \geq 0$.
+  Es sei $P \in K[T]$ ein kubisches Polynom, das eine Nullstelle in $L$ hat.
+  Zeigen Sie, dass $f$ bereits eine Nullstelle in $K$ hat.
+\end{question}
+
+
+\begin{solution}
+  Es sei $\alpha \in L$ eine Nullstelle von $P$.
+  Wir können o.B.d.A.\ davon ausgehen, dass $P$ normiert ist.
+  Hätte $P$ keine Nullstelle in $K$, so wäre $P$ irreduzibel in $K[T]$, da $P$ kubisch ist.
+  Damit wäre dann $P$ das Minimalpolynom von $\alpha$ über $K$, und somit $[K(\alpha) : K] = \deg P = 3$.
+  Dann wäre aber
+  \[
+          3
+    =     [K(\alpha) : K]
+    \mid  [L : K(\alpha)] [K(\alpha) : K]
+    =     [L : K]
+    =     2^k,
+  \]
+  was nicht gilt.
+\end{solution}
+
 
