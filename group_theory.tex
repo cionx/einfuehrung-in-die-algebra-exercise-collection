@@ -25,205 +25,205 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Multiple Choice I]
-  Entscheiden Sie, ob die folgenden Aussagen allgemein gültig sind, und geben sie gegebenenfalls ein Gegenbeispiel an.
-  \begin{enumerate}
-    \item
-      Ist $G$ eine Gruppe und $N \subseteq G$ eine normale Untergruppe, so gilt $G \cong (G/N) \times N$.
-    \item
-      Ist $G$ eine endliche Gruppe, so dass $G/N$ für normale Untergruppe $N \subseteq G$ mit $N \neq 1$ abelsch ist, so ist auch $G$ abelsch.
-    \item
-      Zwei Gruppen $G_1$ und $G_2$ sind genau dann isomorph, wenn $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$.
-    \item
-      Sind $G_1$ und $G_2$ zwei Gruppen, so ist jede Untergruppe von $G_1 \times G_2$ von der Form $H_1 \times H_2$ für Untergruppen $H_1 \subseteq G_1$ und $H_2 \subseteq G_2$.
-    \item
-      Sind $G_1$ und $G_2$ zwei Gruppen, so dass es Gruppenepimorphismen $\phi \colon G_1 \to G_2$ und $\psi \colon G_2 \to G_1$ gibt, so gilt $G_1 \cong G_2$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Die Aussage ist falsch:
-      Es sei $G = \Integer$ und $N = 2 \Integer$.
-      Dann ist
-      \[
-              (G/N) \times N
-        \cong (\Integer / 2 \Integer) \times (2 \Integer)
-        \cong (\Integer / 2 \Integer) \times \Integer.
-      \]
-      Es ist allerdings $(\Integer / 2 \Integer) \times \Integer \ncong \Integer$, da $(\Integer / 2 \Integer) \times \Integer$ ein Element der Ordnung $2$ enthält (nämlich $(1,0)$), $\Integer$ aber nicht.
-    \item
-      Die Aussage ist falsch:
-      Die einzige nicht-trivialen normalen Untergruppe von $S_3$ sind $N = \generate{(1 \, 2 \, 3)} = \{\id, (1 \, 2 \, 3), (1 \, 3 \, 2) \}$ und $S_3$ selbst.
-      Der Quotient $S_3 / N$ hat Ordnung $2$, weshalb $S_3 / N \cong \Integer / 2 \Integer$ abelsch ist, und $S_3/S_3 = 1$ ist ohnehin abelsch.
-      Die Gruppe $S_3$ selbst ist allerdings nicht abelsch.
-      
-      Alternativ ist $A_n$ für $n \geq 5$ einfach, weshalb $A_n$ der einzige nicht-triviale Normalteiler von $A_n$ ist, aber $A_4$ ist für $n \geq 4$ nicht abelsch.
-    \item
-      Die Aussage ist wahr:
-      Gilt $G_1 \cong G_2$, so gibt es einen Isomorphismus $\phi \colon G_1 \to G_2$.
-      Für jede Gruppe $H$ ist dann $\phi \times \id_H \colon G_1 \times H \to G_2 \times H$ ein Isomorphismus, und somit $G_1 \times H \cong G_2 \times H$.
-      Gilt andererseits $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$, so gilt inbesondere $G_1 \cong G_1 \times 1 \cong G_2 \times 1 \cong G_2$.
-    \item
-      Die Aussage ist falsch:
-      Ist $G \neq 1$ eine Gruppe und $G_1 = G_2 = G$, so ist die Diagonale $\Delta = \{(g,g) \mid g \in G\}$ eine Untergruppe von $G_1 \times G_2 = G \times G$, die sich nicht als ein solches Produkt schreiben lässt.
-    \item
-      Die Aussage ist falsch:
-      Für die Gruppen
-      \begin{gather*}
-        G_1
-      = \bigoplus_{n \in \Natural} \Integer
-      = \Integer \oplus \Integer \oplus \Integer \oplus \dotsb
-      \shortintertext{und}
-        G_2
-      = \Integer/2\Integer \oplus \bigoplus_{n \in \Natural} \Integer
-      = \Integer/2\Integer \oplus \Integer \oplus \Integer \oplus \dotsb
-      \end{gather*}
-      gibt es Gruppenepimorphismen
-      \begin{gather*}
-        \phi \colon G_1 \to G_2,
-        \quad
-        (n_1, n_2, n_3, \dotsc)
-        \mapsto
-        (\overline{n_1}, n_2, n_3, \dotsc)
-      \shortintertext{und}
-        \psi \colon G_2 \to G_1,
-        \quad
-        (\overline{n_1}, n_2, n_3, \dotsc)
-        \mapsto
-        (n_2, n_3, \dotsc).
-      \end{gather*}
-      Es gilt aber $G_1 \ncong G_2$, denn $G_2$ enthält ein Element der Ordnung $2$, $G_1$ jedoch nicht.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}
-  Es seien $G_1$ und $G_2$ zwei Gruppen, $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ zwei normale Untergruppen.
-  Geben Sie jeweils Beispiele für die folgenden Situationen:
-  \begin{enumerate}
-    \item
-      Es gilt $G_1 \cong G_2$ und $N_1 \cong N_2$, aber $G_1/N_1 \ncong G_2/N_2$.
-    \item
-      Es gilt $G_1 \cong G_2$ und $G_1/N_1 \cong G_2/N_2$, aber $N_1 \ncong N_2$.
-    \item
-      Es gilt $G_1/N_1 \cong G_2/N_2$ und $N_1 \cong N_2$, aber $G_1 \ncong G_2$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$, sowie \mbox{$N_1 = \bigoplus_{n \geq 1} \Integer$} und $N_2 = \bigoplus_{n \geq 2} \Integer$.
-      Dann gilt $G_1 = G_2 \cong N_1 \cong N_2$ aber
-      \[
-        G_1/N_1 \cong \Integer \ncong \Integer \oplus \Integer = G_2/N_2.
-      \]
-    \item
-      Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$ und
-      \begin{gather*}
-        N_1 \coloneqq \Integer \oplus 0 \oplus 0 \oplus 0 \oplus \dotsb
-      \shortintertext{und}
-        N_2 \coloneqq \Integer \oplus \Integer \oplus 0 \oplus 0 \oplus \dotsb
-      \end{gather*}
-      Dann gilt
-      \[
-              G_1/N_1
-        \cong \bigoplus_{n \geq 1} \Integer
-        \cong \bigoplus_{n \geq 2} \Integer
-        =     G_2/N_2.
-      \]
-      Es gilt aber $N_1 \ncong N_2$, denn $N_1 \cong \Integer$ ist zyklisch, $\Integer \oplus \Integer$ aber nicht.
-    \item
-      Es seien $G_1 = \Integer/4\Integer$ und $G_2 = \Integer/2\Integer \oplus \Integer/2\Integer$, sowie $N_1 = 2\Integer/4\Integer = \{\overline{0}, \overline{2}\}$ und $N_2 = \Integer/2\Integer \oplus 0$.
-      Wegen der Kommutativität von $G_1$ und $G_2$ handelt es sich jeweils um eine normale Untergruppe.
-      Da $N_1$ und $N_2$ beide zweielementig sind, gilt
-      \[
-        N_1 \cong \Integer/2\Integer \cong N_2
-      \]
-      (denn $\Integer/2\Integer$ ist die bis auf Isomorphie eindeutige zweielementige Gruppe).
-      Nach dem zweiten (oder dritten) Isomorphiesatz gilt
-      \[
-              G_1 / N_1
-        =     (\Integer/4\Integer) / (2\Integer/4\Integer)
-        \cong \Integer/2\Integer,
-      \]
-      und für den anderen Quotienten gilt
-      \begin{align*}
-                G_2 / N_2
-        &=      (\Integer/2\Integer \oplus \Integer/2\Integer) / (\Integer/2\Integer \oplus 0)
-        \\
-        &\cong  ((\Integer/2\Integer)/(\Integer/2\Integer)) \oplus ((\Integer/2\Integer)/0)
-        \cong   0 \oplus \Integer/2\Integer
-        \cong   \Integer/2\Integer.
-      \end{align*}
-      Also gilt auch $G_1/N_1 \cong G_2/N_2$.
-      Es gilt aber $G_1 \ncong G_2$, da $G_1$ ein Element der Ordnung $4$ enthält, $G_2$ jedoch nicht.
-  \end{enumerate}
-\end{solution}
-
-
-
-\begin{question}[subtitle = Gruppen mit trivialer Automorphismengruppe]
-  Es sei $G$ eine Gruppe mit $\Aut(G) = 1$.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $G$ abelsch ist.
-    \item
-      Zeigen Sie, dass $g = -g$ für alle $g \in G$.
-    \item
-      Folgern Sie, dass es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ gibt.
-    \item
-      Folgern Sie, dass $G = 0$ oder $G \cong \Integer / 2 \Integer$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Für $g \in G$ sei $c_g \colon G \to G$ die Konjugation mit $g$.
-      Dies ist ein Automorphismus von $G$, weshalb $c_g = \id_G$.
-      Somit ist $g \in \Center(G)$.
-    \item
-      Wegen der Kommutativität von $G$ ist die Abbildung $n \colon G \to G$, $g \mapsto -g$ ein Automorphismus von $G$.
-      Somit ist $n = \id_G$, also $-g = g$ für alle $g \in G$.
-    \item
-      Nach dem vorherigen Aufgabenteil ist $2 g = 0$ für alle $g \in G$.
-      Deshalb gibt es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ via
-      \[
-        \overline{n} \cdot g = n \cdot g
-        \quad
-        \text{für alle $n \in \Integer$, $g \in G$},
-      \]
-      wie sich durch direktes Nachrechnen ergibt.
-    \item
-      Es sei $(b_i)_{i \in I}$ eine Basis von $G$ als $\Field_2$-Vektorraum.
-      Ist $G \neq 0$ und $G \ncong \Integer/2$, so ist $\dim_{\Field_2} G \geq 2$.
-      Es gibt daher $i_1, i_2 \in I$ with $i_1 \neq i_2$.
-      Die Permutation
-      \[
-        \sigma \colon \{b_i\}_{i \in I} \to \{b_i\}_{i \in I},
-        \quad
-        b_j
-        \mapsto
-        \begin{cases}
-          b_{i_2} & \text{falls $j = i_1$}, \\
-          b_{i_1} & \text{falls $j = i_2$}, \\
-          b_j     & \text{sonst},
-        \end{cases}
-      \]
-      induziert einen nicht-trivialen $\Field_2$-Vek\-tor\-raum\-auto\-mor\-phis\-mus $\alpha \colon G \to G$ mit
-      \[
-          \alpha\left( \sum_{i \in I} \lambda_i b_i \right)
-        = \sum_{i \in I} \lambda_i b_{\sigma(i)}.
-      \]
-      Dann ist $\alpha$ aber insbesondere ein nicht-trivialer Gruppenautomorphismus, im Widerspruch zu $\Aut(G) = 1$.
-  \end{enumerate}
-\end{solution}
+% \begin{question}[subtitle = Multiple Choice I]
+%   Entscheiden Sie, ob die folgenden Aussagen allgemein gültig sind, und geben sie gegebenenfalls ein Gegenbeispiel an.
+%   \begin{enumerate}
+%     \item
+%       Ist $G$ eine Gruppe und $N \subseteq G$ eine normale Untergruppe, so gilt $G \cong (G/N) \times N$.
+%     \item
+%       Ist $G$ eine endliche Gruppe, so dass $G/N$ für normale Untergruppe $N \subseteq G$ mit $N \neq 1$ abelsch ist, so ist auch $G$ abelsch.
+%     \item
+%       Zwei Gruppen $G_1$ und $G_2$ sind genau dann isomorph, wenn $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$.
+%     \item
+%       Sind $G_1$ und $G_2$ zwei Gruppen, so ist jede Untergruppe von $G_1 \times G_2$ von der Form $H_1 \times H_2$ für Untergruppen $H_1 \subseteq G_1$ und $H_2 \subseteq G_2$.
+%     \item
+%       Sind $G_1$ und $G_2$ zwei Gruppen, so dass es Gruppenepimorphismen $\phi \colon G_1 \to G_2$ und $\psi \colon G_2 \to G_1$ gibt, so gilt $G_1 \cong G_2$.
+%   \end{enumerate}
+% \end{question}
+% 
+% 
+% \begin{solution}
+%   \begin{enumerate}
+%     \item
+%       Die Aussage ist falsch:
+%       Es sei $G = \Integer$ und $N = 2 \Integer$.
+%       Dann ist
+%       \[
+%               (G/N) \times N
+%         \cong (\Integer / 2 \Integer) \times (2 \Integer)
+%         \cong (\Integer / 2 \Integer) \times \Integer.
+%       \]
+%       Es ist allerdings $(\Integer / 2 \Integer) \times \Integer \ncong \Integer$, da $(\Integer / 2 \Integer) \times \Integer$ ein Element der Ordnung $2$ enthält (nämlich $(1,0)$), $\Integer$ aber nicht.
+%     \item
+%       Die Aussage ist falsch:
+%       Die einzige nicht-trivialen normalen Untergruppe von $S_3$ sind $N = \generate{(1 \, 2 \, 3)} = \{\id, (1 \, 2 \, 3), (1 \, 3 \, 2) \}$ und $S_3$ selbst.
+%       Der Quotient $S_3 / N$ hat Ordnung $2$, weshalb $S_3 / N \cong \Integer / 2 \Integer$ abelsch ist, und $S_3/S_3 = 1$ ist ohnehin abelsch.
+%       Die Gruppe $S_3$ selbst ist allerdings nicht abelsch.
+%       
+%       Alternativ ist $A_n$ für $n \geq 5$ einfach, weshalb $A_n$ der einzige nicht-triviale Normalteiler von $A_n$ ist, aber $A_4$ ist für $n \geq 4$ nicht abelsch.
+%     \item
+%       Die Aussage ist wahr:
+%       Gilt $G_1 \cong G_2$, so gibt es einen Isomorphismus $\phi \colon G_1 \to G_2$.
+%       Für jede Gruppe $H$ ist dann $\phi \times \id_H \colon G_1 \times H \to G_2 \times H$ ein Isomorphismus, und somit $G_1 \times H \cong G_2 \times H$.
+%       Gilt andererseits $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$, so gilt inbesondere $G_1 \cong G_1 \times 1 \cong G_2 \times 1 \cong G_2$.
+%     \item
+%       Die Aussage ist falsch:
+%       Ist $G \neq 1$ eine Gruppe und $G_1 = G_2 = G$, so ist die Diagonale $\Delta = \{(g,g) \mid g \in G\}$ eine Untergruppe von $G_1 \times G_2 = G \times G$, die sich nicht als ein solches Produkt schreiben lässt.
+%     \item
+%       Die Aussage ist falsch:
+%       Für die Gruppen
+%       \begin{gather*}
+%         G_1
+%       = \bigoplus_{n \in \Natural} \Integer
+%       = \Integer \oplus \Integer \oplus \Integer \oplus \dotsb
+%       \shortintertext{und}
+%         G_2
+%       = \Integer/2\Integer \oplus \bigoplus_{n \in \Natural} \Integer
+%       = \Integer/2\Integer \oplus \Integer \oplus \Integer \oplus \dotsb
+%       \end{gather*}
+%       gibt es Gruppenepimorphismen
+%       \begin{gather*}
+%         \phi \colon G_1 \to G_2,
+%         \quad
+%         (n_1, n_2, n_3, \dotsc)
+%         \mapsto
+%         (\overline{n_1}, n_2, n_3, \dotsc)
+%       \shortintertext{und}
+%         \psi \colon G_2 \to G_1,
+%         \quad
+%         (\overline{n_1}, n_2, n_3, \dotsc)
+%         \mapsto
+%         (n_2, n_3, \dotsc).
+%       \end{gather*}
+%       Es gilt aber $G_1 \ncong G_2$, denn $G_2$ enthält ein Element der Ordnung $2$, $G_1$ jedoch nicht.
+%   \end{enumerate}
+% \end{solution}
+% 
+% 
+% \begin{question}
+%   Es seien $G_1$ und $G_2$ zwei Gruppen, $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ zwei normale Untergruppen.
+%   Geben Sie jeweils Beispiele für die folgenden Situationen:
+%   \begin{enumerate}
+%     \item
+%       Es gilt $G_1 \cong G_2$ und $N_1 \cong N_2$, aber $G_1/N_1 \ncong G_2/N_2$.
+%     \item
+%       Es gilt $G_1 \cong G_2$ und $G_1/N_1 \cong G_2/N_2$, aber $N_1 \ncong N_2$.
+%     \item
+%       Es gilt $G_1/N_1 \cong G_2/N_2$ und $N_1 \cong N_2$, aber $G_1 \ncong G_2$.
+%   \end{enumerate}
+% \end{question}
+% 
+% 
+% \begin{solution}
+%   \begin{enumerate}
+%     \item
+%       Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$, sowie \mbox{$N_1 = \bigoplus_{n \geq 1} \Integer$} und $N_2 = \bigoplus_{n \geq 2} \Integer$.
+%       Dann gilt $G_1 = G_2 \cong N_1 \cong N_2$ aber
+%       \[
+%         G_1/N_1 \cong \Integer \ncong \Integer \oplus \Integer = G_2/N_2.
+%       \]
+%     \item
+%       Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$ und
+%       \begin{gather*}
+%         N_1 \coloneqq \Integer \oplus 0 \oplus 0 \oplus 0 \oplus \dotsb
+%       \shortintertext{und}
+%         N_2 \coloneqq \Integer \oplus \Integer \oplus 0 \oplus 0 \oplus \dotsb
+%       \end{gather*}
+%       Dann gilt
+%       \[
+%               G_1/N_1
+%         \cong \bigoplus_{n \geq 1} \Integer
+%         \cong \bigoplus_{n \geq 2} \Integer
+%         =     G_2/N_2.
+%       \]
+%       Es gilt aber $N_1 \ncong N_2$, denn $N_1 \cong \Integer$ ist zyklisch, $\Integer \oplus \Integer$ aber nicht.
+%     \item
+%       Es seien $G_1 = \Integer/4\Integer$ und $G_2 = \Integer/2\Integer \oplus \Integer/2\Integer$, sowie $N_1 = 2\Integer/4\Integer = \{\overline{0}, \overline{2}\}$ und $N_2 = \Integer/2\Integer \oplus 0$.
+%       Wegen der Kommutativität von $G_1$ und $G_2$ handelt es sich jeweils um eine normale Untergruppe.
+%       Da $N_1$ und $N_2$ beide zweielementig sind, gilt
+%       \[
+%         N_1 \cong \Integer/2\Integer \cong N_2
+%       \]
+%       (denn $\Integer/2\Integer$ ist die bis auf Isomorphie eindeutige zweielementige Gruppe).
+%       Nach dem zweiten (oder dritten) Isomorphiesatz gilt
+%       \[
+%               G_1 / N_1
+%         =     (\Integer/4\Integer) / (2\Integer/4\Integer)
+%         \cong \Integer/2\Integer,
+%       \]
+%       und für den anderen Quotienten gilt
+%       \begin{align*}
+%                 G_2 / N_2
+%         &=      (\Integer/2\Integer \oplus \Integer/2\Integer) / (\Integer/2\Integer \oplus 0)
+%         \\
+%         &\cong  ((\Integer/2\Integer)/(\Integer/2\Integer)) \oplus ((\Integer/2\Integer)/0)
+%         \cong   0 \oplus \Integer/2\Integer
+%         \cong   \Integer/2\Integer.
+%       \end{align*}
+%       Also gilt auch $G_1/N_1 \cong G_2/N_2$.
+%       Es gilt aber $G_1 \ncong G_2$, da $G_1$ ein Element der Ordnung $4$ enthält, $G_2$ jedoch nicht.
+%   \end{enumerate}
+% \end{solution}
+% 
+% 
+% 
+% \begin{question}[subtitle = Gruppen mit trivialer Automorphismengruppe]
+%   Es sei $G$ eine Gruppe mit $\Aut(G) = 1$.
+%   \begin{enumerate}
+%     \item
+%       Zeigen Sie, dass $G$ abelsch ist.
+%     \item
+%       Zeigen Sie, dass $g = -g$ für alle $g \in G$.
+%     \item
+%       Folgern Sie, dass es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ gibt.
+%     \item
+%       Folgern Sie, dass $G = 0$ oder $G \cong \Integer / 2 \Integer$.
+%   \end{enumerate}
+% \end{question}
+% 
+% 
+% \begin{solution}
+%   \begin{enumerate}
+%     \item
+%       Für $g \in G$ sei $c_g \colon G \to G$ die Konjugation mit $g$.
+%       Dies ist ein Automorphismus von $G$, weshalb $c_g = \id_G$.
+%       Somit ist $g \in \Center(G)$.
+%     \item
+%       Wegen der Kommutativität von $G$ ist die Abbildung $n \colon G \to G$, $g \mapsto -g$ ein Automorphismus von $G$.
+%       Somit ist $n = \id_G$, also $-g = g$ für alle $g \in G$.
+%     \item
+%       Nach dem vorherigen Aufgabenteil ist $2 g = 0$ für alle $g \in G$.
+%       Deshalb gibt es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ via
+%       \[
+%         \overline{n} \cdot g = n \cdot g
+%         \quad
+%         \text{für alle $n \in \Integer$, $g \in G$},
+%       \]
+%       wie sich durch direktes Nachrechnen ergibt.
+%     \item
+%       Es sei $(b_i)_{i \in I}$ eine Basis von $G$ als $\Field_2$-Vektorraum.
+%       Ist $G \neq 0$ und $G \ncong \Integer/2$, so ist $\dim_{\Field_2} G \geq 2$.
+%       Es gibt daher $i_1, i_2 \in I$ with $i_1 \neq i_2$.
+%       Die Permutation
+%       \[
+%         \sigma \colon \{b_i\}_{i \in I} \to \{b_i\}_{i \in I},
+%         \quad
+%         b_j
+%         \mapsto
+%         \begin{cases}
+%           b_{i_2} & \text{falls $j = i_1$}, \\
+%           b_{i_1} & \text{falls $j = i_2$}, \\
+%           b_j     & \text{sonst},
+%         \end{cases}
+%       \]
+%       induziert einen nicht-trivialen $\Field_2$-Vek\-tor\-raum\-auto\-mor\-phis\-mus $\alpha \colon G \to G$ mit
+%       \[
+%           \alpha\left( \sum_{i \in I} \lambda_i b_i \right)
+%         = \sum_{i \in I} \lambda_i b_{\sigma(i)}.
+%       \]
+%       Dann ist $\alpha$ aber insbesondere ein nicht-trivialer Gruppenautomorphismus, im Widerspruch zu $\Aut(G) = 1$.
+%   \end{enumerate}
+% \end{solution}
 
 
 
