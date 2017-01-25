@@ -209,3 +209,28 @@
 \end{solution}
 
 
+\begin{question}
+  Zeigen Sie, dass eine Körpererweiterung $L/K$ genau dann algebraisch ist, wenn jeder Zwischenring $K \subseteq R \subseteq L$ bereits ein Körper ist.
+\end{question}
+
+
+\begin{solution}
+  Es sei $L/K$ algebraisch und $K \subseteq R \subseteq L$ ein Zwischenring.
+  Für $\alpha \in R$ ist dann $\alpha$ algebraisch über $K$, und somit $K(\alpha) = K[\alpha]$.
+  Da $R$ ein Ring ist, der $\alpha$ und $R$ enthält, gilt $K[\alpha] \subseteq R$.
+  Somit ist $K(\alpha) = K[\alpha] \subseteq R$.
+  Ist $\alpha \neq 0$, so ist inbesondere $\alpha^{-1} \in K(\alpha) \subseteq R$.
+  Das zeigt, dass jedes Element $\alpha \in R$ mit $\alpha \neq 0$ in $R$ invertierbar ist.
+  Somit ist $R$ ein Körper.
+  (Die Kommutativität von $R$ ist klar, es sich um einen Unterring von $L$ handelt, und $L$ als Körper kommutativ ist.)
+  
+  Es sei nun $L/K$ nicht algebraisch.
+  Dann gibt es ein Element $\alpha \in L$, das transzendent über $K$ ist.
+  Der Zwischenring $K \subseteq K[\alpha] \subseteq L$ ist dann kein Körper:
+  Für den Polynomring $K[T]$ ist der Einsetzhomorphismus $K[T] \to K[\alpha]$, $P(T) \to P(\alpha)$ surjektiv, und wegen der Transzendenz von $\alpha$ auch injektiv, und somit ein Isomorphismus.
+  Der Polynomring $K[T]$, und somit auch $K[\alpha]$, ist aber kein Körper.
+\end{solution}
+
+
+
+
