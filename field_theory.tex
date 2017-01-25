@@ -64,3 +64,23 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $K(\alpha)/K$ eine endliche, zyklische Körpererweiterung von ungeraden Grad.
+  Zeigen Sie, dass $K(\alpha) = K(\alpha^2)$.
+\end{question}
+
+
+\begin{solution}
+  Da $K(\alpha^2) \subseteq K(\alpha)$ gilt, genügt es zu zeigen, dass $\alpha^2 \in K(\alpha)$.
+  Wir nehmen an, dass $\alpha^2 \notin K(\alpha)$.
+  Dann ist das normierte quadratische Polynom $P(T) \coloneqq T^2 - \alpha^2 \in K(\alpha^2)[T]$ irreduzibel mit $P(\alpha) = 0$, und deshalb das Minimalpolynom von $\alpha$ über $K(\alpha^2)$.
+  Es ist also $[K(\alpha) : K(\alpha^2)] = 2$.
+  Damit gilt
+  \[
+      [K(\alpha) : K]
+    = [K(\alpha) : K(\alpha^2)] [K(\alpha^2) : K]
+    = 2 [K(\alpha^2) : K],
+  \]
+  was im Widerspruch dazu steht, dass $[K(\alpha) : K]$ ungerade ist.
+\end{solution}
+
