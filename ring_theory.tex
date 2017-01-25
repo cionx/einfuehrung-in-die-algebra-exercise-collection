@@ -93,7 +93,51 @@
 
 
 \begin{solution}
-  Dies ist eine Standardaussage, deren Beweis sich in jedem Algebra-Buch findet.
+  \begin{enumerate}
+    \item
+      Für alle $x \in R$ sei $\overline{x} \in R/\pideal$ die entsprechende Äquivalenzklasse.
+      Das Ideal $\pideal$ ist genau dann prim, wenn die Aussage
+      \begin{equation}
+        \label{eqn: quotient is integral definition}
+        \forall x, y \in R
+        :
+        \overline{x} \cdot \overline{y} = 0
+        \implies
+        \text{$\overline{x} = 0$ oder $\overline{y} = 0$}
+      \end{equation}
+      gilt. Da $\overline{x} \cdot \overline{y} = \overline{xy}$ für alle $x, y \in R$ gilt, ist die Aussage~\eqref{eqn: quotient is integral definition} äquivalent dazu, dass
+      \begin{equation}
+        \label{eqn: quotient is integral nearly definition}
+        \forall x, y \in R
+        :
+        \overline{xy} = 0
+        \implies
+        \text{$\overline{x} = 0$ oder $\overline{y} = 0$}.
+      \end{equation}
+      Für alle $x \in R$ gilt genau dann $\overline{x} = 0$, wenn $x \in \pideal$.
+      Deshalb ist die Aussage~\eqref{eqn: quotient is integral nearly definition} äquivalent dazu, dass
+      \begin{equation}
+        \label{eqn: quotient is integral via prime }
+        \forall x, y \in R
+        :
+        xy \in \pideal
+        \implies
+        \text{$x \in \pideal$ oder $y \in \pideal$}.
+      \end{equation}
+      Dies ist genau die Aussage, dass $\pideal$ ein Primideal ist.
+    \item
+      Es sei $\pi \colon R \to R/\mideal$, $x \mapsto \overline{x}$ die kanonische Projektion.
+      Wie aus der Vorlesung bekannt ist die Abbildung
+      \[
+            \{ \text{Ideale $I \subseteq R/\mideal$} \}
+        \to \{ \text{Ideale $J \subseteq R$ mit $J \supseteq \mideal$} \},
+        \quad
+        I \mapsto \pi^{-1}(I)
+      \]
+      eine wohldefinierte Bijektion.
+      Der Ring $R/\mideal$ ist genau dann ein Körper, wenn $R/\mideal$ genau zwei Ideale enthält (man siehe Übung~\ref{question: characterization of fields via its ideals}); das Ideal $\mideal$ ist genau dann ein maximales Ideal in $R$, wenn es genau zwei Ideale $J \subseteq R$ mit $J \supseteq \mideal$ gibt.
+      Wegen der Existenz der obigen Bijektion sind beide Aussagen äquivalent.
+  \end{enumerate}
 \end{solution}
 
 
