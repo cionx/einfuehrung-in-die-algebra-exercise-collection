@@ -1,6 +1,41 @@
 \section{Gruppentheorie}
 
 
+\begin{question}
+  \begin{enumerate}
+    \item
+      Es sei $G$ eine Gruppe und $H_1, H_2 \subseteq G$ seien zwei Untergruppen.
+      Zeigen Sie, dass $H_1 \cup H_2$ genau dann eine Untergruppe ist, wenn $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$.
+    \item
+      Geben Sie ein Beispiel für eine eine Gruppe $G$ und Untergruppen $H_1, H_2, H_3 \subseteq G$ an, so dass zwar $H_i \subsetneq H_j$ für alle $i \neq j$, aber $H_1 \cup H_2 \cup H_3$ eine Untergruppe von $G$ ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Gilt $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$, so gilt $H_1 \cup H_2 = H_2$ oder $H_1 \cup H_2 = H_1$, weshalb $H_1 \cup H_2$ dann eine Untergruppe ist.
+      
+      Gilt $H_1 \subsetneq H_2$ und $H_2 \subsetneq H_1$, so gibt es $h_1 \in H_1$ mit $h_1 \notin H_2$ und $h_2 \in H_2$ mit $h_2 \notin H_1$.
+      Es ist $h_1 h_2 \notin H_1$, da sonst $h_2 = h_1^{-1} h_1 h_2 \in H_1$ gelten würde;
+      analog gilt auch $h_1 h_2 \notin H_2$.
+      Insgesamt gilt somit $h_1 h_2 \notin H_1 \cup H_2$, obwohl $h_1, h_2 \in H_1 \cup H_2$.
+      Also ist $H_1 \cup H_2$ nicht multiplikativ abgeschlossen, und somit keine Untergruppe von $G$.
+    \item
+      Es sei $G = \Integer/2 \oplus \Integer/2$ und es seien
+      \begin{align*}
+        H_1 &= \generate{ (1,0) } = \{ (0,0), (1,0) \},
+        \\
+        H_2 &= \generate{ (1,1) } = \{ (0,0), (1,1) \},
+        \\
+        H_3 &= \generate{ (0,1) } = \{ (0,0), (0,1) \}.
+      \end{align*}
+      Dann gilt $H_i \subseteq H_j$ für alle $1 \leq i \neq j \leq n$ und $H_1 \cup H_2 \cup H_3 = G$.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Ein Kriterium für maximale Untergruppen]
   Es sei $G$ ein Gruppe und $H \subseteq G$ eine Untergruppe, so dass $[G : H]$ endlich und prim ist.
   Zeigen Sie, dass $H$ eine maximale echte Untergruppe von $G$ ist. Entscheiden Sie, ob $H$ notwendigerweise normal in $G$ ist.
