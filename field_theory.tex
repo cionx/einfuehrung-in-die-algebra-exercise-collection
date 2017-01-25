@@ -105,3 +105,36 @@
 \end{solution}
 
 
+\begin{question}
+  Zeigen Sie, dass endliche Körpererweiterungen algebraisch sind.
+\end{question}
+
+
+\begin{solution}
+  Es sei $L/K$ eine endliche Körpererweiterung und $x \in L$.
+  Für den $K$-Untervektorraum $\generate{ \{x^n \mid n \in \Natural\} }_K \subseteq L$ gilt
+  \[
+          \dim_K \generate{ \{x^n \mid n \in \Natural \} }_K
+    \leq  \dim_K L
+    =     [L : K]
+    <     \infty,
+  \]
+  weshalb die Potenzen $x^n$ mit $n \in \Natural$ linear abhängig über $K$ sind.
+  Also gibt es eine nichttriviale Linearkombination
+  \[
+    a_n x^n + \dotsb + a_1 x + a_0 = 0
+  \]
+  mit $n \geq 1$ und $a_n, \dotsc, a_0 \in K$ mit $a_n \neq 0$.
+  Für das Polynom
+  \[
+              P(T)
+    \coloneqq a_n T^n + \dotsb + a_1 T + a_0
+    \in       K[T]
+  \]
+  gilt also $P(x) = 0$, weshalb $x$ algebraisch über $K$ ist.
+\end{solution}
+
+
+
+
+
