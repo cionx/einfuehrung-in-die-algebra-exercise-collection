@@ -124,6 +124,21 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $R$ ein Hauptidealring und $M$ ein endlich erzeugter $R$-Modul.
+  Zeigen Sie, dass auch jeder Untermodul $N \subseteq M$ endlich erzeugt ist.
+\end{question}
+
+
+\begin{solution}
+  Es sei $m_1, \dotsc, m_t \in M$ ein endliches Erzeugendensystem und $\varphi \colon R^t \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $\varphi(e_i) = m_i$ für alle $i = 1, \dotsc, t$ (hier bezeichnet $e_1, \dotsc, e_t \in R^t$ die Standardbasis).
+  Dann ist $\varphi$ surjektiv, und deshalb $F \coloneqq \varphi^{-1}(N)$ ein Untermodul von $R^t$, für den $\varphi(F) = N$ gilt.
+  Der $R$-Modul $R^t$ ist frei vom Rang $t$; da $R$ ein Hauptidealring ist, folgt daraus, dass der Untermodul $F \subseteq R^t$ frei vom Rang $s \leq t$ ist.
+  Insbesondere ist $F$ endlich erzeugt.
+  Somit ist auch $N = \varphi(F)$ endlich erzeugt.
+\end{solution}
+
+
 \begin{question}[subtitle=Charakterisierungen noetherscher Moduln]
   Es sei $M$ ein $R$-Modul.
   Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
