@@ -84,3 +84,24 @@
   was im Widerspruch dazu steht, dass $[K(\alpha) : K]$ ungerade ist.
 \end{solution}
 
+
+\begin{question}
+  Es sei $K$ ein algebraisch abgeschlossener Körper und $L/K$ eine algebraische Körpererweiterung.
+  Zeigen Sie, dass bereits $L = K$ gilt.
+\end{question}
+
+
+\begin{solution}
+  Es sei $\alpha \in L$.
+  Da $L/K$ algebraisch ist, gibt es ein normiertes Polynom $P \in K[T]$ mit $P \neq 0$ und $P(\alpha) = 0$.
+  Da $K$ algebraisch abgeschlossen ist zerfällt $P$ in Linearfaktoren, also $P(T) = (T - a_1) \dotsm (T - a_n)$ mit $a_1, \dotsc, a_n \in K$ und $n = \deg P$.
+  Da
+  \[
+      0
+    = P(\alpha)
+    = (\alpha - a_1) \dotsm (\alpha - a_n)
+  \]
+  muss bereits $\alpha = a_i$ für ein $1 \leq i \leq n$, und somit $\alpha \in K$.
+\end{solution}
+
+
