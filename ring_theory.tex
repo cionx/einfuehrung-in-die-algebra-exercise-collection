@@ -711,13 +711,24 @@
 
 
 
-\begin{question}
+\begin{question}[subtitle = Euklid]
   Es sei $K$ ein Körper.
-  Zeigen Sie, dass es in $K[X]$ unendlich viele irreduzible, normierte Polynome gibt.
+  Zeigen Sie, dass es in $K[X]$ unendlich viele normierte, irreduzible Polynome gibt.
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Wir nehmen an, dass es nur endlich viele normierte, irreduzible Polynome in $K[X]$ gibt, nämlich $p_1, \dotsc, p_n \in K[X]$.
+  Man bemerke, dass $n \geq 1$, da die Polynome $X - a$ für $a \in K$ irreduzibel und normiert sind.
+  Für das Element
+  \[
+    q \coloneqq 1 + p_1 \dotsm p_n \in K[X]
+  \]
+  gilt dann $\deg q \geq n \geq 1$.
+  Es gilt $q \equiv 1 \pmod{p_i}$ für alle $i = 1, \dotsc, n$, und somit $p_i \nmid q$ für alle $i = 1, \dotsc, n$.
+  Da die $p_i$ ein Repräsentantensystem der Primelemente von $K[X]$ sind, widerspricht dies der Existenz einer Primfaktorzerlegung von $q$.
+\end{solution}
+
 
 
 \begin{question}
