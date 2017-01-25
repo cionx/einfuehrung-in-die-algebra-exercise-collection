@@ -272,21 +272,52 @@
 \end{solution}
 
 
-\begin{question}
-  Es sei $K$ ein Körper.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass es für jedes Polynom $f \in K[X]$ einen eindeutigen $K$-linearen Ringhomomorphismus $\phi_f \colon K[X] \to K[X]$ gibt, so dass $\phi_f(X) = f$.
-      
-      (\emph{Hinweis}:
-       Zeigen Sie zunächst, dass $\phi_f|_K = \id_K$ gilt.)
-    \item
-      Zeigen Sie, dass $\phi_f$ genau dann ein Ringisomorphismus ist, wenn $\deg f = 1$.
-  \end{enumerate}
-\end{question}
-
-
-% TODO: Adding a solution.
+% \begin{question}
+%   Es sei $K$ ein Körper.
+%   \begin{enumerate}
+%     \item
+%       Zeigen Sie, dass es für jedes Polynom $f \in K[X]$ einen eindeutigen $K$-linearen Ringhomomorphismus $\phi_f \colon K[X] \to K[X]$ gibt, so dass $\phi_f(X) = f$.
+%       
+%       (\emph{Hinweis}:
+%        Überlegen Sie sich zunächst, dass ein Ringhomomorphismus $\phi \colon K[X] \to K[X]$ genau dann $K$-linear ist, wenn $\phi|_K = \id_K$.)
+%     \item
+%       Zeigen Sie, dass $\phi_f(p) = p(f)$ für alle $p \in K[X]$.
+%     \item
+%       Zeigen Sie, dass $\phi_f$ genau dann ein Ringisomorphismus ist, wenn $\deg f = 1$.
+%   \end{enumerate}
+% \end{question}
+% 
+% 
+% \begin{solution}
+%   \begin{enumerate}
+%     \item
+%       Ist $\phi \colon K[X] \to K[X]$ ein $K$-linearer Ringhomomorphismus, so muss
+%       \[
+%           \phi(\lambda)
+%         = \phi(\lambda \cdot 1)
+%         = \lambda \phi(1)
+%         = \lambda \cdot 1
+%         = \lambda
+%         \qquad
+%         \text{für alle $\lambda \in K$},
+%       \]
+%       weshalb $\phi|_K = \id_K$.
+%       Ist andererseits $\phi \colon K[X] \to K[X]$ ein Ringhomomorphismus mit $\phi|_K = \id_K$, so gilt
+%       \[
+%           \phi(\lambda \cdot f)
+%         = \phi(\lambda) \cdot \phi(f)
+%         = \lambda \cdot \phi(f)
+%         \qquad
+%         \text{für alle $\lambda \in K$, $f \in K[X]$}.
+%       \]
+%       Also ist ein Ringhomomorphismus $\phi \colon K[X] \to K[X]$ genau dann $K$-linear, wenn $\phi|_K = \id_K$.
+%       
+%       Es gilt also zu zeigen, dass es für jedes $f \in K[X]$ genau einen Ringhomomorphismus $\phi_f \colon K[X] \to K[X]$ mit $\phi_f|_K = \id_K$ und $\phi_f(T) = f$ gibt.
+%       Dies gilt nach der universellen Eigenschaft des Polynomrings.
+%     \item
+%       
+%   \end{enumerate}
+% \end{solution}
 
 
 \begin{question}[subtitle = Funktorialität der Einheitengruppe]
