@@ -433,28 +433,28 @@
 \end{solution}
 
 
-\begin{question}
-  Es sei $R$ ein kommutativer Ring.
-  Es seien $\aideal, \bideal \subseteq R$ zwei Ideale mit $\aideal = (x_i \mid i \in I)$ und $\bideal = (y_j \mid j \in J)$.
-  Zeigen Sie, dass
-  \[
-    \aideal \bideal = (x_i y_j \mid i \in I, j \in J).
-  \]
-\end{question}
-
-
-\begin{solution}
-  Für alle $i \in I$ und $j \in J$ folgt aus $x_i \in \aideal$ und $y_j \in \bideal$, dass $x_i y_j \in \aideal \bideal$.
-  Daraus folgt, dass $(x_i y_j \mid i \in I, j \in J) \subseteq \aideal \bideal$.
-  Sind andererseits $a \in \aideal$ und $b \in \bideal$, so ist $a = \sum_{i \in I} r_i x_i$ und $b = \sum_{j \in J} s_j y_j$ mit $r_i, s_j \in R$, wobei $r_i = 0$ für fast alle $i \in I$ und $s_j = 0$ für fast alle $j \in J$.
-  Deshalb ist
-  \[
-        ab
-    =   \sum_{\substack{i \in I \\ j \in J}} r_i s_j x_i y_j
-    \in (x_i y_j \mid i \in I, j \in J).
-  \]
-  Da jedes Element aus $\aideal \bideal$ von der Form $\sum_{k=1}^n a_k b_k$ mit $a_k \in \aideal$ und $b_k \in \bideal$ ist, folgt daraus, dass $\aideal \bideal \subseteq (x_i y_j \mid i \in I, j \in J)$.
-\end{solution}
+% \begin{question}
+%   Es sei $R$ ein kommutativer Ring.
+%   Es seien $\aideal, \bideal \subseteq R$ zwei Ideale mit $\aideal = (x_i \mid i \in I)$ und $\bideal = (y_j \mid j \in J)$.
+%   Zeigen Sie, dass
+%   \[
+%     \aideal \bideal = (x_i y_j \mid i \in I, j \in J).
+%   \]
+% \end{question}
+% 
+% 
+% \begin{solution}
+%   Für alle $i \in I$ und $j \in J$ folgt aus $x_i \in \aideal$ und $y_j \in \bideal$, dass $x_i y_j \in \aideal \bideal$.
+%   Daraus folgt, dass $(x_i y_j \mid i \in I, j \in J) \subseteq \aideal \bideal$.
+%   Sind andererseits $a \in \aideal$ und $b \in \bideal$, so ist $a = \sum_{i \in I} r_i x_i$ und $b = \sum_{j \in J} s_j y_j$ mit $r_i, s_j \in R$, wobei $r_i = 0$ für fast alle $i \in I$ und $s_j = 0$ für fast alle $j \in J$.
+%   Deshalb ist
+%   \[
+%         ab
+%     =   \sum_{\substack{i \in I \\ j \in J}} r_i s_j x_i y_j
+%     \in (x_i y_j \mid i \in I, j \in J).
+%   \]
+%   Da jedes Element aus $\aideal \bideal$ von der Form $\sum_{k=1}^n a_k b_k$ mit $a_k \in \aideal$ und $b_k \in \bideal$ ist, folgt daraus, dass $\aideal \bideal \subseteq (x_i y_j \mid i \in I, j \in J)$.
+% \end{solution}
 
 
 \begin{question}[subtitle = Zur Definition von Unterringen]
