@@ -525,6 +525,40 @@
 
 
 \begin{question}
+  Es sei $R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 - n$ eine Einheit ist, und geben Sie $(1 - n)^{-1}$ an.
+    \item
+      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 + n$ eine Einheit ist, und geben Sie $(1 + n)^{-1}$ an.
+    \item
+      Zeigen Sie, dass für nilpotentes $n \in R$ und jede Einheit $e \in R^\times$ das Element $e + n$ eine Einheit ist, und geben Sie $(e + n)^{-1}$ an.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für $k \geq 0$ mit $n^k = 0$ gilt $(1 - n)(1 + n + \dotsb + n^{k-1}) = 1 - n^k = 1$.
+      Also ist $1 - n$ eine Einheit mit $(1-n)^{-1} = \sum_{p=0}^{k-1} n^p = \sum_{p=0}^\infty n^p$.
+    \item
+      Da $n$ nilpotent ist, gilt dies auch für $-n$.
+      Nach dem vorherigen Aufgabenteil ist deshalb $1 + n = 1 - (-n)$ eine Einheit mit $(1 + n)^{-1} = (1 - (-n))^{-1} = \sum_{p=0}^\infty (-1)^p n^p$.
+    \item
+      Es gilt $e + n = e(1 + e^{-1} n)$, und da $n$ nilpotent ist, gilt dies auch für $e^{-1} n$.
+      Nach dem vorherigen Teil ist $1 + e^{-1} n$ eine Einheit, und somit $e + n$ als Produkt zweier Einheiten ebenfalls eine Einheit; ferner gilt
+      \[
+          (e + n)^{-1}
+        = e^{-1} (1 + e^{-1} n)^{-1}
+        = e^{-1} \sum_{p=0}^\infty (-1)^p (e^{-1} n)^p
+        = \sum_{p=0}^\infty (-1)^p e^{-1-p} n^p.
+      \]
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   Es sei $R$ ein kommutativer Ring und $S \subseteq R$ eine multiplikative Teilmenge.
   \begin{enumerate}
     \item
