@@ -165,3 +165,24 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $L/K$ eine Körpererweiterung, so dass $p \coloneqq [L : K]$ endlich und prim ist.
+  Zeigen Sie, dass $L/K$ ein zyklische Erweiterung ist, und bestimmen Sie alle $\alpha \in L$ mit $L = K(\alpha)$.
+\end{question}
+
+
+\begin{solution}
+  Für alle $\alpha \in K$ ist $K(\alpha) = K$.
+  Ist $\alpha \in L$ mit $\alpha \notin K$, so ist $K(\alpha)/K$ eine echte Körperweiterung, weshalb $[K(\alpha) : K] \neq 1$ gilt.
+  Aus
+  \[
+      p
+    = [L : K]
+    = [L : K(\alpha)] \underbrace{[K(\alpha) : K]}_{\neq 1}
+  \]
+  folgt, da $p$ prim ist, dass $[L : K(\alpha)] = 1$ (und $[K(\alpha) : K] = p$), und somit $K(\alpha) = L$.
+  Also ist $L$ eine zyklische Körpererweiterung, und die möglichen Elemente sind genau die $\alpha \in L$, für die $\alpha \notin K$.
+\end{solution}
+
+
+
