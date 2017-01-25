@@ -135,6 +135,33 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $L/K$ eine Körpererweiterung und es seien $\alpha, \beta \in L$.
+  Zeigen Sie, dass $\alpha$ und $\beta$ genau dann beide algebraisch über $K$ sind, wenn $\alpha + \beta$ und $\alpha \beta$ beide algebraisch über $K$ sind.
+\end{question}
 
+
+\begin{remark*}
+  Da $\pi$ und $e$ transzenent (über $\Rational$) sind, muss $\pi + e$ oder $\pi \cdot e$ transzendent sein.
+  Es ist nicht bekannt, welches von beiden.
+\end{remark*}
+
+
+\begin{solution}
+  Sind $\alpha$ und $\beta$ algebraisch über $K$, so ist $K(\alpha, \beta) / K$ eine algebraische Körpererweiterung.
+  Da $\alpha + \beta, \alpha \beta \in K(\alpha, \beta)$ sind $\alpha + \beta$ und $\alpha \beta$ dann algebraisch über $K$.
+  
+  Es seien nun $\alpha + \beta$ und $\alpha \beta$ algebraisch über $K$.
+  Dann ist $K(\alpha + \beta, \alpha \beta)/K$ eine algebraische Erweiterung.
+  Auch die Erweiterung $K(\alpha, \beta)/K(\alpha + \beta, \alpha \beta)$ ist algebraisch, da $\alpha$ und $\beta$ Nullstellen des Polynoms
+  \[
+              P(T)
+    \coloneqq (T - \alpha)(T - \beta)
+    =         T^2 - (\alpha + \beta)T + \alpha \beta
+    \in       K(\alpha + \beta, \alpha \beta)[T]
+  \]
+  sind.
+  Wegen der Transitivität von Algebraizität folgt, dass auch $K(\alpha,\beta)/K$ algebraisch ist, also $\alpha$ und $\beta$ algebraisch über $K$ sind.
+\end{solution}
 
 
