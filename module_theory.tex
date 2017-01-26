@@ -383,17 +383,69 @@
   Zeigen Sie, dass für jeden $R$-Moduln $M$ die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
     \item
+      \label{enum: module is cyclic}
       $M$ wird von einem einzelnen Element erzeugt, d.h.\ es gibt $m \in M$ mit $M = \generate{m}_R$.
     \item
+      \label{enum: module is quotient by its annihilator}
       Es gilt $M \cong R/\!\annihilator(M)$ als $R$-Moduln.
     \item
+      \label{enum: module is quotient by an ideal}
       Es gibt ein Ideal $I \subseteq R$ mit $R/I \cong M$ als $R$-Moduln.
   \end{enumerate}
   Erfüllt $M$ eine (und damit alle) dieser Bedingungen, so heißt $M$ \emph{zyklisch}.
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  (
+    \ref{enum: module is cyclic}
+    $\implies$
+    \ref{enum: module is quotient by its annihilator}
+  )
+  Es sei $m \in M$ mit $M = \generate{m}_R$.
+  Dann gilt
+  \[
+      \annihilator(M)
+    = \annihilator(\generate{m}_R)
+    = \annihilator(m)
+    = \{r \in R \mid rm = 0\}.
+  \]
+  Für den surjektive Homomorphismus von $R$-Moduln
+  \[
+            \varphi
+    \colon  R \to M,
+    \quad
+            r \mapsto rm
+  \]
+  gilt deshalb $\ker \varphi = \annihilator(M)$.
+  Somit induziert $\varphi$ einen Isomorphismus von $R$-Moduln
+  \[
+            \bar{\varphi}
+    \colon  R/\annihilator(M) \to M,
+    \quad
+            [r] \mapsto rm.
+  \]
+  
+  (
+    \ref{enum: module is quotient by its annihilator}
+    $\implies$
+    \ref{enum: module is quotient by an ideal}
+  )
+  Man setze $I = \annihilator(M)$.
+  
+  (
+    \ref{enum: module is quotient by an ideal}
+    $\implies$
+    \ref{enum: module is cyclic}
+  )
+  Ist $\varphi \colon R/I \to M$ ein Isomorphismus, so gilt
+  \[
+      M
+    = \varphi(R/I)
+    = \varphi(\generate{\overline{1}}_R)
+    = \generate{\varphi(\overline{1})}_R.
+  \]
+\end{solution}
 
 
 \begin{question}
