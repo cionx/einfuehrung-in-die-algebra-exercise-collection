@@ -286,12 +286,40 @@
       Geben Sie für einen passenden Ring $R$ eine kurze exakte Sequenz $0 \to N \to M \to P \to 0$ von $R$-Moduln an, die nicht spaltet.
     \item
       Es sei $R$ ein kommutativer Ring und $F$ ein freier $R$-Modul.
-      Zeigen Sie, dass jede kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to F \to 0$ spaltet.
+      Zeigen Sie, dass jede kurze exakte Sequenz von $R$-Moduln $0 \to N \xrightarrow{f} M \xrightarrow{g} F \to 0$ spaltet.
   \end{enumerate}
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir betrachten die folgende kurze exakte Sequenz von $\Integer$-Moduln, d.h.\ von abelschen Gruppen:
+      \[
+                                              0
+        \to                                   \Integer
+        \xrightarrow{\cdot 2}                 \Integer
+        \xrightarrow{x \mapsto \overline{x}}  \Integer/2
+        \to                                   0
+      \]
+      Würde diese kurze exakte Sequenz spalten, so wäre $\Integer \cong \Integer \oplus \Integer/2$.
+      Dies gilt aber nicht, wie man den folgenden Gründen entnehmen kann:
+      \begin{itemize}
+        \item
+          Dies würde dem Hauptsatz über endlich erzeugte abelsche Gruppen widersprechen.
+        \item
+          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$ und somit torsionsfrei (denn $\Integer$ ist frei und somit auch torsionsfrei, und Untergruppen von torsionsfreien abelschen Gruppen sind ebenfalls torsionsfrei), aber $2 \cdot \Integer/2 = 0$.
+        \item
+          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$, und müsste somit entweder trivial oder unendlich sein, was beides nicht gilt.
+      \end{itemize}
+    \item
+      Es sei $(e_i)_{i \in I}$ eine Basis von $F$.
+      Wegen der Surjektivität von $g$ gibt es für jedes $i \in I$ ein $m_i \in M$ mit $g(m_i) = e_i$.
+      Es sei $h \colon F \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $h(e_i) = m_i$ für alle $i \in I$.
+      Dann gilt $g(h(e_i)) = g(m_i) = e_i$ für alle $i \in I$, und wegen der $R$-Linearität von $g \circ h$ somit bereits $g(h(x)) = x$ für alle $x \in F$.
+      Also ist $g \circ h = \id_F$, weshalb die gegebene kurze exakte Sequenz spaltet.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
