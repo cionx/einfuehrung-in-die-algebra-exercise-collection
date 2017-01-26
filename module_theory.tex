@@ -448,7 +448,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Schurs Lemma]
   Ein $R$-Modul $M$ heißt \emph{einfach}, wenn $M$ genau zwei Untermoduln hat.
   \begin{enumerate}
     \item
@@ -459,7 +459,26 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Ist $M$ einfach, so muss $M \neq 0$, da $M$ sonst nur einen Untermodul hätte (nämlich sich selbst).
+      Dann sind $0, M \subseteq M$ zwei verschiedene Untermoduln, und nach Annahme gibt es keine weiteren Untermoduln.
+      
+      Ist $M \neq 0$ und sind $0, M \subseteq M$ die einzigen beiden Untermoduln, so hat $M$ genau zwei Untermoduln.
+    \item
+      Ist $f \colon M \to N$ ein Homomorphismus von $R$-Moduln mit $f \neq 0$, so sind $\ker f \subseteq M$ und $\im f \subseteq N$ Untermoduln mit $\ker f \neq M$ und $\im f \neq 0$.
+      Ist $M$ einfach, so muss bereits $\ker f = 0$ gelten, und $f$ somit bereits injektiv sein.
+      Ist $N$ einfach, so muss bereits $\im f = N$ gelten, und $f$ somit bereits surjektiv sein.
+      Sind $M$ und $N$ beide einfach, so ist $f$ also bereits ein Isomorphismus.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{remark*}
+  Das Lemma von Schur besagt insbesondere, dass der Endomorphismenring eines einfachen Moduls ein Schiefkörper ist.
+\end{remark*}
+
 
 
 \begin{question}
