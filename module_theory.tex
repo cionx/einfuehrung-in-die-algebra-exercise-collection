@@ -144,20 +144,140 @@
   Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
     \item
+      \label{enum: every submodule is finitely generated}
       Jeder $R$-Untermodul von $M$ ist endlich erzeugt.
     \item
+      \label{enum: every ascending chain of submodules stabilizes}
       Jede aufsteigende Kette
       \[
         N_0 \subseteq N_1 \subseteq N_2 \subseteq N_3 \subseteq N_4 \subseteq \dotso
       \]
       von Untermoduln von $M$ stabilisiert, i.e.\ es gibt ein $i \geq 0$ mit $N_j = N_i$ für alle $j \geq i$.
     \item
-      Jede nicht-leere Menge $\mathcal{S}$ bestehend aus $R$-Untermoduln von $M$ besitzt ein (bezüglich der Inklusion) maximales Element.
+      \label{enum: every non empty collection of submodules has a maximal element}
+      Jede nicht-leere Menge $\mathcal{S}$ bestehend aus $R$-Untermoduln von $M$ besitzt ein maximales Element, d.h.\ ein Element $N \in \mathcal{S}$, das in keinem anderen Element von $\mathcal{S}$ echt enthalten ist.
   \end{enumerate}
 \end{question}
 
 
-% TODO: Adding a solution
+\begin{solution}
+  Der Vollständigkeit halber geben wir mehr Implikationen an, als notwendig sind.
+  
+  (
+  \ref{enum: every submodule is finitely generated}
+  $\implies$
+  \ref{enum: every ascending chain of submodules stabilizes}
+  )
+  Es sei
+  \begin{equation}
+    \label{eqn: an ascending chain of submodules}
+              N_0
+    \subseteq N_1
+    \subseteq N_2
+    \subseteq N_3
+    \subseteq N_4
+    \subseteq \dotso
+  \end{equation}
+  eine aufsteigende Kette von Untermoduln von $M$.
+  Dann ist $N \coloneqq \bigcup_{i \geq 0} N_i$ ein Untermodul von $M$.
+  Nach Annahme ist $N$ endlich erzeugt; es sei $n_1, \dotsc, n_t \in N$ ein endliches Erzeugendensystem.
+  Da $n_1, \dotsc, n_t \in N = \bigcup_{i \geq 0} N_i$ gibt es für jedes $j = 1, \dotsc, t$ ein $i_j \geq 0$ mit $n_j \in N_{i_j}$;
+  da $N_i \subseteq N_{i+1}$ für alle $i \geq 0$ gibt es bereits ein $I \geq 0$ mit $n_1, \dotsc, n_t \subseteq N_I$.
+  Damit gilt
+  \[
+              N
+    =         \generate{n_1, \dotsc, n_t}_R
+    \subseteq N_I
+    \subseteq \bigcup_{i \geq 0} N_i
+    =         N
+  \]
+  und deshalb bereits $N = N_I$.
+  Für alle $i \geq I$ git dann $N = N_I \subseteq N_i \subseteq N$ und somit $N_i = N_I$.
+  Also stabilisiert die Kette \eqref{eqn: an ascending chain of submodules}.
+  
+  (
+  \ref{enum: every ascending chain of submodules stabilizes}
+  $\implies$
+  \ref{enum: every submodule is finitely generated}
+  )
+  Es gebe einen Untermodul $N \subseteq M$, der nicht endlich erzeugt ist.
+  Es gilt notwendigerweise $N \neq 0$.
+  Wir konstruieren eine nicht-stabilisierende Kette
+  \[
+                N_0
+    \subsetneq  N_1
+    \subsetneq  N_2
+    \subsetneq  N_3
+    \subsetneq  N_4
+    \subsetneq \dotso
+    \subsetneq  N
+    \subseteq   M
+  \]
+  von endlich erzeugten von $N$ wie folgt:
+  Wir beginnen mit $N_0 \coloneqq 0$.
+  Ist $N_i$ definiert, so gilt $N_i \subsetneq N$, da $N_i$ endlich erzeugt ist, $N$ aber nicht. 
+  Es gibt also $f \in N$ mit $f \notin N_i$.
+  Da $N_i$ endlich erzeugt ist, gilt dies auch für $N_{i+1} \coloneqq N_i + \generate{f}_R$, und nach Wahl von $f$ gilt $N_i \subsetneq N_{i+1}$.
+  
+  
+  (
+  \ref{enum: every ascending chain of submodules stabilizes}
+  $\implies$
+  \ref{enum: every non empty collection of submodules has a maximal element}
+  )
+  Es gebe eine nicht-leere Menge $\mathcal{S}$ von Untermoduln von $M$, die kein maximales Element besitzt.
+  Dann gibt es für jedes $N \in \mathcal{S}$ ein $N' \in \mathcal{S}$ mit $N \subsetneq N'$.
+  Ausgehend von einem beliebigen $N_0 \in \mathcal{S}$ erhalten wir somit eine Kette
+  \[
+                N_0
+    \subsetneq  N_1
+    \subsetneq  N_2
+    \subsetneq  N_3
+    \subsetneq  N_4
+    \subsetneq \dotso
+  \]
+  von Untermoduln von $M$, die nicht stabilisiert.
+  
+  
+  (
+  \ref{enum: every non empty collection of submodules has a maximal element}
+  $\implies$
+  \ref{enum: every ascending chain of submodules stabilizes}
+  )
+  Es sei
+  \[
+              N_0
+    \subseteq N_1
+    \subseteq N_2
+    \subseteq N_3
+    \subseteq N_4
+    \subseteq \dotso
+  \]
+  eine aufsteigende Kette von Untermoduln von $M$.
+  Dann ist $\mathcal{S} \coloneqq \{N_i \mid i \in I\}$ eine nicht-leere Menge von Untermoduln von $M$.
+  Nach Annahme hat $\mathcal{S}$ ein maximales Element, d.h.\ es gibt ein $i \in I$ mit $N_i \subsetneq N_j$ für alle $j \geq 0$.
+  Es muss also bereits $N_i = N_j$ für alle $j \geq i$ gelten, weshalb die Kette stabilisiert.
+  
+  (
+  \ref{enum: every non empty collection of submodules has a maximal element}
+  $\implies$
+  \ref{enum: every submodule is finitely generated}
+  )
+  Es sei $N \subseteq M$ ein Untermodul von $M$ und
+  \[
+      \mathcal{S}
+    = \{
+        P \subseteq N
+      \mid
+        \text{$P$ ist ein endlich erzeugter Untermodul von $N$}
+      \}.
+  \]
+  Dann ist $\mathcal{S}$ eine nicht-leere ($0 \in \mathcal{S}$) Menge von Untermoduln von $M$, und besitzt daher nach Annahme ein maximales Element $N'$.
+  Wäre $N' \subsetneq N$, so gebe es ein $f \in N$ mit $f \notin N'$.
+  Dann wäre aber $N'' \coloneqq N' + \generate{f}_R$ ein endlich erzeugter Untermodul von $N$, also ein Element von $\mathcal{S}$, mit $N' \subseteq N''$, was der Maximalität von $N'$ widerspricht.
+  Also muss bereits $N = N'$, und $N$ somit endlich erzeugt sein.
+\end{solution}
+
 
 
 \begin{question}
@@ -269,7 +389,7 @@
       Es sei $R$ ein Integritätsbereich.
       Zeigen Sie, dass $R$ als $R$-Modul unzerlegbar ist.
       
-      (\emph{Hinweis: Zeigen Sie, dass $I \cap J \neq 0$ für alle Ideale $I, J \subseteq R$ mit $I, J \neq 0$.)
+      (\emph{Hinweis}: Zeigen Sie, dass $I \cap J \neq 0$ für alle Ideale $I, J \subseteq R$ mit $I, J \neq 0$.)
     \item
       Geben Sie ein Beispiel für einen Ring $R$, der zwar nicht nullteilerfrei ist, so dass aber $R$ als $R$-Modul dennoch unzerlegbar ist.
     \item
