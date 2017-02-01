@@ -528,6 +528,8 @@
   Entscheiden Sie, welche der folgenden Aussagen wahr oder falsch sind.
   \begin{enumerate}
     \item
+      Ist $M$ ein freier $R$-Modul und $S \subseteq R$ ein Unterring, so ist $M$ auch als $S$-Modul frei.
+    \item
       Sind $M$ und $N$ zwei freie $R$-Moduln endlichen Rangs, so ist auch $\Hom_R(M, N)$ ein freier $R$-Modul.
     \item
       Ist $M$ ein endlich erzeugter $R$-Modul, so ist auch jeder Untermodul $N \subseteq M$ endlich erzeugt.
@@ -539,6 +541,9 @@
 
 \begin{solution}
   \begin{enumerate}
+    \item
+      Die Aussage ist falsch:
+      Betrachtet man etwa $R = \Rational$ und $S = \Integer$, so ist $M = \Rational$ als $R$-Modul endlich frei vom Rang $1$, aber als $\Integer$-Modul nicht frei.
     \item
       Die Aussage ist wahr:
       Ist $M$ vom Rang $r$ und $N$ vom Rang $s$, so gilt
@@ -570,7 +575,6 @@
     \item
       Es gilt $M_1/N_1 \cong M_2/N_2$ und $N_1 \cong N_2$, aber $M_1 \ncong M_2$.
   \end{enumerate}
-  
   (\emph{Hinweis}:
    Betrachten Sie Moduln der Form $\bigoplus_{n \in \Natural} R$.)
 \end{question}
