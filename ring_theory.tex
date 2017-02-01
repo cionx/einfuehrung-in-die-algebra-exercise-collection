@@ -1004,3 +1004,61 @@
       Jeder Körper ist ein faktorieller Ring, aber es gibt endliche Körper.
   \end{enumerate}
 \end{solution}
+
+
+\begin{question}
+  Es sei $K$ ein Körper.
+  Zeigen Sie, dass der Ring $\powerseries{K}{X}$ ein eindeutiges maximales Ideal besitzt.
+\end{question}
+
+
+\begin{solution}
+  Wir geben zwei mögliche Beweise an:
+  \begin{enumerate}
+    \item
+      Der Ring $\powerseries{K}{X}$ ein ein euklidisch mit der üblichen Gradabbildung $\Deg$ und somit ein Hauptidealring.
+      Also ist jedes Ideal in $\powerseries{K}{X}$ von der Form $(f)$ für ein Element $f \in \powerseries{K}{X}$.
+      Ist $f \in \powerseries{K}{X}$ mit $f \neq 0$, so ist $f = \sum_{i=n}^\infty f_i X^i$ mit $f_n \neq 0$ für ein $n \geq 0$.
+      Dann ist
+      \[
+          f
+        = \sum_{i=n}^\infty f_i X^i
+        = X^n \cdot \sum_{j=0}^\infty f_{n+j} X^j
+        = X^n \cdot g.
+      \]
+      für das Element $g \coloneqq \sum_{j=0}^\infty f_{n+j} X^j$.
+      Es gilt $g_0 \neq 0$, also $g_0 \in K^\times$, und somit $g \in \powerseries{K}{X}^\times$.
+      Also sind $f$ und $X^n$ assoziiert, und somit $(f) = (X^n)$.
+      
+      Damit ist gezeigt, dass $0$ und die Ideale $(X^n)$ für $n \geq 0$ die einzigen Ideale in $\powerseries{K}{X}$ sind.
+      Falls $(X^n) = (X^m)$ mit $n \leq m$, so sind $X^n$ und $X^m$ assoziiert zueinander, und es gibt $g \in \powerseries{K}{X}^\times$ mit $X^n = g X^m$.
+      Dann gilt $g_0 \neq 0$ und somit $\Deg g X^m = m$, weshalb $n = \Deg X^n = \Deg g X^m = m$.
+      Die Ideale in $\powerseries{K}{X}$ bilden also eine echte absteigende Kette
+      \[
+                    (1)
+        =           (X^0)
+        \supsetneq  (X)
+        \supsetneq  (X^2)
+        \supsetneq  (X^3)
+        \supsetneq  (X^4)
+        \supsetneq \dotsb
+        \supsetneq  0.
+      \]
+      Inbesondere ist $(X)$ das eindeutige maximale Ideal in $\powerseries{R}{X}$.
+    \item
+      Es sei $\mideal \coloneqq \{f \in \powerseries{K}{X} \mid f_0 = 0\}$.
+      Die Abbildung $\varphi \colon \powerseries{K}{X} \to K$, $f \mapsto f_0$ ist ein Ringhomomorphismus mit $\ker \varphi = \mideal$, weshalb $\mideal$ ein Ideal in $\powerseries{K}{X}$ ist.
+      Da
+      \[
+              K
+        =     \im \varphi
+        \cong \powerseries{K}{X}/\ker \varphi
+        =     \powerseries{K}{X}/\mideal
+      \]
+      ein Körper ist, ist $\mideal$ bereits ein maximales Ideal.
+
+      Gebe es ein maximales Ideal $\mideal' \subseteq \powerseries{K}{X}$ mit $\mideal' \neq \mideal$, so würde wegen der Maximalität von $\mideal'$ inbesondere $\mideal' \nsubseteq \mideal$ gelten.
+      Dann gebe es $f \in \mideal'$ mit $f \notin \mideal$, also $f_0 \neq 0$ und somit $f \in K^\times$.
+      Dann würde aber $f \in \powerseries{K}{X}^\times$ gelten, und somit $(1) = (f) \subseteq \mideal'$, was im Widerspruch dazu stünde, dass $\mideal'$ ein echtes Ideal in $\powerseries{K}{X}$ ist.
+  \end{enumerate}
+\end{solution}
