@@ -641,3 +641,116 @@
 
 
 % TODO: Adding a solution.
+
+
+\begin{question}[subtitle = Zwei Vierer- und ein Fünferlemma]
+  Es sei $R$ ein Ring und
+  \[
+    \begin{tikzcd}[ampersand replacement=\&]
+          M_1
+          \arrow{r}{f_1}
+          \arrow{d}{h_1}
+      \&  M_2
+          \arrow{r}{f_2}
+          \arrow{d}{h_2}
+      \&  M_3
+          \arrow{r}{f_3}
+          \arrow{d}{h_3}
+      \&  M_4
+          \arrow{r}{f_4}
+          \arrow{d}{h_4}
+      \&  M_5
+          \arrow{d}{h_5}
+      \\
+          N_1
+          \arrow{r}{g_1}
+      \&  N_2
+          \arrow{r}{g_2}
+      \&  N_3
+          \arrow{r}{g_3}
+      \&  N_4
+          \arrow{r}{g_4}
+      \&  N_5
+    \end{tikzcd}
+  \]
+  ein kommutatives Diagramm von $R$-Moduln mit exakten Ze
+  \begin{enumerate}
+    \item
+      Es sei $h_1$ surjektiv, und $h_2$ und $h_4$ seien injektiv.
+      Zeigen Sie, dass auch $h_3$ injektiv ist.
+    \item
+      Es sei $h_5$ injektiv, und $h_2$ und $h_4$ seien surjektiv.
+      Zeigen Sie, dass auch $h_3$ surjektiv ist.
+    \item
+      Folgern Sie:
+      Sind $h_1$, $h_2$, $h_4$ und $h_5$ Isomorphismen, so ist auch $h_3$ ein Isomorphismus.
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{question}[subtitle = Anwendungen des Fünferlemmas]
+  Es sei $R$ ein Ring.
+  \begin{enumerate}
+    \item
+      Es seien nun $N$ und $P$ zwei $R$-Moduln.
+      Eine \emph{Erweiterung von $N$ um $P$} ist eine kurze exakte Sequenz der Form $0 \to N \to M \to P \to 0$.
+      Zwei Erweiterungen
+      \[
+        0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0
+        \quad\text{und}\quad
+        0 \to N \xrightarrow{f'} M' \xrightarrow{g'} P \to 0
+      \]
+      heißen \emph{Yoneda-äquivalent}, falls es einen Homomorphismus $h \colon M \to M'$ gibt, der das folgende Diagram zum Kommutieren bringt:
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              N
+              \arrow{r}{f}
+              \arrow[equal]{d}
+          \&  M
+              \arrow{r}{g}
+              \arrow{d}{h}
+          \&  P
+              \arrow[equal]{d}
+          \\
+              N
+              \arrow{r}{f'}
+          \&  M'
+              \arrow{r}{g'}
+          \&  P
+        \end{tikzcd}
+      \]
+%       \[
+%         \begin{tikzcd}[ampersand replacement = \&]
+%               0
+%               \arrow{r}
+%           \&  N
+%               \arrow{r}{f}
+%               \arrow[equal]{d}
+%           \&  M
+%               \arrow{r}{g}
+%               \arrow{d}{h}
+%           \&  P
+%               \arrow{r}
+%               \arrow[equal]{d}
+%           \&  0
+%           \\
+%               0
+%               \arrow{r}
+%           \&  N
+%               \arrow{r}{f'}
+%           \&  M'
+%               \arrow{r}{g'}
+%           \&  P
+%               \arrow{r}
+%           \&  0
+%         \end{tikzcd}
+%       \]
+      Zeigen Sie, dass Yoneda-Äquivalenz eine Äquivalenzrelation auf der Klasse der Erweiterungen von $N$ um $P$ ist.
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
