@@ -288,7 +288,6 @@
 \end{solution}
 
 
-
 \begin{question}
   \begin{enumerate}
     \item
@@ -362,6 +361,7 @@
 % TODO: Adding a solution.
 % For the strict inequality take R^2 with both axes.
 
+
 \begin{question}
   Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ zwei Ideale, so dass $R/I \cong R/J$ als $R$-Moduln.
   Zeigen Sie, dass bereits $I = J$.
@@ -373,6 +373,30 @@
 \begin{solution}
   Für jedes Ideal $K \subseteq R$ gilt $\annihilator(R/K) = K$, weshalb $I = \annihilator(R/I) = \annihilator(R/J) = J$ gilt.
 \end{solution}
+
+
+\begin{question}
+  Es sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  \begin{enumerate}
+    \item
+      Zeigen Sie für je zwei teilerfremde Polynome $p, q \in K[T]$ die Gleichheit
+      \[
+        \ker {(pq)(f)} = \ker p(f) \oplus \ker q(f).
+      \]
+    \item
+      Folgern Sie für alle paarweise teilerfremden Polynome $p_1, \dotsc, p_n \in K[T]$ die Gleichheit
+      \[
+          \ker {(p_1 \dotsm p_n)(f)}
+        = \ker p_1(f) \oplus \dotsb \oplus \ker p_n(f).
+      \]
+  \end{enumerate}
+  Es sei nun $K$ algebraisch abgeschlossen und $V$ endlichdimensional.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $V$ in die Summe der Haupträume von $f$ ist.
+  \end{enumerate}
+\end{question}
+
 
 
 \begin{question}[subtitle=Torsionsuntermoduln]
