@@ -781,7 +781,6 @@
 % TODO: Adding a solution.
 
 
-
 \begin{question}
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
@@ -848,6 +847,41 @@
   Es wäre auch $R \neq 0$ da $0[X] = 0$ kein Körper ist.
   Dann wäre aber $0 \neq X \in R[X]$ keine Einheit und $R[X]$ somit kein Körper.
 \end{solution}
+
+
+\begin{question}
+  \label{question: product of ideals is an ideal}
+  Es seien $R_1, \dotsc, R_n$ kommutative Ringe für jedes $i = 1, \dotsc, n$ sei $\aideal_i \subseteq R_i$ ein Ideal.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\aideal_1 \times \dotsb \times \aideal_n$ ein Ideal in $R_1 \times \dotsb \times R_n$ ist.
+    \item
+      Zeigen Sie, dass $(R_1 \times \dotsb R_n)/(\aideal_1 \times \dotsb \times \aideal_n) \cong (R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)$ gilt.
+    \item
+      Folgern Sie, dass $\aideal_1 \times \dotsb \times \aideal_n$ genau dann prim ist, wenn es ein $1 \leq j \leq n$ gibt, so dass $\aideal_j \subseteq R_j$ prim ist, und $\aideal_i = R_i$ für alle $i \neq j$ gilt.
+    \item
+      Entscheiden Sie, ob die obige Aussage auch für maximale Ideale gilt.
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{question}
+  \label{questions: ideals in products are products of ideal}
+  Es seien $R_1, \dotsc, R_n$ kommutative Ringe
+  Zeigen Sie, dass jedes Ideal $\aideal \subseteq R_1 \times \dotsb \times R_n$ von der Form $\aideal = \aideal_1 \times \dotsb \times \aideal_n$ für eindeutige Ideale $\aideal_i \subseteq R_i$ ist.
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{remark}
+  Übung~\ref{question: product of ideals is an ideal} und Übung~\ref{questions: ideals in products are products of ideal} ergeben zusammen eine Klassifikation der Primideale in $R_1 \times \dotsb \times R_n$:
+  Es handelt sich um die disjunkte Vereinigung der Primideale der $R_i$.
+\end{remark}
 
 
 \begin{question}
