@@ -181,6 +181,7 @@
 
 
 \begin{question}
+  \label{question: radical ideals}
   Es sei $R$ ein kommutativer Ring und $I \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
@@ -189,6 +190,8 @@
       Zeigen Sie, dass $\radicalideal{\radicalideal{I}} = \radicalideal{I}$.
     \item
       Zeigen Sie, dass $\radicalideal{I}$ genau dann ein echtes Ideal ist, wenn $I$ ein echtes Ideal ist.
+    \item
+      Zeigen Sie für jedes weitere Ideal $J \subseteq R$ die Gleichheit $\radicalideal{I \cap J} = \radicalideal{I} \cap \radicalideal{J}$.
   \end{enumerate}
   Ein Ideal $I$ ist ein \emph{Radikalideal}, wenn $I = \radicalideal{J}$ für ein Ideal $J \subseteq I$.
   \begin{enumerate}[resume]
@@ -241,6 +244,12 @@
       Dies ist wiederum äquivalent dazu, dass $\radicalideal{I}$ ein echtes Ideal ist.
     
     \item
+      Aus den Inklusionen $I \cap J \subseteq I, J$ folgen die Inklusionen $\radicalideal{I \cap J} \subseteq \radicalideal{I}, \radicalideal{J}$ und damit die Inklusion $\radicalideal{I \cap J} \subseteq \radicalideal{I} \cap \radicalideal{J}$.
+      
+      Ist andererseits $x \in \radicalideal{I} \cap \radicalideal{J}$, so gibt es $n, m \in \Natural$ mit $x^n \in I$ und $x^m \in J$.
+      Dann ist $x^{n+m} = x^n x^m \in I \cap J$ (es gilt $x^n x^m \in I$ da $x^n \in I$, und $x^n x^m \in J$ da $x^m \in J$) und deshalb $x \in \radicalideal{I \cap J}$.
+    
+    \item
       Gilt $I = \radicalideal{I}$ so erfüllt $I$ die definierende Eigenschaft eines Radikalideals (mit $J = I$).
       Ist andererseits $I = \radicalideal{J}$ für ein Ideal $J \subseteq R$, so gilt
       \[
@@ -285,6 +294,8 @@
       Der Quotient $R/\pideal$ ist ein Integritatsbereich, da $\pideal$ ein Primideal ist.
       Nach dem vorherigen Aufgabenteil genügt es zu zeigen, dass jeder Integritätsbereich $S$ reduziert ist.
       Dies folgt direkt daraus, dass für jedes $x \in S$ mit $x^n = 0$ aus der Nullteilerfreiheit von $S$ folgt, dass $x = 0$.
+      
+      % TODO: Direkte Berechnung.
   \end{enumerate}
 \end{solution}
 
