@@ -912,6 +912,40 @@
 
 
 \begin{question}
+  Es seien $R$ und $R'$ zwei kommutative Ringe, und $S \subseteq R$ und $S' \subseteq R'$ multiplikative Mengen.
+  Es seien $i \colon R \to R_S$ und $i' \colon R' \to R'_{S'}$ die kanonischen Ringhomomorphismen.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $S \times S' \subseteq R \times R'$ eine multiplikative Menge ist.
+  \end{enumerate}
+  Es sei $j \colon R \times R' \to (R \times R')_{S \times S'}$ der kanonische Ringhomomorphismus.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass es eine eindeutigen Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ gibt, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              {}
+          \&  R \times R'
+              \arrow{dl}[swap]{j}
+              \arrow{dr}{i \times i'}
+              {}
+          \\
+              (R \times R')_{S \times S'}
+              \arrow{rr}{\varphi}
+          \&  {}
+          \&  R_S \times R'_{S'}
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie, dass $\varphi$ ein Isomorphismus ist.
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{question}
   Es sei $R$ ein kommutativer Ring und $f \in R$.
   Zeigen Sie, dass $R_f \cong R[X]/(fX-1)$.
 \end{question}
