@@ -678,6 +678,31 @@
 
 
 \begin{question}
+  Es sei $R$ ein Hauptidealring.
+  Zeigen Sie, dass jedes Primideal in $R$ bereits ein maximales Ideal ist.
+\end{question}
+
+
+\begin{solution}
+  Es sei $\mideal \subseteq R$ ein Primideal und $p \in R$ mit $\mideal = (p)$;
+  inbesondere ist $p$ prim.
+  Es sei $\aideal \subseteq R$ ein Ideal mit $\mideal \subseteq \aideal$ und $a \in R$ mit $\aideal = (a)$.
+  Dass $(p) \subseteq (a)$ gilt, ist äquivalent dazu, dass $a \mid p$ gilt;
+  es gibt also $b \in R$ mit $p = ab$.
+  Da $p$ prim ist, gilt bereits $p \mid a$ oder $p \mid b$.
+  
+  Gilt $p \mid b$, so gibt es $c \in R$ mit $b = pc$.
+  Dann gilt $p = ab = abp$ und somit $1 = ab$, da $R$ ein Integritätsbereich ist.
+  In diesem Fall ist also $a$ eine Einheit und somit $\aideal = (a) = R$ kein echtes Ideal.
+  
+  Gilt andererseits $p \mid a$, so ist $\aideal = (a) \subseteq (p) = \mideal$, und somit bereits $\mideal = \aideal$.
+  
+  Ingesamt zeigt dies, dass es kein echtes Ideal $\bideal \subsetneq R$ gibt, so dass $\mideal \subsetneq \bideal$.
+  Da $\mideal$ als Primideal inbesondere ein echtes Ideal ist, folgt daraus, dass $\mideal$ ein maximales Ideal ist.
+\end{solution}
+
+
+\begin{question}
   Es sei $K$ ein kommutativer Ring, so dass $K[X]$ ein Hauptidealring ist.
   Zeigen Sie, dass $K$ bereits ein Körper ist.
 \end{question}
