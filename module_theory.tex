@@ -302,7 +302,7 @@
   \begin{enumerate}
     \item
       Es sei $R$ ein Ring und $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
-      Zeigen Sie, dass $M$ genau dann noethersch ist, wenn $M$ noethersch ist.
+      Zeigen Sie, dass $M$ genau dann noethersch ist, wenn $N$ und $P$ beide noethersch sind.
     \item
       Folgern Sie, dass für alle noetherschen $R$-Moduln $M_1, \dotsc, M_s$ auch $M_1 \oplus \dotsb \oplus M_s$ noethersch ist.
     \item
@@ -374,6 +374,23 @@
 
 
 \begin{question}
+  \label{question: annihilators of quotients}
+  Es sei $R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Zeigen Sie für jedes Ideal $I \subseteq R$ die Gleichheit $\annihilator(A/I) = I$.
+    \item
+      Zeigen Sie für jeden freien $R$-Modul $F$ mit $F \neq 0$, dass $\annihilator(F) = 0$.
+    \item
+      Folgern Sie, dass $R$ genau dann ein Körper ist, wenn jeder endlich erzeugte $R$-Modul frei ist.
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{question}
   Es sei $R$ ein Ring und $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
   \begin{enumerate}
     \item
@@ -386,7 +403,7 @@
 \end{question}
 
 
-% TODO:
+% TODO: Adding a solution.
 
 
 \begin{question}
@@ -415,7 +432,7 @@
 
 
 \begin{solution}
-  Für jedes Ideal $K \subseteq R$ gilt $\annihilator(R/K) = K$, weshalb $I = \annihilator(R/I) = \annihilator(R/J) = J$ gilt.
+  Für jedes Ideal $K \subseteq R$ gilt $\annihilator(R/K) = K$ (siehe Übung~\ref{question: annihilators of quotients}), weshalb $I = \annihilator(R/I) = \annihilator(R/J) = J$ gilt.
 \end{solution}
 
 
