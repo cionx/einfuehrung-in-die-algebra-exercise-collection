@@ -896,6 +896,35 @@
 
 
 \begin{question}
+  Es sei $\varphi \colon R \to R'$ ein Ringhomomorphismus zwischen kommutativen Ringen $R$ und $R'$.
+  Es sei $S \subseteq R$ eine multiplikative Menge.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $S' \coloneqq \varphi(S)$ eine multiplikative Menge in $R'$ ist.
+    \item
+      Zeigen Sie, dass es einen eindeutigen Ringhomomorphismus $\hat{\varphi} \colon R \to R'$ gibt, so dass das folgende Diagramm kommutiert:
+      \[
+        \begin{tikzcd}[ampersand replacement=\&]
+              R
+              \arrow{r}{\varphi}
+              \arrow{d}
+          \&  R'
+              \arrow{d}
+          \\
+              R_S
+              \arrow{r}{\hat{\varphi}}
+          \&  R'_{S'}
+        \end{tikzcd}
+      \]
+      Hierbei sind die unbenannten vertikalen Pfeile jeweils die kanonischen Ringhomomorphismen.
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{question}
   Es sei $R$ ein kommutativer Ring und $f \in R$.
   Zeigen Sie, dass $R_f \cong R[X]/(fX-1)$.
 \end{question}
