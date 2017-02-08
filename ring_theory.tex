@@ -1207,6 +1207,22 @@
       Jeder endliche Integritätsbereich ist ein Hauptidealring.
     \item
       Ist $R$ ein endlicher Ring, so ist $R[X,Y]$ noethersch.
+    \item
+      Ist $R$ ein Integritätsbereich und $p \in R$ prim, so ist $p$ irreduzibel.
+    \item
+      Sind $n_1, n_2, n_3 \in \Integer$ mit $\ggT(n_1, n_2, n_3) = 1$, so hat das Gleichungssystem
+      \[
+        \left\{
+          \begin{array}{ccc}
+            x &\equiv&  a_1 \mod n_1
+            \\
+            x &\equiv&  a_2 \mod n_2
+            \\
+            x &\equiv&  a_3 \mod n_3
+          \end{array}
+        \right.
+      \]
+      für alle $a_1, a_2, a_3 \in \Integer$ eine Lösung.
   \end{enumerate}
 \end{question}
 
@@ -1225,6 +1241,17 @@
     \item
       Die Aussage ist wahr:
       $R$ ist noethersch, und nach iterierter Anwendung des Hilbertschen Basissatzes somit auch $R[X][Y] \cong R[X,Y]$.
+    \item
+      Die Aussage ist wahr:
+      Es seien $a, b \in R$ mit $p = ab$.
+      Da $p$ prim ist, gilt $p \mid a$ oder $p \mid b$;
+      wir können o.B.d.A.\ davon ausgehen, dass $p \mid a$.
+      Dann gibt es $c \in R$ mit $a = pc$ und es folgt $p = ab = pcb$.
+      Da $R$ ein Integritätsbereich ist, und $p \neq 0$ gilt (denn $p$ ist prim) folgt, dass bereits $1 = cb$ gilt.
+      Also ist $b$ eine Einheit.
+    \item
+      Die Aussage ist falsch:
+      % TODO: Adding a more detailed solution.
   \end{enumerate}
 \end{solution}
 
