@@ -690,6 +690,90 @@
 % TODO: Adding a solution.
 
 
+\begin{question}[subtitle = Isomorphie von kurzen exakten Sequenzen]
+  \label{question: isomorpism of short exact sequences}
+  Es sei $R$ ein Ring.
+  Zwei kurze exakte Sequenzen
+  \[
+    0 \to N  \xrightarrow{f}  M  \xrightarrow{g}  P \to 0
+    \quad\text{und}\quad
+    0 \to N' \xrightarrow{f'} M' \xrightarrow{g'} P' \to 0
+  \]
+  von $R$-Moduln heißen \emph{isomorph}, wenn es Isomorphismen $\varphi_N \colon N \to N'$, $\varphi_M \colon M \to M'$ und $\varphi_P \colon P \to P'$ gibt, die das folgende Diagramm zu kommutieren bringen:
+  \[
+    \begin{tikzcd}[ampersand replacement = \&]
+          0
+          \arrow{r}
+      \&  N
+          \arrow{r}{f}
+          \arrow{d}{\varphi_N}
+      \&  M
+          \arrow{r}{g}
+          \arrow{d}{\varphi_M}
+      \&  P
+          \arrow{r}
+          \arrow{d}{\varphi_P}
+      \&  0
+      \\
+          0
+          \arrow{r}
+      \&  N'
+          \arrow{r}{f'}
+      \&  M'
+          \arrow{r}{g'}
+      \&  P'
+          \arrow{r}
+      \&  0
+    \end{tikzcd}
+  \]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass Isomorphie von kurzen exakten Sequenzen eine Äquivalenzrelation auf der Klasse der kurzen exakten Sequenzen von $R$-Moduln ist.
+    \item
+      Es sei $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
+      Zeigen Sie, dass sich das Diagramm
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              0
+              \arrow{r}
+          \&  N
+              \arrow{r}{f}
+          \&  M
+              \arrow{r}{g}
+              \arrow[equal]{d}
+          \&  P
+              \arrow{r}
+          \&  0
+          \\
+              0
+              \arrow{r}
+          \&  \im f
+              \arrow{r}{i}
+          \&  M
+              \arrow{r}{p}
+          \&  P
+              \arrow{r}
+          \&  0
+        \end{tikzcd}
+      \]
+      zu einem Isomorphismus von kurzen exakten Sequenzen ergänzen lässt.
+      Dabei bezeichnet $i \colon \im f \to M$, $x \mapsto x$ die Inklusion und $p \colon M \to M / \im f$, $x \mapsto \overline{x}$ die kanonische Projektion.
+      
+      (Mit anderen Worten:
+       Die beiden Zeilen im obigen Diagramm sind isomorphe kurze exakte Sequenzen, und es gibt einen Isomorphismus, dessen mittlerer vertikaler Pfeil die Identität ist.)
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{remark*}
+  Übung~\ref{question: isomorpism of short exact sequences} gibt eine formale Begründung der informalen Aussage, dass jede kurze exakte Sequenz von $R$-Moduln von der Form $0 \to N \to M \to M/N \to 0$ für einen $R$-Modul $M$ und Untermodul $N \subseteq M$ ist (wobei die Pfeile $N \to M$ und $M \to M/N$ die jeweils kanonischen Homomorphismen sind).
+  % TODO: Extending this remark when the different definitions of split exact sequences are discussed.
+\end{remark*}
+
+
 \begin{question}[subtitle = Zwei Vierer- und ein Fünferlemma]
   \label{question: the five lemma}
   Es sei $R$ ein Ring und
