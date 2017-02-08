@@ -407,12 +407,16 @@
 
 
 \begin{question}
-  Es sei $M$ ein $R$-Modul und $(M_i)_{i \in I}$ eine Familie von Untermoduln $M_i \subseteq M$.
+  Es sei $M$ ein $R$-Modul..
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $\annihilator( \sum_{i \in I} M_i) = \bigcap_{i \in I} \annihilator(M_i)$.
+      Zeigen Sie, dass $\annihilator( \generate{m}_R ) = \annihilator(m)$ für jedes $m \in M$.
     \item
-      Zeigen Sie, dass $\annihilator( \bigcap_{i \in I} M_i) \supseteq \sum_{i \in I} \annihilator(M_i)$.
+      Zeigen Sie, dass $\annihilator( \sum_{i \in I} M_i) = \bigcap_{i \in I} \annihilator(M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
+    \item
+      Folgern Sie, dass $\annihilator( \generate{m_j \mid j \in J}_R ) = \bigcap_{j \in J} \annihilator(m_j)$ für jede Familie $(m_j)_{j \in J}$ von Elementen $m_j \in M$, und dass $\annihilator(M) = \bigcap_{m \in M} \annihilator(m)$.
+    \item
+      Zeigen Sie, dass $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
     \item
       Geben Sie ein Beispiel an, in dem die obige Inklusion strikt ist.
   \end{enumerate}
