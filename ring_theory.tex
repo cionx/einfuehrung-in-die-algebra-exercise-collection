@@ -770,6 +770,7 @@
 
 
 \begin{question}
+  \label{question: fields are the only rings for which the polynomial ring is a pid}
   Es sei $K$ ein kommutativer Ring, so dass $K[X]$ ein Hauptidealring ist.
   Zeigen Sie, dass $K$ bereits ein Körper ist.
 \end{question}
@@ -1196,6 +1197,33 @@
 % TODO: Adding a solution.
 
 
+\begin{question}[subtitle = Ein Lemma von Gauß]
+  Es sei $R$ ein faktorieller Ring und $f, g \in R[T]$ seien zwei primitive Polynome.
+  Zeigen Sie, dass auch $fg$ primitiv ist.
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
+\begin{question}
+  Es sei $K$ ein Körper und $R \coloneqq K[t^2, t^3] \subseteq K[t]$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $R$ noethersch ist.
+    \item
+      Folgern Sie, dass in $R$ eine Zerlegung in irreduzible Elemente existiert.
+    \item
+      Zeigen Sie, dass $R$ nicht faktoriell ist.
+      (\emph{Hinweis}:
+       Zeigen Sie zunächst, dass $t^2$ und $t^3$ irreduzibel sind.)
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Adding a solution.
+
+
 \begin{question}[subtitle = Multiple Choice]
   Entscheiden Sie, welche der folgenden Aussagen wahr oder falsch sind.
   \begin{enumerate}
@@ -1207,6 +1235,8 @@
       Jeder endliche Integritätsbereich ist ein Hauptidealring.
     \item
       Ist $R$ ein endlicher Ring, so ist $R[X,Y]$ noethersch.
+    \item
+      Ist $R$ ein Hauptidealring, so ist auch $R[X]$ ein Hauptidealring.
     \item
       Ist $R$ ein Integritätsbereich und $p \in R$ prim, so ist $p$ irreduzibel.
     \item
@@ -1241,6 +1271,10 @@
     \item
       Die Aussage ist wahr:
       $R$ ist noethersch, und nach iterierter Anwendung des Hilbertschen Basissatzes somit auch $R[X][Y] \cong R[X,Y]$.
+    \item
+      Die Aussage ist falsch:
+      Ist $K$ ein Körper, so ist zwar $R \coloneqq K[X]$ ein Hauptidealring, aber $R[Y] \cong K[X,Y]$ nicht (siehe Übung~\ref{question: examples for non principal and not finitely generated modules}).
+      Allgemeiner ist $R[X]$ genau dann ein Hauptidealring, wenn $R$ bereits ein Körper ist (siehe Übung~\ref{question: fields are the only rings for which the polynomial ring is a pid}).
     \item
       Die Aussage ist wahr:
       Es seien $a, b \in R$ mit $p = ab$.
