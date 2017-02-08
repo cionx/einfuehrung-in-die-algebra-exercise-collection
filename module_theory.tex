@@ -478,7 +478,7 @@
     \item
       Zeigen Sie, dass jeder freie $R$-Modul torsionsfrei ist.
     \item
-      Zeigen Sie für jeden $R$-Moduln $M$, dass $M/T(M)$ torsionsfrei ist.
+      Zeigen Sie für jeden $R$-Moduln $M$, dass $M/\torsion(M)$ torsionsfrei ist.
     \item
       Es sei $f \colon M \to N$ ein $R$-Modulhomomorphismus.
       Zeigen Sie, dass $f(\torsion(M)) \subseteq \torsion(N)$.
@@ -487,22 +487,20 @@
   \begin{enumerate}[resume]
     \item
       Zeigen Sie, dass
-      \begin{enumerate}
+      \begin{enumerate}[leftmargin=*]
         \item
           $\torsion(\id_M) = \id_{\torsion(M)}$ für jeden $R$-Modul $M$, und
         \item
           $\torsion(g \circ f) = \torsion(g) \circ \torsion(f)$ für alle $R$-Modulhomomorphismen $N \xrightarrow{f} M \xrightarrow{g} P$.
       \end{enumerate}
     \item
-      Zeigen Sie für jede exakte Sequenz von $R$-Moduln $0 \to M \xrightarrow{f} N \xrightarrow{g} P \to 0$ die Exaktheit der Sequenz
+      Zeigen Sie für jede exakte Sequenz von $R$-Moduln $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ die Exaktheit der induzierten Sequenz
       \[
                                   0
-        \to                       \torsion(M)
-        \xrightarrow{\torsion(f)} \torsion(N)
+        \to                       \torsion(N)
+        \xrightarrow{\torsion(f)} \torsion(M)
         \xrightarrow{\torsion(g)} \torsion(P).
       \]
-    \item
-      Zeigen Sie ferner, dass $\torsion(g)$ surjektiv ist, falls $P$ projektiv ist.
     \item
       Geben Sie ein Beispiel für einen surjektiven $R$-Modulhomomorphismus $g \colon M \to P$ an, so dass $T(g)$ nicht surjektiv ist.
   \end{enumerate}
