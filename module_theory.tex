@@ -37,7 +37,13 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Wir zeigen, dass die Abbildung $\varphi \colon \Hom_R(R, M) \to M$, $f \mapsto f(1)$ ein Isomorphismus von $R$-Moduln ist:
+  Dass $\varphi$ ein Homomorphismus von $R$-Moduln ist, ergibt sich direkt daraus, dass die $R$-Modulstruktur auf $\Hom_R(R, M)$ punktweise definiert ist.
+  Die Injektivität von $\varphi$ ergibt sich daraus, dass $R = \generate{1}_R$, und somit jeder $R$-Modulhomomorphismus $f \colon R \to M$ durch die Einschränkung $f|_{\{1\}}$ bereits eindeutig bestimmt ist.
+  Für jedes $m \in M$ ergibt sich ein Homomorphismus von $R$-Moduln $f_m \colon R \to M$, $r \mapsto rm$;
+  für diesen gilt $\varphi(f_m) = f_m(1) = m$, was die Surjektivität von $\varphi$ zeigt.
+\end{solution}
 
 
 \begin{question}
