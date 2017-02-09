@@ -1221,7 +1221,23 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Nach dem Hilbertschen Nullstellensatz ist $K[X,Y]$ noethersch.
+      Der Einsetzhomomorphismus $\varphi \colon K[X,Y] \to K[t^2, t^3]$ mit $\varphi(X) = t^2$ und $\varphi(Y) = t^3$ ist surjektiv, und somit $R = K[t^2, t^3] \cong K[X,Y]/\ker \varphi$ als Quotient eines noetherschen Rings ebenfalls noethersch.
+    \item
+      Als Unterring von $K[t]$ ist $R$ ein Integritätsbereich.
+      Aus der Vorlesung ist bekannt, dass in noetherschen Integritätsbereichen eine Zerlegung in irreduzible Elemente existiert.
+    \item
+      Wir bemerken zunächst, dass $R = \{\sum_i f_i T^i \in K[t] \mid f_1 = 0\}$.
+      Es enthält also $R$ keine Polynome vom Grad $1$.
+      Jede nicht-triviale Zerlegung von $t^2$ oder $t^3$ in $K[t]$ enthält aber einen Faktor vom Grad $1$;
+      folglich sind beide Elemente irreduzibel in $R$.
+      Wir erhalten nun für $t^6 \in R$ mit $t^6 = t^2 \cdot t^2 \cdot t^2 = t^3 \cdot t^3$ zwei Zerlegungen in irreduzible Elemente, die nicht äquivalent im Sinne eines faktoriellen Rings sind (insbesondere kommen in beiden Zerlegungen unterschiedlich viele Faktoren vor).
+      Folgich ist $R$ nicht faktoriell.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}[subtitle = Multiple Choice]
