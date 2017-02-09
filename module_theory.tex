@@ -475,6 +475,33 @@
 
 
 \begin{question}
+  Es sei $R$ ein Ring und $M$ ein noetherscher $R$-Modul.
+  Zeigen Sie, dass jeder surjektive Endomorphismus $f \colon M \to M$ bereits ein Isomorphismus ist.
+\end{question}
+
+
+\begin{solution}
+  Da $M$ noethersch ist stabilisiert die Kette
+  \[
+              0
+    =         \ker f^0
+    \subseteq \ker f
+    \subseteq \ker f^2
+    \subseteq \ker f^3
+    \subseteq \ker f^4
+    \subseteq \dotso,
+  \]
+  d.h.\ es gibt $n \geq 1$ mit $\ker f^n = \ker f^k$ für alle $k \geq n$.
+  Inbesondere gilt $\ker f^n = \ker f^{2n}$.
+  Für $m \in \ker f^n$ gibt es wegen der Surjektivität von $f$ ein $m' \in M$ mit $m = f^n(m')$.
+  Dann gilt $0 = f^n(m) = f^{2n}(m')$, also $m' \in \ker f^{2n} = \ker f^n$.
+  Deshalb ist bereits $m = f^n(m) = 0$.
+  Das zeigt die Gleichheit $\ker f^n = 0$, und da $\ker f \subseteq \ker f^n$ somit auch, dass $\ker f = 0$ gilt.
+  Also ist $f$ injektiv, und somit bereits ein Isomorphismus.
+\end{solution}
+
+
+\begin{question}
   Es sei $R$ ein Ring und $F$ ein freier $R$-Modul mit Basis $(b_i)_{i \in I}$.
   Zeigen Sie, dass es für jeden $R$-Modul $M$ und jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$ einen eindeutigen Homomorphismus von $R$-Moduln $\varphi \colon F \to M$ gibt, so dass $\varphi(b_i) = m_i$ für alle $i \in I$ gilt.
 \end{question}
