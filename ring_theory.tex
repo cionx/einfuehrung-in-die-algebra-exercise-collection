@@ -646,12 +646,28 @@
     \item
       Zeigen Sie, dass die Abbildung $\sigma \colon R \to R$, $x \mapsto x^p$ ein Ringhomomorphismus ist.
     \item
-      Zeigen Sie, dass $\sigma$ ein Automorphismus ist, falls $R$ endlich ist.
+      Zeigen Sie, dass $\sigma$ ein Automorphismus ist, falls $R$ ein endlicher Körper ist.
   \end{enumerate}
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $\sigma(1) = 1^p = 1$ und $\sigma(xy) = (xy)^p = x^p y^p = \sigma(x) \sigma(y)$ für alle $x, y \in R$.
+      Es bleibt also nur zu zeigen, dass $\sigma$ additiv ist.
+      Für alle $x, y \in R$ gilt
+      \begin{equation}
+        \label{equation: Frobenis homomorphism without cancelation}
+        \sigma(x+y) = (x+y)^p = \sum_{k=0}^p \binom{p}{k} x^k y^{p-k}
+      \end{equation}
+      Für alle $k = 1, \dotsc, p-1$ gilt dabei $p \mid \binom{p}{k}$, denn in dem Ausdruck $\binom{p}{k} = p!/(k!(p-k)!)$ enthält dann zwar der Zähler $p$ als Primfaktor, der Nenner aber nicht, da $k, p-k < p$.
+      Folglich vereinfacht sich \eqref{equation: Frobenis homomorphism without cancelation} zu $\sigma(x+y) = x^p + y^p = \sigma(x) + \sigma(y)$.
+    \item
+      Es gilt $\ker \sigma = 0$, denn für $x \in R$ mit $x^p = \sigma(x) = 0$ gilt wegen der Nullteilerfreiheit von $R$ bereits, dass $x = 0$.
+      Also ist $\sigma$ injektiv, und wegen der Endlichkeit von $R$ damit auch schon bijektiv.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
