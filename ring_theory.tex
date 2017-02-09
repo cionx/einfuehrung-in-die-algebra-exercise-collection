@@ -250,6 +250,7 @@
 
 
 \begin{question}
+  \label{question: unit group of quotients}
   \begin{enumerate}
     \item
       Zeigen Sie für $n \in \Integer$, dass $\overline{q} \in \Integer/n$ genau dann eine Einheit ist, wenn $n$ und $q$ teilerfremd sind.
@@ -584,7 +585,7 @@
   \]
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $\varphi(n) = |(\Integer/n)^\times|$ für alle $n \geq 1$.
+      Zeigen Sie, dass $\varphi(n) = | (\Integer/n)^\times |$ für alle $n \geq 1$.
     \item
       Folgern Sie, dass $\varphi(n_1 n_2) = \varphi(n_1) \varphi(n_2)$ für je zwei teilerfremde $n_1, n_2 \geq 1$.
     \item
@@ -595,7 +596,48 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Elemente $1, \dotsc, n$ bilden ein Repräsentantensystem der Restklassen von $\Integer/n$, für $k \in \{1, \dotsc, n\}$ ist $\overline{k} \in \Integer/n$ genau dann eine Einheit, wenn $k$ und $n$ teilerfremd sind (siehe Übung~\ref{question: unit group of quotients}).
+    \item
+      Nach dem Chinesischen Restklassensatz gilt $\Integer/(n_1 n_2) \cong \Integer/n_1 \times \Integer/n_2$.
+      Somit gilt
+      \begin{align*}
+            \varphi(n_1 n_2)
+        &=  | (\Integer/(n_1 n_2))^\times |
+         =  | (\Integer/n_1 \times \Integer/n_2)^\times |
+        \\
+        &=  | (\Integer/n_1)^\times \times (\Integer/n_2)^\times |
+         =  | (\Integer/n_1)^\times | | (\Integer/n_2)^\times |
+         =  \varphi(n_1) \varphi(n_2).
+      \end{align*}
+    \item
+      Es ist $\{0, \dotsc, p^r - 1\}$ ein Repräsentantensystem der Restklassen von $\Integer/p^r$.
+      Eine Zahl $k \in \{0, \dotsc, p^r - 1\}$ ist genau dann teilerfremd so $p^r$, wenn sie kein Vielfaches von $p$ ist.
+      Da jede $p$-te Zahl aus dieser Menge ein Vielfaches von $p$ ist, gibt es $p^r/p = p^{r-1}$ viele Vielfache von $p$ in diesem Repräsentantensystem.
+      Somit sind $p^r - p^{r-1}$ viele Repräsentanten kein Vielfaches von $p$, also teilerfremd zu $p$.
+    \item
+      Es gelten
+      \begin{align*}
+            \varphi(42)
+        &=  \varphi(2 \cdot 3 \cdot 7)
+         =  \varphi(2) \varphi(3) \varphi(7)
+         =  (2 - 1)(3 - 1)(7 - 1)
+         =  12,
+        \\
+            \varphi(57)
+        &=  \varphi(3 \cdot 19)
+         =  (3 - 1)(19 - 1)
+         =  36,
+        \\
+            \varphi(144)
+        &=  \varphi(2^4 \cdot 3^2)
+         =  (16 - 8) (9 - 3)
+         =  48.
+      \end{align*}
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}[subtitle = Der Frobeniushomomorphismus]
