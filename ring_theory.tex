@@ -81,6 +81,7 @@
 
 
 \begin{question}[subtitle = Urbilder von Idealen]
+  \label{question: preimages of ideals}
   Es seien $R$ und $S$ zwei kommutative Ringe und $\phi \colon R \to S$ ein Ringhomomorphismus.
   \begin{enumerate}
     \item
@@ -142,7 +143,50 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für jedes Ideal $K \subseteq R/I$ ist das Urbild $\pi^{-1}(K) \subseteq R$ ebenfalls ein Ideal, denn Urbilder von Idealen unter Ringhomomorphismen sind ebenfalls Ideale (siehe Übung~\ref{question: preimages of ideals}).
+      Aus $0 \subseteq K$ ergibt sich, dass dabei $I = \ker \pi = \pi^{-1}(0) \subseteq \pi^{-1}(K)$.
+      
+      Wegen der Surjektivität von $\pi$ ist für jedes Ideal $J \subseteq R$ auch $\pi(J) \subseteq R/I$ ein Ideal:
+      Für $\overline{x}, \overline{y} \in \pi(J)$ kann $x, y \in J$ gewählt werden;
+      dann ist auch $x + y \in J$ und somit $\overline{x} + \overline{y} = \overline{x + y} \in \pi(J)$.
+      Für $\overline{x} \in \pi(J)$ und $\overline{r} \in R/I$ kann $x \in J$ gewählt werden;
+      dann ist auch $r x \in J$ und somit $\overline{r} \overline{x} = \overline{r x} \in \pi(J)$.
+      
+      Das zeigt, dass die beiden Abbildungen wohldefiniert sind.
+      
+      Wegen der Surjektivität von $\pi$ gilt $\pi(\pi^{-1}(K)) = K$ für jede Teilmenge $K \subseteq R/I$, inbesondere also für die Ideale.
+      
+      Für jedes Ideal $J \subseteq R$ gilt $\pi^{-1}(\pi(J)) = J + I$:
+      Es gilt $J \subseteq \pi^{-1}(\pi(J)) \subseteq J$ und wie bereits gezeigt auch $I \subseteq \pi^{-1}(\pi(J))$, und somit $I + J \subseteq \pi^{-1}(\pi(J))$.
+      Ist andererseits $x \in \pi^{-1}(\pi(J))$, so gibt es $d \in J$ mit $\overline{x} = \overline{y}$.
+      Dann ist $\overline{x-y} = \overline{x} - \overline{y} = 0$, somit $x - y \in I$ und deshalb $x = (x-y) + y \in I + J$.
+      Gilt bereits $I \subseteq J$, so ist $I + J = J$ und somit $\pi^{-1}(\pi(J)) = J$.
+      
+      Das zeigt, dass beide Abbildungen invers zueinander sind.
+    \item
+      Wir bemerken zunächst, dass
+      \[
+          \pi(J)
+        = \{ \overline{x} \mid x \in J \}
+        = \{ x + I \mid x \in J \}
+        = J/I
+      \]
+      für jedes Ideal $J \subseteq R$ mit $J \supseteq I$.
+      Inbsbesondere gilt deshalb nach dem dritten Isomorphiesatz, dass $R/J \cong (R/I)/(J/I) \cong (R/I)/\pi(J)$.
+      Es gilt somit
+      \begin{align*}
+              \text{$J$ ist prim}
+        &\iff \text{$R/J$ ist ein Integritätsbereich}
+        \\
+        &\iff \text{$(R/I)/\pi(J)$ ist ein Integritätsbereich}
+         \iff \text{$\pi(J)$ ist prim}.
+      \end{align*}
+      Die Aussage für maximale Ideale ergibt sich analog, indem man \emph{prim} durch \emph{maximal} und \emph{Integritätsbereich} durch \emph{Körper} ersetzt.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
