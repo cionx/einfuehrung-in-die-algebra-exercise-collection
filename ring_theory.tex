@@ -766,9 +766,6 @@
 \end{solution}
 
 
-% TODO: Adding a solution.
-
-
 \begin{question}
   \label{question: fields are the only rings for which the polynomial ring is a pid}
   Es sei $K$ ein kommutativer Ring, so dass $K[X]$ ein Hauptidealring ist.
@@ -854,18 +851,33 @@
 
 
 \begin{question}
-  Es sei $R$ ein Hauptidealring und $(a_i)_{i \in I}$ eine Familie von Elementen $a_i \in R$.
+  Es sei $R$ ein kommutativer Ring, $(a_i)_{i \in I}$ eine Familie von Elementen $a_i \in R$ und $a \in R$.
   \begin{enumerate}
     \item
-      Es sei $a$ ein größter gemeinsamer Teiler der $a_i$.
-      Zeigen Sie, dass $(a_i \mid i \in I) = (a)$.
+      Zeigen Sie, dass $a$ ein größter gemeinsamer Teiler der $a_i$ ist, falls $(a_i \mid i \in I) = (a)$.
     \item
-      Entscheiden Sie, ob die obige Gleicheit auch dann noch gilt, wenn $R$ nur ein faktorieller Ring ist.
+      Entscheiden Sie, ob auch die Umkehrung der obigen Aussage gilt.
   \end{enumerate}
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{question}
+  \begin{enumerate}
+    \item
+      Es ist $a$ ein gemeinsamer Teiler der $a_i$, denn es gilt
+      \[
+              (a_i \mid i \in I) \subseteq (a)
+        \iff  \forall i \in I: a_i \in (a)
+        \iff  \forall i \in I: a \mid a_i.
+      \]
+      Da außerdem $a \in (a) \subseteq (a_i \mid i \in I)$ gilt, ergibt sich $a = \sum_{i \in I} r_i a_i$ für passende $r_i \in R$ mit $r_i = 0$ für fast alle $i \in I$.
+      Für jeden gemeinsamen Teiler $b \in R$ der $a_i$ gilt deshalb auch $b \mid a$.
+      Somit ist $a$ bereits ein größter gemeinsamer Teiler der $a_i$.
+    \item
+      Die Umkehrung gilt im Allgemeinen nicht:
+      Ist etwa $K$ ein Körper, so ist $1$ ein größter gemeinsamer Teiler von $X, Y \in K[X, Y]$, aber $(X, Y) \subsetneq (1)$.
+  \end{enumerate}
+\end{question}
 
 
 \begin{question}[subtitle = Euklid]
