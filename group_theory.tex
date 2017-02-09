@@ -139,6 +139,8 @@
     \item
       Definieren Sie die Bahn $G.x$ und den Stabilisator $G_x$ eines Elementes $x \in X$.
     \item
+      Zeigen Sie, dass $G_x$ für alle $x \in X$ eine Untergruppe von $G$ ist.
+    \item
       Konstruieren Sie für jedes $x \in X$ eine Bijektion $G/G_x \to G.x$.
     \item
       Es seien $x, y \in X$ zwei Elemente mit gleicher $G$-Bahn.
@@ -151,7 +153,56 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $G.x = \{g.x \mid g \in G\}$, der Stabilisator von $x$ ist $G_x = \{g \in G \mid g.x = x\}$.
+    \item
+      Es gilt $1 \in G_x$ da $1.x = x$.
+      Für $g_1, g_2 \in G_x$ gilt $(g_1 g_2).x = g_1.(g_2.x) = g_1.x = x$ und somit auch $g_1 g_2 \in G_x$.
+      Für $g \in G$ gilt $g^{-1}.x = g^{-1}.(g.x) = (g^{-1}.g).x = 1.x = x$ und somit auch $g^{-1} \in G_x$.
+      Ingesamt zeigt dies, dass $G_x$ ein Untergruppe von $G$ ist.
+    \item
+      Die Abbildung $f \colon G \to G.x$, $g \mapsto g.x$ ist surjektiv, und für $g_1, g_2 \in G$ gilt
+      \begin{align*}
+              f(g_1) = f(g_2)
+        &\iff g_1.x = g_2.x
+        \iff  g_2^{-1}.g_1.x = x
+        \\
+        &\iff (g_2^{-1} g_1).x = x
+        \iff  g_2^{-1} g_1 \in G_x
+        \iff  g_1 G_x = g_2 G_x,
+      \end{align*}
+      weshalb $f$ durch eine wohldefinierte Bijektion $\overline{f} \colon G/G_x \to G.x$, $\overline{g} \mapsto g.x$ faktorisiert.
+    \item
+      Haben $x$ und $y$ die Gleiche $G$-Bahn, so gibt es $g \in G$ mit $y = g^{-1}.x$.
+      Für alle $h \in G$ gilt dann
+      \begin{align*}
+              h \in G_y
+        &\iff h.y = y
+        \iff  h.g^{-1}.x = g^{-1}.x
+        \\
+        &\iff g.h.g^{-1}.x = x
+        \iff  (g h g^{-1}).x = x
+        \iff  g h g^{-1} \in G_x.
+      \end{align*}
+      Wegen der Bijektivität der Konjugationsabbildung $G \to G$, $h \mapsto ghg^{-1}$ folgt, dass $g G_y g^{-1} = G_x$.
+    \item
+      Die Umkehrung gilt nicht:
+      Gilt etwa $G = 1$, so gilt $G_x = G$ für alle $x \in X$, aber alle Bahnen sind einelementig.
+      Für $|X| \geq 2$ ergibt dies ein Gegenbeispiel.
+      
+      Allgemeiner kann man eine beliebige Gruppe $G$ auf einer Menge $X$ mit $|X| \geq 2$ trivial wirken lassen, d.h.\ es gelte $g.x = x$ für alle $g \in G$ und $x \in X$.
+      Dann gilt $G_x = G$ für alle $x \in X$ aber alle Bahnen sind einelementig.
+    \item
+      Es genügt zu zeigen, dass $x \sim y \iff x \in G.y$ eine Äquivalenzrelation auf $X$ definiert, denn dann sind die $G$-Bahnen genau die Äquivalenzklassen von ${\sim}$.
+      Da $x = 1.x \in G.x$ ist die Relation reflexiv.
+      Gilt $x \sim y$ so gibt es $g \in G$ mit $x = g.x$;
+      dann gilt auch $y = g^{-1}.x \in G.x$ und somit $y \sim x$.
+      Für $x, y, z \in X$ mit $x \sim y$ und $y \sim z$ gibt es $g, h \in G$ mit $x = g.y$ und $y = h.z$;
+      dann gilt auch $x = g.y = g.h.z = (gh).z \in G.z$ und somit $x \sim z$.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
