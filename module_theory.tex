@@ -539,17 +539,38 @@
 
 \begin{question}
   Es sei $R$ ein Ring und $\{ N_i \xrightarrow{f_i} M_i \xrightarrow{g_i} P_i \}_{i \in I}$ eine Familie von exakten Sequenzen von $R$-Moduln.
-  Zeigen Sie, dass auch die Sequenz
-  \[
-                                  \bigoplus_{i \in I} N_i
-    \xrightarrow{(f_i)_{i \in I}} \bigoplus_{i \in I} M_i
-    \xrightarrow{(g_i)_{i \in I}} \bigoplus_{i \in I} P_i
-  \]
-  exakt ist.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass auch die induzierte Sequenz
+      \[
+                            \prod_{i \in I} N_i
+        \xlongrightarrow{f} \prod_{i \in I} M_i
+        \xlongrightarrow{g} \prod_{i \in I} P_i
+      \]
+      exakt ist, wobei $f$ und $g$ durch $f((n_i)_{i \in I}) = (f(n_i))_{i \in I}$ für alle $(n_i)_{i \in I} \in \prod_{i \in I} N_i$ und $g((m_i)) = (g(m_i))_{i \in I}$ für alle $(m_i)_{i \in I} \in \prod_{i \in I} M_i$ gegeben sind.
+    \item
+      Entscheiden Sie, ob die Aussage auch gilt, wenn man das Produkt $\prod_{i \in I}$ jeweils durch die direkte Summe $\bigoplus_{i \in I}$ ersetzt.
+  \end{enumerate}
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $g \circ f = (g_i)_{i \in I} \circ (f_i)_{i \in I} = (g_i \circ f_i)_{i \in I} = 0$, da $g_i \circ f_i = 0$ für alle $i \in I$.
+      Also ist $\im f \subseteq \ker g$.
+      
+      Ist andererseits $(m_i)_{i \in I} \in \ker g$, so gilt $0 = g((m_i)_{i \in i}) = (g(m_i))_{i \in I}$, also $g(m_i) = 0$ für alle $i \in I$.
+      Dann ist $m_i \in \ker g_i = \im f_i$ für alle $i \in I$, weshalb es für jedes $i \in I$ ein $n_i \in N_i$ mit $f_i(n_i) = m_i$ gibt.
+      Für $n \coloneqq (n_i)_{i \in I} \in \prod_{i \in I} N_i$ gilt dann $f(n) = f((n_i)_{i \in I}) = (f(n_i))_{i \in I} = (m_i)_{i \in I} = m$, weshalb $m \in \im f$.
+      Das zeigt, dass $\ker g \subseteq \im f$.
+    \item
+      Die Aussage gilt auch weiterhin.
+      Der obige Beweis muss nur bei der Wahl der $n_i$ etwas angepasst werden:
+      Damit $(n_i) \in \bigoplus_{i \in I} N_i$ gilt, muss $n_i = 0$ für fast alle $i \in I$ gelten.
+      Da aber ohnehin $m_i = 0$ für fast alle $i \in I$ gilt, lassen sich fast alle $n_i$ als $0$ wählen.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
