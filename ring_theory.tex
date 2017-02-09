@@ -1212,7 +1212,27 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Die Eindeutigkeit ist klar, und es gilt nur die Existenz zu zeigen:
+  Für jedes $i = 1, \dotsc, n$ sei $\pi_i \colon R_1 \times \dotsb \times R_n \to R_i$, $(x_1, \dotsc, x_n) \mapsto x_i$ die kanonische Projektion.
+  Für jedes $i = 1, \dotsc, n$ sei außerdem $e_i = (0, \dotsc, 0, 1, 0, \dotsc, 0) \in R_1 \times \dotsb \times R_n$ das Element, dessen $i$-ter Eintrag $1$ ist, und dessen Einträge sonst alle $0$ sind.
+  Für alle $i = 1, \dotsc, n$ sei $\aideal_i \coloneqq \pi_i(\aideal)$.
+  
+  Es gilt $\aideal \subseteq \aideal_1 \times \dotsb \times \aideal_n$, denn für jedes $(x_1, \dotsc, x_n) \in \aideal$ gilt $x_i = \pi(x) \in \aideal_i$ für alle $i = 1, \dotsc, n$ und somit $x \in \aideal_1 \times \dotsb \times \aideal_n$.
+  
+  Ist andererseits $x = (x_1, \dotsc, x_n) \in \aideal_1 \times \dotsb \times \aideal_n$, so ist $x_i \in \aideal_i$ für alle $i = 1, \dotsc, n$.
+  Für alle $i = 1, \dotsc, n$ gibt es deshalb ein $y^{(i)} = (y^{(i)}_1, \dotsc, y^{(i)}_n) \in \aideal$ mit $\pi_i(y^{(i)}) = x_i$, also $y^{(i)}_i = x_i$.
+  Es folgt, dass
+  \begin{align*}
+        x
+    &=  (x_1, \dotsc, x_n)
+     =  \sum_{i=1}^n \underbrace{(0, \dotsc, 0, x_i, 0, \dotsc, 0)}_{\text{$x_i$ an $i$-ter Stelle}}
+    \\
+    &=  \sum_{i=1}^n e_i \left( y^{(i)}_1, \dotsc, y^{(i)}_{i-1}, x_i, y^{(i)}_{i+1}, \dotsc, y^{(i)}_n \right)
+     =  \sum_{i=1}^n e_i y^{(i)}
+    \in \aideal.
+  \end{align*}
+\end{solution}
 
 
 \begin{remark*}
