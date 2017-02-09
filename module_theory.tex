@@ -145,6 +145,7 @@
 
 
 \begin{question}
+  \label{question: restriction of a short exact sequence to a submodule of its middle term}
   Es sei $R$ ein Ring und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ ein kurze exakte Sequenz von $R$-Moduln und $M' \subseteq M$ ein Untermodul.
   Zeigen sie, dass auch
   \[
@@ -196,11 +197,26 @@
     \label{equation: restrition of shor exact sequence}
     0 \to i^{-1}(F') \xrightarrow{i'} F' \xrightarrow{p'} p(F') \to 0
   \end{equation}
-  ein, wobei $i'$ und $p'$ die entsprechenden Einschränkungen von $i$ und $p$ bezeichnen.
+  ein, wobei $i'$ und $p'$ die entsprechenden Einschränkungen von $i$ und $p$ bezeichnen (siehe Übung~\ref{question: restriction of a short exact sequence to a submodule of its middle term}).
   Dabei sind $i^{-1}(F') \subseteq R^{n-1}$ und $p(F') \subseteq R$ Untermoduln, und somit nach Induktionsannahme frei vom Rang $\leq n-1$ und $\leq 1$.
   Da $p(F')$ frei ist, spaltet die Sequenz \eqref{equation: restrition of shor exact sequence};
   inbesondere ist deshalb $F' \cong i^{-1}(F') \oplus p(F')$.
   Somit ist $F'$ frei von Rang $\leq n-1 + 1 = n$.
+\end{solution}
+
+
+\begin{question}
+  Es sei $R$ ein Hauptidealring und $M$ ein endlich erzeugter $R$-Modul.
+  Zeigen Sie, dass auch jeder Untermodul $N \subseteq M$ endlich erzeugt ist.
+\end{question}
+
+
+\begin{solution}
+  Es sei $m_1, \dotsc, m_t \in M$ ein endliches Erzeugendensystem und $\varphi \colon R^t \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $\varphi(e_i) = m_i$ für alle $i = 1, \dotsc, t$ (hier bezeichnet $e_1, \dotsc, e_t \in R^t$ die Standardbasis).
+  Dann ist $\varphi$ surjektiv, und deshalb $F \coloneqq \varphi^{-1}(N)$ ein Untermodul von $R^t$, für den $\varphi(F) = N$ gilt.
+  Der $R$-Modul $R^t$ ist frei vom Rang $t$; da $R$ ein Hauptidealring ist, folgt daraus, dass der Untermodul $F \subseteq R^t$ frei vom Rang $s \leq t$ ist (siehe Übung~\ref{question: submodules of free modules over pid are also free}).
+  Insbesondere ist $F$ endlich erzeugt.
+  Somit ist auch $N = \varphi(F)$ endlich erzeugt.
 \end{solution}
 
 
@@ -259,21 +275,6 @@
         = r_1 m_1 + \dotsb + r_s m_s + r_{s+1} m_{s+1} + \dotsb + r_t m_t.
       \]
   \end{enumerate}
-\end{solution}
-
-
-\begin{question}
-  Es sei $R$ ein Hauptidealring und $M$ ein endlich erzeugter $R$-Modul.
-  Zeigen Sie, dass auch jeder Untermodul $N \subseteq M$ endlich erzeugt ist.
-\end{question}
-
-
-\begin{solution}
-  Es sei $m_1, \dotsc, m_t \in M$ ein endliches Erzeugendensystem und $\varphi \colon R^t \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $\varphi(e_i) = m_i$ für alle $i = 1, \dotsc, t$ (hier bezeichnet $e_1, \dotsc, e_t \in R^t$ die Standardbasis).
-  Dann ist $\varphi$ surjektiv, und deshalb $F \coloneqq \varphi^{-1}(N)$ ein Untermodul von $R^t$, für den $\varphi(F) = N$ gilt.
-  Der $R$-Modul $R^t$ ist frei vom Rang $t$; da $R$ ein Hauptidealring ist, folgt daraus, dass der Untermodul $F \subseteq R^t$ frei vom Rang $s \leq t$ ist.
-  Insbesondere ist $F$ endlich erzeugt.
-  Somit ist auch $N = \varphi(F)$ endlich erzeugt.
 \end{solution}
 
 
@@ -456,7 +457,7 @@
         \label{equation: restriction of short exact sequence to a submodule}
         0 \to f^{-1}(M') \xrightarrow{f'} M' \xrightarrow{g'} g(M') \to 0
       \end{equation}
-      ein, wobei $f'$ und $g'$ die entsprechenden Einschränkungen von $f$ und $g$ bezeichnen.
+      ein, wobei $f'$ und $g'$ die entsprechenden Einschränkungen von $f$ und $g$ bezeichnen (siehe Übung~\ref{question: restriction of a short exact sequence to a submodule of its middle term}).
       Nach Annahme sind die Untermoduln $f^{-1}(M') \subseteq N$ und $g(M') \subseteq P$ endlich erzeugt.
       In \eqref{equation: restriction of short exact sequence to a submodule} sind also die beiden äußeren Terme endlich erzeugt;
       somit ist auch der mittlere Term, also $M'$, endlich erzeugt (siehe Übung~\ref{question: finitely generated in short exact sequences}).
