@@ -244,12 +244,7 @@
 \begin{question}[subtitle = Multiple Choice]
   \begin{enumerate}
     \item
-      Für jeden Körper $K$ und jedes $n \geq 1$ ist $\{x \in K \mid x^n = 1\}$ eine zyklische Untergruppe von $K^\times$.
-    \item
-      Es sei $G$ eine Gruppe.
-      Sind $K \subseteq N \subseteq G$ Untergruppen, so dass $N$ normal in $G$, und $K$ normal in $N$ ist, so ist $K$ bereits normal in $G$.
-      (Mit anderen Worten:
-       Normalität ist transitiv.)
+      Für jeden Körper $K$ und jedes $n \geq 1$ ist $C_n(K) \coloneqq \{x \in K \mid x^n = 1\}$ eine zyklische Untergruppe von $K^\times$.
   \end{enumerate}
 \end{question}
 
@@ -258,10 +253,10 @@
   \begin{enumerate}
     \item
       Die Aussage ist wahr:
-      % TODO: Adding a more detailed solution.
-    \item
-      Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
+      Dass $C_n(K)$ eine Untergruppe von $K^\times$ ist, ergibt sich durch direktes Nachrechnen;
+      alternativ erkennt man, dass die Abbildung $K^\times \to K^\times$, $x \mapsto x^n$ ein Gruppenhomomorphismus ist, und $C_n(K)$ ihr Kern ist.
+      Die Gruppe $C_n(K)$ ist endlich, da sie die Nullstellenmenge des Polynoms $X^n - 1 \in K[X]$ ist.
+      Als endliche Untergruppe der multiplikativen Gruppe eines Körpers ist $C_n(K)$ zyklisch.
   \end{enumerate}
 \end{solution}
 
