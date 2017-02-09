@@ -64,30 +64,73 @@
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass für jedes $g \in G$ die Abbildung
-      \[
-                c_g
-        \colon  G \to G,
-        \quad   h \mapsto ghg^{-1}
-      \]
-      ein Gruppenautomorphismus ist.
+      Zeigen Sie, dass für jedes $g \in G$ die Abbildung $c_g \colon G \to G$, $h \mapsto g h g^{-1}$ ein Gruppenautomorphismus ist.
+    \item
+      Zeigen Sie, dass die Abbildung $c \colon G \to G$, $g \mapsto c_g$ ein Gruppenhomomorphismus ist.
     \item
       Zeigen Sie, dass $\ker c = \Center(G)$.
     \item
-      Zeigen Sie, dass die Abbildung
-      \[
-                c
-        \colon  G \to \Aut G,
-        \quad   g \mapsto c_g
-      \]
-      ein Gruppenhomomorphismus ist.
-    \item
-      Zeigen Sie, dass $\im c$ eine normale Untergruppe von $\Aut G$ ist.
+      Zeigen Sie, dass $\Inner G \coloneqq \im c$ eine normale Untergruppe von $\Aut G$ ist.
   \end{enumerate}
+  Man bezeichnet $\Inner G$ als die Gruppe der \emph{inneren Automorphismen} von $G$.
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für alle $h_1, h_2 \in G$ gilt
+      \[
+          c_g(h_1 h_2)
+        = g h_1 h_2 g^{-1}
+        = g h_1 g^{-1} g h_2 g^{-1}
+        = c_g(h_1) c_g(h_2),
+      \]
+      also ist $c_g$ ein Gruppenhomomorphismus.
+      Für alle $h \in G$ gilt
+      \[
+          c_g( c_{g^{-1}}(h) )
+        = g g^{-1} h g g^{-1}
+        = h
+        = g^{-1} g h g^{-1} g
+        = c_{g^{-1}}( c_g(h) ),
+      \]
+      also ist $c_g$ bijektiv mit $c_g^{-1} = c_{g^{-1}}$.
+    \item
+      Für alle $g_1, g_2 \in G$ gilt
+      \[
+          c_{g_1 g_2}(h)
+        = (g_1 g_2) h (g_1 g_2)^{-1}
+        = g_1 g_2 h g_2^{-1} g_1^{-1}
+        = c_{g_1}( c_{g_2}(h) )
+        \qquad
+        \text{für alle $h \in G$}
+      \]
+      und somit $c_{g_1 g_2} = c_{g_1} c_{g_2}$.
+    \item
+      Für $g \in G$ gilt
+      \begin{align*}
+              g \in \ker c
+        &\iff c_g = \id_G
+         \iff \forall h \in G: c_g(h) = h
+        \\
+        &\iff \forall h \in G: ghg^{-1} = h
+         \iff \forall h \in G: gh = hg
+         \iff g \in \Center(G).
+      \end{align*}
+    \item
+      Da $c$ ein Gruppenhomomorphismus ist, ist $\Inner G$ ein Untergruppe von $\Aut G$.
+      Für jedes $\phi \in \Aut G$ und jedes $g \in G$ gilt $\phi c_g \phi^{-1} = c_{\phi(g)}$, denn für alle $h \in G$ gilt
+      \[
+        (\phi c_g \phi^{-1})(h)
+        = \phi( c_g( \phi^{-1}(h) ) )
+        = \phi(g \phi^{-1}(h) g^{-1})
+        = \phi(g) h \phi(g)^{-1}
+        = c_{\phi(g)}(h).
+      \]
+      Folglich ist $\phi \, {\Inner G} \, \phi^{-1} \subseteq \im c$ für alle $\phi \in \Aut G$, also $\im c$ normal in $\Aut G$.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
