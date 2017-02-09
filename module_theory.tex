@@ -599,7 +599,7 @@
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
     \item
-      Zeigen Sie für jedes Ideal $I \subseteq R$ die Gleichheit $\annihilator(A/I) = I$.
+      Zeigen Sie für jedes Ideal $I \subseteq R$ die Gleichheit $\annihilator(R/I) = I$.
     \item
       Zeigen Sie für jeden freien $R$-Modul $F$ mit $F \neq 0$, dass $\annihilator(F) = 0$.
     \item
@@ -608,7 +608,24 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für alle $x \in I$ und $\overline{y} \in R/I$ gilt $xy \in I$ und somit $\overline{x} \overline{y} = \overline{xy} = 0$.
+      Deshalb gilt $I \subseteq \annihilator(R/I)$.
+      Für jedes $x \in \annihilator(R/I)$ gilt $0 = x \cdot \overline{1} = \overline{x}$ und somit $x \in I$.
+      Deshalb ist auch $\annihilator(R/I) \subseteq I$.
+    \item
+      Da $F$ frei ist, besitzt $F$ eine Basis; da $F \neq 0$ gilt, ist diese nicht leer.
+      Es gibt daher ein Element $m \in F$, so dass $\{m\} \subseteq F$ linear unabhängig ist.
+      Dann gilt $xm \neq 0$ für alle $x \in R$ mit $x \neq 0$, und deshalb $x \notin \annihilator(F)$.
+    \item
+      Ist $R$ ein Körper, so besitzt jeder endlich erzeugte erzugte $R$-Modul, also endlicher erzeugte $R$-Vektorraum, bekanntermaßen eine Basis.
+      Ist andererseits $R$ kein Körper, so gibt es ein Ideal $I \subseteq R$ mit $I \neq 0, R$ (siehe Übung~\ref{question: characterization of fields via its ideals}).
+      Dann ist $M \coloneqq R/I$ ein endlich erzeugter $R$-Modul mit $M \neq 0$ (da $I \neq R$) sowie $\annihilator(R/I) = I \neq 0$.
+      Nach dem vorherigen Aufgabenteil ist $M$ nicht frei.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
