@@ -890,11 +890,30 @@
 
 \begin{question}
   Es sei $R$ ein Ring und $I \subseteq R$ ein echtes Ideal.
-  Zeigen Sie, dass es ein maximales Ideal $\mideal \subseteq R$ gibt, so dass $I \subseteq \mideal$.
+  Zeigen Sie mithilfe des Lemmas von Zorn, dass es ein maximales Ideal $\mideal \subsetneq R$ gibt, so dass $I \subseteq \mideal$.
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Es sei
+  \[
+              \mathcal{I}
+    \coloneqq \{J \subsetneq R \mid \text{$J$ ist ein echtes Ideal mit $I \subseteq J$}\}.
+  \]
+  Die Menge $\mathcal{I}$ ist nicht leer, da sie $I$ enthält.
+  Bezüglich der üblichen Teilmengeninklusion $\subseteq$ ist $\mathcal{I}$ partiell geordnet.
+  
+  Ist $\mathcal{K} \subseteq \mathcal{I}$ eine nicht-leere Kette, so ist auch $K \coloneqq \bigcup \mathcal{K} = \bigcup_{J \in \mathcal{K}} J$ wieder ein Ideal in $R$, und es gilt $I \subseteq K$.
+  Da alle $J \in \mathcal{K}$ echte Ideale sind, gilt $1 \notin J$ für alle $J \in \mathcal{K}$;
+  somit gilt auch $1 \notin K$, weshalb $K$ ein echtes Ideal in $R$ ist.
+  Ingesamt ist also $K \in \mathcal{I}$, und da $J \subseteq K$ für alle $J \in \mathcal{K}$ gilt, ist $K$ eine obere Schranke für $\mathcal{K}$ in $\mathcal{I}$.
+  
+  Nach dem Lemma von Zorn besitzt nun $\mathcal{I}$ ein maximales Element $\mideal \in \mathcal{I}$;
+  inbesondere ist $\mideal$ ein echtes Ideal in $R$ mit $I \subseteq \mideal$.
+  Wäre $\mideal$ kein maximales Ideal in $R$, so gebe es ein echtes Ideal $\mideal' \subsetneq R$ mit $\mideal \subsetneq \mideal'$.
+  Dann wäre aber $I \subseteq \mideal \subsetneq \mideal'$ und somit $\mideal' \in \mathcal{I}$. Da $\mideal \subsetneq \mideal'$ stünde dies im Widerspruch zur Maximalität von $\mideal$ in $\mathcal{I}$.
+  Also muss $\mideal$ bereits ein maximales Ideal in $R$ sein.
+\end{solution}
 
 
 \begin{question}
