@@ -145,6 +145,26 @@
 
 
 \begin{question}
+  Es sei $R$ ein Ring und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ ein kurze exakte Sequenz von $R$-Moduln und $M' \subseteq M$ ein Untermodul.
+  Zeigen sie, dass auch
+  \[
+    0 \to f^{-1}(M') \xrightarrow{f'} M' \xrightarrow{g'} g(M') \to 0
+  \]
+  eine kurze exakte Sequenz ist, wobei $f' \colon f^{-1}(M') \to M'$, $m \mapsto f(m)$ und $g' \colon M' \to g(M')$, $m \mapsto g(m)$ die entsprechenden Einschränkungen von $f$ und $g$ bezeichnen.
+\end{question}
+
+
+\begin{solution}
+  Es ist klar, dass $f'$ und $g'$ wohldefinierte Homomorphismen sind.
+  Die Injektivität von $f'$ folgt aus der von $f$, und die Surjektivität von $g'$ aus $\im g' = g'(M') = g(M')$.
+  Da $g \circ f = 0$ gilt, gilt auch $g' \circ f' = 0$, also $\im f' \subseteq \ker g'$.
+  Ist andererseits $m \in \ker g'$, so gilt $m \in \ker g = \im f$, weshalb es $n \in N$ mit $f(n) = m$ gibt.
+  Dabei gilt bereits $n \in f^{-1}(M')$, da ja $f(n) = m \in M'$, und somit $m = f(n) = f'(n) \in \im f'$.
+  Das zeigt, dass auch $\ker g' \subseteq \im f'$.
+\end{solution}
+
+
+\begin{question}
   \label{question: submodules of free modules over pid are also free}
   Es sei $R$ ein Hauptidealring und $F$ ein freier $R$-Modul mit endlichen Rang $n \geq 0$.
   Es sei $F' \subseteq F$ ein Untermodul.
