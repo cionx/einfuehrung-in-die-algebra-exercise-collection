@@ -1153,7 +1153,56 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für jedes $i = 1, \dotsc, n$ sei $\pi_i \colon R_i \to R_i/\aideal_i$, $x \mapsto \overline{x}$ die kanonische Projektion.
+      Es ist
+      \[
+        R_1 \times \dotsb \times R_n
+        \xrightarrow{\pi \coloneqq \pi_1 \times \dotsb \times \pi_n}
+        (R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)
+      \]
+      ein Ringhomomorphismus mit $\ker \pi = (\ker \pi_1) \times \dotsb \times (\ker \pi_n) = \aideal_1 \times \dotsb \times \aideal_n$.
+      Inbesondere ist deshalb $\aideal_1 \times \dotsb \times \aideal_n$ ein Ideal in $R_1 \times \dotsb \times R_n$.
+    \item
+      Da die $\pi_i$ surjektiv sind, ist es auch $\pi$.
+      Da $\ker \pi = \aideal_1 \times \dotsb \times \aideal_n$ gilt, induziert $\pi$ also einen Isomorphismus
+      \begin{align*}
+                \overline{\pi}
+        \colon  (R_1 \times \dotsb \times R_n)/(\aideal_1 \times \dotsb \times \aideal_n)
+        &\to    (R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n),
+        \\
+                  \overline{(x_1, \dotsc, x_n)}
+        &\mapsto  (\overline{x_1}, \dotsc, \overline{x_n}).
+      \end{align*}
+    \item
+      Ist $\aideal_i \neq R_i$ und $\aideal_j \neq R_j$ für $i \neq j$, so sind in dem Produkt $(R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)$ mindestens zwei Faktoren nicht trivial, und der Ring somit nicht nullteilerfrei.
+      Es genügt daher, sich auf den Fall einzuschränken, dass $\aideal_i = R_i$ für alle $i = 1, \dotsc, n$ bis auf ein $1 \leq j \leq n$.
+      Dann gilt
+      \begin{gather*}
+        \begin{aligned}
+                  (R_1 \times \dotsb R_n)/(\aideal_1 \times \dotsb \times \aideal_n)
+          &\cong  (R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)
+          \\
+          &\cong  0 \times \dotsb \times 0 \times (R_j/\aideal_j) \times 0 \times \dotsb \times 0
+           \cong  R_j/\aideal_j,
+        \end{aligned}
+      \intertext{und somit}
+        \begin{aligned}
+              &\, \text{$\aideal_1 \times \dotsb \times \aideal_n$ ist prim}
+          \\
+          \iff&\, \text{$(R_1 \times \dotsb R_n)/(\aideal_1 \times \dotsb \times \aideal_n)$ ist ein Integritätsbereich}
+          \\
+          \iff&\, \text{$R_j/\aideal_j$ ist ein Integritätsbereich}
+          \iff \text{$\aideal_j$ ist prim}.
+        \end{aligned}
+      \end{gather*}
+    \item
+      Die Aussage gilt auch für maximale Ideale.
+      Man muss nur in der obigen Argumentation \emph{prim} durch \emph{maximal} und \emph{Integritätsbereich} durch \emph{Körper} ersetzen.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
