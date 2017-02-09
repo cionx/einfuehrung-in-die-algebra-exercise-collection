@@ -145,13 +145,37 @@
 
 
 \begin{question}
-  Es sei $R$ ein Hauptidealring und $F$ ein freier $R$-Modul mit endlichen Rang $r \geq 0$.
+  Es sei $R$ ein Hauptidealring und $F$ ein freier $R$-Modul mit endlichen Rang $n \geq 0$.
   Es sei $F' \subseteq F$ ein Untermodul.
-  Zeigen Sie, dass $F'$ frei vom Rang $s \leq r$ ist.
+  Zeigen Sie, dass $F'$ frei vom Rang $r \leq n$ ist.
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Es genügt den Fall $F = R^n$ für $n \geq 0$ zu betrachten.
+  Wir zeigen die Aussage per Induktion über $n$.
+  Für $n = 0$ ist die Aussage klar.
+  
+  Für $n = 1$ sei $\aideal \subseteq R$ ein Untermodul, also ein Ideal.
+  Für $\aideal = 0$ ist die Aussage klar, wir beschränken uns also auf den Fall $\aideal \neq 0$.
+  Es ist $\aideal$ ein Hauptideal, also $\aideal = (a)$ für ein $a \in \aideal$, und nach Annahme gilt $a \neq 0$.
+  Die Teilmenge $\{a\} \subseteq \aideal$ ist linear unabhängig, denn die Abbildung $R \to \aideal$, $r \mapsto ra$ ist injektiv, da $R$ ein Integritätsbereich ist und $a \neq 0$ gilt.
+  Also ist $\{a\}$ eine Basis von $\aideal$, und $\aideal$ somit frei vom Rang $1$.
+  
+  Es sei nun $n \geq 2$ und die Aussage gelte für alle kleineren Ränge.
+  Durch die Inklusion $i \colon R^{n-1} \to R^n$, $(x_1, \dotsc, x_{n-1}) \mapsto (x_1, \dotsc, x_{n-1}, 0)$ und die Projektion $p \colon R^n \to R$, $(x_1, \dotsc, x_n) \mapsto x_n$ erhalten wir eine kurze exakte Sequenz $0 \to R^{n-1} \xrightarrow{i} R^n \xrightarrow{p} R \to 0$.
+  
+  Ist $F' \subseteq F$ ein Untermodul, so schränkt sich diese kurze exakte Sequenz zu einer kurzen exakten Sequenz
+  \begin{equation}
+    \label{equation: restrition of shor exact sequence}
+    0 \to i^{-1}(F') \xrightarrow{i'} F' \xrightarrow{p'} p(F') \to 0
+  \end{equation}
+  ein, wobei $i'$ und $p'$ die entsprechenden Einschränkungen von $i$ und $p$ bezeichnen.
+  Dabei sind $i^{-1}(F') \subseteq R^{n-1}$ und $p(F') \subseteq R$ Untermoduln, und somit nach Induktionsannahme frei vom Rang $\leq n-1$ und $\leq 1$.
+  Da $\pi(F')$ frei ist, spaltet die Sequenz \eqref{equation: restrition of shor exact sequence};
+  inbesondere ist deshalb $F' \cong i^{-1}(F') \oplus p(F')$.
+  Somit ist $F'$ frei von Rang $\leq n-1 + 1 = n$.
+\end{solution}
 
 
 \begin{question}
@@ -736,6 +760,9 @@
       Ist $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln mit $M = N \oplus P$, so spaltet die Sequenz.
     \item
       Ist $M$ ein $R$-Modul mit $M \cong M \oplus M$, so ist $M = 0$.
+    \item
+      Es sei $R = K[T]$ und $M$ der eindeutige $R$-Modul, der dem $K$-Vektorraum $K[T]$ zusammen mit dem Endomorphismus $D \colon K[T] \to K[T]$, $f \mapsto f'$ entspricht.
+      Dann ist $M$ ein endlich erzeugter $R$-Modul.
   \end{enumerate}
 \end{question}
 
