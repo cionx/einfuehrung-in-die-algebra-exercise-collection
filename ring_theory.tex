@@ -481,7 +481,23 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Es sei $f = \sum_{i=0}^\infty f_i T^i \in R$.
+  
+  Ist $f \in \powerseries{R}{T}^\times$, so gibt es $g = \sum_{i=0}^\infty g_i T^i \in \powerseries{R}{T}$ mit $fg = 1$.
+  Inbesondere ist dann $f_0 g_0 = 1$ und somit $f_0 \in R^\times$.
+  
+  Ist andererseits $f_0 \in R^\times$, so seien die Koeffizienten von $g = \sum_{i=0}^\infty g_i T^i \in \powerseries{R}{T}$ rekursiv durch $g_0 = f_0^{-1}$ und $g_i \coloneqq - f_0^{-1} \sum_{j=0}^{i-1} f_{i-j} g_j$ definiert.
+  Für $fg = \sum_{i=0}^\infty h_i T^i$ gilt dann $h_0 = f_0 g_0 = 1$, sowie
+  \[
+      h_i
+    = \sum_{j=0}^i f_{i-j} g_j
+    = f_0 g_i + \sum_{j=0}^{i-1} f_{i-j} g_j
+    = - \sum_{j=0}^{i-1} f_{i-j} g_j + \sum_{j=0}^{i-1} f_{i-j} g_j
+    = 0
+  \]
+  für alle $i \geq 1$, und somit $fg = 1$.
+\end{solution}
 
 
 \begin{question}[subtitle = Funktorialität der Einheitengruppe]
