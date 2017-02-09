@@ -62,18 +62,66 @@
 
 \begin{question}
   Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
-  Es sei $I \subseteq R$ ein Ideal.
+  Es sei $I \subseteq R$ ein Ideal und $S \subseteq R$ eine multiplikative Menge.
   \begin{enumerate}
     \item
       Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R/I$-Modulstruktur fortsetzen lässt, wenn $IM =  0$ (d.h.\ wenn $am = 0$ für alle $a \in I$ und $m \in M$).
+      Entscheiden Sie, ob diese Fortsetzung eindeutig ist.
     \item
-      Es sei $S \subseteq R$ eine multiplikative Teilmenge.
       Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R_S$-Modulstruktur fortsetzen lässt, wenn für jedes $s \in S$ die Abbildung $\lambda_s \colon M \to M$, $m \mapsto sm$ bijektiv ist.
+      Entscheiden Sie, ob diese Fortsetzung eindeutig ist.
   \end{enumerate}
 \end{question}
 
-
-% TODO: Adding a solution.
+\begin{solution}
+  Es sei $\End(M) \coloneqq \{f \colon M \to M \mid \text{$f$ ist additiv}\}$.
+  Die $R$-Modulstruktur auf $M$ entspricht dem Ringhomomorphismus $\lambda \colon R \to \End(M)$, $r \mapsto \lambda_r$ mit $\lambda_r(m) = r \cdot m$ für alle $r \in R$, $m \in M$.
+  \begin{enumerate}
+    \item
+      Es sei $\pi \colon R \to R/I$, $r \mapsto \overline{r}$ die kanonische Projektion.
+      Eine $R/I$-Modulstruktur auf $M$ entspricht genau einem Ringhomomorphismus $\overline{\lambda} \colon R/I \to \End(M)$.
+      Dass es sich um eine Fortsetzung der $R$-Modulstruktur handelt, ist dabei äquivalent dazu, dass $\overline{\lambda}$ eine Forsetzung von $\lambda$ ist, d.h.\ dass das folgende Diagramm kommutiert:
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              R
+              \arrow{r}{\lambda}
+              \arrow[swap]{d}{\pi}
+          \&  \End(M)
+          \\
+              R/I
+              \arrow[swap]{ru}{\overline{\lambda}}
+          \&  {}
+        \end{tikzcd}
+      \]
+      Nach der universellen Eigenschaft des Quotienten $R/I$ ist eine solche Fortsetzung $\overline{\lambda}$ eindeutig, und sie existiert genau dann, wenn $I \subseteq \ker \lambda$.
+      Es bleibt zu zeigen, dass genau dann $I \subseteq \ker \lambda$, wenn $IM = 0$.
+      Dies ergibt sich daraus, dass für alle $r \in R$
+      \[
+              r \in \ker \lambda
+        \iff  \lambda_r = 0
+        \iff  \forall m \in M : \lambda_r(m) = 0
+        \iff  \forall m \in M : r \cdot m = 0.
+      \]
+    \item
+      Es sei $i \colon R \to R_S$, $r \mapsto r/1$ der kanonische Ringhomomorphismus.
+      Eine $R_S$-Mo\-dul\-struk\-tur auf $M$ entspricht einen Ringhomomorphismus $\hat{\lambda} \colon R_S \to \End(M)$.
+      Dass es sich dabei um eine Forsetzung der $R$-Modulstruktur handelt, ist äquivalent dazu, dass $\hat{\lambda}$ eine Fortsetzung von $\lambda$ ist, d.h.\ dass das folgende Diagramm kommutiert:
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              R_S
+              \arrow{rd}{\hat{\lambda}}
+          \&  {}
+          \\
+              R
+              \arrow{u}{i}
+              \arrow{r}{\lambda}
+          \&  \End(M)
+        \end{tikzcd}
+      \]
+      Nach der universellen Eigenschaft der Lokalisierung $R_S$ ist eine solche Fortsetzung $\hat{\lambda}$ eindeutig, und sie existiert genau dann, wenn $\lambda(s)$ für jedes $s \in S$ eine Einheit in $\End(M)$ ist.
+      Da ein Element $f \in \End(M)$ genau dann eine Einheit ist, wenn $f$ bijektiv ist, ist die obige Bedingung äquivalent dazu, dass $\lambda_s$ für alle $s \in S$ bijektiv ist.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
