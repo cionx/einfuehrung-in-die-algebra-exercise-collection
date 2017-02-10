@@ -23,6 +23,8 @@
     \item
       Die beiden Projektionen $\pi_1, \pi_2 \colon \Integer \times \Integer \to \Integer$ mit $\pi_1(x,y) = x$ und $\pi_2(x,y) = y$ für alle $(x,y) \in \Integer \times \Integer$ sind die einzigen beiden Ringhomomorphismen $\Integer \times \Integer \to \Integer$.
     \item
+      Für alle Ringe $R_1$ und $R_2$ gilt $(R_1 \times R_2)[X] \cong R_1[X] \times R_2[X]$.
+    \item
       Jeder faktorielle Ring ist unendlich.
     \item
       Jeder endliche Integritätsbereich ist ein Hauptidealring.
@@ -60,6 +62,27 @@
     \item
       Die Aussage ist wahr:
       % TODO: Adding a more detailed solution.
+    \item
+      Die Aussage ist wahr:
+      Die kanonischen Projektionen $\pi_i \colon R_1 \times R_2 \to R_i$, $(x_1, x_2) \mapsto x_i$ induzieren Ringhomomorphismen
+      \[
+                \pi_i[X]
+        \colon  (R_1 \times R_2)[X] \to R_i[X],
+        \quad
+                \sum_j \left( x^{(1)}_j, x^{(2)}_j \right) X^j
+        \mapsto \sum_j x^{(i)}_j X^j
+      \]
+      die in einen Ringhomorphismus
+      \begin{align*}
+                                                    \varphi
+         \colon                                     (R_1 \times R_2)[X]
+        &\xlongrightarrow{\pi_1[X] \times \pi_2[X]} R_1[X] \times R_2[X],
+        \\
+                                                    \sum_j (a_j, b_j) X^j
+        &\mapsto                                    \left( \sum_j a_j X^j, \sum_j b_j X^j \right)
+      \end{align*}
+      resultieren.
+      Die Bijektivität von $\varphi$ ergibt sich durch direktes Hinsehen.
     \item
       Die Aussage ist falsch:
       Jeder Körper ist ein faktorieller Ring, aber es gibt endliche Körper.
