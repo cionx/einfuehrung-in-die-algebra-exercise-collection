@@ -678,7 +678,36 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  Wir bezeichnen die gegebene kurze exakte Sequenz mit $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$.
+  \begin{enumerate}
+    \item
+      Es sei zunächst $M$ $p$-primär.
+      Dann ist auch der Untermodul $f(N) \subseteq M$ $p$-primär, und da $f$ eine Isomorphie $N \cong f(N)$ liefert, damit auch $N$ $p$-primär.
+      Für $x \in P$ gibt es $x' \in M$ mit $g(x') = x$; da $M$ $p$-primär ist, gibt es ein $k \geq 0$ mit $p^k x' = 0$ und somit auch $p^k x = p^k g(x') = g(p^k x') = g(0) = 0$.
+      Also ist auch $P$ $p$-primär.
+      
+      Es seien nun $N$ und $P$ beide $p$-primär.
+      Für $m \in M$ ist $g(m) \in P$, es gibt also $k_2 \geq 0$ mit $p^{k_2} g(m) = 0$.
+      Dann gilt $g(p^{k_2} m) = p^{k_2} g(m) = 0$ und somit $p^{k_2} m \in \ker g = \im f$.
+      Es gibt also ein $n \in N$ mit $p^{k_2} m = f(n)$.
+      Da $N$ $p$-primär ist, gibt es ein $k_1 \geq 0$ mit $p^{k_1} n = 0$.
+      Ingesamt erhalten wir, dass
+      \[
+          p^{k_1 + k_2} m
+        = p^{k_1} p^{k_2} m
+        = p^{k_1} f(n)
+        = f(p^{k_1} n)
+        = f(0)
+        = 0.
+      \]
+      Das zeigt, dass $M$ $p$-primär ist.
+    \item
+      Für $x \in R$ gilt genau dann $x \in \radicalideal{\annihilator(M)}$, wenn es $k \geq 0$ mit $x^k \in \annihilator(M)$ gibt, also genau dann, wenn es $k \geq 0$ mit $x^k M = 0$ gibt.
+      Es gilt also genau dann $x \in \radicalideal{\annihilator(M)}$, wenn $M$ „$x$-primär“ ist.
+      Ersetzt man in der obigen Argumentation $p$ durch $x$, so erhält man deshalb, dass genau dann $x \in \radicalideal{\annihilator(M)}$ gilt, wenn $x \in \radicalideal{\annihilator(N)}$ und $x \in \radicalideal{\annihilator(P)}$ gelten.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
