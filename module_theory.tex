@@ -711,14 +711,14 @@
 
 
 \begin{question}
-  Es sei $M$ ein $R$-Modul..
+  Es sei $M$ ein $R$-Modul.
   \begin{enumerate}
     \item
       Zeigen Sie, dass $\annihilator( \generate{m}_R ) = \annihilator(m)$ für jedes $m \in M$.
     \item
       Zeigen Sie, dass $\annihilator( \sum_{i \in I} M_i) = \bigcap_{i \in I} \annihilator(M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
     \item
-      Folgern Sie, dass $\annihilator( \generate{m_j \mid j \in J}_R ) = \bigcap_{j \in J} \annihilator(m_j)$ für jede Familie $(m_j)_{j \in J}$ von Elementen $m_j \in M$, und dass $\annihilator(M) = \bigcap_{m \in M} \annihilator(m)$.
+      Folgern Sie, dass $\annihilator( \generate{m_i \mid i \in I}_R ) = \bigcap_{i \in I} \annihilator(m_i)$ für jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$, und dass $\annihilator(M) = \bigcap_{m \in M} \annihilator(m)$.
     \item
       Zeigen Sie, dass $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
     \item
@@ -727,8 +727,30 @@
 \end{question}
 
 
-% TODO: Adding a solution.
-% For the strict inequality take R^2 with both axes.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Aus der Inklusion $\{m\} \subseteq \generate{m}_R$ folgt die Inklusion $\annihilator( \generate{M}_R ) \subseteq \annihilator(m)$.
+      Ist andererseits $x \in \annihilator(m)$, so gilt $xm = 0$, und somit auch $x(rm) = r(xm) = 0$ für alle $r \in R$, also $xm' = 0$ für alle $m' \in \{rm \mid r \in R\} = \generate{m}_R$.
+    \item
+      Für alle $j \in J$ ergibt sich aus der Inklusion $M_j \subseteq \sum_{i \in I} M_i$ die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \annihilator(M_j)$, und somit insgesamt die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \bigcap_{i \in I} \annihilator(M_i)$.
+      Gilt andererseits $x \in \bigcap_{i \in I} \annihilator(M_i)$, so gilt $x M_i = 0$ für alle $i \in I$, also $x m_i = 0$ für alle $i \in I$ und $m_i \in M_i$.
+      Da jedes $m \in \sum_{i \in I} M_i$ eine endliche Summe solcher $m_i$ ist, gilt bereits $xm = 0$ für alle $m \in \sum_{i \in I} M_i$, also $x \in \annihilator( \sum_{i \in I} M_i )$.
+      Somit gilt auch $\bigcap_{i \in I} \annihilator( M_i ) \subseteq \annihilator( \sum_{i \in I} M_i )$.
+    \item
+      Es gilt die Gleichungskette
+      \[
+          \annihilator( \generate{m_i \mid i \in I}_R )
+        = \annihilator\left( \sum_{i \in I} \generate{m_i}_R \right)
+        = \bigcap_{i \in I} \annihilator( \generate{m_i}_R )
+        = \bigcap_{i \in I} \annihilator(m_i)
+      \]
+      und somit insbesondere $\annihilator(M) = \annihilator(\sum_{m \in M} \generate{m}_R) = \bigcap_{m \in M} \annihilator(m)$.
+    \item
+      Es gilt genau dann $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i )$, wenn $\annihilator(M_j) \subseteq \annihilator( \bigcap_{i \in I} M_i )$ für alle $j \in I$.
+      Für jedes $j \in I$ ergibt sich diese Inklusion aus der Inklusion $\bigcap_{i \in I} M_i \subseteq M_j$.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
