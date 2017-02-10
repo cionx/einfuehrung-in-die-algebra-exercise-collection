@@ -1,6 +1,82 @@
 \section{Ringtheorie}
 
 
+\begin{question}[subtitle = Multiple Choice]
+  Entscheiden Sie, welche der folgenden Aussagen wahr oder falsch sind.
+  \begin{enumerate}
+    \item
+      Jeder Körper ist faktoriell.
+    \item
+      Die beiden kanonischen $\pi_1, \pi_2 \colon \Integer \times \Integer \to \Integer$ mit $\pi_1(x,y) = x$ und $\pi_2(x,y) = y$ für alle $(x,y) \in \Integer \times \Integer$ sind die einzigen beiden Ringhomomorphismen $\Integer \times \Integer \to \Integer$.
+    \item
+      Jeder faktorielle Ring ist unendlich.
+    \item
+      Jeder endliche Integritätsbereich ist ein Hauptidealring.
+    \item
+      Ist $R$ ein endlicher kommutativer Ring, so ist $R[X,Y]$ noethersch.
+    \item
+      Ist $R$ ein Hauptidealring, so ist auch $R[X]$ ein Hauptidealring.
+    \item
+      Ist $R$ ein Integritätsbereich und $p \in R$ prim, so ist $p$ irreduzibel.
+    \item
+      Sind $n_1, n_2, n_3 \in \Integer$ mit $\ggT(n_1, n_2, n_3) = 1$, so hat das Gleichungssystem
+      \[
+        \left\{
+          \begin{array}{ccc}
+            x &\equiv&  a_1 \mod n_1
+            \\
+            x &\equiv&  a_2 \mod n_2
+            \\
+            x &\equiv&  a_3 \mod n_3
+          \end{array}
+        \right.
+      \]
+      für alle $a_1, a_2, a_3 \in \Integer$ eine Lösung.
+    \item
+      Ist $R$ ein endlicher kommutativer Ring mit $p \coloneqq \ringchar R > 0$ prim, so ist die Abbildung $R \to R$, $x \mapsto x^p$ ein Ringautomorphismus.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Aussage ist wahr:
+      % TODO: Adding a more detailed solution.
+    \item
+      Die Aussage ist wahr:
+      % TODO: Adding a more detailed solution.
+    \item
+      Die Aussage ist falsch:
+      Jeder Körper ist ein faktorieller Ring, aber es gibt endliche Körper.
+    \item
+      Die Aussage ist wahr:
+      Jeder endliche Integritätsbereich ist bereits ein Körper.
+    \item
+      Die Aussage ist wahr:
+      $R$ ist noethersch, und nach iterierter Anwendung des Hilbertschen Basissatzes somit auch $R[X][Y] \cong R[X,Y]$.
+    \item
+      Die Aussage ist falsch:
+      Ist $K$ ein Körper, so ist zwar $R \coloneqq K[X]$ ein Hauptidealring, aber $R[Y] \cong K[X,Y]$ nicht (siehe Übung~\ref{question: examples for non principal and not finitely generated modules}).
+      Allgemeiner ist $R[X]$ genau dann ein Hauptidealring, wenn $R$ bereits ein Körper ist (siehe Übung~\ref{question: fields are the only rings for which the polynomial ring is a pid}).
+    \item
+      Die Aussage ist wahr:
+      Es seien $a, b \in R$ mit $p = ab$.
+      Da $p$ prim ist, gilt $p \mid a$ oder $p \mid b$;
+      wir können o.B.d.A.\ davon ausgehen, dass $p \mid a$.
+      Dann gibt es $c \in R$ mit $a = pc$ und es folgt $p = ab = pcb$.
+      Da $R$ ein Integritätsbereich ist, und $p \neq 0$ gilt (denn $p$ ist prim) folgt, dass bereits $1 = cb$ gilt.
+      Also ist $b$ eine Einheit.
+    \item
+      Die Aussage ist falsch:
+      % TODO: Adding a more detailed solution.
+    \item
+      Die Aussage ist falsch:
+      % TODO: Adding a more detailed solution.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Initialobjekte in der Kategorie der Ringe]
   \label{qst: Z is inital}
   \begin{enumerate}
@@ -1484,82 +1560,6 @@
       folglich sind beide Elemente irreduzibel in $R$.
       Wir erhalten nun für $t^6 \in R$ mit $t^6 = t^2 \cdot t^2 \cdot t^2 = t^3 \cdot t^3$ zwei Zerlegungen in irreduzible Elemente, die nicht äquivalent im Sinne eines faktoriellen Rings sind (insbesondere kommen in beiden Zerlegungen unterschiedlich viele Faktoren vor).
       Folgich ist $R$ nicht faktoriell.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Multiple Choice]
-  Entscheiden Sie, welche der folgenden Aussagen wahr oder falsch sind.
-  \begin{enumerate}
-    \item
-      Jeder Körper ist faktoriell.
-    \item
-      Die beiden kanonischen $\pi_1, \pi_2 \colon \Integer \times \Integer \to \Integer$ mit $\pi_1(x,y) = x$ und $\pi_2(x,y) = y$ für alle $(x,y) \in \Integer \times \Integer$ sind die einzigen beiden Ringhomomorphismen $\Integer \times \Integer \to \Integer$.
-    \item
-      Jeder faktorielle Ring ist unendlich.
-    \item
-      Jeder endliche Integritätsbereich ist ein Hauptidealring.
-    \item
-      Ist $R$ ein endlicher kommutativer Ring, so ist $R[X,Y]$ noethersch.
-    \item
-      Ist $R$ ein Hauptidealring, so ist auch $R[X]$ ein Hauptidealring.
-    \item
-      Ist $R$ ein Integritätsbereich und $p \in R$ prim, so ist $p$ irreduzibel.
-    \item
-      Sind $n_1, n_2, n_3 \in \Integer$ mit $\ggT(n_1, n_2, n_3) = 1$, so hat das Gleichungssystem
-      \[
-        \left\{
-          \begin{array}{ccc}
-            x &\equiv&  a_1 \mod n_1
-            \\
-            x &\equiv&  a_2 \mod n_2
-            \\
-            x &\equiv&  a_3 \mod n_3
-          \end{array}
-        \right.
-      \]
-      für alle $a_1, a_2, a_3 \in \Integer$ eine Lösung.
-    \item
-      Ist $R$ ein endlicher kommutativer Ring mit $p \coloneqq \ringchar R > 0$ prim, so ist die Abbildung $R \to R$, $x \mapsto x^p$ ein Ringautomorphismus.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Die Aussage ist wahr:
-      % TODO: Adding a more detailed solution.
-    \item
-      Die Aussage ist wahr:
-      % TODO: Adding a more detailed solution.
-    \item
-      Die Aussage ist falsch:
-      Jeder Körper ist ein faktorieller Ring, aber es gibt endliche Körper.
-    \item
-      Die Aussage ist wahr:
-      Jeder endliche Integritätsbereich ist bereits ein Körper.
-    \item
-      Die Aussage ist wahr:
-      $R$ ist noethersch, und nach iterierter Anwendung des Hilbertschen Basissatzes somit auch $R[X][Y] \cong R[X,Y]$.
-    \item
-      Die Aussage ist falsch:
-      Ist $K$ ein Körper, so ist zwar $R \coloneqq K[X]$ ein Hauptidealring, aber $R[Y] \cong K[X,Y]$ nicht (siehe Übung~\ref{question: examples for non principal and not finitely generated modules}).
-      Allgemeiner ist $R[X]$ genau dann ein Hauptidealring, wenn $R$ bereits ein Körper ist (siehe Übung~\ref{question: fields are the only rings for which the polynomial ring is a pid}).
-    \item
-      Die Aussage ist wahr:
-      Es seien $a, b \in R$ mit $p = ab$.
-      Da $p$ prim ist, gilt $p \mid a$ oder $p \mid b$;
-      wir können o.B.d.A.\ davon ausgehen, dass $p \mid a$.
-      Dann gibt es $c \in R$ mit $a = pc$ und es folgt $p = ab = pcb$.
-      Da $R$ ein Integritätsbereich ist, und $p \neq 0$ gilt (denn $p$ ist prim) folgt, dass bereits $1 = cb$ gilt.
-      Also ist $b$ eine Einheit.
-    \item
-      Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
-    \item
-      Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
   \end{enumerate}
 \end{solution}
 
