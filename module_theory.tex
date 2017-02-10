@@ -733,9 +733,9 @@
       Aus der Inklusion $\{m\} \subseteq \generate{m}_R$ folgt die Inklusion $\annihilator( \generate{M}_R ) \subseteq \annihilator(m)$.
       Ist andererseits $x \in \annihilator(m)$, so gilt $xm = 0$, und somit auch $x(rm) = r(xm) = 0$ für alle $r \in R$, also $xm' = 0$ für alle $m' \in \{rm \mid r \in R\} = \generate{m}_R$.
     \item
-      Für alle $j \in J$ ergibt sich aus der Inklusion $M_j \subseteq \sum_{i \in I} M_i$ die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \annihilator(M_j)$, und somit insgesamt die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \bigcap_{i \in I} \annihilator(M_i)$.
+      Für jedes $j \in J$ folgt sich aus $M_j \subseteq \sum_{i \in I} M_i$ die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \annihilator(M_j)$, und somit insgesamt die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \bigcap_{i \in I} \annihilator(M_i)$.
       Gilt andererseits $x \in \bigcap_{i \in I} \annihilator(M_i)$, so gilt $x M_i = 0$ für alle $i \in I$, also $x m_i = 0$ für alle $i \in I$ und $m_i \in M_i$.
-      Da jedes $m \in \sum_{i \in I} M_i$ eine endliche Summe solcher $m_i$ ist, gilt bereits $xm = 0$ für alle $m \in \sum_{i \in I} M_i$, also $x \in \annihilator( \sum_{i \in I} M_i )$.
+      Da jedes $m \in \sum_{i \in I} M_i$ eine endliche Summe solcher $m_i$ ist, gilt bereits $xm = 0$ für alle $m \in \sum_{i \in I} M_i$, und somit $x \in \annihilator( \sum_{i \in I} M_i )$.
       Somit gilt auch $\bigcap_{i \in I} \annihilator( M_i ) \subseteq \annihilator( \sum_{i \in I} M_i )$.
     \item
       Es gilt die Gleichungskette
@@ -749,6 +749,11 @@
     \item
       Es gilt genau dann $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i )$, wenn $\annihilator(M_j) \subseteq \annihilator( \bigcap_{i \in I} M_i )$ für alle $j \in I$.
       Für jedes $j \in I$ ergibt sich diese Inklusion aus der Inklusion $\bigcap_{i \in I} M_i \subseteq M_j$.
+    \item
+      Für $R \neq 0$ betrachte man $M = R \oplus R$ mit den Untermoduln $M_1 = R \oplus 0$ und $M_2 = 0 \oplus R$.
+      Dann gilt $M_1 \cong M_2 \cong R$ und somit $\annihilator(M_1) = \annihilator(M_2) = \annihilator(R) = 0$.
+      Deshalb gilt $\annihilator(M_1) + \annihilator(M_2) = 0$.
+      Andererseits gilt $M_1 \cap M_2 = 0$ und somit $\annihilator(M_1 \cap M_2) = \annihilator(0) = R \neq 0$.
   \end{enumerate}
 \end{solution}
 
