@@ -1183,7 +1183,7 @@
 
 
 \begin{question}
-  Es sei $R$ ein kommutativer Ring.
+  Es sei $R$ ein kommutativer Ring und $\aideal \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
       Zeigen Sie, dass für jedes Ideal $\aideal \subseteq R$ die Teilmenge
@@ -1197,9 +1197,37 @@
       \]
       ein Ideal in $R[X]$ ist.
     \item
-      Zeigen Sie, dass $\pideal[X]$ ein Primideal in $R[X]$ ist, wenn $\pideal \subseteq R$ ein Primideal ist.
+      Zeigen Sie, dass die Abbildung
+      \[
+        R[X]/\aideal[X] \to (R/\aideal)[X],
+        \quad
+        \overline{\sum_i a_i X^i} \mapsto \sum_i \overline{a_i} X^i
+      \]
+      ein wohldefinierter Isomorphismus ist.
     \item
-      Zeigen oder widerlegen Sie, dass $\mideal[X]$ notwendigerweise ein maximales Ideal in $R[X]$ ist, wenn $\mideal \subseteq R$ ein maximales Ideal ist.
+      Zeigen Sie, dass für jedes Primideal $\pideal \subseteq R$ auch $\pideal[X] \subseteq R[X]$ ein Primideal ist.
+    \item
+      Zeigen oder widerlegen Sie, dass für jedes maximale Ideal $\mideal \subseteq R$ auch $\mideal[X] \subseteq R[X]$ ein maximales Ideal ist.
+  \end{enumerate}
+  Das Ideal $\aideal[X]$ lässt sich auch noch anders durch $\aideal$ beschreiben.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $\aideal[X]$ das von $\aideal$ in $R[X]$ erzeugte Ideal ist, d.h.\ dass $(\aideal)_{R[X]} = \aideal[X]$.
+  \end{enumerate}
+  Damit erhalten wir für jedes Ideal $\aideal \subseteq R$ einen Ringisomorphismus $R[X]/(\aideal) \to (R/\aideal)[X]$, $\overline{\sum_i a_i X^i} \mapsto \sum_i \overline{a_i} X^i$.
+  \begin{enumerate}[resume]
+    \item
+      Veinfachen Sie für die folgenden Ringe $R$ und Ideale $I \subseteq R$ jeweils den Quotienten $R/I$.
+      Entscheiden Sie jeweils, ob das Ideal prim oder maximal ist.
+      \[
+        (7)               \subseteq \Integer[X],
+        \quad
+        (3, X^2 + 1)      \subseteq \Integer[X],
+        \quad
+        (5, X^2 + X + 3)  \subseteq \Integer[X],
+        \quad
+        (X^2 + 1)         \subseteq \Rational[X,Y].
+      \]
   \end{enumerate}
 \end{question}
 
@@ -1220,19 +1248,70 @@
       Wegen der Surjektivität von $\pi$ ist auch $\varphi$ surjektiv.
       Somit induziert $\varphi$ einen Ringisomorphismus
       \[
-        \psi \colon R[X]/\pideal[X] \to (R/\pideal)[X],
+        \psi \colon R[X] / \ker \varphi \to (R/\pideal)[X],
         \quad
         \overline{\sum_i f_i X^i} \mapsto \sum_i \overline{f_i} X^i.
       \]
+      Nach dem vorherigen Aussagenteil gilt $\ker \psi = \aideal[X]$, was die Aussage zeigt.
+    \item
       Der Quotient $R/\pideal$ ist ein Integritätsbereich, da $\pideal$ ein Primideal in $R$ ist.
-      Somit ist auch $(R/\pideal)[X]$ ein Integritätsbereich.
-      Da der Quotient $R[X]/\pideal[X]$ ein Integritätsbereich ist, folgt, dass $\pideal[X]$ ein Primideal in $R[X]$ ist.
+      Damit ist auch $(R/\pideal)[X] \cong R[X]/\pideal[X]$ ein Integritätsbereich ist, und deshalb $\pideal[X]$.
     \item
       Ist $K$ ein Körper, so ist $0 \subseteq K$ ein maximales Ideal, und es gilt $\mideal[X] = 0$.
       Der Quotient $K[X]/\mideal[X] \cong (K/0)[X] \cong K[X]$ ist kein Körper, da $0 \neq X \in K[X]$ keine Einheit ist.
       Also ist $\mideal[X]$ nicht maximal in $K[X]$.
       
       Tatsächlich kann $\mideal[X]$ nicht maximal in $R[X]$ sein, da $R[X]/\mideal[X] \cong (R/\mideal)[X]$, aber es keinen Ring $R'$ gibt, so dass $R'[X]$ ein Körper ist (siehe Übung~\ref{qst: polynomial rings are not fields}).
+    \item
+      Es gilt $\aideal \subseteq \aideal[X]$ und somit $(\aideal)_{R[X]} \subseteq \aideal[X]$.
+      Andererseits ist $a X^i \in (\aideal)_{R[X]}$ für jedes $a \in \aideal$ und $i \geq 0$ und somit $\sum_i a_i X^i \in \in (\aideal)_{R[X]}$ für jedes $\sum_i a_i X^i \in \aideal[X]$.
+    \item
+      \begin{enumerate}[leftmargin=*]
+        \item
+          Es gilt $\Integer[X]/(7) \cong (\Integer/7)[X] = \Field_7[X]$.
+          Das Ideal ist also prim, aber nicht maximal.
+        \item
+          Mithilfe des dritten Isomorphiesatzes erhält man, dass
+          \begin{align*}
+                    \Integer[X]/(3, X^2 + 1)
+            &\cong  ( \Integer[X]/(3) ) / ( (3, X^2 + 1) / (3) )
+             =      ( \Integer[X]/(3) ) / ( \overline{X^2 + 1} )
+            \\
+            &\cong  (\Integer/3)[X] / (X^2 + 1)
+             =      \Field_3[X] / (X^2 + 1).
+          \end{align*}
+          Das Polynom $X^2 +1 \in \Field_3[X]$ ist quadratisch und hat keine Nullstellen, ist also irreduzibel.
+          Der obige Quotient ist also eine Körpererweiterung von $\Field_3$ von Grad $2$, also $\Field_3[X] / (X^2 + 1) \cong \Field_9$.
+          Inbesondere ist das Ideal maximal.
+        \item
+          Mithilfe des dritten Isomorphiesatzes erhält man, dass
+          \begin{align*}
+                 &\,  \Integer[X]/(5, X^2 + 6X - 2)
+            \cong     (\Integer[X]/(5)) / ((5, X^2 + 6X - 2)/(5))
+          \\
+            \cong&\,  (\Integer[X]/(5)) / (\overline{X^2 + 6X - 2})
+            \cong     (\Integer/5)[X] / (X^2 + 6X -2)
+          \\
+            \cong&\,  \Field_5[X] / (X^2 - 4X + 3)
+            =         \Field_5[X] / ( (X-1) (X-3) ).
+          \end{align*}
+          Mithilfe des chinesischen Restklassensatzes erhält man weiter, dass
+          \[
+                  \Field_5[X] / ( (X-1)(X-3))
+            \cong \Field_5[X]/(X-1) \times \Field_5[X]/(X-3)
+            \cong \Field_5 \times \Field_5.
+          \]
+          Da $\Field_5 \times \Field_5$ kein Integritätsbereich ist, ist das Ideal nicht prim.
+        \item
+          Es gilt
+          \[
+                  \Rational[X,Y]/(X^2 + 1)
+            \cong \Rational[X][Y]/(X^2 + 1)
+            \cong (\Rational[X]/(X^2 + 1))[Y]
+            \cong \Rational(i)[Y].
+          \]
+          Inbesondere ist das Ideal prim, aber nicht maximal.
+      \end{enumerate}
   \end{enumerate}
 \end{solution}
 
