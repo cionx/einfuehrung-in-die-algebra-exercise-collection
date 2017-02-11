@@ -970,12 +970,14 @@
 
 
 \begin{question}[subtitle=Torsionsuntermoduln]
-  Es sei $R$ ein Integritätsbereich.
+  Es sei $R$ ein Integritätsbereich mit Quotientenkörper $K$.
   \begin{enumerate}
     \item
       Definieren Sie den Torsionsuntermodul $\torsion(M)$ eines $R$-Moduls $M$, und zeigen Sie, dass es sich um einen $R$-Untermodul von $M$ handelt.
     \item
-      Zeigen Sie, dass $\torsion(M \oplus N) = \torsion(M) \oplus \torsion(N)$ für alle $R$-Moduln $M$ und $N$.
+      Zeigen Sie, dass $\torsion(M)$ der Kern der kanonischen Abbildung $M \to M_K$, $m \mapsto m/1$ ist.
+    \item
+      Zeigen Sie für jeden $R$-Moduln $M$, dass $\torsion(M \oplus N) = \torsion(M) \oplus \torsion(N)$ für alle $R$-Moduln $M$ und $N$.
     \item
       Zeigen Sie, dass jeder freie $R$-Modul torsionsfrei ist.
     \item
@@ -1021,6 +1023,16 @@
       Für $m \in \torsion(M)$ gibt es $r \in R$ mit $rm = 0$ und $r \neq 0$.
       Für jedes $r' \in R$ ist dann auch $r (r' m) = r' (rm) = 0$, und somit $r' m \in \torsion(M)$.
       
+    \item
+      Es ist $K$ die Lokalisierung von $R$ an der multiplikativen Menge $S = R \setminus \{0\}$.
+      Für die kanonische Abbildung $i \colon M \to M_K$, $m \mapsto m/1$ gilt deshalb
+      \[
+              m \in \ker i
+        \iff  \frac{m}{1} = \frac{0}{1}
+        \iff  \exists s \in S : s \cdot m = 0
+        \iff  m \in \torsion(M).
+      \]
+
     \item
       Für $(m, n) \in \torsion(M)$ gibt es $r \in R$ mit $r \neq 0$ und $0 = r(m,n) = (rm,rn)$.
       Dann gilt $rm = 0$ un $rn = 0$, und wegen $r \neq 0$ gelten somit $m \in \torsion(M)$ und $n \in \torsion(N)$.
