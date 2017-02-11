@@ -879,7 +879,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Existenz der Hauptraumzerlegung]
   Es sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   \begin{enumerate}
     \item
@@ -902,7 +902,72 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Da $p$ und $q$ teilerfremd sind, gibt es $a, b \in K[T]$ mit $ap + bq = 1$.
+      Durch Einsetzen von $f$ ergibt sich, dass $a(f) p(f) + b(f) g(f) = \id_V$.
+      Für $v \in \ker p(f) \cap \ker q(f)$ gilt deshalb
+      \[
+          0
+        =   a(f)( \underbrace{p(f)(v)}_{=0} ) + b(f)( \underbrace{q(f)(v)}_{=0} )
+        = (a(f) p(f) + b(f) q(f))(v)
+        = \id_V(v)
+        = v.
+      \]
+      Also ist $\ker p(f) \cap \ker q(f) = 0$.
+      Für $v \in \ker {(pq)(f)}$ gilt andererseits
+      \[
+          v
+        = \id_V(v)
+        = (a(f) p(f) + b(f) q(f))(v)
+        = \underbrace{(a(f)p(f))(v)}_{\eqqcolon v_2} + \underbrace{(b(f)q(v))(v)}_{\eqqcolon v_1}
+      \]
+      Dabei gilt $v_1 \in \ker p(f)$, da
+      \begin{align*}
+            p(f)(v_1)
+        &=  (p(f)b(f)q(f))(v)
+         =  (b(f)p(f)q(f))(v)
+        \\
+        &=  (b(f)(pq)(f))(v)
+         =  b(f)( \underbrace{(pq)(f)(v)}_{=0} )
+         =  0.
+      \end{align*}
+      Analog gilt auch $v_2 \in \ker q(f)$.
+      Also gilt auch $\ker {(pq)(f)} = \ker p(f) + \ker q(f)$.
+      
+    \item
+      Wir zeigen die Aussage per Induktion über $n$.
+      Für $n = 1$ ist die Aussage klar, und für $n = 2$ wurde sie im vorherigen Teil der Aussage gezeigt.
+%       
+      Es sei also $n \geq 3$; da $f_1, \dotsc, f_n$ paarweise teilerfremd sind, sind auch die beiden Polynome $f_1 \dotsm f_{n-1}$ und $f_n$ teilerfremd.
+      Nach Induktionsvoraussetzung gilt deshalb
+      \begin{equation}
+        \label{equation: decomposition into two subspaces}
+          \ker {(p_1 \dotsm p_n)(f)}
+        = \ker {(p_1 \dotsm p_{n-1} \cdot p_n)(f)}
+        = \ker {(p_1 \dotsm p_{n-1})(f)} \oplus \ker p_n(f).
+      \end{equation}
+      Da $f_1, \dotsc, f_n$ paarweise teilerfremd sind, sind es auch $f_1, \dotsc, f_{n-1}$.
+      Nach Induktionsvoraussetzung gilt daher auch
+      \begin{equation}
+        \label{equation: decomposition of the first summand into subspaces}
+          \ker {(p_1 \dotsm p_{n-1})(f)}
+        = \ker p_1(f) \oplus \dotsb \oplus \ker p_{n-1}(f).
+      \end{equation}
+      Zusammenfügen von \eqref{equation: decomposition into two subspaces} und \eqref{equation: decomposition of the first summand into subspaces} ergibt die Aussage.
+    \item
+      Es sei $p \in K[T]$ das charakteristische Polynom von $f$.
+      Da $K$ algebraisch abgeschlossen ist zerfällt $p$ in Linearfaktoren, also $p(T) = (T - \lambda_1)^{n_1} \dotsm (T - \lambda_s^{n_s})$ für $n_1, \dotsc, n_s \geq 0$ und paarweise verschiedene $\lambda_1, \dotsc, \lambda_s \in K$.
+      Die Polynome $(T-\lambda_1)^{n_1}, \dotsc, (T-\lambda_s)^{n_s}$ sind paarweise teilerfremd, und somit gilt nach dem vorherigen Aussagenteil
+      \[
+          \ker p(f)
+        = \ker (f - \lambda_1)^{n_1} \oplus \dotsb \oplus \ker (f - \lambda_s)^{n_s}.
+      \]
+      Nach dem Satz von Cayley-Hamilton gilt dabei $p(f) = 0$ und somit $\ker p(f) = V$.
+  \end{enumerate}
+\end{solution}
+
 
 
 \begin{question}[subtitle=Torsionsuntermoduln]
