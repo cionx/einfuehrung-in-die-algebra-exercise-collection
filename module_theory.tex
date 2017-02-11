@@ -651,7 +651,6 @@
 \end{solution}
 
 
-
 \begin{question}
   \begin{enumerate}
     \item
@@ -1009,7 +1008,83 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es ist $\torsion(M) = \{m \in M \mid \text{$rm = 0$ für ein $r \in R$ mit $r \neq 0$}\}$.
+      Es gilt $0 \in M$, da $1 \cdot 0 = 0$.
+      
+      Für $m_1, m_2 \in \torsion(M)$ gibt es $r_1, r_2 \in R$ mit $r_1, r_2 \neq 0$, so dass $r_1 m_1 = r_2 m_2 = 0$.
+      Dann gilt auch $(r_1 r_2) (m_1 + m_2) = r_2 r_1 m_1 + r_1 r_2 m_2 = 0$, wobei $r_1 r_2 \neq 0$, da $R$ ein Integritätsbereich ist.
+      Also gilt auch $m_1, m_2 \in M$.
+      
+      Für $m \in \torsion(M)$ gibt es $r \in R$ mit $rm = 0$ und $r \neq 0$.
+      Für jedes $r' \in R$ ist dann auch $r (r' m) = r' (rm) = 0$, und somit $r' m \in \torsion(M)$.
+      
+    \item
+      Für $(m, n) \in \torsion(M)$ gibt es $r \in R$ mit $r \neq 0$ und $0 = r(m,n) = (rm,rn)$.
+      Dann gilt $rm = 0$ un $rn = 0$, und wegen $r \neq 0$ gelten somit $m \in \torsion(M)$ und $n \in \torsion(N)$.
+      Also gilt $\torsion(M \oplus N) \subseteq \torsion(M) \oplus \torsion(N)$.
+      
+      Für $(m, n) \in \torsion(M) \oplus \torsion(N)$ gibt es $r_1, r_2 \in R$ mit $r_1, r_2 \neq 0$ und $r_1 m = 0$ und $r_2 n = 0$.
+      Dann gelten $(r_1 r_2) (m, n) = (r_2, r_1 m, r_1 r_2 n) = (0,0)$, und da $R$ ein Integritätsbereich ist, gilt $r_1 r_2 \neq 0$.
+      Also ist $(m,n) \in \torsion(M \oplus N)$, und somit $\torsion(M) \oplus \torsion(N) \subseteq \torsion(M \oplus N)$.
+      
+%       Andererseits gilt ergibt sich für die beiden Untermoduln $M \oplus 0, 0 \oplus N \subseteq M \oplus N$, dass $\torsion(M \oplus 0), \torsion(0 \oplus N) \subseteq \torsion(M \oplus N)$.
+%       Der Isomorphismus $M \oplus 0 \to M$, $(m, 0) \mapsto m$ schränkt sich zu einem Isomorphismus $\torsion(M \oplus 0) \to \torsion(M)$ ein;
+%       dabei entspricht aber der Untermodul $\torsion(M) \subseteq M$ dem Untermodul $\torsion(M) \oplus 0 \subseteq M \oplus 0$.
+%       Es folgt, dass $\torsion(M \oplus 0) = \torsion(M) \oplus 0$;
+%       analog ergibt sich, dass $\torsion(0 \oplus N) = 0 \oplus \torsion(N)$ gilt.
+%       Somit gelten $\torsion(M) \oplus 0, 0 \oplus \torsion(N) \subseteq \torsion(M \oplus N)$ und deshalb auch
+%       \[
+%                   \torsion(M) \oplus \torsion(N)
+%         =         (\torsion(M) \oplus 0) + (0 \oplus \torsion(N))
+%         \subseteq \torsion(M \oplus N)
+%       \]
+    
+    \item
+      Es sei $F$ ein freier $R$-Modul mit Basis $(b_i)_{i \in I}$ und $m \in \torsion(F)$.
+      Dann gibt es eine (eindeutige) Darstellung $m = \sum_{i \in I} r_i b_i$ mit $r_i = 0$ für fast alle $i \in I$.
+      Nach Annahme gibt es $r \in R$ mit $r \neq 0$ und $0 = rm = \sum_{i \in I} r r_i b_i$.
+      Wegen der linearen Unabhängigkeit der Familie $(b_i)_{i \in I}$ muss bereits $r r_i = 0$ für alle $i \in I$.
+      Da $R$ ein Integritätsbereich ist folgt zusammen mit $r \neq 0$, dass $r_i = 0$ für alle $i \in I$.
+      Somit ist bereits $m = \sum_{i \in I} r_i b_i = 0$.
+      
+    \item
+      Es sei $\overline{m} \in \torsion(M/\torsion(M))$.
+      Dann gibt es $r_2 \in R$ mit $r_2 \neq 0$ und $0 = r_2 \overline{m} = \overline{r_2 m}$, also $r_1 m \in \torsion(M)$.
+      Dann gibt es wiederum $r_1 \in R$ mit $r_1 \neq 0$ und $r_1 r_2 m = 0$. 
+      Da $R$ ein Integritätsbereich ist, gilt dabei $r_1 r_2 \neq 0$.
+      Deshalb gilt bereits $m \in \torsion(M)$ und somit $\overline{m} = 0$.
+      
+    \item
+      Es sei $m \in \torsion(M)$.
+      Dann gibt es $r \in R$ mit $r \neq 0$ und $rm = 0$.
+      Dann gilt auch $r f(m) = f(rm) = f(0) = 0$ und somit $f(m) \in \torsion(N)$.
+    
+    \item
+      Dass $\torsion(\id_M) = \id_{\torsion(M)}$ gilt ist klar, und dass $\torsion(g \circ f) = \torsion(g) \circ \torsion(f)$ gilt, folgt aus der Veträglichkeit von Komposition und Restriktion.
+    
+    \item
+      Wegen der Injektivität von $f$ ist auch $\torsion(f)$ injektiv, die Sequenze also exakt an $\torsion(N)$.
+      Für die Exaktheit an $\torsion(M)$ bemerken wir zunächst, dass $\torsion(g) \circ \torsion(f) = \torsion(g \circ f) = \torsion(0) = 0$, und somit $\im \torsion(f) \subseteq \ker \torsion(g)$.
+      Ist andererseits $m \in \ker \torsion(g) = \ker g \cap \torsion(M)$, so ist $m \in \ker g = \im f$, weshalb es ein $n \in N$ mit $m = f(n)$.
+      Da $m \in \torsion(M)$ gilt, gibt es $r \in R$ mit $r \neq 0$ und $0 = rm = r f(n) = f(rn)$.
+      Wegen der Injektivität von $f$ gilt bereits $rn = 0$ und somit $n \in \torsion(N)$.
+      Also gilt bereits $m = f(n) = \torsion(f)(n) \in \im \torsion(f)$ und somit $\ker \torsion(g) \subseteq \im \torsion(f)$.
+    
+    \item
+      Wir betrachten das folgende Gegenbeispiel von $\Integer$—Moduln:
+      Die kanonische Projektion $p \colon \Integer \to \Integer/2$, $n \mapsto \overline{n}$ ist zwar surjektiv, die induzierte Abbildung
+      \[
+                                  0
+        =                         \torsion(\Integer)
+        \xrightarrow{\torsion(p)} \torsion(\Integer/2)
+        =                         \Integer/2
+      \]
+      kann es aber nicht sein. (Dass $\torsion(\Integer) = 0$ folgt daraus, dass $\Integer$ als freier $\Integer$-Modul torsionfrei ist.)
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
