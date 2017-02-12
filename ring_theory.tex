@@ -60,10 +60,23 @@
   \begin{enumerate}
     \item
       Die Aussage ist wahr:
-      % TODO: Adding a more detailed solution.
+      Ein Körper ist ein Hauptidealring, und somit faktoriell (Körper sind sogar schon euklidsch).
+      Die Aussage lässt sich auch konkret zeigen:
+      Ist $K$ ein Körper, so gibt es keine Primelement in $K$, die leere Menge $\emptyset \eqqcolon \mathcal{P} \subseteq K$ ist also ein Repräsentantensystem der Primeleme von $K$.
+      Jedes Element $x \in K$ mit $x \neq 0$ lässt sich nun eindeutig als $x = x \cdot \prod_{p \in \mathcal{P}} p$ darstellen, denn es gilt $x \in K^\times$ und $\prod_{p \in \mathcal{P}} = 1$ ist das leere Produkt.
     \item
       Die Aussage ist wahr:
-      % TODO: Adding a more detailed solution.
+      Ist $\varphi \colon \Integer \times \Integer \to \Integer$ ein Ringhomomorphismus, so gilt für die Elemente $e_1 \coloneqq \varphi(1,0)$ und $e_2 \coloneqq \varphi(0,1)$, dass $e_1^2 = e_1$ und $e_2^2 = e_2$.
+      Deshalb gilt $e_1, e_2 \in \{0,1\}$.
+      Da außerdem $1 = \varphi(1,1) = \varphi(1,0) + \varphi(0,1) = e_1 + e_2$ gilt, muss entweder $e_1 = 1$ und $e_2 = 0$, oder $e_1 = 0$ und $e_2 = 1$.
+      Im ersten Fall gilt $\varphi = \pi_1$, im zweiten Fall gilt $\varphi = \pi_2$.
+      
+      Die Aussage lässt sich auch durch Untersuchen von $\ker \varphi$ zeigen:
+      Es ist $\im \varphi$ ein Unterring von $\Integer$, also bereits $\im \varphi = \Integer$.
+      Also induziert $\varphi$ einen Isomorphismus $(\Integer \times \Integer)/\ker \varphi \to \Integer$.
+      Deshalb ist $\ker \varphi$ ein Primideal, aber kein maximales Ideal in $\Integer \times \Integer$.
+      Somit ist $\ker \varphi = \Integer \times \pideal$ oder $\ker \varphi = \pideal \times \Integer$ für ein Primideal $\pideal \subseteq \Integer$ (siehe Übung~\ref{question: product of ideals is an ideal} und Übung~\ref{questions: ideals in products are products of ideal}); wäre dabei $\pideal$ maximal, so wäre dies auch $\ker \varphi$ (siehe Übung~\ref{question: product of ideals is an ideal}), also kommt nur $\pideal = 0$ in Frage.
+      Im Fall $\ker \varphi = 0 \times \Integer$ gilt $\varphi = \pi_1$ und im Fall $\ker \varphi = \Integer \times 0$ gilt $\varphi = \pi_2$.
     \item
       Die Aussage ist wahr:
       Die kanonischen Projektionen $\pi_i \colon R_1 \times R_2 \to R_i$, $(x_1, x_2) \mapsto x_i$ induzieren Ringhomomorphismen
@@ -111,10 +124,21 @@
       Also ist $b$ eine Einheit.
     \item
       Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
+      Man betrachte etwa $n_1 = n_2 = 2$ und $n_3 = 3$ (dann sind $n_1, n_2, n_3$ zwar insgesamt teilerfremd, nicht jedoch paarweise, weshalb sich der chinesische Restklassensatz nicht anwenden lässt).
+      Hätte das Gleichungssystem immer ein Lösung, so wäre der Ringhomomorphismus
+      \[
+                \varphi
+        \colon  \Integer \to \Integer/2 \times \Integer/2 \times \Integer/3,
+        \quad   x
+        \mapsto (\overline{x}, \overline{x}, \overline{x})
+      \]
+      surjektiv.
+      Dies ist aber nicht der Fall, denn für alle $(a_1, a_2, a_3) \in \im \varphi$ gilt $a_1 = a_2$.
     \item
       Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
+      Die Abbildung $\sigma$ ist ein Ringhomomorphismus (siehe Übung~\ref{question: the frobenius homomorphism}), aber betrachtet man etwa den Fall $R = \Field_p[X]/(X^p)$, so gilt $\sigma(\overline{X}) = \overline{X}^p = \overline{X^p} = 0$ und somit $\ker \sigma = \{x \in R \mid x^p = 0\} \neq 0$.
+      (Besitzt $R$ keine nichttrivialen nilpotenten Elemente, etwa falls $R$ ein Integritätsbereich oder sogar ein Körper ist, so ist $\sigma$ hingegen ein Automorphismus:
+      Dann gilt $\ker \sigma = 0$, und wegen der Endlichkeit von $R$ ist $\sigma$ damit schon bijektiv.)
   \end{enumerate}
 \end{solution}
 
@@ -889,6 +913,7 @@
 
 
 \begin{question}[subtitle = Der Frobeniushomomorphismus]
+  \label{question: the frobenius homomorphism}
   Es sei $R$ ein kommutativer Ring mit $p \coloneqq \ringchar R > 0$ prim.
   \begin{enumerate}
     \item
