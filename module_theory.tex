@@ -151,6 +151,42 @@
 
 
 \begin{question}
+  Es seien $n, m \geq 1$.
+  Zeigen Sie, dass $\Integer/n \oplus \Integer/m \cong \Integer/\ggT(n,m) \oplus \Integer/\kgV(n,m)$.
+\end{question}
+
+
+\begin{solution}
+  Es sei $\mathcal{P} = \{2, 3, 5, 7, 11, \dotsc\}$ die Menge der (positiven) Primzahlen.
+  Wir haben Primfaktorzerlegungen $n = \prod_{p \in \mathcal{P}} p^{\nu_p}$ und $m = \prod_{p \in \mathcal{P}} p^{\mu_p}$ mit $\nu_p, \mu_p \geq 0$ für alle $p \in \mathcal{P}$, sowie $\nu_p = 0$ und $\mu_p = 0$ für fast alle $p \in \mathcal{P}$.
+  Wir erhalten Primfaktorzerlegungen
+  \[
+    \ggT(n,m) = \prod_{p \in \mathcal{P}} p^{\min(\nu_p, \mu_p)}
+    \quad\text{und}\quad
+    \kgV(n,m) = \prod_{p \in \mathcal{P}} p^{\max(\nu_p, \mu_p)}.
+  \]
+  Nach dem chinesischen Restklassensatz gelten nun
+  \begin{gather*}
+          \Integer/n \oplus \Integer/m
+    \cong        \bigoplus_{p \in \mathcal{P}} \Integer/p^{\nu_p}
+          \oplus \bigoplus_{p \in \mathcal{P}} \Integer/p^{\mu_p}
+    \cong \bigoplus_{p \in \mathcal{P}} \left( \Integer/p^{\nu_p} \oplus \Integer/p^{\mu_p} \right)
+  \shortintertext{sowie analog}
+          \Integer/\ggT(n,m) \oplus \Integer/\kgV(n,m)
+    \cong \bigoplus_{p \in \mathcal{P}} \left( \Integer/p^{\min(\nu_p, \mu_p)} \oplus \Integer/p^{\max(\nu_p, \mu_p)} \right).
+  \end{gather*}
+  Zum Beweis der Aussage genügt es nun zu zeigen, dass
+  \[
+          \Integer/p^\nu \oplus \Integer/p^\mu
+    \cong \Integer/p^{\min(\nu,\mu)} \oplus \Integer/p^{\max(\nu,\mu)}
+    \qquad
+    \text{für alle $p \in \mathcal{P}$ und $\nu, \mu \geq 0$}.
+  \]
+  Dies ist aber klar, da die Paare $(\nu, \mu)$ und $(\min(\nu, \mu), \max(\nu, \mu))$ bis auf Reihenfolge übereinstimmen.
+\end{solution}
+
+
+\begin{question}
   Zeigen Sie, dass es auf jeder abelschen Gruppe genau eine $\Integer$-Modulstruktur gibt.
 \end{question}
 
