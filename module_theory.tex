@@ -19,6 +19,8 @@
   Entscheiden Sie, welche der folgenden Aussagen wahr oder falsch sind.
   \begin{enumerate}
     \item
+      Jeder $\Integer/(15,36)$-Modul trägt eine eindeutige $\Integer/(30,192)$-Modulstruktur.
+    \item
       Ist $M$ ein freier $R$-Modul und $S \subseteq R$ ein Unterring, so ist $M$ auch als $S$-Modul frei.
     \item
       Ist $M$ ein freier $R$-Modul endlichen Rangs, so ist auch jeder Untermodul $N \subseteq M$ frei.
@@ -52,6 +54,15 @@
 
 \begin{solution}
   \begin{enumerate}
+    \item
+      Die Aussage ist wahr:
+      Es gilt $(15,36) = (\ggT(15,36)) = (\ggT(3 \cdot 5, 2^2 \cdot 3^2)) = (3)$ sowie analog $(30,192)  = (\ggT(30,192)) = (\ggT(2 \cdot 3 \cdot 5, 2^6 \cdot 3)) = (2 \cdot 3) = (6)$.
+      Also gilt $\Integer/(15,36) = \Integer/3$ und $\Integer/(30,192) = \Integer/6$.
+      
+      Eine $\Integer/n$-Modulstruktur auf einer abelschen Gruppe $A$ entspricht einer $\Integer$-Modulstruktur auf $A$, so dass $n \cdot A = 0$ (siehe Übung~\ref{question: extension of module structures onto quotients and localizations}).
+      Jede abelsche Gruppe trägt eine eindeutige $\Integer$-Modulstruktur (siehe Übung~\ref{question: abelian groups are the same as modules over Z}), also gilt es nur zu überprüfen, dass aus $3 \cdot A = 0$ bereits $6 \cdot A = 0$ folgt.
+      Dies ist klar, da $3 \mid 6$.
+      
     \item
       Die Aussage ist falsch:
       Betrachtet man etwa $R = \Rational$ und $S = \Integer$, so ist $M = \Rational$ als $R$-Modul endlich frei vom Rang $1$, aber als $\Integer$-Modul nicht frei.
@@ -187,6 +198,7 @@
 
 
 \begin{question}
+  \label{question: abelian groups are the same as modules over Z}
   Zeigen Sie, dass es auf jeder abelschen Gruppe genau eine $\Integer$-Modulstruktur gibt.
 \end{question}
 
@@ -246,6 +258,7 @@
 
 
 \begin{question}
+  \label{question: extension of module structures onto quotients and localizations}
   Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
   Es sei $I \subseteq R$ ein Ideal und $S \subseteq R$ eine multiplikative Menge.
   \begin{enumerate}
@@ -257,6 +270,7 @@
       Entscheiden Sie, ob diese Fortsetzung eindeutig ist.
   \end{enumerate}
 \end{question}
+
 
 \begin{solution}
   Es sei $\End(M) \coloneqq \{f \colon M \to M \mid \text{$f$ ist additiv}\}$.
