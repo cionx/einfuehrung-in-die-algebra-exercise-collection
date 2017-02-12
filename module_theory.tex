@@ -253,6 +253,61 @@
 
 
 \begin{question}
+  Es sei $R$ ein Ring
+  \begin{enumerate}
+    \item
+      Es sei $F$ ein freier $R$-Modul mit Basis $(b_i)_{i \in I}$.
+      Zeigen Sie, dass es für jeden $R$-Modul $M$ und jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$ einen eindeutigen Homomorphismus von $R$-Moduln $\varphi \colon F \to M$ gibt, so dass $\varphi(b_i) = m_i$ für alle $i \in I$ gilt.
+    \item
+      Folgern Sie, dass jeder $R$-Modul $M$ Quotient eines freien $R$-Moduls ist, d.h.\ dass es einen freien $R$-Modul $F$ gibt, so dass $M \cong F/K$ für einen geeigneten Untermoduln $K \subseteq F$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir zeigen zunächst die Eindeutigkeit:
+      Hierfür sei $\varphi \colon F \to M$ ein Homomorphismen mit $\varphi(b_i) = m_i$ für alle $i \in I$.
+      Jedes $x \in F$ lässt sich als Linearkombination $x = \sum_{i \in I} r_i b_i$ mit $r_i = 0$ für fast alle $i \in I$ schreiben, da die Familie $(b_i)_{i \in I}$ ein Erzeugendensystem von $F$ ist.
+      Deshalb gilt
+      \[
+          \varphi(x)
+        = \varphi\left( \sum_{i \in I} r_i b_i \right)
+        = \sum_{i \in I} r_i \varphi(b_i)
+        = \sum_{i \in I} r_i m_i.
+      \]
+      Also ist $\varphi$ bereits eindeutig bestimmt.
+      
+      Nun zur Existenz:
+      Für jedes $x \in F$ ist die Darstellung $x = \sum_{i \in I} r_i b_i$ mit $r_i = 0$ für fast alle $i \in I$ eindeutig, da die Familie $(b_i)_{i \in I}$ linear unabhängig ist.
+      Daher ist der Ausdruck $\varphi(x) \coloneqq \sum_{i \in I} r_i m_i$ wohldefiniert, und liefert eine Funktion $\varphi \colon F \to M$.
+      Ist $r \in R$ und sind $x, y \in F$ mit $x = \sum_{i \in I} r_i b_i$ und $y = \sum_{i \in I} s_i b_i$, so gelten $rx = \sum_{i \in I} rr_i b_i$ und $x + y = \sum_{i \in I} (r_i + s_i) b_i$.
+      Deshalb gilt
+      \begin{gather*}
+          \varphi(rx)
+        = \varphi\left( \sum_{i \in I} rr_i b_i \right)
+        = \sum_{i \in I} rr_i m_i
+        = r \sum_{i \in I} r_i m_i
+        = r \varphi\left( \sum_{i \in I} r_i b_i \right)
+        = r \varphi(x)
+      \shortintertext{und}
+          \varphi(x + y)
+        = \sum_{i \in I} (r_i + s_i) b_i
+        = \left( \sum_{i \in I} r_i b_i \right) + \left( \sum_{i \in I} s_i b_i \right)
+        = \varphi(x) + \varphi(y).
+      \end{gather*}
+      Also ist $\varphi$ ein Modulhomomorphismus.
+    
+    \item
+      Es sei $F$ ein freier $R$-Modul mit Basis $(b_m)_{m \in M}$.
+      Es sei $\varphi \colon F \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $\varphi(b_m) = m$ für alle $m \in M$.
+      Dann ist $\varphi$ surjektiv und induziert daher einen Isomorphismus $\overline{\varphi} \colon F / \ker \varphi \to M$, $x \mapsto \varphi(x)$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   \label{question: in a finitely generated module every generating set contains a finite generatin set}
   Es sei $M$ ein endlich erzeugter $R$-Modul.
   Zeigen Sie, dass jedes Erzeugendensystem $S \subseteq M$ ein endliches Erzeugendensystem enthält.
@@ -634,47 +689,6 @@
   Deshalb ist bereits $m = f^n(m) = 0$.
   Das zeigt die Gleichheit $\ker f^n = 0$, und da $\ker f \subseteq \ker f^n$ somit auch, dass $\ker f = 0$ gilt.
   Also ist $f$ injektiv, und somit bereits ein Isomorphismus.
-\end{solution}
-
-
-\begin{question}
-  Es sei $R$ ein Ring und $F$ ein freier $R$-Modul mit Basis $(b_i)_{i \in I}$.
-  Zeigen Sie, dass es für jeden $R$-Modul $M$ und jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$ einen eindeutigen Homomorphismus von $R$-Moduln $\varphi \colon F \to M$ gibt, so dass $\varphi(b_i) = m_i$ für alle $i \in I$ gilt.
-\end{question}
-
-
-\begin{solution}
-  Wir zeigen zunächst die Eindeutigkeit:
-  Hierfür sei $\varphi \colon F \to M$ ein Homomorphismen mit $\varphi(b_i) = m_i$ für alle $i \in I$.
-  Jedes $x \in F$ lässt sich als Linearkombination $x = \sum_{i \in I} r_i b_i$ mit $r_i = 0$ für fast alle $i \in I$ schreiben, da die Familie $(b_i)_{i \in I}$ ein Erzeugendensystem von $F$ ist.
-  Deshalb gilt
-  \[
-      \varphi(x)
-    = \varphi\left( \sum_{i \in I} r_i b_i \right)
-    = \sum_{i \in I} r_i \varphi(b_i)
-    = \sum_{i \in I} r_i m_i.
-  \]
-  Also ist $\varphi$ bereits eindeutig bestimmt.
-  
-  Nun zur Existenz:
-  Für jedes $x \in F$ ist die Darstellung $x = \sum_{i \in I} r_i b_i$ mit $r_i = 0$ für fast alle $i \in I$ eindeutig, da die Familie $(b_i)_{i \in I}$ linear unabhängig ist.
-  Daher ist der Ausdruck $\varphi(x) \coloneqq \sum_{i \in I} r_i m_i$ wohldefiniert, und liefert eine Funktion $\varphi \colon F \to M$.
-  Ist $r \in R$ und sind $x, y \in F$ mit $x = \sum_{i \in I} r_i b_i$ und $y = \sum_{i \in I} s_i b_i$, so gelten $rx = \sum_{i \in I} rr_i b_i$ und $x + y = \sum_{i \in I} (r_i + s_i) b_i$.
-  Deshalb gilt
-  \begin{gather*}
-      \varphi(rx)
-    = \varphi\left( \sum_{i \in I} rr_i b_i \right)
-    = \sum_{i \in I} rr_i m_i
-    = r \sum_{i \in I} r_i m_i
-    = r \varphi\left( \sum_{i \in I} r_i b_i \right)
-    = r \varphi(x)
-  \shortintertext{und}
-      \varphi(x + y)
-    = \sum_{i \in I} (r_i + s_i) b_i
-    = \left( \sum_{i \in I} r_i b_i \right) + \left( \sum_{i \in I} s_i b_i \right)
-    = \varphi(x) + \varphi(y).
-  \end{gather*}
-  Also ist $\varphi$ ein Modulhomomorphismus.
 \end{solution}
 
 
