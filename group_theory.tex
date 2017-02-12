@@ -35,6 +35,24 @@
 
 
 \begin{question}
+  Zeigen Sie, dass die symmetrische Gruppe $S_n$ von dem Zykel $\rho = (1 \, 2 \, \dotso \, n)$ und der Permutation $\tau = (1 \, 2)$ erzeugt wird.
+\end{question}
+
+
+\begin{solution}
+  Für alle $i = 1, \dotsc, n$ gilt $\rho^{i-1}(1) = i$ und $\rho^{i-1}(2) = i+1$, und somit
+  \[
+    \rho^{i-1} \tau (\rho^{i-1})^{-1}
+    = \rho^{i-1} (1 \quad 2) (\rho^{i-1})^{-1}
+    = (\rho^{i-1}(1) \quad \rho^{i-1}(2))
+    = (i \quad i+1).
+  \]
+  Deshalb gilt $(1 \quad 2), (2 \quad 3), \dotsc, (n-1 \quad n) \in \generate{\rho, \tau}$.
+  Da $S_n$ von diese Elementartranspositionen erzeugt wird, gilt bereits $S_n \subseteq \generate{\rho, \tau} \subseteq S_n$, und somit $S_n = \generate{\rho, \tau}$.
+\end{solution}
+
+
+\begin{question}
   \begin{enumerate}
     \item
       Es sei $G$ eine Gruppe und $H_1, H_2 \subseteq G$ seien zwei Untergruppen.
