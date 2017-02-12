@@ -6,8 +6,7 @@
 %   greatest common divisor
 %   calculating inverses in quotiens via gcd
 %   simplification of quotiens
-%   isomorphism class of cokernels 
-%   irreducibility of polynomials
+%   isomorphism class of cokernels
 %   solving equations with the chinese reminder theorem
 %   which of these rings is a field/pid/noetherian
 % Theorems:
@@ -950,15 +949,41 @@
     \item
       Zeigen Sie, dass $(X,Y) \subseteq K[X,Y]$ kein Hauptideal ist.
     \item
-      Zeigen Sie, dass das Ideal $(X_i \mid i \in \Natural) \subseteq K[X_i \mid i \in \Natural]$ nicht endlich erzeugt ist.
-      
-      (\emph{Hinweis}:
-       In jedem Polynom $f \in K[X_i \mid i \in \Natural]$ kommen nur endlich viele Variablen vor.)
+      Zeigen Sie, dass das Ideal $(X_1, X_2, X_3, \dotsc) \subseteq K[X_i \mid i = 1, 2, 3, \dotsc]$ nicht endlich erzeugt ist.
   \end{enumerate}
 \end{question}
 
 
-% TODO: Adding solutions.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wäre $(X,Y) = (f)$ für eine $f \in K[X,Y]$, so wäre $f \mid X$ und $f \mid Y$, also $f$ ein gemeinsamer Teiler von $X$ und $Y$ (sogar schon ein größter gemeinsamer Teiler, siehe Übung~\ref{question: greatest common divisor via generated ideal}).
+      Da $X$ und $Y$ teilerfremd sind, muss $f$ bereits eine Einheit in $K[X,Y]$ sein;
+      dann gilt aber $(X,Y) = (1) = K[X,Y]$, was nicht gilt (denn $K[X,Y]/(X,Y) \cong K$).
+    \item
+      Es sei $R \coloneqq K[X_i \mid i = 1, 2, 3, \dotsc]$.
+      Wir nehmen an, dass $I \coloneqq (X_i \mid i \in \Natural)$ endlich erzeugt von $f_1, \dotsc, f_t \in I$ erzeugt wird.
+      Man bemerke, dass jedes der Polynome in $R$ nur endlich viele Variablen enthält, und dass $I$ aus all jenen Polynomen besteht, deren konstater Term verschwindet.
+      Es folgt, dass $I = \bigcup_{n \geq 1} (X_1, X_2, \dotsc, X_n)$;
+      inbesondere gibt es ein $N \geq 1$ mit $f_1, \dotsc, f_t \in (X_1, \dotsc, X_N)$.
+      Es gilt also
+      \[
+        I = (f_1, \dotsc, f_t) \subseteq (X_1, \dotsc, X_N) \subseteq I
+      \]
+      und somit $I = (X_1, \dotsc, X_N)$.
+      Damit gilt aber auch
+      \begin{align*}
+                K
+         \cong  R/I
+        &\cong  K[X_1, X_2, \dotsc, X_N, X_{N+1}, X_{N+2}, \dotsc]/(X_1, \dotsc, X_N)
+        \\
+        &\cong  K[X_{N+1}, X_{N+2}, \dotsc]
+         \cong  K[X_1, X_2, X_3, \dotsc]
+         =      R,
+      \end{align*}
+      aber $R$ ist kein Körper.
+  \end{enumerate}
+\end{solution}
 
 
 % \begin{question}
@@ -1265,6 +1290,7 @@
 
 
 \begin{question}
+  \label{question: greatest common divisor via generated ideal}
   Es sei $R$ ein kommutativer Ring, $(a_i)_{i \in I}$ eine Familie von Elementen $a_i \in R$ und $a \in R$.
   \begin{enumerate}
     \item
