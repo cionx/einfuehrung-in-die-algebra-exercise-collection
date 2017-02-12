@@ -1778,7 +1778,28 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gelten $1 \in S$ und $1' \in S'$ und somit auch $1_{R \times R'} = (1_R, 1_{R'}) \in S \times S'$.
+      
+      Für $(s_1, s'_1), (s_2, s'_2) \in S \times S'$ gelten auch $s_1 s_1' \in S_1$ und $s_2 s_2' \in S_2$, und deshalb gilt $(s_1 s_1', s_2, s_2') \in S \times S'$.
+      
+    \item
+      Für $(s, s') \in S \times S'$ gelten $i(s) = s/1 \in R_S^\times$ und $i'(s') = s'/1 \in R_{S'}^\times$ und somit $(i \times i')(s,s') = (s/1, s'/1) \in R_S^\times \times R_{S'}^\times = (R_S \times R_{S'})^\times$.
+      Nach der universellen Eigenschaft der Lokalisierung $(R \times R')_{S \times S'}$ setzt sich $i \times i'$ eindeutig zu einem Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ fort, so dass $\varphi \circ j = i \times i'$, d.h.\ so dass das gegebene Diagramm kommutiert.
+      Konkret gilt $\varphi((r,r')/(s,s')) = (r/s, r'/s')$ für alle $(r,r')/(s,s') \in (R \times R')_{S \times S'}$.
+      
+    \item
+      Für jedes $(r/s, r'/s') \in R_S \times R'_{S'}$ gilt $(r/s, r'/s') = \varphi((r,r')/(s,s')) \in \im \varphi$, also ist $\varphi$ surjektiv.
+      Für $(r,r')/(s,s') \in \ker \varphi$ gilt $0 = \varphi((r,r')/(s,s')) = (r/s, r'/s')$.
+      Es ist also $r/s = 0/1$, es gibt also $t \in S$ mit $tr = 0$.
+      Analog gibt es auch $t' \in S'$ mit $t'r' = 0$.
+      Dann ist $(t,t') \in S \times S'$ mit $(t,t')(r,r') = (tr,t'r') = 0$, weshalb $(r,r')/(s,s') = 0$ gilt.
+      Also ist $\ker \varphi = 0$ und $\varphi$ somit auch injektiv.
+  \end{enumerate}
+\end{solution}
+
 
 
 \begin{question}
