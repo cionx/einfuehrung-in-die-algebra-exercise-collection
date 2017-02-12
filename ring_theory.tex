@@ -1890,7 +1890,71 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{question}
+  Der Hilbertsche Basissatz besagt, dass für einen noetherschen Ring $R$ auch der Polynomring $R[X]$ noethersch ist.
+  
+  Zum Beweis des Satzes sei $I \subseteq R[X]$ ein Ideal.
+  Für jedes $d \geq 0$ sei
+  \[
+              I_d
+    \coloneqq \{a \in R \mid \text{es gibt $f \in I$ mit $\deg f = d$ und Leitkoeffizienten $a$}\} \cup \{0\}.
+  \]
+  
+  \begin{claim*}
+    Für jedes $d \geq 0$ ist $I_d \subseteq R$ ein Ideal
+  \end{claim*}
+  \begin{proof}
+    Per Definition gilt $0 \in I_d$.
+    Sind $a_1, a_2 \in I_d$ so gibt es Polynome $f_1, f_2 \in I$ vom Grad $d$, so dass $a_i$ der Leitkoeffizient von $f_i$ ist.
+    Ist $a_1 = -a_2$, so gilt $a_1 + a_2\in I_d$;
+    andernfalls löschen sich in der Summe $f_1 + f_2 \in I$ die beiden Leitkoeffizienten nicht aus, weshalb $f_1 + f_2$ ein Polynom von Grad $d$ mit Leitkoeffizienten $a_1 + a_2$ ist.
+    In beiden Fällen gilt $a_1 + a_2 \in I_d$.
+    Ist $r \in R$ und $a \in I_d$, so gibt es ein Polynom $f \in I$ vom Grad $d$ mit Leitkoeffizienten $a$.
+    Ist $r \cdot a = 0$, so ist insbesondere $r \cdot a \in I_d$;
+    ist $r \cdot a \neq 0$, so ist auch $r f \in I$ wieder vom Grad $d$ und hat $ra$ als Leitkoeffizienten, weshalb auch $ra \in I_d$.
+  \end{proof}
+  
+  Ist $f \in I$ vom Grad $d$ mit Leitkoeffizietnen $a \in R$, so ist $X f \in I$ vom Grad $d+1$ mit Leitkoeffizienten $a$.
+  Deshalb ist $I_d \subseteq I_{d+1}$ für alle $d \geq 0$.
+  Da $R$ noethersch ist, stabiliert die aufsteigende Kette $0 \subseteq I_1 \subseteq I_2 \subseteq I_3 \subseteq \dotsb$; es gibt also ein $D \geq 0$ mit $I_D = I_{D+l}$ für alle $l \geq 0$.
+  Die Ideale $I_0, \dotsc, I_D$ sind endlich erzeugt, da $R$ noethersch sind;
+  Für jedes $d = 0, \dotsc, D$ sei $I_d = (a^{(d)}_1, \dotsc, a^{(d)}_{s_d})$.
+  Für jedes $d = 0, \dotsc, D$ und $i = 1, \dotsc, s_d$ gibt es dann ein Polynom $f^{(d)}_i \in I$ vom Grad $d$ mit Leitkoeffizienten $a^{(d)}_i$;
+  man merke für $d = 0$, dass $f^{(0)}_i = a^{(0)}_i$ für alle $i = 0, \dotsc, d$, da ein konstantes Polynom mit seiem Leitkoeffizienten übereinstimmt.
+  Es sei $J \coloneqq (f^{(d)}_i \mid d = 0, \dotsc, D, i = 1, \dotsc, s_d) \subseteq I$.
+  
+  Wir zeigen, dass bereits $J = I$ gilt, dass also $f \in J$ für jedes $f \in I$.
+  Wir zeigen dies per Induktion über den Grad von $f$:
+  Für $\deg f = 0$ gilt bereits $f\in I_0$, und es gilt
+  \[
+              I_0
+    =         (a^{(0)}_1, \dotsc, a^{(0)}_{s_0})_R
+    \subseteq (a^{(0)}_1, \dotsc, a^{(0)}_{s_0})_{R[X]}
+    =         (f^{(0)}_1, \dotsc, af^{(0)}_{s_0})_{R[X]}
+    \subseteq J.
+  \]
+  Es sei nun $f \in I$ mit $d \coloneqq \deg f \geq 1$ und es gelte $g \in J$ für alle $f \in I$ mit $\deg g \leq d-1$.
+  Es sei $a \in I_d$ der Leitkoeffizient von $f$.
+  Wir unterscheiden zwischen zwei Fällen:
+  \begin{itemize}
+    \item
+      Gilt $d \leq D$, so gilt $a \in I_d = (a^{(d)}_1, \dotsc, a^{(d)}_{s_d})$, also $a = \sum_{i=1}^{s_d} r_i a^{(d)}_i$ für passende $r_i \in R$.
+      Das Polynom $g \coloneqq \sum_{i=1}^{s_d} r_i f^{(d)}_i \in J$ hat dann $a$ als Leitkoeffzienten und hat ebenfalls Grad $d$.
+      Das Polynom $f - g \in I$ hat daher echt kleineren Grad als $f$, weshalb nach Induktionsvoraussetzung $f - g \in J$ gilt.
+      Somit ist auch $f = (f - g) + g \in J$.
+    \item
+      Gilt $d \geq D$, so ist $a \in I_d = I_D$.
+      Es gilt daher $a = \sum_{i=1}^{s_D} r_i a^{(D)}_i$ für passende $r_i \in R$.
+      Das Polynom $g \coloneqq \sum_{i=1}^{s_D} r_i f^{(D)}_i \in J$ hat dann $a$ als Leitkoeffizienten und Grad $D \leq d$.
+      Deshalb ist $X^{d-D} g \in J$ mit Leitkoeffizienten $a$ und Grad $d$.
+      Das Polynom $f - X^{d-D} g$ hat daher echt kleineren Grad als $f$, weshalb nach Induktionsvoraussetzung $f - X^{d-D} g \in J$ gilt.
+      Somit ist auch $f = (f - X^{d-D} g) + X^{d-D} g \in J$.
+  \end{itemize}
+  In beiden Fällen erhalten wir also, dass auch $f \in J$.
+  
+  Ingesamt zeigt dies, dass $I = J$ endlich erzeugt ist.
+  Der Ring $R[X]$ ist also noethersch, da jedes seiner Ideale endlich erzeugt ist.
+\end{question}
 
 
 \begin{question}[subtitle = Ein Lemma von Gauß]
