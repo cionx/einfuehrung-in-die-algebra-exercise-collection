@@ -402,7 +402,7 @@
         &\longleftrightarrow  \{ \text{Ideale $K \subseteq R/I$} \},
         \\
                       J
-        &\longmapsto  \pi(J),
+        &\longmapsto  \pi(J) = J/I,
         \\
                         \pi^{-1}(K)
         &\longmapsfrom  K
@@ -1176,7 +1176,20 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $J \subseteq R/I$ ein Ideal.
+      Dann gibt es ein Ideal $J' \subseteq R$ mit $J' \supseteq I$ und $J = J'/I$ (siehe Übung~\ref{question: lattice isomorphism for quotients}).
+      Das Ideal $J'$ ist endlich erzeugt, da $R$ noethersch ist, also $J' = (a_1, \dotsc, a_n)$.
+      Damit gilt $J = J/I = (\overline{a_1}, \dotsc, \overline{a_n})$, weshalb auch $J$ endlich erzeugt ist.
+      Der Ring $R/I$ ist also noethersch, da jedes seiner Ideale endlich erzeugt ist.
+    \item
+      Analog zum Beweis des ersten Aussagenteiles ergibt sich, dass jedes Ideal in $R/I$ ein Hauptideal ist.
+      Damit $R/I$ ein Integritätsbereich ist, muss allerdings noch zusätzlich gefordert werden, dass $I$ ein Primideal ist.
+      Ist etwa $K$ ein Körper, so ist in $K[X]/(X^2)$ zwar jedes Ideal ein Hauptideal, aber $0 \neq \overline{X} \in K[X]/(X^2)$ ist nilpotent, weshalb $K[X]/(X^2)$ kein Integritätsbereich, und somit auch kein Hauptidealring ist.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
