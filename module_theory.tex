@@ -368,10 +368,10 @@
       \&  {}
       \&  L
           \arrow{d}{\varphi}
-          \arrow[dashed, bend right, swap]{dll}{\psi}
+          \arrow[densely dotted, bend right, swap]{dll}{\psi}
       \\ 
           N
-          \arrow[swap]{rr}{f}
+          \arrow[bend right = 40]{rr}{f}
       \&  {}
       \&  M
     \end{tikzcd}
@@ -387,13 +387,13 @@
       \&  {}
       \&  L
           \arrow{d}{\varphi}
-          \arrow{dl}{\tilde{\varphi}}
+          \arrow[dashed]{dl}{\tilde{\varphi}}
       \\ 
           N
-          \arrow[swap]{r}{\tilde{f}}
+          \arrow[dashed, swap]{r}{\tilde{f}}
           \arrow[bend right = 40]{rr}{f}
       \&  \im f
-          \arrow[swap]{r}{i}
+          \arrow[dashed, swap]{r}{i}
       \&  M
     \end{tikzcd}
   \]
@@ -452,7 +452,7 @@
               {}
           \&  P
               \arrow{d}{\varphi}
-              \arrow[dashed, swap]{dl}{\psi}
+              \arrow[densely dotted, swap]{dl}{\psi}
           \\
               M
               \arrow[twoheadrightarrow]{r}{g}
@@ -506,7 +506,7 @@
     \&  {}
     \&  P
         \arrow{d}{\id_P}
-        \arrow[dashed, swap]{dl}{\psi}
+        \arrow[densely dotted, swap]{dl}{\psi}
     \&  {}
     \\
         0
