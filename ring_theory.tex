@@ -1111,9 +1111,13 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Ideale in der Lokalisierung]
   Es sei $R$ ein kommutativer Ring und $S \subseteq R$ eine multiplikative Teilmenge.
   \begin{enumerate}
+    \item
+      Zeigen Sie, dass jedes Ideal $J \subseteq R_S$ von der Form $J = I_S$ für ein Ideal $I \subseteq R$ ist.
+    \item
+      Zeigen Sie, dass $I_S = (a_i/1 \mid i \in I)$ falls $I = (a_i \mid i \in I)$.
     \item
       Zeigen Sie, dass $R_S$ noethersch ist, wenn $R$ noethersch ist.
     \item
@@ -1122,7 +1126,43 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $I \coloneqq \{r \in R \mid r/1 \in J\}$.
+      Dies ist ein Ideal in $I$:
+      
+      Es gilt $0 \in I$, da $0/1 \in J$.
+      Für $r_1, r_2 \in I$ gelten $r_1/1, r_2/1 \in J$ und somit auch $(r_1 + r_2)/1 = r_1/1 + r_2/1 \in J$, also $r_1 + r_2 \in I$.
+      Für $r \in I$ und jedes $r' \in R$ gilt $r/1 \in J$ und somit auch $(r' r)/1 = (r'/1)(r/1) \in J$, also $r' r \in I$.
+      Insgesamt zeigt dies, dass $I$ ein Ideal ist.
+      
+      Alternativ betrachte man den kanonischen Ringhomomorphismus $i \colon R \to R_S$, $r \mapsto r/1$.
+      Für diesen gilt $I = i^{-1}(J)$, also ist $I$ ein Ideal (siehe Übung~\ref{question: preimages of ideals}).
+      
+      Für jedes $r \in I$ und $s \in S$ gilt $r/1 \in J$ und somit auch $r/s = (1/s)(r/1) \in J$, weshalb $I_S \subseteq J$.
+      Für jedes $r/s \in J$ gilt $r/1 = (s/1)(r/s) \in J$ und somit auch $r \in I$, also $r/s \in I_S$.
+      Deshalb gilt auch $J \subseteq I_S$.
+      
+    \item
+      Es gilt $a_i \in I$ für alle $i \in I$, also $a_i/1 \in I_S$ für alle $i \in I$ und deshalb $(a_i/1 \mid i \in I) \subseteq I_S$.
+      Ist andererseits $r/s \in I_S$ mit $r \in R$, so gilt $r = \sum_{i \in I} r_i a_i$ mit $r_i = 0$ für fast alle $i \in I$.
+      Dann gilt $r/s = \sum_{i \in I} (r_i/s)(a_i/1) \in (a_i \mid i \in I)$.
+      Also gilt auch $I_S \subseteq (a_i/1 \mid i \in I)$.
+    
+    \item
+      Ist $J \subseteq R_S$ ein Ideal, so gilt nach dem ersten Aussagenteil $J = I_S$ für ein Ideal $I \subseteq J$.
+      Das Ideal $I$ ist endlich erzeugt, da $R$ noethersch ist, also $I = (a_1, \dotsc, a_n)$.
+      Nach dem zweiten Aussagenteil gilt deshalb $J = I_S = (a_1/1, \dotsc, a_n/1)$, weshalb $J$ endlich erzeugt.
+      Es ist also jedes Ideal in $R_S$ endlich erzeugt, also $R_S$ noethersch.
+    
+    \item
+      Auch $R_S$ ist wieder ein Hauptidealring:
+      Analog zum Beweis des vorherigen Aussagenteils erhalten wir, dass jedes Ideal in $R_S$ ein Hauptideal ist.
+      Es bleibt daher nur zu zeigen, dass $R_S$ ein Integritätsbereich ist.
+      Dies folgt aber daraus, dass $R$ ein Integritätsbereich ist, und $R_S$ daher als Unterring des Quotientenkörpers $Q(R)$ realisiert werden kann.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
