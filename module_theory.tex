@@ -13,7 +13,6 @@
 %   equivalent definitions of a short exact sequence being split
 %   localization of modules is exact
 %   rank of a free module is well-defined for nonzero commutative rings
-%   every module is quotient of a free module
 
 
 \begin{question}[subtitle = Multiple Choice]
@@ -325,6 +324,105 @@
     \subseteq M.
   \]
   Also ist $\generate{S'} = M$ und somit $S'$ ein endliches Erzeugendensystem von $M$.
+\end{solution}
+
+\begin{question}[subtitle = Linksexaktheit von $\Hom$]
+  Es sei $R$ ein Ring und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
+  Zeigen Sie, dass für jeden $R$-Moduln $L$ auch die induzierte Sequenz
+  \[
+                          0
+    \to                   \Hom_R(L,N)
+    \xlongrightarrow{f_*} \Hom_R(L,M)
+    \xlongrightarrow{g_*} \Hom_R(L,P)
+  \]
+  exakt ist.
+\end{question}
+
+
+\begin{solution}
+  Für $\varphi_1, \varphi_2 \in \Hom_R(L,N)$ gilt wegen der Injektivität von $f$, dass
+  \[
+          f_*(\varphi_1) = f_*(\varphi_2)
+    \iff  f \circ \varphi_1 = f \circ \varphi_2
+    \iff  \varphi_1 = \varphi_2.
+  \]
+  Also ist auch $f_*$ injektiv.
+  Für alle $\varphi \in \Hom_R(L,N)$ gilt
+  \[
+      (g_* \circ f_*)(\varphi)
+    = g_*( f_*(\varphi) )
+    = {\underbrace{g \circ f}_{=0}} \circ \varphi
+    = 0,
+  \]
+  also gilt $\im f_* \subseteq \ker g_*$.
+  (Die obige Rechnung lässt sich durch $g_* \circ f_* = (g \circ f)_* = 0_* = 0$ abkürzen.)
+  
+  Es sei $\varphi \in \ker g_*$.
+  Um zu zeigen, dass bereits $\varphi \in \im f_*$ gilt,  konstruieren wir einen Homomorphismus $\psi \colon L \to N$ mit $\varphi = f_*(\psi) = f \circ \psi$.
+  \[
+    \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+          {}
+      \&  {}
+      \&  L
+          \arrow{d}{\varphi}
+          \arrow[dashed, bend right, swap]{dll}{\psi}
+      \\ 
+          N
+          \arrow[swap]{rr}{f}
+      \&  {}
+      \&  M
+    \end{tikzcd}
+  \]
+  Es gilt $0 = g_*(\varphi) = g \circ \varphi$ und somit $\im \varphi \subseteq \ker g = \im f$.
+  Es sei $\tilde{\varphi} \colon L \to \im f$ die entsprechende Einschränkung von $\tilde{\varphi}$;
+  für die Inklusion $i \colon \im f \to M$ gilt also $\varphi = i \circ \tilde{\varphi}$.
+  Wegen der Injektivität von $f$ schränkt sich $f$ zu einem Isomorphismus $\tilde{f} \colon N \to \im f$ ein;
+  es gilt also $f = i \circ \tilde{f}$.
+  \[
+    \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+          {}
+      \&  {}
+      \&  L
+          \arrow{d}{\varphi}
+          \arrow{dl}{\tilde{\varphi}}
+      \\ 
+          N
+          \arrow[swap]{r}{\tilde{f}}
+          \arrow[bend right = 40]{rr}{f}
+      \&  \im f
+          \arrow[swap]{r}{i}
+      \&  M
+    \end{tikzcd}
+  \]
+  Da $f$ ein Isomorphismus ist, können wir nun $\psi \coloneqq \tilde{f}^{-1} \circ \tilde{\varphi} \colon L \to N$ definieren.
+  \[
+    \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+          {}
+      \&  {}
+      \&  L
+          \arrow{d}{\varphi}
+          \arrow{dl}{\tilde{\varphi}}
+          \arrow[dashed, bend right, swap]{dll}{\psi}
+      \\ 
+          N
+          \arrow[swap]{r}{\tilde{f}}
+          \arrow[bend right = 40]{rr}{f}
+      \&  \im f
+          \arrow[dashed, bend right = 20, near start, swap]{l}{\tilde{f}^{-1}}
+          \arrow[swap]{r}{i}
+      \&  M
+    \end{tikzcd}
+  \]
+  Wir erhalten, dass
+  \[
+      f_*(\psi)
+    = f_*( \tilde{f}^{-1} \circ \tilde{\varphi} )
+    = f \circ \tilde{f}^{-1} \circ \tilde{\varphi}
+    = i \circ \tilde{f} \circ \tilde{f}^{-1} \circ \tilde{\varphi}
+    = i \circ \tilde{\varphi}
+    = \varphi.
+  \]
+  Also gilt bereits $\varphi \in \im f_*$, und somit $\ker g_* \subseteq \im f_*$.
 \end{solution}
 
 
