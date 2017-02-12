@@ -41,6 +41,8 @@
     \item
       Ist $P$ ein projektiver $R$-Modul, so gibt es einen $R$-Moduln $C$, so dass $P \oplus C$ frei ist.
     \item
+      Sind $M_1$ und $M_2$ zwei $R$-Moduln und $N_1 \subseteq M_1$, $N_2 \subseteq M_2$ Untermoduln mit $M_1 \cong M_2$ und $N_1 \cong N_2$, so gilt auch $M_1/N_1 \cong M_2/N_2$.
+    \item
       Ist $M$ ein $R$-Modul mit $M \cong M \oplus M$, so gilt $M = 0$.
   \end{enumerate}
 \end{question}
@@ -129,6 +131,10 @@
       Der Homomorphismus $\varphi$ lässt sich zu einer kurzen exakten Sequenz $0 \to \ker \varphi \xrightarrow{i} F \xrightarrow{\varphi} P \to 0$ ergänzen, wobei $i \colon \ker \varphi \to F$, $x \mapsto x$ die kanonische Inklusion bezeichnet.
       Da $P$ projektiv ist, spaltet diese Sequenz, weshalb $P \oplus \ker \varphi \cong F$ frei ist.
       (Man siehe Übung~\ref{questions: equivalent characterizations of projective modules} für die verschiedenen Charakterisierungen projektiver Moduln.)
+      
+    \item
+      Die Aussage ist falsch:
+      Man siehe Übung~\ref{cancelation laws up to isomorphism} für ein Gegenbeispiel.
       
     \item
       Die Aussage ist falsch:
@@ -1526,6 +1532,7 @@
 
 
 \begin{question}[subtitle = Kürzungsregeln bis auf Isomorphie]
+  \label{question: cancelation laws up to isomorphism}
   Geben Sie einen jeweils passenden kommutativen Ring $R$ Beispiele für $R$-Moduln $M_1$ und $M_2$, sowie Untermoduln $N_1 \subseteq M_1$ und $N_2 \subseteq M_2$, so dass die folgenden Bedingungen erfüllt sind:
   \begin{enumerate}
     \item
