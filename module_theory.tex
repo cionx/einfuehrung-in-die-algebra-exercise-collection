@@ -29,7 +29,7 @@
     \item
       Ist $M$ ein $R$-Modul und $N \subseteq M$ ein Untermodul, so gibt es einen Untermodul $P \subseteq M$ mit $M = N \oplus P$.
     \item
-      Sind $M$ und $N$ zwei freie $R$-Moduln endlichen Rangs, so ist auch $\Hom_R(M, N)$ ein freier $R$-Modul.
+      Sind $M$ und $N$ zwei freie $R$-Moduln endlichen Rangs, so ist auch $\Hom_R(M, N)$ ein freier $R$-Modul endlichen Rangs.
     \item
       Ist $M$ ein endlich erzeugter $R$-Modul, so ist auch jeder Untermodul $N \subseteq M$ endlich erzeugt.
     \item
@@ -37,16 +37,11 @@
     \item
       Ist $M$ ein endlich erzeugter $R$-Modul und $E \subseteq M$ ein minimales Erzeugendensystem, so ist $E$ endlich.
     \item
-      Ist $M$ ein endlich erzeugter $R$-Modul und $E_1, E_2 \subseteq M$ zwei minimale Erzeugendensysteme, so sind $E_1$ und $E_2$ gleichmächtig.
+      Ist $M$ ein freier $R$-Modul endlichen Rangs und sind $E_1, E_2 \subseteq M$ zwei minimale Erzeugendensysteme, so sind $E_1$ und $E_2$ gleichmächtig.
     \item
       Ist $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln mit $M = N \oplus P$, so spaltet die Sequenz.
     \item
       Ist $M$ ein $R$-Modul mit $M \cong M \oplus M$, so gilt $M = 0$.
-    \item
-      Es gibt eine $K[T]$-Modulstruktur auf dem Vektorraum $K[T]$, so dass $X.f = f$ für alle $f \in K[X]$.
-    \item
-      Es sei $R = K[T]$ und $M$ der eindeutige $R$-Modul, der dem $K$-Vektorraum $K[T]$ zusammen mit dem Endomorphismus $D \colon K[T] \to K[T]$, $f \mapsto f'$ entspricht.
-      Dann ist $M$ ein endlich erzeugter $R$-Modul.
   \end{enumerate}
 \end{question}
 
@@ -56,15 +51,28 @@
     \item
       Die Aussage ist falsch:
       Betrachtet man etwa $R = \Rational$ und $S = \Integer$, so ist $M = \Rational$ als $R$-Modul endlich frei vom Rang $1$, aber als $\Integer$-Modul nicht frei.
+      
     \item
       Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
-    \item
-      Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
+      Man betrachte für eine Körper $K$ den Ring $R = K[X,Y]$.
+      Dann ist $M = R$ frei vom Rang $1$.
+      Der Untermodul, d.h.\ das Ideal $(X,Y) \subseteq R$ ist aber nicht frei:
+      Da $(X,Y)$ kein Hauptideal ist (siehe Übung~\ref{question: examples for non principal and not finitely generated modules}) müsste $(X,Y)$ frei vom Rang $\geq 2$ sein.
+      Inbesondere wäre dann $(X,Y) = I \oplus J$ für zwei Ideale $I, J \subseteq R$ mit $I, J \neq 0$.
+      (Man wähle $I$ als den Span eines Basiselements, und $J$ als den Span aller anderen.)
+      Dann gibt es aber $f \in I$ und $g \in J$ mit $f, g \neq 0$.
+      Wegen der Nullteilerfreiheit von $R$ ist dann auch $fg \neq 0$, da aber $fg \in IJ \subseteq I \cap J$ steht dies im Widerspruch zur Direktheit der Summe $I \oplus J$.
+      
     \item
       Die Aussage ist falsch:
       Für $R = 0$ ist $0$ (bis auf Isomorphie) der einzige $R$-Modul und somit jeder $R$-Modul frei, aber $0$ ist kein Körper.
+      
+    \item
+      Die Aussage ist falsch:
+      Es seien etwa $R = \Integer$, $M = \Integer$ und $N = 2\Integer$.
+      Für jeden Untermodul $P \subseteq M$ mit $P \neq 0$ gilt dann $N \cap P \neq 0$;
+      für jeden Untermodul $P \subseteq M$ gilt also $P + N \subsetneq M$ oder $P \cap N \neq 0$.
+      
     \item
       Die Aussage ist wahr:
       Ist $M$ vom Rang $r$ und $N$ vom Rang $s$, so gilt
@@ -74,31 +82,49 @@
         \cong R^{rs}
       \]
       als $R$-Moduln.
+      
     \item
       Die Aussage ist falsch:
       Es sei $R$ ein Ring, so dass es ein Ideal $I \subseteq R$ gibt, das nicht endlich erzeugt ist (man siehe etwa Übung~\ref{question: examples for non principal and not finitely generated modules}).
       Dann ist $R$ ein endlich erzeugter $R$-Modul (denn $R$ ist als $R$-Modul frei vom Rang $1$), aber $I$ ist ein Untermodul von $R$, der nicht endlich erzeugt ist.
+      
     \item
       Die Aussage ist falsch:
       Ist etwa $K$ ein endlicher Körper und $V$ ein unendlichdimensionaler $K$-Vektorraum, so ist jedes Element $v \in V$ in dem endlichen Untervektorraum $\generate{v}_K$ enthalten, aber $V$ ist als $K$-Vektorraum nicht endlich erzeugt.
+      
     \item
       Die Aussage ist wahr:
-      % TODO: Adding a more detailed solution.
+      Da $F$ ein endliches Erzeugendensystem besitzt, enthält jedes Erzeugendensystem $E \subseteq M$ bereits ein endliches Erzeugendensystem $E' \subseteq E$ (siehe Übung~\ref{question: in a finitely generated module every generating set contains a finite generatin set}).
+      Ist $E$ bereits minimal, so muss dabei $E = E'$ gelten, und $E$ somit bereits endlich sein.
+      
     \item
       Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
+      Betrachtet man $R = \Integer$ und $M = \Integer$, so sind $\{1\}, \{2, 3\} \subseteq \Integer$ zwei minimal Erzeugendensysteme, die nicht gleichmächtig sind.
+      
     \item
       Die Aussage ist falsch:
-      % TODO: Adding a more detailed solution.
+      Man betrachte für den Ring $R = \Integer$ die kurze exakte Sequenz
+      \[
+                            0
+        \to                 \Integer
+        \xlongrightarrow{f} \Integer \oplus \bigoplus_{n \geq 2} (\Integer/2)
+        \xlongrightarrow{g} \bigoplus_{n \geq 1} (\Integer/2)
+        \to                 0
+      \]
+      wobei $f(n) = (2n,0,0,0,\dotsc)$ und $g(n, a_1, a_2, a_3, \dotsc) = (\overline{n}, a_1, a_2, a_3, \dotsc)$.
+      Diese Sequenz spaltet nicht:
+      Ansonsten gebe es nämlich einen Homomorphismus von $R$-Moduln $s \colon \Integer \oplus \bigoplus_{n \geq 1} (\Integer/2) \to \Integer$ mit $s \circ f = \id_\Integer$.
+      Dann würde inbesondere
+      \[
+          2 s(1,0,0,\dotsc)
+        = s(2,0,0,\dotsc)
+        = s(f(1))
+        = 1
+      \]
+      gelten, was in $\Integer$ nicht möglich ist.
     \item
       Die Aussage ist falsch:
       Man betrachten etwa den Modul $M = \bigoplus_{n \in \Natural} R$.
-    \item
-      Die Aussage ist falsch.
-      % TODO: Adding a more detailed solution.
-    \item
-      Die Aussage ist wahr.
-      % TODO: Adding a more detailed solution.
   \end{enumerate}
 \end{solution}
 
@@ -227,6 +253,7 @@
 
 
 \begin{question}
+  \label{question: in a finitely generated module every generating set contains a finite generatin set}
   Es sei $M$ ein endlich erzeugter $R$-Modul.
   Zeigen Sie, dass jedes Erzeugendensystem $S \subseteq M$ ein endliches Erzeugendensystem enthält.
 \end{question}
