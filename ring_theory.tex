@@ -114,6 +114,136 @@
 \end{solution}
 
 
+\begin{question}
+  Entscheiden Sie, ob die folgenden Polynome jeweils irreduzibel sind:
+  \begin{enumerate}
+    \item
+      $f(X) \coloneqq (X - 3)^2 + 1 \in \Rational[X]$.
+    \item
+      $f(X) \coloneqq 2X^3 - 14X + 2 \in \Rational[X]$.
+    \item
+      $f(X) \coloneqq 2X^3 - 14X + 2 \in \Integer[X]$.
+    \item
+      $f(X) \coloneqq X^3 - 18 X^2 + 6 X + 3 \in \Rational[X]$.
+    \item
+      $f(X) \coloneqq X^3 - 18 X^2 + 6 X + 3 \in \Real[X]$.
+    \item
+      $f(X) \coloneqq X^5 + 15 X^2 + 6 X + 21 \in \Integer[X]$.
+    \item
+      $f(X) \coloneqq X^3 + 2 X^2 + X + 1 \in \Integer[X]$.
+    \item
+      $f(X) \coloneqq 2X^4 + 200 X^3 + 2000 X^2 + 20000 X + 20 \in \Rational[X]$.
+    \item
+      $f(X) \coloneqq  X^n - 2t \in K(t)[X]$ für einen Körper $K$ und $n \geq 1$.
+    \item
+      $f(X,Y) \coloneqq X Y^3 + X^2 Y + 5 X Y^2 + X^2 + 3 X Y + 2 X + Y + 2 \in \Rational[X]$.
+    \item
+      $f(X,Y) \coloneqq X^3 + Y^3 + X^2 Y + X Y^2 + XY + 6 X + 6 Y + 3 \in \Rational[X,Y]$.
+    \item
+      $f(X) \coloneqq X^{p-1} + X^{p-2} + \dotsb + X + 1 \in \Rational[X]$ für $p > 0$ prim.
+    \item
+      $f(X) \coloneqq X^n + X^{n-1} + \dotsb + X + 1 \in \Rational[X]$ für $n \geq 3$ ungerade.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir geben zwei Möglichkeiten an, um die Irreduziblität von $f$ zu zeigen:
+      \begin{itemize}
+        \item
+          Es handelt sich um ein quadratisches Polynom ohne reellen, und damit auch ohne rationale Nullstellen;
+          also ist $f$ irreduzibel.
+        \item
+          Alternativ ergibt sich durch Ausmultiplizieren, dass $f(X) = X^2 - 6X + 10$, und die Irreduziblität von $f$ ergibt sich aus Eisenstein mit $p = 2$.
+      \end{itemize}
+    \item
+      Da $2 \in \Rational$ eine Einheit ist, dürfen wir $f$ durch $2$ teilen und stattdessen das Polynom $\tilde{f}(X) = X^3 - 7X + 1 \in \Rational[X]$ betrachten.
+      Da es sich bei $\tilde{f}$ ein kubisches Polynom handelt, ist es genau dann irreduzibel, wenn es keine Nullstelle hat.
+      Da $\tilde{f}$ normiert ist und bereits $\tilde{f} \in \Integer[X]$ gilt, ist jede Nullstelle von $\tilde{f}$ schon eine ganze Zahl.
+      Da jede Nullstelle $n \in \Integer$ den konstanten Teil von $\tilde{f}$ teilen muss, kommen nur $1$ und $-1$ als mögliche Nullstellen in Frage. Durch direktes Ausprobieren können aber beide ausgeschlossen werden.
+      Also hat $\tilde{f}$ keine Nullstelle und ist somit irreduzibel.
+    \item
+      Das Polynom ist nicht irreduzibel, da es in $f(X) = 2 \cdot (X^3 - 7X + 1)$ faktorisiert, wobei keiner der beiden Faktoren eine Einheit in $\Integer[X]$ ist.
+    \item
+      Reduzieren bezüglich $p = 3$ liefert $\tilde{f}(X) = X^3 - 4X - 1 = X^3 + 2X + 2 \in \Field_3[X]$.
+      Durch direktes Ausprobieren ergibt sich, dass $\tilde{f}$ keine Nullstellen hat, und als kubisches Polynom somit irreduzibel ist.
+      Somit ist auch $f$ irreduzibel.
+    \item
+      Das Polynom ist nach Eisenstein mit $p = 3$ irreduzibel.
+    \item
+      Das Polynom ist nicht irreduzibel, da es (als Polynom ungeraden Grades über $\Real$) eine Nullstelle hat, aber nicht linear ist.
+    \item
+      Die Irreduziblität ergibt sich nach Eisenstein mit $p = 3$.
+    \item
+      Wir geben zwei Möglichkeit an die Irreduziblität von $f$ zu zeigen.
+      \begin{itemize}
+        \item
+          Es genügt zu zeigen, dass $f$ irreduzibel in $\Rational[X]$ ist.
+          Als kubisches Polynom ist $f$ genau dann irreduzibel in $\Rational[X]$, wenn es über $\Rational$ keine Nullstelle hat.
+          Da $f$ normiert ist, muss jede rationale Nullstelle von $f$ bereits eine ganze Zahl sein.
+          Es genügt also zu zeigen, dass $f$ keine ganzen Nullstellen hat.
+          Jede ganze Nullstelle von $f$ muss den konstanten Teil von $f$, also $1$, teilen;
+          es kommen somit nur $1$ und $-1$ in Frage.
+          Durch Ausprobieren ergibt sich, dass keines von beiden eine Nullstelle ist.
+          Also ist $f$ irreduzibel.
+        \item
+          Reduzieren bezüglich $p = 2$ ergibt das Polynom $\tilde{f}(X) = X^3 + X + 1 \in \Field_2[X]$.
+          Dann hat $\tilde{f}$ keine Nullstellen und ist als kubisches Polynom deshalb irreduzibel.
+          Somit ist auch $f$ schon irreduzibel.
+      \end{itemize}
+    \item
+      Da $2 \in \Rational$ eine Einheit ist, dürfen wir $f$ durch $2$ teilen und somit stattdessen das Polynom $\tilde{f}(X) \coloneqq X^4 + 100 X^3 + 1000 X^2 + 10000 X + 10 \in \Rational[X]$ betrachten.
+      Da $\tilde{f}$ normiert, und somit primitiv ist, ergibt sich die Irreduziblität von $\tilde{f}$ durch Eisenstein wahlweise mit $p = 2$ oder $p = 5$.
+    \item
+      Die Irreduziblität ergibt sich durch Eisenstein mit dem Primelement $t \in K[t]$.
+    \item
+      Wir betrachten das gegebene Polynom als
+      \begin{align*}
+            \tilde{f}(X)
+        &=  X Y^3 + X^2 Y + 3 X Y^2 + X^2 + 3 X Y + 2 X + Y + 2
+        \\
+        &=  (Y + 1) X^2 + (Y^3 + 3 Y^2 + 3 Y + 2) X + (Y + 2)
+        \in \Rational[Y][X]
+      \end{align*}
+      Da die Polynome $Y+1, Y + 2 \in \Rational[Y]$ teilerfremd sind, ist dieses Polynom primitiv.
+      Außerdem gilt $(Y + 2) \mid (Y^3 + 3 Y^2 + 3 Y + 2)$, da $-2$ eine Nullstelle von $Y^3 + 3 Y^2 + 3 Y + 2$ ist.
+      Es lässt sich also Eisenstein mit dem Primelement $Y + 2 \in \Rational[Y]$ anwenden, um die Irreduziblität von $\tilde{f}$ zu erhalten.
+    \item
+      Wir betrachen das gegeben Polynom als
+      \begin{align*}
+            \tilde{f}(Y)
+        &=  X^3 + Y^3 + X^2 Y + X Y^2 + X Y + 6 X + 6 Y + 3
+        \\
+        &=  Y^3 + X Y^2 + (X^2 + X + 6) Y + (X^3 + 6X + 3)
+        \in \Rational[X][Y]
+      \end{align*}
+      Da $\tilde{f}$ normiert ist können wir bezüglich $X \in \Rational[X]$ reduzieren, und erhalten
+      \[
+              \overline{f}(Y)
+        =     Y^3 + 6 Y + 3
+        \in   (\Rational[X]/(X))[Y]
+        \cong \Rational[Y].
+      \]
+      Nach Eisenstein mit $p = 3$ ist $\overline{f}(Y)$ irreduzibel, also ist auch $\tilde{f}$, und somit $f$, irreduzibel.
+    \item
+      Es gilt $f(X) = X^{p-1} + \dotsb + X + 1 = (X^p - 1)/(X - 1)$ und somit
+      \[
+          f(X+1)
+        = \frac{(X+1)^p-1}{X}
+        = \frac{\sum_{k=0}^p \binom{p}{k} X^k - 1}{X}
+        = \sum_{k=1}^p \binom{p}{k} X^{k-1}
+        = \sum_{k=0}^{p-1} \binom{p}{k+1} X^k.
+      \]
+      Dabei gilt $p \mid \binom{p}{k+1}$ für alle $k = 0, \dotsc, p-1$ aber $p^2 \mid p = \binom{p}{1}$.
+      Also ist das normierte Polynom $f(X+1)$ nach Eisenstein irreduzibel, und somit auch $f(X)$.
+    \item
+      Das Polynom ist nicht linear, hat aber $-1$ ein Nullstelle; es ist also reduzibel.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Initialobjekte in der Kategorie der Ringe]
   \label{qst: Z is inital}
   \begin{enumerate}
