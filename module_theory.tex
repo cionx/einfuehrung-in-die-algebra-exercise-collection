@@ -39,6 +39,8 @@
     \item
       Ist $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln mit $M = N \oplus P$, so spaltet die Sequenz.
     \item
+      Ist $P$ ein projektiver $R$-Modul, so gibt es einen $R$-Moduln $C$, so dass $P \oplus C$ frei ist.
+    \item
       Ist $M$ ein $R$-Modul mit $M \cong M \oplus M$, so gilt $M = 0$.
   \end{enumerate}
 \end{question}
@@ -120,6 +122,14 @@
         = 1
       \]
       gelten, was in $\Integer$ nicht möglich ist.
+    
+    \item
+      Die Aussage ist wahr:
+      Es gibt einen surjektiven Modulhomomorphismus $\varphi \colon F \to P$ für einen freien $R$-Modul $F$ (siehe Übung~\ref{question: interaction of free modues with other modules}).
+      Der Homomorphismus $\varphi$ lässt sich zu einer kurzen exakten Sequenz $0 \to \ker \varphi \xrightarrow{i} F \xrightarrow{\varphi} P \to 0$ ergänzen, wobei $i \colon \ker \varphi \to F$, $x \mapsto x$ die kanonische Inklusion bezeichnet.
+      Da $P$ projektiv ist, spaltet diese Sequenz, weshalb $P \oplus \ker \varphi \cong F$ frei ist.
+      (Man siehe Übung~\ref{questions: equivalent characterizations of projective modules} für die verschiedenen Charakterisierungen projektiver Moduln.)
+      
     \item
       Die Aussage ist falsch:
       Man betrachten etwa den Modul $M = \bigoplus_{n \in \Natural} R$.
@@ -428,7 +438,8 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Äquivalente Definitionen projektiver Moduln]
+\begin{question}[subtitle = Äquivalente Charakterisierungen projektiver Moduln]
+  \label{questions: equivalent characterizations of projective modules}
   Es sei $R$ ein Ring und $P$ ein $R$-Modul.
   Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
