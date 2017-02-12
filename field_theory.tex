@@ -128,6 +128,7 @@
 
 
 \begin{question}
+  \label{equation: finite extensions are algebraic}
   Zeigen Sie, dass endliche Körpererweiterungen algebraisch sind.
 \end{question}
 
@@ -163,7 +164,18 @@
 \end{question}
 
 
-% TODO: Adding a solution.
+\begin{question}
+  Es sei $x \in M$.
+  Da $M/L$ algebraisch ist gibt es ein Polynom $p(T) \in L(T)$ mit $p \neq 0$ und $p(x) = 0$.
+  Es seien $a_0, \dotsc, a_n \in L$ die Koeffizienten von $p$.
+  Da $L/K$ algebraisch ist sind $a_0, \dotsc, a_n$ algebraisch über $K$.
+  Für $L' \coloneqq K(a_0, \dotsc, a_n)$ wird die Erweiterung $L'/K$ von endlich vielen algebraischen Elementen erzeugt und ist deshalb endlich.
+  Es gilt bereits $p(T) \in L'(T)$, weshalb $x$ algebraisch über $L'$ ist.
+  Insbesondere ist deshalb $L'(x)/L'$ endlich.
+  Ingesamt gilt also $[K(x) : K] \leq [L'(x) : K] = [L'(x) : L'][L' : K] < \infty$.
+  Die Erweiterung $K(x)/K$ ist also endlich, und damit algebraisch (siehe Übung~\ref{equation: finite extensions are algebraic}).
+  Inbesondere ist $x$ algebraisch über $K$.
+\end{question}
 
 
 \begin{question}
