@@ -252,6 +252,7 @@
 
 
 \begin{question}
+  \label{question: interaction of free modues with other modules}
   Es sei $R$ ein Ring
   \begin{enumerate}
     \item
@@ -326,7 +327,9 @@
   Also ist $\generate{S'} = M$ und somit $S'$ ein endliches Erzeugendensystem von $M$.
 \end{solution}
 
+
 \begin{question}[subtitle = Linksexaktheit von $\Hom$]
+  \label{question: Hom is left exact}
   Es sei $R$ ein Ring und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
   Zeigen Sie, dass für jeden $R$-Moduln $L$ auch die induzierte Sequenz
   \[
@@ -423,6 +426,163 @@
     = \varphi.
   \]
   Also gilt bereits $\varphi \in \im f_*$, und somit $\ker g_* \subseteq \im f_*$.
+\end{solution}
+
+
+\begin{question}[subtitle = Äquivalente Definitionen projektiver Moduln]
+  Es sei $R$ ein Ring und $P$ ein $R$-Modul.
+  Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      \label{enum: Hom is exact}
+      Für jede kurze exakte Sequenz von $R$-Moduln $0 \to L \xrightarrow{f} M \xrightarrow{g} N \to 0$ ist auch die induzierte Sequenz
+      \[
+                              0
+        \to                   \Hom_R(P,L)
+        \xlongrightarrow{f_*} \Hom_R(P,M)
+        \xlongrightarrow{g_*} \Hom_R(P,N)
+        \to                   0
+      \]
+      exakt.
+    \item
+      \label{enum: lifting property}
+      Ist $g \colon M \to N$ ein surjektiver Homomorphismus von $R$-Modul, so liftet jeder Homomorphismus $\varphi \colon P \to N$ über $g$, d.h.\ es gibt einen Homomorphismus $\psi \colon P \to M$, so dass das folgende Diagramm kommutiert:
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              {}
+          \&  P
+              \arrow{d}{\varphi}
+              \arrow[dashed, swap]{dl}{\psi}
+          \\
+              M
+              \arrow[twoheadrightarrow]{r}{g}
+          \&  N
+        \end{tikzcd}
+      \]
+    \item
+      \label{enum: every short exact sequence splits}
+      Jede kurze exakte Sequenz von $R$-Moduln $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ spaltet.
+    \item
+      \label{enum: direct summand of a free module}
+      $P$ ist direkter Summand eines freien $R$-Moduls, d.h.\ es gibt einen $R$-Modul $C$, so dass $P \oplus C$ frei ist.
+  \end{enumerate}
+  Erfüllt $P$ eine (und damit alle) dieser Bedingungen, so heißt $P$ \emph{projektiv}.
+\end{question}
+
+
+\begin{solution}
+  (\ref{enum: Hom is exact} $\implies$ \ref{enum: lifting property})
+  Die Sequenz $0 \to \ker g \xrightarrow{i} M \xrightarrow{g} P \to 0$ ist kurz exakt, da $g$ surjektiv ist;
+  dabei bezeichnet $i \colon \ker g \to M$, $m \mapsto m$ die kanonische Inklusion.
+  Nach Annahme ist daher auch die Sequenz
+  \[
+                          0
+    \to                   \Hom_R(P, \ker g)
+    \xlongrightarrow{i_*} \Hom_R(P, M)
+    \xlongrightarrow{g_*} \Hom_R(P, N)
+    \to                   0
+  \]
+  exakt.
+  Inbesondere ist $g_*$ surjektiv, weshalb es für $\varphi \in \Hom_R(P,N)$ ein $\psi \in \Hom_R(P,M)$ mit $\varphi = g_*(\psi) = g \circ \psi$ gibt.
+  
+  (\ref{enum: lifting property} $\implies$ \ref{enum: Hom is exact})
+  Da $\Hom(P,-)$ linksexakt ist (siehe Übung~\ref{question: Hom is left exact}) ist die Sequenz
+  \[
+                          0
+    \to                   \Hom_R(P, \ker g)
+    \xlongrightarrow{i_*} \Hom_R(P, M)
+    \xlongrightarrow{g_*} \Hom_R(P, N)
+  \]
+  exakt.
+  Es bleibt also nur zu zeigen, dass $g_*$ bereits surjektiv ist, dass es also für jeden Homomorphismus $\varphi \colon P \to N$ einen Homomorphismus $\psi \in P \to N$ mit $\varphi = g_*(\psi) = g \circ \psi$ gibt.
+  Dies gilt nach Annahme.
+  
+  (\ref{enum: lifting property} $\implies$ \ref{enum: every short exact sequence splits})
+  Es gilt zu zeigen, dass es einen Homomorphismus $\psi \colon P \to M$ gibt, so dass $g \circ \psi = \id_P$, d.h.\ so dass das folgende Diagramm kommutiert:
+  \[
+    \begin{tikzcd}[ampersand replacement = \&]
+        {}
+    \&  {}
+    \&  {}
+    \&  P
+        \arrow{d}{\id_P}
+        \arrow[dashed, swap]{dl}{\psi}
+    \&  {}
+    \\
+        0
+        \arrow{r}
+    \&  N
+        \arrow{r}{f}
+    \&  M
+        \arrow{r}{g}
+    \&  P
+        \arrow{r}
+    \&  0
+    \end{tikzcd}
+  \]
+  Ein solches $\psi$ existiert nach Annahme.
+  
+  (\ref{enum: every short exact sequence splits} $\implies$ \ref{enum: direct summand of a free module})
+  Es gibt einen freien $R$-Modul $F$ und einen surjektiven Homomorphismus $g \colon F \to P$ (siehe Übung~\ref{question: interaction of free modues with other modules}).
+  Der Homomorphismus $g$ lässt sich zu einer kurze exakte Sequenz $0 \to \ker g \xrightarrow{i} F \xrightarrow{g} P \to 0$ erweitern, wobei $i \colon \ker g \to F$, $x \mapsto x$ die kanonische Inklusion bezeichnet.
+  Nach Annahme spaltet diese kurze Sequenz, weshalb $P \oplus {\ker g} \cong F$ frei ist.
+  
+  (\ref{enum: direct summand of a free module} $\implies$ \ref{enum: lifting property})
+  Wir zeigen die Aussage zunächst für den Fall, dass $P$ bereits frei ist:
+  Dann gibt es eine Basis $(b_i)_{i \in I}$ von $P$, und wegen der Surjektivität von $g$ gibt es für jedes $i \in I$ ein $m_i \in M$ mit $g(m_i) = \varphi(b_i)$.
+  Es sei dann $\psi \colon P \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $\psi(b_i) = m_i$ für alle $i \in I$.
+  Für alle $i \in I$ gilt $(g \circ \psi)(b_i) = g(\psi(b_i)) = g(m_i) = \varphi(b_i)$, und somit bereits $g \circ \psi = \varphi$.
+  
+  Wir zeigen nun die allgemeine Aussage:
+  Nach Annahme gibt es einen $R$-Modul $C$, so dass $P \oplus C$ frei ist.
+  Es sei $\pi \colon P \oplus C \to P$, $(x,y) \mapsto x$ die kanonische Projektion und $\tilde{\varphi} \coloneqq \varphi \circ \pi \colon P \oplus C \to N$.
+  Nach Annahme einen Homomorphismus $\tilde{\psi} \colon P \oplus C \to M$ mit $g \circ \tilde{\psi} = \tilde{\varphi}$.
+  \[
+    \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+          {}
+      \&  P \oplus C
+          \arrow[dashed]{d}{\pi}
+          \arrow[dashed, bend left = 50]{dd}{\tilde{\varphi}}
+          \arrow[dashed, bend right, swap]{ldd}{\tilde{\psi}}
+      \\
+          {}
+      \&  P
+          \arrow{d}{\varphi}
+      \\
+          M
+          \arrow{r}{g}
+      \&  N
+    \end{tikzcd}
+  \]
+  Es sei $\iota \colon P \to P \oplus C$, $x \mapsto (x,0)$ die kanonische Inklusion und $\psi \coloneqq \tilde{\psi} \circ \iota \colon P \to N$.
+  \[
+    \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+          {}
+      \&  P \oplus C
+          \arrow{d}{\pi}
+          \arrow[bend left = 50]{dd}{\tilde{\varphi}}
+          \arrow[bend right, swap]{ldd}{\tilde{\psi}}
+      \\
+          {}
+      \&  P
+          \arrow[dashed, bend left]{u}{\iota}
+          \arrow{d}{\varphi}
+          \arrow[dashed, swap]{dl}{\psi}
+      \\
+          M
+          \arrow{r}{g}
+      \&  N
+    \end{tikzcd}
+  \]
+  Man bemerke, dass $\pi \circ \iota = \id_P$, und deshalb
+  \[
+      g \circ \psi
+    = g \circ \tilde{\psi} \circ \iota
+    = \tilde{\varphi} \circ \iota
+    = \varphi \circ \pi \circ \iota
+    = \varphi \circ \id_P
+    = \varphi.
+  \]
 \end{solution}
 
 
