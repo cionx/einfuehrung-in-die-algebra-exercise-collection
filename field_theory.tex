@@ -9,6 +9,73 @@
 
 
 \begin{question}
+  Es sei $f(X) \coloneqq X^3 - 2 X^2 - X + 1 \in \Rational[X]$ und $\alpha \in \Complex$ eine Nullstelle von $f$.
+  \begin{enumerate}
+    \item
+      Bestimmen Sie den Grad von $\Rational(\alpha) / \Rational$.
+    \item
+      Zeigen Sie, dass auch $\alpha(\alpha-2)$ eine Nullstelle von $f$ ist.
+    \item
+      Folgern Sie, dass $\Rational(\alpha)/\Rational$ galoisch ist.
+    \item
+      Bestimmen Sie $\Gal(\Rational(\alpha)/\Rational)$ bis auf Isomorphie.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Durch Reduzieren bezüglich des Primelements $2 \in \Integer$ erhält man das kubische Polynom $\tilde{f}(X) = X^3 + X + 1 \in \Field_2[X]$.
+      Da $\tilde{f}(0) = \tilde{f}(1) = 1$ hat $\tilde{f}$ keine Nullstellen.
+      Da $\tilde{f}$ kubisch ist, ist $\tilde{f}$ somit bereits irreduzibel.
+      Also ist auch $f$ schon irreduzibel.
+      Folglich ist $f$ bereits das Minimalpolynom von $\alpha$.
+      Somit gilt $[\Rational(\alpha) : \Rational] = \deg f = 3$.
+      
+    \item
+      Es gilt
+      \begin{align*}
+        \label{equation: polynomial of degree 6}
+            f(\alpha(\alpha-2))
+        &=  \alpha^3 (\alpha-2)^3 - 2 \alpha^2 (\alpha-2)^2 - \alpha(\alpha-2) + 1
+        \\
+        &=  \alpha^6 - 6 \alpha^5 + 10 \alpha^4 - 9 \alpha^2 + 2 \alpha + 1.
+      \end{align*}
+      Aus $0 = f(\alpha) = \alpha^3 - 2 \alpha^2 - \alpha + 1$ erhalten wir, dass $\alpha^3 = 2 \alpha^2 + \alpha - 1$.
+      Somit gelten auch $\alpha^4 = 2 \alpha^3 + \alpha^2 - \alpha$, $\alpha^5 = 2 \alpha^4 + \alpha^3 - \alpha^2$ und $\alpha^6 = 2 \alpha^5 + \alpha^4 - \alpha^3$.
+      Einsetzen von $\alpha^6 = 2 \alpha^5 + \alpha^4 - \alpha^3$ liefert
+      \[
+          \alpha^6 - 6 \alpha^5 + 10 \alpha^4 - 9 \alpha^2 + 2 \alpha + 1
+        = -4 \alpha^5 + 11 \alpha^4 - \alpha^3 - 9 \alpha^2 + 2 \alpha + 1.
+      \]
+      Einsetzen von $\alpha^5 = 2 \alpha^4 + \alpha^3 - \alpha^2$ liefert
+      \[
+          -4 \alpha^5 + 11 \alpha^4 - \alpha^3 - 9 \alpha^2 + 2 \alpha + 1
+        = 3 \alpha^4 - 5 \alpha^3 - 5 \alpha^2 + 2 \alpha + 1.
+      \]
+      Einsetzen von $\alpha^4 = 2 \alpha^3 + \alpha^2 - \alpha$ liefert schließlich
+      \[
+          3 \alpha^4 - 5 \alpha^3 - 5 \alpha^2 + 2 \alpha + 1
+        = \alpha^3 - 2 \alpha^2 - \alpha + 1
+        = 0.
+      \]
+      Ingesamt gilt also $f(\alpha (\alpha - 2)) = \dotsb = 0$.
+%       
+    \item
+      Da $\ringchar \Rational = 0$ ist $f \in \Rational[X]$ als irreduzibles Polynom bereits separabel.
+      Inbesondere sind die Nullstellen $\alpha$ und $\alpha (\alpha - 2)$ verschieden.
+      Also hat $f$ in $\Rational(\alpha)$ zwei verschiedene Nullstellen; da $f$ kubisch ist, zerfällt $f$ deshalb über $\Rational(\alpha)$ bereits in Linearfaktoren.
+      Es ist also $\Rational(\alpha)$ der Zerfällungskörper des separablen Polynoms $f$, und die Erweiterung $\Rational(\alpha)/\Rational$ somit galoisch.
+%       
+    \item
+      Da $\Rational(\alpha)/\Rational$ galoisch ist, gilt $|\Gal(\Rational(\alpha)/\Rational)| = [\Rational(\alpha) : \Rational] = 3$.
+      Da $\Integer/3$ bis auf Isomorphie die einzige dreielementige Gruppe ist, gilt also $\Gal(\Rational(\alpha)/\Rational) \cong \Integer/3$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   \label{question: characterization of fields via its ideals}
   Zeigen Sie, dass für einen kommutativen Ring $K$ die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
