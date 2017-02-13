@@ -272,6 +272,64 @@
 \end{solution}
 
 
+ \begin{question}
+  Bestimmen Sie, welche der folgenden Ringe isomorph zueinander sind, und welche nicht:
+  \begin{gather*}
+    \Integer/25,
+    \quad
+    \Field_{25},
+    \quad
+    \Field_5 \times \Field_5,
+    \quad
+    \Field_5[X]/(X^2),
+    \\
+    \Field_5[X]/(X^2+2),
+    \quad
+    \Field_5[X]/(X^2+4),
+    \quad
+    \Integer[X]/(5X).
+  \end{gather*}
+\end{question}
+
+
+\begin{solution}
+  Wir bezeichnen die Ring in der gegebenen Reihenfolge mit $R_1, \dotsc, R_7$.
+  Wir zeigen, dass die Isomorphieklassen der gegebenen Moduln durch $\{R_1\}, \{R_2, R_5\}, \{R_3, R_6\}, \{R_4\}, \{R_7\}$ gegeben sind.
+  
+  Das Polynom $X^2 + 2 \in \Field_5[X]$ hat keine Nullstellen und ist deshalb irreduzibel (da quadratisch).
+  Folglich ist $R_4$ eine quadratische Körpererweiterung von $\Field_5$, also $R_5 \cong \Field_{25} = R_2$.
+  
+  Das Polynom $X^2 + 4 \in \Field_5[X]$ zerfällt in $X^2 + 4 = X^2 - 1 = (X-1)(X+1)$.
+  Nach dem chinesischen Restklassensatz gilt daher
+  \[
+          R_6
+    =     \Field_5[X]/((X-1)(X+1))
+    \cong \Field_5[X]/(X-1) \times \Field_5[X]/(X+1)
+    \cong \Field_5 \times \Field_5
+    =     R_3.
+  \]
+  
+  Es bleibt zu zeigen, dass die Ring $R_1, R_2, R_3, R_4, R_7$ paarweise nicht isomorph sind.
+  
+  Während $R_1, \dotsc, R_6$ endlich sind (mit je $25$ Elementen) ist $R_7$ unendlich, denn nach dem dritten Isomorphiesatz gilt für das Ideal $(X)/(5X) \subseteq \Integer[X]/(5X)$, dass
+  \[
+           (\Integer[X]/(5X))/((X)/(5X))
+    \cong \Integer[X]/(X)
+    \cong \Integer.
+  \]
+  Somit ist $R_7$ zu keinem der anderen Ringe isomorph.
+  
+  Es bleibt zu zeigen, dass $R_1, R_2, R_3, R_4$ paarweisen nicht isomorph sind.
+  Da $0 \neq \overline{5} \in R_1$ und $0 \neq \overline{X} \in R_4$ nilpotent sind, aber $R_2$ und $R_3$ außer $0$ keine nilpotenten Elemete enthalten, gelten $R_1, R_4 \ncong R_2, R_3$.
+  
+  Es bleibt zu zeigen, dass $R_1 \ncong R_4$ und $R_2 \ncong R_3$.
+  Dass $R_2 \ncong R_3$ folgt daraus, dass $R_2$ ein Körper ist, $R_3$ aber nicht.
+  Es gilt $R_4 \cong \Field_5^2$ als $\Field_5$-Vektorraum;
+  die unterliegende abelsche Gruppe von $R_4$ ist deshalb $\Integer/5 \oplus \Integer/5$, die unterliegende abelsche Gruppe von $R_1$ ist aber $\Integer/25$ (und die beiden Gruppen sind nicht isomorph).
+  Also gilt auch $R_1 \ncong R_4$.
+\end{solution}
+
+
 \begin{question}[subtitle = Initialobjekte in der Kategorie der Ringe]
   \label{qst: Z is inital}
   \begin{enumerate}
