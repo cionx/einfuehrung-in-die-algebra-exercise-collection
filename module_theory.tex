@@ -229,6 +229,27 @@
 
 
 \begin{question}
+  \label{question: Q is not finitely generated}
+  Zeigen Sie, dass $\Rational$ als abelsche Gruppe nicht endlich erzeugt ist.
+\end{question}
+
+
+\begin{solution}
+  Wir nehmen an, dass $\Rational$ endlich erzeugt wäre.
+  Dann gebe es $p_1/q_1, \dotsc, p_n/q_n \in \Rational$ mit $\Rational = \generate{p_1/q_1, \dotsc, p_n/q_n}_\Integer$.
+  Dann würde aber
+  \[
+              \Rational
+    =         \generate{ \frac{p_1}{q_1}, \dotsc, \frac{p_n}{q_n} }_\Integer
+    \subseteq \generate{\frac{1}{q_1 \dotsm q_n}}_\Integer
+    \subseteq \Rational
+  \]
+  gelten, und somit bereits $\Rational = \generate{1/(q_1 \dotsm q_n)}_\Integer$.
+  Dies kann nicht sein, da $1/(2 q_1 \dotsm q_n)$ in diesem $\Integer$-Untermodul nicht enhalten ist.
+\end{solution}
+
+
+\begin{question}
   Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
   Zeigen Sie, dass $\Hom_R(R, M) \cong M$ als $R$-Moduln.
 \end{question}
