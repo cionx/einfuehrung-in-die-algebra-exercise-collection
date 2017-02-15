@@ -146,6 +146,148 @@
 
 
 \begin{question}
+  Es sei $L \coloneqq \Rational(\sqrt[4]{2}, i)$.
+  \begin{enumerate}
+    \item
+      Bestimmen Sie den Grad der Erweiterun $L/\Rational$.
+    \item
+      Zeigen Sie, dass $L/\Rational$ galoisch ist.
+    \item
+      Bestimmen Sie $\Gal(L / \Rational)$.
+    \item
+      Entscheiden Sie, ob $\Gal(L / \Rational)$ abelsch ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir betrachten den Zwischenkörper $\Rational \subseteq \Rational(\sqrt[4]{2}) \subseteq L$.
+      
+      Das Polynom $f(X) = X^4 - 2 \in \Rational[X]$ hat $\sqrt[4]{2}$ als Nullstelle, ist normiert, und nach Eisenstein mit $2 \in \Integer$ irreduzibel.
+      Also ist $f$ das Minimalpolynom von $\sqrt[4]{2}$ über $\Rational$ und somit $[\Rational(\sqrt[4]{2}) : \Rational] = 4$.
+      
+      Da $i$ eine Nullstelle des Polynoms $X^2 + 1 \in \Rational(\sqrt[4]{2})[X]$ ist, gilt $[L : \Rational(\sqrt[4]{2})] \leq 2$.
+      Wäre $[L : \Rational(\sqrt[4]{2})] = 1$, also $L = \Rational(\sqrt[4]{2})$, so wäre $i \in \Rational(\sqrt[4]{2})$.
+      Dies ist aber nicht der Fall, da $\Rational(\sqrt[4]{2}) \subseteq \Real$.
+      also ist $[L : \Rational(\sqrt[4]{2})] = 2$.
+      
+      Somit gilt $[L : \Rational] = [L : \Rational(\sqrt[4]{2})] [\Rational(\sqrt[4]{2}) : \Rational] = 4$.
+      
+    \item
+      Wir betrachten erneut das Polynom $f(X) = X^4 - 2 \in \Rational[X]$.
+      Die Nullstellen dieses Polynoms sind $\sqrt[4]{2}$, $i\sqrt[4]{2}$, $-\sqrt[4]{2}$ und $-i\sqrt[4]{2}$.
+      Da $i = (i\sqrt[4]{2})/\sqrt[4]{2}$ gilt, folgt, dass
+      \[
+          L
+        = \Rational(\sqrt[4]{2}, i)
+        = \Rational(\sqrt[4]{2}, i\sqrt[4]{2}, -\sqrt[4]{2}, -i\sqrt[4]{2}).
+      \]
+      Also wird $L$ von den Nullstellen von $f$ erzeugt, ist also ein Zerfällungskörper von $f$.
+      Da die Nullstellen von $f$ paarweise verschieden sind, ist $f$ separabel.
+      Also ist $L$ Zerfällungskörper eines separablen Polynoms, und somit galoisch.
+    
+    \item
+      Da $L/\Rational$ Galoisch ist gilt $|{\Gal(L / \Rational)}| = [L : \Rational] = 8$.
+      Da $\sigma \in \Gal(L / \Rational)$ die Nullstellen der beiden Polynome $X^4 - 2, X^2 + 1 \in \Rational[X]$ jeweils permutieren muss, gelten $\sigma(\sqrt[4]{2}) \in \{ \sqrt[4]{2}, i\sqrt[4]{2}, -\sqrt[4]{2}, -i\sqrt[4]{2} \}$ und $\sigma(i) = \pm 1$.
+      Da $L$ von $\sqrt[4]{2}$ und $i$ erzeugt wird ist $\sigma$ durch die beiden Werte $\sigma(\sqrt[4]{2})$ und $\sigma(i)$ auch schon eindeutig bestimmt.
+      
+      Zusammen mit $|{\Gal(L / \Rational)}| = 8$ erhalten wir, dass die Automorphismen $\sigma_{r,s} \in \Gal(L / \Rational)$ mit $r = 1, 2, 3, 4$ und $s = 1, 2$ durch
+      \begin{align*}
+        \sigma_{1,1}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto & \sqrt[4]{2},  \\
+            i           & \mapsto & i,
+          \end{array}
+        \right.
+        &
+        \sigma_{1,2}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto & \phantom{-}\sqrt[4]{2},  \\
+            i           & \mapsto &           -i,
+          \end{array}
+        \right.
+        \\
+        \sigma_{2,1}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto & i\sqrt[4]{2},  \\
+            i           & \mapsto & i,
+          \end{array}
+        \right.
+        &
+        \sigma_{2,2}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto & \phantom{-}i\sqrt[4]{2},  \\
+            i           & \mapsto &           -i,
+          \end{array}
+        \right.
+        \\
+        \sigma_{3,1}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto &           -\sqrt[4]{2},  \\
+            i           & \mapsto & \phantom{-}i,
+          \end{array}
+        \right.
+        &
+        \sigma_{3,2}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto & -\sqrt[4]{2},  \\
+            i           & \mapsto & -i,
+          \end{array}
+        \right.
+        \\
+        \sigma_{4,1}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto &           -i\sqrt[4]{2},  \\
+            i           & \mapsto & \phantom{-}i,
+          \end{array}
+        \right.
+        &
+        \sigma_{4,2}
+        &\colon
+        \left\{
+          \begin{array}{rcl}
+            \sqrt[4]{2} & \mapsto & -i\sqrt[4]{2},  \\
+            i           & \mapsto & -i,
+          \end{array}
+        \right.
+      \end{align*}
+      gegeben sind.
+      
+    \item
+      Die Gruppe $\Gal(L / \Rational)$ ist nicht abelsch, denn
+      \begin{align*}
+            \left( \sigma_{(2,1)} \circ \sigma_{(1,2)} \right)\left( \sqrt[2]{4} \right)
+        &=  \sigma_{(2,1)}\left( \sigma_{(1,2)}\left( \sqrt[2]{4} \right) \right)
+         =  \sigma_{(2,1)}\left( \sqrt[2]{4} \right)
+         =  i\sqrt[2]{4}
+      \shortintertext{sowie}
+            \left( \sigma_{(1,2)} \circ \sigma_{(2,1)} \right)\left( \sqrt[2]{4} \right)
+        &=  \sigma_{(1,2)}\left( \sigma_{(2,1)}\left( \sqrt[2]{4} \right) \right)
+         =  \sigma_{(1,2)}\left( i\sqrt[2]{4} \right)
+         =  -i\sqrt[2]{4}.
+      \end{align*}
+    (Die Gruppe $\Gal(L / \Rational)$ ist isomorph zu der Diedergruppe $D_8$, die Symmetriegruppe eines Quadrats)
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   Es sei $\sigma \in \Gal(\Real/\Rational)$.
   \begin{enumerate}
     \item
