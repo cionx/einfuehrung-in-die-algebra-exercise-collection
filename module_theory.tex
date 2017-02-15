@@ -23,6 +23,8 @@
     \item
       Die abelsche Gruppe $\Rational/\Integer$ ist endlich erzeugt.
     \item
+      Ist $K$ ein Körper, so gilt für alle $a, b \in K$, dass $K[X]/(X-a) \cong K[X]/(X-b)$ als $K[X]$-Moduln.
+    \item
       Ist $M$ ein freier $R$-Modul und $S \subseteq R$ ein Unterring, so ist $M$ auch als $S$-Modul frei.
     \item
       Ist $M$ ein freier $R$-Modul endlichen Rangs, so ist auch jeder Untermodul $N \subseteq M$ frei.
@@ -72,6 +74,52 @@
           Wir haben eine kurze exakte Sequenz von $\Integer$-Moduln $0 \to \Integer \to \Rational \to \Rational/\Integer$.
           Dabei ist $\Integer$ endlich erzeugt;
           wäre $\Rational/\Integer$ endlich erzeugt, so wäre dies deshalb auch $\Rational$ (siehe Übung~\ref{question: finitely generated in short exact sequences}), was aber nicht gilt (siehe Übung~\ref{question: Q is not finitely generated}).
+      \end{itemize}
+    
+    \item
+      Die Aussage ist falsch:
+      Es gibt $a, b \in K$ mit $a \neq b$.
+      Dann sind $K[X]/(X-a)$ und $K[X]/(X-b)$ nicht isomorph als $K[X]$-Moduln:
+      \begin{itemize}
+        \item
+          Wegen $a \neq b$ gilt $(X-a) \neq (X-b)$.
+          Nach dem Hauptsatz über endlich erzeugte $K[X]$-Moduln sind die beiden Torsionsmoduln $K[X]/(X-a)$ und $K[X]/(X-b)$ sind also nicht isomorph.
+        \item
+          Wäre $K[X]/(X-a) \cong K[X]/(X-b)$ als $K[X]$-Moduln, so wäre nach Übung~\ref{question: quotients isomorphic as modules} bereits $(X-a) = (X-b)$ und somit $a = b$.
+        \item
+          Wenn es einen Isomorphismus $\varphi \colon K[X]/(X-a) \to K[X]/(X-b)$ gebe, so würde das folgende Diagramm kommutieren:
+          \[
+            \begin{tikzcd}[ampersand replacement = \&]
+                  K[X]/(X-a)
+                  \arrow{r}{X \cdot}
+                  \arrow{d}{\varphi}
+              \&  K[X]/(X-a)
+                  \arrow{d}{\varphi}
+              \\
+                  K[X]/(X-b)
+                  \arrow{r}{X \cdot}
+              \&  K[X]/(X-b)
+            \end{tikzcd}
+          \]
+          Der obere horizontale Pfeil ist durch Multiplikation mit $a \in K$ gegeben, denn für alle $p \in K[X]$ gilt $X \cdot \overline{p} = \overline{Xp} = \overline{ap} = a \overline{p}$.
+          Analog ergibt sich, dass der untere horizontale Pfeile durch Multiplikation mit $b \in K$ gegeben ist.
+          Es müsste also das folgende Diagramm kommutieren:
+          \[
+            \begin{tikzcd}[ampersand replacement = \&]
+                  K[X]/(X-a)
+                  \arrow{r}{a \cdot}
+                  \arrow{d}{\varphi}
+              \&  K[X]/(X-a)
+                  \arrow{d}{\varphi}
+              \\
+                  K[X]/(X-b)
+                  \arrow{r}{b \cdot}
+              \&  K[X]/(X-b)
+            \end{tikzcd}
+          \]
+          Es müsste also $\varphi(a \cdot f) = b \cdot \varphi(f)$ für alle $f \in K[X]/(X-a)$.
+          Da $\varphi$ als Homomorphismus von $K[X]$-Moduln insbesondere $K$-linear ist, gilt aber $\varphi(a \cdot f) = a \cdot \varphi(f)$ für alle $f \in K[X]/(X-a)$.
+          Wählt man nun $f \in K[X]/(X-a)$ mit $f \neq 0$, so wäre auch $\varphi(f) \neq 0$, und wir erhalten aus $a \cdot \varphi(f) = b \cdot \varphi(f)$, dass $a = b$.
       \end{itemize}
       
     \item
@@ -1454,6 +1502,7 @@
 
 
 \begin{question}
+  \label{question: quotients isomorphic as modules}
   Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ seien zwei Ideale, so dass $R/I \cong R/J$ als $R$-Moduln.
   Zeigen Sie, dass bereits $I = J$.
   (\emph{Hinweis}:
