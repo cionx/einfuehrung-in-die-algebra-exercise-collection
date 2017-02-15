@@ -9,6 +9,28 @@
 
 
 \begin{question}
+  \begin{enumerate}
+    \item
+      Ist $L/K$ eine endliche Körpererweiterung mit $[L : K] \neq 1$, so gilt auch $\Gal(L/K) \neq 1$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Aussage ist falsch:
+      Man betrachte etwa $K = \Rational$ und $L = \Rational(\sqrt[3]{2})$.
+      Jeder Automorphismus $\sigma \in \Gal(\Rational(\sqrt[3]{2})/\Rational)$ muss die Nullstellen des Polynoms $f(X) \coloneqq X^3-2 \in \Rational[X]$ permutieren.
+      Die Nullstellen von $f$ sind $\sqrt[3]{2}$, $\zeta \sqrt[3]{2}$, und $\zeta^2 \sqrt[3]{2}$, wobei $\zeta \in \Complex$, $\zeta \notin \Real$ eine primitive dritte Einheitswurzel ist (etwa $\zeta = e^{2 \pi i/3}$).
+      Inbesondere gelten $\zeta \sqrt[3]{2}, \zeta^2 \sqrt[3]{2} \notin \Real$.
+      Da $\Rational(\sqrt[3]{2}) \subseteq \Real$ gilt, ist deshalb $\sqrt[3]{2}$ die einzige Nullstelle von $f$ in $\Rational(\sqrt[3]{2})$;
+      für jedes $\sigma \in \Gal(\Rational(\sqrt[3]{2})/\Rational)$ muss deshalb $\sigma(\sqrt[3]{2}) = \sqrt[3]{2}$ gelten, und somit bereits $\sigma = \id_{\Rational(\sqrt[3]{2})}$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   Es sei $L \coloneqq \Rational(\sqrt{2} + \sqrt{3})$.
   \begin{enumerate}
     \item
