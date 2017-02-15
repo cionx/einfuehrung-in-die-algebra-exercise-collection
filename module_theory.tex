@@ -173,6 +173,161 @@
 
 
 \begin{question}
+    Bestimmen Sie die Smith-Normalform der folgenden Matrizen $A_i \in \Mat(m \times n, R)$ für den jeweils gegebenen euklidischen Ring $R$.
+    Bestimmen Sie auch jeweils die Isomorphieklasse von $M_i \coloneqq R^m/AR^n$ gemäß des Hauptsatzes über endlich erzeugte $R$-Moduln, sowie die Primärzerlegung des Torsionsuntermoduls $\torsion(M_i)$.
+  \begin{enumerate}
+    \item
+      Es sei $R = \Integer$, und es seien
+      \begin{gather*}
+        A_1 =
+        \begin{pmatrix*}[r]
+          38  & -12 \\
+          18  &  -6
+        \end{pmatrix*},
+      \quad
+        A_2 =
+        \begin{pmatrix*}[r]
+          10 & 8 \\
+          -2 & 6
+        \end{pmatrix*},
+      \quad
+        A_3 =
+        \begin{pmatrix*}[r]
+            8 & 8 & -2 \\
+          10 & 2 &  2
+        \end{pmatrix*},
+      \quad
+        A_4 =
+        \begin{pmatrix*}[r]
+           1  & 2 & 3 \\
+          -2  & 3 & 1 \\
+           3  & 2 & 1
+        \end{pmatrix*},
+      \\
+        A_5 =
+        \begin{pmatrix*}[r]
+           2  &  4  & 6 \\
+           4  &  3  & 7 \\
+          11  & -2  & 3
+        \end{pmatrix*},
+      \quad
+        A_6 =
+        \begin{pmatrix*}[r]
+          15  & 11  & 10 \\
+           3  &  2  & -2 \\
+          15  & 10  & 11
+        \end{pmatrix*},
+      \quad
+        A_7 = 
+        \begin{pmatrix*}[r]
+           -1 &  1  & 0 \\
+           -2 & -2  & 1 \\
+            2 & -2  & 0 \\
+           -1 & -1  & 3
+        \end{pmatrix*}.
+      \end{gather*}
+    \item
+      Es sei $R = \Rational[t]$, und es seien
+      \[
+        A_8 =
+        \begin{pmatrix*}[l]
+          t^2 & t^4 - t^2 \\
+          t   & t^2 - t
+        \end{pmatrix*}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      \begin{enumerate}
+        \item
+          Eine Smith-Normalform ist $A_2' = \begin{psmallmatrix} 2 & 0 \\ 0 & 6 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_1
+            \cong \Integer/2 \oplus \Integer/6
+            \cong \Integer/2 \oplus \Integer/2 \oplus \Integer/3.
+          \]
+          Inbesondere ist $M_1$ ein Torsionsmodul, und es gilt $M_1 = 3 M_2 \oplus 2 M_2$;
+          dabei ist $3 M_2 \cong \Integer/2 \oplus \Integer/2$ der $2$-primäre, und $2 M_1 \cong \Integer/3$ der $3$-primäre Anteil von $M_2$ .
+        \item
+          Eine Smith-Normalform ist $A_2' = \begin{psmallmatrix} 2 & 0 \\ 0 & 38 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_2
+            \cong \Integer/2 \oplus \Integer/38
+            \cong \Integer/2 \oplus \Integer/2 \oplus \Integer/19.
+          \]
+          Inbesondere ist $M_2$ ein Torsionsmodul, und es gilt $M_2 = 19 M_2 \oplus 2 M_2$, wobei $19 M_2 \cong \Integer/2 \oplus \Integer/2$ der $2$-primäre, und $2 M_2 \cong \Integer/19$ der $19$-primäre Anteil von $M_2$ ist.
+        \item
+          Eine Smith-Normalform ist $A_3' = \begin{psmallmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_3
+            \cong \Integer/2 \oplus \Integer/2
+            \cong \Integer/2 \oplus \Integer/2.
+          \]
+          Inbesondere ist $M_3$ ein $2$-primärer Torsionsmodul.
+        \item
+          Eine Smith-Normalform ist $A_4' = \begin{psmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 28 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_4
+            \cong \Integer/28
+            \cong \Integer/4 \oplus \Integer/7.
+          \]
+          Inbesondere ist $M_4$ ein Torsionsmodul, und es gilt $M_4 = 7 M_4 \oplus 4 M_4$;
+          dabei ist $7 M_4 \cong \Integer/2$ der $2$-primäre Anteil von $M_4$ ist, und $4 M_4 \cong \Integer/7$ der $7$-primäre Anteil.
+        \item
+          Eine Smith-Normalform ist $A_5' = \begin{psmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 60 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_5
+            \cong \Integer/60
+            \cong \Integer/4 \oplus \Integer/3 \oplus \Integer/5
+          \]
+          Inbesondere ist $M_5$ ein Torsionsmodul und es gilt $M_5 = 15 M_5 \oplus 20 M_5 \oplus 12 M_5$;
+          dabei ist $15 M_5\cong \Integer/4$ der $2$-primäre Anteil von $M_5$, und $20 M_5 \cong \Integer/3$ der $3$-primäre Anteil, und $12 M_5 \cong \Integer/5$ der $5$-primäre Anteil.
+        \item
+          Eine Smith-Normalform ist $A_6' = \begin{psmallmatrix} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 21 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_6
+            \cong \Integer/3 \oplus \Integer/24
+            \cong \Integer/3 \oplus \Integer/3 \oplus \Integer/7.
+          \]
+          Inbesondere ist $M_6$ ein Torsionsmodul, und es gilt $M_6 = 7 M_6 \oplus 4 M_6$;
+          dabei ist $7 M_6 \cong \Integer/3 \oplus \Integer/3$ der $5$-primäre Anteil von $M_6$ ist, und $3 M_6 \cong \Integer/7$ der $7$-primäre Anteil.
+        \item
+          Eine Smith-Normalform ist $A_7' = \begin{psmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 10 \\ 0 & 0 & 0 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_7
+            \cong \Integer \oplus \Integer/10
+            \cong \Integer \oplus \Integer/2 \oplus \Integer/5.
+          \]
+          Inbesondere gilt $\torsion(M_7) = 5 \torsion(M_7) \oplus 2 \torsion(M_7)$, wobei $5 \torsion(M_7) \cong \Integer/2$ der $2$-primäre Anteil von $\torsion(M_7)$ ist, und $2 \torsion(M_7) \cong \Integer/5$ der $5$-primäre Anteil von $\torsion(M_7)$.
+      \end{enumerate}
+    \item
+      \begin{enumerate}
+        \item
+          Eine Smith-Normalform ist $A_8' = \begin{psmallmatrix} t & 0 \\ 0 & t^4-t^3 \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_8
+            \cong \Rational[t]/(t) \oplus \Rational[t]/(t^4 - t^3)
+            \cong \Rational[t]/(t)  \oplus \Rational[t]/(t^3) \oplus \Rational[t]/(t-1).
+          \]
+          Inbesondere ist $M_8$ ein Torsionsmodul, und es gilt $M_8 = (t-1) M_8 \oplus t^3 M_8$, wobei $(t-1) M_8 \cong \Rational[t]/(t) \oplus \Rational[t]/(t^3)$ der $t$-primäre Anteil von $M_8$ ist, und $t^3 M_8 \cong \Rational[t]/(t-1)$ der $(t-1)$-primäre Anteil.
+      \end{enumerate}
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   Es seien $n, m \geq 1$.
   Zeigen Sie, dass $\Integer/n \oplus \Integer/m \cong \Integer/\ggT(n,m) \oplus \Integer/\kgV(n,m)$.
 \end{question}
