@@ -9,6 +9,113 @@
 
 
 \begin{question}
+  Es sei $L \coloneqq \Rational(\sqrt{2} + \sqrt{3})$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\sqrt{2}, \sqrt{3} \in L$ und folgern Sie, dass $L = \Rational(\sqrt{2}, \sqrt{3})$.
+    \item
+      Bestimmen Sie den Grad der Erweiterung $L/\Rational$.
+    \item
+      Zeigen Sie, dass $L/\Rational$ galoisch ist.
+    \item
+      Bestimmen Sie $\Gal(L/\Rational)$, und entscheiden Sie, ob $\Gal(L/\Rational)$ abelsch ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $(\sqrt{2} + \sqrt{3})^3 = 11 \sqrt{2} + 9 \sqrt{3}$ und deshalb
+      \[
+            \sqrt{2}
+        =   \frac{1}{2}\left( (\sqrt{2} + \sqrt{3})^2 - 9(\sqrt{2} + \sqrt{3}) \right)
+        \in L.
+      \]
+      Somit gilt auch $\sqrt{3} = (\sqrt{2} + \sqrt{3}) - \sqrt{3} \in L$.
+      Dass $L \subseteq \Rational(\sqrt{2}, \sqrt{3})$ ist klar, und dass $\Rational(\sqrt{2}, \sqrt{3}) \subseteq L$ gilt, folgt aus $\Rational \subseteq L$ und $\sqrt{2}, \sqrt{3} \in L$.
+      
+    \item
+      Wir betrachten die Zwischenerweiterung $\Rational \subseteq \Rational(\sqrt{2}) \subseteq L$.
+      
+      Das Minimalpolynom von $\sqrt{2}$ über $\Rational$ ist $f(X) = X^2 - 2 \in \Rational[X]$, denn $f$ ist normiert, nach Eisenstein irreduzibel, und hat $\sqrt{2}$ ist als Nullstelle.
+      Deshalb gilt $[\Rational(\sqrt{2}) : \Rational] = 2$.
+      
+      Da $\sqrt{3}$ eine Nullstelle des Polynoms $g(X) = X^2 - 3 \in \Rational(\sqrt{2})[X]$ ist, gilt die Abschätzung $[L : \Rational(\sqrt{2})] \leq 2$.
+      Wäre $[L : \Rational(\sqrt{2})] < 2$, also $[L : \Rational(\sqrt{2})] = 1$ und somit $L = \Rational(\sqrt{2})$, so gebe es $a, b \in \Rational$ mit $\sqrt{3} = a + b \sqrt{2}$ (denn $\{1, \sqrt{2}\}$ ist eine $\Rational$-Basis von $\Rational(\sqrt{2})$, da $[\Rational(\sqrt{2}) : \Rational] = 2$).
+      Deshalb würde dann
+      \[
+          3
+        = \sqrt{3}^2
+        = (a + b \sqrt{2})^2
+        = a^2 + 2 b^2 + ab \sqrt{3}
+      \]
+      gelten.
+      Es müsste $a \neq 0$ gelten, denn sonst wäre $\sqrt{3/2} = b \in \Rational$, und es müsste auch $b \neq 0$ gelten, denn sonst wäre $\sqrt{3} = a \in \Rational$.
+      Also wäre bereits $\sqrt{3} = (3 - a^2 - 2b^2)/(ab) \in \Rational$, was aber nicht gilt.
+      
+      Es muss also auch $[L : \Rational(\sqrt{2})] = 2$ gelten, und somit insgesamt
+      \[
+          [L : \Rational]
+        = [L : \Rational(\sqrt{2})] [\Rational(\sqrt{2}) : \Rational]
+        = 2 \cdot 2
+        = 4.
+      \]
+      
+    \item
+      Es gilt $\Rational(\sqrt{2}, \sqrt{3}) = \Rational(\sqrt{2}, \sqrt{3}, -\sqrt{2}, -\sqrt{3})$, also wird $L/\Rational$ von den Nullstellen des Polynoms $f(X) = (X^2 - 2)(X^2 - 3) \in \Rational[X]$ erzeugt.
+      Somit ist $L$ der Zerfällungskörper von $f$ über $\Rational$.
+      Da die Nullstellen von $f$ paarweise verschieden sind, ist $f$ separabel.
+      Also ist $L$ als Zerfällungskörper des separablen Polynoms $f$ bereits galoisch.
+    
+    \item
+      Da $L/\Rational$ galoisch ist, wissen wir, dass $|{\Gal(L / \Rational)}| = [L : \Rational] = 4$.
+      Außerdem muss jedes $\sigma \in \Gal(L : \Rational)$ die Nullstellen der rationalen Polynome $X^2 - 2, X^2 - 3 \in \Rational[X]$ permutieren;
+      es muss also $\sigma(\sqrt{2}) = \pm \sqrt{2}$ und $\sigma(\sqrt{3}) = \pm \sqrt{3}$.
+      Da $L$ von $\sqrt{2}$ und $\sqrt{3}$ erzeugt wird, ist $\sigma$ durch die beiden Werte $\sigma(\sqrt{2})$ und $\sigma(\sqrt{3})$ auch schon eindeutig bestimmt.
+      
+      Zusammen mit $|{\Gal(L / \Rational)}| = 4$ erhalten wir hieraus, dass die vier Automorphismen $\sigma_1, \sigma_2, \sigma_3, \sigma_4 \colon \Gal(L / \Rational)$ durch
+      \begin{gather*}
+        \sigma_1 \colon
+        \left\{
+          \begin{array}{ccr}
+            \sqrt{2} & \mapsto  & \sqrt{2}, \\
+            \sqrt{3} & \mapsto  & \sqrt{3},
+          \end{array}
+        \right.
+        \quad
+        \sigma_2 \colon
+        \left\{
+          \begin{array}{ccr}
+            \sqrt{2} & \mapsto  & -\sqrt{2},  \\
+            \sqrt{3} & \mapsto  &  \sqrt{3},
+          \end{array}
+        \right.
+        \\
+        \sigma_3 \colon
+        \left\{
+          \begin{array}{ccr}
+            \sqrt{2} & \mapsto  &  \sqrt{2},  \\
+            \sqrt{3} & \mapsto  & -\sqrt{3},
+          \end{array}
+        \right.
+        \quad
+        \sigma_4 \colon
+        \left\{
+          \begin{array}{ccr}
+            \sqrt{2} & \mapsto  & -\sqrt{2},  \\
+            \sqrt{3} & \mapsto  & -\sqrt{3},
+          \end{array}
+        \right.
+      \end{gather*}
+      gegeben sind.
+      Insbesondere erhalten wir, dass $\Gal(L / \Rational) \cong \Integer/2 \times \Integer/2$,
+      weshalb $\Gal(L / \Rational)$ abelsch ist.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   Es sei $f(X) \coloneqq X^3 - 2 X^2 - X + 1 \in \Rational[X]$ und $\alpha \in \Complex$ eine Nullstelle von $f$.
   \begin{enumerate}
     \item
