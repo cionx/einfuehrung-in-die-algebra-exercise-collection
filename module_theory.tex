@@ -401,17 +401,37 @@
 
 
 \begin{solution}
-  Wir nehmen an, dass $\Rational$ endlich erzeugt wäre.
-  Dann gebe es $p_1/q_1, \dotsc, p_n/q_n \in \Rational$ mit $\Rational = \generate{p_1/q_1, \dotsc, p_n/q_n}_\Integer$.
-  Dann würde aber
-  \[
-              \Rational
-    =         \generate{ \frac{p_1}{q_1}, \dotsc, \frac{p_n}{q_n} }_\Integer
-    \subseteq \generate{\frac{1}{q_1 \dotsm q_n}}_\Integer
-    \subseteq \Rational
-  \]
-  gelten, und somit bereits $\Rational = \generate{1/(q_1 \dotsm q_n)}_\Integer$.
-  Dies kann nicht sein, da $1/(2 q_1 \dotsm q_n)$ in diesem $\Integer$-Untermodul nicht enhalten ist.
+  Wir geben zwei Beweise an:
+  \begin{itemize}
+    \item
+      Wir nehmen an, dass $\Rational$ endlich erzeugt wäre.
+      Dann gebe es $p_1/q_1, \dotsc, p_n/q_n \in \Rational$ mit $\Rational = \generate{p_1/q_1, \dotsc, p_n/q_n}_\Integer$.
+      Dann würde aber
+      \[
+                  \Rational
+        =         \generate{ \frac{p_1}{q_1}, \dotsc, \frac{p_n}{q_n} }_\Integer
+        \subseteq \generate{\frac{1}{q_1 \dotsm q_n}}_\Integer
+        \subseteq \Rational
+      \]
+      gelten, und somit bereits $\Rational = \generate{1/(q_1 \dotsm q_n)}_\Integer$.
+      Dies kann nicht sein, da $1/(2 q_1 \dotsm q_n)$ in diesem $\Integer$-Untermodul nicht enhalten ist.
+      
+    \item
+      Da $\Integer$ ein als Hauptidealring insbesondere noethersch ist, wäre $\Rational$ als endlich erzeugter $\Integer$-Modul bereits noethersch (siehe Übung~\ref{question: properties of noetherian modules}).
+      Dann würde jede aufsteigende Kette von $\Integer$-Untermoduln stabilisieren (siehe Übung~\ref{question: characterizations of noetherian modules}).
+      Die Kette
+      \[
+                    \Integer
+        \subsetneq  \generate{\frac{1}{2}}_\Integer
+        \subsetneq  \generate{\frac{1}{4}}_\Integer
+        \subsetneq  \generate{\frac{1}{8}}_\Integer
+        \subsetneq  \dotsb
+        \subsetneq  \generate{\frac{1}{2^n}}_\Integer
+        \subsetneq  \generate{\frac{1}{2^{n+1}}}_\Integer
+        \subsetneq  \dotsb
+      \]
+      stabilisiert aber nicht.
+  \end{itemize}
 \end{solution}
 
 
@@ -994,6 +1014,7 @@
 
 
 \begin{question}[subtitle=Charakterisierungen noetherscher Moduln]
+  \label{question: characterizations of noetherian modules}
   Es sei $M$ ein $R$-Modul.
   Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
