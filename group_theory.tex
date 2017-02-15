@@ -53,6 +53,198 @@
 
 
 \begin{question}
+  Es sei $K$ ein Körper.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass
+      \[
+                  \Borel_2(K)
+        \coloneqq \left\{
+                    \begin{pmatrix}
+                      a_1 & b   \\
+                      0   & a_2
+                    \end{pmatrix}
+                  \,\middle|\,
+                    a_1, a_2 \in K^\times,
+                    b \in K
+                  \right\}.
+      \]
+      eine Untergruppe von $\GL_2(K)$ ist.
+    \item
+      Zeigen Sie, dass $\Borel_2(K)$ nicht normal in $\GL_2(K)$ ist.
+    \item
+      Zeigen Sie, dass
+      \[
+                  \Upper_2(K)
+        \coloneqq \left\{
+                    \begin{pmatrix}
+                      1 & b \\
+                      0 & 1
+                    \end{pmatrix}
+                  \,\middle|\,
+                    b \in K
+                  \right\}.
+      \]
+      eine normale Untergruppe von $\Borel_2(K)$ ist, und dass $\Borel_2(K)/\Upper_2(K) \cong K^\times \times K^\times$.
+    \item
+      Entscheiden Sie, ob $\Borel_2(K) \cong \Upper_2(K) \times K^\times \times K^\times$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Einheitsmatrix liegt in $\Borel_2(K)$, da $1 \in K^\times$.
+      Es gilt
+      \begin{equation}
+        \label{equation: product of upper triangular matrices}
+        \begin{pmatrix}
+          a_1 & b   \\
+          0   & a_2
+        \end{pmatrix}
+        \begin{pmatrix}
+          a'_1  & b'   \\
+          0     & a'_2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          a_1 a'_1  & a'_1 b + b' a_2 \\
+          0         & a_2 a'_2
+        \end{pmatrix}
+      \end{equation}
+      mit $a_1 a'_1, a_2 a'_2 \in K^\times$ falls $a_1, a'_1, a_2, a'_2 \in K^\times$;
+      deshalb ist $\Borel_2(K)$ abgeschlossen unter Multiplikation ist.
+      Für $\begin{psmallmatrix} a_1 & b \\ 0 & a_2 \end{psmallmatrix} \in \Borel_2(K)$ gilt auch
+      \[
+        \begin{pmatrix}
+          a_1 & b   \\
+          0   & a_2
+        \end{pmatrix}^{-1}
+        =
+        \frac{1}{a_1 a_2}
+        \begin{pmatrix}
+          a_2 &           -b    \\
+          0   & \phantom{-}a_1
+        \end{pmatrix}
+        \in \Borel_2(K),
+      \]
+      also ist $\Borel_2(K)$ auch unter Inversion abgeschlossen.
+    
+    \item
+      Es gilt
+      \[
+        \begin{pmatrix}
+          0 & 1 \\
+          1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+          1 & 1 \\
+          0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          0 & 1 \\
+          1 & 0
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          1 & 0 \\
+          1 & 1
+        \end{pmatrix}
+        \notin \Borel_2(K).
+      \]
+      
+    \item
+      Aus \eqref{equation: product of upper triangular matrices} ergibt sich, dass die Abbildung
+      \[
+                \varphi
+        \colon  \Borel_2(K) \to K^\times \times K^\times,
+        \quad   \begin{pmatrix}
+                  a_1 & b   \\
+                  0   & a_2
+                \end{pmatrix}
+                \mapsto
+                (a_1, a_2)
+      \]
+      ein surjektiver Gruppenhomomorphismus ist, und es gilt $\ker \varphi = \Upper_2(K)$.
+      Folglich ist $\Upper_2(K)$ normal in $\Borel_2(K)$ und $\Borel_2(K) / \Upper_2(K) \cong \im \varphi = K^\times \times K^\times$.
+    
+    \item
+      Für $K = \Field_2$ sind die Gruppen isomorph:
+      Es gilt $\Field_2^\times \cong 1$ und somit auch $\Field_2^\times \times \Field_2^\times \cong 1$ sowie $\Borel_2(\Field_2) = \Upper_2(\Field_2)$.
+      Deshalb gilt
+      \[
+              \Borel_2(\Field_2)
+        \cong \Upper_2(\Field_2)
+        \cong \Upper_2(\Field_2) \times \Field_2^\times \times \Field_2^\times.
+      \]
+      
+      Für $K \neq \Field_2$ sind die Gruppen nicht isomorph:
+      Die Gruppe $\Borel_2(K)$ ist dann nicht abelsch, denn es gibt $a_1, a_2 \in K^\times$ mit $a_1 \neq a_2$ und somit gilt
+      \[
+        \begin{pmatrix}
+          a_1 & 0   \\
+          0   & a_2
+        \end{pmatrix}
+        \begin{pmatrix}
+          1 & 1 \\
+          0 & 1
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          a_1 & a_1 \\
+          0   & a_2
+        \end{pmatrix}
+        \neq
+        \begin{pmatrix}
+          a_1 & a_2 \\
+          0   & a_2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          1 & 1 \\
+          0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          a_1 & 0   \\
+          0   & a_2
+        \end{pmatrix}.
+      \]
+      Die Gruppe $\Upper_2(K)$, und damit auch die Gruppe $\Upper_2(K) \times K^\times \times K^\times$, ist allerdings abelsch, denn für alle $b_1, b_2 \in K$ gilt
+      \[
+        \begin{pmatrix}
+          1 & b_1 \\
+          0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          1 & b_2 \\
+          0 & 1
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          1 & b_1 + b_2 \\
+          0 & 1
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          1 & b_2 + b_1 \\
+          0 & 1
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          1 & b_2 \\
+          0 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          1 & b_1 \\
+          0 & 1
+        \end{pmatrix}.
+      \]
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   \begin{enumerate}
     \item
       Es sei $G$ eine Gruppe und $H_1, H_2 \subseteq G$ seien zwei Untergruppen.
