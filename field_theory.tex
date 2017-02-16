@@ -682,6 +682,62 @@
 
 
 \begin{question}
+  Es sei $K$ ein Körper, $L/K$ eine endliche Körpererweiterung und es seien $K \subseteq L_1, L_2 \subseteq L$ zwei Zwischenkörper.
+  \begin{enumerate}
+    \item
+      Zeigen Sie für alle $\alpha, \beta \in L$, dass $[K(\alpha, \beta) : K(\alpha)] \leq [K(\beta) : K]$ gilt.
+    \item
+      Es sei $L_1 L_2 \subseteq L$ der kleinste Unterkörper, der $L_1$ und $L_2$ enthält.
+      Zeigen Sie, dass $[L_1 L_2 : L_2] \leq [L_1 : K]$.
+    \item
+      Zeigen Sie, dass $[L_1 L_2 : K] = [L_1 : K] [L_2 : K]$ falls $[L_1 : K]$ und $[L_2 : K]$ teilerfremd sind.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Da $L/K$ endlich ist, gilt dies auch für $[K(\beta) : K]$.
+      Ist $f(X) \in K[X]$ das Minimalpolynom von $\beta$, so gilt $[K(\beta) : K] = \deg f$.
+      Dann ist auch $f(X) \in K(\alpha)[X]$ mit $f(\beta) = 0$;
+      für das Minimalpolynom $g(X) \in K(\alpha)[X]$ von $\beta$ gilt daher $\deg g \leq \deg f$.
+      Dabei gilt $\deg g = [K(\alpha, \beta) : K(\alpha)]$ und die Aussage folgt.
+    
+    \item
+      Da $L/K$ endlich erzeugt ist, sind es auch $L_1/K$ und $L_2/K$.
+      Inbesondere sind die beiden Erweiterungen sind endlich erzeugt, also $L_1 = K(\alpha_1, \dotsc, \alpha_n)$ und $L_2 = K(\beta_1, \dotsc, \beta_m)$.
+      Inbesondere gilt damit auch $L_1 L_2 = K(\alpha_1, \dotsc, \alpha_n, \beta_1, \dotsc, \beta_m)$.
+      Aus dem vorherigen Aussagenteil erhalten wir, dass
+      \begin{align*}
+              [L_1 : K]
+       &=     [K(\alpha_1, \dotsc, \alpha_n) : K]
+       \\
+       &\geq  [K(\alpha_1, \dotsc, \alpha_n, \beta_1) : K(\beta_1)]
+       \\
+       &\geq  [K(\alpha_1, \dotsc, \alpha_n, \beta_1, \beta_2) : K(\beta_1, \beta_2)]
+       \\
+       &\geq  \dotsb
+       \\
+       &\geq  [K(\alpha_1, \dotsc, \alpha_n, \beta_1, \dotsc, \beta_m) : K(\beta_1, \dotsc, \beta_m)]
+        =  [L_1 L_2 : L_2].
+      \end{align*}
+    
+    \item
+      Aus $K \subseteq L_1, L_2 \subseteq L_1 L_2$ folgt wegen der Multiplikativität des Grades, dass $[L_1 : K]$ und $[L_2 : K]$ den Grad $[L_1 L_2 : K]$ teilen.
+      Wegen der Teilerfremdheit folgt, dass auch $[L_1 : K] [L_2 : K]$ ein Teiler von $[L_1 L_2 : K]$ ist.
+      Andererseits gilt nach dem vorherigen Aussagenteil, dass
+      \[
+              [L_1 L_2 : K]
+        =     [L_1 L_2 : L_2] [L_2 : K]
+        \leq  [L_1 : K] [L_2 : K].
+      \]
+      Ingesamt folgt deshalb $[L_1 L_2 : K] = [L_1 : K][L_2 : K]$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   Zeigen Sie, dass eine Körpererweiterung $L/K$ genau dann algebraisch ist, wenn jeder Zwischenring $K \subseteq R \subseteq L$ bereits ein Körper ist.
 \end{question}
 
