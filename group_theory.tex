@@ -244,11 +244,58 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Bahnenkombinatorik]
+  Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe.
   \begin{enumerate}
     \item
-      Es sei $G$ eine Gruppe und $H_1, H_2 \subseteq G$ seien zwei Untergruppen.
-      Zeigen Sie, dass $H_1 \cup H_2$ genau dann eine Untergruppe ist, wenn $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$.
+      Es sei $X$ eine endliche Menge mit $p \nmid |X|$ und $G$ wirke auf $X$.
+      Zeigen Sie, dass die Wirkung einen Fixpunkt besitzt, d.h.\ dass es ein $x \in X$ gibt, so dass $g.x = x$ für alle $g \in G$ gilt.
+    \item
+      Zeigen Sie für $G \neq 1$, dass auch $\Center(G) \neq 1$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $B \in X/G$ eine $G$-Bahn.
+      Es gilt genau dann $|B| = 1$, wenn $B = \{x\}$ für einen Fixpunkt $x \in X$.
+      Ist $|B| \neq 1$ und $x \in B$, so folgt aus $|B| = G.x = [G : G_x] \mid |G| = p^r$ mit $r \geq 0$, dass bereits $p \mid |B|$ gilt.
+      
+      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{B \in X/G} |B|$.
+      Aus $p \nmid |X|$ erhalten wir, dass $p \nmid |B|$ für eine $G$-Bahn $B \in X/G$.
+      Nach den obigen Beobachtungen erhalten wir, dass es einen Fixpunkt gibt.
+    
+    \item
+      Es sei $X \coloneqq G$.
+      Die Gruppe $G$ wirkt auf $X$ durch Konjugation, also durch $g.x = g x g^{-1}$ für alle $g \in G$, $x \in X$
+      Ein Punkt $x \in X$ ist genau dann ein Fixpunkt wenn $g x g^{-1} = x$ für alle $g \in G$, wenn also $x \in \Center(G)$.
+      Wie im vorherigen Aussagenteil erhalten wir damit, dass für $B \in X/G$ mit $B = G.x$ für $x \in X$ genau dann $p \mid |B|$ gilt wenn $x \notin \Center(G)$ (hier bezeichnet $X/G$ die Menge der $G$-Bahnen in $X$, also die Menge der Konjugationsklassen in $G$, und nicht den Quotienten trivialen $G/G$).
+      Da $|G| = p^r$ mit $r \geq 1$ gilt, erhalten wir aus der Bahnengleichung, dass
+      \[
+                0
+        \equiv  |G|
+        =       \sum_{B \in X/G} |B|
+        \equiv  \sum_{\substack{B \in X/G \\ |B| = 1}} |B|
+        =       |{\Center(G)}|
+        \mod    p.
+      \]
+      Deshalb gilt $p \mid |{\Center(G)}|$.
+      Insbesondere ist $|{\Center(G)}| \neq 1$ und somit $\Center(G) \neq 1$.
+ \end{enumerate} 
+\end{solution}
+
+
+\begin{question}
+  Es sei $G$ eine Gruppe.
+  \begin{enumerate}
+    \item
+      Es seien $H, H_1, H_2 \subseteq G$ Untergruppen mit $H \subseteq H_1 \cup H_2$,
+      Zeigen Sie dass bereits $H \subseteq H_1$ oder $H \subseteq H_2$ gilt.
+    \item
+      Folgern Sie:
+      Sind $H_1, H_2 \subseteq G$ seien zwei Untergruppen, so ist $H_1 \cup H_2$ genau dann eine Untergruppe ist, wenn $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$.
     \item
       Geben Sie ein Beispiel für eine eine Gruppe $G$ und Untergruppen $H_1, H_2, H_3 \subseteq G$ an, so dass zwar $H_i \subsetneq H_j$ für alle $i \neq j$, aber $H_1 \cup H_2 \cup H_3$ eine Untergruppe von $G$ ist.
   \end{enumerate}
@@ -258,13 +305,17 @@
 \begin{solution}
   \begin{enumerate}
     \item
+      Würde $H \nsubseteq H_2$ und $H \nsubseteq H_1$ gelten, so gebe es $h_1, h_2 \in H$ mit $h_1 \notin H_2$ und $h_2 \in H_1$.
+      Da $h_1, h_2 \in H \subseteq H_1 \cup H_2$ gilt, müsste allerdings $h_1 \in H_1$ und $h_2 \in H_2$ gelten.
+      Für das Produkt $h_1 h_2$ würde dann $h_1 h_2 \in H_1$ gelten, denn sonst wäre $h_2 = h_1^{-1} h_1 h_2 \in H_1$, im Widerspruch zur Wahl von $h_1$.
+      Analog ergebe sich aber auch, dass $h_1 h_2 \notin H_2$ gilt.
+      Es müsste aber $h_1 h_2 \in H \subseteq H_1 \cup H_2$ gelten, da $H$ ein Untergruppe ist.
+      
+    \item
       Gilt $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$, so gilt $H_1 \cup H_2 = H_2$ oder $H_1 \cup H_2 = H_1$, weshalb $H_1 \cup H_2$ dann eine Untergruppe ist.
       
-      Gilt $H_1 \nsubseteq H_2$ und $H_2 \nsubseteq H_1$, so gibt es $h_1 \in H_1$ mit $h_1 \notin H_2$ und $h_2 \in H_2$ mit $h_2 \notin H_1$.
-      Es ist $h_1 h_2 \notin H_1$, da sonst $h_2 = h_1^{-1} h_1 h_2 \in H_1$ gelten würde;
-      analog gilt auch $h_1 h_2 \notin H_2$.
-      Insgesamt gilt somit $h_1 h_2 \notin H_1 \cup H_2$, obwohl $h_1, h_2 \in H_1 \cup H_2$.
-      Also ist $H_1 \cup H_2$ nicht multiplikativ abgeschlossen, und somit keine Untergruppe von $G$.
+      Ist andererseits $H_1 \cup H_2$ eine Untergruppe, so ergibt sich aus den vorherigen Aufgabenteil mit $H = H_1 \cup H_2$ dass bereits $H_1 \cup H_2 \subseteq H_1$ oder $H_1 \cup H_2 \subseteq H_2$ gilt, und somit $H_2 \subseteq H_1$ oder $H_1 \subseteq H_2$.
+      
     \item
       Es sei $G = \Integer/2 \oplus \Integer/2$ und es seien
       \begin{align*}
