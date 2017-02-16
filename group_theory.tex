@@ -103,6 +103,33 @@
 
 
 \begin{question}[subtitle = Bahnenkombinatorik]
+  Es sei $G$ eine Gruppe der Ordnung $77$ die auf einer $17$-elementigen Menge $X$ wirkt.
+  Zeigen Sie, dass die Wirkung mindestens $3$ Fixpunkte hat.
+  (Ein Element $x \in X$ ist ein Fixpunkt falls $g.x = x$ für alle $g \in G$.)
+\end{question}
+
+
+\begin{solution}
+  Ist $B \in X/G$ eine $G$-Bahn und $x \in X$ mit $B = G.x$, so gilt $|B| = |G.x| = [G : G_x] \mid |G|$.
+  Für die Ordnung von $G$ gilt $|G| = 77 = 7 \cdot 11$, also ist $|B| \in \{1, 7, 11, 77\}$ für jede $G$-Bahn $B \in X/G$.
+  Dabei gilt genau dann $|B| = 1$, falls $B = G.x$ für einen Fixpunkt $x \in X$ gilt;
+  es gilt also zu zeigen, dass es mindestens drei einelementige $G$-Bahnen in $X$ gibt.
+  
+  Nach der Bahnengleichung gilt $17 = |X| = \sum_{B \in X/G} |B|$.
+  Die einzigen Möglichkeiten, die Zahl $17$ als Summe der Zahlen $1$, $7$, $11$ und $77$ darzustellen, sind
+  \[
+      17
+    = 11 + 6 \cdot 1
+    = 2 \cdot 7 + 3 \cdot 1
+    = 7 + 10 \cdot 1
+    = 17 \cdot 1.
+  \]
+  In jeder der Möglichkeiten kommt der Summand $1$ mindestens dreimal vor, wodurch sich die Aussage ergibt.
+\end{solution}
+
+
+
+\begin{question}[subtitle = Mehr Bahnenkombinatorik]
   Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe.
   \begin{enumerate}
     \item
