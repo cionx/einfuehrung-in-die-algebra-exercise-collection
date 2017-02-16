@@ -225,9 +225,13 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Irreduziblität von Polynomen]
   Entscheiden Sie, ob die folgenden Polynome jeweils irreduzibel sind:
   \begin{enumerate}
+    \item
+      $f(X) \coloneqq X^3 - 2 \in \Integer[X]$.
+    \item
+      $f(X) \coloneqq X^3 + 39 X^2 - 4X + 8 \in \Integer[X]$.
     \item
       $f(X) \coloneqq (X - 3)^2 + 1 \in \Rational[X]$.
     \item
@@ -254,12 +258,20 @@
       $f(X) \coloneqq X^{p-1} + X^{p-2} + \dotsb + X + 1 \in \Rational[X]$ für $p > 0$ prim.
     \item
       $f(X) \coloneqq X^n + X^{n-1} + \dotsb + X + 1 \in \Rational[X]$ für $n \geq 3$ ungerade.
+    \item
+      $f(X) \coloneqq X^6 + X^3 + 1 \in \Rational[X]$.
   \end{enumerate}
 \end{question}
 
 
 \begin{solution}
   \begin{enumerate}
+    \item
+      Nach Eisenstein mit dem Primelement $2 \in \Integer$ ist das Polynom irreduzibel.
+    \item
+      Reduzieren bezüglich $3 \in \Integer$ liefert das Polynom $\tilde{f}(X) = X^3 + 2X + 2 \in \Field_3[X]$.
+      Das Polynom $\tilde{f}$ hat keine Nullstellen, und da es kubisch ist somit irreduzibel.
+      Also ist auch $f$ bereits irreduzibel.
     \item
       Wir geben zwei Möglichkeiten an, um die Irreduziblität von $f$ zu zeigen:
       \begin{itemize}
@@ -351,6 +363,9 @@
       Also ist das normierte Polynom $f(X+1)$ nach Eisenstein irreduzibel, und somit auch $f(X)$.
     \item
       Das Polynom ist nicht linear, hat aber $-1$ ein Nullstelle; es ist also reduzibel.
+    \item
+      Es gilt $f(X+1) = X^6 + 6 X^5 + 15 X^4 + 21 X^3 + 18 X^2 + 9 X + 3$.
+      Nach Eisenstein mit dem Primelement $3 \in \Integer$ ist $f(X+1)$ irreduzibel, und somit auch $f(X)$.
   \end{enumerate}
 \end{solution}
 
