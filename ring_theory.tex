@@ -650,6 +650,19 @@
 
 
 \begin{question}
+  Es sei $R$ ein kommutativer Ring und es gebe $n > 1$, so dass $x^n = x$ für jedes $x \in R$ gilt.
+  Zeigen Sie, dass jedes Primideal in $R$ bereits maximal ist.
+\end{question}
+
+\begin{solution}
+  Ist $\pideal \subseteq R$ ein Primideal, so gilt $y^n = y$ für jedes $y \in R/\pideal$.
+  Ist $y \neq 0$, so lässt sich diese Gleichung durch $y$ teilen, da $R/\pideal$ ein Integritätsbereich ist.
+  Deshalb gilt für jedes $y \in R$ bereits $y^{n-1} = 1$, also $y \cdot y^{n-2} = 1$, weshalb $y$ eine Einheit mit $y^{-1} = y^{n-2}$ ist.
+  Somit ist jedes $y \in R/\pideal$ mit $y \neq 0$ eine Einheit, also der Integritätsbereich $R/\pideal$ bereits ein Körper, und $\pideal$ somit bereits maximal.
+\end{solution}
+
+
+\begin{question}
   \label{question: unit group of quotients}
   \begin{enumerate}
     \item
