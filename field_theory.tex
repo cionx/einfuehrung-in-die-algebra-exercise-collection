@@ -9,6 +9,78 @@
 
 
 \begin{question}
+  Es sei $\alpha \in \Complex$ eine Nullstelle des Polynoms $X^3 - 6 X^2 + 9 X + 3 \in \Rational[X]$.
+  \begin{enumerate}
+    \item
+      Bestimmen Sie eine $\Rational$-Basis von $\Rational(\alpha)$.
+    \item
+      Drücken Sie $\alpha^5$ und $3 \alpha^4 - 2 \alpha^3 + 1$ in der obigen Basis aus.
+    \item
+      Zeigen Sie, dass $\alpha + 2 \neq 0$ und drücken Sie $1/(\alpha + 2)$ in der obigen Basis aus.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Das Polynom $f(X) \coloneqq X^3 - 6 X^2 + 9 X + 3 \in \Rational[X]$ ist nach Eisenstein bezüglich des Primelements $3 \in \Integer$ irreduzibel.
+      Also ist $f$ das Minimalpolynom von $\alpha$, und somit $[\Rational(\alpha) : \Rational] = \deg f = 3$.
+      Deshalb ist $(1, \alpha, \alpha^2)$ eine $\Rational$-Basis von $\Rational(\alpha)$.
+    
+    \item
+      Da $\alpha$ eine Nullstelle von $f$ ist, gilt $\alpha^3 = 6 \alpha^2 - 9 \alpha - 3$.
+      Somit gilt auch $\alpha^5 = 6 \alpha^4 - 9 \alpha^3 - 3 \alpha^2$ und $\alpha^4 = 6 \alpha^3 - 9 \alpha^2 - 3 \alpha$.
+      Durch sukzessives Einsetzen ergibt sich, dass
+      \[
+          \alpha^5
+        = 6 \alpha^4 - 9 \alpha^3 - 3 \alpha^2
+        = 27 \alpha^3 - 57 \alpha^2 - 18 \alpha
+        = 105 \alpha^2 - 261 \alpha - 81.
+      \]
+      Alternativ ergibt sich auch durch Polynomdivision, dass
+      \[
+          \alpha^5
+        = (\alpha^2 + 6 \alpha + 27)(\alpha^3 - 6 \alpha^2 + 9 \alpha + 3) + 105 \alpha^2 - 261 \alpha - 81,
+      \]
+      wobei der erste Summand verschwindet, da $\alpha^3 - 6 \alpha^2 + 9 \alpha + 3 = 0$ gilt.
+      Durch sukszessives Einsetzen ergibt sich auch, dass
+      \[
+          3 \alpha^4 - 2 \alpha^3 + 1
+        = 16 \alpha^3 - 27 \alpha^2 - 9 \alpha + 1
+        = 69 \alpha^2 - 153 \alpha - 47.
+      \]
+      Alternativ ergibt sich mithilfe von Polynomdivision, dass
+      \[
+          3 \alpha^4 - 2 \alpha^3 + 1
+        = (3 \alpha + 16)(\alpha^3 - 6 \alpha^2 + 9 \alpha + 3) + 69 \alpha^2 - 153 \alpha - 47,
+      \]
+      wobei der erste Summand verschwindet, da $\alpha^3 - 6 \alpha^2 + 9 \alpha + 3 = 0$ gilt.
+    
+    \item
+      Es gibt mehrere Möglichkeiten um einzusehen, dass $\alpha + 2 \neq 0$.
+      \begin{itemize}
+        \item
+          Dann wäre $\alpha = -2$, aber $-2$ ist keine Nullstelle von $f$.
+        \item
+          Dann wäre $\alpha = -2$, weshalb $f$ eine rationale Nullstelle hätte, was im Widerspruch zur Irreduziblität von $f$ steht.
+        \item
+          Dann wäre $2 \cdot 1 + 1 \cdot \alpha + 0 \cdot \alpha^2 = 0$ eine nicht-triviale Linearkombination der $0$, was der linearen Unabhängigkeit von $(1, \alpha, \alpha^2)$ über $\Rational$ widerspricht.
+      \end{itemize}
+      Mithilfe des euklidischen Algorithmus ergibt sich, dass
+      \[
+        -(\alpha^3 - 6 \alpha^2 + \alpha + 3) + (\alpha + 2)(\alpha^2 - 8 \alpha + 25) = 47,
+      \]
+      und somit, dass
+      \[
+          \frac{1}{\alpha + 2}
+        = \frac{1}{47} \alpha^2 - \frac{8}{47} \alpha + \frac{25}{47}.  
+      \]
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   \begin{enumerate}
     \item
       Ist $L/K$ eine endliche Körpererweiterung mit $[L : K] \neq 1$, so gilt auch $\Gal(L/K) \neq 1$.
