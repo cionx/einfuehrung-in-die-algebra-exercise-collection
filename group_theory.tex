@@ -52,6 +52,103 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Zur Ordnung]
+  Es sei $G$ eine endliche Gruppe.
+  \begin{enumerate}
+    \item
+      Es seien $H, K \subseteq G$ zwei Untergruppen, so dass $|H|$ und $|K|$ teilerfremd sind.
+      Zeigen Sie, dass $H \cap K = 1$.
+    \item
+      Es sei $N \subseteq G$ eine Untergruppe, so dass $H$ die einzige Untergruppe von Ordnung $|N|$ ist.
+      Zeigen Sie, dass $N$ normal in $G$ ist.
+    \item
+      Es sei $|G|$ prim.
+      Zeigen Sie, dass $G$ zyklisch ist.
+    \item
+      Es sei $N \subseteq G$ eine normale Untergruppe, so dass $|N|$ und $[G : N]$ teilerfremd sind.
+      Zeigen Sie, dass $N$ die einzige Untergruppe von $G$ von Ordnung $|N|$ ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Der Schnitt $H \cap K$ ist sowohl von $H$ als auch von $K$ eine Untergruppe.
+      Deshalb gilt $|H \cap K| \mid |H|$ und $|H \cap K| \mid |K|$.
+      Da $|H|$ und $|K|$ teilerfremd sind, gilt bereits $|H \cap K| = 1$ und somit $H \cap K = 1$.
+      
+    \item
+      Für $g \in G$ ist die Abbildung $c_g \colon G \to G$, $x \mapsto gxg^{-1}$ ein Gruppenautomorphismus (siehe Übung~\ref{question: inner automorphims}) ist somit auch $c_g(H) = gHg^{-1}$ eine Untergruppe von $G$ von Ordnung $|H|$.
+      Aus der Eindeutigkeit von $H$ bezüglich dieser Eigenschaft folgt, dass bereits $g H g^{-1} = H$ gilt.
+      Da dies für jedes $g \in G$ gilt ist $H$ normal.
+    
+    \item
+      Es sei $g \in G$ mit $g \neq 1$.
+      Dann ist $\generate{g} = \{g^n \mid n \in \Integer\}$ eine Untergruppe von $G$, weshalb $|{\generate{g}}| \mid G$ gilt.
+      Da $|G|$ prim ist, gilt also entweder $|{\generate{g}}| = 1$ und somit $\generate{g} = 1$ oder $|{\generate{g}}| = G$ und somit $\generate{g} = G$.
+      Da $1 \neq g \in \generate{g}$ gilt, kann der erste Fall ausgeschlossen werden.
+    
+    \item
+      Es sei $\pi \colon G \to G/N$ die kanonische Projektion und $H \subseteq G$ eine Untergruppe von Ordnung $|N|$.
+      Dann ist $\pi(H) \subseteq G/N$ eine Untergruppe, weshalb $|\pi(H)| \mid |G/N| = [G : N]$ gilt.
+      Außerdem gilt $|H/(H \cap N)| = [H : H \cap N] \mid |H| = |N|$.
+      
+      Aus $\ker \pi|_H = H \cap \ker \pi = H \cap N$ erhalten wir, dass $\pi(H) \cong H / \ker \pi|_H \cong H / (H \cap N)$ gilt.
+      Somit erhalten wir, dass $\pi(H)$ sowohl $[G : N]$ als auch $|N|$ teilt.
+      Da $[G : N]$ und $|N|$ teilerfremd sind folgt hieraus, dass $\pi(H) = 1$ gilt.
+      Es gilt also $H \subseteq \ker \pi = N$, und wegen $|H| = |N|$ somit bereits $H = N$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Bahnenkombinatorik]
+  Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe.
+  \begin{enumerate}
+    \item
+      Es sei $X$ eine endliche Menge mit $p \nmid |X|$ und $G$ wirke auf $X$.
+      Zeigen Sie, dass die Wirkung einen Fixpunkt besitzt, d.h.\ dass es ein $x \in X$ gibt, so dass $g.x = x$ für alle $g \in G$ gilt.
+      (\emph{Hinweis}:
+       Nutzen Sie die Bahnengleichung.)
+    \item
+      Zeigen Sie für $G \neq 1$, dass auch $\Center(G) \neq 1$.
+      (\emph{Hinweis}:
+       Lassen sich $G$ auf sich selbst durch Konjugation wirken.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $B \in X/G$ eine $G$-Bahn.
+      Es gilt genau dann $|B| = 1$, wenn $B = \{x\}$ für einen Fixpunkt $x \in X$.
+      Ist $|B| \neq 1$ und $x \in B$, so folgt aus $|B| = G.x = [G : G_x] \mid |G| = p^r$ mit $r \geq 0$, dass bereits $p \mid |B|$ gilt.
+      
+      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{B \in X/G} |B|$.
+      Aus $p \nmid |X|$ erhalten wir, dass $p \nmid |B|$ für eine $G$-Bahn $B \in X/G$.
+      Nach den obigen Beobachtungen erhalten wir, dass es einen Fixpunkt gibt.
+    
+    \item
+      Es sei $X \coloneqq G$.
+      Die Gruppe $G$ wirkt auf $X$ durch Konjugation, also durch $g.x = g x g^{-1}$ für alle $g \in G$, $x \in X$
+      Ein Punkt $x \in X$ ist genau dann ein Fixpunkt wenn $g x g^{-1} = x$ für alle $g \in G$, wenn also $x \in \Center(G)$.
+      Wie im vorherigen Aussagenteil erhalten wir damit, dass für $B \in X/G$ mit $B = G.x$ für $x \in X$ genau dann $p \mid |B|$ gilt wenn $x \notin \Center(G)$ (hier bezeichnet $X/G$ die Menge der $G$-Bahnen in $X$, also die Menge der Konjugationsklassen in $G$, und nicht den Quotienten trivialen $G/G$).
+      Da $|G| = p^r$ mit $r \geq 1$ gilt, erhalten wir aus der Bahnengleichung, dass
+      \[
+                0
+        \equiv  |G|
+        =       \sum_{B \in X/G} |B|
+        \equiv  \sum_{\substack{B \in X/G \\ |B| = 1}} |B|
+        =       |{\Center(G)}|
+        \mod    p.
+      \]
+      Deshalb gilt $p \mid |{\Center(G)}|$.
+      Insbesondere ist $|{\Center(G)}| \neq 1$ und somit $\Center(G) \neq 1$.
+ \end{enumerate} 
+\end{solution}
+
+
 \begin{question}
   Es sei $K$ ein Körper.
   \begin{enumerate}
@@ -244,49 +341,6 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Bahnenkombinatorik]
-  Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe.
-  \begin{enumerate}
-    \item
-      Es sei $X$ eine endliche Menge mit $p \nmid |X|$ und $G$ wirke auf $X$.
-      Zeigen Sie, dass die Wirkung einen Fixpunkt besitzt, d.h.\ dass es ein $x \in X$ gibt, so dass $g.x = x$ für alle $g \in G$ gilt.
-    \item
-      Zeigen Sie für $G \neq 1$, dass auch $\Center(G) \neq 1$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es sei $B \in X/G$ eine $G$-Bahn.
-      Es gilt genau dann $|B| = 1$, wenn $B = \{x\}$ für einen Fixpunkt $x \in X$.
-      Ist $|B| \neq 1$ und $x \in B$, so folgt aus $|B| = G.x = [G : G_x] \mid |G| = p^r$ mit $r \geq 0$, dass bereits $p \mid |B|$ gilt.
-      
-      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{B \in X/G} |B|$.
-      Aus $p \nmid |X|$ erhalten wir, dass $p \nmid |B|$ für eine $G$-Bahn $B \in X/G$.
-      Nach den obigen Beobachtungen erhalten wir, dass es einen Fixpunkt gibt.
-    
-    \item
-      Es sei $X \coloneqq G$.
-      Die Gruppe $G$ wirkt auf $X$ durch Konjugation, also durch $g.x = g x g^{-1}$ für alle $g \in G$, $x \in X$
-      Ein Punkt $x \in X$ ist genau dann ein Fixpunkt wenn $g x g^{-1} = x$ für alle $g \in G$, wenn also $x \in \Center(G)$.
-      Wie im vorherigen Aussagenteil erhalten wir damit, dass für $B \in X/G$ mit $B = G.x$ für $x \in X$ genau dann $p \mid |B|$ gilt wenn $x \notin \Center(G)$ (hier bezeichnet $X/G$ die Menge der $G$-Bahnen in $X$, also die Menge der Konjugationsklassen in $G$, und nicht den Quotienten trivialen $G/G$).
-      Da $|G| = p^r$ mit $r \geq 1$ gilt, erhalten wir aus der Bahnengleichung, dass
-      \[
-                0
-        \equiv  |G|
-        =       \sum_{B \in X/G} |B|
-        \equiv  \sum_{\substack{B \in X/G \\ |B| = 1}} |B|
-        =       |{\Center(G)}|
-        \mod    p.
-      \]
-      Deshalb gilt $p \mid |{\Center(G)}|$.
-      Insbesondere ist $|{\Center(G)}| \neq 1$ und somit $\Center(G) \neq 1$.
- \end{enumerate} 
-\end{solution}
-
-
 \begin{question}
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
@@ -355,6 +409,7 @@
 
 
 \begin{question}[subtitle = Innere Automorphismen]
+  \label{question: inner automorphims}
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
     \item
