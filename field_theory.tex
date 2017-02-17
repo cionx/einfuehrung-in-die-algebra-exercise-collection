@@ -8,6 +8,50 @@
 % Theorems:
 
 
+\begin{question}[subtitle = Multiple Choice]
+  \begin{enumerate}
+    \item
+      Ist $L/K$ eine endliche Körpererweiterung mit $[L : K] \neq 1$, so gilt auch $\Gal(L/K) \neq 1$.
+    \item
+      Es gilt $\sqrt[4]{2} \in \Rational(\sqrt[10]{6})$.
+    \item
+      Ist $K$ ein Körper, so dass $K/K$ normal ist, so ist $K$ algebraisch abgeschlossen.
+    \item
+      Sind $M/L/K$ Körpererweiterungen, so dass $M/K$ normal ist, so ist auch $M/L$ normal.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Aussage ist falsch:
+      Man betrachte etwa $K = \Rational$ und $L = \Rational(\sqrt[3]{2})$.
+      Jeder Automorphismus $\sigma \in \Gal(\Rational(\sqrt[3]{2})/\Rational)$ muss die Nullstellen des Polynoms $f(X) \coloneqq X^3-2 \in \Rational[X]$ permutieren.
+      Die Nullstellen von $f$ sind $\sqrt[3]{2}$, $\zeta \sqrt[3]{2}$, und $\zeta^2 \sqrt[3]{2}$, wobei $\zeta \in \Complex$, $\zeta \notin \Real$ eine primitive dritte Einheitswurzel ist (etwa $\zeta = e^{2 \pi i/3}$).
+      Inbesondere gelten $\zeta \sqrt[3]{2}, \zeta^2 \sqrt[3]{2} \notin \Real$.
+      Da $\Rational(\sqrt[3]{2}) \subseteq \Real$ gilt, ist deshalb $\sqrt[3]{2}$ die einzige Nullstelle von $f$ in $\Rational(\sqrt[3]{2})$;
+      für jedes $\sigma \in \Gal(\Rational(\sqrt[3]{2})/\Rational)$ muss deshalb $\sigma(\sqrt[3]{2}) = \sqrt[3]{2}$ gelten, und somit bereits $\sigma = \id_{\Rational(\sqrt[3]{2})}$.
+      
+    \item
+      Die Aussage ist falsch:
+      Das Polynoms $f(X) = X^4 - 2 \in \Rational[X]$ hat $\sqrt[4]{2}$ als Nullstelle, und das Polynom $g(X) = X^{10} - 6 \in \Rational[X]$ hat $\sqrt[10]{6}$ als Nullstelle.
+      Die beiden Polynome $f$ und $g$ sind normiert und nach Eisenstein mit dem Primelement $2 \in \Integer$ irreduzibel.
+      Folglich ist $f$ das Minimalpolynom von $\sqrt[4]{2}$ und $g$ das Minimalpolynom von $\sqrt[10]{6}$, und somit $[\Rational(\sqrt[4]{2}) : \Rational] = \deg f = 4$ und $[\Rational(\sqrt[10]{6}) : \Rational] = \deg g = 10$.
+      Wäre $\sqrt[4]{2} \in \Rational(\sqrt[10]{6})$, so wäre $[\Rational(\sqrt[4]{2}) : \Rational]$ ein Teiler von $[\Rational(\sqrt[10]{6} : \Rational)]$; da $4 \nmid 10$ ist dies nicht der Fall.
+      
+    \item
+      Die Aussage ist wahr:
+      Ist $P(T) \in K[T]$ ein Polynom, so besitzt das Polynom $T P(T) \in K[T]$ eine Nullstelle in $K$, und zerfällt daher nach Annahme bereits in Linearfaktoren.
+      Also zerfällt $P$ bereits in Linearfaktoren.
+      
+    \item
+      Die Aussage ist wahr:
+      Siehe Übung~\ref{TOADD}.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}
   Es sei $\alpha \in \Complex$ eine Nullstelle des Polynoms $X^3 - 6 X^2 + 9 X + 3 \in \Rational[X]$.
   \begin{enumerate}
@@ -76,36 +120,6 @@
           \frac{1}{\alpha + 2}
         = \frac{1}{47} \alpha^2 - \frac{8}{47} \alpha + \frac{25}{47}.  
       \]
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}
-  \begin{enumerate}
-    \item
-      Ist $L/K$ eine endliche Körpererweiterung mit $[L : K] \neq 1$, so gilt auch $\Gal(L/K) \neq 1$.
-    \item
-      Es gilt $\sqrt[4]{2} \in \Rational(\sqrt[10]{6})$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Die Aussage ist falsch:
-      Man betrachte etwa $K = \Rational$ und $L = \Rational(\sqrt[3]{2})$.
-      Jeder Automorphismus $\sigma \in \Gal(\Rational(\sqrt[3]{2})/\Rational)$ muss die Nullstellen des Polynoms $f(X) \coloneqq X^3-2 \in \Rational[X]$ permutieren.
-      Die Nullstellen von $f$ sind $\sqrt[3]{2}$, $\zeta \sqrt[3]{2}$, und $\zeta^2 \sqrt[3]{2}$, wobei $\zeta \in \Complex$, $\zeta \notin \Real$ eine primitive dritte Einheitswurzel ist (etwa $\zeta = e^{2 \pi i/3}$).
-      Inbesondere gelten $\zeta \sqrt[3]{2}, \zeta^2 \sqrt[3]{2} \notin \Real$.
-      Da $\Rational(\sqrt[3]{2}) \subseteq \Real$ gilt, ist deshalb $\sqrt[3]{2}$ die einzige Nullstelle von $f$ in $\Rational(\sqrt[3]{2})$;
-      für jedes $\sigma \in \Gal(\Rational(\sqrt[3]{2})/\Rational)$ muss deshalb $\sigma(\sqrt[3]{2}) = \sqrt[3]{2}$ gelten, und somit bereits $\sigma = \id_{\Rational(\sqrt[3]{2})}$.
-    \item
-      Die Aussage ist falsch:
-      Das Polynoms $f(X) = X^4 - 2 \in \Rational[X]$ hat $\sqrt[4]{2}$ als Nullstelle, und das Polynom $g(X) = X^{10} - 6 \in \Rational[X]$ hat $\sqrt[10]{6}$ als Nullstelle.
-      Die beiden Polynome $f$ und $g$ sind normiert und nach Eisenstein mit dem Primelement $2 \in \Integer$ irreduzibel.
-      Folglich ist $f$ das Minimalpolynom von $\sqrt[4]{2}$ und $g$ das Minimalpolynom von $\sqrt[10]{6}$, und somit $[\Rational(\sqrt[4]{2}) : \Rational] = \deg f = 4$ und $[\Rational(\sqrt[10]{6}) : \Rational] = \deg g = 10$.
-      Wäre $\sqrt[4]{2} \in \Rational(\sqrt[10]{6})$, so wäre $[\Rational(\sqrt[4]{2}) : \Rational]$ ein Teiler von $[\Rational(\sqrt[10]{6} : \Rational)]$; da $4 \nmid 10$ ist dies nicht der Fall.
   \end{enumerate}
 \end{solution}
 
