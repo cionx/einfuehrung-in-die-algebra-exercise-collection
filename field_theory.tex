@@ -224,20 +224,6 @@
 \end{solution}
 
 
-\begin{question}
-  Es sei $L \coloneqq \Rational(\sqrt[4]{2}, i)$.
-  \begin{enumerate}
-    \item
-      Bestimmen Sie den Grad der Erweiterun $L/\Rational$.
-    \item
-      Zeigen Sie, dass $L/\Rational$ galoisch ist.
-    \item
-      Bestimmen Sie $\Gal(L / \Rational)$.
-    \item
-      Entscheiden Sie, ob $\Gal(L / \Rational)$ abelsch ist.
-  \end{enumerate}
-\end{question}
-
 
 \begin{question}
   Es sei $L \coloneqq \Rational(\sqrt[4]{2}, i)$.
@@ -293,7 +279,7 @@
         &\colon
         \left\{
           \begin{array}{rcl}
-            \sqrt[4]{2} & \mapsto & \sqrt[4]{2},  \\
+            \slqrt[4]{2} & \mapsto & \sqrt[4]{2},  \\
             i           & \mapsto & i,
           \end{array}
         \right.
@@ -442,51 +428,6 @@
 
 
 \begin{question}
-  Es sei $\sigma \in \Gal(\Real/\Rational)$.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass für alle $x \in \Real$ genau dann $x \geq 0$, wenn $\sigma(x) \geq 0$.
-    \item
-      Folgern Sie, dass $\sigma$ streng monoton steigend ist.
-    \item
-      Folgern Sie, dass $\sigma$ stetig ist.
-    \item
-      Folgern Sie, dass $\sigma = \id_\Real$.
-  \end{enumerate}
-  Das zeigt, dass $\Gal(\Real/\Rational) = 1$.
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Eine reelle Zahl ist genau dann nicht-negativ, wenn sie eine Quadratzahl ist;
-      diese Eigenschaft ist invariant unter Körperautomorphismen.
-      
-    \item
-      Für alle $x, y \in \Real$ gilt
-      \[
-              x \geq y
-        \iff  x - y \geq 0
-        \iff  \sigma(x) - \sigma(y) \geq 0
-        \iff  \sigma(x) \geq \sigma(y).
-      \]
-      Somit ist $\sigma$ monoton steigend;
-      dass $\sigma$ bereits \emph{streng} monoton steigend ist ergibt sich aus der Injektivität von $\sigma$.
-      
-    \item
-      Für alle $x, y \in \Real$ mit $x < y$ gilt nach dem vorherigen Aussagenteil, dass genau dann $x < z < y$, wenn 
-      $\sigma(x) < \sigma(z) < \sigma(y)$; also bildet $\sigma$ offene Intervalle auf offene Intervalle ab.
-      Da eine jede offene Menge $U \subseteq \real$ eine Vereinigung offener Intervalle ist, folgt daraus, dass auch $\sigma(U) \subseteq \real$ offen ist.
-      Wendet man dieses Resultat auf $\sigma^{-1} \in \Gal(\Real/\Rational)$ an, so ergibt sich, dass für jede offene Teilmenge $U \subseteq \Real$ auch $\sigma^{-1}(U)$ offen ist.
-    
-    \item
-      Da $\Rational \subseteq \Real$ dicht liegt, folgt aus $\sigma|_{\Rational} = \id_\Rational$ und der Stetigkeit von $\sigma$, dass bereits $\sigma = \id_\Real$ gilt.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}
   Es sei $f(X) \coloneqq X^3 - 2 X^2 - X + 1 \in \Rational[X]$ und $\alpha \in \Complex$ eine Nullstelle von $f$.
   \begin{enumerate}
     \item
@@ -549,6 +490,51 @@
     \item
       Da $\Rational(\alpha)/\Rational$ galoisch ist, gilt $|\Gal(\Rational(\alpha)/\Rational)| = [\Rational(\alpha) : \Rational] = 3$.
       Da $\Integer/3$ bis auf Isomorphie die einzige dreielementige Gruppe ist, gilt also $\Gal(\Rational(\alpha)/\Rational) \cong \Integer/3$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Es sei $\sigma \in \Gal(\Real/\Rational)$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für alle $x \in \Real$ genau dann $x \geq 0$, wenn $\sigma(x) \geq 0$.
+    \item
+      Folgern Sie, dass $\sigma$ streng monoton steigend ist.
+    \item
+      Folgern Sie, dass $\sigma$ stetig ist.
+    \item
+      Folgern Sie, dass $\sigma = \id_\Real$.
+  \end{enumerate}
+  Das zeigt, dass $\Gal(\Real/\Rational) = 1$.
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Eine reelle Zahl ist genau dann nicht-negativ, wenn sie eine Quadratzahl ist;
+      diese Eigenschaft ist invariant unter Körperautomorphismen.
+      
+    \item
+      Für alle $x, y \in \Real$ gilt
+      \[
+              x \geq y
+        \iff  x - y \geq 0
+        \iff  \sigma(x) - \sigma(y) \geq 0
+        \iff  \sigma(x) \geq \sigma(y).
+      \]
+      Somit ist $\sigma$ monoton steigend;
+      dass $\sigma$ bereits \emph{streng} monoton steigend ist ergibt sich aus der Injektivität von $\sigma$.
+      
+    \item
+      Für alle $x, y \in \Real$ mit $x < y$ gilt nach dem vorherigen Aussagenteil, dass genau dann $x < z < y$, wenn 
+      $\sigma(x) < \sigma(z) < \sigma(y)$; also bildet $\sigma$ offene Intervalle auf offene Intervalle ab.
+      Da eine jede offene Menge $U \subseteq \real$ eine Vereinigung offener Intervalle ist, folgt daraus, dass auch $\sigma(U) \subseteq \real$ offen ist.
+      Wendet man dieses Resultat auf $\sigma^{-1} \in \Gal(\Real/\Rational)$ an, so ergibt sich, dass für jede offene Teilmenge $U \subseteq \Real$ auch $\sigma^{-1}(U)$ offen ist.
+    
+    \item
+      Da $\Rational \subseteq \Real$ dicht liegt, folgt aus $\sigma|_{\Rational} = \id_\Rational$ und der Stetigkeit von $\sigma$, dass bereits $\sigma = \id_\Real$ gilt.
   \end{enumerate}
 \end{solution}
 
