@@ -816,6 +816,94 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Quadratische Körpererweiterungen]
+  \label{question: quadratic field extensions}
+  Es sei $L/K$ eine Körpererweiterung vom Grad $2$.
+  Es gelte zunächst $\ringchar K \neq 2$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $L = K(\alpha)$ für ein $\alpha \in L$ mit $\alpha \notin K$ und $\alpha^2 \in K$ gilt.
+      ($L$ entsteht also durch Hinzuadjungieren einer Quadratwurzel.)
+    \item
+      Folgern Sie, dass $L/K$ galoisch ist.
+  \end{enumerate}
+  Es gelte nun $\ringchar K = 2$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $L$ nicht notwendigerweise durch Hinzuadjungieren einer Quadratwurzel entsteht.
+    \item
+      Zeigen Sie, dass $L/K$ nicht notwendigerweise galoisch ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Ist $\alpha \in L$ mit $\alpha \neq K$, so gilt
+      \[
+              2
+        =     [L : K)
+        \geq  [K(\alpha) : K]
+        \geq  2,
+      \]
+      also $[K(\alpha) : K] = 2$ und somit $L = K(\alpha)$.
+      Ist $f \in K[X]$ das Minimalpolynom von $\alpha$, so gilt deshalb $\deg f = [K(\alpha : K] = 2$ und $L = K(\alpha) \cong K[X](f)$.
+      Wir können daher o.B.d.A.\ davon ausgehen, dass $L = K[X]/(f)$ für ein normiertes, irreduzibles quadratisches Polyom $f \in K[X]$ gilt.
+      
+      Da $\ringchar K \neq 2$ gilt, können wir
+      \[
+          f(X)
+        = X^2 + aX + b
+        = \left( X + \frac{a}{2} \right)^2 - \left( \frac{a^2}{4} - b\right)
+      \]
+      schreiben.
+      Der Automorphismus $K[X] \to K[X]$, $p(X) \mapsto p(X - a/2)$ induziert deshalb einen Isomorphismus $K[X]/(f) \to K[X]/(X^2 - (a^2/4 - b))$.
+      Wir können also auch o.B.d.A.\ davon ausgehen, dass $f$ von der Form $f(X) = X^2 - c$ ist, wobei $c \in K$ kein Quadrat ist.
+      
+      Wir haben nun also $L = K[X]/(X^2 - c)$, wobei $c \in K$ kein Quadrat ist.
+      Nun leistet $\alpha = \overline{X}$ das Gewünschte.
+    
+    \item
+      Es sei $\alpha \in L$ mit $\alpha \notin K$ und $\alpha^2 \in K$.
+      Dann ist $f(X) \coloneqq X^2 - \alpha^2 \in K[X]$ das Minimalpolynom, denn es ist normiert, hat $\alpha$ als Nullstelle, und ist irreduzibel (denn es ist quadratisch und hat keine Nullstelle in $K$).
+      Es gibt nun (mindestens) zwei mögliche Argumentationsweisen:
+      \begin{itemize}
+        \item
+          Der Automorphismus $K[X] \to K[X]$, $p(X) \mapsto p(-X)$ induziert einen $K$-linearen Automorphismus $K[X]/(f) \to K[X]/(f)$, $a + b \overline{X} \mapsto a - b \overline{X}$.
+          Unter dem Isomorphismus $K[X]/(f) \to L = K(\alpha)$, $a + b \overline{X} \mapsto a + b \alpha$ entspricht dies dem $K$-linearen Automorphismus $\tau \colon L \to L$, $a + b \alpha \mapsto a - b \alpha$.
+          Es ergibt sich nun (mindestens) zwei Weisen um einzusehen, dass $|{\Gal(L/K)}| = 2 = [L : K]$ gilt:
+          \begin{itemize}
+            \item
+              Jedes $\sigma \in \Gal(L/K)$ muss die Nullstellen von $f$ permutieren, und somit muss $\sigma(\alpha) = \pm \alpha$ gelten.
+              Da $L = K(\alpha)$ gilt, ist deshalb bereits $\sigma = \id$ (falls $\sigma(\alpha) = \alpha$) oder $\sigma = \tau$ (falls $\sigma(\alpha) = - \alpha$).
+              Es gilt also bereits $\Gal(L/K) = \{\id_L, \tau\}$.
+            \item
+              Es gilt $2 \leq |{\Gal(L/K)}| \leq [L : K] = 2$.
+          \end{itemize}
+        \item
+          Da $L = K(\alpha) = K(\alpha, -\alpha)$ gilt, ist $L$ ein Zerfällungskörper von $f$ über $K$.
+          Die beiden Nullstellen von $f$, $\alpha$ und $-\alpha$, sind verschieden, da $\alpha \neq 0$ (denn $\alpha \notin K$) und $\ringchar K \neq 2$ gelten.
+          Also ist $f$ separabel.
+          Als Zerfällungskörper eines separablen Polynoms ist $L/K$ galoisch.
+      \end{itemize}
+      
+    \item
+      Wir betrachten den Fall, dass $K$ ein endlicher Körper ist.
+      Dann ist der Frobeniushomomorphismus $\sigma \colon K \to K$, $x \mapsto x^2$ ein Automorphismus, also insbesondere surjektiv.
+      Ist $\alpha \in L$ mit $\alpha^2 \in K$, so gibt es deshalb ein $x \in K$ mit $x^2 = \alpha^2$, also $0 = x^2 - \alpha^2 = (x - \alpha)^2$.
+      Somit gilt dann bereits $\alpha = x \in K$.
+      
+    \item
+      Wir betrachten den Fall $K = \Field_2(t)$.
+      Das Polynom $f(X) = X^2 - t \in \Field_2(t)[X]$ ist nach Eisenstein bezüglich des Primelements $t \in \Field_2[t]$ irreduzibel.
+      Es gilt aber $f' = 0$, weshalb $f$ nicht separabel ist.
+      Für $L \coloneqq K[X]/(f)$ ist dann $\overline{X} \in L$ nicht separabel, da $f$ das Minimalpolynom von $\overline{X}$ ist.
+      Somit ist $L/K$ auch nicht galoisch.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}
   Zeigen Sie, dass eine Körpererweiterung $L/K$ genau dann algebraisch ist, wenn jeder Zwischenring $K \subseteq R \subseteq L$ bereits ein Körper ist.
 \end{question}
