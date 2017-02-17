@@ -904,6 +904,50 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Einschränkung und Transitivität von Normalität]
+  Es seien $M/L/K$ algebraische Körpererweiterungen.
+  \begin{enumerate}
+    \item
+      Es sei $\overline{K}$ ein algebraischer Abschluss von $K$.
+      Zeigen Sie, dass $\overline{K}/K$ normal ist.
+    \item
+      Zeigen Sie, dass $M/L$ normal ist, falls $M/K$ normal ist.
+    \item
+      Zeigen Sie, dass $L/M$ nicht notwendigerweise normal ist, falls $M/K$ normal ist.
+    \item
+      Zeigen Sie, dass $M/K$ nicht notwendigerweise normal ist, wenn $M/L$ und $L/K$ normal sind.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Jedes Polynom $f \in K[X]$ zerfällt über $\overline{K}$ bereits in Linearfaktoren;
+      inbesondere also jedes irreduzibel Polynom, das eine Nullstelle in $\overline{K}$ hat.
+      
+    \item
+      Nach Annahme gibt es eine Familie $(f_i)_{i \in I}$ von Polynomen $f_i \in K[X]$, so dass $M$ der Zerfällungskörper der $f_i$ über $K$ ist.
+      Dann ist $M$ auch der Zerfällungskörper der $f_i$ über $L$, und somit $M/L$ normal.
+      
+    \item
+      Es sei $L/K$ eine algebraische, nicht normale Körpererweiterung, und $\overline{L}$ ein algebraischer Abschluss von $L$.
+      Dann ist $\overline{L}$ algebraisch abgeschlossen und $\overline{L}/K$ algebraisch, also $\overline{L}$ auch von $K$ ein algebraischer Abschluss.
+      Nach dem ersten Aussagenteil ist somit $\overline{L}/L/K$ ein Gegenbeispiel.
+      
+    \item
+      Wir betrachten die Körpererweiterungen $\Rational(\sqrt[4]{2}) / \Rational(\sqrt{2}) / \Rational$.
+      
+      Es gilt $[\Rational(\sqrt[4]{2}) : \Rational] = 4$, denn das Minimalpolynom von $\sqrt[4]{2}$ über $\Rational$ ist $X^4 - 2$ (die Irreduziblität ergibt sich mit Eisenstein), und es gilt $[\Rational(\sqrt[4]{2}) : \Rational] = 2$, denn das Minimalpolynom von $\sqrt{2}$ über $\Rational$ ist $X^2 - 2$ (die Irreduziblität ergibt sich ebenfalls mit Eisenstein).
+      Somit gilt $[\Rational(\sqrt[4]{2}) : \Rational(\sqrt{2})] = 2$.
+      
+      Die beiden Erweiterungen $\Rational(\sqrt[4]{2}) / \Rational(\sqrt{2})$ und $\Rational(\sqrt{2}) / \Rational$ sind also beide vom Grad $2$;
+      da $\ringchar \Rational \neq 2$ gilt, sind sie somit beide galoisch (siehe Übung~\ref{question: quadratic field extensions}) und damit insbesondere normal.
+      Die Erweiterung $\Rational(\sqrt[4]{2}) / \Rational$ ist allerdings nicht normal, denn das Polynom $f(X) \coloneqq X^4 - 2 \in \Rational[X]$ hat zwar eine Nullstelle in $\Rational(\sqrt[4]{2})$, zerfällt dort aber nicht in Linearfaktoren, da die beiden Nullstellen $\pm i \sqrt[4]{2}$ nicht in $\Rational(\sqrt[4]{2})$ liegen (denn $\Rational(\sqrt[4]{2}) \subseteq \Real$).
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}
   Zeigen Sie, dass eine Körpererweiterung $L/K$ genau dann algebraisch ist, wenn jeder Zwischenring $K \subseteq R \subseteq L$ bereits ein Körper ist.
 \end{question}
