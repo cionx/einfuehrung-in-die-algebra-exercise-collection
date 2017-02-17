@@ -382,6 +382,66 @@
 
 
 \begin{question}
+  Es sei $\zeta \in \Complex$ eine dritte primitive Einheitswurzel (etwa $\zeta = e^{2 \pi i/3}$) und $L \coloneqq \Rational(\sqrt[3]{3}, \zeta)$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $L/\Rational$ Galoisch ist.
+    \item
+      Bestimmen Sie den Grad $[L : \Rational]$.
+    \item
+      Bestimmen Sie die Gruppe $\Gal(L/\Rational)$ und entscheiden Sie, ob sie abelsch ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $L = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}, \zeta^2 \sqrt[3]{3})$ da $\zeta = (\zeta \sqrt[3]{3}) / \sqrt[3]{3})$.
+      Also wird $L$ über $\Rational$ von den Nullstellen des Polynoms $f(X) \coloneqq X^3 - 3 \in \Rational[X]$ erzeugt, ist also ein Zerfällungskörper von $f$.
+      Die Nullstellen von $f$ sind paarweise verschieden, also ist $f$ separabel.
+      Als Zerfällungskörper eines separablen Polynoms ist $L/\Rational$ galoisch.
+      
+    \item
+      Wir betrachten den Zwischenkörper $\Rational \subseteq \Rational(\sqrt[3]{3}) \subseteq L$.
+      Nach Eisenstein bezüglich $3 \in \Integer$ ist $f$ irreduzibel.
+      Also ist $f$ das Minimalpolynom von $\sqrt[3]{3}$, also $[\Rational(\sqrt[3]{3}) : \Rational] = \deg f = 3$.
+      Außerdem gilt $\zeta \notin \Real \supseteq L$.
+      Es gilt nun (mindestens) zwei Argumentationen:
+      \begin{itemize}
+        \item
+          Aus $\zeta \notin \Rational(\sqrt[3]{3})$ ergibt sich, dass $[L : \Rational(\sqrt[3]{3})] \geq 2$.
+          Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] \geq 6$ gilt.
+          Andererseits ist $L$ ein Zerfällungskörper eines kubischen Polynoms und somit $[L : \Rational] \leq 3! = 6$.
+          Zusammen erhalten wir, dass $[L : \Rational] = 2$.
+        \item
+          Es gilt $L = \Rational(\sqrt[3]{3}, \zeta) = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}) = \Rational(\sqrt[3]{3})(\zeta \sqrt[3]{3})$.
+          Das Polynom
+          \[
+                      g(X)
+            \coloneqq (X - \zeta \sqrt[3]{3})(X - \zeta^2 \sqrt[3]{3})
+            =         f(X)/(X-\sqrt[3]{3})
+            \in       \Rational(\sqrt[3]{3})[X]
+          \]
+          ist irreduzibel, da wegen $\zeta \notin \Rational(\sqrt[3]{3})$ auch $\pm \zeta \sqrt[3]{3} \notin \Rational(\sqrt[3]{3})$.
+          Somit ist $g$ das Minimalpolynom von $\zeta \sqrt[3]{3}$ über $\Rational(\sqrt[3]{3})$ und deshalb $[L : \Rational(\sqrt[3]{3})] = 2$.
+          Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] = 6$ gilt.
+      \end{itemize}
+          
+    \item
+      Es ist $L$ der Zerfällungskörper von $f$ und $[L : \Rational] = 6 = 3! = (\deg f)!$.
+      Aus der Vorlesung ist bekannt, dass deshalb bereits $\Gal(L/\Rational) \cong S_3$ gilt.
+      Aus $\Gal(L/\Rational) \cong S_3$ erhalten wir inbesondere, dass $\Gal(L/\Rational)$ nicht abelsch ist.
+      
+      Von Hand lässt sich die Aussage wie folgt nachrechnen:
+      Jedes $\sigma \in \Gal(L/\Rational)$ muss die Nullstellen von $f$, also $z_1 = \sqrt[3]{3}$, $z_2 = \zeta \sqrt[3]{3}$ und $z_3 = \zeta^2 \sqrt[3]{3}$, permutieren.
+      Da $L$ bereits von diesen Nullstellen erzeugt wird, ergibt sich eine Einbettung $\varphi \colon \Gal(L/\Rational) \to S_3$, wobei $\pi = \varphi(\sigma)$ die eindeutige Permutation mit $\sigma(z_i) = z_{\pi(i)}$ für alle $i = 1, 2, 3$ ist.
+      Da $L/\Rational$ galoisch ist, gilt dabei $|{\Gal(L/\Rational)}| = [L : \Rational] = 6 = 3! = |S_3|$, weshalb $\varphi$ bereits ein Isomorphismus ist.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
   Es sei $\sigma \in \Gal(\Real/\Rational)$.
   \begin{enumerate}
     \item
