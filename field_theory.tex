@@ -16,6 +16,8 @@
       Es gilt $\sqrt[4]{2} \in \Rational(\sqrt[10]{6})$.
     \item
       Sind $M/L/K$ Körpererweiterungen, so dass $M/K$ normal ist, so ist auch $M/L$ normal.
+    \item
+      Es gilt $\Field_{8} \subseteq \Field_{32}$.
   \end{enumerate}
 \end{question}
 
@@ -41,6 +43,17 @@
     \item
       Die Aussage ist wahr:
       Siehe Übung~\ref{question: restriction and transitivity of normality}.
+      
+    \item
+      Die Aussage ist falsch, denn sonst wäre
+      \[
+              3
+        =     [\Field_{2^3} : \Field_2]
+        =     [\Field_8 : \Field_2]
+        \mid  [\Field_{32} : \Field_2]
+        =     [\Field_{2^5} : \Field_2]
+        =     5.
+      \]
   \end{enumerate}
 \end{solution}
 
@@ -536,6 +549,39 @@
     \item
       Da $\Rational \subseteq \Real$ dicht liegt, folgt aus $\sigma|_{\Rational} = \id_\Rational$ und der Stetigkeit von $\sigma$, dass bereits $\sigma = \id_\Real$ gilt.
   \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Es sei $K$ ein Körper und $L/K$ eine endliche Galoiserweiterung.
+  Es sei $f \in K[X]$ und es seien $\alpha_1, \dotsc, \alpha_n \in L$ die paarweise verschiedenen Nullstellen von $f$.
+  Zeigen Sie für das Polynom $g(X) \coloneqq \prod_{i=1}^n (X - \alpha_i) \in L[X]$, dass bereits $g \in K[X]$ gilt.
+  \\
+  (\emph{Hinweis}:
+   Überlegen Sie sich, dass die Koeffizienten von $g$ invariant unter der Galoisgruppe $\Gal(L/K)$ sind.)
+\end{question}
+
+
+\begin{solution}
+  Es sei $G \coloneqq \Gal(L/K)$.
+  Jedes $\sigma \in G$ induziert einen Automorphismus $\varphi_\sigma \colon L[X] \to L[X]$, $\sum_i a_i X^i \mapsto \sum_i \sigma(a_i) X^i$.
+  Jedes $\sigma \in G$ muss die Nullstellen von $f$ permutieren;
+  es gibt also eine Permutation $\pi_\sigma \in S_n$ mit $\sigma(\alpha_i) = \alpha_{\pi_\sigma(i)}$ für alle $i = 1, \dotsc, n$.
+  Für jedes $\sigma \in G$ gilt deshalb
+  \begin{align*}
+        \varphi_\sigma( g(X) )
+    &=  \varphi_\sigma\left( \prod_{i=1}^n X - \alpha_i \right)
+     =  \prod_{i=1}^n ( X - \sigma(\alpha_i) )
+    \\
+    &=  \prod_{i=1}^n ( X- \alpha_{\pi_\sigma(i)} )
+     =  \prod_{j=1}^n ( X - \alpha_j )
+     =  g(X).
+  \end{align*}
+  Also ist $g$ invariant unter allen $\varphi_\sigma$ mit $\sigma \in G$.
+  Da die $\varphi_\sigma$ koeffizientenweise agieren, erhalten wir, dass alle Koeffizienten von $g$ invariant unter allen $\sigma \in G$ sind.
+  Die Koeffizienten von $G$ liegen also im Fixkörper $L^G$;
+  somit gilt $g \in L^G[X]$.
+  Da $L/K$ galoisch ist, gilt dabei bereits $L^G = K$.
 \end{solution}
 
 
