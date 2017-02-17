@@ -215,6 +215,85 @@
 \end{solution}
 
 
+\begin{question}[Abelsche Gruppen endlicher Ordnung]
+  Bestimmen Sie bis auf Isomorphie alle abelschen Gruppen der Ordnung
+  \begin{enumerate}
+    \item
+      $213$
+    \item
+      $675$,
+    \item
+      $3087$,
+    \item
+      $152460$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $213 = 3 \cdot 71$.
+      Nach dem Hauptsatz über endlich erzeugt abelsche Gruppen ist $\Integer/3 \oplus \Integer/71$ bis auf Isomorphie die einzige abelsche Gruppe von Ordnung $213$.
+      
+    \item
+      Es gilt $675 = 3^3 \cdot 5^2$.
+      Nach dem Hauptsatz über endlich erzeugt abelsche Gruppen gibt es bis auf Isomorphie $6$ abelsche Gruppen der Ordnung $675$, und diese sind
+      \begin{align*}
+        &\,\Integer/27 \oplus \Integer/25,
+        \\
+        &\,\Integer/27 \oplus \Integer/5 \oplus \Integer/5,
+        \\
+        &\,\Integer/9 \oplus \Integer/3 \oplus \Integer/25,
+        \\
+        &\,\Integer/9 \oplus \Integer/3 \oplus \Integer/5 \oplus \Integer/5,
+        \\
+        &\,\Integer/3 \oplus \Integer/3 \oplus \Integer/3 \oplus \Integer/25,
+        \\
+        &\,\Integer/3 \oplus \Integer/3 \oplus \Integer/3 \oplus \Integer/5 \oplus \Integer/5.
+      \end{align*}
+      
+    \item
+      Es gilt $3087 = 3^2 \cdot 7^3$.
+      Nach dem Hauptsatz über endlich erzeugt abelsche Gruppen gibt es bis auf Isomorphie $6$ abelsche Gruppen der Ordnung $3087$, und diese sind
+      \begin{align*}
+        &\,\Integer/9 \oplus \Integer/343,
+        \\
+        &\,\Integer/3 \oplus \Integer/3 \oplus \Integer/343,
+        \\
+        &\,\Integer/9 \oplus \Integer/49 \oplus \Integer/7,
+        \\
+        &\,\Integer/3 \oplus \Integer/3 \oplus \Integer/49 \oplus \Integer/7,
+        \\
+        &\,\Integer/9 \oplus \Integer/7 \oplus \Integer/7 \oplus \Integer/7,
+        \\
+        &\,\Integer/3 \oplus \Integer/3 \oplus \Integer/7 \oplus \Integer/7 \oplus \Integer/7.
+      \end{align*}
+      
+    \item
+      Es gilt $152460 = 2^2 \cdot 3^2 \cdot 5 \cdot 7 \cdot 11^2$.
+      Nach dem Hauptsatz über endlich erzeugt abelsche Gruppen gibt es bis auf Isomorphie $8$ abelsche Gruppen der Ordnung $3087$, und diese sind
+      \begin{align*}
+        &\, \Integer/4 \oplus \Integer/9 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/121,
+        \\
+        &\,\Integer/4 \oplus \Integer/9 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/11 \oplus \Integer/11,
+        \\
+        &\,\Integer/4 \oplus \Integer/3 \oplus \Integer/3 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/121,
+        \\
+        &\,\Integer/4 \oplus \Integer/3 \oplus \Integer/3 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/11 \oplus \Integer/11,
+        \\
+        &\,\Integer/2 \oplus \Integer/2 \oplus \Integer/9 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/121,
+        \\
+        &\,\Integer/2 \oplus \Integer/2 \oplus \Integer/9 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/11 \oplus \Integer/11,
+        \\
+        &\,\Integer/2 \oplus \Integer/2 \oplus \Integer/3 \oplus \Integer/3 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/121,
+        \\
+        &\,\Integer/2 \oplus \Integer/2 \oplus \Integer/3 \oplus \Integer/3 \oplus \Integer/5 \oplus \Integer/7 \oplus \Integer/11 \oplus \Integer/11.
+      \end{align*}
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Smith-Normalform]
     Bestimmen Sie die Smith-Normalform der folgenden Matrizen $A_i \in \Mat(m \times n, R)$ für den jeweils gegebenen euklidischen Ring $R$.
     Bestimmen Sie auch jeweils die Isomorphieklasse von $M_i \coloneqq R^m/AR^n$ gemäß des Hauptsatzes über endlich erzeugte $R$-Moduln, sowie die Primärzerlegung des Torsionsuntermoduls $\torsion(M_i)$.
