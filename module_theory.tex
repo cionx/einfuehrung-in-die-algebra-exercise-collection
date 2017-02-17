@@ -3,11 +3,6 @@
 
 % TODO:
 % Calculations:
-%   Smith normal form
-%   simplification of quotients
-%   which of these modules / abelians groups is cyclic?
-%   which of these modules is finitely generated?
-%   which of these modules is noetherian
 % Theorems:
 %   equivalent definitions of a short exact sequence being split
 %   localization of modules is exact
@@ -220,7 +215,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Smith-Normalform]
     Bestimmen Sie die Smith-Normalform der folgenden Matrizen $A_i \in \Mat(m \times n, R)$ für den jeweils gegebenen euklidischen Ring $R$.
     Bestimmen Sie auch jeweils die Isomorphieklasse von $M_i \coloneqq R^m/AR^n$ gemäß des Hauptsatzes über endlich erzeugte $R$-Moduln, sowie die Primärzerlegung des Torsionsuntermoduls $\torsion(M_i)$.
   \begin{enumerate}
@@ -281,6 +276,12 @@
         \begin{pmatrix*}[l]
           t^2 & t^4 - t^2 \\
           t   & t^2 - t
+        \end{pmatrix*},
+        \quad
+        A_9 =
+        \begin{pmatrix*}[c]
+            t + 1 & 2 t^2 - 2 t - 2
+          2 t     & 4 t^2 - 6 t
         \end{pmatrix*}.
       \]
   \end{enumerate}
@@ -370,6 +371,15 @@
             \cong \Rational[t]/(t)  \oplus \Rational[t]/(t^3) \oplus \Rational[t]/(t-1).
           \]
           Inbesondere ist $M_8$ ein Torsionsmodul, und es gilt $M_8 = (t-1) M_8 \oplus t^3 M_8$, wobei $(t-1) M_8 \cong \Rational[t]/(t) \oplus \Rational[t]/(t^3)$ der $t$-primäre Anteil von $M_8$ ist, und $t^3 M_8 \cong \Rational[t]/(t-1)$ der $(t-1)$-primäre Anteil.
+        \item
+          Eine Smith-Normalform ist $A_9' = \begin{psmallmatrix} 1 & 0 \\ 0 & t^2 - t \end{psmallmatrix}$.
+          Deshalb gilt
+          \[
+                  M_9
+            \cong \Rational[t]/(t^2 - t)
+            \cong \Rational[t]/(t) \oplus \Rational[t]/(t-1).
+          \]
+          Inbesondere ist $M_9$ ein Torsionsmodul, und es gilt $M_9 = (t-1) M_9 \oplus t M_9$, wobei $(t-1) M_9 \cong \Rational[t]/(t)$ der $t$-primäre Anteil von $M_9$ ist, und $t M_9 \cong \Rational[t]/(t-1)$ der $(t-1)$-primäre Anteil.
       \end{enumerate}
   \end{enumerate}
 \end{solution}
