@@ -434,6 +434,83 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Quadrate in endlichen Körpern]
+  Es sei $p > 0$ prim, $n$ eine positive natürliche Zahl und
+  \[
+    \Quad(p,n) = \{x^2 \mid x \in \Field_{p^n}\}
+  \]
+  die Menge der Quadrate in $\Field_{p^n}$.
+  \begin{enumerate}
+    \item
+      Bestimmen Sie die Anzahl der Elemente von $\Quad(p,n)$ in Abhängigkeit von $p$.
+    \item
+      Entscheiden Sie, für welche $p$ und $n$ eine Untergruppe der additiven Gruppe von $\Field_{p^n}$ ist.
+    \item
+      Zeigen Sie dass $xy \in \Quad(p,n)$ für alle $x, y \in \Field_{p^n}$ mit $x, y \notin \Quad(p,n)$ gilt.
+      (Das Produkt zweier Nicht-Quadrate ist also ein Quadrat.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Im Fall $p = 2$ ist der Frobenius-Homomorphismus $\Field_{2^n} \to \Field_{2^n}$, $x \mapsto x^2$ ein Automorphismus und somit $\Quad(2,n) = \Field_{p^n}$.
+      Inbesondere gilt dann $|{\Quad(2,n)}| = |\Field_{2^n}| = 2^n$.
+      
+      Im Fall $p \neq 2$ gilt
+      \[
+          \Quad(p,n)
+        = \{ x^2 \mid x \in \Field_{p^n} \}
+        = \{0\} \cup \{x^2 \mid x \in \Field_{p^n}^\times\}
+        = \{0\} \cup \im q
+      \]
+      für den Gruppenhomomorphismus $q \colon \Field_{p^n}^\times \to \Field_{p^n}^\times$, $x \mapsto x^2$.
+      Es gilt
+      \[
+          \ker q
+        = \{x \in \Field_{p^n}^\times \mid x^2 = 1\}
+        = \{1,-1\}
+      \]
+      und somit $|{\ker q}| = 2$ (hier nutzen wir, dass $\ringchar \Field_{p^n} = p \neq 2$ und somit $1 \neq -1$).
+      Damit gilt auch $|{\im q}| = [\Field_{p^n}^\times : \ker q] = |\Field_{p^n}^\times|/|q| = (p^n - 1)/2$.
+      Ingesamt gilt somit, dass
+      \[
+          |{\Quad(p,n)}| =
+          \begin{cases}
+            2^n                   & \text{falls $p = 2$},     \\
+            \frac{p^n - 1}{2} + 1 & \text{falls $p \neq 2$}.
+          \end{cases}
+      \]
+      
+    \item
+      Im Falle $p = 2$ gilt, wie bereits zuvor gesehen, dass $\Quad(2,n) = \Field_{2^n}$, also handelt es sich um eine Untergruppe.
+      Im Falle $p \neq 2$ gilt $((p^n - 1)/2 + 1) \nmid p^n$, denn sonst würde
+      \begin{align*}
+            &\, \left. \frac{p^n - 1}{2} + 1 \,\middle|\, p^n \right.
+        \iff    \frac{p^n - 1}{2} + 1 \equiv 0 \pmod{p^n}
+        \\
+        \iff&\, \frac{p^n - 1}{2} \equiv - 1 \pmod{p^n}
+        \iff    p^n - 1 \equiv -2 \pmod{p^n}
+        \\
+        \iff&\, -1 \equiv -2 \pmod{p^n}
+        \iff    1 \equiv 0  \pmod{p^n}
+        \iff    p^n \mid 1
+      \end{align*}
+      gelten.
+      Somit  ist $|{\Quad(p,n)}|$ in diesem Fall kein Teiler von $|\Field_{p^n}|$, und deshalb $\Quad(p,n)$ keine Untergruppe von $\Field_{p^n}$.
+      
+    \item
+      Für $x, y \notin \Quad(p,n)$ gelten inbesondere $x, y \neq 0$ und somit $x, y \in \Field_{p^n}^\times$.
+      Die Gruppe $\Field_{p^n}^\times$ zyklisch, da $\Field_{p^n}$ ein endlicher Körper ist;
+      es sei $g \in \Field_{p^n}^\times$ ein Erzeuger.
+      Dann gibt es $a, b \in \Natural$ mit $x = g^a$ und $y = g^b$;
+      da $x$ und $y$ keine Quadrate sind, müssen $a$ and $b$ ungerade sein (denn sonst wäre beispielsweise $x = g^a = (g^{a/2})^2$).
+      Dann ist $a+b$ gerade und somit $xy = g^a g^b = g^{a+b} = (g^{(a+b)/2})^2$ ein Quadrat.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Innere Automorphismen]
   \label{question: inner automorphims}
   Es sei $G$ eine Gruppe.
