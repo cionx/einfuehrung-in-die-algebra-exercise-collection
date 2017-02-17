@@ -428,6 +428,109 @@
 \end{solution}
 
 
+\begin{question}
+  Bestimmen Sie für die folgenden Ringe jeweils die Anzahl der Elemente, Einheiten und nilpotenten Elemente.
+  \begin{enumerate}
+    \item
+      $\Integer[X]/(5, 10 X^4 - 3 X^3 + 8 X - 11)$
+    \item
+      $\Integer[X]/(3, 4 X^3 + 13 X^2 + 10 X - 5)$
+    \item
+      $\Integer[X]/(7, 3 X^2 + 7X - 14$
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt
+      \begin{align*}
+             &\,  \Integer[X]/(5, 10 X^4 - 3 X^3 + 8 X - 11)
+        \\
+        \cong&\,  ( \Integer[X]/(5) ) / ( (5, 10 X^4 - 3 X^3 + 8 X - 11)/(5) )
+        \\
+            =&\,  ( \Integer[X]/(5) ) / ( \overline{X^4 - 3 X^3 + 8 X - 11} )
+        \\
+        \cong&\,  (\Integer/(5))[X] / (10 X^4 - 3 X^3 + 8 X - 11)
+            =     \Field_5[X]/(10 X^4 - 3 X^3 + 8 X - 11)
+        \\
+            =&\,  \Field_5[X](2 X^3 + 3 X + 4)
+            =     \Field_5[X]/(X^2 + 4 X + 2).
+      \end{align*}
+      Für den ersten Isomorphismus nutzen wir den dritten Isomorphiesatz.
+      Für eine genaue Erklärung des zweiten Isomorphismus siehe man Übung~\ref{question: quotients by ideals coming from the ground ring}.
+      Für die letzte Gleichheit multiplizieren wir das Polynom mit $2^{-1} = 3$.
+      
+      Durch Ausprobieren ergibt sich, dass das kubische Polynom $X^3 + 4 X + 2 \in \Field_5[X]$ keine Nullstelle hat; es ist also irreduzibel, und der Quotient $\Field_5[X]/(X^3 + 4 X + 2)$ somit ein Körper.
+      Dabei gilt $[\Field_5[X]/(X^3 + 4 X + 2) : \Field_5] = \deg (X^3 + 4 X + 2) = 3$, also ist
+      \[
+              \Field_5[X]/(X^3 + 4 X + 2)
+        \cong \Field_{5^3}
+        =     \Field_{125}.
+      \]
+      Es gibt also $125$ Elemente, von denen $124$ Einheiten sind und $1$ Element nilpotent ist.
+      
+    \item
+      Es gilt
+      \begin{align*}
+             &\,  \Integer[X]/(3, 4 X^3 + 13 X^2 + 10 X - 5)
+        \\
+        \cong&\,  (\Integer[X] / (3)) / ( (3, 4 X^3 + 13 X^2 + 10 X - 5) / (3) )
+        \\
+            =&\,  (\Integer[X] / (3)) / ( \overline{4 X^3 + 13 X^2 + 10 X - 5} )
+        \\
+        \cong&\,  (\Integer/(3))[X] / (4 X^3 + 13 X^2 + 10 X - 5)
+        \\
+            =&\,  \Field_3[X] / (4 X^3 + 13 X^2 + 10 X - 5)
+            =     \Field_3[X] / (X^3 + X^2 + X + 1)
+      \end{align*}
+      Für den ersten Isomorphismus nutzen wir den dritten Isomorphiesatz.
+      Für eine genaue Erklärung des zweiten Isomorphismus siehe man Übung~\ref{question: quotients by ideals coming from the ground ring}.
+      
+      Es ist $2 = -1$ eine Nullstelle von $X^3 + X^2 + X + 1$; durch Ausmultiplizieren des entsprechenden Linearfaktors ergibt sich, dass $X^3 + X^2 + X + 1 = (X^2 + 1)(X + 1)$ gilt.
+      Dabei ist das Polynom $X^2 + 1 \in \Field_3[X]$ irreduzibel, da es quadratisch ist aber keine Nullstellen hat.
+      Die obige Zerlegung ist also eine Zerlegung in irreduzible Faktoren.
+      Nach dem chinesischen Restklassensatz ist nun
+      \begin{align*}
+             &\,  \Field_3[X]/(X^3 + X^2 + X + 1)
+            =     \Field_3[X]/( (X^2 + 1)(X + 1) )
+        \\
+        \cong&\,  \Field_3[X](X^2 + 1) \times \Field_3[X]/(X+1)
+        \cong     \Field_3[X](X^2 + 1) \times \Field_3.
+      \end{align*}
+      Der Quotient $X^2 + 1 \in \Field_3[X]$ ist ein Körper, da $X^2 + 1$ irreduzibel ist; dabei gilt $[\Field_3[X](X^2 + 1) : \Field_3] = \deg (X^2 + 1) = 2$ und somit $\Field_3 \cong \Field_{3^2} = \Field_9$.
+      Ingesamt erhalten wir somit, dass
+      \[
+              \Integer[X]/(3, 4 X^3 + 13 X^2 + 10 X - 5)
+        \cong \Field_3 \times \Field_9.
+      \]
+      Es gibt also $3 \cdot 9 = 27$ Elemente, von denen $2 \cdot 8 = 16$ Einheiten sind und $1$ Element nilpotent ist.
+    
+    \item
+      Es gilt
+      \begin{align*}
+             &\,  \Integer[X]/(7, 3 X^2 + 7X - 14
+        \\
+        \cong&\,  ( \Integer[X]/(7) ) / ( (7, 3 X^2 + 7X - 14 ) / (7) )
+        \\
+            =&\,  ( \Integer[X]/(7) ) / ( \overline{3 X^2 + 7X - 14} )
+        \\
+        \cong&\,  ( (\Integer/(7))[X] ) / (3 X^2 + 7X - 14)
+            =     \Field_7[X] / (3 X^2 + 7 X - 14)
+        \\
+            =&\,   \Field_7[X] / (3 X^2)
+            =     \Field_7[X] / (X^2).
+      \end{align*}
+      Es ist $1, \overline{X})$ eine $\Field_7$-Basis von $\Field_7[X]/(X^2)$, jedes Element $f \in \Field_7[X]/(X^2)$ ist also von der Form $f = a + b \overline{X}$ mit eindeutigen $a, b \in \Field_7$.
+      Ist $a = 0$, so ist $f^2 = 0$ und $f$ somit nilpotent.
+      Ist $a \neq 0$, so gilt $(a + b\overline{X}) (a^{-1} - b a^{-2} \overline{X}) = 1$, weshalb $f$ eine Einheit ist.
+      (Alternativ erkennt man, dass $a + b X$ und $X^2$ dann teilerfremd sind, und somit $\overline{a + b X} = a + b \overline{X}$ eine Einheit in $\Field_7[X]/(X^2)$ ist.)
+      Damit erhalten wir, dass $\Field_7[X]/(X^2)$ aus $7^2 = 49$ Elementen besteht, von denen $6 \cdot 7 = 42$ Einheiten sind und $7$ nilpotent.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Initialobjekte in der Kategorie der Ringe]
   \label{qst: Z is inital}
   \begin{enumerate}
@@ -1590,6 +1693,7 @@
 
 
 \begin{question}
+  \label{question: quotients by ideals coming from the ground ring}
   Es sei $R$ ein kommutativer Ring und $\aideal \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
