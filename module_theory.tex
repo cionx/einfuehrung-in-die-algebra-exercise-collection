@@ -18,6 +18,8 @@
     \item
       Die abelsche Gruppe $\Rational/\Integer$ ist endlich erzeugt.
     \item
+      Es gilt $\Hom_\Integer(\Integer/2, \Integer/3) = 0$.
+    \item
       Ist $K$ ein Körper, so gilt für alle $a, b \in K$, dass $K[X]/(X-a) \cong K[X]/(X-b)$ als $K[X]$-Moduln.
     \item
       Ist $M$ ein freier $R$-Modul und $S \subseteq R$ ein Unterring, so ist $M$ auch als $S$-Modul frei.
@@ -70,6 +72,12 @@
           Dabei ist $\Integer$ endlich erzeugt;
           wäre $\Rational/\Integer$ endlich erzeugt, so wäre dies deshalb auch $\Rational$ (siehe Übung~\ref{question: finitely generated in short exact sequences}), was aber nicht gilt (siehe Übung~\ref{question: Q is not finitely generated}).
       \end{itemize}
+    
+    \item
+      Die Aussage ist wahr:
+      Ist $f \colon \Integer/2 \to \Integer/3$ ein Homomorphismus, so ist $2 \cdot f(\overline{1}) = f(\overline{2}) = f(\overline{0}) = \overline{0}$.
+      Das einzige Element aus $\Integer/3$, was für $f(\overline{1})$ in Frage kommt, ist $\overline{0}$.
+      Also muss $f(\overline{1}) = \overline{0}$ und somit $f = 0$.
     
     \item
       Die Aussage ist falsch:
