@@ -10,9 +10,15 @@
     \item
       Sind $M/L/K$ Körpererweiterungen, so dass $M/K$ normal ist, so ist auch $M/L$ normal.
     \item
+      Sind $M/L/K$ Körpererweiterungen, so dass $M/L$ und $L/K$ normal sind, so ist auch $M/K$ normal.
+    \item
       Es gilt $\Field_{8} \subseteq \Field_{32}$.
     \item
       Ist $L/K$ eine Körpererweiterung und $\overline{L} \supseteq L$ ein algebraischer Abschluss, so ist auch $\overline{L} \supseteq K$ auch ein algebraischer Abschluss.
+    \item
+      Ist $L/K$ ein Körperweiterung und $L$ der Zerfällungskörper eines Polynoms $f \in K[X]$ von Grad $n \coloneqq \deg f$, so gilt $[L : K] \mid n!$.
+    \item
+      Ist $L/K$ ein Körperweiterung und $L$ der Zerfällungskörper eines Polynoms $f \in K[X]$ von Grad $n \coloneqq \deg f$, so gilt $|{\Gal(L/K)}| \mid n!$.
   \end{enumerate}
 \end{question}
 
@@ -40,6 +46,10 @@
       Siehe Übung~\ref{question: restriction and transitivity of normality}.
       
     \item
+      Die Aussage ist falsch:
+      Siehe Übung~\ref{question: restriction and transitivity of normality}.
+      
+    \item
       Die Aussage ist falsch, denn sonst wäre
       \[
               3
@@ -54,6 +64,23 @@
       Die Aussage ist falsch:
       Sie gilt genau dann, wenn $L/K$ algebraisch ist, siehe Übung~\ref{question: transitivity of algebraic closure}.
       Als Gegenbeispiel betrachte man somit beispielsweise $L = K(t)$.
+      
+    \item
+      Die Aussage ist wahr:
+      Sie wurde auf einem der Übungszettel gezeigt.
+      
+    \item
+      Die Aussage ist wahr:
+      Sind $\alpha_1, \dotsc, \alpha_d \in L$ mit $d \leq n$ die paarweise verschiedenen Nullstellen von $f$, so muss jedes $\sigma \in \Gal(L/K)$ die Nullstellen von $f$ permutieren.
+      Also gibt es eine Einbettung $\varphi \colon \Gal(L/K) \to S_d$, $\sigma \mapsto \pi_\sigma$ wobei $\pi_\sigma \in S_d$ die eindeutige Permutation ist, so dass $\sigma(\alpha_i) = \alpha_{\pi_\sigma(i)}$ für alle $i = 1, \dotsc, d$.
+      Da $\im \varphi \subseteq S_d$ eine Untergruppe ist, erhalten wir, dass
+      \[
+              |{\Gal(L/K)}|
+        =     |{\im \varphi}|
+        \mid  |S_d|
+        =     d!
+        \mid  n!.
+      \] 
   \end{enumerate}
 \end{solution}
 
