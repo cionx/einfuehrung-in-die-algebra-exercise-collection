@@ -151,77 +151,6 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Größte gemeinsame Teiler]
-  Bestimmen Sie jeweils einen größten gemeinsamen Teiler und drücken sie diesen als Linearkombination der jeweiligen Elemente aus.
-  \begin{enumerate}
-    \item
-      \begin{enumerate}
-        \item
-          $54, 24 \in \Integer$
-        \item
-          $270, 192 \in \Integer$
-        \item
-          $213, 168 \in \Integer$
-        \item
-          $45, 63, 105 \in \Integer$
-        \item
-          $105, 70, 42, 30 \in \Integer$
-      \end{enumerate}
-    \item
-      \begin{enumerate}
-        \item
-          $t^2 + t - 2, t^2 - 3 t + 2 \in \Rational[t]$
-        \item
-          $t^2 + 3, t^2 - 3 t + 2 \in \Rational[t]$
-        \item
-          $t^4 - t^2 - 2 t - 1, t^3 - 1 \in \Rational[t]$
-        \item
-          $t^3 - t^2 + t - 1, t^3 - 3 t^2 + 4 t - 2 \in \Rational[t]$
-        \item
-          $t^3 + t^2 + t + 1, t^2 - 1, t^3 - t^2 + t - 1 \in \Rational[t]$
-      \end{enumerate}
-  \end{enumerate}
-\end{question}
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      \begin{enumerate}
-        \item
-          Es gilt $\ggT(54, 24) = 6 = 54 - 2 \cdot 24$.
-        \item
-          Es gilt $\ggT(270, 192) = 6 = 5 \cdot 270 - 7 \cdot 192$.
-        \item
-          Es gilt $\ggT(213, 168) = 3 = 15 \cdot 213 - 19 \cdot 168$.
-        \item
-          Es gilt $\ggT(45,63,105) = 3 = 36 \cdot 45 - 24 \cdot 63 - 105$.
-        \item
-          Es gilt $\ggT(105, 70, 42, 30) = 1 = -13 \cdot 15 + 13 \cdot 70 + 13 \cdot 42 - 3 \cdot 30$.
-      \end{enumerate}
-    \item
-      Wir wählen die größten gemeinsamer Teiler jeweils so, dass alle auftretenden Polynome ganzzahlig sind.
-      \begin{enumerate}
-        \item
-          Es gilt $\ggT(t^2 + t - 2, t^2 - 3t + 2) = 4t-4 = (t^2 + t - 2) - (t^2 - 3t + 2)$.
-        \item
-          Es gilt $\ggT(t^2 + 3, t^2 - 3t + 2) = 28 = (-3t + 10)(t^2 + 3) + (3t - 1)(t^2 - 3t + 2)$.
-        \item
-          Es gilt $\ggT(t^4 - t^2 - 2 t - 1, t^3 - 1) = t^2 + t + 1 = -t(t^4-t^2-2t+1) + (t^2-1)(t^3-1)$.
-        \item
-          Es gilt $\ggT(t^3 - t^2 + t - 1, t^3 - 3 t^2 + 4 t - 2) = 10t-10$ wobei
-          \[
-            10t-10 = (-6 t^2 + 4 t)(t^3 - t^2 + t - 1) + (6 t^2 + 8 t + 10)(t^3 - 3 t^2 + 4 t - 2).
-          \]
-        \item
-          Es gilt $\ggT(t^3 + t^2 + t + 1, t^2 - 1, t^3 - t^2 + t - 1) = 8$ mit
-          \[
-              8 = 2(t^3 + t^2 + t + 1) + (t^3 + t^2 + t + 3)(t^2 - 1) - (t^2 + 2t + 3)(t^3 - t^2 + t - 1).
-          \]
-      \end{enumerate}
-  \end{enumerate}
-\end{solution}
-
-
 \begin{question}[subtitle = Irreduziblität von Polynomen]
   Entscheiden Sie, ob die folgenden Polynome jeweils irreduzibel sind:
   \begin{enumerate}
@@ -377,6 +306,78 @@
       Damit ist auch $f$ schon irreduzibel.
     \item
       Das Polynom $f(X+1) = X^4 + 4 X^3 + 6 X^2 + 4 X + 2$ ist nach Eisenstein bezüglich $2 \in \Integer$ irreduzibel, und somit ist auch $f$ irreduzibel.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Größte gemeinsame Teiler]
+  Bestimmen Sie jeweils einen größten gemeinsamen Teiler und drücken sie diesen als Linearkombination der jeweiligen Elemente aus.
+  \begin{enumerate}
+    \item
+      \begin{enumerate}
+        \item
+          $54, 24 \in \Integer$
+        \item
+          $270, 192 \in \Integer$
+        \item
+          $213, 168 \in \Integer$
+        \item
+          $45, 63, 105 \in \Integer$
+        \item
+          $105, 70, 42, 30 \in \Integer$
+      \end{enumerate}
+    \item
+      \begin{enumerate}
+        \item
+          $t^2 + t - 2, t^2 - 3 t + 2 \in \Rational[t]$
+        \item
+          $t^2 + 3, t^2 - 3 t + 2 \in \Rational[t]$
+        \item
+          $t^4 - t^2 - 2 t - 1, t^3 - 1 \in \Rational[t]$
+        \item
+          $t^3 - t^2 + t - 1, t^3 - 3 t^2 + 4 t - 2 \in \Rational[t]$
+        \item
+          $t^3 + t^2 + t + 1, t^2 - 1, t^3 - t^2 + t - 1 \in \Rational[t]$
+      \end{enumerate}
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      \begin{enumerate}
+        \item
+          Es gilt $\ggT(54, 24) = 6 = 54 - 2 \cdot 24$.
+        \item
+          Es gilt $\ggT(270, 192) = 6 = 5 \cdot 270 - 7 \cdot 192$.
+        \item
+          Es gilt $\ggT(213, 168) = 3 = 15 \cdot 213 - 19 \cdot 168$.
+        \item
+          Es gilt $\ggT(45,63,105) = 3 = 36 \cdot 45 - 24 \cdot 63 - 105$.
+        \item
+          Es gilt $\ggT(105, 70, 42, 30) = 1 = -13 \cdot 15 + 13 \cdot 70 + 13 \cdot 42 - 3 \cdot 30$.
+      \end{enumerate}
+    \item
+      Wir wählen die größten gemeinsamer Teiler jeweils so, dass alle auftretenden Polynome ganzzahlig sind.
+      \begin{enumerate}
+        \item
+          Es gilt $\ggT(t^2 + t - 2, t^2 - 3t + 2) = 4t-4 = (t^2 + t - 2) - (t^2 - 3t + 2)$.
+        \item
+          Es gilt $\ggT(t^2 + 3, t^2 - 3t + 2) = 28 = (-3t + 10)(t^2 + 3) + (3t - 1)(t^2 - 3t + 2)$.
+        \item
+          Es gilt $\ggT(t^4 - t^2 - 2 t - 1, t^3 - 1) = t^2 + t + 1 = -t(t^4-t^2-2t+1) + (t^2-1)(t^3-1)$.
+        \item
+          Es gilt $\ggT(t^3 - t^2 + t - 1, t^3 - 3 t^2 + 4 t - 2) = 10t-10$ wobei
+          \[
+            10t-10 = (-6 t^2 + 4 t)(t^3 - t^2 + t - 1) + (6 t^2 + 8 t + 10)(t^3 - 3 t^2 + 4 t - 2).
+          \]
+        \item
+          Es gilt $\ggT(t^3 + t^2 + t + 1, t^2 - 1, t^3 - t^2 + t - 1) = 8$ mit
+          \[
+              8 = 2(t^3 + t^2 + t + 1) + (t^3 + t^2 + t + 3)(t^2 - 1) - (t^2 + 2t + 3)(t^3 - t^2 + t - 1).
+          \]
+      \end{enumerate}
   \end{enumerate}
 \end{solution}
 
