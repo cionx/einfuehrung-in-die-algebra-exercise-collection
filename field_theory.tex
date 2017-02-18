@@ -11,6 +11,8 @@
       Sind $M/L/K$ Körpererweiterungen, so dass $M/K$ normal ist, so ist auch $M/L$ normal.
     \item
       Es gilt $\Field_{8} \subseteq \Field_{32}$.
+    \item
+      Ist $L/K$ eine Körpererweiterung und $\overline{L} \supseteq L$ ein algebraischer Abschluss, so ist auch $\overline{L} \supseteq K$ auch ein algebraischer Abschluss.
   \end{enumerate}
 \end{question}
 
@@ -47,6 +49,11 @@
         =     [\Field_{2^5} : \Field_2]
         =     5.
       \]
+      
+    \item
+      Die Aussage ist falsch:
+      Sie gilt genau dann, wenn $L/K$ algebraisch ist, siehe Übung~\ref{question: transitivity of algebraic closure}.
+      Als Gegenbeispiel betrachte man somit beispielsweise $L = K(t)$.
   \end{enumerate}
 \end{solution}
 
@@ -684,6 +691,7 @@
 
 
 \begin{question}
+  \label{question: algebraically closed fields have no nontrivial algebraic extensions}
   Es sei $K$ ein algebraisch abgeschlossener Körper und $L/K$ eine algebraische Körpererweiterung.
   Zeigen Sie, dass bereits $L = K$ gilt.
 \end{question}
@@ -700,6 +708,44 @@
     = (\alpha - a_1) \dotsm (\alpha - a_n)
   \]
   muss bereits $\alpha = a_i$ für ein $1 \leq i \leq n$, und somit $\alpha \in K$.
+\end{solution}
+
+
+\begin{question}
+  \label{question: transitivity of algebraic closure}
+  Es sei $L/K$ eine Körpererweiterung und $\overline{L}/L$ ein algebraischer Abschluss von $L$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\overline{L}/K$ genau dann ein algebraischer Abschluss ist, wenn $L/K$ algebraisch ist.
+    \item
+      Zeigen Sie, dass es einen Unterkörper $\overline{K} \subseteq L$ gibt, so dass $\overline{K} \supseteq K$ gilt und $\overline{K}/K$ ein algebraischer Abschluss ist.
+    \item
+      Entscheiden Sie, ob der obige Körper $\overline{K}$ eindeutig ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wegen der algebraischen Abgeschlossenheit von $\overline{L}$ ist $\overline{L}/K$ genau dann ein algebraischer Abschluss, wenn $\overline{L}/K$ algebraisch ist.
+      Da $\overline{L}/L$ algebraisch ist folgt aus der Transitivität von Algebraizität, dass dies genau dann gilt, wenn $L/K$ algebraisch ist.
+      
+    \item
+      Es sei $\overline{K} \coloneqq \{x \in \overline{L} \mid \text{$x$ is algebraisch über $K$}\}$.
+      Dann ist $K \subseteq \overline{K} \subseteq \overline{L}$ ein Zwischenkörper, so dass $\overline{K}/K$ algebraisch ist.
+      Jedes nicht-konstante Polynom $f \in \overline{K}[X] \subseteq \overline{L}[X]$ hat eine Nullstelle $x \in \overline{L}$, da $\overline{L}$ algebraisch abgeschlossen ist.
+      Dann ist $x$ algebraisch über $\overline{K}$, und wegen der Transitivität von Algebraizität damit auch algebraisch über $K$;
+      somit gilt bereits $x \in \overline{K}$.
+      Das zeigt, dass $\overline{K}$ algebraisch abgeschlossen ist.
+      
+    \item
+      Es sei $K \subseteq \overline{K}' \subseteq \overline{L}$ ein weiterer Zwischenkörper, so dass $\overline{K}'/K$ ein algebraischer Abschluss ist.
+      Dann ist $\overline{K}'/K$ algebraisch und somit $\overline{K}' \subseteq \overline{K}$.
+      Wir haben also einen Erweiterungsturm $\overline{K}/\overline{K}'/K$.
+      Da $\overline{K}/K$ algebraisch ist, ist es auch $\overline{K}/\overline{K}'$;
+      da $\overline{K}'$ algebraisch abgeschlossen ist, gilt deshalb bereits $\overline{K} = \overline{K}'$ (siehe Übung~\ref{question: algebraically closed fields have no nontrivial algebraic extensions}).
+  \end{enumerate}
 \end{solution}
 
 
@@ -1063,5 +1109,75 @@
 \end{solution}
 
 
+\begin{question}
+  Es seien $L/E/K$ endliche Körpererweiterungen, so dass $L/K$ galoisch ist.
+  Zeigen Sie, dass $E/K$ genau dann galoisch ist, wenn $\sigma(E) = E$ für alle $\sigma \in \Gal(L/K)$ gilt.
+\end{question}
+
+\begin{solution}
+  Wir geben zwei mögliche Lösungen an:
+  \begin{itemize}
+    \item
+      Nach dem Hauptsatz der Galoistheorie ist $E/K$ genau dann Galoisch, wenn die Untergruppe $\Gal(L/E) \subseteq \Gal(L/K)$ normal ist.
+      
+      Es gelte zunächst $\sigma(E) = E$ für alle $\sigma \in \Gal(L/K)$, und es seien $\sigma \in \Gal(L/K)$ und $\tau \in \Gal(L/E)$.
+      Für jedes $e \in E$ gilt nach Annahme $\sigma^{-1}(e) \in E$, also $\tau(\sigma^{-1}(e)) = \sigma^{-1}(e)$ und somit $\sigma(\tau(\sigma^{-1}(e))) = \sigma(\sigma^{-1}(e)) = e$.
+      Also gilt $\sigma \tau \sigma^{-1} \in \Gal(L/E)$.
+      Das zeigt, dass $\Gal(L/E)$ normal in $\Gal(L/E)$ ist.
+      
+      Es sei nun $\Gal(L/E)$ normal in $\Gal(L/K)$, und es sei $\sigma \in \Gal(L/K)$.
+      Nach Annahme gilt $\Gal(L/E) \sigma = \sigma \Gal(L/E)$, weshalb es für jedes $\tau \in \Gal(L/E)$ ein $\tau' \in \Gal(L/E)$ mit $\tau \sigma = \sigma \tau'$ gibt.
+      Für jedes $e \in E$ gilt deshalb, dass
+      \[
+        \tau(\sigma(e)) = \sigma(\tau'(e)) = \sigma(e)
+        \qquad
+        \text{für alle $\tau \in \Gal(L/E)$}
+      \]
+      gilt.
+      Also gilt $\sigma(e) \in L^{\Gal(L/E)}$ für alle $e \in E$;
+      nach dem Hauptsatz der Galoistheorie gilt $L^{\Gal(L/E)} = E$, weshalb $\sigma(E) \subseteq E$.
+      
+      Für alle $\sigma \in \Gal(L/K)$ gilt also $\sigma(E) \subseteq E$.
+      Da dies auch für $\sigma^{-1}$ gilt, erhalten wir mit $\sigma^{-1}(E) \subseteq E$, dass $E = \sigma(\sigma^{-1}(E)) \subseteq \sigma(E) \subseteq E$ und somit $E = \sigma(E)$ gilt.
+      
+    \item
+      Die Erweiterung $L/K$ ist separabel und normal, da sie Galoisch ist.
+      Damit ist auch $L/E$ separabel;
+      es bleibt also nur zu zeigen, dass $L/E$ genau dann normal ist, wenn $\sigma(E) = E$ für alle $\sigma \in \Gal(L/K)$ gilt.
+      
+      Da $L/K$ algebraisch ist gibt es einen algebraischen Abschluss $\overline{K}$ von $K$, der $L$ enthält.
+      
+      Es sei zunächst $E/K$ normal und $\sigma \in \Gal(L/K)$.
+      Es seien $\iota_E \colon E \to \overline{K}$, $x \mapsto x$ und $\iota_L \colon L \to \overline{K}$, $x \mapsto x$ die kanonische Inklusionen.
+      Es sei außerdem $\iota_{LE} \colon E \to L$, $x \mapsto x$ die kanonische Inklusion;
+      es gilt $\iota_E = \iota_L \iota_{LE}$.
+      
+      Es sind $\iota_E \colon E \to \overline{K}$ und $\iota_L \circ \sigma \circ \iota_{LE} \colon E \to \overline{K}$ zwei $K$-lineare Körperhomomorphismen.
+      Da $E/K$ normal ist haben sie das gleiche Bild; es gilt also
+      \[
+          E
+        = \iota_E(E)
+        = \iota_L(\sigma(\iota_{LE}(E)))
+        = \sigma(E).
+      \]
+      
+      Es gelte nun $\sigma(E) = E$ für alle $\sigma \in \Gal(L/K)$.
+      Es sei $\varphi \colon E \to \overline{K}$ ein $K$-linearer Körperhomomorphismus.
+      Da $L/E$ algebraisch ist, lässt sich $\varphi$ zu einem Körperhomomorphismus $\psi \colon L \to \overline{K}$ fortsetzen;
+      da $\psi|_K = \varphi|_K = \id_K$ gilt, ist auch $\psi$ $K$-linear.
+      Da $L/K$ normal ist und $\overline{K}$ ein algebraischer Abschluss von $K$ ist, gilt $\psi(L) = L$ (denn auch $\iota \colon L \to \overline{K}$, $x \mapsto x$ ist eine $K$-lineare Einbettung, und wegen der Normalität von $L/K$ gilt bereits $\im \psi = \im \iota = L$).
+      Also schränkt sich $\psi$ zu einem $K$-linearen Automorphismus $\sigma \colon L \to L$, $x \mapsto \psi(x)$ ein.
+      Nach Annahme gilt somit
+      \[
+          E
+        = \sigma(E)
+        = \psi(E)
+        = \varphi(E)
+        = \im \varphi.
+      \]
+      Das Bild von $\varphi$ hängt also nicht von $\varphi$ selbst ab;
+      dies zeigt die Normalität von $E/K$.
+  \end{itemize}
+\end{solution}
 
 
