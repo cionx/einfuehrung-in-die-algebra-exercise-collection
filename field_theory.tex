@@ -19,6 +19,9 @@
       Ist $L/K$ ein Körperweiterung und $L$ der Zerfällungskörper eines Polynoms $f \in K[X]$ von Grad $n \coloneqq \deg f$, so gilt $[L : K] \mid n!$.
     \item
       Ist $L/K$ ein Körperweiterung und $L$ der Zerfällungskörper eines Polynoms $f \in K[X]$ von Grad $n \coloneqq \deg f$, so gilt $|{\Gal(L/K)}| \mid n!$.
+    \item
+      Es sei $L/K$ eine Körpererweiterung und $L_1, L_2 \subseteq L$ seien Unterkörper, so dass $L_1/K$ und $L_2/K$ Unterkörper sind.
+      Bezeichnet $L_1 L2 \subseteq L$ den kleinsten Unterkörper, der $L_1$ und $L_2$ enthält, so ist auch $L_1 L_2/K algebraisch$.
   \end{enumerate}
 \end{question}
 
@@ -80,7 +83,12 @@
         \mid  |S_d|
         =     d!
         \mid  n!.
-      \] 
+      \]
+    
+    \item
+      Die Aussage ist wahr:
+      Da $L_1/K$ und $L_2/K$ algebraisch sind beide Erweiterungen von algebraischen ELementen erzeugt, also $L_1 = K(\alpha_i \mid i \in I)$ und $L_2 = K(\beta_j \mid j \in J)$ für algebraische Elemente $\alpha_i \in L_1$ und $\beta_j \in L_2$.
+      Dann gilt $L_1 L_2 = K(\alpha_i, \beta_j \mid i \in I, j \in J)$, weshalb auch $L_1 L_2/K$ von algebraischen Elementen erzeugt wird, also algebraisch ist.
   \end{enumerate}
 \end{solution}
 
