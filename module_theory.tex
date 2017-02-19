@@ -223,6 +223,82 @@
 \end{solution}
 
 
+\begin{question}
+  \begin{enumerate}
+    \item
+      Formulieren Sie den Hauptsatz über endlich erzeugte Moduln über Hauptidealringen.
+    \item
+      Leiten Sie aus obigen Satz die Existenz der Jordannormalform über algebraisch abgeschlossenen Körpern her.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Der Hauptsatz besagt, dass für einen Hauptidealring $R$ jeder endliche erzeugte $R$-Modul $M$ von der Form
+      \[
+        M \cong R^s \oplus \bigoplus_{p \in \mathcal{P}} \bigoplus_{i=1}^{r_p} R/(p^{\nu(p,i)})
+      \]
+      ist, wobei $\mathcal{P}$ ein Repräsentantensystem der Primelemente von $R$ ist und die Exponenten $\nu(p,1), \dotsc, \nu(p,r_p)$ positive natürliche Zahlen sind.
+      Dabei sind die Zahlen $r_p$ für $p \in \mathcal{P}$ eindeutig, und für jedes $p \in \mathcal{P}$ sind die Zahlen $r_1, \dotsc, r_p$ eindeutig bis auf Permutation.
+      (Fordert man zusätzlich, dass $r_1 \leq \dotsb \leq r_p$ gelte, so werden die Zahlen eindeutig.)
+    
+    \item
+      Es sei $K$ ein algebraisch abgeschlossener Körper und $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $K$-Vektorraums $V$.
+      Dann lässt sich die $K$-Vektorraumstruktur von $V$ eindeutig zu einer $K[T]$-Modulstruktur erweitern, so dass $T \cdot v = f(v)$ für alle $v \in V$ gilt.
+      Der Ring $K[T]$ ist ein Hauptidealring, da $K$ ein Körper ist;
+      da $K$ algebraisch abgeschlossen ist, bildet die Menge der Linearfaktoren $\mathcal{P} = \{T - \lambda \mid \lambda \in K\}$ ein Repräsentantensystem der Primelemente von $K[T]$.
+      Nach dem obigen Hauptsatz gibt es eine Zerlegung
+      \begin{align*}
+        V
+        &\cong K[T]^s \oplus \bigoplus_{p \in \mathcal{P}} \bigoplus_{i=1}^{r_p} K[T]/(p^{\nu(p,i)})
+        \\
+        &=     K[T]^s \oplus \bigoplus_{\lambda \in K} \bigoplus_{i=1}^{r_{T-\lambda}} K[T]/( (T - \lambda)^{\nu(T-\lambda,i)} )
+        \\
+        &=     K[T]^s \bigoplus_{\lambda \in K} \bigoplus_{i=1}^{s_\lambda} K[T]/( (T-\lambda)^{\mu(\lambda, i)} ).
+      \end{align*}
+      für $s_\lambda \coloneqq r_{T-\lambda}$ und $\mu(\lambda,i) = \nu(T-\lambda,i)$.
+      Dies ist inbesondere eine Isomorphie von $K$-Vektorräumen;
+      wegen der Endlichdimensionalität von $V$ gilt somit $s = 0$.
+      Also gilt bereits
+      \[
+        V \cong \bigoplus_{\lambda \in K} \bigoplus_{i=1}^{s_\lambda} K[T]/( (T-\lambda)^{\mu(\lambda, i)} ).
+      \]
+      Die Summanden $K[T]/( (T-\lambda)^{\mu(\lambda, i)} )$ entsprechen dabei $f$-invarianten Untervektorräumen von $V$.
+      Um die Existenz einer Jordanbasis von $V$ bezüglich $f$ zu zeigen, genügt es daher zu zeigen, dass es für alle $\lambda \in K$ und $n \geq 0$ eine $K$-Basis $\basis{B} = (x_1, \dotsc, x_n)$ von $K[T]/( (T-\lambda)^n )$ gibt, so dass der $K$-lineare Endomorphismus
+      \[
+        \tilde{f} \colon K[T]/((T-\lambda)^n) \to K[T]/((T-\lambda)^n),
+        \quad
+        x \mapsto T \cdot x
+      \]
+      bezüglich $\basis{B}$ durch einen Jordanblock dargestellt wird, also
+      \[
+        \Mat_{\basis{B}}(\tilde{f})
+        =
+        \begin{pmatrix}
+          \lambda & 1       &         &         &         &         \\
+                  & \lambda & 1       &         &         &         \\
+                  &         & \ddots  & \ddots  &         &         \\
+                  &         &         & \ddots  & 1       &         \\
+                  &         &         &         & \lambda & 1       \\
+                  &         &         &         &         & \lambda 
+        \end{pmatrix}
+      \]
+      gilt.
+      Eine solche Basis ist durch $\basis{B} = (\overline{1}, \overline{T - \lambda}, \dotsc, \overline{(T - \lambda)}^{n-1})$ gegeben, denn für alle $i \geq 0$ gilt
+      \begin{align*}
+            \tilde{f}\left( \overline{(T-\lambda)}^i \right)
+        &=  T \cdot \overline{(T-\lambda)}^i
+        \\
+        &=  (T-\lambda) \cdot \overline{(T-\lambda)}^i + \lambda \overline{(T-\lambda)}^i
+         =  \overline{(T-\lambda)}^{i+1} + \lambda \overline{(T-\lambda)}^i,
+      \end{align*}
+      wobei $\overline{(T-\lambda)}^{i+1} = 0$ für alle $i \geq n-1$ gilt.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Abelsche Gruppen endlicher Ordnung]
   Bestimmen Sie bis auf Isomorphie alle abelschen Gruppen der Ordnung
   \begin{enumerate}
