@@ -474,6 +474,110 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Produkte von Normalteilern und auflösbaren Gruppen]
+  Es seien $G_1$ und $G_2$ zwei Gruppen.
+  \begin{enumerate}
+    \item
+      Es seien $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ zwei normale Untergruppen.
+      Zeigen Sie, dass auch $N_1 \times N_2 \subseteq G_1 \times G_2$ eine normale Untergruppe ist, und dass
+      \[
+        (G_1 \times G_2)/(N_1 \times N_2) \cong (G_1/N_1) \times (G_2/N_2)
+      \]
+      gilt.
+    \item
+      Folgern Sie, dass $G_1 \times G_2$ auflösbar ist, wenn $G_1$ und $G_2$ auflösbar sind.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die kanonischen Projektionen $\pi_i \colon G_i \to G_i/N_i$, $g \mapsto \overline{g}$ induzieren einen Gruppenhomomorphismus
+      \[
+        \pi
+        \coloneqq
+                \pi_1 \times \pi_2
+        \colon  G_1 \times G_2
+        \to     (G_1/N_1) \times (G_2/N_2),
+        \quad
+                (g_1, g_2)
+        \mapsto (\overline{g_1}, \overline{g_2}).
+      \]
+      Da $\pi_1$ und $\pi_2$ surjektiv sind, ist es auch $\pi$.
+      Außerdem gilt
+      \[
+          \ker \pi
+        = \ker \pi_1 \times \ker \pi_2
+        = N_1 \times N_2
+      \]
+      Somit ist $N_1 \times N_2$ eine normale Untergruppe von $G_1 \times G_2$ und $\pi$ induziert einen Isomorphismus
+      \[
+                \overline{\pi}
+        \colon  (G_1 \times G_2)/(N_1 \times N_2)
+        \to     (G_1/N_1) \times (G_2/N_2),
+        \quad
+                \overline{(g_1, g_2)}
+        \mapsto (\overline{g_1}, \overline{g_2}).
+      \]
+      
+    \item
+      Da $G_1$ auflösbar ist gibt es eine Kette von Untergruppen
+      \[
+                  1
+        =         N_0
+        \subseteq N_1
+        \subseteq N_2
+        \subseteq N_3
+        \subseteq \dotsb
+        \subseteq N_{s-1}
+        \subseteq N_s
+        =         G_1,
+      \]
+      so dass für alle $i = 1, \dotsc, s$ die Untergruppe $N_{i-1}$ normal in $N_i$ ist, und der Quotient $N_i/N_{i-1}$ abelsch ist.
+      Aus der Auflösbarkeit von $G_2$ ergibt sich analog eine Kette von Untergruppen
+      \[
+                  1
+        =         K_0
+        \subseteq K_1
+        \subseteq K_2
+        \subseteq K_3
+        \subseteq \dotsb
+        \subseteq K_{t-1}
+        \subseteq K_t
+        =         G_1,
+      \]
+      so dass für alle $j = 1, \dotsc, t$ die Untergruppe $N_{j-1}$ normal in $N_j$ ist, und der Quotient $N_j/N_{j-1}$ abelsch ist.
+      Zusammen erhalten wir damit eine Kette von Untergruppen
+      \[
+                  1       \times 1
+        =         N_0     \times 1
+        \subseteq \dotsb
+        \subseteq N_s     \times 1
+        =         G_1     \times K_0
+        \subseteq \dotsb
+        \subseteq G_1     \times K_t
+        =         G_1     \times G_2.
+      \]
+  \end{enumerate}
+  Nach dem vorherigen Aussagenteil ist in dieser Kette jede Untergruppe normal in der jeweils nächsten Untergruppe.
+  Die Quotienten sind abelsch, denn für alle $i = 1, \dotsc, s$ gilt
+  \[
+          (N_i \times 1)/(N_{i-1} \times 1)
+    \cong (N_i/N_{i-1}) \times (1 \times 1)
+    \cong (N_i/N_{i-1}) \times 1
+    \cong N_i/N_{i-1}
+  \]
+  und für alle $j = 1, \dotsc, t$ gilt
+  \[
+          (G_1 \times K_j)/(G_1 \times K_{j-1})
+    \cong (G_1/G_1) \times (K_j/K_{j-1})
+    \cong 1 \times (K_j/K_{j-1})
+    \cong K_i/K_{j-1}.
+  \]
+\end{solution}
+
+
 \begin{question}[subtitle = Erste Sylowschritte]
   \begin{enumerate}
     \item
