@@ -56,6 +56,41 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Klassifikation zyklischer Gruppen]
+  Es sei $G$ eine zyklische Gruppe, d.h.\ es gebe eine $g \in G$ mit $G = \generate{g}$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $G$ abelsch ist.
+    \item
+      Zeigen Sie, dass $G \cong \Integer/n$ für eine eindeutiges $n \in \Integer$ mit $n \geq 0$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  Nach Annahme gibt es ein $g \in G$ mit $G = \generate{g} = \{g^n \mid n \in \Integer\}$.
+  \begin{enumerate}
+    \item
+      Für $x, y \in G$ gibt es $a, b \in \Integer$ mit $x = g^a$ und $y = g^b$, und deshalb gilt
+      \[
+        xy = g^a g^b = g^{a+b} = g^{b+a} = g^b g^a = yx.
+      \]
+      
+    \item
+      Die Abbildung $\varphi \colon \Integer \to G$, $n \mapsto g^n$ ist ein Gruppenhomomorphismus, und nach Annahme surjektiv.
+      Für $n \in \Integer$ mit $n \geq 0$ und $\ker \varphi = (n)$ induziert deshalb $\varphi$ einen Isomorphismus
+      \[
+        \overline{\varphi} \colon \Integer/n \to G,
+        \quad
+        \overline{n} \mapsto g^n.
+      \]
+      Ist $G$ unendlich, so muss $n = 0$ gelten;
+      ist $G$ endlich, so muss $n = |\Integer/n| = |G|$ gelten.
+      Das zeigt die Eindeutigkeit von $n$.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Zur Ordnung]
   Es sei $G$ eine endliche Gruppe.
   \begin{enumerate}
