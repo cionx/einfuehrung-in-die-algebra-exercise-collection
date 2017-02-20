@@ -15,9 +15,7 @@
     \item
       Ist $K$ ein Körper, so ist $\powerseries{K}{X}$ faktoriell.
     \item
-      Die Potenzreihe $6X^4 + 5X^3 + 4X^2 + 3X + 2 \in \powerseries{\Integer}{X}$ ist irreduzibel.
-    \item
-      Die beiden Projektionen $\pi_1, \pi_2 \colon \Integer \times \Integer \to \Integer$ mit $\pi_1(x,y) = x$ und $\pi_2(x,y) = y$ für alle $(x,y) \in \Integer \times \Integer$ sind die einzigen beiden Ringhomomorphismen $\Integer \times \Integer \to \Integer$.
+      Die Potenzreihe $6X^4 + 5X^3 + 4X^2 + 3X + 2 \in \powerseries{\Integer}{X}$ ist irreduzibel.    
     \item
       Für alle Ringe $R_1$ und $R_2$ gilt $(R_1 \times R_2)[X] \cong R_1[X] \times R_2[X]$.
     \item
@@ -56,31 +54,18 @@
   \begin{enumerate}
     \item
       Die Aussage ist wahr:
-      Ein Körper ist ein Hauptidealring, und somit faktoriell (Körper sind sogar schon euklidsch).
+      Jeder Körper ist ein Hauptidealring, und somit faktoriell (Körper sind sogar schon euklidisch).
       Die Aussage lässt sich auch konkret zeigen:
-      Ist $K$ ein Körper, so gibt es keine Primelement in $K$, die leere Menge $\emptyset \eqqcolon \mathcal{P} \subseteq K$ ist also ein Repräsentantensystem der Primeleme von $K$.
+      Ist $K$ ein Körper, so gibt es keine Primelemente in $K$, die leere Menge $\mathcal{P} \coloneqq \emptyset \subseteq K$ ist also ein Repräsentantensystem der Primeleme von $K$.
       Jedes Element $x \in K$ mit $x \neq 0$ lässt sich nun eindeutig als $x = x \cdot \prod_{p \in \mathcal{P}} p$ darstellen, denn es gilt $x \in K^\times$ und $\prod_{p \in \mathcal{P}} = 1$ ist das leere Produkt.
     \item
       Die Aussage ist wahr:
       Der Ring $\powerseries{K}{X}$ ist euklidisch und somit ein Hauptidealring.
     \item
       Die Aussage ist wahr:
-      Wir bezeichnen die gegebene Potenreihe mit $f$.
+      Wir bezeichnen die gegebene Potenzreihe mit $f$.
       Sind $g, h \in \powerseries{\Integer}{X}$ mit $g = \sum_{i=0}^\infty g_i X^i$, $h = \sum_{i=0}^\infty h_i X^i$ und $f = gh$, so ist inbesondere $2 = g_0 h_0$.
       Aus der Irreduziblität von $2 \in \Integer$ folgt, dass $g_0 = \pm 1$ oder $h_0 = \pm 1$, und somit $g \in \powerseries{\Integer}{X}^\times$ oder $h \in \powerseries{\Integer}{X}^\times$ (siehe Übung~\ref{question: unit group of the power series ring}).
-    \item
-      Die Aussage ist wahr:
-      Ist $\varphi \colon \Integer \times \Integer \to \Integer$ ein Ringhomomorphismus, so gilt für die Elemente $e_1 \coloneqq \varphi(1,0)$ und $e_2 \coloneqq \varphi(0,1)$, dass $e_1^2 = e_1$ und $e_2^2 = e_2$.
-      Deshalb gilt $e_1, e_2 \in \{0,1\}$.
-      Da außerdem $1 = \varphi(1,1) = \varphi(1,0) + \varphi(0,1) = e_1 + e_2$ gilt, muss entweder $e_1 = 1$ und $e_2 = 0$, oder $e_1 = 0$ und $e_2 = 1$.
-      Im ersten Fall gilt $\varphi = \pi_1$, im zweiten Fall gilt $\varphi = \pi_2$.
-      
-      Die Aussage lässt sich auch durch Untersuchen von $\ker \varphi$ zeigen:
-      Es ist $\im \varphi$ ein Unterring von $\Integer$, also bereits $\im \varphi = \Integer$.
-      Also induziert $\varphi$ einen Isomorphismus $(\Integer \times \Integer)/\ker \varphi \to \Integer$.
-      Deshalb ist $\ker \varphi$ ein Primideal, aber kein maximales Ideal in $\Integer \times \Integer$.
-      Somit ist $\ker \varphi = \Integer \times \pideal$ oder $\ker \varphi = \pideal \times \Integer$ für ein Primideal $\pideal \subseteq \Integer$ (siehe Übung~\ref{question: product of ideals is an ideal} und Übung~\ref{questions: ideals in products are products of ideal}); wäre dabei $\pideal$ maximal, so wäre dies auch $\ker \varphi$ (siehe Übung~\ref{question: product of ideals is an ideal}), also kommt nur $\pideal = 0$ in Frage.
-      Im Fall $\ker \varphi = 0 \times \Integer$ gilt $\varphi = \pi_1$ und im Fall $\ker \varphi = \Integer \times 0$ gilt $\varphi = \pi_2$.
     \item
       Die Aussage ist wahr:
       Die kanonischen Projektionen $\pi_i \colon R_1 \times R_2 \to R_i$, $(x_1, x_2) \mapsto x_i$ induzieren Ringhomomorphismen
@@ -107,13 +92,13 @@
       Jeder Körper ist ein faktorieller Ring, aber es gibt endliche Körper.
     \item
       Die Aussage ist wahr:
-      Der Ring $S \coloneqq \Integer[T_x \mid x \in R]$ ist ein Integritätsbereich, und der Einsetzhomomorphismus $\varphi \colon S \to R$ mit $\varphi(T_x) = x$ für alle $r \in R$ ist surjektiv, induziert also einen Isomorphismus $\overline{\varphi} \colon S / \ker \varphi \to R$.
+      Der Ring $S \coloneqq \Integer[T_x \mid x \in R]$ ist ein Integritätsbereich, und der Einsetzhomomorphismus $\varphi \colon S \to R$ mit $\varphi(T_x) = x$ für alle $x \in R$ ist surjektiv, induziert also einen Isomorphismus $\overline{\varphi} \colon S / \ker \varphi \to R$.
     \item
       Die Aussage ist wahr:
       Jeder endliche Integritätsbereich ist bereits ein Körper.
     \item
       Die Aussage ist wahr:
-      $R$ ist noethersch, und nach iterierter Anwendung des Hilbertschen Basissatzes somit auch $R[X][Y] \cong R[X,Y]$.
+      $R$ ist noethersch, und nach iterierter Anwendung des Hilbertschen Basissatzes (siehe Übung~\ref{question: Hilbert basis theorem}) somit auch $R[X][Y] \cong R[X,Y]$.
     \item
       Die Aussage ist falsch:
       Ist $K$ ein Körper, so ist zwar $R \coloneqq K[X]$ ein Hauptidealring, aber $R[Y] \cong K[X,Y]$ nicht (siehe Übung~\ref{question: examples for non principal and not finitely generated modules}).
@@ -124,7 +109,7 @@
       Da $p$ prim ist, gilt $p \mid a$ oder $p \mid b$;
       wir können o.B.d.A.\ davon ausgehen, dass $p \mid a$.
       Dann gibt es $c \in R$ mit $a = pc$ und es folgt $p = ab = pcb$.
-      Da $R$ ein Integritätsbereich ist, und $p \neq 0$ gilt (denn $p$ ist prim) folgt, dass bereits $1 = cb$ gilt.
+      Da $R$ ein Integritätsbereich ist und $p \neq 0$ gilt (denn $p$ ist prim) folgt, dass bereits $1 = cb$ gilt.
       Also ist $b$ eine Einheit.
     \item
       Die Aussage ist falsch:
@@ -140,7 +125,7 @@
       Dies ist aber nicht der Fall, denn für alle $(a_1, a_2, a_3) \in \im \varphi$ gilt $a_1 = a_2$.
     \item
       Die Aussage ist falsch:
-      Die Abbildung $\sigma$ ist ein Ringhomomorphismus (siehe Übung~\ref{question: the frobenius homomorphism}), aber betrachtet man etwa den Fall $R = \Field_p[X]/(X^p)$, so gilt $\sigma(\overline{X}) = \overline{X}^p = \overline{X^p} = 0$ und somit $\ker \sigma = \{x \in R \mid x^p = 0\} \neq 0$.
+      Die Abbildung $\sigma$ ist ein Ringhomomorphismus (siehe Übung~\ref{question: the frobenius homomorphism}), aber betrachtet man etwa den Fall $R = \Field_p[X]/(X^p)$, so gilt $\sigma(\overline{X}) = \overline{X}^p = \overline{X^p} = 0$ aber $\overline{X} \neq 0$, und somit $\ker \sigma = \{x \in R \mid x^p = 0\} \neq 0$.
       (Besitzt $R$ keine nichttrivialen nilpotenten Elemente, etwa falls $R$ ein Integritätsbereich oder sogar ein Körper ist, so ist $\sigma$ hingegen ein Automorphismus:
       Dann gilt $\ker \sigma = 0$, und wegen der Endlichkeit von $R$ ist $\sigma$ damit schon bijektiv.)
   \end{enumerate}
@@ -172,9 +157,9 @@
     \item
       $f(X) \coloneqq 2X^4 + 200 X^3 + 2000 X^2 + 20000 X + 20 \in \Rational[X]$.
     \item
-      $f(X) \coloneqq  X^n - 2t \in K(t)[X]$ für einen Körper $K$ und $n \geq 1$.
+      $f(X) \coloneqq  X^n - t \in K(t)[X]$ für einen Körper $K$ und $n \geq 1$.
     \item
-      $f(X,Y) \coloneqq X Y^3 + X^2 Y + 5 X Y^2 + X^2 + 3 X Y + 2 X + Y + 2 \in \Rational[X]$.
+      $f(X,Y) \coloneqq X Y^3 + X^2 Y + 3 X Y^2 + X^2 + 3 X Y + 2 X + Y + 2 \in \Rational[X]$.
     \item
       $f(X,Y) \coloneqq X^3 + Y^3 + X^2 Y + X Y^2 + XY + 6 X + 6 Y + 3 \in \Rational[X,Y]$.
     \item
@@ -194,12 +179,13 @@
 
 
 \begin{solution}
+  Wir nutzen im Folgenden wiederholt, dass ein quadratisches oder kubisches Polynom über einem Körper genau dann irreduzibel ist, wenn es eine Nullstelle hat; man siehe Übung~\ref{question: irreducibility of quadratic and cubic polynomials}.
   \begin{enumerate}
     \item
       Nach Eisenstein mit dem Primelement $2 \in \Integer$ ist das Polynom irreduzibel.
     \item
       Reduzieren bezüglich $3 \in \Integer$ liefert das Polynom $\tilde{f}(X) = X^3 + 2X + 2 \in \Field_3[X]$.
-      Das Polynom $\tilde{f}$ hat keine Nullstellen, und da es kubisch ist somit irreduzibel.
+      Das Polynom $\tilde{f}$ hat keine Nullstellen, und ist somit irreduzibel, da es kubisch ist.
       Also ist auch $f$ bereits irreduzibel.
     \item
       Wir geben zwei Möglichkeiten an, um die Irreduziblität von $f$ zu zeigen:
@@ -208,26 +194,34 @@
           Es handelt sich um ein quadratisches Polynom ohne reellen, und damit auch ohne rationale Nullstellen;
           also ist $f$ irreduzibel.
         \item
-          Alternativ ergibt sich durch Ausmultiplizieren, dass $f(X) = X^2 - 6X + 10$, und die Irreduziblität von $f$ ergibt sich aus Eisenstein mit $p = 2$.
+          Alternativ ergibt sich durch Ausmultiplizieren, dass $f(X) = X^2 - 6X + 10$, und die Irreduziblität von $f$ ergibt sich aus Eisenstein mit dem Primelement $2 \in \Integer$.
       \end{itemize}
     \item
-      Da $2 \in \Rational$ eine Einheit ist, dürfen wir $f$ durch $2$ teilen und stattdessen das Polynom $\tilde{f}(X) = X^3 - 7X + 1 \in \Rational[X]$ betrachten.
-      Da es sich bei $\tilde{f}$ ein kubisches Polynom handelt, ist es genau dann irreduzibel, wenn es keine Nullstelle hat.
-      Da $\tilde{f}$ normiert ist und bereits $\tilde{f} \in \Integer[X]$ gilt, ist jede Nullstelle von $\tilde{f}$ schon eine ganze Zahl.
-      Da jede Nullstelle $n \in \Integer$ den konstanten Teil von $\tilde{f}$ teilen muss, kommen nur $1$ und $-1$ als mögliche Nullstellen in Frage. Durch direktes Ausprobieren können aber beide ausgeschlossen werden.
-      Also hat $\tilde{f}$ keine Nullstelle und ist somit irreduzibel.
+      Da $2 \in \Rational$ eine Einheit ist, dürfen wir $f$ durch $2$ teilen und stattdessen das normierte Polynom $\tilde{f}(X) = X^3 - 7X + 1 \in \Rational[X]$ betrachten.
+      Es gibt (mindestens) zwei Möglichkeiten die Irreduziblität von $\tilde{f}$ einzusehen:
+      \begin{itemize}
+        \item
+          Da es sich bei $\tilde{f}$ ein kubisches Polynom handelt, ist es genau dann irreduzibel, wenn es keine Nullstelle hat.
+          Da $\tilde{f}$ normiert ist und bereits $\tilde{f} \in \Integer[X]$ gilt, ist jede Nullstelle von $\tilde{f}$ schon eine ganze Zahl.
+          Da jede Nullstelle $n \in \Integer$ den konstanten Teil von $\tilde{f}$ teilen muss, kommen nur $1$ und $-1$ als mögliche Nullstellen in Frage. Durch direktes Ausprobieren können aber beide ausgeschlossen werden.
+          Also hat $\tilde{f}$ keine Nullstelle und ist somit irreduzibel.
+        \item
+          Reduzieren bezüglich des Primelements $2 \in \Integer$ liefert $\overline{f} = X^3 + X + 1 \in \Field_2[X]$.
+          Da $\overline{f}(0) = \overline{f}(1) = 1$ gilt, hat $\overline{f}$ keine Nullstellen, und ist als kubisches Polynom somit irreduzibel.
+          Also ist bereits $\tilde{f}$ irreduzibel in $\Integer[X]$, und somit auch in $\Rational[X]$.
+      \end{itemize}
     \item
       Das Polynom ist nicht irreduzibel, da es in $f(X) = 2 \cdot (X^3 - 7X + 1)$ faktorisiert, wobei keiner der beiden Faktoren eine Einheit in $\Integer[X]$ ist.
+%     \item
+%       Reduzieren bezüglich des Primelements $3 \in \Integer$ liefert $\tilde{f}(X) = X^3 - 4X - 1 = X^3 + 2X + 2 \in \Field_3[X]$.
+%       Durch direktes Ausprobieren ergibt sich, dass $\tilde{f}$ keine Nullstellen hat, und als kubisches Polynom somit irreduzibel ist.
+%       Somit ist auch $f$ irreduzibel.
     \item
-      Reduzieren bezüglich $p = 3$ liefert $\tilde{f}(X) = X^3 - 4X - 1 = X^3 + 2X + 2 \in \Field_3[X]$.
-      Durch direktes Ausprobieren ergibt sich, dass $\tilde{f}$ keine Nullstellen hat, und als kubisches Polynom somit irreduzibel ist.
-      Somit ist auch $f$ irreduzibel.
-    \item
-      Das Polynom ist nach Eisenstein mit $p = 3$ irreduzibel.
+      Das Polynom ist nach Eisenstein bezüglich $3 \in \Integer$ irreduzibel.
     \item
       Das Polynom ist nicht irreduzibel, da es (als Polynom ungeraden Grades über $\Real$) eine Nullstelle hat, aber nicht linear ist.
     \item
-      Die Irreduziblität ergibt sich nach Eisenstein mit $p = 3$.
+      Die Irreduziblität ergibt sich nach Eisenstein bezüglich $3 \in \Integer$.
     \item
       Wir geben zwei Möglichkeit an die Irreduziblität von $f$ zu zeigen.
       \begin{itemize}
@@ -241,13 +235,13 @@
           Durch Ausprobieren ergibt sich, dass keines von beiden eine Nullstelle ist.
           Also ist $f$ irreduzibel.
         \item
-          Reduzieren bezüglich $p = 2$ ergibt das Polynom $\tilde{f}(X) = X^3 + X + 1 \in \Field_2[X]$.
+          Reduzieren bezüglich $2 \in \Integer$ ergibt das Polynom $\tilde{f}(X) = X^3 + X + 1 \in \Field_2[X]$.
           Dann hat $\tilde{f}$ keine Nullstellen und ist als kubisches Polynom deshalb irreduzibel.
           Somit ist auch $f$ schon irreduzibel.
       \end{itemize}
     \item
       Da $2 \in \Rational$ eine Einheit ist, dürfen wir $f$ durch $2$ teilen und somit stattdessen das Polynom $\tilde{f}(X) \coloneqq X^4 + 100 X^3 + 1000 X^2 + 10000 X + 10 \in \Rational[X]$ betrachten.
-      Da $\tilde{f}$ normiert, und somit primitiv ist, ergibt sich die Irreduziblität von $\tilde{f}$ durch Eisenstein wahlweise mit $p = 2$ oder $p = 5$.
+      Da $\tilde{f}$ normiert, und somit primitiv ist, ergibt sich die Irreduziblität von $\tilde{f}$ durch Eisenstein bezüglich des Primelements $2 \in \Integer$ oder $5 \in \Integer$.
     \item
       Die Irreduziblität ergibt sich durch Eisenstein mit dem Primelement $t \in K[t]$.
     \item
@@ -271,14 +265,14 @@
         &=  Y^3 + X Y^2 + (X^2 + X + 6) Y + (X^3 + 6X + 3)
         \in \Rational[X][Y]
       \end{align*}
-      Da $\tilde{f}$ normiert ist können wir bezüglich $X \in \Rational[X]$ reduzieren, und erhalten
+      Da $\tilde{f}$ normiert ist können wir bezüglich des Primelements $X \in \Rational[X]$ reduzieren, und erhalten das Polynom
       \[
               \overline{f}(Y)
         =     Y^3 + 6 Y + 3
         \in   (\Rational[X]/(X))[Y]
         \cong \Rational[Y].
       \]
-      Nach Eisenstein mit $p = 3$ ist $\overline{f}(Y)$ irreduzibel, also ist auch $\tilde{f}$, und somit $f$, irreduzibel.
+      Nach Eisenstein mit dem Primelement $p \in \Integer$ ist $\overline{f}(Y)$ irreduzibel, also auch $\tilde{f}$, und somit auch $f$.
     \item
       Es gilt $f(X) = X^{p-1} + \dotsb + X + 1 = (X^p - 1)/(X - 1)$ und somit
       \[
@@ -288,7 +282,7 @@
         = \sum_{k=1}^p \binom{p}{k} X^{k-1}
         = \sum_{k=0}^{p-1} \binom{p}{k+1} X^k.
       \]
-      Dabei gilt $p \mid \binom{p}{k+1}$ für alle $k = 0, \dotsc, p-1$ aber $p^2 \mid p = \binom{p}{1}$.
+      Dabei gilt $p \nmid 1 = \binom{p}{p}$, $p \mid \binom{p}{k+1}$ für alle $k = 0, \dotsc, p-2$ und $p^2 \nmid p = \binom{p}{1}$.
       Also ist das normierte Polynom $f(X+1)$ nach Eisenstein irreduzibel, und somit auch $f(X)$.
     \item
       Das Polynom ist nicht linear, hat aber $-1$ ein Nullstelle; es ist also reduzibel.
@@ -480,20 +474,20 @@
 
 
  \begin{question}[subtitle = Isomorphiepuzzle]
-  Bestimmen Sie, welche der folgenden Ringe isomorph zueinander sind, und welche nicht:
+  Bestimmen Sie, welche der folgenden sieben Ringe isomorph zueinander sind, und welche nicht:
   \begin{gather*}
     \Integer/25,
-    \quad
+    \qquad
     \Field_{25},
-    \quad
+    \qquad
     \Field_5 \times \Field_5,
-    \quad
+    \qquad
     \Field_5[X]/(X^2),
     \\
     \Field_5[X]/(X^2+2),
-    \quad
+    \qquad
     \Field_5[X]/(X^2+4),
-    \quad
+    \qquad
     \Integer[X]/(5X).
   \end{gather*}
 \end{question}
@@ -504,7 +498,7 @@
   Wir zeigen, dass die Isomorphieklassen der gegebenen Moduln durch $\{R_1\}, \{R_2, R_5\}, \{R_3, R_6\}, \{R_4\}, \{R_7\}$ gegeben sind.
   
   Das Polynom $X^2 + 2 \in \Field_5[X]$ hat keine Nullstellen und ist deshalb irreduzibel (da quadratisch).
-  Folglich ist $R_4$ eine quadratische Körpererweiterung von $\Field_5$, also $R_5 \cong \Field_{25} = R_2$.
+  Folglich ist $R_5$ eine quadratische Körpererweiterung von $\Field_5$, also $R_5 \cong \Field_{25} = R_2$.
   
   Das Polynom $X^2 + 4 \in \Field_5[X]$ zerfällt in $X^2 + 4 = X^2 - 1 = (X-1)(X+1)$.
   Nach dem chinesischen Restklassensatz gilt daher
@@ -559,20 +553,20 @@
         \\
         \cong&\,  ( \Integer[X]/(5) ) / ( (5, 10 X^4 - 3 X^3 + 8 X - 11)/(5) )
         \\
-            =&\,  ( \Integer[X]/(5) ) / ( \overline{X^4 - 3 X^3 + 8 X - 11} )
+            =&\,  ( \Integer[X]/(5) ) / ( \overline{10X^4 - 3 X^3 + 8 X - 11} )
         \\
         \cong&\,  (\Integer/(5))[X] / (10 X^4 - 3 X^3 + 8 X - 11)
             =     \Field_5[X]/(10 X^4 - 3 X^3 + 8 X - 11)
         \\
             =&\,  \Field_5[X](2 X^3 + 3 X + 4)
-            =     \Field_5[X]/(X^2 + 4 X + 2).
+            =     \Field_5[X]/(X^3 + 4 X + 2).
       \end{align*}
       Für den ersten Isomorphismus nutzen wir den dritten Isomorphiesatz.
       Für eine genaue Erklärung des zweiten Isomorphismus siehe man Übung~\ref{question: quotients by ideals coming from the ground ring}.
       Für die letzte Gleichheit multiplizieren wir das Polynom mit $2^{-1} = 3$.
       
       Durch Ausprobieren ergibt sich, dass das kubische Polynom $X^3 + 4 X + 2 \in \Field_5[X]$ keine Nullstelle hat; es ist also irreduzibel, und der Quotient $\Field_5[X]/(X^3 + 4 X + 2)$ somit ein Körper.
-      Dabei gilt $[\Field_5[X]/(X^3 + 4 X + 2) : \Field_5] = \deg (X^3 + 4 X + 2) = 3$, also ist
+      Dabei gilt $[\Field_5[X]/(X^3 + 4 X + 2) : \Field_5] = \deg (X^3 + 4 X + 2) = 3$, also gilt
       \[
               \Field_5[X]/(X^3 + 4 X + 2)
         \cong \Field_{5^3}
@@ -605,10 +599,10 @@
              &\,  \Field_3[X]/(X^3 + X^2 + X + 1)
             =     \Field_3[X]/( (X^2 + 1)(X + 1) )
         \\
-        \cong&\,  \Field_3[X](X^2 + 1) \times \Field_3[X]/(X+1)
-        \cong     \Field_3[X](X^2 + 1) \times \Field_3.
+        \cong&\,  \Field_3[X]/(X^2 + 1) \times \Field_3[X]/(X+1)
+        \cong     \Field_3[X]/(X^2 + 1) \times \Field_3.
       \end{align*}
-      Der Quotient $X^2 + 1 \in \Field_3[X]$ ist ein Körper, da $X^2 + 1$ irreduzibel ist; dabei gilt $[\Field_3[X](X^2 + 1) : \Field_3] = \deg (X^2 + 1) = 2$ und somit $\Field_3 \cong \Field_{3^2} = \Field_9$.
+      Der Quotient $\Field_3[X]/(X^2 + 1)$ ist ein Körper, da das Polynom $X^2 + 1 \in \Field_3[X]$ irreduzibel ist; dabei gilt $[\Field_3[X](X^2 + 1) : \Field_3] = \deg (X^2 + 1) = 2$ und somit $\Field_3 \cong \Field_{3^2} = \Field_9$.
       Ingesamt erhalten wir somit, dass
       \[
               \Integer[X]/(3, 4 X^3 + 13 X^2 + 10 X - 5)
@@ -619,7 +613,7 @@
     \item
       Es gilt
       \begin{align*}
-             &\,  \Integer[X]/(7, 3 X^2 + 7X - 14
+             &\,  \Integer[X]/(7, 3 X^2 + 7X - 14)
         \\
         \cong&\,  ( \Integer[X]/(7) ) / ( (7, 3 X^2 + 7X - 14 ) / (7) )
         \\
@@ -631,10 +625,10 @@
             =&\,   \Field_7[X] / (3 X^2)
             =     \Field_7[X] / (X^2).
       \end{align*}
-      Es ist $1, \overline{X})$ eine $\Field_7$-Basis von $\Field_7[X]/(X^2)$, jedes Element $f \in \Field_7[X]/(X^2)$ ist also von der Form $f = a + b \overline{X}$ mit eindeutigen $a, b \in \Field_7$.
+      Die Familie $(1, \overline{X})$ eine $\Field_7$-Basis von $\Field_7[X]/(X^2)$, jedes Element $f \in \Field_7[X]/(X^2)$ ist also von der Form $f = a + b \overline{X}$ mit eindeutigen $a, b \in \Field_7$.
       Ist $a = 0$, so ist $f^2 = 0$ und $f$ somit nilpotent.
       Ist $a \neq 0$, so gilt $(a + b\overline{X}) (a^{-1} - b a^{-2} \overline{X}) = 1$, weshalb $f$ eine Einheit ist.
-      (Alternativ erkennt man, dass $a + b X$ und $X^2$ dann teilerfremd sind, und somit $\overline{a + b X} = a + b \overline{X}$ eine Einheit in $\Field_7[X]/(X^2)$ ist.)
+      (Alternativ erkennt man, dass $a + b X$ und $X^2$ dann teilerfremd sind, und somit $\overline{a + b X} = a + b \overline{X}$ eine Einheit in $\Field_7[X]/(X^2)$ ist, man siehe Übung~\ref{question: unit group of quotients}.)
       Damit erhalten wir, dass $\Field_7[X]/(X^2)$ aus $7^2 = 49$ Elementen besteht, von denen $6 \cdot 7 = 42$ Einheiten sind und $7$ nilpotent.
   \end{enumerate}
 \end{solution}
@@ -676,6 +670,30 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Die einzigen Ringhomomorphismen $\Integer \times \Integer \to \Integer$]
+  Zeigen Sie, dass die beiden Projektionen $\pi_i \colon \Integer \times \Integer \to \Integer$ mit $\pi_1(x_1 , x_2) = x_i$ für alle $(x_1, x_2) \in \Integer \times \Integer$ die einzigen beiden Ringhomomorphismen $\Integer \times \Integer \to \Integer$ sind.
+\end{question}
+
+
+\begin{solution}
+  Wir geben zwei mögliche Beweise an:
+  \begin{itemize}
+    \item
+      Ist $\varphi \colon \Integer \times \Integer \to \Integer$ ein Ringhomomorphismus, so gilt für die Elemente $e_1 \coloneqq \varphi(1,0)$ und $e_2 \coloneqq \varphi(0,1)$, dass $e_1^2 = e_1$ und $e_2^2 = e_2$.
+      Deshalb gilt $e_1, e_2 \in \{0,1\}$.
+      Da außerdem $1 = \varphi(1,1) = \varphi(1,0) + \varphi(0,1) = e_1 + e_2$ gilt, muss entweder $e_1 = 1$ und $e_2 = 0$, oder $e_1 = 0$ und $e_2 = 1$.
+      Im ersten Fall gilt $\varphi = \pi_1$, im zweiten Fall gilt $\varphi = \pi_2$.
+      
+    \item
+      Es ist $\im \varphi$ ein Unterring von $\Integer$, also bereits $\im \varphi = \Integer$.
+      Also induziert $\varphi$ einen Isomorphismus $(\Integer \times \Integer)/\ker \varphi \to \Integer$.
+      Deshalb ist $\ker \varphi$ ein Primideal, aber kein maximales Ideal in $\Integer \times \Integer$.
+      Somit ist $\ker \varphi = \Integer \times \pideal$ oder $\ker \varphi = \pideal \times \Integer$ für ein Primideal $\pideal \subseteq \Integer$ (siehe Übung~\ref{question: product of ideals is an ideal} und Übung~\ref{questions: ideals in products are products of ideal}); wäre dabei $\pideal$ maximal, so wäre dies auch $\ker \varphi$ (siehe Übung~\ref{question: product of ideals is an ideal}), also kommt jeweils nur $\pideal = 0$ in Frage.
+      Im Fall $\ker \varphi = 0 \times \Integer$ gilt $\varphi = \pi_1$ und im Fall $\ker \varphi = \Integer \times 0$ gilt $\varphi = \pi_2$.
+  \end{itemize}
+\end{solution}
+
+
 \begin{question}
   Es sei $R$ ein kommutativer Ring und es gebe $n > 1$, so dass $x^n = x$ für jedes $x \in R$ gilt.
   Zeigen Sie, dass jedes Primideal in $R$ bereits maximal ist.
@@ -685,7 +703,7 @@
 \begin{solution}
   Ist $\pideal \subseteq R$ ein Primideal, so gilt $y^n = y$ für jedes $y \in R/\pideal$.
   Ist $y \neq 0$, so lässt sich diese Gleichung durch $y$ teilen, da $R/\pideal$ ein Integritätsbereich ist.
-  Deshalb gilt für jedes $y \in R$ bereits $y^{n-1} = 1$, also $y \cdot y^{n-2} = 1$, weshalb $y$ eine Einheit mit $y^{-1} = y^{n-2}$ ist.
+  Deshalb gilt für jedes $y \in R$ mit $y \neq 0$ bereits $y^{n-1} = 1$, also $y \cdot y^{n-2} = 1$, weshalb $y$ eine Einheit ist (mit $y^{-1} = y^{n-2}$).
   Somit ist jedes $y \in R/\pideal$ mit $y \neq 0$ eine Einheit, also der Integritätsbereich $R/\pideal$ bereits ein Körper, und $\pideal$ somit bereits maximal.
 \end{solution}
 
@@ -703,7 +721,7 @@
     \item
       Folgern Sie, dass $\varphi(n_1 n_2) = \varphi(n_1) \varphi(n_2)$ für je zwei teilerfremde $n_1, n_2 \geq 1$.
     \item
-      Zeigen Sie, dass $\varphi(p^r) = p^r - p^{r-1} = p^{r-1} (p - 1)$ für alle Primzahlen $p \in \Natural$ und $r \geq 1$.
+      Zeigen Sie, dass $\varphi(p^r) = p^r - p^{r-1} = p^{r-1} (p - 1)$ für jede Primzahl $p$ und alle $r \geq 1$.
     \item
       Berechnen Sie $\varphi(42)$, $\varphi(57)$ und $\varphi(144)$.
   \end{enumerate}
@@ -713,7 +731,7 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Die Elemente $1, \dotsc, n$ bilden ein Repräsentantensystem der Restklassen von $\Integer/n$, für $k \in \{1, \dotsc, n\}$ ist $\overline{k} \in \Integer/n$ genau dann eine Einheit, wenn $k$ und $n$ teilerfremd sind (siehe Übung~\ref{question: unit group of quotients}).
+      Die Elemente $1, \dotsc, n$ bilden ein Repräsentantensystem der Restklassen von $\Integer/n$, und für $k \in \{1, \dotsc, n\}$ ist $\overline{k} \in \Integer/n$ genau dann eine Einheit, wenn $k$ und $n$ teilerfremd sind (siehe Übung~\ref{question: unit group of quotients}).
     \item
       Nach dem Chinesischen Restklassensatz gilt $\Integer/(n_1 n_2) \cong \Integer/n_1 \times \Integer/n_2$.
       Somit gilt
@@ -723,12 +741,12 @@
          =  | (\Integer/n_1 \times \Integer/n_2)^\times |
         \\
         &=  | (\Integer/n_1)^\times \times (\Integer/n_2)^\times |
-         =  | (\Integer/n_1)^\times | | (\Integer/n_2)^\times |
+         =  | (\Integer/n_1)^\times | \cdot | (\Integer/n_2)^\times |
          =  \varphi(n_1) \varphi(n_2).
       \end{align*}
     \item
       Es ist $\{0, \dotsc, p^r - 1\}$ ein Repräsentantensystem der Restklassen von $\Integer/p^r$.
-      Eine Zahl $k \in \{0, \dotsc, p^r - 1\}$ ist genau dann teilerfremd so $p^r$, wenn sie kein Vielfaches von $p$ ist.
+      Eine Zahl $k \in \{0, \dotsc, p^r - 1\}$ ist genau dann teilerfremd zu $p^r$, wenn sie kein Vielfaches von $p$ ist.
       Da jede $p$-te Zahl aus dieser Menge ein Vielfaches von $p$ ist, gibt es $p^r/p = p^{r-1}$ viele Vielfache von $p$ in diesem Repräsentantensystem.
       Somit sind $p^r - p^{r-1}$ viele Repräsentanten kein Vielfaches von $p$, also teilerfremd zu $p$.
     \item
@@ -773,9 +791,10 @@
     \item
       Zeigen Sie, dass $R$ noethersch ist.
     \item
-      Folgern Sie, dass in $R$ eine Zerlegung in irreduzible Elemente existiert.
+      Folgern Sie, dass sich jedes Element aus $R$ als Produkt irreduzibler Elemente schreiben lässt.
     \item
       Zeigen Sie, dass $R$ nicht faktoriell ist.
+      \\
       (\emph{Hinweis}:
        Zeigen Sie zunächst, dass $t^2$ und $t^3$ irreduzibel sind.)
   \end{enumerate}
@@ -792,7 +811,7 @@
       Aus der Vorlesung ist bekannt, dass in noetherschen Integritätsbereichen eine Zerlegung in irreduzible Elemente existiert.
     \item
       Wir bemerken zunächst, dass $R = \{\sum_i f_i T^i \in K[t] \mid f_1 = 0\}$.
-      Es enthält also $R$ keine Polynome vom Grad $1$.
+      Also enthält $R$ keine Polynome vom Grad $1$.
       Jede nicht-triviale Zerlegung von $t^2$ oder $t^3$ in $K[t]$ enthält aber einen Faktor vom Grad $1$;
       folglich sind beide Elemente irreduzibel in $R$.
       Wir erhalten nun für $t^6 \in R$ mit $t^6 = t^2 \cdot t^2 \cdot t^2 = t^3 \cdot t^3$ zwei Zerlegungen in irreduzible Elemente, die nicht äquivalent im Sinne eines faktoriellen Rings sind (insbesondere kommen in beiden Zerlegungen unterschiedlich viele Faktoren vor).
@@ -845,8 +864,8 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Ist $\phi \colon \Integer \to R$ ein Ringhomomorphismus, so ist $\phi(1_\Integer) = 1_R$.
-      Für alle $n \in \Integer$ ist damit
+      Ist $\phi \colon \Integer \to R$ ein Ringhomomorphismus, so gilt $\phi(1_\Integer) = 1_R$.
+      Für alle $n \in \Integer$ gilt deshalb
       \[
           \phi(n)
         = \phi(n \cdot 1_\Integer)
@@ -865,9 +884,9 @@
       Es gibt einen eindeutigen Ringhomomorphismus $\phi \colon \Integer \to Z$ sowie einen eindeutigen Ringhomomorphismus $\psi \colon Z \to \Integer$.
       Es ist auch $\psi \circ \phi \colon \Integer \to \Integer$ ein Ringhomomorphismus.
       Die Identität $\id_\Integer \colon \Integer \to \Integer$ ist ebenfalls ein Ringhomomorphismus.
-      Da es genau einen Ringhomomorphismus $\Integer \to \Integer$ gibt, muss sowohl $\psi \circ \phi$ als auch $\id_\Integer$  dieser eindeutige Ringhomomorphismus $\Integer \to \Integer$ sein.
+      Da es genau einen Ringhomomorphismus $\Integer \to \Integer$ gibt, müssen sowohl $\psi \circ \phi$ als auch $\id_\Integer$  dieser eindeutige Ringhomomorphismus $\Integer \to \Integer$ sein.
       Folglich gilt $\psi \circ \phi = \id_\Integer$.
-      Analog ergibt sich, dass auch $\phi \circ \psi = \id_Z$ gilt.
+      Analog ergibt sich auch, dass $\phi \circ \psi = \id_Z$ gilt.
   \end{enumerate}
 \end{solution}
 
@@ -881,7 +900,7 @@
       Zeigen Sie, dass Assoziiertheit eine Äquivalenzrelation ist.
     \item
       Es sei nun $R$ ein Integritätsbereich.
-      Zeigen Sie, dass zwei Elemente $a, b \in R$ genau dann assoziiert sind, wenn $(a) = (b)$.
+      Zeigen Sie, dass zwei Elemente $a, b \in R$ genau dann assoziiert sind, wenn $(a) = (b)$ gilt.
   \end{enumerate}
 \end{question}
 
@@ -911,14 +930,15 @@
         = (y).
       \]
       Ist andererseits $(x) = (y)$ so ist $x \in (y)$ und $y \in (x)$, also gibt es $\varepsilon_1, \varepsilon_2 \in R$ mit $y = \varepsilon_1 x$ und $x = \varepsilon_2 y$.
-      Dann ist $y = \varepsilon_1 x = \varepsilon_1 \varepsilon_2 y$, und da $R$ ein Integritätsbereich ist, somit $\varepsilon_1 \varepsilon_2 = 1$.
+      Dann ist $y = \varepsilon_1 x = \varepsilon_1 \varepsilon_2 y$, und da $R$ ein Integritätsbereich ist, deshalb bereits $\varepsilon_1 \varepsilon_2 = 1$.
       Also ist $\varepsilon_1$ eine Einheit mit $\varepsilon_1^{-1} = \varepsilon_2$.
-      Da $y = \varepsilon_1 x$ ist $x \sim y$.
+      Da $y = \varepsilon_1 x$ gilt, ist somit $x \sim y$.
   \end{enumerate}
 \end{solution}
 
 
-\begin{question}[subtitle = Die Einheitengruppe]
+\begin{question}[subtitle = Funktorialität der Einheitengruppe]
+  \label{question: functoriality of the unit group}
   Ist $R$ ein kommutativer Ring, so ist
   \[
               R^\times
@@ -941,16 +961,21 @@
     \item
       Ist $R$ ein kommutativer Ring und $\phi \colon R \to S$ ein Isomorphismus von Ringen, so ist $\phi^\times \colon R^\times \to S^\times$ ein Isomorphismus von Gruppen.
   \end{enumerate}
-  (Die Aussagen gelten auch für nichtkommutative Ringe, wobei $R^\times$ dann im Allgemeinen nicht abelsch ist.
-   Dabei ist ein Element $r \in R$ eines nichtkommutativen Rings $R$ eine Einheit, wenn es $s \in R$ mit $rs = 1 = sr$ gibt.
-   Es genügt auch, dass es $s, t \in R$ mit $rs = 1 = tr$ gibt; dann gilt bereits $s = t$.)
 \end{question}
+
+
+\begin{remark*}
+  Die Aussagen aus Übung~\ref{question: functoriality of the unit group} gelten auch für nichtkommutative Ringe, wobei $R^\times$ dann im Allgemeinen nicht abelsch ist.
+  Dabei ist ein Element $r \in R$ eines nichtkommutativen Rings $R$ eine Einheit, wenn es $s \in R$ mit $rs = 1 = sr$ gibt.
+  So gilt beispielsweise $\Mat_n(R)^\times = \GL_n(R)$.
+  Es genügt auch, dass es $s, t \in R$ mit $rs = 1 = tr$ gibt; dann gilt bereits $s = trs = t$.
+\end{remark*}
 
 
 \begin{solution}
   \begin{enumerate}
     \item
-      Für je zwei Einheiten $xy \in R^\times$ ist auch $xy$ eine Einheit, also $xy \in R^\times$, da
+      Für je zwei Einheiten $x, y \in R^\times$ ist auch $xy$ eine Einheit, also $xy \in R^\times$, da
       \[
           (xy)(y^{-1}x^{-1})
         = x y y^{-1} x^{-1}
@@ -975,7 +1000,7 @@
       Das zeigt, dass die Einschränkung $\phi^\times$ wohldefiniert ist.
       Da $\phi$ mulitplikativ ist, gilt dies auch für $\phi^\times$, weshalb $\phi^\times$ ein Gruppenhomomorphismus ist.
     \item
-      Da $\id_R^\times(x) = \id_R(x) = x = \id_{R^\times}(x)$ für alle $x \in X$ gilt, ist $\id_R^\times = \id_{R^\times}$.
+      Da $\id_R^\times(x) = \id_R(x) = x = \id_{R^\times}(x)$ für alle $x \in R^\times$ gilt, ist $\id_R^\times = \id_{R^\times}$.
       Für alle $x \in R_1$ gilt
       \[
           (\psi^\times \phi^\times)(x)
@@ -1001,7 +1026,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Primideale und maximale Ideale via Quotienten]
+\begin{question}[subtitle = Charakterisierung on Primidealen und maximalen Idealen durch ihre Quotienten]
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
     \item
@@ -1015,8 +1040,10 @@
 \begin{solution}
   \begin{enumerate}
     \item
+      Es genügt den Fall zu betrachten, dass $\pideal$ ein echtes Ideal ist, denn dies ist äquivalent dazu, dass $R/\pideal \neq 0$ gilt.
+      
       Für alle $x \in R$ sei $\overline{x} \in R/\pideal$ die entsprechende Äquivalenzklasse.
-      Das Ideal $\pideal$ ist genau dann prim, wenn die Aussage
+      Der Ring $R/\pideal$ ist genau dann ein Integritätsbereich, wenn die Aussage
       \begin{equation}
         \label{eqn: quotient is integral definition}
         \forall x, y \in R
@@ -1025,7 +1052,7 @@
         \implies
         \text{$\overline{x} = 0$ oder $\overline{y} = 0$}
       \end{equation}
-      gilt. Da $\overline{x} \cdot \overline{y} = \overline{xy}$ für alle $x, y \in R$ gilt, ist die Aussage~\eqref{eqn: quotient is integral definition} äquivalent dazu, dass
+      gilt. Da $\overline{x} \cdot \overline{y} = \overline{xy}$ für alle $x, y \in R$ gilt, ist die Aussage~\eqref{eqn: quotient is integral definition} äquivalent zu der Aussage
       \begin{equation}
         \label{eqn: quotient is integral nearly definition}
         \forall x, y \in R
@@ -1035,7 +1062,7 @@
         \text{$\overline{x} = 0$ oder $\overline{y} = 0$}.
       \end{equation}
       Für alle $x \in R$ gilt genau dann $\overline{x} = 0$, wenn $x \in \pideal$.
-      Deshalb ist die Aussage~\eqref{eqn: quotient is integral nearly definition} äquivalent dazu, dass
+      Deshalb ist die Aussage~\eqref{eqn: quotient is integral nearly definition} äquivalent zu der Aussage
       \begin{equation}
         \label{eqn: quotient is integral via prime }
         \forall x, y \in R
@@ -1045,6 +1072,7 @@
         \text{$x \in \pideal$ oder $y \in \pideal$}.
       \end{equation}
       Dies ist genau die Aussage, dass $\pideal$ ein Primideal ist.
+      
     \item
       Es sei $\pi \colon R \to R/\mideal$, $x \mapsto \overline{x}$ die kanonische Projektion.
       Wir erhalten eine wohldefinierte Bijektion
@@ -1063,7 +1091,7 @@
 
 \begin{question}[subtitle = Urbilder von Idealen]
   \label{question: preimages of ideals}
-  Es seien $R$ und $S$ zwei kommutative Ringe und $\phi \colon R \to S$ ein Ringhomomorphismus.
+  Es seien $R$ und $S$ zwei kommutative Ringe und es sei $\phi \colon R \to S$ ein Ringhomomorphismus.
   \begin{enumerate}
     \item
       Zeigen Sie, dass für jedes Ideal $\aideal \subseteq S$ das Urbild $\phi^{-1}(\aideal)$ ein Ideal in $R$ ist.
@@ -1076,26 +1104,43 @@
 
 
 \begin{solution}
+  Es sei $\pi \colon S \to S/\aideal$, $s \mapsto \overline{s}$ die kanonische Projektion.
   \begin{enumerate}
     \item
-      Es sei $\pi \colon S \to S/\aideal$, $s \mapsto \overline{s}$ die kanonische Projektion.
-      Dann ist $\pi \phi$ ein Ringhomomorphismus und somit $\ker (\pi \phi) = \phi^{-1}(\ker \pi) = \phi^{-1}(\aideal)$ ein Ideal in $R$.
+      Dann ist $\pi \circ \phi$ ein Ringhomomorphismus und somit
+      \[
+          \ker (\pi \circ \phi)
+        = (\pi \circ \phi)^{-1}(0)
+        = \phi^{-1}( \pi^{-1}(0) )
+        = \phi^{-1}(\ker \pi)
+        = \phi^{-1}(\aideal)
+      \]
+      ein Ideal in $R$.
+      
     \item
       Die Aussage gilt:
-      Es sei $\pi \colon S \to S/\pideal$, $s \mapsto \overline{s}$ die kanonische Projektion und $\qideal \coloneqq \phi^{-1}(\pideal)$.
+      Es sei $\qideal \coloneqq \phi^{-1}(\pideal)$.
       Der Quotient $S/\pideal$ ist ein Integritätsbereich, da $\pideal$ ein Primideal ist.
-      Nach dem vorherigen Aufgabenteil ist $\qideal$ ein Ideal in $R$, und da $\ker (\pi \phi) = \phi^{-1}(\ker \pi) = \phi^{-1}(\pideal) = \qideal$ induziert $\pi \phi$ einen injektiven Ringhomomorphismus
+      Nach dem vorherigen Aufgabenteil ist $\qideal$ ein Ideal in $R$, und da
+      \[
+          \ker (\pi \circ \phi)
+        = \phi^{-1}(\ker \pi)
+        = \phi^{-1}(\pideal)
+        = \qideal
+      \]
+      gilt, induziert $\pi \circ \phi$ einen injektiven Ringhomomorphismus
       \[
         \psi \colon R/\qideal \to S/\pideal
         \quad
         \overline{r} \mapsto \overline{\phi(r)}.
       \]
-      Der Ring $\im (\pi \phi) \subseteq S/\pideal$ ist als Unterring eines Integritätsbereichs ebenfalls ein Integritätsbereich.
-      Somit ist $R/\qideal \cong \im(\pi \phi)$ ein Integritätsbereich, also $\qideal$ ein Primideal.
+      Der Ring $\im \psi = \im (\pi \circ \phi) \subseteq S/\pideal$ ist als Unterring eines Integritätsbereichs ebenfalls ein Integritätsbereich.
+      Somit ist $R/\qideal \cong \im \psi$ ein Integritätsbereich, also $\qideal$ ein Primideal.
+      
     \item
       Die Aussage gilt nicht:
       Es sei etwa $\phi \colon \Integer \to \Rational$ die kanonische Inklusion.
-      Dann ist $\mideal \coloneqq 0$ ein maximales Ideal in $\Rational$, aber $\phi^{-1}(0) = 0$ ist kein maximales Ideal in $\Integer$, da $\Integer/\mideal \cong \Integer$ kein Körper ist.
+      Dann ist $\mideal \coloneqq 0$ ein maximales Ideal in $\Rational$, aber $\phi^{-1}(0) = 0$ ist kein maximales Ideal in $\Integer$, da $\Integer/0 \cong \Integer$ kein Körper ist.
   \end{enumerate}
 \end{solution}
 
@@ -1970,6 +2015,12 @@
 \end{solution}
 
 
+\begin{remark*}
+  Übung~\ref{question: product of ideals is an ideal} und Übung~\ref{questions: ideals in products are products of ideal} ergeben zusammen eine Klassifikation der Primideale, bzw.\ maximalen Ideale in $R_1 \times \dotsb \times R_n$:
+  Es handelt sich (in gewisser Weise) um die disjunkte Vereinigung der Primideale, bzw.\ maximalen Ideale der $R_i$.
+\end{remark*}
+
+
 \begin{question}[subtitle = Lokalisierung und Produkte]
   Es seien $R$ und $R'$ zwei kommutative Ringe, und $S \subseteq R$ und $S' \subseteq R'$ multiplikative Mengen.
   Es seien $i \colon R \to R_S$ und $i' \colon R' \to R'_{S'}$ die kanonischen Ringhomomorphismen.
@@ -2022,12 +2073,6 @@
       Also ist $\ker \varphi = 0$ und $\varphi$ somit auch injektiv.
   \end{enumerate}
 \end{solution}
-
-
-\begin{remark*}
-  Übung~\ref{question: product of ideals is an ideal} und Übung~\ref{questions: ideals in products are products of ideal} ergeben zusammen eine Klassifikation der Primideale, bzw.\ maximalen Ideale in $R_1 \times \dotsb \times R_n$:
-  Es handelt sich (in gewisser Weise) um die disjunkte Vereinigung der Primideale, bzw.\ maximalen Ideale der $R_i$.
-\end{remark*}
 
 
 \begin{question}[subtitle = Funktorialität von Lokalisierung]
@@ -2222,11 +2267,12 @@
 
 
 \begin{question}[subtitle = Der Hilbertsche Basissatz]
+  \label{question: Hilbert basis theorem}
   Formulieren und beweisen Sie den Hilbertschen Basissatz.
 \end{question}
 
 
-\begin{question}
+\begin{solution}
   Der Hilbertsche Basissatz besagt, dass für einen noetherschen Ring $R$ auch der Polynomring $R[X]$ noethersch ist.
   
   Zum Beweis des Satzes sei $I \subseteq R[X]$ ein Ideal.
@@ -2290,7 +2336,7 @@
   
   Ingesamt zeigt dies, dass $I = J$ endlich erzeugt ist.
   Der Ring $R[X]$ ist also noethersch, da jedes seiner Ideale endlich erzeugt ist.
-\end{question}
+\end{solution}
 
 
 \begin{question}[subtitle = $\powerseries{K}{X}$ ist lokal]
