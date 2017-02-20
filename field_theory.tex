@@ -94,7 +94,18 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Gemeinsame Nullstellen irreduzibler Polynome]
+  Es seien $p, q \in K[T]$ zwei normierte irreduzible Polynome mit $p \neq q$.
+  Zeigen Sie, dass $p$ und $q$ in $\overline{K}$ keine gemeinsamen Nullstellen haben.
+\end{question}
+
+
+\begin{solution}
+  Gebe es eine gemeinsame Nullstelle $\alpha \in \overline{K}$ von $p$ und $q$, so wären $p$ und $q$ beide das Minimalpolynom von $\alpha$ über $K$, und somit $p = q$.
+\end{solution}
+
+
+\begin{question}[subtitle = Rechnen in zyklischen Erweiterungen]
   Es sei $\alpha \in \Complex$ eine Nullstelle des Polynoms $X^3 - 6 X^2 + 9 X + 3 \in \Rational[X]$.
   \begin{enumerate}
     \item
@@ -166,7 +177,96 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Erweiterungen vom primer Ordnung]
+  Es sei $L/K$ eine Körpererweiterung, so dass $p \coloneqq [L : K]$ endlich und prim ist.
+  Zeigen Sie, dass $L/K$ ein zyklische Erweiterung ist, und bestimmen Sie alle $\alpha \in L$ mit $L = K(\alpha)$.
+\end{question}
+
+
+\begin{solution}
+  Für alle $\alpha \in K$ ist $K(\alpha) = K$.
+  Ist $\alpha \in L$ mit $\alpha \notin K$, so ist $K(\alpha)/K$ eine echte Körperweiterung, weshalb $[K(\alpha) : K] \neq 1$ gilt.
+  Aus
+  \[
+      p
+    = [L : K]
+    = [L : K(\alpha)] \underbrace{[K(\alpha) : K]}_{\neq 1}
+  \]
+  folgt, da $p$ prim ist, dass $[L : K(\alpha)] = 1$ (und $[K(\alpha) : K] = p$), und somit $K(\alpha) = L$.
+  Also ist $L$ eine zyklische Körpererweiterung, und die möglichen Elemente sind genau die $\alpha \in L$, für die $\alpha \notin K$.
+\end{solution}
+
+
+\begin{question}[subtitle = Zum Grad]
+  Es sei $K(\alpha)/K$ eine endliche, zyklische Körpererweiterung von ungeraden Grad.
+  Zeigen Sie, dass $K(\alpha) = K(\alpha^2)$.
+\end{question}
+
+
+\begin{solution}
+  Da $K(\alpha^2) \subseteq K(\alpha)$ gilt, genügt es zu zeigen, dass $\alpha^2 \in K(\alpha)$.
+  Wir nehmen an, dass $\alpha^2 \notin K(\alpha)$.
+  Dann ist das normierte quadratische Polynom $P(T) \coloneqq T^2 - \alpha^2 \in K(\alpha^2)[T]$ irreduzibel mit $P(\alpha) = 0$, und deshalb das Minimalpolynom von $\alpha$ über $K(\alpha^2)$.
+  Es ist also $[K(\alpha) : K(\alpha^2)] = 2$.
+  Damit gilt
+  \[
+      [K(\alpha) : K]
+    = [K(\alpha) : K(\alpha^2)] [K(\alpha^2) : K]
+    = 2 [K(\alpha^2) : K],
+  \]
+  was im Widerspruch dazu steht, dass $[K(\alpha) : K]$ ungerade ist.
+\end{solution}
+
+
+\begin{question}[subtitle = Mehr zum Grad]
+  Es sei $L/K$ eine endliche Körpererweiterung mit $[L : K] = 2^k$ für ein $k \geq 0$.
+  Es sei $P \in K[T]$ ein kubisches Polynom, das eine Nullstelle in $L$ hat.
+  Zeigen Sie, dass $f$ bereits eine Nullstelle in $K$ hat.
+\end{question}
+
+
+\begin{solution}
+  Wir können o.B.d.A.\ davon ausgehen, dass $P$ normiert ist.
+  Es sei $\alpha \in L$ eine Nullstelle von $P$.
+  Hätte $P$ keine Nullstelle in $K$, so wäre $P$ irreduzibel in $K[T]$, da $P$ kubisch ist.
+  Damit wäre dann $P$ das Minimalpolynom von $\alpha$ über $K$, und somit $[K(\alpha) : K] = \deg P = 3$.
+  Dann wäre aber
+  \[
+          3
+    =     [K(\alpha) : K]
+    \mid  [L : K(\alpha)] [K(\alpha) : K]
+    =     [L : K]
+    =     2^k,
+  \]
+  was nicht gilt.
+\end{solution}
+
+
+\begin{question}[subtitle = Algebraizität von Summe und Produkt]
+  Es sei $L/K$ eine Körpererweiterung und es seien $\alpha, \beta \in L$.
+  Zeigen Sie, dass $\alpha$ und $\beta$ genau dann beide algebraisch über $K$ sind, wenn $\alpha + \beta$ und $\alpha \beta$ beide algebraisch über $K$ sind.
+\end{question}
+
+
+\begin{solution}
+  Sind $\alpha$ und $\beta$ algebraisch über $K$, so ist $K(\alpha, \beta) / K$ eine algebraische Körpererweiterung.
+  Da $\alpha + \beta, \alpha \beta \in K(\alpha, \beta)$ sind $\alpha + \beta$ und $\alpha \beta$ dann algebraisch über $K$.
+  
+  Es seien nun $\alpha + \beta$ und $\alpha \beta$ algebraisch über $K$.
+  Dann ist $K(\alpha + \beta, \alpha \beta)/K$ eine algebraische Erweiterung.
+  Auch die Erweiterung $K(\alpha, \beta)/K(\alpha + \beta, \alpha \beta)$ ist algebraisch, da $\alpha$ und $\beta$ Nullstellen des Polynoms
+  \[
+              P(T)
+    \coloneqq (T - \alpha)(T - \beta)
+    =         T^2 - (\alpha + \beta)T + \alpha \beta
+    \in       K(\alpha + \beta, \alpha \beta)[T]
+  \]
+  sind.
+  Wegen der Transitivität von Algebraizität folgt, dass auch $K(\alpha,\beta)/K$ algebraisch ist, also $\alpha$ und $\beta$ algebraisch über $K$ sind.
+\end{solution}
+
+
+\begin{question}[subtitle = Die Erweiterung $\Rational(\sqrt{2} + \sqrt{3})/\Rational$]
   Es sei $L \coloneqq \Rational(\sqrt{2} + \sqrt{3})$.
   \begin{enumerate}
     \item
@@ -273,8 +373,67 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Galoisgruppe von $\Rational(\sqrt[3]{3}, \zeta)/\Rational$]
+  Es sei $\zeta \in \Complex$ eine dritte primitive Einheitswurzel (etwa $\zeta = e^{2 \pi i/3}$) und $L \coloneqq \Rational(\sqrt[3]{3}, \zeta)$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $L/\Rational$ Galoisch ist.
+    \item
+      Bestimmen Sie den Grad $[L : \Rational]$.
+    \item
+      Bestimmen Sie die Gruppe $\Gal(L/\Rational)$ und entscheiden Sie, ob sie abelsch ist.
+  \end{enumerate}
+\end{question}
 
-\begin{question}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $L = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}, \zeta^2 \sqrt[3]{3})$ da $\zeta = (\zeta \sqrt[3]{3}) / \sqrt[3]{3})$.
+      Also wird $L$ über $\Rational$ von den Nullstellen des Polynoms $f(X) \coloneqq X^3 - 3 \in \Rational[X]$ erzeugt, ist also ein Zerfällungskörper von $f$.
+      Die Nullstellen von $f$ sind paarweise verschieden, also ist $f$ separabel.
+      Als Zerfällungskörper eines separablen Polynoms ist $L/\Rational$ galoisch.
+      
+    \item
+      Wir betrachten den Zwischenkörper $\Rational \subseteq \Rational(\sqrt[3]{3}) \subseteq L$.
+      Nach Eisenstein bezüglich $3 \in \Integer$ ist $f$ irreduzibel.
+      Also ist $f$ das Minimalpolynom von $\sqrt[3]{3}$, also $[\Rational(\sqrt[3]{3}) : \Rational] = \deg f = 3$.
+      Außerdem gilt $\zeta \notin \Real \supseteq L$.
+      Es gilt nun (mindestens) zwei Argumentationen:
+      \begin{itemize}
+        \item
+          Aus $\zeta \notin \Rational(\sqrt[3]{3})$ ergibt sich, dass $[L : \Rational(\sqrt[3]{3})] \geq 2$.
+          Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] \geq 6$ gilt.
+          Andererseits ist $L$ ein Zerfällungskörper eines kubischen Polynoms und somit $[L : \Rational] \leq 3! = 6$.
+          Zusammen erhalten wir, dass $[L : \Rational] = 2$.
+        \item
+          Es gilt $L = \Rational(\sqrt[3]{3}, \zeta) = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}) = \Rational(\sqrt[3]{3})(\zeta \sqrt[3]{3})$.
+          Das Polynom
+          \[
+                      g(X)
+            \coloneqq (X - \zeta \sqrt[3]{3})(X - \zeta^2 \sqrt[3]{3})
+            =         f(X)/(X-\sqrt[3]{3})
+            \in       \Rational(\sqrt[3]{3})[X]
+          \]
+          ist irreduzibel, da wegen $\zeta \notin \Rational(\sqrt[3]{3})$ auch $\pm \zeta \sqrt[3]{3} \notin \Rational(\sqrt[3]{3})$.
+          Somit ist $g$ das Minimalpolynom von $\zeta \sqrt[3]{3}$ über $\Rational(\sqrt[3]{3})$ und deshalb $[L : \Rational(\sqrt[3]{3})] = 2$.
+          Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] = 6$ gilt.
+      \end{itemize}
+          
+    \item
+      Es ist $L$ der Zerfällungskörper von $f$ und $[L : \Rational] = 6 = 3! = (\deg f)!$.
+      Aus der Vorlesung ist bekannt, dass deshalb bereits $\Gal(L/\Rational) \cong S_3$ gilt.
+      Aus $\Gal(L/\Rational) \cong S_3$ erhalten wir inbesondere, dass $\Gal(L/\Rational)$ nicht abelsch ist.
+      
+      Von Hand lässt sich die Aussage wie folgt nachrechnen:
+      Jedes $\sigma \in \Gal(L/\Rational)$ muss die Nullstellen von $f$, also $z_1 = \sqrt[3]{3}$, $z_2 = \zeta \sqrt[3]{3}$ und $z_3 = \zeta^2 \sqrt[3]{3}$, permutieren.
+      Da $L$ bereits von diesen Nullstellen erzeugt wird, ergibt sich eine Einbettung $\varphi \colon \Gal(L/\Rational) \to S_3$, wobei $\pi = \varphi(\sigma)$ die eindeutige Permutation mit $\sigma(z_i) = z_{\pi(i)}$ für alle $i = 1, 2, 3$ ist.
+      Da $L/\Rational$ galoisch ist, gilt dabei $|{\Gal(L/\Rational)}| = [L : \Rational] = 6 = 3! = |S_3|$, weshalb $\varphi$ bereits ein Isomorphismus ist.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Galoisgruppe von $\Rational(\sqrt[4]{2}, i)/\Rational$]
   Es sei $L \coloneqq \Rational(\sqrt[4]{2}, i)$.
   \begin{enumerate}
     \item
@@ -416,67 +575,7 @@
 \end{solution}
 
 
-\begin{question}
-  Es sei $\zeta \in \Complex$ eine dritte primitive Einheitswurzel (etwa $\zeta = e^{2 \pi i/3}$) und $L \coloneqq \Rational(\sqrt[3]{3}, \zeta)$.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $L/\Rational$ Galoisch ist.
-    \item
-      Bestimmen Sie den Grad $[L : \Rational]$.
-    \item
-      Bestimmen Sie die Gruppe $\Gal(L/\Rational)$ und entscheiden Sie, ob sie abelsch ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es gilt $L = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}, \zeta^2 \sqrt[3]{3})$ da $\zeta = (\zeta \sqrt[3]{3}) / \sqrt[3]{3})$.
-      Also wird $L$ über $\Rational$ von den Nullstellen des Polynoms $f(X) \coloneqq X^3 - 3 \in \Rational[X]$ erzeugt, ist also ein Zerfällungskörper von $f$.
-      Die Nullstellen von $f$ sind paarweise verschieden, also ist $f$ separabel.
-      Als Zerfällungskörper eines separablen Polynoms ist $L/\Rational$ galoisch.
-      
-    \item
-      Wir betrachten den Zwischenkörper $\Rational \subseteq \Rational(\sqrt[3]{3}) \subseteq L$.
-      Nach Eisenstein bezüglich $3 \in \Integer$ ist $f$ irreduzibel.
-      Also ist $f$ das Minimalpolynom von $\sqrt[3]{3}$, also $[\Rational(\sqrt[3]{3}) : \Rational] = \deg f = 3$.
-      Außerdem gilt $\zeta \notin \Real \supseteq L$.
-      Es gilt nun (mindestens) zwei Argumentationen:
-      \begin{itemize}
-        \item
-          Aus $\zeta \notin \Rational(\sqrt[3]{3})$ ergibt sich, dass $[L : \Rational(\sqrt[3]{3})] \geq 2$.
-          Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] \geq 6$ gilt.
-          Andererseits ist $L$ ein Zerfällungskörper eines kubischen Polynoms und somit $[L : \Rational] \leq 3! = 6$.
-          Zusammen erhalten wir, dass $[L : \Rational] = 2$.
-        \item
-          Es gilt $L = \Rational(\sqrt[3]{3}, \zeta) = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}) = \Rational(\sqrt[3]{3})(\zeta \sqrt[3]{3})$.
-          Das Polynom
-          \[
-                      g(X)
-            \coloneqq (X - \zeta \sqrt[3]{3})(X - \zeta^2 \sqrt[3]{3})
-            =         f(X)/(X-\sqrt[3]{3})
-            \in       \Rational(\sqrt[3]{3})[X]
-          \]
-          ist irreduzibel, da wegen $\zeta \notin \Rational(\sqrt[3]{3})$ auch $\pm \zeta \sqrt[3]{3} \notin \Rational(\sqrt[3]{3})$.
-          Somit ist $g$ das Minimalpolynom von $\zeta \sqrt[3]{3}$ über $\Rational(\sqrt[3]{3})$ und deshalb $[L : \Rational(\sqrt[3]{3})] = 2$.
-          Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] = 6$ gilt.
-      \end{itemize}
-          
-    \item
-      Es ist $L$ der Zerfällungskörper von $f$ und $[L : \Rational] = 6 = 3! = (\deg f)!$.
-      Aus der Vorlesung ist bekannt, dass deshalb bereits $\Gal(L/\Rational) \cong S_3$ gilt.
-      Aus $\Gal(L/\Rational) \cong S_3$ erhalten wir inbesondere, dass $\Gal(L/\Rational)$ nicht abelsch ist.
-      
-      Von Hand lässt sich die Aussage wie folgt nachrechnen:
-      Jedes $\sigma \in \Gal(L/\Rational)$ muss die Nullstellen von $f$, also $z_1 = \sqrt[3]{3}$, $z_2 = \zeta \sqrt[3]{3}$ und $z_3 = \zeta^2 \sqrt[3]{3}$, permutieren.
-      Da $L$ bereits von diesen Nullstellen erzeugt wird, ergibt sich eine Einbettung $\varphi \colon \Gal(L/\Rational) \to S_3$, wobei $\pi = \varphi(\sigma)$ die eindeutige Permutation mit $\sigma(z_i) = z_{\pi(i)}$ für alle $i = 1, 2, 3$ ist.
-      Da $L/\Rational$ galoisch ist, gilt dabei $|{\Gal(L/\Rational)}| = [L : \Rational] = 6 = 3! = |S_3|$, weshalb $\varphi$ bereits ein Isomorphismus ist.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}
+\begin{question}[subtitle = Galoisgruppe von $X^3 - 2 X^2 - X + 1$]
   Es sei $f(X) \coloneqq X^3 - 2 X^2 - X + 1 \in \Rational[X]$ und $\alpha \in \Complex$ eine Nullstelle von $f$.
   \begin{enumerate}
     \item
@@ -549,34 +648,7 @@
 \end{solution}
 
 
-\begin{question}
-  Es sei $p > 0$ prim und $f(X) \coloneqq X^p - 2 \in \Rational[X]$.
-  Es sei $\zeta \in \Complex$ eine primitive $p$-te Einheitswurzel (etwa $\zeta = e^{2 \pi i/p}$).
-  Es sei $L \coloneqq \Rational(\sqrt[p]{2}, \zeta)$.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $L$ ein Zerfällungskörper von $f$ ist.
-    \item
-      Folgern Sie, dass $L/\Rational$ galoisch ist.
-    \item
-      Zeigen Sie, dass $[\Rational(\zeta) : \Rational] = p-1$.
-      \\
-      (\emph{Hinweis}:
-       Man betrachte Übung~\ref{question: irreducibility of polynomials}.)
-    \item
-      Folgern Sie, dass $[L : \Rational] = p(p-1)$.
-      \\
-      (\emph{Hinweis}:
-       Zeigen Sie, dass $p, p-1 \mid [L : \Rational]$.
-    \item
-      Bestimmen Sie $\Gal(L / \Rational)$.
-    \item
-      Entscheiden Sie, ob $\Gal(L / \Rational)$ abelsch ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Produkt von Linearfaktoren]
   Es sei $K$ ein Körper und $L/K$ eine endliche Galoiserweiterung.
   Es sei $f \in K[X]$ und es seien $\alpha_1, \dotsc, \alpha_n \in L$ die paarweise verschiedenen Nullstellen von $f$.
   Zeigen Sie für das Polynom $g(X) \coloneqq \prod_{i=1}^n (X - \alpha_i) \in L[X]$, dass bereits $g \in K[X]$ gilt.
@@ -610,7 +682,7 @@
 
 
 
-\begin{question}
+\begin{question}[subtitle = Galoisgruppe von $\Real/\Rational$]
   Es sei $\sigma \in \Gal(\Real/\Rational)$.
   \begin{enumerate}
     \item
@@ -655,7 +727,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Galoisgruppe von $X^p - 2$]
   Es sei $p$ eine Primzahl und $f(X) \coloneqq X^p - 2 \in \Rational[X]$.
   Es sei $\zeta \in \Complex$ eine primitive $p$-te Einheitswurzel (etwa $\zeta = e^{2 \pi i/p}$).
   Es sei $L \coloneqq \Rational(\sqrt[p]{2}, \zeta)$.
@@ -857,7 +929,13 @@
 \end{solution}
 
 
-\begin{question}
+
+
+
+\subsection{Hintergrundsaufgaben}
+
+
+\begin{question}[subtitle = Charakterisierung von Körpern]
   \label{question: characterization of fields via its ideals}
   Zeigen Sie, dass für einen kommutativen Ring $K$ die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
@@ -892,7 +970,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Unendlichkeit algebraisch abgeschlossener Körper]
   Es sei $K$ ein algebraisch abgeschlossener Körper.
   Zeigen Sie, dass $K$ unendlich ist.
 \end{question}
@@ -910,7 +988,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Irreduziblität quadratischer und kubischer Polynome]
   Es sei $K$ ein Körper und $p \in K[T]$ ein Polynom mit $\deg p \in \{2, 3\}$.
   Zeigen Sie, dass $p$ genau dann irreduzibel ist, wenn $p$ keine Nullstelle hat.
 \end{question}
@@ -924,39 +1002,7 @@
 \end{solution}
 
 
-\begin{question}
-  Es seien $p, q \in K[T]$ zwei normierte irreduzible Polynome mit $p \neq q$.
-  Zeigen Sie, dass $p$ und $q$ in $\overline{K}$ keine gemeinsamen Nullstellen haben.
-\end{question}
-
-
-\begin{solution}
-  Gebe es eine gemeinsame Nullstelle $\alpha \in \overline{K}$ von $p$ und $q$, so wären $p$ und $q$ beide das Minimalpolynom von $\alpha$ über $K$, und somit $p = q$.
-\end{solution}
-
-
-\begin{question}
-  Es sei $K(\alpha)/K$ eine endliche, zyklische Körpererweiterung von ungeraden Grad.
-  Zeigen Sie, dass $K(\alpha) = K(\alpha^2)$.
-\end{question}
-
-
-\begin{solution}
-  Da $K(\alpha^2) \subseteq K(\alpha)$ gilt, genügt es zu zeigen, dass $\alpha^2 \in K(\alpha)$.
-  Wir nehmen an, dass $\alpha^2 \notin K(\alpha)$.
-  Dann ist das normierte quadratische Polynom $P(T) \coloneqq T^2 - \alpha^2 \in K(\alpha^2)[T]$ irreduzibel mit $P(\alpha) = 0$, und deshalb das Minimalpolynom von $\alpha$ über $K(\alpha^2)$.
-  Es ist also $[K(\alpha) : K(\alpha^2)] = 2$.
-  Damit gilt
-  \[
-      [K(\alpha) : K]
-    = [K(\alpha) : K(\alpha^2)] [K(\alpha^2) : K]
-    = 2 [K(\alpha^2) : K],
-  \]
-  was im Widerspruch dazu steht, dass $[K(\alpha) : K]$ ungerade ist.
-\end{solution}
-
-
-\begin{question}
+\begin{question}[subtitle = Abgeschlossenheit algebraischer abgeschlossener Körper]
   \label{question: algebraically closed fields have no nontrivial algebraic extensions}
   Es sei $K$ ein algebraisch abgeschlossener Körper und $L/K$ eine algebraische Körpererweiterung.
   Zeigen Sie, dass bereits $L = K$ gilt.
@@ -977,7 +1023,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Algebraischen Abschlüsse von Unterkörpern]
   \label{question: transitivity of algebraic closure}
   Es sei $L/K$ eine Körpererweiterung und $\overline{L}/L$ ein algebraischer Abschluss von $L$.
   \begin{enumerate}
@@ -1015,7 +1061,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = You should be able to do this]
   \label{equation: finite extensions are algebraic}
   Zeigen Sie, dass endliche Körpererweiterungen algebraisch sind.
 \end{question}
@@ -1046,7 +1092,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Transitivität von Algebraizität]
   Es seien $M / L / K$ Körpererweiterungen, so dass $M/L$ und $L/K$ algebraisch sind.
   Zeigen Sie, dass auch $M/K$ algebraisch ist.
 \end{question}
@@ -1066,81 +1112,13 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $L/K$ eine Körpererweiterung und es seien $\alpha, \beta \in L$.
-  Zeigen Sie, dass $\alpha$ und $\beta$ genau dann beide algebraisch über $K$ sind, wenn $\alpha + \beta$ und $\alpha \beta$ beide algebraisch über $K$ sind.
-\end{question}
-
-
 \begin{remark*}
   Da $\pi$ und $e$ transzenent (über $\Rational$) sind, muss von den beiden Zahlen $\pi + e$ und $\pi e$ mindestens eine transzendent sein.
   Es ist nicht bekannt, welches von ihnen es ist.
 \end{remark*}
 
 
-\begin{solution}
-  Sind $\alpha$ und $\beta$ algebraisch über $K$, so ist $K(\alpha, \beta) / K$ eine algebraische Körpererweiterung.
-  Da $\alpha + \beta, \alpha \beta \in K(\alpha, \beta)$ sind $\alpha + \beta$ und $\alpha \beta$ dann algebraisch über $K$.
-  
-  Es seien nun $\alpha + \beta$ und $\alpha \beta$ algebraisch über $K$.
-  Dann ist $K(\alpha + \beta, \alpha \beta)/K$ eine algebraische Erweiterung.
-  Auch die Erweiterung $K(\alpha, \beta)/K(\alpha + \beta, \alpha \beta)$ ist algebraisch, da $\alpha$ und $\beta$ Nullstellen des Polynoms
-  \[
-              P(T)
-    \coloneqq (T - \alpha)(T - \beta)
-    =         T^2 - (\alpha + \beta)T + \alpha \beta
-    \in       K(\alpha + \beta, \alpha \beta)[T]
-  \]
-  sind.
-  Wegen der Transitivität von Algebraizität folgt, dass auch $K(\alpha,\beta)/K$ algebraisch ist, also $\alpha$ und $\beta$ algebraisch über $K$ sind.
-\end{solution}
-
-
-\begin{question}
-  Es sei $L/K$ eine Körpererweiterung, so dass $p \coloneqq [L : K]$ endlich und prim ist.
-  Zeigen Sie, dass $L/K$ ein zyklische Erweiterung ist, und bestimmen Sie alle $\alpha \in L$ mit $L = K(\alpha)$.
-\end{question}
-
-
-\begin{solution}
-  Für alle $\alpha \in K$ ist $K(\alpha) = K$.
-  Ist $\alpha \in L$ mit $\alpha \notin K$, so ist $K(\alpha)/K$ eine echte Körperweiterung, weshalb $[K(\alpha) : K] \neq 1$ gilt.
-  Aus
-  \[
-      p
-    = [L : K]
-    = [L : K(\alpha)] \underbrace{[K(\alpha) : K]}_{\neq 1}
-  \]
-  folgt, da $p$ prim ist, dass $[L : K(\alpha)] = 1$ (und $[K(\alpha) : K] = p$), und somit $K(\alpha) = L$.
-  Also ist $L$ eine zyklische Körpererweiterung, und die möglichen Elemente sind genau die $\alpha \in L$, für die $\alpha \notin K$.
-\end{solution}
-
-
-\begin{question}
-  Es sei $L/K$ eine endliche Körpererweiterung mit $[L : K] = 2^k$ für ein $k \geq 0$.
-  Es sei $P \in K[T]$ ein kubisches Polynom, das eine Nullstelle in $L$ hat.
-  Zeigen Sie, dass $f$ bereits eine Nullstelle in $K$ hat.
-\end{question}
-
-
-\begin{solution}
-  Wir können o.B.d.A.\ davon ausgehen, dass $P$ normiert ist.
-  Es sei $\alpha \in L$ eine Nullstelle von $P$.
-  Hätte $P$ keine Nullstelle in $K$, so wäre $P$ irreduzibel in $K[T]$, da $P$ kubisch ist.
-  Damit wäre dann $P$ das Minimalpolynom von $\alpha$ über $K$, und somit $[K(\alpha) : K] = \deg P = 3$.
-  Dann wäre aber
-  \[
-          3
-    =     [K(\alpha) : K]
-    \mid  [L : K(\alpha)] [K(\alpha) : K]
-    =     [L : K]
-    =     2^k,
-  \]
-  was nicht gilt.
-\end{solution}
-
-
-\begin{question}
+\begin{question}[subtitle = Zur Separablität]
   Es sei $K$ ein Körper und $f \in K[T]$ ein irreduzibles Polynom.
   \begin{enumerate}
     \item
@@ -1163,7 +1141,7 @@
 \end{enumerate}
 
 
-\begin{question}
+\begin{question}[subtitle = Grad des Körperkompositums]
   Es sei $K$ ein Körper, $L/K$ eine endliche Körpererweiterung und es seien $K \subseteq L_1, L_2 \subseteq L$ zwei Zwischenkörper.
   \begin{enumerate}
     \item
@@ -1352,7 +1330,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Charakterisierung algebraischer Erweiterungen durch Zwischenringe]
   Zeigen Sie, dass eine Körpererweiterung $L/K$ genau dann algebraisch ist, wenn jeder Zwischenring $K \subseteq R \subseteq L$ bereits ein Körper ist.
 \end{question}
 
@@ -1375,7 +1353,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Charakterisierung galoischer Unterkörper]
   Es seien $L/E/K$ endliche Körpererweiterungen, so dass $L/K$ galoisch ist.
   Zeigen Sie, dass $E/K$ genau dann galoisch ist, wenn $\sigma(E) = E$ für alle $\sigma \in \Gal(L/K)$ gilt.
 \end{question}
@@ -1446,5 +1424,4 @@
       dies zeigt die Normalität von $E/K$.
   \end{itemize}
 \end{solution}
-
 
