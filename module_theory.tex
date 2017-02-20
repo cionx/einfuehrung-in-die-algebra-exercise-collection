@@ -630,11 +630,22 @@
           $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$, und müsste somit entweder trivial oder unendlich sein, was beides nicht gilt.
       \end{itemize}
     \item
-      Es sei $(e_i)_{i \in I}$ eine Basis von $F$.
-      Wegen der Surjektivität von $g$ gibt es für jedes $i \in I$ ein $m_i \in M$ mit $g(m_i) = e_i$.
-      Es sei $h \colon F \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $h(e_i) = m_i$ für alle $i \in I$.
-      Dann gilt $g(h(e_i)) = g(m_i) = e_i$ für alle $i \in I$, und wegen der $R$-Linearität von $g \circ h$ somit bereits $g(h(x)) = x$ für alle $x \in F$.
-      Also ist $g \circ h = \id_F$, weshalb die gegebene kurze exakte Sequenz spaltet.
+      Es gibt zwei mögliche Argumentationsweisen:
+      Die erste ist recht direkt:
+      \begin{itemize}
+        \item
+          Es sei $(e_i)_{i \in I}$ eine Basis von $F$.
+          Wegen der Surjektivität von $g$ gibt es für jedes $i \in I$ ein $m_i \in M$ mit $g(m_i) = e_i$.
+          Es sei $h \colon F \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $h(e_i) = m_i$ für alle $i \in I$.
+          Dann gilt $g(h(e_i)) = g(m_i) = e_i$ für alle $i \in I$, und wegen der $R$-Linearität von $g \circ h$ somit bereits $g(h(x)) = x$ für alle $x \in F$.
+          Also ist $g \circ h = \id_F$, weshalb die gegebene kurze exakte Sequenz spaltet.
+      \end{itemize}
+      Die zweite nutzt die Äquivalenz der verschiedenen Charakterisierungen projektiver Moduln (siehe Übung~\ref{questions: equivalent characterizations of projective modules}), in deren Beweis sich die obige Rechnung versteckt.
+      \begin{itemize}[resume]
+        \item
+          Als freier $R$-Modul ist $F$ inbesondere projektiv, da $F \cong 0 \cong F$ frei ist.
+          Somit spaltet jede kurze exakte Sequenz, die in $F$ endet.
+      \end{itemize}
   \end{enumerate}
 \end{solution}
 
