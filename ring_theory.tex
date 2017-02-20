@@ -545,7 +545,7 @@
     \item
       $\Integer[X]/(3, 4 X^3 + 13 X^2 + 10 X - 5)$
     \item
-      $\Integer[X]/(7, 3 X^2 + 7X - 14$
+      $\Integer[X]/(7, 3 X^2 + 7X - 14)$
   \end{enumerate}
 \end{question}
 
@@ -640,6 +640,189 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $R$ ein Ring.
+  Konstruieren Sie eine Bijektion zwischen $R$ und der Menge der Ringhomomorphismen $\Integer[T] \to R$.
+\end{question}
+
+
+\begin{solution}
+  Aus der Vorlesung ist bekannt, dass die Abbildung
+  \begin{align*}
+              \{ \text{Ringhomomorphismen $\Integer[T] \to R$} \}
+    &\to      \{ \text{Ringhomomorphismen $\Integer \to R$} \} \times R,
+    \\
+              \phi
+    &\mapsto  (\phi|_\Integer, \phi(T))
+  \end{align*}
+  eine Bijektion ist.
+  Da es genau einen Ringhomomorphismus $\Integer \to R$ gibt, ergibt sich ferner, dass die Abbildung
+  \[
+            \{ \text{Ringhomomorphismen $\Integer \to R$} \} \times R
+    \to     R,
+    \quad
+            (\psi, r)
+    \mapsto r
+  \]
+  eine Bijektion ist.
+  Damit ergibt sich insgesamt eine Bijektion
+  \[
+            \{ \text{Ringhomomorphismen $\Integer[T] \to R$} \}
+    \to     R,
+    \quad
+            \phi
+    \mapsto \phi(T).
+  \]
+\end{solution}
+
+
+\begin{question}
+  Es sei $R$ ein kommutativer Ring und es gebe $n > 1$, so dass $x^n = x$ für jedes $x \in R$ gilt.
+  Zeigen Sie, dass jedes Primideal in $R$ bereits maximal ist.
+\end{question}
+
+
+\begin{solution}
+  Ist $\pideal \subseteq R$ ein Primideal, so gilt $y^n = y$ für jedes $y \in R/\pideal$.
+  Ist $y \neq 0$, so lässt sich diese Gleichung durch $y$ teilen, da $R/\pideal$ ein Integritätsbereich ist.
+  Deshalb gilt für jedes $y \in R$ bereits $y^{n-1} = 1$, also $y \cdot y^{n-2} = 1$, weshalb $y$ eine Einheit mit $y^{-1} = y^{n-2}$ ist.
+  Somit ist jedes $y \in R/\pideal$ mit $y \neq 0$ eine Einheit, also der Integritätsbereich $R/\pideal$ bereits ein Körper, und $\pideal$ somit bereits maximal.
+\end{solution}
+
+
+\begin{question}[subtitle = Die Eulersche Phi-Funktion]
+  Die Eulersche Phi-Funktion ist definiert als
+  \[
+            \varphi
+    \colon  \Natural_{>1} \to \Natural,
+    \quad   n \mapsto |\{ k \in \{1, \dotsc, n\} \mid \text{$k$ und $n$ sind teilerfremd} \}|.
+  \]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\varphi(n) = | (\Integer/n)^\times |$ für alle $n \geq 1$.
+    \item
+      Folgern Sie, dass $\varphi(n_1 n_2) = \varphi(n_1) \varphi(n_2)$ für je zwei teilerfremde $n_1, n_2 \geq 1$.
+    \item
+      Zeigen Sie, dass $\varphi(p^r) = p^r - p^{r-1} = p^{r-1} (p - 1)$ für alle Primzahlen $p \in \Natural$ und $r \geq 1$.
+    \item
+      Berechnen Sie $\varphi(42)$, $\varphi(57)$ und $\varphi(144)$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Elemente $1, \dotsc, n$ bilden ein Repräsentantensystem der Restklassen von $\Integer/n$, für $k \in \{1, \dotsc, n\}$ ist $\overline{k} \in \Integer/n$ genau dann eine Einheit, wenn $k$ und $n$ teilerfremd sind (siehe Übung~\ref{question: unit group of quotients}).
+    \item
+      Nach dem Chinesischen Restklassensatz gilt $\Integer/(n_1 n_2) \cong \Integer/n_1 \times \Integer/n_2$.
+      Somit gilt
+      \begin{align*}
+            \varphi(n_1 n_2)
+        &=  | (\Integer/(n_1 n_2))^\times |
+         =  | (\Integer/n_1 \times \Integer/n_2)^\times |
+        \\
+        &=  | (\Integer/n_1)^\times \times (\Integer/n_2)^\times |
+         =  | (\Integer/n_1)^\times | | (\Integer/n_2)^\times |
+         =  \varphi(n_1) \varphi(n_2).
+      \end{align*}
+    \item
+      Es ist $\{0, \dotsc, p^r - 1\}$ ein Repräsentantensystem der Restklassen von $\Integer/p^r$.
+      Eine Zahl $k \in \{0, \dotsc, p^r - 1\}$ ist genau dann teilerfremd so $p^r$, wenn sie kein Vielfaches von $p$ ist.
+      Da jede $p$-te Zahl aus dieser Menge ein Vielfaches von $p$ ist, gibt es $p^r/p = p^{r-1}$ viele Vielfache von $p$ in diesem Repräsentantensystem.
+      Somit sind $p^r - p^{r-1}$ viele Repräsentanten kein Vielfaches von $p$, also teilerfremd zu $p$.
+    \item
+      Es gelten
+      \begin{align*}
+            \varphi(42)
+        &=  \varphi(2 \cdot 3 \cdot 7)
+         =  \varphi(2) \varphi(3) \varphi(7)
+         =  (2 - 1)(3 - 1)(7 - 1)
+         =  12,
+        \\
+            \varphi(57)
+        &=  \varphi(3 \cdot 19)
+         =  (3 - 1)(19 - 1)
+         =  36,
+        \\
+            \varphi(144)
+        &=  \varphi(2^4 \cdot 3^2)
+         =  (16 - 8) (9 - 3)
+         =  48.
+      \end{align*}
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Polynomringe sind keine Körper]
+  \label{qst: polynomial rings are not fields}
+  Zeigen Sie, dass es keinen Ring $R$ gibt, so dass $R[X]$ ein Körper ist.
+\end{question}
+
+
+\begin{solution}
+  Gebe es einen solchen Ring $R$, so wäre $R$ kommutativ, da $R \subseteq R[X]$ ein Unterring ist.
+  Es wäre auch $R \neq 0$ da $0[X] = 0$ kein Körper ist.
+  Dann wäre aber $0 \neq X \in R[X]$ keine Einheit und $R[X]$ somit kein Körper.
+\end{solution}
+
+
+\begin{question}[subtitle = Ein nicht-faktorieller Ring]
+  Es sei $K$ ein Körper und $R \coloneqq K[t^2, t^3] \subseteq K[t]$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $R$ noethersch ist.
+    \item
+      Folgern Sie, dass in $R$ eine Zerlegung in irreduzible Elemente existiert.
+    \item
+      Zeigen Sie, dass $R$ nicht faktoriell ist.
+      (\emph{Hinweis}:
+       Zeigen Sie zunächst, dass $t^2$ und $t^3$ irreduzibel sind.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Nach dem Hilbertschen Nullstellensatz ist $K[X,Y]$ noethersch.
+      Der Einsetzhomomorphismus $\varphi \colon K[X,Y] \to K[t^2, t^3]$ mit $\varphi(X) = t^2$ und $\varphi(Y) = t^3$ ist surjektiv, und somit $R = K[t^2, t^3] \cong K[X,Y]/\ker \varphi$ als Quotient eines noetherschen Rings ebenfalls noethersch.
+    \item
+      Als Unterring von $K[t]$ ist $R$ ein Integritätsbereich.
+      Aus der Vorlesung ist bekannt, dass in noetherschen Integritätsbereichen eine Zerlegung in irreduzible Elemente existiert.
+    \item
+      Wir bemerken zunächst, dass $R = \{\sum_i f_i T^i \in K[t] \mid f_1 = 0\}$.
+      Es enthält also $R$ keine Polynome vom Grad $1$.
+      Jede nicht-triviale Zerlegung von $t^2$ oder $t^3$ in $K[t]$ enthält aber einen Faktor vom Grad $1$;
+      folglich sind beide Elemente irreduzibel in $R$.
+      Wir erhalten nun für $t^6 \in R$ mit $t^6 = t^2 \cdot t^2 \cdot t^2 = t^3 \cdot t^3$ zwei Zerlegungen in irreduzible Elemente, die nicht äquivalent im Sinne eines faktoriellen Rings sind (insbesondere kommen in beiden Zerlegungen unterschiedlich viele Faktoren vor).
+      Folglich ist $R$ nicht faktoriell.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Charakterisierung von Primidealen]
+  Es sei $R$ ein kommutativer Ring und $\pideal \subseteq R$ ein Ideal.
+  Zeigen Sie, dass $\pideal$ genau dann ein Primideal ist, wenn es einen Körper $K$ und einen Ringhomomorphismus $\phi \colon R \to K$ mit $\ker \phi = \pideal$ gibt.
+\end{question}
+
+
+\begin{solution}
+  Ist $\pideal$ ein Primideal, so ist der Quotient $R/\pideal$ ein Integritätsbereich.
+  Da die kanonische Inklusion $R/\pideal \to Q(R/\pideal)$ ein injektiver Ringhomomorphismus ist, folgt für die Komposition
+  \[
+    \phi \colon R \xrightarrow{\pi} R/\pideal \to Q(R/\pideal),
+  \]
+  dass $\ker \phi = \ker \pi = \pideal$.
+  (Hier bezeichnet $\pi \colon R \to R/\pideal$ die kanonische Projektion.)
+  Da $Q(R/\pideal)$ ein Körper ist, zeigt dies eine Implikation.
+  
+  Gibt es andererseits einen Körper $K$ und einen Ringhomomorphismus $\phi \colon R \to K$ mit $\pideal = \ker \phi$, so ist $R/\pideal \cong \im \phi \subseteq K$.
+  Der Körper $K$ ist insbesondere ein Integritätsbereich, weshalb auch der Unterring $\im \phi$ ein Integritätsbereich ist.
+  Der Quotient $R/\pideal$ ist also ein Integritätsbereich und $\pideal$ somit eine Primideal.
+\end{solution}
+
+
 
 
 
@@ -654,7 +837,7 @@
       (Dies bedeutet, dass $\Integer$ ein Initialobjekt in der Kategorie der Ringe ist.)
     \item
       Es sei $Z$ ein Ring, so dass es für jeden Ring $R$ einen eindeutigen Ringhomomorphismus $Z \to R$ gibt.
-      Zeigen Sie, dass $Z \cong \Integer$.
+      Zeigen Sie, dass bereits $Z \cong \Integer$ gilt.
   \end{enumerate}
 \end{question}
 
@@ -689,39 +872,184 @@
 \end{solution}
 
 
-\begin{question}
-  Es sei $R$ ein Ring.
-  Konstruieren Sie eine Bijektion zwischen der Menge der Ringhomomorphismen $\Integer[T] \to R$ und $R$.
+\begin{question}[subtitle = Assoziiertheit in Ringen]
+  Es sei $R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Definieren Sie, wann zwei Elemente von $R$ assoziiert sind.
+    \item
+      Zeigen Sie, dass Assoziiertheit eine Äquivalenzrelation ist.
+    \item
+      Es sei nun $R$ ein Integritätsbereich.
+      Zeigen Sie, dass zwei Elemente $a, b \in R$ genau dann assoziiert sind, wenn $(a) = (b)$.
+  \end{enumerate}
 \end{question}
 
 
 \begin{solution}
-  Aus der Vorlesung ist bekannt, dass die Abbildung
-  \begin{align*}
-              \{ \text{Ringhomomorphismen $\Integer[T] \to R$} \}
-    &\to      \{ \text{Ringhomomorphismen $\Integer \to R$} \} \times R,
-    \\
-              \phi
-    &\mapsto  (\phi|_\Integer, \phi(T))
-  \end{align*}
-  eine Bijektion ist.
-  Da es genau einen Ringhomomorphismus $\Integer \to R$ gibt, ergibt sich ferner, dass die Abbildung
+  \begin{enumerate}
+    \item
+      Ein Element $y \in R$ ist assoziiert zu einem Element $x \in R$, wenn es eine Einheit $\varepsilon \in R^\times$ mit $y = \varepsilon x$ gibt.
+  \end{enumerate}
+  Für $x, y \in R$ schreiben wir im Folgenden $x \sim y$, wenn $y$ assoziiert zu $x$ ist.
+  \begin{enumerate}[resume]
+    \item
+      Für jedes $x \in R$ ist $x \sim x$ da $x = 1 \cdot x$ mit $1 \in R^\times$.
+      Für $x, y \in R$ mit $x \sim y$ gibt es $\varepsilon \in R^\times$ mit $y = \varepsilon x$;
+      dann ist $\varepsilon^{-1} \in R^\times$ mit $x = \varepsilon^{-1} y$ und deshalb $y \sim x$.
+      Für $x, y, z \in R$ mit $x \sim y$ und $y \sim z$ gibt es $\varepsilon_1, \varepsilon_2 \in R^\times$ mit $y = \varepsilon_1 x$ und $z = \varepsilon_2 y$;
+      dann ist $\varepsilon_2 \varepsilon_1 \in R^\times$ mit $z = \varepsilon_2 y = \varepsilon_2 \varepsilon_1 x$ und somit $x \sim z$.
+    \item
+      Für $x, y \in R$ mit $x \sim y$ gibt es $\varepsilon \in R^\times$ mit $x = \varepsilon y$.
+      Dann ist $R \varepsilon = R$ und deshalb
+      \[
+          (x)
+        = \{r x \mid r \in R\}
+        = \{r \varepsilon y \mid r \in R\}
+        = \{r' y \mid r' \in R \varepsilon\}
+        = \{r' y \mid r' \in R\}
+        = (y).
+      \]
+      Ist andererseits $(x) = (y)$ so ist $x \in (y)$ und $y \in (x)$, also gibt es $\varepsilon_1, \varepsilon_2 \in R$ mit $y = \varepsilon_1 x$ und $x = \varepsilon_2 y$.
+      Dann ist $y = \varepsilon_1 x = \varepsilon_1 \varepsilon_2 y$, und da $R$ ein Integritätsbereich ist, somit $\varepsilon_1 \varepsilon_2 = 1$.
+      Also ist $\varepsilon_1$ eine Einheit mit $\varepsilon_1^{-1} = \varepsilon_2$.
+      Da $y = \varepsilon_1 x$ ist $x \sim y$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Die Einheitengruppe]
+  Ist $R$ ein kommutativer Ring, so ist
   \[
-            \{ \text{Ringhomomorphismen $\Integer \to R$} \} \times R
-    \to     R,
-    \quad
-            (\psi, r)
-    \mapsto r
+              R^\times
+    \coloneqq \{x \in R \mid \text{$x$ ist eine Einheit}\}
   \]
-  eine Bijektion ist.
-  Damit ergibt sich insgesamt eine Bijektion
-  \[
-            \{ \text{Ringhomomorphismen $\Integer[T] \to R$} \}
-    \to     R,
-    \quad
-            \phi
-    \mapsto \phi(T).
-  \]
+  die \emph{Einheitengruppe} von $R$.
+  Zeigen Sie:
+  \begin{enumerate}
+    \item
+      Ist $R$ ein kommutativer Ring, so bildet $R^\times$ mit der Multiplikation aus $R$ eine abelsche Gruppe.
+    \item
+      Sind $R$ und $S$ zwei kommutativer Ringe und ist $\phi \colon R \to S$ ein Ringhomomorphismus, so induziert $\phi$ per Einschränkung einen Gruppenhomomorphismus
+      \[
+        \phi^\times \colon R^\times \to S^\times,
+        \quad
+        x \mapsto \phi(x).
+      \]
+    \item
+      Für jeden Ring kommutativen $R$ gilt $\id_R^\times = \id_{R^\times}$, und für alle kommutativen Ringe $R_1$, $R_2$ und $R_3$ und Ringhomomorphismen $\phi \colon R_1 \to R_2$ und $\psi \colon R_2 \to R_3$ gilt $(\psi \phi)^\times = \psi^\times \phi^\times$.
+    \item
+      Ist $R$ ein kommutativer Ring und $\phi \colon R \to S$ ein Isomorphismus von Ringen, so ist $\phi^\times \colon R^\times \to S^\times$ ein Isomorphismus von Gruppen.
+  \end{enumerate}
+  (Die Aussagen gelten auch für nichtkommutative Ringe, wobei $R^\times$ dann im Allgemeinen nicht abelsch ist.
+   Dabei ist ein Element $r \in R$ eines nichtkommutativen Rings $R$ eine Einheit, wenn es $s \in R$ mit $rs = 1 = sr$ gibt.
+   Es genügt auch, dass es $s, t \in R$ mit $rs = 1 = tr$ gibt; dann gilt bereits $s = t$.)
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die Multiplikation in $R^\times$ ist assoziativ, da sie es in $R$ ist.
+      Dass $R^\times$ abelsch ist ergibt sich aus der Kommutativität von $R$.
+      Es gilt $1 \in R^\times$, und da $1$ in ganz $R$ neutral bezüglich der Multiplikation ist, gilt dies auch in $R^\times$.
+      Für jedes $x \in R^\times$ gibt es ein $y \in R$ mit $xy = 1$.
+      Dann gilt auch $y \in R^\times$ und $y$ ist auch in $R^\times$ invers zu $x$.
+    \item
+      Für $x \in R^\times$ gilt
+      \[
+          1
+        = \phi(1)
+        = \phi(x x^{-1})
+        = \phi(x) \phi(x^{-1}).
+      \]
+      Deshalb ist $\phi(x)$ eine Einheit in $S$ (mit $\phi(x)^{-1} = \phi(x^{-1})$), und somit $\phi(x) \in S^\times$.
+      Das zeigt, dass die Einschränkung $\phi^\times$ wohldefiniert ist.
+      Da $\phi$ mulitplikativ ist, gilt dies auch für $\phi^\times$, weshalb $\phi^\times$ ein Gruppenhomomorphismus ist.
+    \item
+      Da $\id_R^\times(x) = \id_R(x) = x = \id_{R^\times}(x)$ für alle $x \in X$ gilt, ist $\id_R^\times = \id_{R^\times}$.
+      Für alle $x \in R_1$ gilt
+      \[
+          (\psi^\times \phi^\times)(x)
+        = \psi^\times(\phi^\times(x))
+        = \psi(\phi(x))
+        = (\psi \phi)(x)
+        = (\psi \phi)^\times(x).
+      \]
+      Deshalb ist $(\psi^\times \phi^\times) = (\psi \phi)^\times$.
+    \item
+      Es sei $\psi \coloneqq \phi^{-1} \colon S \to R$.
+      Es gilt
+      \[
+          \phi^\times \psi^\times
+        = (\phi \psi)^\times
+        = \left( \phi \phi^{-1} \right)^\times
+        = \id_S^\times
+        = \id_{S^\times}
+      \]
+      und analog auch $\psi^\times \phi^\times = \id_{R^\times}$.
+      Also ist der Gruppenhomomorphismus $\phi^\times$ bijektiv mit $(\phi^\times)^{-1} = (\phi^{-1})^\times$, und somit ein Gruppenisomorphismus.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Primideale und maximale Ideale via Quotienten]
+  Es sei $R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass ein Ideal $\pideal \subseteq R$ genau dann prim ist, wenn $R/\pideal$ ein Integritätsbereich ist.
+    \item
+      Zeigen Sie, dass ein Ideal $\mideal \subseteq R$ genau dann maximal ist, wenn $R/\mideal$ ein Körper ist. 
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für alle $x \in R$ sei $\overline{x} \in R/\pideal$ die entsprechende Äquivalenzklasse.
+      Das Ideal $\pideal$ ist genau dann prim, wenn die Aussage
+      \begin{equation}
+        \label{eqn: quotient is integral definition}
+        \forall x, y \in R
+        :
+        \overline{x} \cdot \overline{y} = 0
+        \implies
+        \text{$\overline{x} = 0$ oder $\overline{y} = 0$}
+      \end{equation}
+      gilt. Da $\overline{x} \cdot \overline{y} = \overline{xy}$ für alle $x, y \in R$ gilt, ist die Aussage~\eqref{eqn: quotient is integral definition} äquivalent dazu, dass
+      \begin{equation}
+        \label{eqn: quotient is integral nearly definition}
+        \forall x, y \in R
+        :
+        \overline{xy} = 0
+        \implies
+        \text{$\overline{x} = 0$ oder $\overline{y} = 0$}.
+      \end{equation}
+      Für alle $x \in R$ gilt genau dann $\overline{x} = 0$, wenn $x \in \pideal$.
+      Deshalb ist die Aussage~\eqref{eqn: quotient is integral nearly definition} äquivalent dazu, dass
+      \begin{equation}
+        \label{eqn: quotient is integral via prime }
+        \forall x, y \in R
+        :
+        xy \in \pideal
+        \implies
+        \text{$x \in \pideal$ oder $y \in \pideal$}.
+      \end{equation}
+      Dies ist genau die Aussage, dass $\pideal$ ein Primideal ist.
+    \item
+      Es sei $\pi \colon R \to R/\mideal$, $x \mapsto \overline{x}$ die kanonische Projektion.
+      Wir erhalten eine wohldefinierte Bijektion
+      \[
+            \{ \text{Ideale $I \subseteq R/\mideal$} \}
+        \to \{ \text{Ideale $J \subseteq R$ mit $J \supseteq \mideal$} \},
+        \quad
+        I \mapsto \pi^{-1}(I)
+      \]
+      (siehe Übung~\ref{question: lattice isomorphism for quotients}).
+      Der Ring $R/\mideal$ ist genau dann ein Körper, wenn $R/\mideal$ genau zwei Ideale enthält (siehe Übung~\ref{question: characterization of fields via its ideals}); das Ideal $\mideal$ ist genau dann ein maximales Ideal in $R$, wenn es genau zwei Ideale $J \subseteq R$ mit $J \supseteq \mideal$ gibt.
+      Wegen der Existenz der obigen Bijektion sind beide Aussagen äquivalent.
+  \end{enumerate}
 \end{solution}
 
 
@@ -834,13 +1162,13 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Primideale und maximale Ideale via Quotienten]
-  Es sei $R$ ein kommutativer Ring.
+\begin{question}[subtitle = Noethersch und Hauptidealring für Quotienten]
+  Es sei $R$ ein Ring und $I \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass ein Ideal $\pideal \subseteq R$ genau dann prim ist, wenn $R/\pideal$ ein Integritätsbereich ist.
+      Zeigen Sie, dass $R/I$ noethersch ist, wenn $R$ noethersch ist.
     \item
-      Zeigen Sie, dass ein Ideal $\mideal \subseteq R$ genau dann maximal ist, wenn $R/\mideal$ ein Körper ist. 
+      Zeigen Sie widerlegen, dass $R/I$ ein Hauptidealring ist, wenn $R$ ein Hauptidealring ist.
   \end{enumerate}
 \end{question}
 
@@ -848,62 +1176,16 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Für alle $x \in R$ sei $\overline{x} \in R/\pideal$ die entsprechende Äquivalenzklasse.
-      Das Ideal $\pideal$ ist genau dann prim, wenn die Aussage
-      \begin{equation}
-        \label{eqn: quotient is integral definition}
-        \forall x, y \in R
-        :
-        \overline{x} \cdot \overline{y} = 0
-        \implies
-        \text{$\overline{x} = 0$ oder $\overline{y} = 0$}
-      \end{equation}
-      gilt. Da $\overline{x} \cdot \overline{y} = \overline{xy}$ für alle $x, y \in R$ gilt, ist die Aussage~\eqref{eqn: quotient is integral definition} äquivalent dazu, dass
-      \begin{equation}
-        \label{eqn: quotient is integral nearly definition}
-        \forall x, y \in R
-        :
-        \overline{xy} = 0
-        \implies
-        \text{$\overline{x} = 0$ oder $\overline{y} = 0$}.
-      \end{equation}
-      Für alle $x \in R$ gilt genau dann $\overline{x} = 0$, wenn $x \in \pideal$.
-      Deshalb ist die Aussage~\eqref{eqn: quotient is integral nearly definition} äquivalent dazu, dass
-      \begin{equation}
-        \label{eqn: quotient is integral via prime }
-        \forall x, y \in R
-        :
-        xy \in \pideal
-        \implies
-        \text{$x \in \pideal$ oder $y \in \pideal$}.
-      \end{equation}
-      Dies ist genau die Aussage, dass $\pideal$ ein Primideal ist.
+      Es sei $J \subseteq R/I$ ein Ideal.
+      Dann gibt es ein Ideal $J' \subseteq R$ mit $J' \supseteq I$ und $J = J'/I$ (siehe Übung~\ref{question: lattice isomorphism for quotients}).
+      Das Ideal $J'$ ist endlich erzeugt, da $R$ noethersch ist, also $J' = (a_1, \dotsc, a_n)$.
+      Damit gilt $J = J/I = (\overline{a_1}, \dotsc, \overline{a_n})$, weshalb auch $J$ endlich erzeugt ist.
+      Der Ring $R/I$ ist also noethersch, da jedes seiner Ideale endlich erzeugt ist.
     \item
-      Es sei $\pi \colon R \to R/\mideal$, $x \mapsto \overline{x}$ die kanonische Projektion.
-      Wir erhalten eine wohldefinierte Bijektion
-      \[
-            \{ \text{Ideale $I \subseteq R/\mideal$} \}
-        \to \{ \text{Ideale $J \subseteq R$ mit $J \supseteq \mideal$} \},
-        \quad
-        I \mapsto \pi^{-1}(I)
-      \]
-      (siehe Übung~\ref{question: lattice isomorphism for quotients}).
-      Der Ring $R/\mideal$ ist genau dann ein Körper, wenn $R/\mideal$ genau zwei Ideale enthält (siehe Übung~\ref{question: characterization of fields via its ideals}); das Ideal $\mideal$ ist genau dann ein maximales Ideal in $R$, wenn es genau zwei Ideale $J \subseteq R$ mit $J \supseteq \mideal$ gibt.
-      Wegen der Existenz der obigen Bijektion sind beide Aussagen äquivalent.
+      Analog zum Beweis des ersten Aussagenteiles ergibt sich, dass jedes Ideal in $R/I$ ein Hauptideal ist.
+      Damit $R/I$ ein Integritätsbereich ist, muss allerdings noch zusätzlich gefordert werden, dass $I$ ein Primideal ist.
+      Ist etwa $K$ ein Körper, so ist in $K[X]/(X^2)$ zwar jedes Ideal ein Hauptideal, aber $0 \neq \overline{X} \in K[X]/(X^2)$ ist nilpotent, weshalb $K[X]/(X^2)$ kein Integritätsbereich, und somit auch kein Hauptidealring ist.
   \end{enumerate}
-\end{solution}
-
-
-\begin{question}
-  Es sei $R$ ein kommutativer Ring und es gebe $n > 1$, so dass $x^n = x$ für jedes $x \in R$ gilt.
-  Zeigen Sie, dass jedes Primideal in $R$ bereits maximal ist.
-\end{question}
-
-\begin{solution}
-  Ist $\pideal \subseteq R$ ein Primideal, so gilt $y^n = y$ für jedes $y \in R/\pideal$.
-  Ist $y \neq 0$, so lässt sich diese Gleichung durch $y$ teilen, da $R/\pideal$ ein Integritätsbereich ist.
-  Deshalb gilt für jedes $y \in R$ bereits $y^{n-1} = 1$, also $y \cdot y^{n-2} = 1$, weshalb $y$ eine Einheit mit $y^{-1} = y^{n-2}$ ist.
-  Somit ist jedes $y \in R/\pideal$ mit $y \neq 0$ eine Einheit, also der Integritätsbereich $R/\pideal$ bereits ein Körper, und $\pideal$ somit bereits maximal.
 \end{solution}
 
 
@@ -939,6 +1221,61 @@
       Inbesondere entspricht das Ideal $(x) + I \subseteq R$ dem Ideal $(\overline{x}) \subseteq R/I$ und das Ideal $R \subseteq R$ den Ideal $R/I \subseteq R/I$.
       Es ist $\overline{x}$ genau dann eine Einheit in $R/I$, wenn $(\overline{x}) = R/I$;
       aufgrund der obigen Bijekton ist dies äquivalent dazu, dass $(x) + I = R$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Ideale in der Lokalisierung]
+  Es sei $R$ ein kommutativer Ring und $S \subseteq R$ eine multiplikative Teilmenge.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass jedes Ideal $J \subseteq R_S$ von der Form $J = I_S$ für ein Ideal $I \subseteq R$ ist.
+    \item
+      Zeigen Sie, dass $I_S = (a_i/1 \mid i \in I)$ falls $I = (a_i \mid i \in I)$.
+    \item
+      Zeigen Sie, dass $R_S$ noethersch ist, wenn $R$ noethersch ist.
+    \item
+      Zeigen oder widerlegen Sie, dass $R_S$ ein Hauptidealring ist, wenn $R$ ein Hauptidealring ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $I \coloneqq \{r \in R \mid r/1 \in J\}$.
+      Dies ist ein Ideal in $I$:
+      
+      Es gilt $0 \in I$, da $0/1 \in J$.
+      Für $r_1, r_2 \in I$ gelten $r_1/1, r_2/1 \in J$ und somit auch $(r_1 + r_2)/1 = r_1/1 + r_2/1 \in J$, also $r_1 + r_2 \in I$.
+      Für $r \in I$ und jedes $r' \in R$ gilt $r/1 \in J$ und somit auch $(r' r)/1 = (r'/1)(r/1) \in J$, also $r' r \in I$.
+      Insgesamt zeigt dies, dass $I$ ein Ideal ist.
+      
+      Alternativ betrachte man den kanonischen Ringhomomorphismus $i \colon R \to R_S$, $r \mapsto r/1$.
+      Für diesen gilt $I = i^{-1}(J)$, also ist $I$ ein Ideal (siehe Übung~\ref{question: preimages of ideals}).
+      
+      Für jedes $r \in I$ und $s \in S$ gilt $r/1 \in J$ und somit auch $r/s = (1/s)(r/1) \in J$, weshalb $I_S \subseteq J$.
+      Für jedes $r/s \in J$ gilt $r/1 = (s/1)(r/s) \in J$ und somit auch $r \in I$, also $r/s \in I_S$.
+      Deshalb gilt auch $J \subseteq I_S$.
+      
+    \item
+      Es gilt $a_i \in I$ für alle $i \in I$, also $a_i/1 \in I_S$ für alle $i \in I$ und deshalb $(a_i/1 \mid i \in I) \subseteq I_S$.
+      Ist andererseits $r/s \in I_S$ mit $r \in R$, so gilt $r = \sum_{i \in I} r_i a_i$ mit $r_i = 0$ für fast alle $i \in I$.
+      Dann gilt $r/s = \sum_{i \in I} (r_i/s)(a_i/1) \in (a_i \mid i \in I)$.
+      Also gilt auch $I_S \subseteq (a_i/1 \mid i \in I)$.
+    
+    \item
+      Ist $J \subseteq R_S$ ein Ideal, so gilt nach dem ersten Aussagenteil $J = I_S$ für ein Ideal $I \subseteq J$.
+      Das Ideal $I$ ist endlich erzeugt, da $R$ noethersch ist, also $I = (a_1, \dotsc, a_n)$.
+      Nach dem zweiten Aussagenteil gilt deshalb $J = I_S = (a_1/1, \dotsc, a_n/1)$, weshalb $J$ endlich erzeugt.
+      Es ist also jedes Ideal in $R_S$ endlich erzeugt, also $R_S$ noethersch.
+    
+    \item
+      Gilt $0 \in S$, so ist $R_S = 0$ kein Hauptidealring.
+      Für $0 \notin S$ ist $R_S$ wieder ein Hauptidealring:
+      Analog zum Beweis des vorherigen Aussagenteils erhalten wir, dass jedes Ideal in $R_S$ ein Hauptideal ist.
+      Es bleibt daher nur zu zeigen, dass $R_S$ ein Integritätsbereich ist.
+      Dies folgt aber daraus, dass $R$ ein Integritätsbereich ist, und dass $R_S$ wegen $0 \notin S$ daher als Unterring des Quotientenkörpers $Q(R)$ realisiert werden kann.
   \end{enumerate}
 \end{solution}
 
@@ -1064,224 +1401,6 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Charakterisierung von Primidealen]
-  Es sei $R$ ein kommutativer Ring und $\pideal \subseteq R$ ein Ideal.
-  Zeigen Sie, dass $\pideal$ genau dann ein Primideal ist, wenn es einen Körper $K$ und einen Ringhomomorphismus $\phi \colon R \to K$ mit $\ker \phi = \pideal$ gibt.
-\end{question}
-
-
-\begin{solution}
-  Ist $\pideal$ ein Primideal, so ist der Quotient $R/\pideal$ ein Integritätsbereich.
-  Da die kanonische Inklusion $R/\pideal \to Q(R/\pideal)$ ein injektiver Ringhomomorphismus ist, folgt für die Komposition
-  \[
-    \phi \colon R \xrightarrow{\pi} R/\pideal \to Q(R/\pideal),
-  \]
-  dass $\ker \phi = \ker \pi = \pideal$.
-  (Hier bezeichnet $\pi \colon R \to R/\pideal$ die kanonische Projektion.)
-  Da $Q(R/\pideal)$ ein Körper ist, zeigt dies eine Implikation.
-  
-  Gibt es andererseits einen Körper $K$ und einen Ringhomomorphismus $\phi \colon R \to K$ mit $\pideal = \ker \phi$, so ist $R/\pideal \cong \im \phi \subseteq K$.
-  Der Körper $K$ ist insbesondere ein Integritätsbereich, weshalb auch der Unterring $\im \phi$ ein Integritätsbereich ist.
-  Der Quotient $R/\pideal$ ist also ein Integritätsbereich und $\pideal$ somit eine Primideal.
-\end{solution}
-
-
-\begin{question}[subtitle = Die Einheitengruppe des Potenzreihenrings]
-  \label{question: unit group of the power series ring}
-  Es sei $R$ ein kommutativer Ring.
-  Zeigen Sie, dass $\powerseries{R}{T}^\times = \{\sum_{i=0}^\infty f_i T^i \in \powerseries{R}{T} \mid f_0 \in R^\times\}$.
-\end{question}
-
-
-\begin{solution}
-  Es sei $f = \sum_{i=0}^\infty f_i T^i \in R$.
-  
-  Ist $f \in \powerseries{R}{T}^\times$, so gibt es $g = \sum_{i=0}^\infty g_i T^i \in \powerseries{R}{T}$ mit $fg = 1$.
-  Inbesondere ist dann $f_0 g_0 = 1$ und somit $f_0 \in R^\times$.
-  
-  Ist andererseits $f_0 \in R^\times$, so seien die Koeffizienten von $g = \sum_{i=0}^\infty g_i T^i \in \powerseries{R}{T}$ rekursiv durch $g_0 = f_0^{-1}$ und $g_i \coloneqq - f_0^{-1} \sum_{j=0}^{i-1} f_{i-j} g_j$ definiert.
-  Für $fg = \sum_{i=0}^\infty h_i T^i$ gilt dann $h_0 = f_0 g_0 = 1$, sowie
-  \[
-      h_i
-    = \sum_{j=0}^i f_{i-j} g_j
-    = f_0 g_i + \sum_{j=0}^{i-1} f_{i-j} g_j
-    = - \sum_{j=0}^{i-1} f_{i-j} g_j + \sum_{j=0}^{i-1} f_{i-j} g_j
-    = 0
-  \]
-  für alle $i \geq 1$, und somit $fg = 1$.
-\end{solution}
-
-
-\begin{question}[subtitle = Funktorialität der Einheitengruppe]
-  Ist $R$ ein kommutativer Ring, so ist
-  \[
-              R^\times
-    \coloneqq \{x \in R \mid \text{$x$ ist eine Einheit}\}
-  \]
-  die \emph{Einheitengruppe} von $R$.
-  Zeigen Sie:
-  \begin{enumerate}
-    \item
-      Ist $R$ ein kommutativer Ring, so bildet $R^\times$ mit der Multiplikation aus $R$ eine abelsche Gruppe.
-    \item
-      Sind $R$ und $S$ zwei kommutativer Ringe und ist $\phi \colon R \to S$ ein Ringhomomorphismus, so induziert $\phi$ per Einschränkung einen Gruppenhomomorphismus
-      \[
-        \phi^\times \colon R^\times \to S^\times,
-        \quad
-        x \mapsto \phi(x).
-      \]
-    \item
-      Für jeden Ring kommutativen $R$ gilt $\id_R^\times = \id_{R^\times}$, und für alle kommutativen Ringe $R_1$, $R_2$ und $R_3$ und Ringhomomorphismen $\phi \colon R_1 \to R_2$ und $\psi \colon R_2 \to R_3$ gilt $(\psi \phi)^\times = \psi^\times \phi^\times$.
-    \item
-      Ist $R$ ein kommutativer Ring und $\phi \colon R \to S$ ein Isomorphismus von Ringen, so ist $\phi^\times \colon R^\times \to S^\times$ ein Isomorphismus von Gruppen.
-  \end{enumerate}
-  (Die Aussagen gelten auch für nichtkommutative Ringe, wobei $R^\times$ dann im Allgemeinen nicht abelsch ist.
-   Dabei ist ein Element $r \in R$ eines nichtkommutativen Rings $R$ eine Einheit, wenn es $s \in R$ mit $rs = 1 = sr$ gibt.
-   Es genügt auch, dass es $s, t \in R$ mit $rs = 1 = tr$ gibt; dann gilt bereits $s = t$.)
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Die Multiplikation in $R^\times$ ist assoziativ, da sie es in $R$ ist.
-      Dass $R^\times$ abelsch ist ergibt sich aus der Kommutativität von $R$.
-      Es gilt $1 \in R^\times$, und da $1$ in ganz $R$ neutral bezüglich der Multiplikation ist, gilt dies auch in $R^\times$.
-      Für jedes $x \in R^\times$ gibt es ein $y \in R$ mit $xy = 1$.
-      Dann gilt auch $y \in R^\times$ und $y$ ist auch in $R^\times$ invers zu $x$.
-    \item
-      Für $x \in R^\times$ gilt
-      \[
-          1
-        = \phi(1)
-        = \phi(x x^{-1})
-        = \phi(x) \phi(x^{-1}).
-      \]
-      Deshalb ist $\phi(x)$ eine Einheit in $S$ (mit $\phi(x)^{-1} = \phi(x^{-1})$), und somit $\phi(x) \in S^\times$.
-      Das zeigt, dass die Einschränkung $\phi^\times$ wohldefiniert ist.
-      Da $\phi$ mulitplikativ ist, gilt dies auch für $\phi^\times$, weshalb $\phi^\times$ ein Gruppenhomomorphismus ist.
-    \item
-      Da $\id_R^\times(x) = \id_R(x) = x = \id_{R^\times}(x)$ für alle $x \in X$ gilt, ist $\id_R^\times = \id_{R^\times}$.
-      Für alle $x \in R_1$ gilt
-      \[
-          (\psi^\times \phi^\times)(x)
-        = \psi^\times(\phi^\times(x))
-        = \psi(\phi(x))
-        = (\psi \phi)(x)
-        = (\psi \phi)^\times(x).
-      \]
-      Deshalb ist $(\psi^\times \phi^\times) = (\psi \phi)^\times$.
-    \item
-      Es sei $\psi \coloneqq \phi^{-1} \colon S \to R$.
-      Es gilt
-      \[
-          \phi^\times \psi^\times
-        = (\phi \psi)^\times
-        = \left( \phi \phi^{-1} \right)^\times
-        = \id_S^\times
-        = \id_{S^\times}
-      \]
-      und analog auch $\psi^\times \phi^\times = \id_{R^\times}$.
-      Also ist der Gruppenhomomorphismus $\phi^\times$ bijektiv mit $(\phi^\times)^{-1} = (\phi^{-1})^\times$, und somit ein Gruppenisomorphismus.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Die Eulersche Phi-Funktion]
-  Die Eulersche Phi-Funktion ist definiert als
-  \[
-            \varphi
-    \colon  \Natural_{>1} \to \Natural,
-    \quad   n \mapsto |\{ k \in \{1, \dotsc, n\} \mid \text{$k$ und $n$ sind teilerfremd} \}|.
-  \]
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $\varphi(n) = | (\Integer/n)^\times |$ für alle $n \geq 1$.
-    \item
-      Folgern Sie, dass $\varphi(n_1 n_2) = \varphi(n_1) \varphi(n_2)$ für je zwei teilerfremde $n_1, n_2 \geq 1$.
-    \item
-      Zeigen Sie, dass $\varphi(p^r) = p^r - p^{r-1} = p^{r-1} (p - 1)$ für alle Primzahlen $p \in \Natural$ und $r \geq 1$.
-    \item
-      Berechnen Sie $\varphi(42)$, $\varphi(57)$ und $\varphi(144)$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Die Elemente $1, \dotsc, n$ bilden ein Repräsentantensystem der Restklassen von $\Integer/n$, für $k \in \{1, \dotsc, n\}$ ist $\overline{k} \in \Integer/n$ genau dann eine Einheit, wenn $k$ und $n$ teilerfremd sind (siehe Übung~\ref{question: unit group of quotients}).
-    \item
-      Nach dem Chinesischen Restklassensatz gilt $\Integer/(n_1 n_2) \cong \Integer/n_1 \times \Integer/n_2$.
-      Somit gilt
-      \begin{align*}
-            \varphi(n_1 n_2)
-        &=  | (\Integer/(n_1 n_2))^\times |
-         =  | (\Integer/n_1 \times \Integer/n_2)^\times |
-        \\
-        &=  | (\Integer/n_1)^\times \times (\Integer/n_2)^\times |
-         =  | (\Integer/n_1)^\times | | (\Integer/n_2)^\times |
-         =  \varphi(n_1) \varphi(n_2).
-      \end{align*}
-    \item
-      Es ist $\{0, \dotsc, p^r - 1\}$ ein Repräsentantensystem der Restklassen von $\Integer/p^r$.
-      Eine Zahl $k \in \{0, \dotsc, p^r - 1\}$ ist genau dann teilerfremd so $p^r$, wenn sie kein Vielfaches von $p$ ist.
-      Da jede $p$-te Zahl aus dieser Menge ein Vielfaches von $p$ ist, gibt es $p^r/p = p^{r-1}$ viele Vielfache von $p$ in diesem Repräsentantensystem.
-      Somit sind $p^r - p^{r-1}$ viele Repräsentanten kein Vielfaches von $p$, also teilerfremd zu $p$.
-    \item
-      Es gelten
-      \begin{align*}
-            \varphi(42)
-        &=  \varphi(2 \cdot 3 \cdot 7)
-         =  \varphi(2) \varphi(3) \varphi(7)
-         =  (2 - 1)(3 - 1)(7 - 1)
-         =  12,
-        \\
-            \varphi(57)
-        &=  \varphi(3 \cdot 19)
-         =  (3 - 1)(19 - 1)
-         =  36,
-        \\
-            \varphi(144)
-        &=  \varphi(2^4 \cdot 3^2)
-         =  (16 - 8) (9 - 3)
-         =  48.
-      \end{align*}
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Der Frobeniushomomorphismus]
-  \label{question: the frobenius homomorphism}
-  Es sei $R$ ein kommutativer Ring mit $p \coloneqq \ringchar R > 0$ prim.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass die Abbildung $\sigma \colon R \to R$, $x \mapsto x^p$ ein Ringhomomorphismus ist.
-    \item
-      Zeigen Sie, dass $\sigma$ ein Automorphismus ist, falls $R$ ein endlicher Körper ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es gilt $\sigma(1) = 1^p = 1$ und $\sigma(xy) = (xy)^p = x^p y^p = \sigma(x) \sigma(y)$ für alle $x, y \in R$.
-      Es bleibt also nur zu zeigen, dass $\sigma$ additiv ist.
-      Für alle $x, y \in R$ gilt
-      \begin{equation}
-        \label{equation: Frobenis homomorphism without cancelation}
-        \sigma(x+y) = (x+y)^p = \sum_{k=0}^p \binom{p}{k} x^k y^{p-k}
-      \end{equation}
-      Für alle $k = 1, \dotsc, p-1$ gilt dabei $p \mid \binom{p}{k}$, denn in dem Ausdruck $\binom{p}{k} = p!/(k!(p-k)!)$ enthält dann zwar der Zähler $p$ als Primfaktor, der Nenner aber nicht, da $k, p-k < p$.
-      Folglich vereinfacht sich \eqref{equation: Frobenis homomorphism without cancelation} zu $\sigma(x+y) = x^p + y^p = \sigma(x) + \sigma(y)$.
-    \item
-      Es gilt $\ker \sigma = 0$, denn für $x \in R$ mit $x^p = \sigma(x) = 0$ gilt wegen der Nullteilerfreiheit von $R$ bereits, dass $x = 0$.
-      Also ist $\sigma$ injektiv, und wegen der Endlichkeit von $R$ damit auch schon bijektiv.
-  \end{enumerate}
-\end{solution}
-
-
 \begin{question}[subtitle = Gegenbeispiele]
   \label{question: examples for non principal and not finitely generated modules}
   Es sei $K$ ein Körper.
@@ -1322,189 +1441,6 @@
          =      R,
       \end{align*}
       aber $R$ ist kein Körper.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Zur Definition von Unterringen]
-  Geben Sie ein Beispiel für einen kommutativen Ring $R$ und eine Teilmenge $S \subseteq R$ mit den folgenden Eigenschaften:
-  \begin{itemize}
-    \item
-      $S$ ist abgeschlossen unter der Addition und Multiplikation von $R$, d.h.\ für alle $s_1, s_2 \in S$ ist auch $s_1 + s_2 \in S$ und $s_1 s_2 \in S$.
-    \item
-      Zusammen mit der Einschränkung der Addition und Multiplikation aus $R$ ist $S$ ebenfalls ein (notwendigerweise kommutativer) Ring.
-    \item
-      $S$ ist kein Unterring von $R$.
-  \end{itemize}
-\end{question}
-
-
-\begin{solution}
-  Es sei $R = \Integer \times \Integer$ und $S = \Integer \times 0 = \{(n,0) \mid n \in \Integer\}$.
-  Offenbar ist $S$ unter der Addition und Multiplikation abgeschlossen.
-  Zusammen mit der Einschränkung dieser Operationen bildet $S$ einen kommutativen Ring, für den $S \cong \Integer$ gilt.
-  Da $1_R = (1,1) \notin S$ ist $S$ allerdings kein Unterring von $R$.
-\end{solution}
-
-
-\begin{question}[subtitle = Assoziiertheit in Ringen]
-  Es sei $R$ ein kommutativer Ring.
-  \begin{enumerate}
-    \item
-      Definieren Sie, wann zwei Elemente von $R$ assoziiert sind.
-    \item
-      Zeigen Sie, dass Assoziiertheit eine Äquivalenzrelation ist.
-    \item
-      Es sei nun $R$ ein Integritätsbereich.
-      Zeigen Sie, dass zwei Elemente $a, b \in R$ genau dann assoziiert sind, wenn $(a) = (b)$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Ein Element $y \in R$ ist assoziiert zu einem Element $x \in R$, wenn es eine Einheit $\varepsilon \in R^\times$ mit $y = \varepsilon x$ gibt.
-  \end{enumerate}
-  Für $x, y \in R$ schreiben wir im Folgenden $x \sim y$, wenn $y$ assoziiert zu $x$ ist.
-  \begin{enumerate}[resume]
-    \item
-      Für jedes $x \in R$ ist $x \sim x$ da $x = 1 \cdot x$ mit $1 \in R^\times$.
-      Für $x, y \in R$ mit $x \sim y$ gibt es $\varepsilon \in R^\times$ mit $y = \varepsilon x$;
-      dann ist $\varepsilon^{-1} \in R^\times$ mit $x = \varepsilon^{-1} y$ und deshalb $y \sim x$.
-      Für $x, y, z \in R$ mit $x \sim y$ und $y \sim z$ gibt es $\varepsilon_1, \varepsilon_2 \in R^\times$ mit $y = \varepsilon_1 x$ und $z = \varepsilon_2 y$;
-      dann ist $\varepsilon_2 \varepsilon_1 \in R^\times$ mit $z = \varepsilon_2 y = \varepsilon_2 \varepsilon_1 x$ und somit $x \sim z$.
-    \item
-      Für $x, y \in R$ mit $x \sim y$ gibt es $\varepsilon \in R^\times$ mit $x = \varepsilon y$.
-      Dann ist $R \varepsilon = R$ und deshalb
-      \[
-          (x)
-        = \{r x \mid r \in R\}
-        = \{r \varepsilon y \mid r \in R\}
-        = \{r' y \mid r' \in R \varepsilon\}
-        = \{r' y \mid r' \in R\}
-        = (y).
-      \]
-      Ist andererseits $(x) = (y)$ so ist $x \in (y)$ und $y \in (x)$, also gibt es $\varepsilon_1, \varepsilon_2 \in R$ mit $y = \varepsilon_1 x$ und $x = \varepsilon_2 y$.
-      Dann ist $y = \varepsilon_1 x = \varepsilon_1 \varepsilon_2 y$, und da $R$ ein Integritätsbereich ist, somit $\varepsilon_1 \varepsilon_2 = 1$.
-      Also ist $\varepsilon_1$ eine Einheit mit $\varepsilon_1^{-1} = \varepsilon_2$.
-      Da $y = \varepsilon_1 x$ ist $x \sim y$.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Nilpotente zu Einheiten]
-  Es sei $R$ ein kommutativer Ring.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 - n$ eine Einheit ist, und geben Sie $(1 - n)^{-1}$ an.
-    \item
-      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 + n$ eine Einheit ist, und geben Sie $(1 + n)^{-1}$ an.
-    \item
-      Zeigen Sie, dass für nilpotentes $n \in R$ und jede Einheit $e \in R^\times$ das Element $e + n$ eine Einheit ist, und geben Sie $(e + n)^{-1}$ an.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Für $k \geq 0$ mit $n^k = 0$ gilt $(1 - n)(1 + n + \dotsb + n^{k-1}) = 1 - n^k = 1$.
-      Also ist $1 - n$ eine Einheit mit $(1-n)^{-1} = \sum_{p=0}^{k-1} n^p = \sum_{p=0}^\infty n^p$.
-    \item
-      Da $n$ nilpotent ist, gilt dies auch für $-n$.
-      Nach dem vorherigen Aufgabenteil ist deshalb $1 + n = 1 - (-n)$ eine Einheit mit $(1 + n)^{-1} = (1 - (-n))^{-1} = \sum_{p=0}^\infty (-1)^p n^p$.
-    \item
-      Es gilt $e + n = e(1 + e^{-1} n)$, und da $n$ nilpotent ist, gilt dies auch für $e^{-1} n$.
-      Nach dem vorherigen Teil ist $1 + e^{-1} n$ eine Einheit, und somit $e + n$ als Produkt zweier Einheiten ebenfalls eine Einheit; ferner gilt
-      \[
-          (e + n)^{-1}
-        = e^{-1} (1 + e^{-1} n)^{-1}
-        = e^{-1} \sum_{p=0}^\infty (-1)^p (e^{-1} n)^p
-        = \sum_{p=0}^\infty (-1)^p e^{-1-p} n^p.
-      \]
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Ideale in der Lokalisierung]
-  Es sei $R$ ein kommutativer Ring und $S \subseteq R$ eine multiplikative Teilmenge.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass jedes Ideal $J \subseteq R_S$ von der Form $J = I_S$ für ein Ideal $I \subseteq R$ ist.
-    \item
-      Zeigen Sie, dass $I_S = (a_i/1 \mid i \in I)$ falls $I = (a_i \mid i \in I)$.
-    \item
-      Zeigen Sie, dass $R_S$ noethersch ist, wenn $R$ noethersch ist.
-    \item
-      Zeigen oder widerlegen Sie, dass $R_S$ ein Hauptidealring ist, wenn $R$ ein Hauptidealring ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es sei $I \coloneqq \{r \in R \mid r/1 \in J\}$.
-      Dies ist ein Ideal in $I$:
-      
-      Es gilt $0 \in I$, da $0/1 \in J$.
-      Für $r_1, r_2 \in I$ gelten $r_1/1, r_2/1 \in J$ und somit auch $(r_1 + r_2)/1 = r_1/1 + r_2/1 \in J$, also $r_1 + r_2 \in I$.
-      Für $r \in I$ und jedes $r' \in R$ gilt $r/1 \in J$ und somit auch $(r' r)/1 = (r'/1)(r/1) \in J$, also $r' r \in I$.
-      Insgesamt zeigt dies, dass $I$ ein Ideal ist.
-      
-      Alternativ betrachte man den kanonischen Ringhomomorphismus $i \colon R \to R_S$, $r \mapsto r/1$.
-      Für diesen gilt $I = i^{-1}(J)$, also ist $I$ ein Ideal (siehe Übung~\ref{question: preimages of ideals}).
-      
-      Für jedes $r \in I$ und $s \in S$ gilt $r/1 \in J$ und somit auch $r/s = (1/s)(r/1) \in J$, weshalb $I_S \subseteq J$.
-      Für jedes $r/s \in J$ gilt $r/1 = (s/1)(r/s) \in J$ und somit auch $r \in I$, also $r/s \in I_S$.
-      Deshalb gilt auch $J \subseteq I_S$.
-      
-    \item
-      Es gilt $a_i \in I$ für alle $i \in I$, also $a_i/1 \in I_S$ für alle $i \in I$ und deshalb $(a_i/1 \mid i \in I) \subseteq I_S$.
-      Ist andererseits $r/s \in I_S$ mit $r \in R$, so gilt $r = \sum_{i \in I} r_i a_i$ mit $r_i = 0$ für fast alle $i \in I$.
-      Dann gilt $r/s = \sum_{i \in I} (r_i/s)(a_i/1) \in (a_i \mid i \in I)$.
-      Also gilt auch $I_S \subseteq (a_i/1 \mid i \in I)$.
-    
-    \item
-      Ist $J \subseteq R_S$ ein Ideal, so gilt nach dem ersten Aussagenteil $J = I_S$ für ein Ideal $I \subseteq J$.
-      Das Ideal $I$ ist endlich erzeugt, da $R$ noethersch ist, also $I = (a_1, \dotsc, a_n)$.
-      Nach dem zweiten Aussagenteil gilt deshalb $J = I_S = (a_1/1, \dotsc, a_n/1)$, weshalb $J$ endlich erzeugt.
-      Es ist also jedes Ideal in $R_S$ endlich erzeugt, also $R_S$ noethersch.
-    
-    \item
-      Gilt $0 \in S$, so ist $R_S = 0$ kein Hauptidealring.
-      Für $0 \notin S$ ist $R_S$ wieder ein Hauptidealring:
-      Analog zum Beweis des vorherigen Aussagenteils erhalten wir, dass jedes Ideal in $R_S$ ein Hauptideal ist.
-      Es bleibt daher nur zu zeigen, dass $R_S$ ein Integritätsbereich ist.
-      Dies folgt aber daraus, dass $R$ ein Integritätsbereich ist, und dass $R_S$ wegen $0 \notin S$ daher als Unterring des Quotientenkörpers $Q(R)$ realisiert werden kann.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Noethersch und Hauptidealring für Quotienten]
-  Es sei $R$ ein Ring und $I \subseteq R$ ein Ideal.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $R/I$ noethersch ist, wenn $R$ noethersch ist.
-    \item
-      Zeigen Sie widerlegen, dass $R/I$ ein Hauptidealring ist, wenn $R$ ein Hauptidealring ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es sei $J \subseteq R/I$ ein Ideal.
-      Dann gibt es ein Ideal $J' \subseteq R$ mit $J' \supseteq I$ und $J = J'/I$ (siehe Übung~\ref{question: lattice isomorphism for quotients}).
-      Das Ideal $J'$ ist endlich erzeugt, da $R$ noethersch ist, also $J' = (a_1, \dotsc, a_n)$.
-      Damit gilt $J = J/I = (\overline{a_1}, \dotsc, \overline{a_n})$, weshalb auch $J$ endlich erzeugt ist.
-      Der Ring $R/I$ ist also noethersch, da jedes seiner Ideale endlich erzeugt ist.
-    \item
-      Analog zum Beweis des ersten Aussagenteiles ergibt sich, dass jedes Ideal in $R/I$ ein Hauptideal ist.
-      Damit $R/I$ ein Integritätsbereich ist, muss allerdings noch zusätzlich gefordert werden, dass $I$ ein Primideal ist.
-      Ist etwa $K$ ein Körper, so ist in $K[X]/(X^2)$ zwar jedes Ideal ein Hauptideal, aber $0 \neq \overline{X} \in K[X]/(X^2)$ ist nilpotent, weshalb $K[X]/(X^2)$ kein Integritätsbereich, und somit auch kein Hauptidealring ist.
   \end{enumerate}
 \end{solution}
 
@@ -1636,81 +1572,157 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Idealtheoretische Beschreibung größter gemeinsamer Teiler]
-  \label{question: greatest common divisor via generated ideal}
-  Es sei $R$ ein kommutativer Ring, $(a_i)_{i \in I}$ eine Familie von Elementen $a_i \in R$ und $a \in R$.
+
+\begin{question}[subtitle = Nilpotente zu Einheiten]
+  Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $a$ ein größter gemeinsamer Teiler der $a_i$ ist, falls $(a_i \mid i \in I) = (a)$.
+      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 - n$ eine Einheit ist, und geben Sie $(1 - n)^{-1}$ an.
     \item
-      Entscheiden Sie, ob auch die Umkehrung der obigen Aussage gilt.
+      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 + n$ eine Einheit ist, und geben Sie $(1 + n)^{-1}$ an.
+    \item
+      Zeigen Sie, dass für nilpotentes $n \in R$ und jede Einheit $e \in R^\times$ das Element $e + n$ eine Einheit ist, und geben Sie $(e + n)^{-1}$ an.
   \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für $k \geq 0$ mit $n^k = 0$ gilt $(1 - n)(1 + n + \dotsb + n^{k-1}) = 1 - n^k = 1$.
+      Also ist $1 - n$ eine Einheit mit $(1-n)^{-1} = \sum_{p=0}^{k-1} n^p = \sum_{p=0}^\infty n^p$.
+    \item
+      Da $n$ nilpotent ist, gilt dies auch für $-n$.
+      Nach dem vorherigen Aufgabenteil ist deshalb $1 + n = 1 - (-n)$ eine Einheit mit $(1 + n)^{-1} = (1 - (-n))^{-1} = \sum_{p=0}^\infty (-1)^p n^p$.
+    \item
+      Es gilt $e + n = e(1 + e^{-1} n)$, und da $n$ nilpotent ist, gilt dies auch für $e^{-1} n$.
+      Nach dem vorherigen Teil ist $1 + e^{-1} n$ eine Einheit, und somit $e + n$ als Produkt zweier Einheiten ebenfalls eine Einheit; ferner gilt
+      \[
+          (e + n)^{-1}
+        = e^{-1} (1 + e^{-1} n)^{-1}
+        = e^{-1} \sum_{p=0}^\infty (-1)^p (e^{-1} n)^p
+        = \sum_{p=0}^\infty (-1)^p e^{-1-p} n^p.
+      \]
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Die Einheitengruppe des Potenzreihenrings]
+  \label{question: unit group of the power series ring}
+  Es sei $R$ ein kommutativer Ring.
+  Zeigen Sie, dass $\powerseries{R}{T}^\times = \{\sum_{i=0}^\infty f_i T^i \in \powerseries{R}{T} \mid f_0 \in R^\times\}$.
+\end{question}
+
+
+\begin{solution}
+  Es sei $f = \sum_{i=0}^\infty f_i T^i \in R$.
+  
+  Ist $f \in \powerseries{R}{T}^\times$, so gibt es $g = \sum_{i=0}^\infty g_i T^i \in \powerseries{R}{T}$ mit $fg = 1$.
+  Inbesondere ist dann $f_0 g_0 = 1$ und somit $f_0 \in R^\times$.
+  
+  Ist andererseits $f_0 \in R^\times$, so seien die Koeffizienten von $g = \sum_{i=0}^\infty g_i T^i \in \powerseries{R}{T}$ rekursiv durch $g_0 = f_0^{-1}$ und $g_i \coloneqq - f_0^{-1} \sum_{j=0}^{i-1} f_{i-j} g_j$ definiert.
+  Für $fg = \sum_{i=0}^\infty h_i T^i$ gilt dann $h_0 = f_0 g_0 = 1$, sowie
+  \[
+      h_i
+    = \sum_{j=0}^i f_{i-j} g_j
+    = f_0 g_i + \sum_{j=0}^{i-1} f_{i-j} g_j
+    = - \sum_{j=0}^{i-1} f_{i-j} g_j + \sum_{j=0}^{i-1} f_{i-j} g_j
+    = 0
+  \]
+  für alle $i \geq 1$, und somit $fg = 1$.
+\end{solution}
+
+
+\begin{question}[subtitle = Einheitengruppe der Gaußschen Zahlen]
+  Bestimmen Sie die Einheitengruppe $\Integer[i]^\times$.
+\end{question}
+
+
+\begin{solution}
+  Ein Element $z \in \Integer[i]$ ist genau dann eine Einheit in $\Integer[i]$, wenn $z \neq 0$ und $z^{-1} \in \Integer[i]$ (hier bezeichnet $z^{-1} = 1/z$ das Inverse von $z$ in $\Complex$).
+  Für die Elemente $1, -1, i, -i \in \Integer[i]$ ist dies erfüllt.
+  Ist $z \in \Integer[i]$ mit $z \neq 0$ und $z^{-1} \in \Integer[i]$, so ist
+  \begin{equation}
+    \label{eqn: units in the gaussian integers}
+      1
+    = |1|^2
+    = |z z^{-1}|^2
+    = |z|^2 |z^{-1}|.
+  \end{equation}
+  Für alle $w \in \Integer[i]$ mit $w = a + ib$ gilt $a, b \in \Integer$ und deshalb $|w|^2 = a^2 + b^2 \in \Integer$.
+  In \eqref{eqn: units in the gaussian integers} gilt deshalb, dass $|z|^2, |z^{-1}|^2 \in \Integer$, und somit $|z|^2 \in \Integer^\times = \{1,-1\}$.
+  Also gilt $|z|^2 = 1$.
+  Ist $z = a + ib$ mit $a,b \in \Integer$ so ist also $a^2 + b^2 = 1$ und somit entweder $a = 0$ und $b = \pm 1$, oder $a = \pm 1$ und $b = 0$.
+  Es ist also $z \in \{1, -1, i, -i\}$.
+  Insgesamt zeigt dies, dass $\Integer[i]^\times = \{1, -1, i, -i\}$.
+\end{solution}
+
+
+\begin{question}[subtitle = Ein Lemma von Gauß]
+  Es sei $R$ ein faktorieller Ring und $f, g \in R[T]$ seien zwei primitive Polynome.
+  Zeigen Sie, dass auch $fg$ primitiv ist.
 \end{question}
 
 
 \begin{question}
+  Wir nehmen an, dass $fg$ nicht primitiv ist.
+  Dann gibt es ein Primelement $p \in R$, dass alle Koeffizienten von $fg$ teilt.
+  Für den von der kanonischen Projektion $R \to R/(p)$, $r \mapsto \overline{r}$ induzierten Ringhomomorphismus $\varphi \colon R[T] \to (R/(p))[T]$ gilt dann $0 = \varphi(fg) = \varphi(f) \varphi(g)$.
+  Der Quotient $R/(p)$ ist ein Integritätsbereich, da $p$ prim ist, und $(R/(p))[T]$ somit ebenfalls.
+  Also muss bereits $\varphi(f) = 0$ oder $\varphi(g) = 0$.
+  Dann sind aber alle Koeffizienten von $f$ durch $p$ teilbar, oder alle Koeffizienten von $g$ durch $p$ teilbar, was der Primitivität von $f$ und $g$ widerspricht.
+\end{question}
+
+
+\begin{question}[subtitle = Der Frobeniushomomorphismus]
+  \label{question: the frobenius homomorphism}
+  Es sei $R$ ein kommutativer Ring mit $p \coloneqq \ringchar R > 0$ prim.
   \begin{enumerate}
     \item
-      Es ist $a$ ein gemeinsamer Teiler der $a_i$, denn es gilt
-      \[
-              (a_i \mid i \in I) \subseteq (a)
-        \iff  \forall i \in I: a_i \in (a)
-        \iff  \forall i \in I: a \mid a_i.
-      \]
-      Da außerdem $a \in (a) \subseteq (a_i \mid i \in I)$ gilt, ergibt sich $a = \sum_{i \in I} r_i a_i$ für passende $r_i \in R$ mit $r_i = 0$ für fast alle $i \in I$.
-      Für jeden gemeinsamen Teiler $b \in R$ der $a_i$ gilt deshalb auch $b \mid a$.
-      Somit ist $a$ bereits ein größter gemeinsamer Teiler der $a_i$.
+      Zeigen Sie, dass die Abbildung $\sigma \colon R \to R$, $x \mapsto x^p$ ein Ringhomomorphismus ist.
     \item
-      Die Umkehrung gilt im Allgemeinen nicht:
-      Ist etwa $K$ ein Körper, so ist $1$ ein größter gemeinsamer Teiler von $X, Y \in K[X, Y]$, aber $(X, Y) \subsetneq (1)$.
+      Zeigen Sie, dass $\sigma$ ein Automorphismus ist, falls $R$ ein endlicher Körper ist.
   \end{enumerate}
 \end{question}
 
 
-\begin{question}[subtitle = Euklid]
-  Es sei $K$ ein Körper.
-  Zeigen Sie, dass es in $K[X]$ unendlich viele normierte, irreduzible Polynome gibt.
-\end{question}
-
-
 \begin{solution}
-  Wir nehmen an, dass es nur endlich viele normierte, irreduzible Polynome in $K[X]$ gibt, nämlich $p_1, \dotsc, p_n \in K[X]$.
-  Man bemerke, dass $n \geq 1$, da die Polynome $X - a$ für $a \in K$ irreduzibel und normiert sind.
-  Für das Element
-  \[
-    q \coloneqq 1 + p_1 \dotsm p_n \in K[X]
-  \]
-  gilt dann $\deg q \geq n \geq 1$.
-  Es gilt $q \equiv 1 \pmod{p_i}$ für alle $i = 1, \dotsc, n$, und somit $p_i \nmid q$ für alle $i = 1, \dotsc, n$.
-  Da die $p_i$ ein Repräsentantensystem der Primelemente von $K[X]$ sind, widerspricht dies der Existenz einer Primfaktorzerlegung von $q$.
+  \begin{enumerate}
+    \item
+      Es gilt $\sigma(1) = 1^p = 1$ und $\sigma(xy) = (xy)^p = x^p y^p = \sigma(x) \sigma(y)$ für alle $x, y \in R$.
+      Es bleibt also nur zu zeigen, dass $\sigma$ additiv ist.
+      Für alle $x, y \in R$ gilt
+      \begin{equation}
+        \label{equation: Frobenis homomorphism without cancelation}
+        \sigma(x+y) = (x+y)^p = \sum_{k=0}^p \binom{p}{k} x^k y^{p-k}
+      \end{equation}
+      Für alle $k = 1, \dotsc, p-1$ gilt dabei $p \mid \binom{p}{k}$, denn in dem Ausdruck $\binom{p}{k} = p!/(k!(p-k)!)$ enthält dann zwar der Zähler $p$ als Primfaktor, der Nenner aber nicht, da $k, p-k < p$.
+      Folglich vereinfacht sich \eqref{equation: Frobenis homomorphism without cancelation} zu $\sigma(x+y) = x^p + y^p = \sigma(x) + \sigma(y)$.
+    \item
+      Es gilt $\ker \sigma = 0$, denn für $x \in R$ mit $x^p = \sigma(x) = 0$ gilt wegen der Nullteilerfreiheit von $R$ bereits, dass $x = 0$.
+      Also ist $\sigma$ injektiv, und wegen der Endlichkeit von $R$ damit auch schon bijektiv.
+  \end{enumerate}
 \end{solution}
 
 
-\begin{question}[subtitle = Zur Existenz von maximalen Idealen]
-  Es sei $R$ ein Ring und $I \subseteq R$ ein echtes Ideal.
-  Zeigen Sie mithilfe des Lemmas von Zorn, dass es ein maximales Ideal $\mideal \subsetneq R$ gibt, so dass $I \subseteq \mideal$.
+\begin{question}[subtitle = Zur Definition von Unterringen]
+  Geben Sie ein Beispiel für einen kommutativen Ring $R$ und eine Teilmenge $S \subseteq R$ mit den folgenden Eigenschaften:
+  \begin{itemize}
+    \item
+      $S$ ist abgeschlossen unter der Addition und Multiplikation von $R$, d.h.\ für alle $s_1, s_2 \in S$ ist auch $s_1 + s_2 \in S$ und $s_1 s_2 \in S$.
+    \item
+      Zusammen mit der Einschränkung der Addition und Multiplikation aus $R$ ist $S$ ebenfalls ein (notwendigerweise kommutativer) Ring.
+    \item
+      $S$ ist kein Unterring von $R$.
+  \end{itemize}
 \end{question}
 
 
 \begin{solution}
-  Es sei
-  \[
-              \mathcal{I}
-    \coloneqq \{J \subsetneq R \mid \text{$J$ ist ein echtes Ideal mit $I \subseteq J$}\}.
-  \]
-  Die Menge $\mathcal{I}$ ist nicht leer, da sie $I$ enthält.
-  Bezüglich der üblichen Teilmengeninklusion $\subseteq$ ist $\mathcal{I}$ partiell geordnet.
-  
-  Ist $\mathcal{K} \subseteq \mathcal{I}$ eine nicht-leere Kette, so ist auch $K \coloneqq \bigcup \mathcal{K} = \bigcup_{J \in \mathcal{K}} J$ wieder ein Ideal in $R$, und es gilt $I \subseteq K$.
-  Da alle $J \in \mathcal{K}$ echte Ideale sind, gilt $1 \notin J$ für alle $J \in \mathcal{K}$;
-  somit gilt auch $1 \notin K$, weshalb $K$ ein echtes Ideal in $R$ ist.
-  Ingesamt ist also $K \in \mathcal{I}$, und da $J \subseteq K$ für alle $J \in \mathcal{K}$ gilt, ist $K$ eine obere Schranke für $\mathcal{K}$ in $\mathcal{I}$.
-  
-  Nach dem Lemma von Zorn besitzt nun $\mathcal{I}$ ein maximales Element $\mideal \in \mathcal{I}$;
-  inbesondere ist $\mideal$ ein echtes Ideal in $R$ mit $I \subseteq \mideal$.
-  Wäre $\mideal$ kein maximales Ideal in $R$, so gebe es ein echtes Ideal $\mideal' \subsetneq R$ mit $\mideal \subsetneq \mideal'$.
-  Dann wäre aber $I \subseteq \mideal \subsetneq \mideal'$ und somit $\mideal' \in \mathcal{I}$. Da $\mideal \subsetneq \mideal'$ stünde dies im Widerspruch zur Maximalität von $\mideal$ in $\mathcal{I}$.
-  Also muss $\mideal$ bereits ein maximales Ideal in $R$ sein.
+  Es sei $R = \Integer \times \Integer$ und $S = \Integer \times 0 = \{(n,0) \mid n \in \Integer\}$.
+  Offenbar ist $S$ unter der Addition und Multiplikation abgeschlossen.
+  Zusammen mit der Einschränkung dieser Operationen bildet $S$ einen kommutativen Ring, für den $S \cong \Integer$ gilt.
+  Da $1_R = (1,1) \notin S$ ist $S$ allerdings kein Unterring von $R$.
 \end{solution}
 
 
@@ -1849,19 +1861,6 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Polynomringe sind keine Körper]
-  \label{qst: polynomial rings are not fields}
-  Zeigen Sie, dass es keinen Ring $R$ gibt, so dass $R[X]$ ein Körper ist.
-\end{question}
-
-
-\begin{solution}
-  Gebe es einen solchen Ring $R$, so wäre $R$ kommutativ, da $R \subseteq R[X]$ ein Unterring ist.
-  Es wäre auch $R \neq 0$ da $0[X] = 0$ kein Körper ist.
-  Dann wäre aber $0 \neq X \in R[X]$ keine Einheit und $R[X]$ somit kein Körper.
-\end{solution}
-
-
 \begin{question}[subtitle = Produkte von Idealen]
   \label{question: product of ideals is an ideal}
   Es seien $R_1, \dotsc, R_n$ kommutative Ringe für jedes $i = 1, \dotsc, n$ sei $\aideal_i \subseteq R_i$ ein Ideal.
@@ -1963,6 +1962,60 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Lokalisierung und Produkte]
+  Es seien $R$ und $R'$ zwei kommutative Ringe, und $S \subseteq R$ und $S' \subseteq R'$ multiplikative Mengen.
+  Es seien $i \colon R \to R_S$ und $i' \colon R' \to R'_{S'}$ die kanonischen Ringhomomorphismen.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $S \times S' \subseteq R \times R'$ eine multiplikative Menge ist.
+  \end{enumerate}
+  Es sei $j \colon R \times R' \to (R \times R')_{S \times S'}$ der kanonische Ringhomomorphismus.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass es eine eindeutigen Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ gibt, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[ampersand replacement = \&]
+              {}
+          \&  R \times R'
+              \arrow{dl}[swap]{j}
+              \arrow{dr}{i \times i'}
+              {}
+          \\
+              (R \times R')_{S \times S'}
+              \arrow{rr}{\varphi}
+          \&  {}
+          \&  R_S \times R'_{S'}
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie, dass $\varphi$ ein Isomorphismus ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gelten $1 \in S$ und $1' \in S'$ und somit auch $1_{R \times R'} = (1_R, 1_{R'}) \in S \times S'$.
+      
+      Für $(s_1, s'_1), (s_2, s'_2) \in S \times S'$ gelten auch $s_1 s_1' \in S_1$ und $s_2 s_2' \in S_2$, und deshalb gilt $(s_1 s_1', s_2, s_2') \in S \times S'$.
+      
+    \item
+      Für $(s, s') \in S \times S'$ gelten $i(s) = s/1 \in R_S^\times$ und $i'(s') = s'/1 \in R_{S'}^\times$ und somit $(i \times i')(s,s') = (s/1, s'/1) \in R_S^\times \times R_{S'}^\times = (R_S \times R_{S'})^\times$.
+      Nach der universellen Eigenschaft der Lokalisierung $(R \times R')_{S \times S'}$ setzt sich $i \times i'$ eindeutig zu einem Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ fort, so dass $\varphi \circ j = i \times i'$, d.h.\ so dass das gegebene Diagramm kommutiert.
+      Konkret gilt $\varphi((r,r')/(s,s')) = (r/s, r'/s')$ für alle $(r,r')/(s,s') \in (R \times R')_{S \times S'}$.
+      
+    \item
+      Für jedes $(r/s, r'/s') \in R_S \times R'_{S'}$ gilt $(r/s, r'/s') = \varphi((r,r')/(s,s')) \in \im \varphi$, also ist $\varphi$ surjektiv.
+      Für $(r,r')/(s,s') \in \ker \varphi$ gilt $0 = \varphi((r,r')/(s,s')) = (r/s, r'/s')$.
+      Es ist also $r/s = 0/1$, es gibt also $t \in S$ mit $tr = 0$.
+      Analog gibt es auch $t' \in S'$ mit $t'r' = 0$.
+      Dann ist $(t,t') \in S \times S'$ mit $(t,t')(r,r') = (tr,t'r') = 0$, weshalb $(r,r')/(s,s') = 0$ gilt.
+      Also ist $\ker \varphi = 0$ und $\varphi$ somit auch injektiv.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{remark*}
   Übung~\ref{question: product of ideals is an ideal} und Übung~\ref{questions: ideals in products are products of ideal} ergeben zusammen eine Klassifikation der Primideale, bzw.\ maximalen Ideale in $R_1 \times \dotsb \times R_n$:
   Es handelt sich (in gewisser Weise) um die disjunkte Vereinigung der Primideale, bzw.\ maximalen Ideale der $R_i$.
@@ -2018,60 +2071,6 @@
           \&  R'_{S'}
         \end{tikzcd}
       \]
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Lokalisierung und Produkte]
-  Es seien $R$ und $R'$ zwei kommutative Ringe, und $S \subseteq R$ und $S' \subseteq R'$ multiplikative Mengen.
-  Es seien $i \colon R \to R_S$ und $i' \colon R' \to R'_{S'}$ die kanonischen Ringhomomorphismen.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $S \times S' \subseteq R \times R'$ eine multiplikative Menge ist.
-  \end{enumerate}
-  Es sei $j \colon R \times R' \to (R \times R')_{S \times S'}$ der kanonische Ringhomomorphismus.
-  \begin{enumerate}[resume]
-    \item
-      Zeigen Sie, dass es eine eindeutigen Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ gibt, so dass das folgende Diagram kommutiert:
-      \[
-        \begin{tikzcd}[ampersand replacement = \&]
-              {}
-          \&  R \times R'
-              \arrow{dl}[swap]{j}
-              \arrow{dr}{i \times i'}
-              {}
-          \\
-              (R \times R')_{S \times S'}
-              \arrow{rr}{\varphi}
-          \&  {}
-          \&  R_S \times R'_{S'}
-        \end{tikzcd}
-      \]
-    \item
-      Zeigen Sie, dass $\varphi$ ein Isomorphismus ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es gelten $1 \in S$ und $1' \in S'$ und somit auch $1_{R \times R'} = (1_R, 1_{R'}) \in S \times S'$.
-      
-      Für $(s_1, s'_1), (s_2, s'_2) \in S \times S'$ gelten auch $s_1 s_1' \in S_1$ und $s_2 s_2' \in S_2$, und deshalb gilt $(s_1 s_1', s_2, s_2') \in S \times S'$.
-      
-    \item
-      Für $(s, s') \in S \times S'$ gelten $i(s) = s/1 \in R_S^\times$ und $i'(s') = s'/1 \in R_{S'}^\times$ und somit $(i \times i')(s,s') = (s/1, s'/1) \in R_S^\times \times R_{S'}^\times = (R_S \times R_{S'})^\times$.
-      Nach der universellen Eigenschaft der Lokalisierung $(R \times R')_{S \times S'}$ setzt sich $i \times i'$ eindeutig zu einem Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ fort, so dass $\varphi \circ j = i \times i'$, d.h.\ so dass das gegebene Diagramm kommutiert.
-      Konkret gilt $\varphi((r,r')/(s,s')) = (r/s, r'/s')$ für alle $(r,r')/(s,s') \in (R \times R')_{S \times S'}$.
-      
-    \item
-      Für jedes $(r/s, r'/s') \in R_S \times R'_{S'}$ gilt $(r/s, r'/s') = \varphi((r,r')/(s,s')) \in \im \varphi$, also ist $\varphi$ surjektiv.
-      Für $(r,r')/(s,s') \in \ker \varphi$ gilt $0 = \varphi((r,r')/(s,s')) = (r/s, r'/s')$.
-      Es ist also $r/s = 0/1$, es gibt also $t \in S$ mit $tr = 0$.
-      Analog gibt es auch $t' \in S'$ mit $t'r' = 0$.
-      Dann ist $(t,t') \in S \times S'$ mit $(t,t')(r,r') = (tr,t'r') = 0$, weshalb $(r,r')/(s,s') = 0$ gilt.
-      Also ist $\ker \varphi = 0$ und $\varphi$ somit auch injektiv.
   \end{enumerate}
 \end{solution}
 
@@ -2136,28 +2135,81 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Einheitengruppe der Gaußschen Zahlen]
-  Bestimmen Sie die Einheitengruppe $\Integer[i]^\times$.
+\begin{question}[subtitle = Idealtheoretische Beschreibung größter gemeinsamer Teiler]
+  \label{question: greatest common divisor via generated ideal}
+  Es sei $R$ ein kommutativer Ring, $(a_i)_{i \in I}$ eine Familie von Elementen $a_i \in R$ und $a \in R$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $a$ ein größter gemeinsamer Teiler der $a_i$ ist, falls $(a_i \mid i \in I) = (a)$.
+    \item
+      Entscheiden Sie, ob auch die Umkehrung der obigen Aussage gilt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}
+    \item
+      Es ist $a$ ein gemeinsamer Teiler der $a_i$, denn es gilt
+      \[
+              (a_i \mid i \in I) \subseteq (a)
+        \iff  \forall i \in I: a_i \in (a)
+        \iff  \forall i \in I: a \mid a_i.
+      \]
+      Da außerdem $a \in (a) \subseteq (a_i \mid i \in I)$ gilt, ergibt sich $a = \sum_{i \in I} r_i a_i$ für passende $r_i \in R$ mit $r_i = 0$ für fast alle $i \in I$.
+      Für jeden gemeinsamen Teiler $b \in R$ der $a_i$ gilt deshalb auch $b \mid a$.
+      Somit ist $a$ bereits ein größter gemeinsamer Teiler der $a_i$.
+    \item
+      Die Umkehrung gilt im Allgemeinen nicht:
+      Ist etwa $K$ ein Körper, so ist $1$ ein größter gemeinsamer Teiler von $X, Y \in K[X, Y]$, aber $(X, Y) \subsetneq (1)$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Euklid]
+  Es sei $K$ ein Körper.
+  Zeigen Sie, dass es in $K[X]$ unendlich viele normierte, irreduzible Polynome gibt.
 \end{question}
 
 
 \begin{solution}
-  Ein Element $z \in \Integer[i]$ ist genau dann eine Einheit in $\Integer[i]$, wenn $z \neq 0$ und $z^{-1} \in \Integer[i]$ (hier bezeichnet $z^{-1} = 1/z$ das Inverse von $z$ in $\Complex$).
-  Für die Elemente $1, -1, i, -i \in \Integer[i]$ ist dies erfüllt.
-  Ist $z \in \Integer[i]$ mit $z \neq 0$ und $z^{-1} \in \Integer[i]$, so ist
-  \begin{equation}
-    \label{eqn: units in the gaussian integers}
-      1
-    = |1|^2
-    = |z z^{-1}|^2
-    = |z|^2 |z^{-1}|.
-  \end{equation}
-  Für alle $w \in \Integer[i]$ mit $w = a + ib$ gilt $a, b \in \Integer$ und deshalb $|w|^2 = a^2 + b^2 \in \Integer$.
-  In \eqref{eqn: units in the gaussian integers} gilt deshalb, dass $|z|^2, |z^{-1}|^2 \in \Integer$, und somit $|z|^2 \in \Integer^\times = \{1,-1\}$.
-  Also gilt $|z|^2 = 1$.
-  Ist $z = a + ib$ mit $a,b \in \Integer$ so ist also $a^2 + b^2 = 1$ und somit entweder $a = 0$ und $b = \pm 1$, oder $a = \pm 1$ und $b = 0$.
-  Es ist also $z \in \{1, -1, i, -i\}$.
-  Insgesamt zeigt dies, dass $\Integer[i]^\times = \{1, -1, i, -i\}$.
+  Wir nehmen an, dass es nur endlich viele normierte, irreduzible Polynome in $K[X]$ gibt, nämlich $p_1, \dotsc, p_n \in K[X]$.
+  Man bemerke, dass $n \geq 1$, da die Polynome $X - a$ für $a \in K$ irreduzibel und normiert sind.
+  Für das Element
+  \[
+    q \coloneqq 1 + p_1 \dotsm p_n \in K[X]
+  \]
+  gilt dann $\deg q \geq n \geq 1$.
+  Es gilt $q \equiv 1 \pmod{p_i}$ für alle $i = 1, \dotsc, n$, und somit $p_i \nmid q$ für alle $i = 1, \dotsc, n$.
+  Da die $p_i$ ein Repräsentantensystem der Primelemente von $K[X]$ sind, widerspricht dies der Existenz einer Primfaktorzerlegung von $q$.
+\end{solution}
+
+
+\begin{question}[subtitle = Zur Existenz von maximalen Idealen]
+  Es sei $R$ ein Ring und $I \subseteq R$ ein echtes Ideal.
+  Zeigen Sie mithilfe des Lemmas von Zorn, dass es ein maximales Ideal $\mideal \subsetneq R$ gibt, so dass $I \subseteq \mideal$.
+\end{question}
+
+
+\begin{solution}
+  Es sei
+  \[
+              \mathcal{I}
+    \coloneqq \{J \subsetneq R \mid \text{$J$ ist ein echtes Ideal mit $I \subseteq J$}\}.
+  \]
+  Die Menge $\mathcal{I}$ ist nicht leer, da sie $I$ enthält.
+  Bezüglich der üblichen Teilmengeninklusion $\subseteq$ ist $\mathcal{I}$ partiell geordnet.
+  
+  Ist $\mathcal{K} \subseteq \mathcal{I}$ eine nicht-leere Kette, so ist auch $K \coloneqq \bigcup \mathcal{K} = \bigcup_{J \in \mathcal{K}} J$ wieder ein Ideal in $R$, und es gilt $I \subseteq K$.
+  Da alle $J \in \mathcal{K}$ echte Ideale sind, gilt $1 \notin J$ für alle $J \in \mathcal{K}$;
+  somit gilt auch $1 \notin K$, weshalb $K$ ein echtes Ideal in $R$ ist.
+  Ingesamt ist also $K \in \mathcal{I}$, und da $J \subseteq K$ für alle $J \in \mathcal{K}$ gilt, ist $K$ eine obere Schranke für $\mathcal{K}$ in $\mathcal{I}$.
+  
+  Nach dem Lemma von Zorn besitzt nun $\mathcal{I}$ ein maximales Element $\mideal \in \mathcal{I}$;
+  inbesondere ist $\mideal$ ein echtes Ideal in $R$ mit $I \subseteq \mideal$.
+  Wäre $\mideal$ kein maximales Ideal in $R$, so gebe es ein echtes Ideal $\mideal' \subsetneq R$ mit $\mideal \subsetneq \mideal'$.
+  Dann wäre aber $I \subseteq \mideal \subsetneq \mideal'$ und somit $\mideal' \in \mathcal{I}$. Da $\mideal \subsetneq \mideal'$ stünde dies im Widerspruch zur Maximalität von $\mideal$ in $\mathcal{I}$.
+  Also muss $\mideal$ bereits ein maximales Ideal in $R$ sein.
 \end{solution}
 
 
@@ -2233,57 +2285,7 @@
 \end{question}
 
 
-\begin{question}[subtitle = Ein Lemma von Gauß]
-  Es sei $R$ ein faktorieller Ring und $f, g \in R[T]$ seien zwei primitive Polynome.
-  Zeigen Sie, dass auch $fg$ primitiv ist.
-\end{question}
-
-
-\begin{question}
-  Wir nehmen an, dass $fg$ nicht primitiv ist.
-  Dann gibt es ein Primelement $p \in R$, dass alle Koeffizienten von $fg$ teilt.
-  Für den von der kanonischen Projektion $R \to R/(p)$, $r \mapsto \overline{r}$ induzierten Ringhomomorphismus $\varphi \colon R[T] \to (R/(p))[T]$ gilt dann $0 = \varphi(fg) = \varphi(f) \varphi(g)$.
-  Der Quotient $R/(p)$ ist ein Integritätsbereich, da $p$ prim ist, und $(R/(p))[T]$ somit ebenfalls.
-  Also muss bereits $\varphi(f) = 0$ oder $\varphi(g) = 0$.
-  Dann sind aber alle Koeffizienten von $f$ durch $p$ teilbar, oder alle Koeffizienten von $g$ durch $p$ teilbar, was der Primitivität von $f$ und $g$ widerspricht.
-\end{question}
-
-
-\begin{question}[subtitle = Ein nicht-faktorieller Ring]
-  Es sei $K$ ein Körper und $R \coloneqq K[t^2, t^3] \subseteq K[t]$.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $R$ noethersch ist.
-    \item
-      Folgern Sie, dass in $R$ eine Zerlegung in irreduzible Elemente existiert.
-    \item
-      Zeigen Sie, dass $R$ nicht faktoriell ist.
-      (\emph{Hinweis}:
-       Zeigen Sie zunächst, dass $t^2$ und $t^3$ irreduzibel sind.)
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Nach dem Hilbertschen Nullstellensatz ist $K[X,Y]$ noethersch.
-      Der Einsetzhomomorphismus $\varphi \colon K[X,Y] \to K[t^2, t^3]$ mit $\varphi(X) = t^2$ und $\varphi(Y) = t^3$ ist surjektiv, und somit $R = K[t^2, t^3] \cong K[X,Y]/\ker \varphi$ als Quotient eines noetherschen Rings ebenfalls noethersch.
-    \item
-      Als Unterring von $K[t]$ ist $R$ ein Integritätsbereich.
-      Aus der Vorlesung ist bekannt, dass in noetherschen Integritätsbereichen eine Zerlegung in irreduzible Elemente existiert.
-    \item
-      Wir bemerken zunächst, dass $R = \{\sum_i f_i T^i \in K[t] \mid f_1 = 0\}$.
-      Es enthält also $R$ keine Polynome vom Grad $1$.
-      Jede nicht-triviale Zerlegung von $t^2$ oder $t^3$ in $K[t]$ enthält aber einen Faktor vom Grad $1$;
-      folglich sind beide Elemente irreduzibel in $R$.
-      Wir erhalten nun für $t^6 \in R$ mit $t^6 = t^2 \cdot t^2 \cdot t^2 = t^3 \cdot t^3$ zwei Zerlegungen in irreduzible Elemente, die nicht äquivalent im Sinne eines faktoriellen Rings sind (insbesondere kommen in beiden Zerlegungen unterschiedlich viele Faktoren vor).
-      Folgich ist $R$ nicht faktoriell.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitel = $\powerseries{K}{X}$ ist lokal]
+\begin{question}[subtitle = $\powerseries{K}{X}$ ist lokal]
   Es sei $K$ ein Körper.
   Zeigen Sie, dass der Ring $\powerseries{K}{X}$ ein eindeutiges maximales Ideal besitzt.
 \end{question}
