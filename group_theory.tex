@@ -1,7 +1,6 @@
 \section{Gruppentheorie}
 
 
-
 \begin{question}[subtitle = Wahr oder Falsch?]
   \begin{enumerate}
     \item
@@ -55,24 +54,6 @@
 \end{solution}
 
 
-\begin{question}
-  Zeigen Sie, dass die symmetrische Gruppe $S_n$ von dem Zykel $\rho = (1 \, 2 \, \dotso \, n)$ und der Permutation $\tau = (1 \, 2)$ erzeugt wird.
-\end{question}
-
-
-\begin{solution}
-  Für alle $i = 1, \dotsc, n$ gilt $\rho^{i-1}(1) = i$ und $\rho^{i-1}(2) = i+1$, und somit
-  \[
-    \rho^{i-1} \tau (\rho^{i-1})^{-1}
-    = \rho^{i-1} (1 \quad 2) (\rho^{i-1})^{-1}
-    = (\rho^{i-1}(1) \quad \rho^{i-1}(2))
-    = (i \quad i+1).
-  \]
-  Deshalb gilt $(1 \quad 2), (2 \quad 3), \dotsc, (n-1 \quad n) \in \generate{\rho, \tau}$.
-  Da $S_n$ von diese Elementartranspositionen erzeugt wird, gilt bereits $S_n \subseteq \generate{\rho, \tau} \subseteq S_n$, und somit $S_n = \generate{\rho, \tau}$.
-\end{solution}
-
-
 \begin{question}[subtitle = Klassifikation zyklischer Gruppen]
   Es sei $G$ eine zyklische Gruppe, d.h.\ es gebe eine $g \in G$ mit $G = \generate{g}$.
   \begin{enumerate}
@@ -106,6 +87,98 @@
       ist $G$ endlich, so muss $n = |\Integer/n| = |G|$ gelten.
       Das zeigt die Eindeutigkeit von $n$.
   \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Innere Automorphismen]
+  \label{question: inner automorphims}
+  Es sei $G$ eine Gruppe.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für jedes $g \in G$ die Abbildung $c_g \colon G \to G$, $h \mapsto g h g^{-1}$ ein Gruppenautomorphismus ist.
+    \item
+      Zeigen Sie, dass die Abbildung $c \colon G \to G$, $g \mapsto c_g$ ein Gruppenhomomorphismus ist.
+    \item
+      Zeigen Sie, dass $\ker c = \Center(G)$.
+    \item
+      Zeigen Sie, dass $\Inner G \coloneqq \im c$ eine normale Untergruppe von $\Aut G$ ist.
+  \end{enumerate}
+  Man bezeichnet $\Inner G$ als die Gruppe der \emph{inneren Automorphismen} von $G$.
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für alle $h_1, h_2 \in G$ gilt
+      \[
+          c_g(h_1 h_2)
+        = g h_1 h_2 g^{-1}
+        = g h_1 g^{-1} g h_2 g^{-1}
+        = c_g(h_1) c_g(h_2),
+      \]
+      also ist $c_g$ ein Gruppenhomomorphismus.
+      Für alle $h \in G$ gilt
+      \[
+          c_g( c_{g^{-1}}(h) )
+        = g g^{-1} h g g^{-1}
+        = h
+        = g^{-1} g h g^{-1} g
+        = c_{g^{-1}}( c_g(h) ),
+      \]
+      also ist $c_g$ bijektiv mit $c_g^{-1} = c_{g^{-1}}$.
+    \item
+      Für alle $g_1, g_2 \in G$ gilt
+      \[
+          c_{g_1 g_2}(h)
+        = (g_1 g_2) h (g_1 g_2)^{-1}
+        = g_1 g_2 h g_2^{-1} g_1^{-1}
+        = c_{g_1}( c_{g_2}(h) )
+        \qquad
+        \text{für alle $h \in G$}
+      \]
+      und somit $c_{g_1 g_2} = c_{g_1} c_{g_2}$.
+    \item
+      Für $g \in G$ gilt
+      \begin{align*}
+              g \in \ker c
+        &\iff c_g = \id_G
+         \iff \forall h \in G: c_g(h) = h
+        \\
+        &\iff \forall h \in G: ghg^{-1} = h
+         \iff \forall h \in G: gh = hg
+         \iff g \in \Center(G).
+      \end{align*}
+    \item
+      Da $c$ ein Gruppenhomomorphismus ist, ist $\Inner G$ ein Untergruppe von $\Aut G$.
+      Für jedes $\phi \in \Aut G$ und jedes $g \in G$ gilt $\phi c_g \phi^{-1} = c_{\phi(g)}$, denn für alle $h \in G$ gilt
+      \[
+        (\phi c_g \phi^{-1})(h)
+        = \phi( c_g( \phi^{-1}(h) ) )
+        = \phi(g \phi^{-1}(h) g^{-1})
+        = \phi(g) h \phi(g)^{-1}
+        = c_{\phi(g)}(h).
+      \]
+      Folglich ist $\phi \, {\Inner G} \, \phi^{-1} \subseteq \im c$ für alle $\phi \in \Aut G$, also $\im c$ normal in $\Aut G$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Ein Erzeugendensystem von $S_n$]
+  Zeigen Sie, dass die symmetrische Gruppe $S_n$ von dem Zykel $\rho = (1 \, 2 \, \dotso \, n)$ und der Permutation $\tau = (1 \, 2)$ erzeugt wird.
+\end{question}
+
+
+\begin{solution}
+  Für alle $i = 1, \dotsc, n$ gilt $\rho^{i-1}(1) = i$ und $\rho^{i-1}(2) = i+1$, und somit
+  \[
+    \rho^{i-1} \tau (\rho^{i-1})^{-1}
+    = \rho^{i-1} (1 \quad 2) (\rho^{i-1})^{-1}
+    = (\rho^{i-1}(1) \quad \rho^{i-1}(2))
+    = (i \quad i+1).
+  \]
+  Deshalb gilt $(1 \quad 2), (2 \quad 3), \dotsc, (n-1 \quad n) \in \generate{\rho, \tau}$.
+  Da $S_n$ von diese Elementartranspositionen erzeugt wird, gilt bereits $S_n \subseteq \generate{\rho, \tau} \subseteq S_n$, und somit $S_n = \generate{\rho, \tau}$.
 \end{solution}
 
 
@@ -160,6 +233,102 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Ein Kriterium für maximale Untergruppen]
+  Es sei $G$ ein Gruppe und $H \subseteq G$ eine Untergruppe, so dass $[G : H]$ endlich und prim ist.
+  Zeigen Sie, dass $H$ eine maximale echte Untergruppe von $G$ ist. Entscheiden Sie, ob $H$ notwendigerweise normal in $G$ ist.
+\end{question}
+
+
+\begin{solution}
+  Es sei $p \coloneqq [G : H]$.
+  Da $p$ eine Primzahl ist gilt inbesondere $p \neq 1$, weshalb $H$ eine echte Untergruppe von $G$ ist.
+  Ist $K \subsetneq G$ eine echte Untergruppe von $G$ mit $H \subseteq K$, so gilt wegen der Multiplikativität des Index’, dass 
+  \[
+      p
+    = [G : H]
+    = [G : K] [K : H].
+  \]
+  Da $p$ eine Primzahl ist, gilt entweder $[G : K] = p$ und $[K : H] = 1$, oder $[G : K] = 1$ und $[K : H] = p$.
+  Es gilt $[G : K] > 1$, da $K$ eine echte Untergruppe von $G$ ist, und somit $[K : H] = 1$.
+  Also ist $K = H$, und somit $H$ eine maximale echte Untergruppe.
+  
+  $H$ ist nicht notwendigerweise normal in $G$:
+  Für $G = S_3$ und $H = \generate{(1\,2)} = \{\id, (1\,2)\}$ ist $H$ zwar nicht normal in $G$, aber $[G : H] = |G|/|H| = 6/2 = 3$ ist prim.
+\end{solution}
+
+
+\begin{question}[subtitle = Grundbegriffe der Gruppenwirkungen]
+  Es sei $G$ eine Gruppe, die auf einer Menge $X$ vermöge $G \times X \to X$, $(g,x) \mapsto g.x$ wirkt.
+  \begin{enumerate}
+    \item
+      Definieren Sie die Bahn $G.x$ und den Stabilisator $G_x$ eines Elementes $x \in X$.
+    \item
+      Zeigen Sie, dass $G_x$ für alle $x \in X$ eine Untergruppe von $G$ ist.
+    \item
+      Konstruieren Sie für jedes $x \in X$ eine Bijektion $G/G_x \to G.x$.
+    \item
+      Es seien $x, y \in X$ zwei Elemente mit gleicher $G$-Bahn.
+      Zeigen Sie, dass die Stabilisatoren $G_x$ und $G_y$ konjugiert zueinander sind.
+    \item
+      Entscheiden Sie, ob auch die Umkerung der obigen Aussage notwendigerweise gilt.
+    \item
+      Zeigen Sie, dass $X$ die disjunkte Vereinigung der $G$-Bahnen ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $G.x = \{g.x \mid g \in G\}$, der Stabilisator von $x$ ist $G_x = \{g \in G \mid g.x = x\}$.
+    \item
+      Es gilt $1 \in G_x$ da $1.x = x$.
+      Für $g_1, g_2 \in G_x$ gilt $(g_1 g_2).x = g_1.(g_2.x) = g_1.x = x$ und somit auch $g_1 g_2 \in G_x$.
+      Für $g \in G$ gilt $g^{-1}.x = g^{-1}.(g.x) = (g^{-1}.g).x = 1.x = x$ und somit auch $g^{-1} \in G_x$.
+      Ingesamt zeigt dies, dass $G_x$ ein Untergruppe von $G$ ist.
+    \item
+      Die Abbildung $f \colon G \to G.x$, $g \mapsto g.x$ ist surjektiv, und für $g_1, g_2 \in G$ gilt
+      \begin{align*}
+              f(g_1) = f(g_2)
+        &\iff g_1.x = g_2.x
+        \iff  g_2^{-1}.g_1.x = x
+        \\
+        &\iff (g_2^{-1} g_1).x = x
+        \iff  g_2^{-1} g_1 \in G_x
+        \iff  g_1 G_x = g_2 G_x,
+      \end{align*}
+      weshalb $f$ durch eine wohldefinierte Bijektion $\overline{f} \colon G/G_x \to G.x$, $\overline{g} \mapsto g.x$ faktorisiert.
+    \item
+      Haben $x$ und $y$ die Gleiche $G$-Bahn, so gibt es $g \in G$ mit $y = g^{-1}.x$.
+      Für alle $h \in G$ gilt dann
+      \begin{align*}
+              h \in G_y
+        &\iff h.y = y
+        \iff  h.g^{-1}.x = g^{-1}.x
+        \\
+        &\iff g.h.g^{-1}.x = x
+        \iff  (g h g^{-1}).x = x
+        \iff  g h g^{-1} \in G_x.
+      \end{align*}
+      Wegen der Bijektivität der Konjugationsabbildung $G \to G$, $h \mapsto ghg^{-1}$ folgt, dass $g G_y g^{-1} = G_x$.
+    \item
+      Die Umkehrung gilt nicht:
+      Gilt etwa $G = 1$, so gilt $G_x = G$ für alle $x \in X$, aber alle Bahnen sind einelementig.
+      Für $|X| \geq 2$ ergibt dies ein Gegenbeispiel.
+      
+      Allgemeiner kann man eine beliebige Gruppe $G$ auf einer Menge $X$ mit $|X| \geq 2$ trivial wirken lassen, d.h.\ es gelte $g.x = x$ für alle $g \in G$ und $x \in X$.
+      Dann gilt $G_x = G$ für alle $x \in X$ aber alle Bahnen sind einelementig.
+    \item
+      Es genügt zu zeigen, dass $x \sim y \iff x \in G.y$ eine Äquivalenzrelation auf $X$ definiert, denn dann sind die $G$-Bahnen genau die Äquivalenzklassen von ${\sim}$.
+      Da $x = 1.x \in G.x$ ist die Relation reflexiv.
+      Gilt $x \sim y$ so gibt es $g \in G$ mit $x = g.x$;
+      dann gilt auch $y = g^{-1}.x \in G.x$ und somit $y \sim x$.
+      Für $x, y, z \in X$ mit $x \sim y$ und $y \sim z$ gibt es $g, h \in G$ mit $x = g.y$ und $y = h.z$;
+      dann gilt auch $x = g.y = g.h.z = (gh).z \in G.z$ und somit $x \sim z$.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Bahnenkombinatorik]
   Es sei $G$ eine Gruppe der Ordnung $77$ die auf einer $17$-elementigen Menge $X$ wirkt.
   Zeigen Sie, dass die Wirkung mindestens $3$ Fixpunkte hat.
@@ -184,7 +353,6 @@
   \]
   In jeder der Möglichkeiten kommt der Summand $1$ mindestens dreimal vor, wodurch sich die Aussage ergibt.
 \end{solution}
-
 
 
 \begin{question}[subtitle = Mehr Bahnenkombinatorik]
@@ -234,7 +402,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Die oberen $2 \times 2$-Matrizen]
   Es sei $K$ ein Körper.
   \begin{enumerate}
     \item
@@ -426,7 +594,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Vereinigung von Untergruppen]
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
     \item
@@ -651,30 +819,6 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Ein Kriterium für maximale Untergruppen]
-  Es sei $G$ ein Gruppe und $H \subseteq G$ eine Untergruppe, so dass $[G : H]$ endlich und prim ist.
-  Zeigen Sie, dass $H$ eine maximale echte Untergruppe von $G$ ist. Entscheiden Sie, ob $H$ notwendigerweise normal in $G$ ist.
-\end{question}
-
-
-\begin{solution}
-  Es sei $p \coloneqq [G : H]$.
-  Da $p$ eine Primzahl ist gilt inbesondere $p \neq 1$, weshalb $H$ eine echte Untergruppe von $G$ ist.
-  Ist $K \subsetneq G$ eine echte Untergruppe von $G$ mit $H \subseteq K$, so gilt wegen der Multiplikativität des Index’, dass 
-  \[
-      p
-    = [G : H]
-    = [G : K] [K : H].
-  \]
-  Da $p$ eine Primzahl ist, gilt entweder $[G : K] = p$ und $[K : H] = 1$, oder $[G : K] = 1$ und $[K : H] = p$.
-  Es gilt $[G : K] > 1$, da $K$ eine echte Untergruppe von $G$ ist, und somit $[K : H] = 1$.
-  Also ist $K = H$, und somit $H$ eine maximale echte Untergruppe.
-  
-  $H$ ist nicht notwendigerweise normal in $G$:
-  Für $G = S_3$ und $H = \generate{(1\,2)} = \{\id, (1\,2)\}$ ist $H$ zwar nicht normal in $G$, aber $[G : H] = |G|/|H| = 6/2 = 3$ ist prim.
-\end{solution}
-
-
 \begin{question}[subtitle = Quadrate in endlichen Körpern]
   Es sei $p > 0$ prim, $n$ eine positive natürliche Zahl und
   \[
@@ -750,388 +894,3 @@
       Dann ist $a+b$ gerade und somit $xy = g^a g^b = g^{a+b} = (g^{(a+b)/2})^2$ ein Quadrat.
   \end{enumerate}
 \end{solution}
-
-
-\begin{question}[subtitle = Innere Automorphismen]
-  \label{question: inner automorphims}
-  Es sei $G$ eine Gruppe.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass für jedes $g \in G$ die Abbildung $c_g \colon G \to G$, $h \mapsto g h g^{-1}$ ein Gruppenautomorphismus ist.
-    \item
-      Zeigen Sie, dass die Abbildung $c \colon G \to G$, $g \mapsto c_g$ ein Gruppenhomomorphismus ist.
-    \item
-      Zeigen Sie, dass $\ker c = \Center(G)$.
-    \item
-      Zeigen Sie, dass $\Inner G \coloneqq \im c$ eine normale Untergruppe von $\Aut G$ ist.
-  \end{enumerate}
-  Man bezeichnet $\Inner G$ als die Gruppe der \emph{inneren Automorphismen} von $G$.
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Für alle $h_1, h_2 \in G$ gilt
-      \[
-          c_g(h_1 h_2)
-        = g h_1 h_2 g^{-1}
-        = g h_1 g^{-1} g h_2 g^{-1}
-        = c_g(h_1) c_g(h_2),
-      \]
-      also ist $c_g$ ein Gruppenhomomorphismus.
-      Für alle $h \in G$ gilt
-      \[
-          c_g( c_{g^{-1}}(h) )
-        = g g^{-1} h g g^{-1}
-        = h
-        = g^{-1} g h g^{-1} g
-        = c_{g^{-1}}( c_g(h) ),
-      \]
-      also ist $c_g$ bijektiv mit $c_g^{-1} = c_{g^{-1}}$.
-    \item
-      Für alle $g_1, g_2 \in G$ gilt
-      \[
-          c_{g_1 g_2}(h)
-        = (g_1 g_2) h (g_1 g_2)^{-1}
-        = g_1 g_2 h g_2^{-1} g_1^{-1}
-        = c_{g_1}( c_{g_2}(h) )
-        \qquad
-        \text{für alle $h \in G$}
-      \]
-      und somit $c_{g_1 g_2} = c_{g_1} c_{g_2}$.
-    \item
-      Für $g \in G$ gilt
-      \begin{align*}
-              g \in \ker c
-        &\iff c_g = \id_G
-         \iff \forall h \in G: c_g(h) = h
-        \\
-        &\iff \forall h \in G: ghg^{-1} = h
-         \iff \forall h \in G: gh = hg
-         \iff g \in \Center(G).
-      \end{align*}
-    \item
-      Da $c$ ein Gruppenhomomorphismus ist, ist $\Inner G$ ein Untergruppe von $\Aut G$.
-      Für jedes $\phi \in \Aut G$ und jedes $g \in G$ gilt $\phi c_g \phi^{-1} = c_{\phi(g)}$, denn für alle $h \in G$ gilt
-      \[
-        (\phi c_g \phi^{-1})(h)
-        = \phi( c_g( \phi^{-1}(h) ) )
-        = \phi(g \phi^{-1}(h) g^{-1})
-        = \phi(g) h \phi(g)^{-1}
-        = c_{\phi(g)}(h).
-      \]
-      Folglich ist $\phi \, {\Inner G} \, \phi^{-1} \subseteq \im c$ für alle $\phi \in \Aut G$, also $\im c$ normal in $\Aut G$.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}
-  Es sei $G$ eine Gruppe, die auf einer Menge $X$ vermöge $G \times X \to X$, $(g,x) \mapsto g.x$ wirkt.
-  \begin{enumerate}
-    \item
-      Definieren Sie die Bahn $G.x$ und den Stabilisator $G_x$ eines Elementes $x \in X$.
-    \item
-      Zeigen Sie, dass $G_x$ für alle $x \in X$ eine Untergruppe von $G$ ist.
-    \item
-      Konstruieren Sie für jedes $x \in X$ eine Bijektion $G/G_x \to G.x$.
-    \item
-      Es seien $x, y \in X$ zwei Elemente mit gleicher $G$-Bahn.
-      Zeigen Sie, dass die Stabilisatoren $G_x$ und $G_y$ konjugiert zueinander sind.
-    \item
-      Entscheiden Sie, ob auch die Umkerung der obigen Aussage notwendigerweise gilt.
-    \item
-      Zeigen Sie, dass $X$ die disjunkte Vereinigung der $G$-Bahnen ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es gilt $G.x = \{g.x \mid g \in G\}$, der Stabilisator von $x$ ist $G_x = \{g \in G \mid g.x = x\}$.
-    \item
-      Es gilt $1 \in G_x$ da $1.x = x$.
-      Für $g_1, g_2 \in G_x$ gilt $(g_1 g_2).x = g_1.(g_2.x) = g_1.x = x$ und somit auch $g_1 g_2 \in G_x$.
-      Für $g \in G$ gilt $g^{-1}.x = g^{-1}.(g.x) = (g^{-1}.g).x = 1.x = x$ und somit auch $g^{-1} \in G_x$.
-      Ingesamt zeigt dies, dass $G_x$ ein Untergruppe von $G$ ist.
-    \item
-      Die Abbildung $f \colon G \to G.x$, $g \mapsto g.x$ ist surjektiv, und für $g_1, g_2 \in G$ gilt
-      \begin{align*}
-              f(g_1) = f(g_2)
-        &\iff g_1.x = g_2.x
-        \iff  g_2^{-1}.g_1.x = x
-        \\
-        &\iff (g_2^{-1} g_1).x = x
-        \iff  g_2^{-1} g_1 \in G_x
-        \iff  g_1 G_x = g_2 G_x,
-      \end{align*}
-      weshalb $f$ durch eine wohldefinierte Bijektion $\overline{f} \colon G/G_x \to G.x$, $\overline{g} \mapsto g.x$ faktorisiert.
-    \item
-      Haben $x$ und $y$ die Gleiche $G$-Bahn, so gibt es $g \in G$ mit $y = g^{-1}.x$.
-      Für alle $h \in G$ gilt dann
-      \begin{align*}
-              h \in G_y
-        &\iff h.y = y
-        \iff  h.g^{-1}.x = g^{-1}.x
-        \\
-        &\iff g.h.g^{-1}.x = x
-        \iff  (g h g^{-1}).x = x
-        \iff  g h g^{-1} \in G_x.
-      \end{align*}
-      Wegen der Bijektivität der Konjugationsabbildung $G \to G$, $h \mapsto ghg^{-1}$ folgt, dass $g G_y g^{-1} = G_x$.
-    \item
-      Die Umkehrung gilt nicht:
-      Gilt etwa $G = 1$, so gilt $G_x = G$ für alle $x \in X$, aber alle Bahnen sind einelementig.
-      Für $|X| \geq 2$ ergibt dies ein Gegenbeispiel.
-      
-      Allgemeiner kann man eine beliebige Gruppe $G$ auf einer Menge $X$ mit $|X| \geq 2$ trivial wirken lassen, d.h.\ es gelte $g.x = x$ für alle $g \in G$ und $x \in X$.
-      Dann gilt $G_x = G$ für alle $x \in X$ aber alle Bahnen sind einelementig.
-    \item
-      Es genügt zu zeigen, dass $x \sim y \iff x \in G.y$ eine Äquivalenzrelation auf $X$ definiert, denn dann sind die $G$-Bahnen genau die Äquivalenzklassen von ${\sim}$.
-      Da $x = 1.x \in G.x$ ist die Relation reflexiv.
-      Gilt $x \sim y$ so gibt es $g \in G$ mit $x = g.x$;
-      dann gilt auch $y = g^{-1}.x \in G.x$ und somit $y \sim x$.
-      Für $x, y, z \in X$ mit $x \sim y$ und $y \sim z$ gibt es $g, h \in G$ mit $x = g.y$ und $y = h.z$;
-      dann gilt auch $x = g.y = g.h.z = (gh).z \in G.z$ und somit $x \sim z$.
-  \end{enumerate}
-\end{solution}
-
-
-% \begin{question}
-%   Es sei $G$ ein Gruppe.
-%   \begin{enumerate}
-%     \item
-%       Definieren Sie die Kommutatoruntergruppe $[G,G]$ von $G$.
-%     \item
-%       Zeigen Sie, dass $[G,G]$ eine normale Untergruppe von $G$ ist, und dass $G/[G,G]$ abelsch ist.
-%     \item
-%       Es sei $N \subseteq G$ eine normale Untergruppe, so dass $G/N$ abelsch ist.
-%       Zeigen Sie, dass $N \subseteq [G,G]$.
-%     \item
-%       Zeigen Sie, dass $G/[G,G]$ die folgende universelle Eigenschaft hat:
-%       Ist $A$ eine abelsche Gruppe und $\varphi \colon G \to A$ ein Gruppenhomomorphismus, so gibt es einen eindeutigen Gruppenhomomorphismus $\hat{\varphi} \colon G/[G,G] \to A$, der das folgende Diagram zum kommutieren bringt:
-%       \[
-%         \begin{tikzcd}[ampersand replacement = \&]
-%               G
-%               \arrow{dr}{\varphi}
-%               \arrow[swap]{dd}{\pi}
-%           \&  {}
-%           \\
-%               {}
-%           \&  A
-%           \\
-%               G/[G,G]
-%               \arrow[swap]{ru}{\hat{\varphi}}
-%           \&  {}
-%         \end{tikzcd}
-%       \]
-%       Dabei bezeichnet $\pi \colon G \to G/[G,G]$, $g \mapsto \overline{g}$ die kanonische Projektion.
-%   \end{enumerate}
-% \end{question}
-
-
-% \begin{question}[subtitle = Multiple Choice I]
-%   Entscheiden Sie, ob die folgenden Aussagen allgemein gültig sind, und geben sie gegebenenfalls ein Gegenbeispiel an.
-%   \begin{enumerate}
-%     \item
-%       Ist $G$ eine Gruppe und $N \subseteq G$ eine normale Untergruppe, so gilt $G \cong (G/N) \times N$.
-%     \item
-%       Ist $G$ eine endliche Gruppe, so dass $G/N$ für normale Untergruppe $N \subseteq G$ mit $N \neq 1$ abelsch ist, so ist auch $G$ abelsch.
-%     \item
-%       Zwei Gruppen $G_1$ und $G_2$ sind genau dann isomorph, wenn $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$.
-%     \item
-%       Sind $G_1$ und $G_2$ zwei Gruppen, so ist jede Untergruppe von $G_1 \times G_2$ von der Form $H_1 \times H_2$ für Untergruppen $H_1 \subseteq G_1$ und $H_2 \subseteq G_2$.
-%     \item
-%       Sind $G_1$ und $G_2$ zwei Gruppen, so dass es Gruppenepimorphismen $\phi \colon G_1 \to G_2$ und $\psi \colon G_2 \to G_1$ gibt, so gilt $G_1 \cong G_2$.
-%   \end{enumerate}
-% \end{question}
-% 
-% 
-% \begin{solution}
-%   \begin{enumerate}
-%     \item
-%       Die Aussage ist falsch:
-%       Es sei $G = \Integer$ und $N = 2 \Integer$.
-%       Dann ist
-%       \[
-%               (G/N) \times N
-%         \cong (\Integer / 2 \Integer) \times (2 \Integer)
-%         \cong (\Integer / 2 \Integer) \times \Integer.
-%       \]
-%       Es ist allerdings $(\Integer / 2 \Integer) \times \Integer \ncong \Integer$, da $(\Integer / 2 \Integer) \times \Integer$ ein Element der Ordnung $2$ enthält (nämlich $(1,0)$), $\Integer$ aber nicht.
-%     \item
-%       Die Aussage ist falsch:
-%       Die einzige nicht-trivialen normalen Untergruppe von $S_3$ sind $N = \generate{(1 \, 2 \, 3)} = \{\id, (1 \, 2 \, 3), (1 \, 3 \, 2) \}$ und $S_3$ selbst.
-%       Der Quotient $S_3 / N$ hat Ordnung $2$, weshalb $S_3 / N \cong \Integer / 2 \Integer$ abelsch ist, und $S_3/S_3 = 1$ ist ohnehin abelsch.
-%       Die Gruppe $S_3$ selbst ist allerdings nicht abelsch.
-%       
-%       Alternativ ist $A_n$ für $n \geq 5$ einfach, weshalb $A_n$ der einzige nicht-triviale Normalteiler von $A_n$ ist, aber $A_4$ ist für $n \geq 4$ nicht abelsch.
-%     \item
-%       Die Aussage ist wahr:
-%       Gilt $G_1 \cong G_2$, so gibt es einen Isomorphismus $\phi \colon G_1 \to G_2$.
-%       Für jede Gruppe $H$ ist dann $\phi \times \id_H \colon G_1 \times H \to G_2 \times H$ ein Isomorphismus, und somit $G_1 \times H \cong G_2 \times H$.
-%       Gilt andererseits $G_1 \times H \cong G_2 \times H$ für jede Gruppe $H$, so gilt inbesondere $G_1 \cong G_1 \times 1 \cong G_2 \times 1 \cong G_2$.
-%     \item
-%       Die Aussage ist falsch:
-%       Ist $G \neq 1$ eine Gruppe und $G_1 = G_2 = G$, so ist die Diagonale $\Delta = \{(g,g) \mid g \in G\}$ eine Untergruppe von $G_1 \times G_2 = G \times G$, die sich nicht als ein solches Produkt schreiben lässt.
-%     \item
-%       Die Aussage ist falsch:
-%       Für die Gruppen
-%       \begin{gather*}
-%         G_1
-%       = \bigoplus_{n \in \Natural} \Integer
-%       = \Integer \oplus \Integer \oplus \Integer \oplus \dotsb
-%       \shortintertext{und}
-%         G_2
-%       = \Integer/2\Integer \oplus \bigoplus_{n \in \Natural} \Integer
-%       = \Integer/2\Integer \oplus \Integer \oplus \Integer \oplus \dotsb
-%       \end{gather*}
-%       gibt es Gruppenepimorphismen
-%       \begin{gather*}
-%         \phi \colon G_1 \to G_2,
-%         \quad
-%         (n_1, n_2, n_3, \dotsc)
-%         \mapsto
-%         (\overline{n_1}, n_2, n_3, \dotsc)
-%       \shortintertext{und}
-%         \psi \colon G_2 \to G_1,
-%         \quad
-%         (\overline{n_1}, n_2, n_3, \dotsc)
-%         \mapsto
-%         (n_2, n_3, \dotsc).
-%       \end{gather*}
-%       Es gilt aber $G_1 \ncong G_2$, denn $G_2$ enthält ein Element der Ordnung $2$, $G_1$ jedoch nicht.
-%   \end{enumerate}
-% \end{solution}
-% 
-% 
-% \begin{question}
-%   Es seien $G_1$ und $G_2$ zwei Gruppen, $N_1 \subseteq G_1$ und $N_2 \subseteq G_2$ zwei normale Untergruppen.
-%   Geben Sie jeweils Beispiele für die folgenden Situationen:
-%   \begin{enumerate}
-%     \item
-%       Es gilt $G_1 \cong G_2$ und $N_1 \cong N_2$, aber $G_1/N_1 \ncong G_2/N_2$.
-%     \item
-%       Es gilt $G_1 \cong G_2$ und $G_1/N_1 \cong G_2/N_2$, aber $N_1 \ncong N_2$.
-%     \item
-%       Es gilt $G_1/N_1 \cong G_2/N_2$ und $N_1 \cong N_2$, aber $G_1 \ncong G_2$.
-%   \end{enumerate}
-% \end{question}
-% 
-% 
-% \begin{solution}
-%   \begin{enumerate}
-%     \item
-%       Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$, sowie \mbox{$N_1 = \bigoplus_{n \geq 1} \Integer$} und $N_2 = \bigoplus_{n \geq 2} \Integer$.
-%       Dann gilt $G_1 = G_2 \cong N_1 \cong N_2$ aber
-%       \[
-%         G_1/N_1 \cong \Integer \ncong \Integer \oplus \Integer = G_2/N_2.
-%       \]
-%     \item
-%       Es seien $G_1 = G_2 = \bigoplus_{n \geq 0} \Integer$ und
-%       \begin{gather*}
-%         N_1 \coloneqq \Integer \oplus 0 \oplus 0 \oplus 0 \oplus \dotsb
-%       \shortintertext{und}
-%         N_2 \coloneqq \Integer \oplus \Integer \oplus 0 \oplus 0 \oplus \dotsb
-%       \end{gather*}
-%       Dann gilt
-%       \[
-%               G_1/N_1
-%         \cong \bigoplus_{n \geq 1} \Integer
-%         \cong \bigoplus_{n \geq 2} \Integer
-%         =     G_2/N_2.
-%       \]
-%       Es gilt aber $N_1 \ncong N_2$, denn $N_1 \cong \Integer$ ist zyklisch, $\Integer \oplus \Integer$ aber nicht.
-%     \item
-%       Es seien $G_1 = \Integer/4\Integer$ und $G_2 = \Integer/2\Integer \oplus \Integer/2\Integer$, sowie $N_1 = 2\Integer/4\Integer = \{\overline{0}, \overline{2}\}$ und $N_2 = \Integer/2\Integer \oplus 0$.
-%       Wegen der Kommutativität von $G_1$ und $G_2$ handelt es sich jeweils um eine normale Untergruppe.
-%       Da $N_1$ und $N_2$ beide zweielementig sind, gilt
-%       \[
-%         N_1 \cong \Integer/2\Integer \cong N_2
-%       \]
-%       (denn $\Integer/2\Integer$ ist die bis auf Isomorphie eindeutige zweielementige Gruppe).
-%       Nach dem zweiten (oder dritten) Isomorphiesatz gilt
-%       \[
-%               G_1 / N_1
-%         =     (\Integer/4\Integer) / (2\Integer/4\Integer)
-%         \cong \Integer/2\Integer,
-%       \]
-%       und für den anderen Quotienten gilt
-%       \begin{align*}
-%                 G_2 / N_2
-%         &=      (\Integer/2\Integer \oplus \Integer/2\Integer) / (\Integer/2\Integer \oplus 0)
-%         \\
-%         &\cong  ((\Integer/2\Integer)/(\Integer/2\Integer)) \oplus ((\Integer/2\Integer)/0)
-%         \cong   0 \oplus \Integer/2\Integer
-%         \cong   \Integer/2\Integer.
-%       \end{align*}
-%       Also gilt auch $G_1/N_1 \cong G_2/N_2$.
-%       Es gilt aber $G_1 \ncong G_2$, da $G_1$ ein Element der Ordnung $4$ enthält, $G_2$ jedoch nicht.
-%   \end{enumerate}
-% \end{solution}
-% 
-% 
-% 
-% \begin{question}[subtitle = Gruppen mit trivialer Automorphismengruppe]
-%   Es sei $G$ eine Gruppe mit $\Aut(G) = 1$.
-%   \begin{enumerate}
-%     \item
-%       Zeigen Sie, dass $G$ abelsch ist.
-%     \item
-%       Zeigen Sie, dass $g = -g$ für alle $g \in G$.
-%     \item
-%       Folgern Sie, dass es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ gibt.
-%     \item
-%       Folgern Sie, dass $G = 0$ oder $G \cong \Integer / 2 \Integer$.
-%   \end{enumerate}
-% \end{question}
-% 
-% 
-% \begin{solution}
-%   \begin{enumerate}
-%     \item
-%       Für $g \in G$ sei $c_g \colon G \to G$ die Konjugation mit $g$.
-%       Dies ist ein Automorphismus von $G$, weshalb $c_g = \id_G$.
-%       Somit ist $g \in \Center(G)$.
-%     \item
-%       Wegen der Kommutativität von $G$ ist die Abbildung $n \colon G \to G$, $g \mapsto -g$ ein Automorphismus von $G$.
-%       Somit ist $n = \id_G$, also $-g = g$ für alle $g \in G$.
-%     \item
-%       Nach dem vorherigen Aufgabenteil ist $2 g = 0$ für alle $g \in G$.
-%       Deshalb gibt es eine eindeutige $\Field_2$-Vektorraumstruktur auf $G$ via
-%       \[
-%         \overline{n} \cdot g = n \cdot g
-%         \quad
-%         \text{für alle $n \in \Integer$, $g \in G$},
-%       \]
-%       wie sich durch direktes Nachrechnen ergibt.
-%     \item
-%       Es sei $(b_i)_{i \in I}$ eine Basis von $G$ als $\Field_2$-Vektorraum.
-%       Ist $G \neq 0$ und $G \ncong \Integer/2$, so ist $\dim_{\Field_2} G \geq 2$.
-%       Es gibt daher $i_1, i_2 \in I$ with $i_1 \neq i_2$.
-%       Die Permutation
-%       \[
-%         \sigma \colon \{b_i\}_{i \in I} \to \{b_i\}_{i \in I},
-%         \quad
-%         b_j
-%         \mapsto
-%         \begin{cases}
-%           b_{i_2} & \text{falls $j = i_1$}, \\
-%           b_{i_1} & \text{falls $j = i_2$}, \\
-%           b_j     & \text{sonst},
-%         \end{cases}
-%       \]
-%       induziert einen nicht-trivialen $\Field_2$-Vek\-tor\-raum\-auto\-mor\-phis\-mus $\alpha \colon G \to G$ mit
-%       \[
-%           \alpha\left( \sum_{i \in I} \lambda_i b_i \right)
-%         = \sum_{i \in I} \lambda_i b_{\sigma(i)}.
-%       \]
-%       Dann ist $\alpha$ aber insbesondere ein nicht-trivialer Gruppenautomorphismus, im Widerspruch zu $\Aut(G) = 1$.
-%   \end{enumerate}
-% \end{solution}
-
-
-
-
-
