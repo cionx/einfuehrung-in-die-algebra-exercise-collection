@@ -1864,20 +1864,33 @@
 \begin{question}[subtitle = Isomorphie von Quotientenringen als Moduln]
   \label{question: quotients isomorphic as modules}
   Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ seien zwei Ideale, so dass $R/I \cong R/J$ als $R$-Moduln.
-  Zeigen Sie, dass bereits $I = J$.
-  (\emph{Hinweis}:
-   Betrachten Sie Annihilatoren.)
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $I = J$ falls $R/I \cong R_J$ als $R$-Moduln gilt.
+      \\
+      (\emph{Hinweis}:
+       Betrachten Sie Annihilatoren.)
+    \item
+      Entscheiden Sie, ob die Aussage auch stimmt, wenn $R/I \cong R_J$ als Ringe gilt.
+  \end{enumerate}
 \end{question}
 
 
 \begin{solution}
-  Für jedes Ideal $K \subseteq R$ gilt $\annihilator(R/K) = K$ (siehe Übung~\ref{question: annihilators of quotients}), und somit gilt
-  \[
-      I
-    = \annihilator(R/I)
-    = \annihilator(R/J)
-    = J.
-  \]
+  \begin{enumerate}
+    \item
+      Für jedes Ideal $K \subseteq R$ gilt $\annihilator(R/K) = K$ (siehe Übung~\ref{question: annihilators of quotients}), und somit gilt
+      \[
+          I
+        = \annihilator(R/I)
+        = \annihilator(R/J)
+        = J.
+      \]
+      
+    \item
+      Gilt $R/I \cong R/J$ als Ringe, so gilt nicht notwendigerweise $I = J$.
+      Ist etwa $K$ ein Körper, so ist $K[X]/(X-a) \cong K \cong K[X]/(X-b)$ als Ringe für alle $a, b \in K$, aber $(X-a) \neq (X-b)$ als $K[X]$-Moduln für alle $a \neq b$.
+  \end{enumerate}
 \end{solution}
 
 
