@@ -582,6 +582,63 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Über $\Hom_R(R,-)$]
+  Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
+  Zeigen Sie, dass $\Hom_R(R, M) \cong M$ als $R$-Moduln.
+\end{question}
+
+
+\begin{solution}
+  Wir zeigen, dass die Abbildung $\varphi \colon \Hom_R(R, M) \to M$, $f \mapsto f(1)$ ein Isomorphismus von $R$-Moduln ist:
+  Dass $\varphi$ ein Homomorphismus von $R$-Moduln ist, ergibt sich direkt daraus, dass die $R$-Modulstruktur auf $\Hom_R(R, M)$ punktweise definiert ist.
+  Die Injektivität von $\varphi$ ergibt sich daraus, dass $R = \generate{1}_R$, und somit jeder $R$-Modulhomomorphismus $f \colon R \to M$ durch die Einschränkung $f|_{\{1\}}$ bereits eindeutig bestimmt ist.
+  Für jedes $m \in M$ ergibt sich ein Homomorphismus von $R$-Moduln $f_m \colon R \to M$, $r \mapsto rm$;
+  für diesen gilt $\varphi(f_m) = f_m(1) = m$, was die Surjektivität von $\varphi$ zeigt.
+\end{solution}
+
+
+\begin{question}[subtitle = Zum Spalten kurzer exakter Sequenzen]
+  \begin{enumerate}
+    \item
+      Geben Sie für einen passenden kommutativen Ring $R$ eine kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to P \to 0$ an, die nicht spaltet.
+    \item
+      Es sei $R$ ein Ring und $F$ ein freier $R$-Modul.
+      Zeigen Sie, dass jede kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to F \to 0$ spaltet.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir betrachten die folgende kurze exakte Sequenz von $\Integer$-Moduln, d.h.\ von abelschen Gruppen:
+      \[
+                                              0
+        \to                                   \Integer
+        \xrightarrow{\cdot 2}                 \Integer
+        \xrightarrow{x \mapsto \overline{x}}  \Integer/2
+        \to                                   0
+      \]
+      Würde diese kurze exakte Sequenz spalten, so wäre $\Integer \cong \Integer \oplus \Integer/2$.
+      Dies gilt aber nicht, wie man den folgenden Gründen entnehmen kann:
+      \begin{itemize}
+        \item
+          Dies würde dem Hauptsatz über endlich erzeugte abelsche Gruppen widersprechen.
+        \item
+          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$ und somit torsionsfrei (denn $\Integer$ ist frei und somit auch torsionsfrei, und Untergruppen von torsionsfreien abelschen Gruppen sind ebenfalls torsionsfrei), aber $2 \cdot \Integer/2 = 0$.
+        \item
+          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$, und müsste somit entweder trivial oder unendlich sein, was beides nicht gilt.
+      \end{itemize}
+    \item
+      Es sei $(e_i)_{i \in I}$ eine Basis von $F$.
+      Wegen der Surjektivität von $g$ gibt es für jedes $i \in I$ ein $m_i \in M$ mit $g(m_i) = e_i$.
+      Es sei $h \colon F \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $h(e_i) = m_i$ für alle $i \in I$.
+      Dann gilt $g(h(e_i)) = g(m_i) = e_i$ für alle $i \in I$, und wegen der $R$-Linearität von $g \circ h$ somit bereits $g(h(x)) = x$ für alle $x \in F$.
+      Also ist $g \circ h = \id_F$, weshalb die gegebene kurze exakte Sequenz spaltet.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = $\Rational$ ist nicht endlich erzeugt]
   \label{question: Q is not finitely generated}
   Zeigen Sie, dass $\Rational$ als abelsche Gruppe nicht endlich erzeugt ist.
@@ -623,6 +680,72 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Surjektive Endomorphismen noetherscher Moduln]
+  \label{question: surjective endomorphisms of noetherian modules are isomorphisms}
+  Es sei $R$ ein Ring und $M$ ein noetherscher $R$-Modul.
+  Zeigen Sie, dass jeder surjektive Endomorphismus $f \colon M \to M$ bereits ein Isomorphismus ist.
+\end{question}
+
+
+\begin{solution}
+  Da $M$ noethersch ist stabilisiert die Kette
+  \[
+              0
+    =         \ker f^0
+    \subseteq \ker f
+    \subseteq \ker f^2
+    \subseteq \ker f^3
+    \subseteq \ker f^4
+    \subseteq \dotso,
+  \]
+  d.h.\ es gibt $n \geq 1$ mit $\ker f^n = \ker f^k$ für alle $k \geq n$.
+  Inbesondere gilt $\ker f^n = \ker f^{2n}$.
+  Für $m \in \ker f^n$ gibt es wegen der Surjektivität von $f$ ein $m' \in M$ mit $m = f^n(m')$.
+  Dann gilt $0 = f^n(m) = f^{2n}(m')$, also $m' \in \ker f^{2n} = \ker f^n$.
+  Deshalb ist bereits $m = f^n(m) = 0$.
+  Das zeigt die Gleichheit $\ker f^n = 0$, und da $\ker f \subseteq \ker f^n$ somit auch, dass $\ker f = 0$ gilt.
+  Also ist $f$ injektiv, und somit bereits ein Isomorphismus.
+\end{solution}
+
+
+\begin{remark*}
+  Ist $R$ ein kommutativer Ring, so lässt sich Übung~\ref{question: surjective endomorphisms of noetherian modules are isomorphisms} dazu verallgemeinern, dass jeder surjektive Endomorphismus $M \to M$ eines endlich erzeugten $R$-Moduls bereits ein Isomorphismus ist:
+  Mithilfe von Lokalisierungen und Nakayamas Lemma lässt sich diese allgemeine Aussage auf den Fall zurückführen, dass $R$ ein Körper ist, und für Körper ist die Aussage aus der Linearen Algebra bekannt.
+\end{remark*}
+
+
+\begin{question}[subtitle = Ein Lemma von Schur]
+  Ein $R$-Modul $M$ heißt \emph{einfach}, wenn $M$ genau zwei Untermoduln hat.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $M$ genau dann einfach ist, wenn $M \neq 0$ und $0, M \subseteq M$ die einzigen beiden Untermoduln sind.
+    \item
+      Zeigen Sie, dass für je zwei einfache $R$-Moduln $M$ und $N$ jeder $R$-Mo\-dul\-ho\-mo\-mor\-phis\-mus $f \colon M \to N$ entweder $0$ oder ein Isomorphismus ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Ist $M$ einfach, so muss $M \neq 0$, da $M$ sonst nur einen Untermodul hätte (nämlich sich selbst).
+      Dann sind $0, M \subseteq M$ zwei verschiedene Untermoduln, und nach Annahme gibt es keine weiteren Untermoduln.
+      
+      Ist $M \neq 0$ und sind $0, M \subseteq M$ die einzigen beiden Untermoduln, so hat $M$ genau zwei Untermoduln.
+    \item
+      Ist $f \colon M \to N$ ein Homomorphismus von $R$-Moduln mit $f \neq 0$, so sind $\ker f \subseteq M$ und $\im f \subseteq N$ Untermoduln mit $\ker f \neq M$ und $\im f \neq 0$.
+      Ist $M$ einfach, so muss bereits $\ker f = 0$ gelten, und $f$ somit bereits injektiv sein.
+      Ist $N$ einfach, so muss bereits $\im f = N$ gelten, und $f$ somit bereits surjektiv sein.
+      Sind $M$ und $N$ beide einfach, so ist $f$ also bereits ein Isomorphismus.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{remark*}
+  Das Lemma von Schur besagt insbesondere, dass der Endomorphismenring eines einfachen Moduls ein Schiefkörper ist.
+\end{remark*}
+
+
 
 
 
@@ -657,35 +780,6 @@
   \]
   ein Ring unter punktweiser Adddition und Komposition.
   Da es genau einen Ringhomomorphismus $\Integer \to \End(A)$ gibt (siehe Übung~\ref{qst: Z is inital}) folgt die Aussage.
-\end{solution}
-
-
-\begin{question}[subtitle = Über $\Hom_R(R,-)$]
-  Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
-  Zeigen Sie, dass $\Hom_R(R, M) \cong M$ als $R$-Moduln.
-\end{question}
-
-
-\begin{solution}
-  Wir zeigen, dass die Abbildung $\varphi \colon \Hom_R(R, M) \to M$, $f \mapsto f(1)$ ein Isomorphismus von $R$-Moduln ist:
-  Dass $\varphi$ ein Homomorphismus von $R$-Moduln ist, ergibt sich direkt daraus, dass die $R$-Modulstruktur auf $\Hom_R(R, M)$ punktweise definiert ist.
-  Die Injektivität von $\varphi$ ergibt sich daraus, dass $R = \generate{1}_R$, und somit jeder $R$-Modulhomomorphismus $f \colon R \to M$ durch die Einschränkung $f|_{\{1\}}$ bereits eindeutig bestimmt ist.
-  Für jedes $m \in M$ ergibt sich ein Homomorphismus von $R$-Moduln $f_m \colon R \to M$, $r \mapsto rm$;
-  für diesen gilt $\varphi(f_m) = f_m(1) = m$, was die Surjektivität von $\varphi$ zeigt.
-\end{solution}
-
-
-\begin{question}[subtitle = Idempotente]
-  Es sei $R$ ein Ring und $e \colon M \to M$ ein idempotenter Endomorphismus eines $R$-Moduls $M$, d.h.\ es gilt $e^2 = e$.
-  Zeigen Sie, das $M = \im e \oplus \ker e$ und dass $e(m + m') = m$ für alle $m \in \im e$ und $m' \in \ker e$.
-\end{question}
-
-
-\begin{solution}
-  Es gilt $M = \im e + \ker e$, denn jedes $m \in M$ lässt sich als $m = e(m) + m - e(m)$ schreiben, wobei $e(m) \in \im e$ und $m - e(m) \in \ker(e)$ (denn $e(m - e(m)) = e(m) - e^2(m) = 0$).
-  Für jedes $m \in M$ gilt $e(m) = m$, denn es gibt ein $\tilde{m} \in M$ mit $m = e(\tilde{m})$, und somit gilt $e(m) = e(e(\tilde{m})) = e^2(\tilde{m}) = e(\tilde{m}) = m$.
-  Für $m \in \im e \cap \ker e$ folgt, dass $m = e(m) = 0$;
-  deshalb gilt $\im e \cap \ker e = 0$.
 \end{solution}
 
 
@@ -811,6 +905,75 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Charakterisierung zyklischer Moduln]
+  Zeigen Sie, dass für jeden $R$-Moduln $M$ die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      \label{enum: module is cyclic}
+      $M$ wird von einem einzelnen Element erzeugt, d.h.\ es gibt $m \in M$ mit $M = \generate{m}_R$.
+    \item
+      \label{enum: module is quotient by its annihilator}
+      Es gilt $M \cong R/\!\annihilator(M)$ als $R$-Moduln.
+    \item
+      \label{enum: module is quotient by an ideal}
+      Es gibt ein Ideal $I \subseteq R$ mit $R/I \cong M$ als $R$-Moduln.
+  \end{enumerate}
+  Erfüllt $M$ eine (und damit alle) dieser Bedingungen, so heißt $M$ \emph{zyklisch}.
+\end{question}
+
+
+\begin{solution}
+  (
+    \ref{enum: module is cyclic}
+    $\implies$
+    \ref{enum: module is quotient by its annihilator}
+  )
+  Es sei $m \in M$ mit $M = \generate{m}_R$.
+  Dann gilt
+  \[
+      \annihilator(M)
+    = \annihilator(\generate{m}_R)
+    = \annihilator(m)
+    = \{r \in R \mid rm = 0\}.
+  \]
+  Für den surjektive Homomorphismus von $R$-Moduln
+  \[
+            \varphi
+    \colon  R \to M,
+    \quad
+            r \mapsto rm
+  \]
+  gilt deshalb $\ker \varphi = \annihilator(M)$.
+  Somit induziert $\varphi$ einen Isomorphismus von $R$-Moduln
+  \[
+            \bar{\varphi}
+    \colon  R/\annihilator(M) \to M,
+    \quad
+            [r] \mapsto rm.
+  \]
+  
+  (
+    \ref{enum: module is quotient by its annihilator}
+    $\implies$
+    \ref{enum: module is quotient by an ideal}
+  )
+  Man setze $I = \annihilator(M)$.
+  
+  (
+    \ref{enum: module is quotient by an ideal}
+    $\implies$
+    \ref{enum: module is cyclic}
+  )
+  Ist $\varphi \colon R/I \to M$ ein Isomorphismus, so gilt
+  \[
+      M
+    = \varphi(R/I)
+    = \varphi(\generate{\overline{1}}_R)
+    = \generate{\varphi(\overline{1})}_R.
+  \]
+\end{solution}
+
+
 \begin{question}[subtitle = Existenz endlicher Erzeugendensysteme]
   \label{question: in a finitely generated module every generating set contains a finite generatin set}
   Es sei $M$ ein endlich erzeugter $R$-Modul.
@@ -829,6 +992,20 @@
     \subseteq M.
   \]
   Also ist $\generate{S'} = M$ und somit $S'$ ein endliches Erzeugendensystem von $M$.
+\end{solution}
+
+
+\begin{question}[subtitle = Idempotente]
+  Es sei $R$ ein Ring und $e \colon M \to M$ ein idempotenter Endomorphismus eines $R$-Moduls $M$, d.h.\ es gilt $e^2 = e$.
+  Zeigen Sie, das $M = \im e \oplus \ker e$ und dass $e(m + m') = m$ für alle $m \in \im e$ und $m' \in \ker e$.
+\end{question}
+
+
+\begin{solution}
+  Es gilt $M = \im e + \ker e$, denn jedes $m \in M$ lässt sich als $m = e(m) + m - e(m)$ schreiben, wobei $e(m) \in \im e$ und $m - e(m) \in \ker(e)$ (denn $e(m - e(m)) = e(m) - e^2(m) = 0$).
+  Für jedes $m \in M$ gilt $e(m) = m$, denn es gibt ein $\tilde{m} \in M$ mit $m = e(\tilde{m})$, und somit gilt $e(m) = e(e(\tilde{m})) = e^2(\tilde{m}) = e(\tilde{m}) = m$.
+  Für $m \in \im e \cap \ker e$ folgt, dass $m = e(m) = 0$;
+  deshalb gilt $\im e \cap \ker e = 0$.
 \end{solution}
 
 
@@ -1112,74 +1289,6 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Untermoduln freier Moduln über Hauptidealringen]
-  \label{question: submodules of free modules over pid are also free}
-  Es sei $R$ ein Hauptidealring und $F$ ein freier $R$-Modul mit endlichen Rang $n \geq 0$.
-  Es sei $F' \subseteq F$ ein Untermodul.
-  Zeigen Sie, dass $F'$ frei vom Rang $r \leq n$ ist.
-\end{question}
-
-
-\begin{remark*}
-  Mithilfe des Auswahlaxioms (in Form des Wohlordnungssatzes) verallgemeinert sich Übung~\ref{question: submodules of free modules over pid are also free} auf freie Moduln beliebigen Rangs.
-\end{remark*}
-
-
-\begin{solution}
-  Es genügt den Fall $F = R^n$ für $n \geq 0$ zu betrachten.
-  Wir zeigen die Aussage per Induktion über $n$.
-  Für $n = 0$ ist die Aussage klar.
-  
-  Für $n = 1$ sei $\aideal \subseteq R$ ein Untermodul, also ein Ideal.
-  Für $\aideal = 0$ ist die Aussage klar, wir beschränken uns also auf den Fall $\aideal \neq 0$.
-  Es ist $\aideal$ ein Hauptideal, also $\aideal = (a)$ für ein $a \in \aideal$, und nach Annahme gilt $a \neq 0$.
-  Die Teilmenge $\{a\} \subseteq \aideal$ ist linear unabhängig, denn die Abbildung $R \to \aideal$, $r \mapsto ra$ ist injektiv, da $R$ ein Integritätsbereich ist und $a \neq 0$ gilt.
-  Also ist $\{a\}$ eine Basis von $\aideal$, und $\aideal$ somit frei vom Rang $1$.
-  
-  Es sei nun $n \geq 2$ und die Aussage gelte für alle kleineren Ränge.
-  Durch die Inklusion $i \colon R^{n-1} \to R^n$, $(x_1, \dotsc, x_{n-1}) \mapsto (x_1, \dotsc, x_{n-1}, 0)$ und die Projektion $p \colon R^n \to R$, $(x_1, \dotsc, x_n) \mapsto x_n$ erhalten wir eine kurze exakte Sequenz $0 \to R^{n-1} \xrightarrow{i} R^n \xrightarrow{p} R \to 0$.
-  
-  Ist $F' \subseteq F$ ein Untermodul, so schränkt sich diese kurze exakte Sequenz zu einer kurzen exakten Sequenz
-  \begin{equation}
-    \label{equation: restrition of shor exact sequence}
-    0 \to i^{-1}(F') \xrightarrow{i'} F' \xrightarrow{p'} p(F') \to 0
-  \end{equation}
-  ein, wobei $i'$ und $p'$ die entsprechenden Einschränkungen von $i$ und $p$ bezeichnen (siehe Übung~\ref{question: restriction of a short exact sequence to a submodule of its middle term}).
-  Dabei sind $i^{-1}(F') \subseteq R^{n-1}$ und $p(F') \subseteq R$ Untermoduln, und somit nach Induktionsannahme frei vom Rang $\leq n-1$ und $\leq 1$.
-  Da $p(F')$ frei ist, spaltet die Sequenz \eqref{equation: restrition of shor exact sequence};
-  inbesondere ist deshalb $F' \cong i^{-1}(F') \oplus p(F')$.
-  Somit ist $F'$ frei von Rang $\leq n-1 + 1 = n$.
-\end{solution}
-
-
-\begin{question}[subtitle = Untermoduln endlich erzeugter Moduln über Hauptidealringen]
-  Es sei $R$ ein Hauptidealring und $M$ ein endlich erzeugter $R$-Modul.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass auch jeder Untermodul $N \subseteq M$ endlich erzeugt ist.
-    \item
-      Es gebe ein Erzeugendensystem $m_1, \dotsc, m_t \in M$
-      Entscheiden Sie, ob jeder Untermodul $N \subseteq M$ ein Erzeugendensystem aus $\leq t$ vielen Elementen besitzt.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Als Hauptidealring ist $R$ insbesondere noethersch.
-      Als endlich erzeugter $R$-Modul ist $M$ somit ebenfalls noethersch (siehe Übung~\ref{question: properties of noetherian modules}).
-      Deshalb ist der Untermodul $N \subseteq M$ endlich erzeugt.
-    \item
-      Die Aussage ist wahr:
-      Es sei $\varphi \colon R^t \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $\varphi(e_i) = m_i$ für alle $i = 1, \dotsc, t$ (hier bezeichnet $e_1, \dotsc, e_t \in R^t$ die Standardbasis).
-      Dann ist $\varphi$ surjektiv, und deshalb $F \coloneqq \varphi^{-1}(N)$ ein Untermodul von $R^t$, für den $\varphi(F) = N$ gilt.
-      Der $R$-Modul $R^t$ ist frei vom Rang $t$; da $R$ ein Hauptidealring ist, folgt daraus, dass der Untermodul $F \subseteq R^t$ frei vom Rang $s \leq t$ ist (siehe Übung~\ref{question: submodules of free modules over pid are also free}).
-      Ist $b_1, \dotsc, b_s \in F$ eine Basis, so bilden $\varphi(b_1), \dotsc, \varphi(b_s)$ ein Erzeugendensystem von $\varphi(F) = N$.
-  \end{enumerate}
-\end{solution}
-
-
 \begin{question}[subtitle = Endlichkeit in kurzen exakten Sequenzen]
   \label{question: finitely generated in short exact sequences}
   Es sei $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
@@ -1399,7 +1508,7 @@
 \end{question}
 
 
-\begin{question}
+\begin{solution}
   \begin{enumerate}
     \item
       Wir bezeichnen die Abbildungen mit $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$.
@@ -1433,50 +1542,57 @@
       Wir erhalten somit eine kurze exakte Sequenz $0 \to \ker \varphi \xrightarrow{i} R^n \xrightarrow{\varphi} M \to 0$, wobei $i \colon \ker \varphi \to R^n$ die Inklusion ist.
       Da $R^n$ nach dem vorherigen Aufgabenteil noethersch ist, ist nach dem ersten Aufgabenteil auch $M$ noethersch.
   \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Untermoduln freier Moduln über Hauptidealringen]
+  \label{question: submodules of free modules over pid are also free}
+  Es sei $R$ ein Hauptidealring und $F$ ein freier $R$-Modul mit endlichen Rang $n \geq 0$.
+  Es sei $F' \subseteq F$ ein Untermodul.
+  Zeigen Sie, dass $F'$ frei vom Rang $r \leq n$ ist.
 \end{question}
 
 
-\begin{question}[subtitle = Surjektive Endomorphismen noetherscher Moduln]
-  \label{question: surjective endomorphisms of noetherian modules are isomorphisms}
-  Es sei $R$ ein Ring und $M$ ein noetherscher $R$-Modul.
-  Zeigen Sie, dass jeder surjektive Endomorphismus $f \colon M \to M$ bereits ein Isomorphismus ist.
-\end{question}
+\begin{solution}
+  Es genügt den Fall $F = R^n$ für $n \geq 0$ zu betrachten.
+  Wir zeigen die Aussage per Induktion über $n$.
+  Für $n = 0$ ist die Aussage klar.
+  
+  Für $n = 1$ sei $\aideal \subseteq R$ ein Untermodul, also ein Ideal.
+  Für $\aideal = 0$ ist die Aussage klar, wir beschränken uns also auf den Fall $\aideal \neq 0$.
+  Es ist $\aideal$ ein Hauptideal, also $\aideal = (a)$ für ein $a \in \aideal$, und nach Annahme gilt $a \neq 0$.
+  Die Teilmenge $\{a\} \subseteq \aideal$ ist linear unabhängig, denn die Abbildung $R \to \aideal$, $r \mapsto ra$ ist injektiv, da $R$ ein Integritätsbereich ist und $a \neq 0$ gilt.
+  Also ist $\{a\}$ eine Basis von $\aideal$, und $\aideal$ somit frei vom Rang $1$.
+  
+  Es sei nun $n \geq 2$ und die Aussage gelte für alle kleineren Ränge.
+  Durch die Inklusion $i \colon R^{n-1} \to R^n$, $(x_1, \dotsc, x_{n-1}) \mapsto (x_1, \dotsc, x_{n-1}, 0)$ und die Projektion $p \colon R^n \to R$, $(x_1, \dotsc, x_n) \mapsto x_n$ erhalten wir eine kurze exakte Sequenz $0 \to R^{n-1} \xrightarrow{i} R^n \xrightarrow{p} R \to 0$.
+  
+  Ist $F' \subseteq F$ ein Untermodul, so schränkt sich diese kurze exakte Sequenz zu einer kurzen exakten Sequenz
+  \begin{equation}
+    \label{equation: restrition of shor exact sequence}
+    0 \to i^{-1}(F') \xrightarrow{i'} F' \xrightarrow{p'} p(F') \to 0
+  \end{equation}
+  ein, wobei $i'$ und $p'$ die entsprechenden Einschränkungen von $i$ und $p$ bezeichnen (siehe Übung~\ref{question: restriction of a short exact sequence to a submodule of its middle term}).
+  Dabei sind $i^{-1}(F') \subseteq R^{n-1}$ und $p(F') \subseteq R$ Untermoduln, und somit nach Induktionsannahme frei vom Rang $\leq n-1$ und $\leq 1$.
+  Da $p(F')$ frei ist, spaltet die Sequenz \eqref{equation: restrition of shor exact sequence};
+  inbesondere ist deshalb $F' \cong i^{-1}(F') \oplus p(F')$.
+  Somit ist $F'$ frei von Rang $\leq n-1 + 1 = n$.
+\end{solution}
 
 
 \begin{remark*}
-  Ist $R$ ein kommutativer Ring, so lässt sich Übung~\ref{question: surjective endomorphisms of noetherian modules are isomorphisms} dazu verallgemeinern, dass jeder surjektive Endomorphismus $M \to M$ eines endlich erzeugten $R$-Moduls bereits ein Isomorphismus ist:
-  Mithilfe von Lokalisierungen und Nakayamas Lemma lässt sich diese allgemeine Aussage auf den Fall zurückführen, dass $R$ ein Körper ist, und für Körper ist die Aussage aus der Linearen Algebra bekannt.
+  Mithilfe des Auswahlaxioms (in Form des Wohlordnungssatzes) verallgemeinert sich Übung~\ref{question: submodules of free modules over pid are also free} auf freie Moduln beliebigen Rangs.
 \end{remark*}
 
 
-\begin{solution}
-  Da $M$ noethersch ist stabilisiert die Kette
-  \[
-              0
-    =         \ker f^0
-    \subseteq \ker f
-    \subseteq \ker f^2
-    \subseteq \ker f^3
-    \subseteq \ker f^4
-    \subseteq \dotso,
-  \]
-  d.h.\ es gibt $n \geq 1$ mit $\ker f^n = \ker f^k$ für alle $k \geq n$.
-  Inbesondere gilt $\ker f^n = \ker f^{2n}$.
-  Für $m \in \ker f^n$ gibt es wegen der Surjektivität von $f$ ein $m' \in M$ mit $m = f^n(m')$.
-  Dann gilt $0 = f^n(m) = f^{2n}(m')$, also $m' \in \ker f^{2n} = \ker f^n$.
-  Deshalb ist bereits $m = f^n(m) = 0$.
-  Das zeigt die Gleichheit $\ker f^n = 0$, und da $\ker f \subseteq \ker f^n$ somit auch, dass $\ker f = 0$ gilt.
-  Also ist $f$ injektiv, und somit bereits ein Isomorphismus.
-\end{solution}
-
-
-\begin{question}[subtitle = Zum Spalten kurzer exakter Sequenzen]
+\begin{question}[subtitle = Untermoduln endlich erzeugter Moduln über Hauptidealringen]
+  Es sei $R$ ein Hauptidealring und $M$ ein endlich erzeugter $R$-Modul.
   \begin{enumerate}
     \item
-      Geben Sie für einen passenden kommutativen Ring $R$ eine kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to P \to 0$ an, die nicht spaltet.
+      Zeigen Sie, dass auch jeder Untermodul $N \subseteq M$ endlich erzeugt ist.
     \item
-      Es sei $R$ ein Ring und $F$ ein freier $R$-Modul.
-      Zeigen Sie, dass jede kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to F \to 0$ spaltet.
+      Es gebe ein Erzeugendensystem $m_1, \dotsc, m_t \in M$
+      Entscheiden Sie, ob jeder Untermodul $N \subseteq M$ ein Erzeugendensystem aus $\leq t$ vielen Elementen besitzt.
   \end{enumerate}
 \end{question}
 
@@ -1484,217 +1600,16 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Wir betrachten die folgende kurze exakte Sequenz von $\Integer$-Moduln, d.h.\ von abelschen Gruppen:
-      \[
-                                              0
-        \to                                   \Integer
-        \xrightarrow{\cdot 2}                 \Integer
-        \xrightarrow{x \mapsto \overline{x}}  \Integer/2
-        \to                                   0
-      \]
-      Würde diese kurze exakte Sequenz spalten, so wäre $\Integer \cong \Integer \oplus \Integer/2$.
-      Dies gilt aber nicht, wie man den folgenden Gründen entnehmen kann:
-      \begin{itemize}
-        \item
-          Dies würde dem Hauptsatz über endlich erzeugte abelsche Gruppen widersprechen.
-        \item
-          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$ und somit torsionsfrei (denn $\Integer$ ist frei und somit auch torsionsfrei, und Untergruppen von torsionsfreien abelschen Gruppen sind ebenfalls torsionsfrei), aber $2 \cdot \Integer/2 = 0$.
-        \item
-          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$, und müsste somit entweder trivial oder unendlich sein, was beides nicht gilt.
-      \end{itemize}
+      Als Hauptidealring ist $R$ insbesondere noethersch.
+      Als endlich erzeugter $R$-Modul ist $M$ somit ebenfalls noethersch (siehe Übung~\ref{question: properties of noetherian modules}).
+      Deshalb ist der Untermodul $N \subseteq M$ endlich erzeugt.
     \item
-      Es sei $(e_i)_{i \in I}$ eine Basis von $F$.
-      Wegen der Surjektivität von $g$ gibt es für jedes $i \in I$ ein $m_i \in M$ mit $g(m_i) = e_i$.
-      Es sei $h \colon F \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $h(e_i) = m_i$ für alle $i \in I$.
-      Dann gilt $g(h(e_i)) = g(m_i) = e_i$ für alle $i \in I$, und wegen der $R$-Linearität von $g \circ h$ somit bereits $g(h(x)) = x$ für alle $x \in F$.
-      Also ist $g \circ h = \id_F$, weshalb die gegebene kurze exakte Sequenz spaltet.
+      Die Aussage ist wahr:
+      Es sei $\varphi \colon R^t \to M$ der eindeutige Homomorphismus von $R$-Moduln mit $\varphi(e_i) = m_i$ für alle $i = 1, \dotsc, t$ (hier bezeichnet $e_1, \dotsc, e_t \in R^t$ die Standardbasis).
+      Dann ist $\varphi$ surjektiv, und deshalb $F \coloneqq \varphi^{-1}(N)$ ein Untermodul von $R^t$, für den $\varphi(F) = N$ gilt.
+      Der $R$-Modul $R^t$ ist frei vom Rang $t$; da $R$ ein Hauptidealring ist, folgt daraus, dass der Untermodul $F \subseteq R^t$ frei vom Rang $s \leq t$ ist (siehe Übung~\ref{question: submodules of free modules over pid are also free}).
+      Ist $b_1, \dotsc, b_s \in F$ eine Basis, so bilden $\varphi(b_1), \dotsc, \varphi(b_s)$ ein Erzeugendensystem von $\varphi(F) = N$.
   \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Produkte und Summen kurzer exakter Sequenzen]
-  Es sei $R$ ein Ring und $\{ N_i \xrightarrow{f_i} M_i \xrightarrow{g_i} P_i \}_{i \in I}$ eine Familie von exakten Sequenzen von $R$-Moduln.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass auch die induzierte Sequenz
-      \[
-                            \prod_{i \in I} N_i
-        \xlongrightarrow{f} \prod_{i \in I} M_i
-        \xlongrightarrow{g} \prod_{i \in I} P_i
-      \]
-      exakt ist, wobei $f$ und $g$ durch $f((n_i)_{i \in I}) = (f(n_i))_{i \in I}$ für alle $(n_i)_{i \in I} \in \prod_{i \in I} N_i$ und $g((m_i)) = (g(m_i))_{i \in I}$ für alle $(m_i)_{i \in I} \in \prod_{i \in I} M_i$ gegeben sind.
-    \item
-      Entscheiden Sie, ob die Aussage auch gilt, wenn man das Produkt $\prod_{i \in I}$ jeweils durch die direkte Summe $\bigoplus_{i \in I}$ ersetzt.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Es gilt $g \circ f = (g_i)_{i \in I} \circ (f_i)_{i \in I} = (g_i \circ f_i)_{i \in I} = 0$, da $g_i \circ f_i = 0$ für alle $i \in I$.
-      Also ist $\im f \subseteq \ker g$.
-      
-      Ist andererseits $(m_i)_{i \in I} \in \ker g$, so gilt $0 = g((m_i)_{i \in i}) = (g(m_i))_{i \in I}$, also $g(m_i) = 0$ für alle $i \in I$.
-      Dann ist $m_i \in \ker g_i = \im f_i$ für alle $i \in I$, weshalb es für jedes $i \in I$ ein $n_i \in N_i$ mit $f_i(n_i) = m_i$ gibt.
-      Für $n \coloneqq (n_i)_{i \in I} \in \prod_{i \in I} N_i$ gilt dann $f(n) = f((n_i)_{i \in I}) = (f(n_i))_{i \in I} = (m_i)_{i \in I} = m$, weshalb $m \in \im f$.
-      Das zeigt, dass $\ker g \subseteq \im f$.
-    \item
-      Die Aussage gilt auch weiterhin.
-      Der obige Beweis muss nur bei der Wahl der $n_i$ etwas angepasst werden:
-      Damit $(n_i) \in \bigoplus_{i \in I} N_i$ gilt, muss $n_i = 0$ für fast alle $i \in I$ gelten.
-      Da aber ohnehin $m_i = 0$ für fast alle $i \in I$ gilt, lassen sich fast alle $n_i$ als $0$ wählen.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Annihilatoren von Quotienten]
-  \label{question: annihilators of quotients}
-  Es sei $R$ ein kommutativer Ring.
-  \begin{enumerate}
-    \item
-      Zeigen Sie für jedes Ideal $I \subseteq R$ die Gleichheit $\annihilator(R/I) = I$.
-    \item
-      Zeigen Sie für jeden freien $R$-Modul $F$ mit $F \neq 0$, dass $\annihilator(F) = 0$.
-  \end{enumerate}
-  Es sei nun zusätzlich $R \neq 0$.
-  \begin{enumerate}[resume]
-    \item
-      Folgern Sie, dass $R$ genau dann ein Körper ist, wenn jeder endlich erzeugte $R$-Modul frei ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Für alle $x \in I$ und $\overline{y} \in R/I$ gilt $xy \in I$ und somit $\overline{x} \overline{y} = \overline{xy} = 0$.
-      Deshalb gilt $I \subseteq \annihilator(R/I)$.
-      Für jedes $x \in \annihilator(R/I)$ gilt $0 = x \cdot \overline{1} = \overline{x}$ und somit $x \in I$.
-      Deshalb ist auch $\annihilator(R/I) \subseteq I$.
-    \item
-      Da $F$ frei ist, besitzt $F$ eine Basis; da $F \neq 0$ gilt, ist diese nicht leer.
-      Es gibt daher ein Element $m \in F$, so dass $\{m\} \subseteq F$ linear unabhängig ist.
-      Dann gilt $xm \neq 0$ für alle $x \in R$ mit $x \neq 0$, und deshalb $x \notin \annihilator(F)$.
-    \item
-      Ist $R$ ein Körper, so besitzt jeder endlich erzeugte erzugte $R$-Modul, also endlicher erzeugte $R$-Vektorraum, bekanntermaßen eine Basis.
-      Ist andererseits $R$ kein Körper, so gibt es ein Ideal $I \subseteq R$ mit $I \neq 0, R$ (siehe Übung~\ref{question: characterization of fields via its ideals}).
-      Dann ist $M \coloneqq R/I$ ein endlich erzeugter $R$-Modul mit $M \neq 0$ (da $I \neq R$) sowie $\annihilator(R/I) = I \neq 0$.
-      Nach dem vorherigen Aufgabenteil ist $M$ nicht frei.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = $p$-primär in kurzen exakten Sequenzen]
-  Es sei $R$ ein Ring und $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
-  \begin{enumerate}
-    \item
-      Es sei zunächst $R$ ein Hauptidealbereich und $p \in R$ prim.
-      Zeigen Sie, dass $M$ genau dann $p$-primär ist, wenn $N$ und $P$ beide $p$-primär sind.
-    \item
-      Zeigen Sie allgemeiner, dass $\radicalideal{\annihilator(M)} = \radicalideal{\annihilator(N)} \cap \radicalideal{\annihilator(P)}$.
-      (Dabei gilt die Gleichheit $\radicalideal{\annihilator(N)} \cap \radicalideal{\annihilator(P)} = \radicalideal{\annihilator(N) \cap \annihilator(P)}$, siehe Übung~\ref{question: radical ideals}.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  Wir bezeichnen die gegebene kurze exakte Sequenz mit $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$.
-  \begin{enumerate}
-    \item
-      Es sei zunächst $M$ $p$-primär.
-      Dann ist auch der Untermodul $f(N) \subseteq M$ $p$-primär, und da $f$ eine Isomorphie $N \cong f(N)$ liefert, damit auch $N$ $p$-primär.
-      Für $x \in P$ gibt es $x' \in M$ mit $g(x') = x$; da $M$ $p$-primär ist, gibt es ein $k \geq 0$ mit $p^k x' = 0$ und somit auch $p^k x = p^k g(x') = g(p^k x') = g(0) = 0$.
-      Also ist auch $P$ $p$-primär.
-      
-      Es seien nun $N$ und $P$ beide $p$-primär.
-      Für $m \in M$ ist $g(m) \in P$, es gibt also $k_2 \geq 0$ mit $p^{k_2} g(m) = 0$.
-      Dann gilt $g(p^{k_2} m) = p^{k_2} g(m) = 0$ und somit $p^{k_2} m \in \ker g = \im f$.
-      Es gibt also ein $n \in N$ mit $p^{k_2} m = f(n)$.
-      Da $N$ $p$-primär ist, gibt es ein $k_1 \geq 0$ mit $p^{k_1} n = 0$.
-      Ingesamt erhalten wir, dass
-      \[
-          p^{k_1 + k_2} m
-        = p^{k_1} p^{k_2} m
-        = p^{k_1} f(n)
-        = f(p^{k_1} n)
-        = f(0)
-        = 0.
-      \]
-      Das zeigt, dass $M$ $p$-primär ist.
-    \item
-      Für $x \in R$ gilt genau dann $x \in \radicalideal{\annihilator(M)}$, wenn es $k \geq 0$ mit $x^k \in \annihilator(M)$ gibt, also genau dann, wenn es $k \geq 0$ mit $x^k M = 0$ gibt.
-      Es gilt also genau dann $x \in \radicalideal{\annihilator(M)}$, wenn $M$ „$x$-primär“ ist.
-      Ersetzt man in der obigen Argumentation $p$ durch $x$, so erhält man deshalb, dass genau dann $x \in \radicalideal{\annihilator(M)}$ gilt, wenn $x \in \radicalideal{\annihilator(N)}$ und $x \in \radicalideal{\annihilator(P)}$ gelten.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Rechenregeln für Annihilatoren]
-  Es sei $M$ ein $R$-Modul.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $\annihilator( \generate{m}_R ) = \annihilator(m)$ für jedes $m \in M$.
-    \item
-      Zeigen Sie, dass $\annihilator( \sum_{i \in I} M_i) = \bigcap_{i \in I} \annihilator(M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
-    \item
-      Folgern Sie, dass $\annihilator( \generate{m_i \mid i \in I}_R ) = \bigcap_{i \in I} \annihilator(m_i)$ für jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$, und dass $\annihilator(M) = \bigcap_{m \in M} \annihilator(m)$.
-    \item
-      Zeigen Sie, dass $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
-    \item
-      Geben Sie ein Beispiel an, in dem die obige Inklusion strikt ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Aus der Inklusion $\{m\} \subseteq \generate{m}_R$ folgt die Inklusion $\annihilator( \generate{M}_R ) \subseteq \annihilator(m)$.
-      Ist andererseits $x \in \annihilator(m)$, so gilt $xm = 0$, und somit auch $x(rm) = r(xm) = 0$ für alle $r \in R$, also $xm' = 0$ für alle $m' \in \{rm \mid r \in R\} = \generate{m}_R$.
-    \item
-      Für jedes $j \in J$ folgt sich aus $M_j \subseteq \sum_{i \in I} M_i$ die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \annihilator(M_j)$, und somit insgesamt die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \bigcap_{i \in I} \annihilator(M_i)$.
-      Gilt andererseits $x \in \bigcap_{i \in I} \annihilator(M_i)$, so gilt $x M_i = 0$ für alle $i \in I$, also $x m_i = 0$ für alle $i \in I$ und $m_i \in M_i$.
-      Da jedes $m \in \sum_{i \in I} M_i$ eine endliche Summe solcher $m_i$ ist, gilt bereits $xm = 0$ für alle $m \in \sum_{i \in I} M_i$, und somit $x \in \annihilator( \sum_{i \in I} M_i )$.
-      Somit gilt auch $\bigcap_{i \in I} \annihilator( M_i ) \subseteq \annihilator( \sum_{i \in I} M_i )$.
-    \item
-      Es gilt die Gleichungskette
-      \[
-          \annihilator( \generate{m_i \mid i \in I}_R )
-        = \annihilator\left( \sum_{i \in I} \generate{m_i}_R \right)
-        = \bigcap_{i \in I} \annihilator( \generate{m_i}_R )
-        = \bigcap_{i \in I} \annihilator(m_i)
-      \]
-      und somit insbesondere $\annihilator(M) = \annihilator(\sum_{m \in M} \generate{m}_R) = \bigcap_{m \in M} \annihilator(m)$.
-    \item
-      Es gilt genau dann $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i )$, wenn $\annihilator(M_j) \subseteq \annihilator( \bigcap_{i \in I} M_i )$ für alle $j \in I$.
-      Für jedes $j \in I$ ergibt sich diese Inklusion aus der Inklusion $\bigcap_{i \in I} M_i \subseteq M_j$.
-    \item
-      Für $R \neq 0$ betrachte man $M = R \oplus R$ mit den Untermoduln $M_1 = R \oplus 0$ und $M_2 = 0 \oplus R$.
-      Dann gilt $M_1 \cong M_2 \cong R$ und somit $\annihilator(M_1) = \annihilator(M_2) = \annihilator(R) = 0$.
-      Deshalb gilt $\annihilator(M_1) + \annihilator(M_2) = 0$.
-      Andererseits gilt $M_1 \cap M_2 = 0$ und somit $\annihilator(M_1 \cap M_2) = \annihilator(0) = R \neq 0$.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Isomorphie von Quotientenringen]
-  \label{question: quotients isomorphic as modules}
-  Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ seien zwei Ideale, so dass $R/I \cong R/J$ als $R$-Moduln.
-  Zeigen Sie, dass bereits $I = J$.
-  (\emph{Hinweis}:
-   Betrachten Sie Annihilatoren.)
-\end{question}
-
-
-\begin{solution}
-  Für jedes Ideal $K \subseteq R$ gilt $\annihilator(R/K) = K$ (siehe Übung~\ref{question: annihilators of quotients}), und somit gilt
-  \[
-      I
-    = \annihilator(R/I)
-    = \annihilator(R/J)
-    = J.
-  \]
 \end{solution}
 
 
@@ -1828,105 +1743,190 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Charakterisierung zyklischer Moduln]
-  Zeigen Sie, dass für jeden $R$-Moduln $M$ die folgenden Bedingungen äquivalent sind:
+\begin{question}[subtitle = $p$-primär in kurzen exakten Sequenzen]
+  Es sei $R$ ein Ring und $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
   \begin{enumerate}
     \item
-      \label{enum: module is cyclic}
-      $M$ wird von einem einzelnen Element erzeugt, d.h.\ es gibt $m \in M$ mit $M = \generate{m}_R$.
+      Es sei zunächst $R$ ein Hauptidealbereich und $p \in R$ prim.
+      Zeigen Sie, dass $M$ genau dann $p$-primär ist, wenn $N$ und $P$ beide $p$-primär sind.
     \item
-      \label{enum: module is quotient by its annihilator}
-      Es gilt $M \cong R/\!\annihilator(M)$ als $R$-Moduln.
-    \item
-      \label{enum: module is quotient by an ideal}
-      Es gibt ein Ideal $I \subseteq R$ mit $R/I \cong M$ als $R$-Moduln.
-  \end{enumerate}
-  Erfüllt $M$ eine (und damit alle) dieser Bedingungen, so heißt $M$ \emph{zyklisch}.
-\end{question}
-
-
-\begin{solution}
-  (
-    \ref{enum: module is cyclic}
-    $\implies$
-    \ref{enum: module is quotient by its annihilator}
-  )
-  Es sei $m \in M$ mit $M = \generate{m}_R$.
-  Dann gilt
-  \[
-      \annihilator(M)
-    = \annihilator(\generate{m}_R)
-    = \annihilator(m)
-    = \{r \in R \mid rm = 0\}.
-  \]
-  Für den surjektive Homomorphismus von $R$-Moduln
-  \[
-            \varphi
-    \colon  R \to M,
-    \quad
-            r \mapsto rm
-  \]
-  gilt deshalb $\ker \varphi = \annihilator(M)$.
-  Somit induziert $\varphi$ einen Isomorphismus von $R$-Moduln
-  \[
-            \bar{\varphi}
-    \colon  R/\annihilator(M) \to M,
-    \quad
-            [r] \mapsto rm.
-  \]
-  
-  (
-    \ref{enum: module is quotient by its annihilator}
-    $\implies$
-    \ref{enum: module is quotient by an ideal}
-  )
-  Man setze $I = \annihilator(M)$.
-  
-  (
-    \ref{enum: module is quotient by an ideal}
-    $\implies$
-    \ref{enum: module is cyclic}
-  )
-  Ist $\varphi \colon R/I \to M$ ein Isomorphismus, so gilt
-  \[
-      M
-    = \varphi(R/I)
-    = \varphi(\generate{\overline{1}}_R)
-    = \generate{\varphi(\overline{1})}_R.
-  \]
-\end{solution}
-
-
-\begin{question}[subtitle = Ein Lemma von Schur]
-  Ein $R$-Modul $M$ heißt \emph{einfach}, wenn $M$ genau zwei Untermoduln hat.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $M$ genau dann einfach ist, wenn $M \neq 0$ und $0, M \subseteq M$ die einzigen beiden Untermoduln sind.
-    \item
-      Zeigen Sie, dass für je zwei einfache $R$-Moduln $M$ und $N$ jeder $R$-Mo\-dul\-ho\-mo\-mor\-phis\-mus $f \colon M \to N$ entweder $0$ oder ein Isomorphismus ist.
+      Zeigen Sie allgemeiner, dass $\radicalideal{\annihilator(M)} = \radicalideal{\annihilator(N)} \cap \radicalideal{\annihilator(P)}$.
+      (Dabei gilt die Gleichheit $\radicalideal{\annihilator(N)} \cap \radicalideal{\annihilator(P)} = \radicalideal{\annihilator(N) \cap \annihilator(P)}$, siehe Übung~\ref{question: radical ideals}.
   \end{enumerate}
 \end{question}
 
 
 \begin{solution}
+  Wir bezeichnen die gegebene kurze exakte Sequenz mit $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$.
   \begin{enumerate}
     \item
-      Ist $M$ einfach, so muss $M \neq 0$, da $M$ sonst nur einen Untermodul hätte (nämlich sich selbst).
-      Dann sind $0, M \subseteq M$ zwei verschiedene Untermoduln, und nach Annahme gibt es keine weiteren Untermoduln.
+      Es sei zunächst $M$ $p$-primär.
+      Dann ist auch der Untermodul $f(N) \subseteq M$ $p$-primär, und da $f$ eine Isomorphie $N \cong f(N)$ liefert, damit auch $N$ $p$-primär.
+      Für $x \in P$ gibt es $x' \in M$ mit $g(x') = x$; da $M$ $p$-primär ist, gibt es ein $k \geq 0$ mit $p^k x' = 0$ und somit auch $p^k x = p^k g(x') = g(p^k x') = g(0) = 0$.
+      Also ist auch $P$ $p$-primär.
       
-      Ist $M \neq 0$ und sind $0, M \subseteq M$ die einzigen beiden Untermoduln, so hat $M$ genau zwei Untermoduln.
+      Es seien nun $N$ und $P$ beide $p$-primär.
+      Für $m \in M$ ist $g(m) \in P$, es gibt also $k_2 \geq 0$ mit $p^{k_2} g(m) = 0$.
+      Dann gilt $g(p^{k_2} m) = p^{k_2} g(m) = 0$ und somit $p^{k_2} m \in \ker g = \im f$.
+      Es gibt also ein $n \in N$ mit $p^{k_2} m = f(n)$.
+      Da $N$ $p$-primär ist, gibt es ein $k_1 \geq 0$ mit $p^{k_1} n = 0$.
+      Ingesamt erhalten wir, dass
+      \[
+          p^{k_1 + k_2} m
+        = p^{k_1} p^{k_2} m
+        = p^{k_1} f(n)
+        = f(p^{k_1} n)
+        = f(0)
+        = 0.
+      \]
+      Das zeigt, dass $M$ $p$-primär ist.
     \item
-      Ist $f \colon M \to N$ ein Homomorphismus von $R$-Moduln mit $f \neq 0$, so sind $\ker f \subseteq M$ und $\im f \subseteq N$ Untermoduln mit $\ker f \neq M$ und $\im f \neq 0$.
-      Ist $M$ einfach, so muss bereits $\ker f = 0$ gelten, und $f$ somit bereits injektiv sein.
-      Ist $N$ einfach, so muss bereits $\im f = N$ gelten, und $f$ somit bereits surjektiv sein.
-      Sind $M$ und $N$ beide einfach, so ist $f$ also bereits ein Isomorphismus.
+      Für $x \in R$ gilt genau dann $x \in \radicalideal{\annihilator(M)}$, wenn es $k \geq 0$ mit $x^k \in \annihilator(M)$ gibt, also genau dann, wenn es $k \geq 0$ mit $x^k M = 0$ gibt.
+      Es gilt also genau dann $x \in \radicalideal{\annihilator(M)}$, wenn $M$ „$x$-primär“ ist.
+      Ersetzt man in der obigen Argumentation $p$ durch $x$, so erhält man deshalb, dass genau dann $x \in \radicalideal{\annihilator(M)}$ gilt, wenn $x \in \radicalideal{\annihilator(N)}$ und $x \in \radicalideal{\annihilator(P)}$ gelten.
   \end{enumerate}
 \end{solution}
 
 
-\begin{remark*}
-  Das Lemma von Schur besagt insbesondere, dass der Endomorphismenring eines einfachen Moduls ein Schiefkörper ist.
-\end{remark*}
+\begin{question}[subtitle = Produkte und Summen kurzer exakter Sequenzen]
+  Es sei $R$ ein Ring und $\{ N_i \xrightarrow{f_i} M_i \xrightarrow{g_i} P_i \}_{i \in I}$ eine Familie von exakten Sequenzen von $R$-Moduln.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass auch die induzierte Sequenz
+      \[
+                            \prod_{i \in I} N_i
+        \xlongrightarrow{f} \prod_{i \in I} M_i
+        \xlongrightarrow{g} \prod_{i \in I} P_i
+      \]
+      exakt ist, wobei $f$ und $g$ durch $f((n_i)_{i \in I}) = (f(n_i))_{i \in I}$ für alle $(n_i)_{i \in I} \in \prod_{i \in I} N_i$ und $g((m_i)) = (g(m_i))_{i \in I}$ für alle $(m_i)_{i \in I} \in \prod_{i \in I} M_i$ gegeben sind.
+    \item
+      Entscheiden Sie, ob die Aussage auch gilt, wenn man das Produkt $\prod_{i \in I}$ jeweils durch die direkte Summe $\bigoplus_{i \in I}$ ersetzt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es gilt $g \circ f = (g_i)_{i \in I} \circ (f_i)_{i \in I} = (g_i \circ f_i)_{i \in I} = 0$, da $g_i \circ f_i = 0$ für alle $i \in I$.
+      Also ist $\im f \subseteq \ker g$.
+      
+      Ist andererseits $(m_i)_{i \in I} \in \ker g$, so gilt $0 = g((m_i)_{i \in i}) = (g(m_i))_{i \in I}$, also $g(m_i) = 0$ für alle $i \in I$.
+      Dann ist $m_i \in \ker g_i = \im f_i$ für alle $i \in I$, weshalb es für jedes $i \in I$ ein $n_i \in N_i$ mit $f_i(n_i) = m_i$ gibt.
+      Für $n \coloneqq (n_i)_{i \in I} \in \prod_{i \in I} N_i$ gilt dann $f(n) = f((n_i)_{i \in I}) = (f(n_i))_{i \in I} = (m_i)_{i \in I} = m$, weshalb $m \in \im f$.
+      Das zeigt, dass $\ker g \subseteq \im f$.
+    \item
+      Die Aussage gilt auch weiterhin.
+      Der obige Beweis muss nur bei der Wahl der $n_i$ etwas angepasst werden:
+      Damit $(n_i) \in \bigoplus_{i \in I} N_i$ gilt, muss $n_i = 0$ für fast alle $i \in I$ gelten.
+      Da aber ohnehin $m_i = 0$ für fast alle $i \in I$ gilt, lassen sich fast alle $n_i$ als $0$ wählen.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Annihilatoren von Quotienten]
+  \label{question: annihilators of quotients}
+  Es sei $R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Zeigen Sie für jedes Ideal $I \subseteq R$ die Gleichheit $\annihilator(R/I) = I$.
+    \item
+      Zeigen Sie für jeden freien $R$-Modul $F$ mit $F \neq 0$, dass $\annihilator(F) = 0$.
+  \end{enumerate}
+  Es sei nun zusätzlich $R \neq 0$.
+  \begin{enumerate}[resume]
+    \item
+      Folgern Sie, dass $R$ genau dann ein Körper ist, wenn jeder endlich erzeugte $R$-Modul frei ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für alle $x \in I$ und $\overline{y} \in R/I$ gilt $xy \in I$ und somit $\overline{x} \overline{y} = \overline{xy} = 0$.
+      Deshalb gilt $I \subseteq \annihilator(R/I)$.
+      Für jedes $x \in \annihilator(R/I)$ gilt $0 = x \cdot \overline{1} = \overline{x}$ und somit $x \in I$.
+      Deshalb ist auch $\annihilator(R/I) \subseteq I$.
+    \item
+      Da $F$ frei ist, besitzt $F$ eine Basis; da $F \neq 0$ gilt, ist diese nicht leer.
+      Es gibt daher ein Element $m \in F$, so dass $\{m\} \subseteq F$ linear unabhängig ist.
+      Dann gilt $xm \neq 0$ für alle $x \in R$ mit $x \neq 0$, und deshalb $x \notin \annihilator(F)$.
+    \item
+      Ist $R$ ein Körper, so besitzt jeder endlich erzeugte erzugte $R$-Modul, also endlicher erzeugte $R$-Vektorraum, bekanntermaßen eine Basis.
+      Ist andererseits $R$ kein Körper, so gibt es ein Ideal $I \subseteq R$ mit $I \neq 0, R$ (siehe Übung~\ref{question: characterization of fields via its ideals}).
+      Dann ist $M \coloneqq R/I$ ein endlich erzeugter $R$-Modul mit $M \neq 0$ (da $I \neq R$) sowie $\annihilator(R/I) = I \neq 0$.
+      Nach dem vorherigen Aufgabenteil ist $M$ nicht frei.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Isomorphie von Quotientenringen als Moduln]
+  \label{question: quotients isomorphic as modules}
+  Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ seien zwei Ideale, so dass $R/I \cong R/J$ als $R$-Moduln.
+  Zeigen Sie, dass bereits $I = J$.
+  (\emph{Hinweis}:
+   Betrachten Sie Annihilatoren.)
+\end{question}
+
+
+\begin{solution}
+  Für jedes Ideal $K \subseteq R$ gilt $\annihilator(R/K) = K$ (siehe Übung~\ref{question: annihilators of quotients}), und somit gilt
+  \[
+      I
+    = \annihilator(R/I)
+    = \annihilator(R/J)
+    = J.
+  \]
+\end{solution}
+
+
+\begin{question}[subtitle = Rechenregeln für Annihilatoren]
+  Es sei $M$ ein $R$-Modul.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\annihilator( \generate{m}_R ) = \annihilator(m)$ für jedes $m \in M$.
+    \item
+      Zeigen Sie, dass $\annihilator( \sum_{i \in I} M_i) = \bigcap_{i \in I} \annihilator(M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
+    \item
+      Folgern Sie, dass $\annihilator( \generate{m_i \mid i \in I}_R ) = \bigcap_{i \in I} \annihilator(m_i)$ für jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$, und dass $\annihilator(M) = \bigcap_{m \in M} \annihilator(m)$.
+    \item
+      Zeigen Sie, dass $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
+    \item
+      Geben Sie ein Beispiel an, in dem die obige Inklusion strikt ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Aus der Inklusion $\{m\} \subseteq \generate{m}_R$ folgt die Inklusion $\annihilator( \generate{M}_R ) \subseteq \annihilator(m)$.
+      Ist andererseits $x \in \annihilator(m)$, so gilt $xm = 0$, und somit auch $x(rm) = r(xm) = 0$ für alle $r \in R$, also $xm' = 0$ für alle $m' \in \{rm \mid r \in R\} = \generate{m}_R$.
+    \item
+      Für jedes $j \in J$ folgt sich aus $M_j \subseteq \sum_{i \in I} M_i$ die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \annihilator(M_j)$, und somit insgesamt die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \bigcap_{i \in I} \annihilator(M_i)$.
+      Gilt andererseits $x \in \bigcap_{i \in I} \annihilator(M_i)$, so gilt $x M_i = 0$ für alle $i \in I$, also $x m_i = 0$ für alle $i \in I$ und $m_i \in M_i$.
+      Da jedes $m \in \sum_{i \in I} M_i$ eine endliche Summe solcher $m_i$ ist, gilt bereits $xm = 0$ für alle $m \in \sum_{i \in I} M_i$, und somit $x \in \annihilator( \sum_{i \in I} M_i )$.
+      Somit gilt auch $\bigcap_{i \in I} \annihilator( M_i ) \subseteq \annihilator( \sum_{i \in I} M_i )$.
+    \item
+      Es gilt die Gleichungskette
+      \[
+          \annihilator( \generate{m_i \mid i \in I}_R )
+        = \annihilator\left( \sum_{i \in I} \generate{m_i}_R \right)
+        = \bigcap_{i \in I} \annihilator( \generate{m_i}_R )
+        = \bigcap_{i \in I} \annihilator(m_i)
+      \]
+      und somit insbesondere $\annihilator(M) = \annihilator(\sum_{m \in M} \generate{m}_R) = \bigcap_{m \in M} \annihilator(m)$.
+    \item
+      Es gilt genau dann $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i )$, wenn $\annihilator(M_j) \subseteq \annihilator( \bigcap_{i \in I} M_i )$ für alle $j \in I$.
+      Für jedes $j \in I$ ergibt sich diese Inklusion aus der Inklusion $\bigcap_{i \in I} M_i \subseteq M_j$.
+    \item
+      Für $R \neq 0$ betrachte man $M = R \oplus R$ mit den Untermoduln $M_1 = R \oplus 0$ und $M_2 = 0 \oplus R$.
+      Dann gilt $M_1 \cong M_2 \cong R$ und somit $\annihilator(M_1) = \annihilator(M_2) = \annihilator(R) = 0$.
+      Deshalb gilt $\annihilator(M_1) + \annihilator(M_2) = 0$.
+      Andererseits gilt $M_1 \cap M_2 = 0$ und somit $\annihilator(M_1 \cap M_2) = \annihilator(0) = R \neq 0$.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}[subtitle = Kürzungsregeln bis auf Isomorphie]
