@@ -474,7 +474,7 @@
 \end{solution}
 
 
- \begin{question}
+ \begin{question}[subtitle = Isomorphiepuzzle]
   Bestimmen Sie, welche der folgenden Ringe isomorph zueinander sind, und welche nicht:
   \begin{gather*}
     \Integer/25,
@@ -532,7 +532,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Vereinfachung von Quotienten]
   Bestimmen Sie für die folgenden Ringe jeweils die Anzahl der Elemente, Einheiten und nilpotenten Elemente.
   \begin{enumerate}
     \item
@@ -753,7 +753,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Ideale in Quotienten]
   \label{question: lattice isomorphism for quotients}
   Es sei $R$ ein kommutativer Ring und $I \subseteq R$ ein Ideal.
   Es sei $\pi \colon R \to R/I$, $x \mapsto \overline{x}$ die kanonische Projektion.
@@ -823,7 +823,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Primideale und maximale Ideale via Quotienten]
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
     \item
@@ -896,7 +896,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Einheiten in Quotienten]
   \label{question: unit group of quotients}
   \begin{enumerate}
     \item
@@ -932,7 +932,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Radikale]
   \label{question: radical ideals}
   Es sei $R$ ein kommutativer Ring und $I \subseteq R$ ein Ideal.
   \begin{enumerate}
@@ -1053,7 +1053,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Charakterisierung von Primidealen]
   Es sei $R$ ein kommutativer Ring und $\pideal \subseteq R$ ein Ideal.
   Zeigen Sie, dass $\pideal$ genau dann ein Primideal ist, wenn es einen Körper $K$ und einen Ringhomomorphismus $\phi \colon R \to K$ mit $\ker \phi = \pideal$ gibt.
 \end{question}
@@ -1073,54 +1073,6 @@
   Der Körper $K$ ist insbesondere ein Integritätsbereich, weshalb auch der Unterring $\im \phi$ ein Integritätsbereich ist.
   Der Quotient $R/\pideal$ ist also ein Integritätsbereich und $\pideal$ somit eine Primideal.
 \end{solution}
-
-
-% \begin{question}
-%   Es sei $K$ ein Körper.
-%   \begin{enumerate}
-%     \item
-%       Zeigen Sie, dass es für jedes Polynom $f \in K[X]$ einen eindeutigen $K$-linearen Ringhomomorphismus $\phi_f \colon K[X] \to K[X]$ gibt, so dass $\phi_f(X) = f$.
-%       
-%       (\emph{Hinweis}:
-%        Überlegen Sie sich zunächst, dass ein Ringhomomorphismus $\phi \colon K[X] \to K[X]$ genau dann $K$-linear ist, wenn $\phi|_K = \id_K$.)
-%     \item
-%       Zeigen Sie, dass $\phi_f(p) = p(f)$ für alle $p \in K[X]$.
-%     \item
-%       Zeigen Sie, dass $\phi_f$ genau dann ein Ringisomorphismus ist, wenn $\deg f = 1$.
-%   \end{enumerate}
-% \end{question}
-% 
-% 
-% \begin{solution}
-%   \begin{enumerate}
-%     \item
-%       Ist $\phi \colon K[X] \to K[X]$ ein $K$-linearer Ringhomomorphismus, so muss
-%       \[
-%           \phi(\lambda)
-%         = \phi(\lambda \cdot 1)
-%         = \lambda \phi(1)
-%         = \lambda \cdot 1
-%         = \lambda
-%         \qquad
-%         \text{für alle $\lambda \in K$},
-%       \]
-%       weshalb $\phi|_K = \id_K$.
-%       Ist andererseits $\phi \colon K[X] \to K[X]$ ein Ringhomomorphismus mit $\phi|_K = \id_K$, so gilt
-%       \[
-%           \phi(\lambda \cdot f)
-%         = \phi(\lambda) \cdot \phi(f)
-%         = \lambda \cdot \phi(f)
-%         \qquad
-%         \text{für alle $\lambda \in K$, $f \in K[X]$}.
-%       \]
-%       Also ist ein Ringhomomorphismus $\phi \colon K[X] \to K[X]$ genau dann $K$-linear, wenn $\phi|_K = \id_K$.
-%       
-%       Es gilt also zu zeigen, dass es für jedes $f \in K[X]$ genau einen Ringhomomorphismus $\phi_f \colon K[X] \to K[X]$ mit $\phi_f|_K = \id_K$ und $\phi_f(T) = f$ gibt.
-%       Dies gilt nach der universellen Eigenschaft des Polynomrings.
-%     \item
-%       
-%   \end{enumerate}
-% \end{solution}
 
 
 \begin{question}[subtitle = Die Einheitengruppe des Potenzreihenrings]
@@ -1224,7 +1176,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Die Eulersche Phi-Funktion]
   Die Eulersche Phi-Funktion ist definiert als
   \[
             \varphi
@@ -1319,7 +1271,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Gegenbeispiele]
   \label{question: examples for non principal and not finitely generated modules}
   Es sei $K$ ein Körper.
   \begin{enumerate}
@@ -1363,30 +1315,6 @@
 \end{solution}
 
 
-% \begin{question}
-%   Es sei $R$ ein kommutativer Ring.
-%   Es seien $\aideal, \bideal \subseteq R$ zwei Ideale mit $\aideal = (x_i \mid i \in I)$ und $\bideal = (y_j \mid j \in J)$.
-%   Zeigen Sie, dass
-%   \[
-%     \aideal \bideal = (x_i y_j \mid i \in I, j \in J).
-%   \]
-% \end{question}
-% 
-% 
-% \begin{solution}
-%   Für alle $i \in I$ und $j \in J$ folgt aus $x_i \in \aideal$ und $y_j \in \bideal$, dass $x_i y_j \in \aideal \bideal$.
-%   Daraus folgt, dass $(x_i y_j \mid i \in I, j \in J) \subseteq \aideal \bideal$.
-%   Sind andererseits $a \in \aideal$ und $b \in \bideal$, so ist $a = \sum_{i \in I} r_i x_i$ und $b = \sum_{j \in J} s_j y_j$ mit $r_i, s_j \in R$, wobei $r_i = 0$ für fast alle $i \in I$ und $s_j = 0$ für fast alle $j \in J$.
-%   Deshalb ist
-%   \[
-%         ab
-%     =   \sum_{\substack{i \in I \\ j \in J}} r_i s_j x_i y_j
-%     \in (x_i y_j \mid i \in I, j \in J).
-%   \]
-%   Da jedes Element aus $\aideal \bideal$ von der Form $\sum_{k=1}^n a_k b_k$ mit $a_k \in \aideal$ und $b_k \in \bideal$ ist, folgt daraus, dass $\aideal \bideal \subseteq (x_i y_j \mid i \in I, j \in J)$.
-% \end{solution}
-
-
 \begin{question}[subtitle = Zur Definition von Unterringen]
   Geben Sie ein Beispiel für einen kommutativen Ring $R$ und eine Teilmenge $S \subseteq R$ mit den folgenden Eigenschaften:
   \begin{itemize}
@@ -1408,7 +1336,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Assoziiertheit in Ringen]
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
     \item
@@ -1454,7 +1382,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Nilpotente zu Einheiten]
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
     \item
@@ -1543,7 +1471,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Noethersch und Hauptidealring für Quotienten]
   Es sei $R$ ein Ring und $I \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
@@ -1570,27 +1498,7 @@
 \end{solution}
 
 
-% \begin{question}
-%   Für jedes $d \in \Natural$ sei
-%   \[
-%               \Integer[\sqrt{-d}]
-%     \coloneqq \Integer[i\sqrt{d}]
-%     =         \{a + i \sqrt{d} b \mid a, b \in \Integer \}
-%     \subseteq \Complex.
-%   \]
-%   Es darf im Folgenden ohne Beweis genutzt werden, dass $\Integer[\sqrt{-d}]$ ein Unterring von $\Complex$ ist.
-%   \begin{enumerate}
-%     \item
-%       Zeigen Sie, dass $\Integer[\sqrt{-1}]$ ein euklidischer Ring ist.
-%     \item
-%       Zeigen Sie, dass $\Integer[\sqrt{-2}]$ ein euklidischer Ring ist.
-%     \item
-%       Zeigen Sie, dass $\Integer[\sqrt{-5}]$ kein euklidischer Ring ist.
-%   \end{enumerate}
-% \end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Euklidische Ringe sind Hauptidealringe]
   Es sei $R$ ein euklidischer Ring.
   Zeigen Sie, dass $R$ ein Hauptidealring ist.
 \end{question}
@@ -1608,7 +1516,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Primideale in Hauptidearingen]
   Es sei $R$ ein Hauptidealring.
   Zeigen Sie, dass jedes Primideal in $R$ bereits ein maximales Ideal ist.
 \end{question}
@@ -1633,7 +1541,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Polynomringe als Hauptidealringe]
   \label{question: fields are the only rings for which the polynomial ring is a pid}
   Es sei $K$ ein kommutativer Ring, so dass $K[X]$ ein Hauptidealring ist.
   Zeigen Sie, dass $K$ bereits ein Körper ist.
@@ -1717,7 +1625,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Idealtheoretische Beschreibung größter gemeinsamer Teiler]
   \label{question: greatest common divisor via generated ideal}
   Es sei $R$ ein kommutativer Ring, $(a_i)_{i \in I}$ eine Familie von Elementen $a_i \in R$ und $a \in R$.
   \begin{enumerate}
@@ -1767,8 +1675,7 @@
 \end{solution}
 
 
-
-\begin{question}
+\begin{question}[subtitle = Zur Existenz von maximalen Idealen]
   Es sei $R$ ein Ring und $I \subseteq R$ ein echtes Ideal.
   Zeigen Sie mithilfe des Lemmas von Zorn, dass es ein maximales Ideal $\mideal \subsetneq R$ gibt, so dass $I \subseteq \mideal$.
 \end{question}
@@ -1796,7 +1703,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Koeffizientenideale in Polynomringen]
   \label{question: quotients by ideals coming from the ground ring}
   Es sei $R$ ein kommutativer Ring und $\aideal \subseteq R$ ein Ideal.
   \begin{enumerate}
@@ -1931,7 +1838,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Polynomringe sind keine Körper]
   \label{qst: polynomial rings are not fields}
   Zeigen Sie, dass es keinen Ring $R$ gibt, so dass $R[X]$ ein Körper ist.
 \end{question}
@@ -1944,7 +1851,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Produkte von Idealen]
   \label{question: product of ideals is an ideal}
   Es seien $R_1, \dotsc, R_n$ kommutative Ringe für jedes $i = 1, \dotsc, n$ sei $\aideal_i \subseteq R_i$ ein Ideal.
   \begin{enumerate}
@@ -1972,6 +1879,7 @@
       \]
       ein Ringhomomorphismus mit $\ker \pi = (\ker \pi_1) \times \dotsb \times (\ker \pi_n) = \aideal_1 \times \dotsb \times \aideal_n$.
       Inbesondere ist deshalb $\aideal_1 \times \dotsb \times \aideal_n$ ein Ideal in $R_1 \times \dotsb \times R_n$.
+      
     \item
       Da die $\pi_i$ surjektiv sind, ist es auch $\pi$.
       Da $\ker \pi = \aideal_1 \times \dotsb \times \aideal_n$ gilt, induziert $\pi$ also einen Isomorphismus
@@ -1983,6 +1891,7 @@
                   \overline{(x_1, \dotsc, x_n)}
         &\mapsto  (\overline{x_1}, \dotsc, \overline{x_n}).
       \end{align*}
+      
     \item
       Ist $\aideal_i \neq R_i$ und $\aideal_j \neq R_j$ für $i \neq j$, so sind in dem Produkt $(R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)$ mindestens zwei Faktoren nicht trivial, und der Ring somit nicht nullteilerfrei.
       Es genügt daher, sich auf den Fall einzuschränken, dass $\aideal_i = R_i$ für alle $i = 1, \dotsc, n$ bis auf ein $1 \leq j \leq n$.
@@ -2005,6 +1914,7 @@
           \iff \text{$\aideal_j$ ist prim}.
         \end{aligned}
       \end{gather*}
+      
     \item
       Die Aussage gilt auch für maximale Ideale.
       Man muss nur in der obigen Argumentation \emph{prim} durch \emph{maximal} und \emph{Integritätsbereich} durch \emph{Körper} ersetzen.
@@ -2012,7 +1922,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Ideale in Produkten]
   \label{questions: ideals in products are products of ideal}
   Es seien $R_1, \dotsc, R_n$ kommutative Ringe
   Zeigen Sie, dass jedes Ideal $\aideal \subseteq R_1 \times \dotsb \times R_n$ von der Form $\aideal = \aideal_1 \times \dotsb \times \aideal_n$ für eindeutige Ideale $\aideal_i \subseteq R_i$ ist.
@@ -2048,23 +1958,7 @@
 \end{remark*}
 
 
-% \begin{question}
-%   Zeigen Sie, dass $\Integer[i] \cong \Integer[X]/(X^2 + 1)$.
-% \end{question}
-
-
-% \begin{question}
-%   Es sei $R$ ein Integritätsbereich und $K$ ein Körper.
-%   \begin{enumerate}
-%     \item
-%       Zeigen Sie, dass $Q(R[X]) \cong Q(R)(X)$.
-%     \item
-%       Folgern Sie, dass $K(X,Y) \cong K(X)(Y)$.
-%   \end{enumerate}
-% \end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Funktorialität von Lokalisierung]
   Es sei $f \colon R \to R'$ ein Ringhomomorphismus zwischen kommutativen Ringen $R$ und $R'$.
   Es sei $S \subseteq R$ eine multiplikative Menge.
   \begin{enumerate}
@@ -2117,7 +2011,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Lokalisierung und Produkte]
   Es seien $R$ und $R'$ zwei kommutative Ringe, und $S \subseteq R$ und $S' \subseteq R'$ multiplikative Mengen.
   Es seien $i \colon R \to R_S$ und $i' \colon R' \to R'_{S'}$ die kanonischen Ringhomomorphismen.
   \begin{enumerate}
@@ -2171,8 +2065,7 @@
 \end{solution}
 
 
-
-\begin{question}
+\begin{question}[subtitle = Lokalisierung durch Quotienten]
   Es sei $R$ ein kommutativer Ring und $f \in R$.
   Zeigen Sie, dass $R_f \cong R[X]/(fX-1)$.
 \end{question}
@@ -2232,7 +2125,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Einheitengruppe der Gaußschen Zahlen]
   Bestimmen Sie die Einheitengruppe $\Integer[i]^\times$.
 \end{question}
 
@@ -2257,7 +2150,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Der Hilbertsche Basissatz]
   Formulieren und beweisen Sie den Hilbertschen Basissatz.
 \end{question}
 
@@ -2345,7 +2238,7 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Ein nicht-faktorieller Ring]
   Es sei $K$ ein Körper und $R \coloneqq K[t^2, t^3] \subseteq K[t]$.
   \begin{enumerate}
     \item
@@ -2379,7 +2272,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitel = $\powerseries{K}{X}$ ist lokal]
   Es sei $K$ ein Körper.
   Zeigen Sie, dass der Ring $\powerseries{K}{X}$ ein eindeutiges maximales Ideal besitzt.
 \end{question}
