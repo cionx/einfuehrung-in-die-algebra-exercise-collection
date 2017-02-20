@@ -2,6 +2,11 @@
 
 
 
+
+
+\subsection{Hauptaufgaben}
+
+
 \begin{question}[subtitle = Wahr oder Falsch?]
   Es sei $R$ ein kommutativer Ring.
   Entscheiden Sie, welche der folgenden Aussagen wahr oder falsch sind.
@@ -216,7 +221,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Herleitung der Jordannormalform]
   \begin{enumerate}
     \item
       Formulieren Sie den Hauptsatz über endlich erzeugte Moduln über Hauptidealringen.
@@ -371,7 +376,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Smith-Normalform]
+\begin{question}[subtitle = Smith-Normalform Und Kokerne]
     Bestimmen Sie die Smith-Normalform der folgenden Matrizen $A_i \in \Mat(m \times n, R)$ für den jeweils gegebenen euklidischen Ring $R$.
     Bestimmen Sie auch jeweils die Isomorphieklasse von $M_i \coloneqq R^m/AR^n$ gemäß des Hauptsatzes über endlich erzeugte $R$-Moduln, sowie die Primärzerlegung des Torsionsuntermoduls $\torsion(M_i)$.
   \begin{enumerate}
@@ -541,7 +546,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Eine Isomorphie von abelschen Gruppen]
   Es seien $n, m \geq 1$.
   Zeigen Sie, dass $\Integer/n \oplus \Integer/m \cong \Integer/\ggT(n,m) \oplus \Integer/\kgV(n,m)$.
 \end{question}
@@ -577,38 +582,7 @@
 \end{solution}
 
 
-\begin{question}
-  \label{question: abelian groups are the same as modules over Z}
-  Zeigen Sie, dass es auf jeder abelschen Gruppe genau eine $\Integer$-Modulstruktur gibt.
-\end{question}
-
-
-\begin{solution}
-  Es sei $A$ eine abelsche Gruppe.
-  Aus der Vorlesung ist die Bijektion
-  \begin{align*}
-    \{\text{$\Integer$-Modulstrukturen $\Integer \times A \to A$}\}
-    &\longleftrightarrow
-    \{\text{Ringhomomorphismen $\Integer \to \End(A)$}\},
-    \\
-                    \mu
-    &\longmapsto    (n \mapsto (a \mapsto \mu(n,a))),
-    \\
-                    ( (n,a) \mapsto \phi(n)(a) )
-    &\longmapsfrom  \phi.
-  \end{align*}
-  bekannt.
-  Dabei ist
-  \[
-      \End(A)
-    = \{f \colon A \to A \mid \text{$f$ ist additiv}\}
-  \]
-  ein Ring unter punktweiser Adddition und Komposition.
-  Da es genau einen Ringhomomorphismus $\Integer \to \End(A)$ gibt (siehe Übung~\ref{qst: Z is inital}) folgt die Aussage.
-\end{solution}
-
-
-\begin{question}
+\begin{question}[subtitle = $\Rational$ ist nicht endlich erzeugt]
   \label{question: Q is not finitely generated}
   Zeigen Sie, dass $\Rational$ als abelsche Gruppe nicht endlich erzeugt ist.
 \end{question}
@@ -649,7 +623,44 @@
 \end{solution}
 
 
-\begin{question}
+
+
+
+\subsection{Hintergrundsaufgaben}
+
+
+\begin{question}[subtitle = $\Integer$-Moduln und abelsche Gruppen]
+  \label{question: abelian groups are the same as modules over Z}
+  Zeigen Sie, dass es auf jeder abelschen Gruppe genau eine $\Integer$-Modulstruktur gibt.
+\end{question}
+
+
+\begin{solution}
+  Es sei $A$ eine abelsche Gruppe.
+  Aus der Vorlesung ist die Bijektion
+  \begin{align*}
+    \{\text{$\Integer$-Modulstrukturen $\Integer \times A \to A$}\}
+    &\longleftrightarrow
+    \{\text{Ringhomomorphismen $\Integer \to \End(A)$}\},
+    \\
+                    \mu
+    &\longmapsto    (n \mapsto (a \mapsto \mu(n,a))),
+    \\
+                    ( (n,a) \mapsto \phi(n)(a) )
+    &\longmapsfrom  \phi.
+  \end{align*}
+  bekannt.
+  Dabei ist
+  \[
+      \End(A)
+    = \{f \colon A \to A \mid \text{$f$ ist additiv}\}
+  \]
+  ein Ring unter punktweiser Adddition und Komposition.
+  Da es genau einen Ringhomomorphismus $\Integer \to \End(A)$ gibt (siehe Übung~\ref{qst: Z is inital}) folgt die Aussage.
+\end{solution}
+
+
+\begin{question}[subtitle = Über $\Hom_R(R,-)$]
   Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
   Zeigen Sie, dass $\Hom_R(R, M) \cong M$ als $R$-Moduln.
 \end{question}
@@ -664,7 +675,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Idempotente]
   Es sei $R$ ein Ring und $e \colon M \to M$ ein idempotenter Endomorphismus eines $R$-Moduls $M$, d.h.\ es gilt $e^2 = e$.
   Zeigen Sie, das $M = \im e \oplus \ker e$ und dass $e(m + m') = m$ für alle $m \in \im e$ und $m' \in \ker e$.
 \end{question}
@@ -678,7 +689,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Moduln über Lokalisierungen und Quotienten]
   \label{question: extension of module structures onto quotients and localizations}
   Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
   Es sei $I \subseteq R$ ein Ideal und $S \subseteq R$ eine multiplikative Menge.
@@ -744,7 +755,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Jeder Modul ist Quotient eines freien Moduls]
   \label{question: interaction of free modues with other modules}
   Es sei $R$ ein Ring
   \begin{enumerate}
@@ -800,7 +811,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Existenz endlicher Erzeugendensysteme]
   \label{question: in a finitely generated module every generating set contains a finite generatin set}
   Es sei $M$ ein endlich erzeugter $R$-Modul.
   Zeigen Sie, dass jedes Erzeugendensystem $S \subseteq M$ ein endliches Erzeugendensystem enthält.
@@ -1080,7 +1091,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Einschränkung kurzer exakter Sequenzen]
   \label{question: restriction of a short exact sequence to a submodule of its middle term}
   Es sei $R$ ein Ring und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ ein kurze exakte Sequenz von $R$-Moduln und $M' \subseteq M$ ein Untermodul.
   Zeigen sie, dass auch
@@ -1101,7 +1112,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Untermoduln freier Moduln über Hauptidealringen]
   \label{question: submodules of free modules over pid are also free}
   Es sei $R$ ein Hauptidealring und $F$ ein freier $R$-Modul mit endlichen Rang $n \geq 0$.
   Es sei $F' \subseteq F$ ein Untermodul.
@@ -1141,7 +1152,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Untermoduln endlich erzeugter Moduln über Hauptidealringen]
   Es sei $R$ ein Hauptidealring und $M$ ein endlich erzeugter $R$-Modul.
   \begin{enumerate}
     \item
@@ -1169,7 +1180,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Endlichkeit in kurzen exakten Sequenzen]
   \label{question: finitely generated in short exact sequences}
   Es sei $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
   \begin{enumerate}
@@ -1227,7 +1238,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle=Charakterisierungen noetherscher Moduln]
+\begin{question}[subtitle = Charakterisierungen noetherscher Moduln]
   \label{question: characterizations of noetherian modules}
   Es sei $M$ ein $R$-Modul.
   Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
@@ -1368,7 +1379,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Konstruktionen mit noetherschen Moduln]
   \label{question: properties of noetherian modules}
   Es sei $R$ ein Ring.
   \begin{enumerate}
@@ -1425,7 +1436,7 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Surjektive Endomorphismen noetherscher Moduln]
   \label{question: surjective endomorphisms of noetherian modules are isomorphisms}
   Es sei $R$ ein Ring und $M$ ein noetherscher $R$-Modul.
   Zeigen Sie, dass jeder surjektive Endomorphismus $f \colon M \to M$ bereits ein Isomorphismus ist.
@@ -1459,7 +1470,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Zum Spalten kurzer exakter Sequenzen]
   \begin{enumerate}
     \item
       Geben Sie für einen passenden kommutativen Ring $R$ eine kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to P \to 0$ an, die nicht spaltet.
@@ -1501,7 +1512,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Produkte und Summen kurzer exakter Sequenzen]
   Es sei $R$ ein Ring und $\{ N_i \xrightarrow{f_i} M_i \xrightarrow{g_i} P_i \}_{i \in I}$ eine Familie von exakten Sequenzen von $R$-Moduln.
   \begin{enumerate}
     \item
@@ -1537,7 +1548,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Annihilatoren von Quotienten]
   \label{question: annihilators of quotients}
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
@@ -1574,7 +1585,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = $p$-primär in kurzen exakten Sequenzen]
   Es sei $R$ ein Ring und $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
   \begin{enumerate}
     \item
@@ -1619,7 +1630,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Rechenregeln für Annihilatoren]
   Es sei $M$ ein $R$-Modul.
   \begin{enumerate}
     \item
@@ -1667,7 +1678,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Isomorphie von Quotientenringen]
   \label{question: quotients isomorphic as modules}
   Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ seien zwei Ideale, so dass $R/I \cong R/J$ als $R$-Moduln.
   Zeigen Sie, dass bereits $I = J$.
@@ -1687,98 +1698,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Existenz der Hauptraumzerlegung]
-  Es sei $K$ ein Körper, $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
-  \begin{enumerate}
-    \item
-      Zeigen Sie für je zwei teilerfremde Polynome $p, q \in K[T]$ die Gleichheit
-      \[
-        \ker {(pq)(f)} = \ker p(f) \oplus \ker q(f).
-      \]
-    \item
-      Folgern Sie für alle paarweise teilerfremden Polynome $p_1, \dotsc, p_n \in K[T]$ die Gleichheit
-      \[
-          \ker {(p_1 \dotsm p_n)(f)}
-        = \ker p_1(f) \oplus \dotsb \oplus \ker p_n(f).
-      \]
-  \end{enumerate}
-  Es sei nun $K$ algebraisch abgeschlossen und $V$ endlichdimensional.
-  \begin{enumerate}[resume]
-    \item
-      Zeigen Sie, dass $V$ in die Summe der Haupträume von $f$ ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Da $p$ und $q$ teilerfremd sind, gibt es $a, b \in K[T]$ mit $ap + bq = 1$.
-      Durch Einsetzen von $f$ ergibt sich, dass $a(f) p(f) + b(f) g(f) = \id_V$.
-      Für $v \in \ker p(f) \cap \ker q(f)$ gilt deshalb
-      \[
-          0
-        =   a(f)( \underbrace{p(f)(v)}_{=0} ) + b(f)( \underbrace{q(f)(v)}_{=0} )
-        = (a(f) p(f) + b(f) q(f))(v)
-        = \id_V(v)
-        = v.
-      \]
-      Also ist $\ker p(f) \cap \ker q(f) = 0$.
-      Für $v \in \ker {(pq)(f)}$ gilt andererseits
-      \[
-          v
-        = \id_V(v)
-        = (a(f) p(f) + b(f) q(f))(v)
-        = \underbrace{(a(f)p(f))(v)}_{\eqqcolon v_2} + \underbrace{(b(f)q(v))(v)}_{\eqqcolon v_1}
-      \]
-      Dabei gilt $v_1 \in \ker p(f)$, da
-      \begin{align*}
-            p(f)(v_1)
-        &=  (p(f)b(f)q(f))(v)
-         =  (b(f)p(f)q(f))(v)
-        \\
-        &=  (b(f)(pq)(f))(v)
-         =  b(f)( \underbrace{(pq)(f)(v)}_{=0} )
-         =  0.
-      \end{align*}
-      Analog gilt auch $v_2 \in \ker q(f)$.
-      Also gilt auch $\ker {(pq)(f)} = \ker p(f) + \ker q(f)$.
-      
-    \item
-      Wir zeigen die Aussage per Induktion über $n$.
-      Für $n = 1$ ist die Aussage klar, und für $n = 2$ wurde sie im vorherigen Teil der Aussage gezeigt.
-%       
-      Es sei also $n \geq 3$; da $f_1, \dotsc, f_n$ paarweise teilerfremd sind, sind auch die beiden Polynome $f_1 \dotsm f_{n-1}$ und $f_n$ teilerfremd.
-      Nach Induktionsvoraussetzung gilt deshalb
-      \begin{equation}
-        \label{equation: decomposition into two subspaces}
-          \ker {(p_1 \dotsm p_n)(f)}
-        = \ker {(p_1 \dotsm p_{n-1} \cdot p_n)(f)}
-        = \ker {(p_1 \dotsm p_{n-1})(f)} \oplus \ker p_n(f).
-      \end{equation}
-      Da $f_1, \dotsc, f_n$ paarweise teilerfremd sind, sind es auch $f_1, \dotsc, f_{n-1}$.
-      Nach Induktionsvoraussetzung gilt daher auch
-      \begin{equation}
-        \label{equation: decomposition of the first summand into subspaces}
-          \ker {(p_1 \dotsm p_{n-1})(f)}
-        = \ker p_1(f) \oplus \dotsb \oplus \ker p_{n-1}(f).
-      \end{equation}
-      Zusammenfügen von \eqref{equation: decomposition into two subspaces} und \eqref{equation: decomposition of the first summand into subspaces} ergibt die Aussage.
-    \item
-      Es sei $p \in K[T]$ das charakteristische Polynom von $f$.
-      Da $K$ algebraisch abgeschlossen ist zerfällt $p$ in Linearfaktoren, also $p(T) = (T - \lambda_1)^{n_1} \dotsm (T - \lambda_s^{n_s})$ für $n_1, \dotsc, n_s \geq 0$ und paarweise verschiedene $\lambda_1, \dotsc, \lambda_s \in K$.
-      Die Polynome $(T-\lambda_1)^{n_1}, \dotsc, (T-\lambda_s)^{n_s}$ sind paarweise teilerfremd, und somit gilt nach dem vorherigen Aussagenteil
-      \[
-          \ker p(f)
-        = \ker (f - \lambda_1)^{n_1} \oplus \dotsb \oplus \ker (f - \lambda_s)^{n_s}.
-      \]
-      Nach dem Satz von Cayley-Hamilton gilt dabei $p(f) = 0$ und somit $\ker p(f) = V$.
-  \end{enumerate}
-\end{solution}
-
-
-
-\begin{question}[subtitle=Torsionsuntermoduln]
+\begin{question}[subtitle = Torsionsuntermoduln]
   Es sei $R$ ein Integritätsbereich mit Quotientenkörper $K$.
   \begin{enumerate}
     \item
@@ -1908,7 +1828,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Charakterisierung zyklischer Moduln]
   Zeigen Sie, dass für jeden $R$-Moduln $M$ die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
     \item
@@ -1977,7 +1897,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Schurs Lemma]
+\begin{question}[subtitle = Ein Lemma von Schur]
   Ein $R$-Modul $M$ heißt \emph{einfach}, wenn $M$ genau zwei Untermoduln hat.
   \begin{enumerate}
     \item
@@ -2007,22 +1927,6 @@
 \begin{remark*}
   Das Lemma von Schur besagt insbesondere, dass der Endomorphismenring eines einfachen Moduls ein Schiefkörper ist.
 \end{remark*}
-
-
-% \begin{question}
-%   Ein $R$-Modul $M$ heißt \emph{unzerlegbar}, falls es keine Zerlegung $M = N_1 \oplus N_2$ in zwei echten Untermoduln $N_1, N_2 \subsetneq M$ gibt.
-%   \begin{enumerate}
-%     \item
-%       Es sei $R$ ein Integritätsbereich.
-%       Zeigen Sie, dass $R$ als $R$-Modul unzerlegbar ist.
-%       
-%       (\emph{Hinweis}: Zeigen Sie, dass $I \cap J \neq 0$ für alle Ideale $I, J \subseteq R$ mit $I, J \neq 0$.)
-%     \item
-%       Geben Sie ein Beispiel für einen Ring $R$, der zwar nicht nullteilerfrei ist, so dass aber $R$ als $R$-Modul dennoch unzerlegbar ist.
-%     \item
-%       Geben Sie ein Beispiel für einen Ring $R$, so dass $R$ als $R$-Modul nicht unzerlegbar ist.
-%   \end{enumerate}
-% \end{question}
 
 
 \begin{question}[subtitle = Kürzungsregeln bis auf Isomorphie]
@@ -2078,200 +1982,47 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Isomorphie von kurzen exakten Sequenzen]
-  \label{question: isomorpism of short exact sequences}
-  Es sei $R$ ein Ring.
-  Zwei kurze exakte Sequenzen
-  \[
-    0 \to N  \xrightarrow{f}  M  \xrightarrow{g}  P \to 0
-    \quad\text{und}\quad
-    0 \to N' \xrightarrow{f'} M' \xrightarrow{g'} P' \to 0
-  \]
-  von $R$-Moduln heißen \emph{isomorph}, wenn es Isomorphismen $\varphi_N \colon N \to N'$, $\varphi_M \colon M \to M'$ und $\varphi_P \colon P \to P'$ gibt, die das folgende Diagramm zu kommutieren bringen:
-  \[
-    \begin{tikzcd}[ampersand replacement = \&]
-          0
-          \arrow{r}
-      \&  N
-          \arrow{r}{f}
-          \arrow{d}{\varphi_N}
-      \&  M
-          \arrow{r}{g}
-          \arrow{d}{\varphi_M}
-      \&  P
-          \arrow{r}
-          \arrow{d}{\varphi_P}
-      \&  0
-      \\
-          0
-          \arrow{r}
-      \&  N'
-          \arrow{r}{f'}
-      \&  M'
-          \arrow{r}{g'}
-      \&  P'
-          \arrow{r}
-      \&  0
-    \end{tikzcd}
-  \]
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass Isomorphie von kurzen exakten Sequenzen eine Äquivalenzrelation auf der Klasse der kurzen exakten Sequenzen von $R$-Moduln ist.
-    \item
-      Es sei $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
-      Zeigen Sie, dass sich das Diagramm
-      \[
-        \begin{tikzcd}[ampersand replacement = \&]
-              0
-              \arrow{r}
-          \&  N
-              \arrow{r}{f}
-          \&  M
-              \arrow{r}{g}
-              \arrow[equal]{d}
-          \&  P
-              \arrow{r}
-          \&  0
-          \\
-              0
-              \arrow{r}
-          \&  \im f
-              \arrow{r}{i}
-          \&  M
-              \arrow{r}{p}
-          \&  P
-              \arrow{r}
-          \&  0
-        \end{tikzcd}
-      \]
-      zu einem Isomorphismus von kurzen exakten Sequenzen ergänzen lässt.
-      Dabei bezeichnet $i \colon \im f \to M$, $x \mapsto x$ die Inklusion und $p \colon M \to M / \im f$, $x \mapsto \overline{x}$ die kanonische Projektion.
-      
-      (Mit anderen Worten:
-       Die beiden Zeilen im obigen Diagramm sind isomorphe kurze exakte Sequenzen, und es gibt einen Isomorphismus, dessen mittlerer vertikaler Pfeil die Identität ist.)
-  \end{enumerate}
-\end{question}
-
-
-% TODO: Adding a solution.
-
-
-\begin{remark*}
-  Übung~\ref{question: isomorpism of short exact sequences} gibt eine formale Begründung der informalen Aussage, dass jede kurze exakte Sequenz von $R$-Moduln von der Form $0 \to N \to M \to M/N \to 0$ für einen $R$-Modul $M$ und Untermodul $N \subseteq M$ ist (wobei die Pfeile $N \to M$ und $M \to M/N$ die jeweils kanonischen Homomorphismen sind).
-  % TODO: Extending this remark when the different definitions of split exact sequences are discussed.
-\end{remark*}
-
-
-\begin{question}[subtitle = Zwei Vierer- und ein Fünferlemma]
-  \label{question: the five lemma}
-  Es sei $R$ ein Ring und
-  \[
-    \begin{tikzcd}[ampersand replacement=\&]
-          M_1
-          \arrow{r}{f_1}
-          \arrow{d}{h_1}
-      \&  M_2
-          \arrow{r}{f_2}
-          \arrow{d}{h_2}
-      \&  M_3
-          \arrow{r}{f_3}
-          \arrow{d}{h_3}
-      \&  M_4
-          \arrow{r}{f_4}
-          \arrow{d}{h_4}
-      \&  M_5
-          \arrow{d}{h_5}
-      \\
-          N_1
-          \arrow{r}{g_1}
-      \&  N_2
-          \arrow{r}{g_2}
-      \&  N_3
-          \arrow{r}{g_3}
-      \&  N_4
-          \arrow{r}{g_4}
-      \&  N_5
-    \end{tikzcd}
-  \]
-  ein kommutatives Diagramm von $R$-Moduln mit exakten Ze
-  \begin{enumerate}
-    \item
-      Es sei $h_1$ surjektiv, und $h_2$ und $h_4$ seien injektiv.
-      Zeigen Sie, dass auch $h_3$ injektiv ist.
-    \item
-      Es sei $h_5$ injektiv, und $h_2$ und $h_4$ seien surjektiv.
-      Zeigen Sie, dass auch $h_3$ surjektiv ist.
-    \item
-      Folgern Sie:
-      Sind $h_1$, $h_2$, $h_4$ und $h_5$ Isomorphismen, so ist auch $h_3$ ein Isomorphismus.
-  \end{enumerate}
-\end{question}
-
-
-% TODO: Adding a solution.
-
-
-% \begin{question}[subtitle = Anwendungen des Fünferlemmas]
-%   Dies ist eine Fortsetzung von Übung~\ref{question: the five lemma}.
-%   Es sei $R$ ein Ring.
+% \begin{question}[subtitle = Zwei Vierer- und ein Fünferlemma]
+%   \label{question: the five lemma}
+%   Es sei $R$ ein Ring und
+%   \[
+%     \begin{tikzcd}[ampersand replacement=\&]
+%           M_1
+%           \arrow{r}{f_1}
+%           \arrow{d}{h_1}
+%       \&  M_2
+%           \arrow{r}{f_2}
+%           \arrow{d}{h_2}
+%       \&  M_3
+%           \arrow{r}{f_3}
+%           \arrow{d}{h_3}
+%       \&  M_4
+%           \arrow{r}{f_4}
+%           \arrow{d}{h_4}
+%       \&  M_5
+%           \arrow{d}{h_5}
+%       \\
+%           N_1
+%           \arrow{r}{g_1}
+%       \&  N_2
+%           \arrow{r}{g_2}
+%       \&  N_3
+%           \arrow{r}{g_3}
+%       \&  N_4
+%           \arrow{r}{g_4}
+%       \&  N_5
+%     \end{tikzcd}
+%   \]
+%   ein kommutatives Diagramm von $R$-Moduln mit exakten Ze
 %   \begin{enumerate}
 %     \item
-%       Es seien nun $N$ und $P$ zwei $R$-Moduln.
-%       Eine \emph{Erweiterung von $N$ um $P$} ist eine kurze exakte Sequenz der Form $0 \to N \to M \to P \to 0$.
-%       Zwei Erweiterungen
-%       \[
-%         0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0
-%         \quad\text{und}\quad
-%         0 \to N \xrightarrow{f'} M' \xrightarrow{g'} P \to 0
-%       \]
-%       heißen \emph{Yoneda-äquivalent}, falls es einen Homomorphismus $h \colon M \to M'$ gibt, der das folgende Diagram zum Kommutieren bringt:
-%       \[
-%         \begin{tikzcd}[ampersand replacement = \&]
-%               N
-%               \arrow{r}{f}
-%               \arrow[equal]{d}
-%           \&  M
-%               \arrow{r}{g}
-%               \arrow{d}{h}
-%           \&  P
-%               \arrow[equal]{d}
-%           \\
-%               N
-%               \arrow{r}{f'}
-%           \&  M'
-%               \arrow{r}{g'}
-%           \&  P
-%         \end{tikzcd}
-%       \]
-% %       \[
-% %         \begin{tikzcd}[ampersand replacement = \&]
-% %               0
-% %               \arrow{r}
-% %           \&  N
-% %               \arrow{r}{f}
-% %               \arrow[equal]{d}
-% %           \&  M
-% %               \arrow{r}{g}
-% %               \arrow{d}{h}
-% %           \&  P
-% %               \arrow{r}
-% %               \arrow[equal]{d}
-% %           \&  0
-% %           \\
-% %               0
-% %               \arrow{r}
-% %           \&  N
-% %               \arrow{r}{f'}
-% %           \&  M'
-% %               \arrow{r}{g'}
-% %           \&  P
-% %               \arrow{r}
-% %           \&  0
-% %         \end{tikzcd}
-% %       \]
-%       Zeigen Sie, dass Yoneda-Äquivalenz eine Äquivalenzrelation auf der Klasse der Erweiterungen von $N$ um $P$ ist.
+%       Es sei $h_1$ surjektiv, und $h_2$ und $h_4$ seien injektiv.
+%       Zeigen Sie, dass auch $h_3$ injektiv ist.
+%     \item
+%       Es sei $h_5$ injektiv, und $h_2$ und $h_4$ seien surjektiv.
+%       Zeigen Sie, dass auch $h_3$ surjektiv ist.
+%     \item
+%       Folgern Sie:
+%       Sind $h_1$, $h_2$, $h_4$ und $h_5$ Isomorphismen, so ist auch $h_3$ ein Isomorphismus.
 %   \end{enumerate}
 % \end{question}
-
-
-% TODO: Adding a solution.
