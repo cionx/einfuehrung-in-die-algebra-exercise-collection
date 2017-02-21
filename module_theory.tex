@@ -64,17 +64,14 @@
 
     \item
       Die Aussage ist falsch:
-      \begin{itemize}
-        \item
-          Wir haben eine kurze exakte Sequenz von $\Integer$-Moduln $0 \to \Integer \to \Rational \to \Rational/\Integer$.
-          Dabei ist $\Integer$ endlich erzeugt;
-          wäre $\Rational/\Integer$ endlich erzeugt, so wäre dies deshalb auch $\Rational$ (siehe Übung~\ref{question: finitely generated in short exact sequences}), was aber nicht gilt (siehe Übung~\ref{question: Q is not finitely generated}).
-      \end{itemize}
+      Es gibt eine kurze exakte Sequenz $0 \to \Integer \to \Rational \to \Rational/\Integer \to 0$ von $\Integer$-Moduln.
+      Dabei ist $\Integer$ endlich erzeugt;
+      wäre $\Rational/\Integer$ endlich erzeugt, so wäre dies deshalb auch $\Rational$ (siehe Übung~\ref{question: finitely generated in short exact sequences}), was aber nicht gilt (siehe Übung~\ref{question: Q is not finitely generated}).
     
     \item
       Die Aussage ist wahr:
       Ist $f \colon \Integer/2 \to \Integer/3$ ein Homomorphismus von $\Integer$-Moduln, so ist $2 \cdot f(\overline{1}) = f(\overline{2}) = f(\overline{0}) = \overline{0}$.
-      Das einzige Element aus $\Integer/3$, was für $f(\overline{1})$ in Frage kommt, ist $\overline{0}$.
+      Das einzige Element aus $\Integer/3$, was für $f(\overline{1})$ in Frage kommt, ist deshalb $\overline{0}$.
       Also muss $f(\overline{1}) = \overline{0}$ und somit $f = 0$.
     
     \item
@@ -84,7 +81,7 @@
       \begin{itemize}
         \item
           Wegen $a \neq b$ gilt $(X-a) \neq (X-b)$.
-          Nach dem Hauptsatz über endlich erzeugte $K[X]$-Moduln sind die beiden Torsionsmoduln $K[X]/(X-a)$ und $K[X]/(X-b)$ sind also nicht isomorph.
+          Nach dem Hauptsatz über endlich erzeugte $K[X]$-Moduln sind die beiden Torsionsmoduln $K[X]/(X-a)$ und $K[X]/(X-b)$ deshalb nicht isomorph.
         \item
           Wäre $K[X]/(X-a) \cong K[X]/(X-b)$ als $K[X]$-Moduln, so wäre nach Übung~\ref{question: quotients isomorphic as modules} bereits $(X-a) = (X-b)$ und somit $a = b$.
         \item
@@ -125,18 +122,24 @@
       
     \item
       Die Aussage ist falsch:
-      Betrachtet man etwa $R = \Rational$ und $S = \Integer$, so ist $M = \Rational$ als $R$-Modul endlich frei vom Rang $1$, aber als $\Integer$-Modul nicht frei.
+      Betrachtet man etwa $R = \Rational$ und $S = \Integer$, so ist $M = \Rational$ als $R$-Modul frei vom Rang $1$, aber als $S$-Modul nicht frei.
       
     \item
       Die Aussage ist falsch:
-      Man betrachte für eine Körper $K$ den Ring $R = K[X,Y]$.
-      Dann ist $M = R$ frei vom Rang $1$.
-      Der Untermodul, d.h.\ das Ideal $(X,Y) \subseteq R$ ist aber nicht frei:
-      Da $(X,Y)$ kein Hauptideal ist (siehe Übung~\ref{question: examples for non principal and not finitely generated modules}) müsste $(X,Y)$ frei vom Rang $\geq 2$ sein.
-      Inbesondere wäre dann $(X,Y) = I \oplus J$ für zwei Ideale $I, J \subseteq R$ mit $I, J \neq 0$.
-      (Man wähle $I$ als den Span eines Basiselements, und $J$ als den Span aller anderen.)
-      Dann gibt es aber $f \in I$ und $g \in J$ mit $f, g \neq 0$.
-      Wegen der Nullteilerfreiheit von $R$ ist dann auch $fg \neq 0$, da aber $fg \in IJ \subseteq I \cap J$ steht dies im Widerspruch zur Direktheit der Summe $I \oplus J$.
+      \begin{itemize}
+        \item
+          Betrachtet man $R = \Integer/6$, so gibt es eine Zerlegung $\Integer/6 = \Integer/2 \oplus \Integer/3$ von $\Integer$-Moduln, und damit auch von $\Integer/6$-Moduln.
+          Die beiden $\Integer/6$-Moduln $\Integer/2$ und $\Integer/3$ sind aber nicht frei da $2, 3 \neq 6^n$ für alle $n \geq 0$ gilt.
+        \item
+          Man betrachte für eine Körper $K$ den Ring $R = K[X,Y]$.
+          Dann ist $M = R$ frei vom Rang $1$.
+          Der Untermodul, d.h.\ das Ideal $(X,Y) \subseteq R$ ist aber nicht frei:
+          Da $(X,Y)$ kein Hauptideal ist (siehe Übung~\ref{question: examples for non principal and not finitely generated modules}) müsste $(X,Y)$ frei vom Rang $\geq 2$ sein.
+          Inbesondere wäre dann $(X,Y) = I \oplus J$ für zwei Ideale $I, J \subseteq R$ mit $I, J \neq 0$.
+          (Man wähle $I$ als den Spann eines Basiselements, und $J$ als den Spann aller anderen.)
+          Dann gibt es aber $f \in I$ und $g \in J$ mit $f, g \neq 0$.
+          Wegen der Nullteilerfreiheit von $R$ ist dann auch $fg \neq 0$, da aber $fg \in IJ \subseteq I \cap J$ steht dies im Widerspruch zur Direktheit der Summe $I \oplus J$.
+      \end{itemize}
       
     \item
       Die Aussage ist falsch:
@@ -169,7 +172,7 @@
       
     \item
       Die Aussage ist wahr:
-      Da $F$ ein endliches Erzeugendensystem besitzt, enthält jedes Erzeugendensystem $E \subseteq M$ bereits ein endliches Erzeugendensystem $E' \subseteq E$ (siehe Übung~\ref{question: in a finitely generated module every generating set contains a finite generatin set}).
+      Da $M$ ein endliches Erzeugendensystem besitzt, enthält jedes Erzeugendensystem $E \subseteq M$ bereits ein endliches Erzeugendensystem $E' \subseteq E$ (siehe Übung~\ref{question: in a finitely generated module every generating set contains a finite generatin set}).
       Ist $E$ bereits minimal, so muss dabei $E = E'$ gelten, und $E$ somit bereits endlich sein.
       
     \item
@@ -188,7 +191,7 @@
       \]
       wobei $f(n) = (2n,0,0,0,\dotsc)$ und $g(n, a_1, a_2, a_3, \dotsc) = (\overline{n}, a_1, a_2, a_3, \dotsc)$.
       Diese Sequenz spaltet nicht:
-      Ansonsten gebe es nämlich einen Homomorphismus von $R$-Moduln $s \colon \Integer \oplus \bigoplus_{n \geq 1} (\Integer/2) \to \Integer$ mit $s \circ f = \id_\Integer$.
+      Ansonsten gebe es nämlich einen Homomorphismus von $R$-Moduln $s \colon \Integer \oplus \bigoplus_{n \geq 2} (\Integer/2) \to \Integer$ mit $s \circ f = \id_\Integer$.
       Dann würde inbesondere
       \[
           2 s(1,0,0,\dotsc)
@@ -216,7 +219,7 @@
       
     \item
       Die Aussage ist falsch:
-      Man betrachten etwa den Modul $M = \bigoplus_{n \in \Natural} R$.
+      Man betrachten für $R \neq 0$ den $R$-Modul $M = \bigoplus_{n \in \Natural} R$.
   \end{enumerate}
 \end{solution}
 
@@ -254,12 +257,11 @@
         \\
         &=     K[T]^s \oplus \bigoplus_{\lambda \in K} \bigoplus_{i=1}^{r_{T-\lambda}} K[T]/( (T - \lambda)^{\nu(T-\lambda,i)} )
         \\
-        &=     K[T]^s \bigoplus_{\lambda \in K} \bigoplus_{i=1}^{s_\lambda} K[T]/( (T-\lambda)^{\mu(\lambda, i)} ).
+        &=     K[T]^s \oplus \bigoplus_{\lambda \in K} \bigoplus_{i=1}^{s_\lambda} K[T]/( (T-\lambda)^{\mu(\lambda, i)} ).
       \end{align*}
       für $s_\lambda \coloneqq r_{T-\lambda}$ und $\mu(\lambda,i) = \nu(T-\lambda,i)$.
-      Dies ist inbesondere eine Isomorphie von $K$-Vektorräumen;
-      wegen der Endlichdimensionalität von $V$ gilt somit $s = 0$.
-      Also gilt bereits
+      Dies ist inbesondere eine Isomorphie von $K$-Vektorräumen.
+      Wegen der Endlichdimensionalität von $V$ gilt somit $s = 0$, und deshalb bereits
       \[
         V \cong \bigoplus_{\lambda \in K} \bigoplus_{i=1}^{s_\lambda} K[T]/( (T-\lambda)^{\mu(\lambda, i)} ).
       \]
@@ -270,7 +272,7 @@
         \quad
         x \mapsto T \cdot x
       \]
-      bezüglich $\basis{B}$ durch einen Jordanblock dargestellt wird, also
+      bezüglich $\basis{B}$ durch einen Jordanblock zum Eigenwert $\lambda$ dargestellt wird, also
       \[
         \Mat_{\basis{B}}(\tilde{f})
         =
@@ -284,7 +286,12 @@
         \end{pmatrix}
       \]
       gilt.
-      Eine solche Basis ist durch $\basis{B} = (\overline{1}, \overline{T - \lambda}, \dotsc, \overline{(T - \lambda)}^{n-1})$ gegeben, denn für alle $i \geq 0$ gilt
+      Eine solche Basis ist durch
+      \[
+          \basis{B}
+        = \left( \overline{(T - \lambda)}^{n-1}, \overline{(T - \lambda)}^{n-2}, \dotsc, \overline{T - \lambda}, \overline{1} \right)
+      \]
+      gegeben, denn für alle $i \geq 0$ gilt
       \begin{align*}
             \tilde{f}\left( \overline{(T-\lambda)}^i \right)
         &=  T \cdot \overline{(T-\lambda)}^i
@@ -441,7 +448,7 @@
         \quad
         A_9 =
         \begin{pmatrix*}[c]
-            t + 1 & 2 t^2 - 2 t - 2
+            t + 1 & 2 t^2 - 2 t - 2 \\
           2 t     & 4 t^2 - 6 t
         \end{pmatrix*}.
       \]
@@ -461,8 +468,8 @@
             \cong \Integer/2 \oplus \Integer/6
             \cong \Integer/2 \oplus \Integer/2 \oplus \Integer/3.
           \]
-          Inbesondere ist $M_1$ ein Torsionsmodul, und es gilt $M_1 = 3 M_2 \oplus 2 M_2$;
-          dabei ist $3 M_2 \cong \Integer/2 \oplus \Integer/2$ der $2$-primäre, und $2 M_1 \cong \Integer/3$ der $3$-primäre Anteil von $M_2$ .
+          Inbesondere ist $M_1$ ein Torsionsmodul, und es gilt $M_1 = 3 M_1\oplus 2 M_1$;
+          dabei ist $3 M_1 \cong \Integer/2 \oplus \Integer/2$ der $2$-primäre, und $2 M_1 \cong \Integer/3$ der $3$-primäre Anteil von $M_1$ .
         \item
           Eine Smith-Normalform ist $A_2' = \begin{psmallmatrix} 2 & 0 \\ 0 & 38 \end{psmallmatrix}$.
           Deshalb gilt
@@ -478,7 +485,6 @@
           \[
                   M_3
             \cong \Integer/2 \oplus \Integer/2
-            \cong \Integer/2 \oplus \Integer/2.
           \]
           Inbesondere ist $M_3$ ein $2$-primärer Torsionsmodul.
         \item
@@ -490,7 +496,7 @@
             \cong \Integer/4 \oplus \Integer/7.
           \]
           Inbesondere ist $M_4$ ein Torsionsmodul, und es gilt $M_4 = 7 M_4 \oplus 4 M_4$;
-          dabei ist $7 M_4 \cong \Integer/2$ der $2$-primäre Anteil von $M_4$ ist, und $4 M_4 \cong \Integer/7$ der $7$-primäre Anteil.
+          dabei ist $7 M_4 \cong \Integer/4$ der $2$-primäre Anteil von $M_4$ ist, und $4 M_4 \cong \Integer/7$ der $7$-primäre Anteil.
         \item
           Eine Smith-Normalform ist $A_5' = \begin{psmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 60 \end{psmallmatrix}$.
           Deshalb gilt
@@ -506,11 +512,11 @@
           Deshalb gilt
           \[
                   M_6
-            \cong \Integer/3 \oplus \Integer/24
+            \cong \Integer/3 \oplus \Integer/21
             \cong \Integer/3 \oplus \Integer/3 \oplus \Integer/7.
           \]
-          Inbesondere ist $M_6$ ein Torsionsmodul, und es gilt $M_6 = 7 M_6 \oplus 4 M_6$;
-          dabei ist $7 M_6 \cong \Integer/3 \oplus \Integer/3$ der $5$-primäre Anteil von $M_6$ ist, und $3 M_6 \cong \Integer/7$ der $7$-primäre Anteil.
+          Inbesondere ist $M_6$ ein Torsionsmodul, und es gilt $M_6 = 7 M_6 \oplus 3 M_6$;
+          dabei ist $7 M_6 \cong \Integer/3 \oplus \Integer/3$ der $3$-primäre Anteil von $M_6$ und $3 M_6 \cong \Integer/7$ der $7$-primäre Anteil.
         \item
           Eine Smith-Normalform ist $A_7' = \begin{psmallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 10 \\ 0 & 0 & 0 \end{psmallmatrix}$.
           Deshalb gilt
@@ -553,7 +559,7 @@
 
 
 \begin{solution}
-  Es sei $\mathcal{P} = \{2, 3, 5, 7, 11, \dotsc\}$ die Menge der (positiven) Primzahlen.
+  Es sei $\mathcal{P} = \{2, 3, 5, 7, 11, \dotsc\}$ die Menge der Primzahlen.
   Wir haben Primfaktorzerlegungen $n = \prod_{p \in \mathcal{P}} p^{\nu_p}$ und $m = \prod_{p \in \mathcal{P}} p^{\mu_p}$ mit $\nu_p, \mu_p \geq 0$ für alle $p \in \mathcal{P}$, sowie $\nu_p = 0$ und $\mu_p = 0$ für fast alle $p \in \mathcal{P}$.
   Wir erhalten Primfaktorzerlegungen
   \[
@@ -576,8 +582,9 @@
           \Integer/p^\nu \oplus \Integer/p^\mu
     \cong \Integer/p^{\min(\nu,\mu)} \oplus \Integer/p^{\max(\nu,\mu)}
     \qquad
-    \text{für alle $p \in \mathcal{P}$ und $\nu, \mu \geq 0$}.
+    \text{für alle $p \in \mathcal{P}$ und $\nu, \mu \geq 0$}
   \]
+  gilt.
   Dies ist aber klar, da die Paare $(\nu, \mu)$ und $(\min(\nu, \mu), \max(\nu, \mu))$ bis auf Reihenfolge übereinstimmen.
 \end{solution}
 
@@ -591,9 +598,9 @@
 \begin{solution}
   Wir zeigen, dass die Abbildung $\varphi \colon \Hom_R(R, M) \to M$, $f \mapsto f(1)$ ein Isomorphismus von $R$-Moduln ist:
   Dass $\varphi$ ein Homomorphismus von $R$-Moduln ist, ergibt sich direkt daraus, dass die $R$-Modulstruktur auf $\Hom_R(R, M)$ punktweise definiert ist.
-  Die Injektivität von $\varphi$ ergibt sich daraus, dass $R = \generate{1}_R$, und somit jeder $R$-Modulhomomorphismus $f \colon R \to M$ durch die Einschränkung $f|_{\{1\}}$ bereits eindeutig bestimmt ist.
-  Für jedes $m \in M$ ergibt sich ein Homomorphismus von $R$-Moduln $f_m \colon R \to M$, $r \mapsto rm$;
-  für diesen gilt $\varphi(f_m) = f_m(1) = m$, was die Surjektivität von $\varphi$ zeigt.
+  Die Injektivität von $\varphi$ ergibt sich daraus, dass $R = \generate{1}_R$, und somit jeder $R$-Modulhomomorphismus $f \colon R \to M$ durch den Funktionswert $f(1)$ bereits eindeutig bestimmt ist.
+  Für jedes $m \in M$ ist $f_m \colon R \to M$, $r \mapsto rm$ ein Homomorphismus von $R$-Moduln.
+  Es gilt $\varphi(f_m) = f_m(1) = m$, was die Surjektivität von $\varphi$ zeigt.
 \end{solution}
 
 
@@ -603,7 +610,7 @@
       Geben Sie für einen passenden kommutativen Ring $R$ eine kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to P \to 0$ an, die nicht spaltet.
     \item
       Es sei $R$ ein Ring und $F$ ein freier $R$-Modul.
-      Zeigen Sie, dass jede kurze exakte Sequenz von $R$-Moduln $0 \to N \to M \to F \to 0$ spaltet.
+      Zeigen Sie, dass jede kurze exakte Sequenz von $R$-Moduln $0 \to N \xrightarrow{f} M \xrightarrow{g} F \to 0$ spaltet.
   \end{enumerate}
 \end{question}
 
@@ -625,7 +632,7 @@
         \item
           Dies würde dem Hauptsatz über endlich erzeugte abelsche Gruppen widersprechen.
         \item
-          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$ und somit torsionsfrei (denn $\Integer$ ist frei und somit auch torsionsfrei, und Untergruppen von torsionsfreien abelschen Gruppen sind ebenfalls torsionsfrei), aber $2 \cdot \Integer/2 = 0$.
+          $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$ und somit torsionsfrei (denn $\Integer$ ist frei und somit auch torsionsfrei, und Untergruppen von torsionsfreien abelschen Gruppen sind ebenfalls torsionsfrei), aber es gilt $2 \cdot \Integer/2 = 0$.
         \item
           $\Integer/2$ wäre isomorph zu einer Untergruppe von $\Integer$, und müsste somit entweder trivial oder unendlich sein, was beides nicht gilt.
       \end{itemize}
@@ -643,8 +650,8 @@
       Die zweite nutzt die Äquivalenz der verschiedenen Charakterisierungen projektiver Moduln (siehe Übung~\ref{questions: equivalent characterizations of projective modules}), in deren Beweis sich die obige Rechnung versteckt.
       \begin{itemize}[resume]
         \item
-          Als freier $R$-Modul ist $F$ inbesondere projektiv, da $F \cong 0 \cong F$ frei ist.
-          Somit spaltet jede kurze exakte Sequenz, die in $F$ endet.
+          Als freier $R$-Modul ist $F$ inbesondere projektiv, da $F \oplus 0 \cong F$ frei ist.
+          Somit spaltet jede kurze exakte Sequenz von $R$-Moduln, die in $F$ endet.
       \end{itemize}
   \end{enumerate}
 \end{solution}
@@ -673,8 +680,8 @@
       Dies kann nicht sein, da $1/(2 q_1 \dotsm q_n)$ in diesem $\Integer$-Untermodul nicht enhalten ist.
       
     \item
-      Da $\Integer$ ein als Hauptidealring insbesondere noethersch ist, wäre $\Rational$ als endlich erzeugter $\Integer$-Modul bereits noethersch (siehe Übung~\ref{question: properties of noetherian modules}).
-      Dann würde jede aufsteigende Kette von $\Integer$-Untermoduln stabilisieren (siehe Übung~\ref{question: characterizations of noetherian modules}).
+      Da $\Integer$ als Hauptidealring insbesondere noethersch ist, wäre $\Rational$ als endlich erzeugter $\Integer$-Modul bereits noethersch (siehe Übung~\ref{question: properties of noetherian modules}).
+      Dann würde jede aufsteigende Kette von $\Integer$-Untermoduln von $\Rational$ stabilisieren (siehe Übung~\ref{question: characterizations of noetherian modules}).
       Die Kette
       \[
                     \Integer
@@ -707,14 +714,14 @@
     \subseteq \ker f^2
     \subseteq \ker f^3
     \subseteq \ker f^4
-    \subseteq \dotso,
+    \subseteq \dotsb,
   \]
   d.h.\ es gibt $n \geq 1$ mit $\ker f^n = \ker f^k$ für alle $k \geq n$.
   Inbesondere gilt $\ker f^n = \ker f^{2n}$.
   Für $m \in \ker f^n$ gibt es wegen der Surjektivität von $f$ ein $m' \in M$ mit $m = f^n(m')$.
   Dann gilt $0 = f^n(m) = f^{2n}(m')$, also $m' \in \ker f^{2n} = \ker f^n$.
-  Deshalb ist bereits $m = f^n(m) = 0$.
-  Das zeigt die Gleichheit $\ker f^n = 0$, und da $\ker f \subseteq \ker f^n$ somit auch, dass $\ker f = 0$ gilt.
+  Deshalb ist bereits $m = f^n(m') = 0$.
+  Das zeigt, dass $\ker f^n = 0$ gilt, und wegen $\ker f \subseteq \ker f^n$ somit auch $\ker f = 0$.
   Also ist $f$ injektiv, und somit bereits ein Isomorphismus.
 \end{solution}
 
@@ -729,7 +736,7 @@
   Ein $R$-Modul $M$ heißt \emph{einfach}, wenn $M$ genau zwei Untermoduln hat.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $M$ genau dann einfach ist, wenn $M \neq 0$ und $0, M \subseteq M$ die einzigen beiden Untermoduln sind.
+      Zeigen Sie, dass $M$ genau dann einfach ist, wenn $M \neq 0$ gilt und $0, M \subseteq M$ die einzigen beiden Untermoduln sind.
     \item
       Zeigen Sie, dass für je zwei einfache $R$-Moduln $M$ und $N$ jeder $R$-Mo\-dul\-ho\-mo\-mor\-phis\-mus $f \colon M \to N$ entweder $0$ oder ein Isomorphismus ist.
   \end{enumerate}
@@ -739,7 +746,7 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Ist $M$ einfach, so muss $M \neq 0$, da $M$ sonst nur einen Untermodul hätte (nämlich sich selbst).
+      Ist $M$ einfach, so muss $M \neq 0$ gelten, da $M$ sonst nur einen Untermodul hätte (nämlich sich selbst).
       Dann sind $0, M \subseteq M$ zwei verschiedene Untermoduln, und nach Annahme gibt es keine weiteren Untermoduln.
       
       Ist $M \neq 0$ und sind $0, M \subseteq M$ die einzigen beiden Untermoduln, so hat $M$ genau zwei Untermoduln.
@@ -797,14 +804,14 @@
 \begin{question}[subtitle = Moduln über Lokalisierungen und Quotienten]
   \label{question: extension of module structures onto quotients and localizations}
   Es sei $R$ ein kommutativer Ring und $M$ ein $R$-Modul.
-  Es sei $I \subseteq R$ ein Ideal und $S \subseteq R$ eine multiplikative Menge.
+  Es sei $I \subseteq R$ ein Ideal und $S \subseteq R$ eine multiplikative Teilmenge.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R/I$-Modulstruktur fortsetzen lässt, wenn $IM =  0$ (d.h.\ wenn $am = 0$ für alle $a \in I$ und $m \in M$).
-      Entscheiden Sie, ob diese Fortsetzung eindeutig ist.
+      Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R/I$-Modulstruktur fortsetzen lässt, wenn $IM =  0$ gilt (d.h.\ wenn $am = 0$ für alle $a \in I$ und $m \in M$ gilt).
+      Entscheiden Sie auch, ob diese Fortsetzung eindeutig ist.
     \item
       Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R_S$-Modulstruktur fortsetzen lässt, wenn für jedes $s \in S$ die Abbildung $\lambda_s \colon M \to M$, $m \mapsto sm$ bijektiv ist.
-      Entscheiden Sie, ob diese Fortsetzung eindeutig ist.
+      Entscheiden Sie auch, ob diese Fortsetzung eindeutig ist.
   \end{enumerate}
 \end{question}
 
@@ -829,8 +836,8 @@
           \&  {}
         \end{tikzcd}
       \]
-      Nach der universellen Eigenschaft des Quotienten $R/I$ ist eine solche Fortsetzung $\overline{\lambda}$ eindeutig, und sie existiert genau dann, wenn $I \subseteq \ker \lambda$.
-      Es bleibt zu zeigen, dass genau dann $I \subseteq \ker \lambda$, wenn $IM = 0$.
+      Nach der universellen Eigenschaft des Quotienten $R/I$ ist eine solche Fortsetzung $\overline{\lambda}$ eindeutig, und sie existiert genau dann, wenn $I \subseteq \ker \lambda$ gilt.
+      Es bleibt zu zeigen, dass die Aussagen $I \subseteq \ker \lambda$ nud $IM = 0$ äquivalent sind.
       Dies ergibt sich daraus, dass für alle $r \in R$
       \[
               r \in \ker \lambda
@@ -868,7 +875,7 @@
       Es sei $F$ ein freier $R$-Modul mit Basis $(b_i)_{i \in I}$.
       Zeigen Sie, dass es für jeden $R$-Modul $M$ und jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$ einen eindeutigen Homomorphismus von $R$-Moduln $\varphi \colon F \to M$ gibt, so dass $\varphi(b_i) = m_i$ für alle $i \in I$ gilt.
     \item
-      Folgern Sie, dass jeder $R$-Modul $M$ Quotient eines freien $R$-Moduls ist, d.h.\ dass es einen freien $R$-Modul $F$ gibt, so dass $M \cong F/K$ für einen geeigneten Untermoduln $K \subseteq F$.
+      Folgern Sie, dass jeder $R$-Modul $M$ Quotient eines freien $R$-Moduls ist, d.h.\ dass es einen freien $R$-Modul $F$ gibt, so dass $M \cong F/K$ für einen geeigneten Untermoduln $K \subseteq F$ gilt.
   \end{enumerate}
 \end{question}
 
@@ -927,7 +934,7 @@
       Es gilt $M \cong R/\!\annihilator(M)$ als $R$-Moduln.
     \item
       \label{enum: module is quotient by an ideal}
-      Es gibt ein Ideal $I \subseteq R$ mit $R/I \cong M$ als $R$-Moduln.
+      Es gibt ein Ideal $I \subseteq R$ mit $M \cong R/I$ als $R$-Moduln.
   \end{enumerate}
   Erfüllt $M$ eine (und damit alle) dieser Bedingungen, so heißt $M$ \emph{zyklisch}.
 \end{question}
@@ -945,22 +952,16 @@
       \annihilator(M)
     = \annihilator(\generate{m}_R)
     = \annihilator(m)
-    = \{r \in R \mid rm = 0\}.
+    = \{r \in R \mid rm = 0\}
   \]
-  Für den surjektive Homomorphismus von $R$-Moduln
-  \[
-            \varphi
-    \colon  R \to M,
-    \quad
-            r \mapsto rm
-  \]
-  gilt deshalb $\ker \varphi = \annihilator(M)$.
+  (siehe Übung~\ref{question: rules for annihilators}).
+  Für den surjektive Homomorphismus von $R$-Moduln $\varphi \colon R \to M$, $r \mapsto rm$ gilt deshalb $\ker \varphi = \annihilator(M)$.
   Somit induziert $\varphi$ einen Isomorphismus von $R$-Moduln
   \[
             \bar{\varphi}
-    \colon  R/\annihilator(M) \to M,
+    \colon  R/{\annihilator(M)} \to M,
     \quad
-            [r] \mapsto rm.
+            \overline{r} \mapsto rm.
   \]
   
   (
@@ -988,34 +989,34 @@
 \begin{question}[subtitle = Existenz endlicher Erzeugendensysteme]
   \label{question: in a finitely generated module every generating set contains a finite generatin set}
   Es sei $M$ ein endlich erzeugter $R$-Modul.
-  Zeigen Sie, dass jedes Erzeugendensystem $S \subseteq M$ ein endliches Erzeugendensystem enthält.
+  Zeigen Sie, dass jedes Erzeugendensystem $E \subseteq M$ ein endliches Erzeugendensystem enthält.
 \end{question}
 
 
 \begin{solution}
   Es sei $\{m_1, \dotsc, m_s\} \subseteq M$ ein endliches Erzeugendensystem.
-  Da $S$ ein Erzeugendensystem ist, lässt sich jedes $m_i$ als $m_i = r_{i,1} s_{i,1} + \dotsb + r_{i,t_i} s_{i,t_i}$ mit $t_i \geq 0$, $s_{i,1}, \dotsc, s_{i,t_i} \in S$ und $r_{i,1}, \dotsc, r_{i,t_i} \in R$ schreiben.
-  Für $S' \coloneqq \{s_{i,j} \mid i = 1, \dotsc, s, j = 1, \dotsc, t_i\}$ gilt dann $m_i \in \generate{S}$ für alle $i = 1, \dotsc, s$ und deshalb
+  Da $E$ ein Erzeugendensystem ist, lässt sich jedes $m_i$ als $m_i = r_{i,1} e_{i,1} + \dotsb + r_{i,t_i} e_{i,t_i}$ mit $t_i \geq 0$, $e_{i,1}, \dotsc, e_{i,t_i} \in E$ und $r_{i,1}, \dotsc, r_{i,t_i} \in R$ schreiben.
+  Für $E' \coloneqq \{e_{i,j} \mid i = 1, \dotsc, s, j = 1, \dotsc, t_i\}$ gilt dann $m_i \in \generate{E'}$ für alle $i = 1, \dotsc, s$, und somit
   \[
               M
     =         \generate{m_1, \dotsc, m_s}
-    \subseteq \generate{S'}
+    \subseteq \generate{E'}
     \subseteq M.
   \]
-  Also ist $\generate{S'} = M$ und somit $S'$ ein endliches Erzeugendensystem von $M$.
+  Also gilt $\generate{E'} = M$, weshalb $E'$ ein endliches Erzeugendensystem von $M$ ist.
 \end{solution}
 
 
 \begin{question}[subtitle = Idempotente]
-  Es sei $R$ ein Ring und $e \colon M \to M$ ein idempotenter Endomorphismus eines $R$-Moduls $M$, d.h.\ es gilt $e^2 = e$.
-  Zeigen Sie, das $M = \im e \oplus \ker e$ und dass $e(m + m') = m$ für alle $m \in \im e$ und $m' \in \ker e$.
+  Es sei $R$ ein Ring und $e \colon M \to M$ ein idempotenter Endomorphismus eines $R$-Moduls $M$, d.h.\ es gelte $e^2 = e$.
+  Zeigen Sie, das $M = \im e \oplus \ker e$ gilt, und dass $e(m + m') = m$ für alle $m \in \im e$ und $m' \in \ker e$ gilt.
 \end{question}
 
 
 \begin{solution}
   Es gilt $M = \im e + \ker e$, denn jedes $m \in M$ lässt sich als $m = e(m) + m - e(m)$ schreiben, wobei $e(m) \in \im e$ und $m - e(m) \in \ker(e)$ (denn $e(m - e(m)) = e(m) - e^2(m) = 0$).
-  Für jedes $m \in M$ gilt $e(m) = m$, denn es gibt ein $\tilde{m} \in M$ mit $m = e(\tilde{m})$, und somit gilt $e(m) = e(e(\tilde{m})) = e^2(\tilde{m}) = e(\tilde{m}) = m$.
-  Für $m \in \im e \cap \ker e$ folgt, dass $m = e(m) = 0$;
+  Für jedes $m \in \im e$ gilt $e(m) = m$, denn es gibt ein $m' \in M$ mit $m = e(m')$, und somit gilt $e(m) = e(e(m')) = e^2(m') = e(m') = m$.
+  Für $m \in \im e \cap \ker e$ folgt, dass $m = e(m) = 0$ gilt;
   deshalb gilt $\im e \cap \ker e = 0$.
 \end{solution}
 
@@ -1023,7 +1024,7 @@
 \begin{question}[subtitle = Linksexaktheit von $\Hom$]
   \label{question: Hom is left exact}
   Es sei $R$ ein Ring und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
-  Zeigen Sie, dass für jeden $R$-Moduln $L$ auch die induzierte Sequenz
+  Zeigen Sie, dass für jeden $R$-Modul $L$ auch die induzierte Sequenz
   \[
                           0
     \to                   \Hom_R(L,N)
@@ -1053,7 +1054,7 @@
   (Die obige Rechnung lässt sich durch $g_* \circ f_* = (g \circ f)_* = 0_* = 0$ abkürzen.)
   
   Es sei $\varphi \in \ker g_*$.
-  Um zu zeigen, dass bereits $\varphi \in \im f_*$ gilt,  konstruieren wir einen Homomorphismus $\psi \colon L \to N$ mit $\varphi = f_*(\psi) = f \circ \psi$.
+  Um zu zeigen, dass bereits $\varphi \in \im f_*$ gilt, konstruieren wir einen Homomorphismus $\psi \colon L \to N$ mit $\varphi = f_*(\psi) = f \circ \psi$.
   \[
     \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
           {}
@@ -1069,7 +1070,7 @@
     \end{tikzcd}
   \]
   Es gilt $0 = g_*(\varphi) = g \circ \varphi$ und somit $\im \varphi \subseteq \ker g = \im f$.
-  Es sei $\tilde{\varphi} \colon L \to \im f$ die entsprechende Einschränkung von $\tilde{\varphi}$;
+  Es sei $\tilde{\varphi} \colon L \to \im f$ die entsprechende Einschränkung von $\varphi$;
   für die Inklusion $i \colon \im f \to M$ gilt also $\varphi = i \circ \tilde{\varphi}$.
   Wegen der Injektivität von $f$ schränkt sich $f$ zu einem Isomorphismus $\tilde{f} \colon N \to \im f$ ein;
   es gilt also $f = i \circ \tilde{f}$.
@@ -1165,7 +1166,7 @@
 
 \begin{solution}
   (\ref{enum: Hom is exact} $\implies$ \ref{enum: lifting property})
-  Die Sequenz $0 \to \ker g \xrightarrow{i} M \xrightarrow{g} P \to 0$ ist kurz exakt, da $g$ surjektiv ist;
+  Die Sequenz $0 \to \ker g \xrightarrow{i} M \xrightarrow{g} N \to 0$ ist kurz exakt, da $g$ surjektiv ist;
   dabei bezeichnet $i \colon \ker g \to M$, $m \mapsto m$ die kanonische Inklusion.
   Nach Annahme ist daher auch die Sequenz
   \[
@@ -1182,12 +1183,12 @@
   Da $\Hom(P,-)$ linksexakt ist (siehe Übung~\ref{question: Hom is left exact}) ist die Sequenz
   \[
                           0
-    \to                   \Hom_R(P, \ker g)
+    \to                   \Hom_R(P, L)
     \xlongrightarrow{i_*} \Hom_R(P, M)
     \xlongrightarrow{g_*} \Hom_R(P, N)
   \]
   exakt.
-  Es bleibt also nur zu zeigen, dass $g_*$ bereits surjektiv ist, dass es also für jeden Homomorphismus $\varphi \colon P \to N$ einen Homomorphismus $\psi \in P \to N$ mit $\varphi = g_*(\psi) = g \circ \psi$ gibt.
+  Es bleibt also nur zu zeigen, dass $g_*$ bereits surjektiv ist, dass es also für jeden Homomorphismus $\varphi \colon P \to N$ einen Homomorphismus $\psi \colon P \to M$ mit $\varphi = g_*(\psi) = g \circ \psi$ gibt.
   Dies gilt nach Annahme.
   
   (\ref{enum: lifting property} $\implies$ \ref{enum: every short exact sequence splits})
@@ -1229,7 +1230,7 @@
   Wir zeigen nun die allgemeine Aussage:
   Nach Annahme gibt es einen $R$-Modul $C$, so dass $P \oplus C$ frei ist.
   Es sei $\pi \colon P \oplus C \to P$, $(x,y) \mapsto x$ die kanonische Projektion und $\tilde{\varphi} \coloneqq \varphi \circ \pi \colon P \oplus C \to N$.
-  Nach Annahme einen Homomorphismus $\tilde{\psi} \colon P \oplus C \to M$ mit $g \circ \tilde{\psi} = \tilde{\varphi}$.
+  Da $P \oplus C$ frei ist gibt es, wie bereits gezeigt, einen Ho\-mo\-mor\-phis\-mus $\tilde{\psi} \colon P \oplus C \to M$ mit $g \circ \tilde{\psi} = \tilde{\varphi}$.
   \[
     \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
           {}
@@ -1247,7 +1248,7 @@
       \&  N
     \end{tikzcd}
   \]
-  Es sei $\iota \colon P \to P \oplus C$, $x \mapsto (x,0)$ die kanonische Inklusion und $\psi \coloneqq \tilde{\psi} \circ \iota \colon P \to N$.
+  Es sei $\iota \colon P \to P \oplus C$, $x \mapsto (x,0)$ die kanonische Inklusion und $\psi \coloneqq \tilde{\psi} \circ \iota \colon P \to M2$.
   \[
     \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
           {}
@@ -1267,7 +1268,7 @@
       \&  N
     \end{tikzcd}
   \]
-  Man bemerke, dass $\pi \circ \iota = \id_P$, und deshalb
+  Man bemerke, dass $\pi \circ \iota = \id_P$ gilt, und deshalb
   \[
       g \circ \psi
     = g \circ \tilde{\psi} \circ \iota
@@ -1281,7 +1282,7 @@
 
 \begin{question}[subtitle = Einschränkung kurzer exakter Sequenzen]
   \label{question: restriction of a short exact sequence to a submodule of its middle term}
-  Es sei $R$ ein Ring und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ ein kurze exakte Sequenz von $R$-Moduln und $M' \subseteq M$ ein Untermodul.
+  Es sei $R$ ein Ring, $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ ein kurze exakte Sequenz von $R$-Moduln und $M' \subseteq M$ ein Untermodul.
   Zeigen sie, dass auch
   \[
     0 \to f^{-1}(M') \xrightarrow{f'} M' \xrightarrow{g'} g(M') \to 0
@@ -1295,8 +1296,8 @@
   Die Injektivität von $f'$ folgt aus der von $f$, und die Surjektivität von $g'$ aus $\im g' = g'(M') = g(M')$.
   Da $g \circ f = 0$ gilt, gilt auch $g' \circ f' = 0$, also $\im f' \subseteq \ker g'$.
   Ist andererseits $m \in \ker g'$, so gilt $m \in \ker g = \im f$, weshalb es $n \in N$ mit $f(n) = m$ gibt.
-  Dabei gilt bereits $n \in f^{-1}(M')$, da ja $f(n) = m \in M'$, und somit $m = f(n) = f'(n) \in \im f'$.
-  Das zeigt, dass auch $\ker g' \subseteq \im f'$.
+  Dabei gilt bereits $n \in f^{-1}(M')$, da ja $f(n) = m \in M'$ gilt, und somit $m = f(n) = f'(n) \in \im f'$.
+  Das zeigt, dass auch $\ker g' \subseteq \im f'$ gilt.
 \end{solution}
 
 
@@ -1328,7 +1329,7 @@
       Es seien $n_1, \dotsc, n_s \in N$ und $p_{s+1}, \dotsc, p_t \in P$ endliche Erzeugendensysteme.
       Für alle $i = 1, \dotsc, s$ sei $m_i \coloneqq f(n_i) \in M$;
       wegen der Surjektivität gibt es für jedes $i = s+1, \dotsc, t$ ein $m_i \in M$ mit $g(m_i) = p_i$.
-      Dann gilt $\generate{m_1, \dotsc, m_s, m_{s+1}, \dotsc, m_t}_R = M$:
+      Dann gilt bereits $\generate{m_1, \dotsc, m_s, m_{s+1}, \dotsc, m_t}_R = M$:
       
       Für $m \in M$ ist $g(m) \in P$ und deshalb $g(m) = r_{s+1} p_{s+1} + \dotsb + r_t p_t$ für passende $r_{s+1}, \dotsc, r_t \in R$.
       Es sei $m' \coloneqq r_{s+1} m_{s+1} + \dotsb + r_t m_t \in M$.
@@ -1383,11 +1384,9 @@
 \begin{solution}
   Der Vollständigkeit halber geben wir mehr Implikationen an, als notwendig sind.
   
-  (
-  \ref{enum: every submodule is finitely generated}
+  (\ref{enum: every submodule is finitely generated}
   $\implies$
-  \ref{enum: every ascending chain of submodules stabilizes}
-  )
+  \ref{enum: every ascending chain of submodules stabilizes})
   Es sei
   \begin{equation}
     \label{eqn: an ascending chain of submodules}
@@ -1396,14 +1395,15 @@
     \subseteq N_2
     \subseteq N_3
     \subseteq N_4
-    \subseteq \dotso
+    \subseteq \dotsb
   \end{equation}
   eine aufsteigende Kette von Untermoduln von $M$.
   Dann ist $N \coloneqq \bigcup_{i \geq 0} N_i$ ein Untermodul von $M$.
-  Nach Annahme ist $N$ endlich erzeugt; es sei $n_1, \dotsc, n_t \in N$ ein endliches Erzeugendensystem.
-  Da $n_1, \dotsc, n_t \in N = \bigcup_{i \geq 0} N_i$ gibt es für jedes $j = 1, \dotsc, t$ ein $i_j \geq 0$ mit $n_j \in N_{i_j}$;
-  da $N_i \subseteq N_{i+1}$ für alle $i \geq 0$ gibt es bereits ein $I \geq 0$ mit $n_1, \dotsc, n_t \subseteq N_I$.
-  Damit gilt
+  Nach Annahme ist $N$ endlich erzeugt.
+  Es sei $n_1, \dotsc, n_t \in N$ ein endliches Erzeugendensystem.
+  Da $n_1, \dotsc, n_t \in N = \bigcup_{i \geq 0} N_i$ gelten, gibt es für jedes $j = 1, \dotsc, t$ ein $i_j \geq 0$ mit $n_j \in N_{i_j}$;
+  da $N_i \subseteq N_{i+1}$ für alle $i \geq 0$ gilt, gibt es bereits ein $I \geq 0$ mit $n_1, \dotsc, n_t \in N_I$.
+  Somit gilt
   \[
               N
     =         \generate{n_1, \dotsc, n_t}_R
@@ -1412,14 +1412,12 @@
     =         N
   \]
   und deshalb bereits $N = N_I$.
-  Für alle $i \geq I$ git dann $N = N_I \subseteq N_i \subseteq N$ und somit $N_i = N_I$.
+  Für jedes $i \geq I$ gilt deshalb $N = N_I \subseteq N_i \subseteq N$ und somit $N_i = N_I$.
   Also stabilisiert die Kette \eqref{eqn: an ascending chain of submodules}.
   
-  (
-  \ref{enum: every ascending chain of submodules stabilizes}
+  (\ref{enum: every ascending chain of submodules stabilizes}
   $\implies$
-  \ref{enum: every submodule is finitely generated}
-  )
+  \ref{enum: every submodule is finitely generated})
   Es gebe einen Untermodul $N \subseteq M$, der nicht endlich erzeugt ist.
   Es gilt notwendigerweise $N \neq 0$.
   Wir konstruieren eine nicht-stabilisierende Kette
@@ -1429,7 +1427,7 @@
     \subsetneq  N_2
     \subsetneq  N_3
     \subsetneq  N_4
-    \subsetneq \dotso
+    \subsetneq \dotsb
     \subsetneq  N
     \subseteq   M
   \]
@@ -1440,11 +1438,9 @@
   Da $N_i$ endlich erzeugt ist, gilt dies auch für $N_{i+1} \coloneqq N_i + \generate{f}_R$, und nach Wahl von $f$ gilt $N_i \subsetneq N_{i+1}$.
   
   
-  (
-  \ref{enum: every ascending chain of submodules stabilizes}
+  (\ref{enum: every ascending chain of submodules stabilizes}
   $\implies$
-  \ref{enum: every non empty collection of submodules has a maximal element}
-  )
+  \ref{enum: every non empty collection of submodules has a maximal element})
   Es gebe eine nicht-leere Menge $\mathcal{S}$ von Untermoduln von $M$, die kein maximales Element besitzt.
   Dann gibt es für jedes $N \in \mathcal{S}$ ein $N' \in \mathcal{S}$ mit $N \subsetneq N'$.
   Ausgehend von einem beliebigen $N_0 \in \mathcal{S}$ erhalten wir somit eine Kette
@@ -1454,16 +1450,14 @@
     \subsetneq  N_2
     \subsetneq  N_3
     \subsetneq  N_4
-    \subsetneq \dotso
+    \subsetneq \dotsb
   \]
   von Untermoduln von $M$, die nicht stabilisiert.
   
   
-  (
-  \ref{enum: every non empty collection of submodules has a maximal element}
+  (\ref{enum: every non empty collection of submodules has a maximal element}
   $\implies$
-  \ref{enum: every ascending chain of submodules stabilizes}
-  )
+  \ref{enum: every ascending chain of submodules stabilizes})
   Es sei
   \[
               N_0
@@ -1471,18 +1465,16 @@
     \subseteq N_2
     \subseteq N_3
     \subseteq N_4
-    \subseteq \dotso
+    \subseteq \dotsb
   \]
   eine aufsteigende Kette von Untermoduln von $M$.
   Dann ist $\mathcal{S} \coloneqq \{N_i \mid i \in I\}$ eine nicht-leere Menge von Untermoduln von $M$.
   Nach Annahme hat $\mathcal{S}$ ein maximales Element, d.h.\ es gibt ein $i \in I$ mit $N_i \subsetneq N_j$ für alle $j \geq 0$.
   Es muss also bereits $N_i = N_j$ für alle $j \geq i$ gelten, weshalb die Kette stabilisiert.
   
-  (
-  \ref{enum: every non empty collection of submodules has a maximal element}
+  (\ref{enum: every non empty collection of submodules has a maximal element}
   $\implies$
-  \ref{enum: every submodule is finitely generated}
-  )
+  \ref{enum: every submodule is finitely generated})
   Es sei $N \subseteq M$ ein Untermodul von $M$ und
   \[
       \mathcal{S}
@@ -1492,10 +1484,10 @@
         \text{$P$ ist ein endlich erzeugter Untermodul von $N$}
       \}.
   \]
-  Dann ist $\mathcal{S}$ eine nicht-leere ($0 \in \mathcal{S}$) Menge von Untermoduln von $M$, und besitzt daher nach Annahme ein maximales Element $N'$.
+  Dann ist $\mathcal{S}$ eine nicht-leere Menge von Untermoduln von $M$ (denn es gilt $0 \in \mathcal{S}$) , und besitzt daher nach Annahme ein maximales Element $N'$.
   Wäre $N' \subsetneq N$, so gebe es ein $f \in N$ mit $f \notin N'$.
-  Dann wäre aber $N'' \coloneqq N' + \generate{f}_R$ ein endlich erzeugter Untermodul von $N$, also ein Element von $\mathcal{S}$, mit $N' \subseteq N''$, was der Maximalität von $N'$ widerspricht.
-  Also muss bereits $N = N'$, und $N$ somit endlich erzeugt sein.
+  Dann wäre aber $N'' \coloneqq N' + \generate{f}_R$ ein endlich erzeugter Untermodul von $N$, also ein Element von $\mathcal{S}$, mit $N' \subsetneq N''$, was der Maximalität von $N'$ widersprechen würde.
+  Also muss bereits $N = N'$ gelten, weshalb $N$ endlich erzeugt ist.
 \end{solution}
 
 
@@ -1541,16 +1533,18 @@
       \end{equation}
       ein, wobei $f'$ und $g'$ die entsprechenden Einschränkungen von $f$ und $g$ bezeichnen (siehe Übung~\ref{question: restriction of a short exact sequence to a submodule of its middle term}).
       Nach Annahme sind die Untermoduln $f^{-1}(M') \subseteq N$ und $g(M') \subseteq P$ endlich erzeugt.
-      In \eqref{equation: restriction of short exact sequence to a submodule} sind also die beiden äußeren Terme endlich erzeugt;
-      somit ist auch der mittlere Term, also $M'$, endlich erzeugt (siehe Übung~\ref{question: finitely generated in short exact sequences}).
+      In \eqref{equation: restriction of short exact sequence to a submodule} sind also die beiden äußeren Terme endlich erzeugt, und damit auch der mittlere Term $M'$ (siehe Übung~\ref{question: finitely generated in short exact sequences}).
+      
     \item
       Dank Induktion genügt es zu zeigen, dass für je zwei noethersche Moduln $M$ und $N$ auch $M \oplus N$ noethersch ist.
       Dies ergibt sich aus dem vorherigen Teil der Aufgabe mithilfe der kurzen exakten Sequenz $0 \to M \xrightarrow{i} M \oplus N \xrightarrow{p} N \to 0$, wobei $i \colon M \to M \oplus N$, $m \mapsto (m,0)$ die kanonische Inklusion bezeichnet und $p \colon M \oplus N \to N$, $(m,n) \mapsto n$ die kanonische Projektion.
+      
     \item
-      Da $R$ noethersch ist, ist nach dem vorherigen Aufgabenteil auch $R^n = R \oplus \dotsb \oplus R$ wieder noethersch.
+      Da $R$ noethersch ist, ist nach dem vorherigen Aussagenteil auch $R^n = R \oplus \dotsb \oplus R$ wieder noethersch.
+      
     \item
-      Ist $M$ ein $R$-Modul mit endlichen Erzeugendensystem $\{m_1, \dotsc, m_n\} \subseteq M$, so ist der eindeutige Modulhomomorphismus $\varphi \colon R^n \to M$ mit $\varphi(e_i) = m_i$ für alle $i = 1, \dotsc, n$ (also $\varphi(x_1, \dotsc, x_n) = x_1 m_1 + \dotsb + x_n m_n$) bereits surjektiv.
-      Wir erhalten somit eine kurze exakte Sequenz $0 \to \ker \varphi \xrightarrow{i} R^n \xrightarrow{\varphi} M \to 0$, wobei $i \colon \ker \varphi \to R^n$ die Inklusion ist.
+      Ist $M$ ein $R$-Modul mit endlichen Erzeugendensystem $\{m_1, \dotsc, m_n\} \subseteq M$, so ist der eindeutige Modulhomomorphismus $\varphi \colon R^n \to M$ mit $\varphi(e_i) = m_i$ für alle $i = 1, \dotsc, n$ bereits surjektiv.
+      Wir erhalten eine kurze exakte Sequenz $0 \to \ker \varphi \xrightarrow{i} R^n \xrightarrow{\varphi} M \to 0$, wobei $i \colon \ker \varphi \to R^n$ die Inklusion ist.
       Da $R^n$ nach dem vorherigen Aufgabenteil noethersch ist, ist nach dem ersten Aufgabenteil auch $M$ noethersch.
   \end{enumerate}
 \end{solution}
@@ -1586,7 +1580,7 @@
   ein, wobei $i'$ und $p'$ die entsprechenden Einschränkungen von $i$ und $p$ bezeichnen (siehe Übung~\ref{question: restriction of a short exact sequence to a submodule of its middle term}).
   Dabei sind $i^{-1}(F') \subseteq R^{n-1}$ und $p(F') \subseteq R$ Untermoduln, und somit nach Induktionsannahme frei vom Rang $\leq n-1$ und $\leq 1$.
   Da $p(F')$ frei ist, spaltet die Sequenz \eqref{equation: restrition of shor exact sequence};
-  inbesondere ist deshalb $F' \cong i^{-1}(F') \oplus p(F')$.
+  inbesondere gilt deshalb $F' \cong i^{-1}(F') \oplus p(F')$.
   Somit ist $F'$ frei von Rang $\leq n-1 + 1 = n$.
 \end{solution}
 
@@ -1669,17 +1663,17 @@
   \begin{enumerate}
     \item
       Es ist $\torsion(M) = \{m \in M \mid \text{$rm = 0$ für ein $r \in R$ mit $r \neq 0$}\}$.
-      Es gilt $0 \in M$, da $1 \cdot 0 = 0$.
       
-      Für $m_1, m_2 \in \torsion(M)$ gibt es $r_1, r_2 \in R$ mit $r_1, r_2 \neq 0$, so dass $r_1 m_1 = r_2 m_2 = 0$.
+      Es gilt $0 \in M$, da $1 \cdot 0 = 0$.
+      Für $m_1, m_2 \in \torsion(M)$ gibt es $r_1, r_2 \in R$ mit $r_1, r_2 \neq 0$, so dass $r_1 m_1 = r_2 m_2 = 0$ gilt.
       Dann gilt auch $(r_1 r_2) (m_1 + m_2) = r_2 r_1 m_1 + r_1 r_2 m_2 = 0$, wobei $r_1 r_2 \neq 0$, da $R$ ein Integritätsbereich ist.
-      Also gilt auch $m_1, m_2 \in M$.
+      Also gilt auch $m_1 + m_2 \in M$.
       
       Für $m \in \torsion(M)$ gibt es $r \in R$ mit $rm = 0$ und $r \neq 0$.
       Für jedes $r' \in R$ ist dann auch $r (r' m) = r' (rm) = 0$, und somit $r' m \in \torsion(M)$.
       
     \item
-      Es ist $K$ die Lokalisierung von $R$ an der multiplikativen Menge $S = R \setminus \{0\}$.
+      Es gilt $K = R_S$ für die multiplikative Menge $S = R \setminus \{0\}$.
       Für die kanonische Abbildung $i \colon M \to M_K$, $m \mapsto m/1$ gilt deshalb
       \[
               m \in \ker i
@@ -1689,37 +1683,25 @@
       \]
 
     \item
-      Für $(m, n) \in \torsion(M)$ gibt es $r \in R$ mit $r \neq 0$ und $0 = r(m,n) = (rm,rn)$.
-      Dann gilt $rm = 0$ un $rn = 0$, und wegen $r \neq 0$ gelten somit $m \in \torsion(M)$ und $n \in \torsion(N)$.
+      Für $(m, n) \in \torsion(M \oplus N)$ gibt es $r \in R$ mit $r \neq 0$ und $0 = r(m,n) = (rm,rn)$.
+      Dann gilt $rm = 0$ und $rn = 0$, und wegen $r \neq 0$ gelten somit $m \in \torsion(M)$ und $n \in \torsion(N)$.
       Also gilt $\torsion(M \oplus N) \subseteq \torsion(M) \oplus \torsion(N)$.
       
-      Für $(m, n) \in \torsion(M) \oplus \torsion(N)$ gibt es $r_1, r_2 \in R$ mit $r_1, r_2 \neq 0$ und $r_1 m = 0$ und $r_2 n = 0$.
-      Dann gelten $(r_1 r_2) (m, n) = (r_2, r_1 m, r_1 r_2 n) = (0,0)$, und da $R$ ein Integritätsbereich ist, gilt $r_1 r_2 \neq 0$.
+      Für $(m, n) \in \torsion(M) \oplus \torsion(N)$ gibt es $r_1, r_2 \in R$ mit $r_1, r_2 \neq 0$ und $r_1 m = 0$, $r_2 n = 0$.
+      Dann gilt $(r_1 r_2) (m, n) = (r_2, r_1 m, r_1 r_2 n) = (0,0)$, und da $R$ ein Integritätsbereich ist, gilt $r_1 r_2 \neq 0$.
       Also ist $(m,n) \in \torsion(M \oplus N)$, und somit $\torsion(M) \oplus \torsion(N) \subseteq \torsion(M \oplus N)$.
-      
-%       Andererseits gilt ergibt sich für die beiden Untermoduln $M \oplus 0, 0 \oplus N \subseteq M \oplus N$, dass $\torsion(M \oplus 0), \torsion(0 \oplus N) \subseteq \torsion(M \oplus N)$.
-%       Der Isomorphismus $M \oplus 0 \to M$, $(m, 0) \mapsto m$ schränkt sich zu einem Isomorphismus $\torsion(M \oplus 0) \to \torsion(M)$ ein;
-%       dabei entspricht aber der Untermodul $\torsion(M) \subseteq M$ dem Untermodul $\torsion(M) \oplus 0 \subseteq M \oplus 0$.
-%       Es folgt, dass $\torsion(M \oplus 0) = \torsion(M) \oplus 0$;
-%       analog ergibt sich, dass $\torsion(0 \oplus N) = 0 \oplus \torsion(N)$ gilt.
-%       Somit gelten $\torsion(M) \oplus 0, 0 \oplus \torsion(N) \subseteq \torsion(M \oplus N)$ und deshalb auch
-%       \[
-%                   \torsion(M) \oplus \torsion(N)
-%         =         (\torsion(M) \oplus 0) + (0 \oplus \torsion(N))
-%         \subseteq \torsion(M \oplus N)
-%       \]
     
     \item
       Es sei $F$ ein freier $R$-Modul mit Basis $(b_i)_{i \in I}$ und $m \in \torsion(F)$.
       Dann gibt es eine (eindeutige) Darstellung $m = \sum_{i \in I} r_i b_i$ mit $r_i = 0$ für fast alle $i \in I$.
       Nach Annahme gibt es $r \in R$ mit $r \neq 0$ und $0 = rm = \sum_{i \in I} r r_i b_i$.
-      Wegen der linearen Unabhängigkeit der Familie $(b_i)_{i \in I}$ muss bereits $r r_i = 0$ für alle $i \in I$.
-      Da $R$ ein Integritätsbereich ist folgt zusammen mit $r \neq 0$, dass $r_i = 0$ für alle $i \in I$.
+      Wegen der linearen Unabhängigkeit der Familie $(b_i)_{i \in I}$ muss bereits $r r_i = 0$ für alle $i \in I$ gelten.
+      Da $R$ ein Integritätsbereich ist, folgt zusammen mit $r \neq 0$, dass $r_i = 0$ für alle $i \in I$ gilt.
       Somit ist bereits $m = \sum_{i \in I} r_i b_i = 0$.
       
     \item
       Es sei $\overline{m} \in \torsion(M/\torsion(M))$.
-      Dann gibt es $r_2 \in R$ mit $r_2 \neq 0$ und $0 = r_2 \overline{m} = \overline{r_2 m}$, also $r_1 m \in \torsion(M)$.
+      Dann gibt es $r_2 \in R$ mit $r_2 \neq 0$ und $0 = r_2 \overline{m} = \overline{r_2 m}$, also $r_2 m \in \torsion(M)$.
       Dann gibt es wiederum $r_1 \in R$ mit $r_1 \neq 0$ und $r_1 r_2 m = 0$. 
       Da $R$ ein Integritätsbereich ist, gilt dabei $r_1 r_2 \neq 0$.
       Deshalb gilt bereits $m \in \torsion(M)$ und somit $\overline{m} = 0$.
@@ -1734,11 +1716,11 @@
     
     \item
       Wegen der Injektivität von $f$ ist auch $\torsion(f)$ injektiv, die Sequenze also exakt an $\torsion(N)$.
-      Für die Exaktheit an $\torsion(M)$ bemerken wir zunächst, dass $\torsion(g) \circ \torsion(f) = \torsion(g \circ f) = \torsion(0) = 0$, und somit $\im \torsion(f) \subseteq \ker \torsion(g)$.
-      Ist andererseits $m \in \ker \torsion(g) = \ker g \cap \torsion(M)$, so ist $m \in \ker g = \im f$, weshalb es ein $n \in N$ mit $m = f(n)$.
+      Für die Exaktheit an $\torsion(M)$ bemerken wir zunächst, dass $\torsion(g) \circ \torsion(f) = \torsion(g \circ f) = \torsion(0) = 0$ gilt, und somit $\im \torsion(f) \subseteq \ker \torsion(g)$ gilt.
+      Ist andererseits $m \in \ker \torsion(g) = \ker g \cap \torsion(M)$, so ist $m \in \ker g = \im f$, weshalb es ein $n \in N$ mit $m = f(n)$ gibt.
       Da $m \in \torsion(M)$ gilt, gibt es $r \in R$ mit $r \neq 0$ und $0 = rm = r f(n) = f(rn)$.
       Wegen der Injektivität von $f$ gilt bereits $rn = 0$ und somit $n \in \torsion(N)$.
-      Also gilt bereits $m = f(n) = \torsion(f)(n) \in \im \torsion(f)$ und somit $\ker \torsion(g) \subseteq \im \torsion(f)$.
+      Also gilt bereits $m = f(n) = \torsion(f)(n) \in \im \torsion(f)$ und somit auch $\ker \torsion(g) \subseteq \im \torsion(f)$.
     
     \item
       Wir betrachten das folgende Gegenbeispiel von $\Integer$—Moduln:
@@ -1749,57 +1731,45 @@
         \xrightarrow{\torsion(p)} \torsion(\Integer/2)
         =                         \Integer/2
       \]
-      kann es aber nicht sein. (Dass $\torsion(\Integer) = 0$ folgt daraus, dass $\Integer$ als freier $\Integer$-Modul torsionfrei ist.)
+      kann es aber nicht sein. (Dass $\torsion(\Integer) = 0$ gilt folgt daraus, dass $\Integer$ als freier $\Integer$-Modul torsionfrei ist.)
   \end{enumerate}
 \end{solution}
 
 
 \begin{question}[subtitle = $p$-primär in kurzen exakten Sequenzen]
-  Es sei $R$ ein Ring und $0 \to N \to M \to P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
-  \begin{enumerate}
-    \item
-      Es sei zunächst $R$ ein Hauptidealbereich und $p \in R$ prim.
-      Zeigen Sie, dass $M$ genau dann $p$-primär ist, wenn $N$ und $P$ beide $p$-primär sind.
-    \item
-      Zeigen Sie allgemeiner, dass $\radicalideal{\annihilator(M)} = \radicalideal{\annihilator(N)} \cap \radicalideal{\annihilator(P)}$.
-      (Dabei gilt die Gleichheit $\radicalideal{\annihilator(N)} \cap \radicalideal{\annihilator(P)} = \radicalideal{\annihilator(N) \cap \annihilator(P)}$, siehe Übung~\ref{question: radical ideals}.
-  \end{enumerate}
+  Es sei $R$ ein Hauptidealring, $p \in R$ prim und $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$ eine kurze exakte Sequenz von $R$-Moduln.
+  Zeigen Sie, dass $M$ genau dann $p$-primär ist, wenn $N$ und $P$ beide $p$-primär sind.
 \end{question}
 
 
 \begin{solution}
-  Wir bezeichnen die gegebene kurze exakte Sequenz mit $0 \to N \xrightarrow{f} M \xrightarrow{g} P \to 0$.
-  \begin{enumerate}
-    \item
-      Es sei zunächst $M$ $p$-primär.
-      Dann ist auch der Untermodul $f(N) \subseteq M$ $p$-primär, und da $f$ eine Isomorphie $N \cong f(N)$ liefert, damit auch $N$ $p$-primär.
-      Für $x \in P$ gibt es $x' \in M$ mit $g(x') = x$; da $M$ $p$-primär ist, gibt es ein $k \geq 0$ mit $p^k x' = 0$ und somit auch $p^k x = p^k g(x') = g(p^k x') = g(0) = 0$.
-      Also ist auch $P$ $p$-primär.
-      
-      Es seien nun $N$ und $P$ beide $p$-primär.
-      Für $m \in M$ ist $g(m) \in P$, es gibt also $k_2 \geq 0$ mit $p^{k_2} g(m) = 0$.
-      Dann gilt $g(p^{k_2} m) = p^{k_2} g(m) = 0$ und somit $p^{k_2} m \in \ker g = \im f$.
-      Es gibt also ein $n \in N$ mit $p^{k_2} m = f(n)$.
-      Da $N$ $p$-primär ist, gibt es ein $k_1 \geq 0$ mit $p^{k_1} n = 0$.
-      Ingesamt erhalten wir, dass
-      \[
-          p^{k_1 + k_2} m
-        = p^{k_1} p^{k_2} m
-        = p^{k_1} f(n)
-        = f(p^{k_1} n)
-        = f(0)
-        = 0.
-      \]
-      Das zeigt, dass $M$ $p$-primär ist.
-    \item
-      Für $x \in R$ gilt genau dann $x \in \radicalideal{\annihilator(M)}$, wenn es $k \geq 0$ mit $x^k \in \annihilator(M)$ gibt, also genau dann, wenn es $k \geq 0$ mit $x^k M = 0$ gibt.
-      Es gilt also genau dann $x \in \radicalideal{\annihilator(M)}$, wenn $M$ „$x$-primär“ ist.
-      Ersetzt man in der obigen Argumentation $p$ durch $x$, so erhält man deshalb, dass genau dann $x \in \radicalideal{\annihilator(M)}$ gilt, wenn $x \in \radicalideal{\annihilator(N)}$ und $x \in \radicalideal{\annihilator(P)}$ gelten.
-  \end{enumerate}
+  Es sei zunächst $M$ $p$-primär.
+  Dann ist auch der Untermodul $f(N) \subseteq M$ $p$-primär, und da $f$ eine Isomorphie $N \cong f(N)$ liefert, damit auch $N$ $p$-primär.
+  Für $x \in P$ gibt es $x' \in M$ mit $g(x') = x$; da $M$ $p$-primär ist, gibt es ein $k \geq 0$ mit $p^k x' = 0$ und somit auch
+  \[
+    p^k x = p^k g(x') = g(p^k x') = g(0) = 0.
+  \]
+  Also ist auch $P$ $p$-primär.
+  
+  Es seien nun $N$ und $P$ beide $p$-primär.
+  Für $m \in M$ gilt $g(m) \in P$, es gibt also $k_2 \geq 0$ mit $p^{k_2} g(m) = 0$.
+  Dann gilt $g(p^{k_2} m) = p^{k_2} g(m) = 0$ und somit $p^{k_2} m \in \ker g = \im f$.
+  Es gibt also ein $n \in N$ mit $p^{k_2} m = f(n)$.
+  Da $N$ $p$-primär ist, gibt es ein $k_1 \geq 0$ mit $p^{k_1} n = 0$.
+  Ingesamt erhalten wir, dass
+  \[
+      p^{k_1 + k_2} m
+    = p^{k_1} p^{k_2} m
+    = p^{k_1} f(n)
+    = f(p^{k_1} n)
+    = f(0)
+    = 0.
+  \]
+  Das zeigt, dass $M$ $p$-primär ist.
 \end{solution}
 
 
-\begin{question}[subtitle = Produkte und Summen kurzer exakter Sequenzen]
+\begin{question}[subtitle = Produkte und Summen exakter Sequenzen]
   Es sei $R$ ein Ring und $\{ N_i \xrightarrow{f_i} M_i \xrightarrow{g_i} P_i \}_{i \in I}$ eine Familie von exakten Sequenzen von $R$-Moduln.
   \begin{enumerate}
     \item
@@ -1819,13 +1789,13 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Es gilt $g \circ f = (g_i)_{i \in I} \circ (f_i)_{i \in I} = (g_i \circ f_i)_{i \in I} = 0$, da $g_i \circ f_i = 0$ für alle $i \in I$.
-      Also ist $\im f \subseteq \ker g$.
+      Es gilt $g \circ f = (g_i)_{i \in I} \circ (f_i)_{i \in I} = (g_i \circ f_i)_{i \in I} = 0$, da $g_i \circ f_i = 0$ für alle $i \in I$ gilt.
+      Also gilt $\im f \subseteq \ker g$.
       
       Ist andererseits $(m_i)_{i \in I} \in \ker g$, so gilt $0 = g((m_i)_{i \in i}) = (g(m_i))_{i \in I}$, also $g(m_i) = 0$ für alle $i \in I$.
       Dann ist $m_i \in \ker g_i = \im f_i$ für alle $i \in I$, weshalb es für jedes $i \in I$ ein $n_i \in N_i$ mit $f_i(n_i) = m_i$ gibt.
-      Für $n \coloneqq (n_i)_{i \in I} \in \prod_{i \in I} N_i$ gilt dann $f(n) = f((n_i)_{i \in I}) = (f(n_i))_{i \in I} = (m_i)_{i \in I} = m$, weshalb $m \in \im f$.
-      Das zeigt, dass $\ker g \subseteq \im f$.
+      Für $n \coloneqq (n_i)_{i \in I} \in \prod_{i \in I} N_i$ gilt dann $f(n) = f((n_i)_{i \in I}) = (f(n_i))_{i \in I} = (m_i)_{i \in I} = m$, weshalb $m \in \im f$ gilt.
+      Das zeigt, dass auch $\ker g \subseteq \im f$ gilt.
     \item
       Die Aussage gilt auch weiterhin.
       Der obige Beweis muss nur bei der Wahl der $n_i$ etwas angepasst werden:
@@ -1842,7 +1812,7 @@
     \item
       Zeigen Sie für jedes Ideal $I \subseteq R$ die Gleichheit $\annihilator(R/I) = I$.
     \item
-      Zeigen Sie für jeden freien $R$-Modul $F$ mit $F \neq 0$, dass $\annihilator(F) = 0$.
+      Zeigen Sie für jeden freien $R$-Modul $F$ mit $F \neq 0$, dass $\annihilator(F) = 0$ gilt.
   \end{enumerate}
   Es sei nun zusätzlich $R \neq 0$.
   \begin{enumerate}[resume]
@@ -1855,29 +1825,29 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Für alle $x \in I$ und $\overline{y} \in R/I$ gilt $xy \in I$ und somit $\overline{x} \overline{y} = \overline{xy} = 0$.
+      Für alle $r \in I$ und $\overline{x} \in R/I$ gilt $rx \in I$ und somit $r \overline{x} = \overline{rx} = 0$.
       Deshalb gilt $I \subseteq \annihilator(R/I)$.
-      Für jedes $x \in \annihilator(R/I)$ gilt $0 = x \cdot \overline{1} = \overline{x}$ und somit $x \in I$.
-      Deshalb ist auch $\annihilator(R/I) \subseteq I$.
+      Für jedes $r \in \annihilator(R/I)$ gilt $\overline{r} = r \cdot \overline{1} = 0$ und somit $r \in I$.
+      Deshalb gilt auch $\annihilator(R/I) \subseteq I$.
     \item
       Da $F$ frei ist, besitzt $F$ eine Basis; da $F \neq 0$ gilt, ist diese nicht leer.
-      Es gibt daher ein Element $m \in F$, so dass $\{m\} \subseteq F$ linear unabhängig ist.
-      Dann gilt $xm \neq 0$ für alle $x \in R$ mit $x \neq 0$, und deshalb $x \notin \annihilator(F)$.
+      Es gibt daher ein Element $x \in F$, so dass $\{x\} \subseteq F$ linear unabhängig ist.
+      Dann gilt $rx \neq 0$ für alle $r \in R$ mit $r \neq 0$, und deshalb $r \notin \annihilator(F)$.
     \item
       Ist $R$ ein Körper, so besitzt jeder endlich erzeugte erzugte $R$-Modul, also endlicher erzeugte $R$-Vektorraum, bekanntermaßen eine Basis.
       Ist andererseits $R$ kein Körper, so gibt es ein Ideal $I \subseteq R$ mit $I \neq 0, R$ (siehe Übung~\ref{question: characterization of fields via its ideals}).
       Dann ist $M \coloneqq R/I$ ein endlich erzeugter $R$-Modul mit $M \neq 0$ (da $I \neq R$) sowie $\annihilator(R/I) = I \neq 0$.
-      Nach dem vorherigen Aufgabenteil ist $M$ nicht frei.
+      Nach dem vorherigen Aussagenteil ist $M$ nicht frei.
   \end{enumerate}
 \end{solution}
 
 
 \begin{question}[subtitle = Isomorphie von Quotientenringen als Moduln]
   \label{question: quotients isomorphic as modules}
-  Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ seien zwei Ideale, so dass $R/I \cong R/J$ als $R$-Moduln.
+  Es sei $R$ ein kommutativer Ring und $I, J \subseteq R$ seien zwei Ideale.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $I = J$ falls $R/I \cong R_J$ als $R$-Moduln gilt.
+      Zeigen Sie, dass $I = J$ gilt, falls $R/I \cong R/J$ als $R$-Moduln gilt.
       \\
       (\emph{Hinweis}:
        Betrachten Sie Annihilatoren.)
@@ -1906,16 +1876,17 @@
 
 
 \begin{question}[subtitle = Rechenregeln für Annihilatoren]
+  \label{question: rules for annihilators}
   Es sei $M$ ein $R$-Modul.
   \begin{enumerate}
     \item
       Zeigen Sie, dass $\annihilator( \generate{m}_R ) = \annihilator(m)$ für jedes $m \in M$.
     \item
-      Zeigen Sie, dass $\annihilator( \sum_{i \in I} M_i) = \bigcap_{i \in I} \annihilator(M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
+      Zeigen Sie, dass $\annihilator( \sum_{i \in I} M_i) = \bigcap_{i \in I} \annihilator(M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$ gilt.
     \item
-      Folgern Sie, dass $\annihilator( \generate{m_i \mid i \in I}_R ) = \bigcap_{i \in I} \annihilator(m_i)$ für jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$, und dass $\annihilator(M) = \bigcap_{m \in M} \annihilator(m)$.
+      Folgern Sie, dass $\annihilator( \generate{m_i \mid i \in I}_R ) = \bigcap_{i \in I} \annihilator(m_i)$ für jede Familie $(m_i)_{i \in I}$ von Elementen $m_i \in M$ gilt, und dass $\annihilator(M) = \bigcap_{m \in M} \annihilator(m)$ gilt.
     \item
-      Zeigen Sie, dass $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$.
+      Zeigen Sie, dass $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i)$ für jede Familie $(M_i)_{i \in I}$ von Untermoduln $M_i \subseteq M$ gilt.
     \item
       Geben Sie ein Beispiel an, in dem die obige Inklusion strikt ist.
   \end{enumerate}
@@ -1925,25 +1896,30 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Aus der Inklusion $\{m\} \subseteq \generate{m}_R$ folgt die Inklusion $\annihilator( \generate{M}_R ) \subseteq \annihilator(m)$.
+      Aus der Inklusion $\{m\} \subseteq \generate{m}_R$ folgt die Inklusion $\annihilator( \generate{m}_R ) \subseteq \annihilator(m)$.
       Ist andererseits $x \in \annihilator(m)$, so gilt $xm = 0$, und somit auch $x(rm) = r(xm) = 0$ für alle $r \in R$, also $xm' = 0$ für alle $m' \in \{rm \mid r \in R\} = \generate{m}_R$.
+      Also gilt auch $\annihilator(m) \subseteq \annihilator(\generate{m}_R)$.
+      
     \item
       Für jedes $j \in J$ folgt sich aus $M_j \subseteq \sum_{i \in I} M_i$ die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \annihilator(M_j)$, und somit insgesamt die Inklusion $\annihilator( \sum_{i \in I} M_i ) \subseteq \bigcap_{i \in I} \annihilator(M_i)$.
       Gilt andererseits $x \in \bigcap_{i \in I} \annihilator(M_i)$, so gilt $x M_i = 0$ für alle $i \in I$, also $x m_i = 0$ für alle $i \in I$ und $m_i \in M_i$.
       Da jedes $m \in \sum_{i \in I} M_i$ eine endliche Summe solcher $m_i$ ist, gilt bereits $xm = 0$ für alle $m \in \sum_{i \in I} M_i$, und somit $x \in \annihilator( \sum_{i \in I} M_i )$.
       Somit gilt auch $\bigcap_{i \in I} \annihilator( M_i ) \subseteq \annihilator( \sum_{i \in I} M_i )$.
+      
     \item
-      Es gilt die Gleichungskette
+      Es gilt die Gleichheitskette
       \[
           \annihilator( \generate{m_i \mid i \in I}_R )
         = \annihilator\left( \sum_{i \in I} \generate{m_i}_R \right)
         = \bigcap_{i \in I} \annihilator( \generate{m_i}_R )
         = \bigcap_{i \in I} \annihilator(m_i)
       \]
-      und somit insbesondere $\annihilator(M) = \annihilator(\sum_{m \in M} \generate{m}_R) = \bigcap_{m \in M} \annihilator(m)$.
+      und somit insbesondere $\annihilator(M) = \annihilator(\generate{m_i \mid i \in I}) = \bigcap_{m \in M} \annihilator(m)$.
+      
     \item
       Es gilt genau dann $\sum_{i \in I} \annihilator(M_i) \subseteq \annihilator( \bigcap_{i \in I} M_i )$, wenn $\annihilator(M_j) \subseteq \annihilator( \bigcap_{i \in I} M_i )$ für alle $j \in I$.
       Für jedes $j \in I$ ergibt sich diese Inklusion aus der Inklusion $\bigcap_{i \in I} M_i \subseteq M_j$.
+      
     \item
       Für $R \neq 0$ betrachte man $M = R \oplus R$ mit den Untermoduln $M_1 = R \oplus 0$ und $M_2 = 0 \oplus R$.
       Dann gilt $M_1 \cong M_2 \cong R$ und somit $\annihilator(M_1) = \annihilator(M_2) = \annihilator(R) = 0$.
@@ -1970,7 +1946,7 @@
 
 
 \begin{solution}
-  Für die ersten beiden Beispiel sei $R$ ein beliebiger kommutativer Ring mit $R \neq 0$.
+  Für die ersten beiden Beispiele sei $R$ ein beliebiger kommutativer Ring mit $R \neq 0$.
   \begin{enumerate}
     \item
       Wir betrachten $M_1 = M_2 = \bigoplus_{n \geq 0} R = R \oplus R \oplus R \oplus \dotsb$ und die Untermoduln $N_1 = 0 \oplus \bigoplus_{n \geq 1} R = 0 \oplus R \oplus R \oplus \dotsb$ und $N_2 = 0 \oplus 0 \oplus \bigoplus_{n \geq 2} R = 0 \oplus 0 \oplus R \oplus \dotsb$;
@@ -1978,7 +1954,7 @@
       \[
         M_1/N_1 \cong R \ncong R^2 \cong M_2/N_2.
       \]
-      (Hier nutzen wir, dass wegen $R \neq 0$ und der Kommutativität von $R$ der Rang eines freien $R$-Moduln wohldefiniert ist.)
+      (Hier nutzen wir, dass wegen $R \neq 0$ und der Kommutativität von $R$ der Rang eines freien $R$-Moduls wohldefiniert ist.)
     
     \item
       Wir betrachten erneut $M_1 = M_2 = \bigoplus_{n \geq 0} R$, dieses Mal mit den jeweiligen Untermoduln $N_1 = R \oplus \bigoplus_{n \geq 1} 0 = R \oplus 0 \oplus 0 \oplus \dotsb$ und $N_2 = R \oplus R \oplus \bigoplus_{n \geq 2} 0 = R \oplus R \oplus 0 \oplus 0 \oplus \dotsb$;
@@ -1996,7 +1972,7 @@
   \[
     \dim M_1 = \dim M_1/N_1 + \dim N_1 = \dim M_2/N_2 + \dim N_2 = \dim M_2,
   \]
-  und somit $M_1 \cong M_2$.
+  und somit $M_1 \cong M_2$ gilt.
   Wir betrachten daher den Fall $R = \Integer$.
   \begin{enumerate}[resume]
     \item
