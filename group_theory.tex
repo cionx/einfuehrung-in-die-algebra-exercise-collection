@@ -55,7 +55,7 @@
 
 
 \begin{question}[subtitle = Klassifikation zyklischer Gruppen]
-  Es sei $G$ eine zyklische Gruppe, d.h.\ es gebe eine $g \in G$ mit $G = \generate{g}$.
+  Es sei $G$ eine zyklische Gruppe, d.h.\ es gebe $g \in G$ mit $G = \generate{g}$.
   \begin{enumerate}
     \item
       Zeigen Sie, dass $G$ abelsch ist.
@@ -99,7 +99,7 @@
     \item
       Zeigen Sie, dass die Abbildung $c \colon G \to G$, $g \mapsto c_g$ ein Gruppenhomomorphismus ist.
     \item
-      Zeigen Sie, dass $\ker c = \Center(G)$.
+      Zeigen Sie, dass $\ker c = \Center(G)$ gilt.
     \item
       Zeigen Sie, dass $\Inner G \coloneqq \im c$ eine normale Untergruppe von $\Aut G$ ist.
   \end{enumerate}
@@ -159,7 +159,7 @@
         = \phi(g) h \phi(g)^{-1}
         = c_{\phi(g)}(h).
       \]
-      Folglich ist $\phi \, {\Inner G} \, \phi^{-1} \subseteq \im c$ für alle $\phi \in \Aut G$, also $\im c$ normal in $\Aut G$.
+      Folglich ist $\phi \, {\Inner G} \, \phi^{-1} \subseteq \Inner G$ für alle $\phi \in \Aut G$, also $\Inner G$ normal in $\Aut G$.
   \end{enumerate}
 \end{solution}
 
@@ -172,13 +172,13 @@
 \begin{solution}
   Für alle $i = 1, \dotsc, n$ gilt $\rho^{i-1}(1) = i$ und $\rho^{i-1}(2) = i+1$, und somit
   \[
-    \rho^{i-1} \tau (\rho^{i-1})^{-1}
+    \rho^{i-1} \, \tau \, (\rho^{i-1})^{-1}
     = \rho^{i-1} (1 \quad 2) (\rho^{i-1})^{-1}
     = (\rho^{i-1}(1) \quad \rho^{i-1}(2))
     = (i \quad i+1).
   \]
   Deshalb gilt $(1 \quad 2), (2 \quad 3), \dotsc, (n-1 \quad n) \in \generate{\rho, \tau}$.
-  Da $S_n$ von diese Elementartranspositionen erzeugt wird, gilt bereits $S_n \subseteq \generate{\rho, \tau} \subseteq S_n$, und somit $S_n = \generate{\rho, \tau}$.
+  Da $S_n$ von diesen Elementartranspositionen erzeugt wird, gilt bereits $S_n \subseteq \generate{\rho, \tau} \subseteq S_n$, und somit $S_n = \generate{\rho, \tau}$.
 \end{solution}
 
 
@@ -210,9 +210,9 @@
       Da $|H|$ und $|K|$ teilerfremd sind, gilt bereits $|H \cap K| = 1$ und somit $H \cap K = 1$.
       
     \item
-      Für $g \in G$ ist die Abbildung $c_g \colon G \to G$, $x \mapsto gxg^{-1}$ ein Gruppenautomorphismus (siehe Übung~\ref{question: inner automorphims}) ist somit auch $c_g(H) = gHg^{-1}$ eine Untergruppe von $G$ von Ordnung $|H|$.
+      Da für $g \in G$ ist die Abbildung $c_g \colon G \to G$, $x \mapsto gxg^{-1}$ ein Gruppenautomorphismus ist (siehe Übung~\ref{question: inner automorphims}), ist auch $c_g(H) = gHg^{-1}$ eine Untergruppe von $G$ von Ordnung $|H|$.
       Aus der Eindeutigkeit von $H$ bezüglich dieser Eigenschaft folgt, dass bereits $g H g^{-1} = H$ gilt.
-      Da dies für jedes $g \in G$ gilt ist $H$ normal.
+      Da dies für jedes $g \in G$ gilt, ist $H$ normal.
     
     \item
       Es sei $g \in G$ mit $g \neq 1$.
@@ -280,7 +280,7 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Es gilt $G.x = \{g.x \mid g \in G\}$, der Stabilisator von $x$ ist $G_x = \{g \in G \mid g.x = x\}$.
+      Es sind $G.x = \{g.x \mid g \in G\}$ und $G_x = \{g \in G \mid g.x = x\}$.
     \item
       Es gilt $1 \in G_x$ da $1.x = x$.
       Für $g_1, g_2 \in G_x$ gilt $(g_1 g_2).x = g_1.(g_2.x) = g_1.x = x$ und somit auch $g_1 g_2 \in G_x$.
@@ -310,7 +310,7 @@
         \iff  (g h g^{-1}).x = x
         \iff  g h g^{-1} \in G_x.
       \end{align*}
-      Wegen der Bijektivität der Konjugationsabbildung $G \to G$, $h \mapsto ghg^{-1}$ folgt, dass $g G_y g^{-1} = G_x$.
+      Wegen der Bijektivität der Konjugationsabbildung $G \to G$, $h \mapsto ghg^{-1}$ folgt, dass $g G_y g^{-1} = G_x$ gilt.
     \item
       Die Umkehrung gilt nicht:
       Gilt etwa $G = 1$, so gilt $G_x = G$ für alle $x \in X$, aber alle Bahnen sind einelementig.
@@ -321,7 +321,7 @@
     \item
       Es genügt zu zeigen, dass $x \sim y \iff x \in G.y$ eine Äquivalenzrelation auf $X$ definiert, denn dann sind die $G$-Bahnen genau die Äquivalenzklassen von ${\sim}$.
       Da $x = 1.x \in G.x$ ist die Relation reflexiv.
-      Gilt $x \sim y$ so gibt es $g \in G$ mit $x = g.x$;
+      Gilt $x \sim y$ so gibt es $g \in G$ mit $x = g.y$;
       dann gilt auch $y = g^{-1}.x \in G.x$ und somit $y \sim x$.
       Für $x, y, z \in X$ mit $x \sim y$ und $y \sim z$ gibt es $g, h \in G$ mit $x = g.y$ und $y = h.z$;
       dann gilt auch $x = g.y = g.h.z = (gh).z \in G.z$ und somit $x \sim z$.
@@ -330,75 +330,79 @@
 
 
 \begin{question}[subtitle = Bahnenkombinatorik]
-  Es sei $G$ eine Gruppe der Ordnung $77$ die auf einer $17$-elementigen Menge $X$ wirkt.
-  Zeigen Sie, dass die Wirkung mindestens $3$ Fixpunkte hat.
-  (Ein Element $x \in X$ ist ein Fixpunkt falls $g.x = x$ für alle $g \in G$.)
+  \begin{enumerate}
+    \item
+      Es sei $G$ eine Gruppe der Ordnung $77$, die auf einer $17$-elementigen Menge $X$ wirkt.
+      Zeigen Sie, dass die Wirkung mindestens $3$ Fixpunkte hat.
+      (Ein Element $x \in X$ ist ein Fixpunkt falls $g.x = x$ für alle $g \in G$.)
+    \item
+      Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe.
+      Es sei $X$ eine endliche Menge mit $p \nmid |X|$ und $G$ wirke auf $X$.
+      Zeigen Sie, dass die Wirkung einen Fixpunkt besitzt.
+  \end{enumerate}
+  (\emph{Hinweis}:
+   Nutzen Sie jeweils die Bahnengleichung.)
 \end{question}
 
 
 \begin{solution}
-  Ist $B \in X/G$ eine $G$-Bahn und $x \in X$ mit $B = G.x$, so gilt $|B| = |G.x| = [G : G_x] \mid |G|$.
-  Für die Ordnung von $G$ gilt $|G| = 77 = 7 \cdot 11$, also ist $|B| \in \{1, 7, 11, 77\}$ für jede $G$-Bahn $B \in X/G$.
-  Dabei gilt genau dann $|B| = 1$, falls $B = G.x$ für einen Fixpunkt $x \in X$ gilt;
-  es gilt also zu zeigen, dass es mindestens drei einelementige $G$-Bahnen in $X$ gibt.
-  
-  Nach der Bahnengleichung gilt $17 = |X| = \sum_{B \in X/G} |B|$.
-  Die einzigen Möglichkeiten, die Zahl $17$ als Summe der Zahlen $1$, $7$, $11$ und $77$ darzustellen, sind
-  \[
-      17
-    = 11 + 6 \cdot 1
-    = 2 \cdot 7 + 3 \cdot 1
-    = 7 + 10 \cdot 1
-    = 17 \cdot 1.
-  \]
-  In jeder der Möglichkeiten kommt der Summand $1$ mindestens dreimal vor, wodurch sich die Aussage ergibt.
+  \begin{enumerate}
+    \item
+      Ist $B \in X/G$ eine $G$-Bahn und $x \in X$ mit $B = G.x$, so gilt $|B| = |G.x| = [G : G_x] \mid |G|$.
+      Für die Ordnung von $G$ gilt $|G| = 77 = 7 \cdot 11$, also gilt $|B| \in \{1, 7, 11, 77\}$ für jede $G$-Bahn $B \in X/G$.
+      Dabei gilt genau dann $|B| = 1$, falls $B = \{x\}$ für einen Fixpunkt $x \in X$ gilt;
+      es gilt also zu zeigen, dass es mindestens drei einelementige $G$-Bahnen in $X$ gibt.
+      
+      Nach der Bahnengleichung gilt $17 = |X| = \sum_{B \in X/G} |B|$.
+      Die einzigen Möglichkeiten, die Zahl $17$ als Summe der Zahlen $1$, $7$, $11$ und $77$ darzustellen, sind
+      \[
+          17
+        = 11 + 6 \cdot 1
+        = 2 \cdot 7 + 3 \cdot 1
+        = 7 + 10 \cdot 1
+        = 17 \cdot 1.
+      \]
+      In jeder der Möglichkeiten kommt der Summand $1$ mindestens dreimal vor, wodurch sich die Aussage ergibt.
+      
+    \item
+      Es sei $B \in X/G$ eine $G$-Bahn.
+      Es gilt genau dann $|B| = 1$, wenn $B = \{x\}$ für einen Fixpunkt $x \in X$ gilt.
+      Ist $|B| \neq 1$ und $x \in B$, so folgt aus $|B| = G.x = [G : G_x] \mid |G| = p^r$ mit $r \geq 0$, dass bereits $p \mid |B|$ gilt.
+      
+      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{B \in X/G} |B|$.
+      Aus $p \nmid |X|$ erhalten wir, dass es eine $G$-Bahn $B \in X/G$ mit $p \nmid |B|$ gibt.
+      Nach den obigen Beobachtungen erhalten wir, dass diese Bahn von der Form $B = \{x\}$ für einen Fixpunkt $x \in X$ ist.
+  \end{enumerate}
 \end{solution}
 
 
 \begin{question}[subtitle = Mehr Bahnenkombinatorik]
-  Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe.
-  \begin{enumerate}
-    \item
-      Es sei $X$ eine endliche Menge mit $p \nmid |X|$ und $G$ wirke auf $X$.
-      Zeigen Sie, dass die Wirkung einen Fixpunkt besitzt, d.h.\ dass es ein $x \in X$ gibt, so dass $g.x = x$ für alle $g \in G$ gilt.
-      (\emph{Hinweis}:
-       Nutzen Sie die Bahnengleichung.)
-    \item
-      Zeigen Sie für $G \neq 1$, dass auch $\Center(G) \neq 1$.
-      (\emph{Hinweis}:
-       Lassen sich $G$ auf sich selbst durch Konjugation wirken.)
-  \end{enumerate}
+  Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe mit $G \neq 1$.
+  Zeigen Sie, dass auch $\Center(G) \neq 1$ gilt.
+  \\
+  (\emph{Hinweis}:
+   Lassen sich $G$ auf sich selbst durch Konjugation wirken.)
 \end{question}
 
 
 \begin{solution}
-  \begin{enumerate}
-    \item
-      Es sei $B \in X/G$ eine $G$-Bahn.
-      Es gilt genau dann $|B| = 1$, wenn $B = \{x\}$ für einen Fixpunkt $x \in X$.
-      Ist $|B| \neq 1$ und $x \in B$, so folgt aus $|B| = G.x = [G : G_x] \mid |G| = p^r$ mit $r \geq 0$, dass bereits $p \mid |B|$ gilt.
-      
-      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{B \in X/G} |B|$.
-      Aus $p \nmid |X|$ erhalten wir, dass $p \nmid |B|$ für eine $G$-Bahn $B \in X/G$.
-      Nach den obigen Beobachtungen erhalten wir, dass es einen Fixpunkt gibt.
-    
-    \item
-      Es sei $X \coloneqq G$.
-      Die Gruppe $G$ wirkt auf $X$ durch Konjugation, also durch $g.x = g x g^{-1}$ für alle $g \in G$, $x \in X$
-      Ein Punkt $x \in X$ ist genau dann ein Fixpunkt wenn $g x g^{-1} = x$ für alle $g \in G$, wenn also $x \in \Center(G)$.
-      Wie im vorherigen Aussagenteil erhalten wir damit, dass für $B \in X/G$ mit $B = G.x$ für $x \in X$ genau dann $p \mid |B|$ gilt wenn $x \notin \Center(G)$ (hier bezeichnet $X/G$ die Menge der $G$-Bahnen in $X$, also die Menge der Konjugationsklassen in $G$, und nicht den Quotienten trivialen $G/G$).
-      Da $|G| = p^r$ mit $r \geq 1$ gilt, erhalten wir aus der Bahnengleichung, dass
-      \[
-                0
-        \equiv  |G|
-        =       \sum_{B \in X/G} |B|
-        \equiv  \sum_{\substack{B \in X/G \\ |B| = 1}} |B|
-        =       |{\Center(G)}|
-        \mod    p.
-      \]
-      Deshalb gilt $p \mid |{\Center(G)}|$.
-      Insbesondere ist $|{\Center(G)}| \neq 1$ und somit $\Center(G) \neq 1$.
- \end{enumerate} 
+  Es sei $X \coloneqq G$.
+  Die Gruppe $G$ wirkt auf $X$ durch Konjugation, also durch $g.x = g x g^{-1}$ für alle $g \in G$, $x \in X$
+  Ein Punkt $x \in X$ ist genau dann ein Fixpunkt, wenn $g x g^{-1} = x$ für alle $g \in G$ gilt, wenn also $x \in \Center(G)$ gilt.
+  
+  Ist $B \in X/G$ eine $G$-Bahn mit $|B| \neq 1$, so gibt es $x \in X$ mit $B = G.x$, und es folgt aus $|B| = |G.x| = [G : G_x] \mid |G|$, dass bereits $p \mid |B|$ gilt.
+  Damit erhalten wir für $x \in X$, dass genau dann $x \in \Center(G)$ gilt, wenn $p \nmid |G.x|$.
+  Da $|G| = p^r$ mit $r \geq 1$ gilt, erhalten wir aus der Bahnengleichung, dass
+  \[
+            0
+    \equiv  |G|
+    =       \sum_{B \in X/G} |B|
+    \equiv  \sum_{\substack{B \in X/G \\ |B| = 1}} |B|
+    =       |{\Center(G)}|
+    \mod    p.
+  \]
+  Deshalb gilt $p \mid |{\Center(G)}|$.
+  Insbesondere ist $|{\Center(G)}| \neq 1$ und somit $\Center(G) \neq 1$.
 \end{solution}
 
 
@@ -435,9 +439,9 @@
                     b \in K
                   \right\}.
       \]
-      eine normale Untergruppe von $\Borel_2(K)$ ist, und dass $\Borel_2(K)/\Upper_2(K) \cong K^\times \times K^\times$.
+      eine normale Untergruppe von $\Borel_2(K)$ ist, und dass $\Borel_2(K)/{\Upper_2(K)} \cong K^\times \times K^\times$ gilt.
     \item
-      Entscheiden Sie, ob $\Borel_2(K) \cong \Upper_2(K) \times K^\times \times K^\times$.
+      Entscheiden Sie, ob $\Borel_2(K) \cong \Upper_2(K) \times K^\times \times K^\times$ gilt.
   \end{enumerate}
 \end{question}
 
@@ -459,7 +463,7 @@
         \end{pmatrix}
         =
         \begin{pmatrix}
-          a_1 a'_1  & a'_1 b + b' a_2 \\
+          a_1 a'_1  & a_1 b' + b a'_2 \\
           0         & a_2 a'_2
         \end{pmatrix}
       \end{equation}
@@ -521,16 +525,16 @@
     
     \item
       Für $K = \Field_2$ sind die Gruppen isomorph:
-      Es gilt $\Field_2^\times \cong 1$ und somit auch $\Field_2^\times \times \Field_2^\times \cong 1$ sowie $\Borel_2(\Field_2) = \Upper_2(\Field_2)$.
+      Es gilt $\Field_2^\times = 1$ und somit auch $\Field_2^\times \times \Field_2^\times \cong 1$, sowie $\Borel_2(\Field_2) = \Upper_2(\Field_2)$.
       Deshalb gilt
       \[
               \Borel_2(\Field_2)
-        \cong \Upper_2(\Field_2)
+        =     \Upper_2(\Field_2)
         \cong \Upper_2(\Field_2) \times \Field_2^\times \times \Field_2^\times.
       \]
       
       Für $K \neq \Field_2$ sind die Gruppen nicht isomorph:
-      Die Gruppe $\Borel_2(K)$ ist dann nicht abelsch, denn es gibt $a_1, a_2 \in K^\times$ mit $a_1 \neq a_2$ und somit gilt
+      Die Gruppe $\Borel_2(K)$ ist dann nicht abelsch, denn es gibt $a_1, a_2 \in K^\times$ mit $a_1 \neq a_2$, weshalb auch
       \[
         \begin{pmatrix}
           a_1 & 0   \\
@@ -602,9 +606,9 @@
       Zeigen Sie dass bereits $H \subseteq H_1$ oder $H \subseteq H_2$ gilt.
     \item
       Folgern Sie:
-      Sind $H_1, H_2 \subseteq G$ seien zwei Untergruppen, so ist $H_1 \cup H_2$ genau dann eine Untergruppe ist, wenn $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$.
+      Sind $H_1, H_2 \subseteq G$ seien zwei Untergruppen, so ist $H_1 \cup H_2$ genau dann eine Untergruppe ist, wenn $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$ gilt.
     \item
-      Geben Sie ein Beispiel für eine eine Gruppe $G$ und Untergruppen $H_1, H_2, H_3 \subseteq G$ an, so dass zwar $H_i \subsetneq H_j$ für alle $i \neq j$, aber $H_1 \cup H_2 \cup H_3$ eine Untergruppe von $G$ ist.
+      Geben Sie ein Beispiel für eine eine Gruppe $G$ und Untergruppen $H_1, H_2, H_3 \subseteq G$ an, so dass zwar $H_i \nsubseteq H_j$ für alle $i \neq j$, aber $H_1 \cup H_2 \cup H_3$ eine Untergruppe von $G$ ist.
   \end{enumerate}
 \end{question}
 
@@ -612,16 +616,16 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Würde $H \nsubseteq H_2$ und $H \nsubseteq H_1$ gelten, so gebe es $h_1, h_2 \in H$ mit $h_1 \notin H_2$ und $h_2 \in H_1$.
+      Würde $H \nsubseteq H_2$ und $H \nsubseteq H_1$ gelten, so gebe es $h_1, h_2 \in H$ mit $h_1 \notin H_2$ und $h_2 \notin H_1$.
       Da $h_1, h_2 \in H \subseteq H_1 \cup H_2$ gilt, müsste allerdings $h_1 \in H_1$ und $h_2 \in H_2$ gelten.
-      Für das Produkt $h_1 h_2$ würde dann $h_1 h_2 \in H_1$ gelten, denn sonst wäre $h_2 = h_1^{-1} h_1 h_2 \in H_1$, im Widerspruch zur Wahl von $h_1$.
+      Für das Produkt $h_1 h_2$ würde dann $h_1 h_2 \notin H_1$ gelten, denn sonst wäre $h_2 = h_1^{-1} h_1 h_2 \in H_1$, im Widerspruch zur Wahl von $h_1$.
       Analog ergebe sich aber auch, dass $h_1 h_2 \notin H_2$ gilt.
       Es müsste aber $h_1 h_2 \in H \subseteq H_1 \cup H_2$ gelten, da $H$ ein Untergruppe ist.
       
     \item
       Gilt $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$, so gilt $H_1 \cup H_2 = H_2$ oder $H_1 \cup H_2 = H_1$, weshalb $H_1 \cup H_2$ dann eine Untergruppe ist.
       
-      Ist andererseits $H_1 \cup H_2$ eine Untergruppe, so ergibt sich aus den vorherigen Aufgabenteil mit $H = H_1 \cup H_2$ dass bereits $H_1 \cup H_2 \subseteq H_1$ oder $H_1 \cup H_2 \subseteq H_2$ gilt, und somit $H_2 \subseteq H_1$ oder $H_1 \subseteq H_2$.
+      Ist andererseits $H_1 \cup H_2$ eine Untergruppe, so ergibt sich aus den vorherigen Aussagenteil mit $H = H_1 \cup H_2$ dass bereits $H_1 \cup H_2 \subseteq H_1$ oder $H_1 \cup H_2 \subseteq H_2$ gilt, und somit $H_2 \subseteq H_1$ oder $H_1 \subseteq H_2$.
       
     \item
       Es sei $G = \Integer/2 \oplus \Integer/2$ und es seien
@@ -632,7 +636,7 @@
         \\
         H_3 &= \generate{ (0,1) } = \{ (0,0), (0,1) \}.
       \end{align*}
-      Dann gilt $H_i \subseteq H_j$ für alle $1 \leq i \neq j \leq n$ und $H_1 \cup H_2 \cup H_3 = G$.
+      Dann gilt $H_i \nsubseteq H_j$ für alle $1 \leq i \neq j \leq 3$, aber $H_1 \cup H_2 \cup H_3 = G$.
   \end{enumerate}
 \end{solution}
 
@@ -674,7 +678,7 @@
         = \ker \pi_1 \times \ker \pi_2
         = N_1 \times N_2
       \]
-      Somit ist $N_1 \times N_2$ eine normale Untergruppe von $G_1 \times G_2$ und $\pi$ induziert einen Isomorphismus
+      Somit ist $N_1 \times N_2$ eine normale Untergruppe von $G_1 \times G_2$, und $\pi$ induziert einen Isomorphismus
       \[
                 \overline{\pi}
         \colon  (G_1 \times G_2)/(N_1 \times N_2)
@@ -710,7 +714,7 @@
         \subseteq K_t
         =         G_1,
       \]
-      so dass für alle $j = 1, \dotsc, t$ die Untergruppe $N_{j-1}$ normal in $N_j$ ist, und der Quotient $N_j/N_{j-1}$ abelsch ist.
+      so dass für alle $j = 1, \dotsc, t$ die Untergruppe $K_{j-1}$ normal in $K_j$ ist, und der Quotient $K_j/K_{j-1}$ abelsch ist.
       Zusammen erhalten wir damit eine Kette von Untergruppen
       \[
                   1       \times 1
@@ -727,7 +731,7 @@
   Die Quotienten sind abelsch, denn für alle $i = 1, \dotsc, s$ gilt
   \[
           (N_i \times 1)/(N_{i-1} \times 1)
-    \cong (N_i/N_{i-1}) \times (1 \times 1)
+    \cong (N_i/N_{i-1}) \times (1 / 1)
     \cong (N_i/N_{i-1}) \times 1
     \cong N_i/N_{i-1}
   \]
@@ -810,8 +814,9 @@
       Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
       
     \item
+      Wir können o.B.d.A.\ davon ausgehen, dass $p < q$ gilt.
       Bezeichnet $n_q$ die Anzahl der $q$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_q \equiv 1 \pmod{q}$ und $n_q \mid p$.
-      Es folgt, dass $n_q  = 1$.
+      Es folgt, dass $n_q  = 1$, da $1 + q > p$.
       Die eindeutige $q$-Sylowgruppe $H$ von $G$ ist von Ordnung $q$, also zyklisch und somit abelsch.
       Nach gleicher Argumentation ist der Quotient $G/H$ mit $|G/H| = |G|/|H| = p$ abelsch.
       Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
@@ -829,7 +834,7 @@
     \item
       Bestimmen Sie die Anzahl der Elemente von $\Quad(p,n)$ in Abhängigkeit von $p$.
     \item
-      Entscheiden Sie, für welche $p$ und $n$ eine Untergruppe der additiven Gruppe von $\Field_{p^n}$ ist.
+      Entscheiden Sie, für welche $p$ und $n$ die Menge $\Quad(p,n)$ eine Untergruppe der additiven Gruppe von $\Field_{p^n}$ ist.
     \item
       Zeigen Sie dass $xy \in \Quad(p,n)$ für alle $x, y \in \Field_{p^n}$ mit $x, y \notin \Quad(p,n)$ gilt.
       (Das Produkt zweier Nicht-Quadrate ist also ein Quadrat.)
@@ -858,7 +863,7 @@
         = \{1,-1\}
       \]
       und somit $|{\ker q}| = 2$ (hier nutzen wir, dass $\ringchar \Field_{p^n} = p \neq 2$ und somit $1 \neq -1$).
-      Damit gilt auch $|{\im q}| = [\Field_{p^n}^\times : \ker q] = |\Field_{p^n}^\times|/|q| = (p^n - 1)/2$.
+      Deshalb gilt $|{\im q}| = [\Field_{p^n}^\times : \ker q] = |\Field_{p^n}^\times|/|\ker q| = (p^n - 1)/2$.
       Ingesamt gilt somit, dass
       \[
           |{\Quad(p,n)}| =
@@ -869,8 +874,8 @@
       \]
       
     \item
-      Im Falle $p = 2$ gilt, wie bereits zuvor gesehen, dass $\Quad(2,n) = \Field_{2^n}$, also handelt es sich um eine Untergruppe.
-      Im Falle $p \neq 2$ gilt $((p^n - 1)/2 + 1) \nmid p^n$, denn sonst würde
+      Im Falle $p = 2$ gilt, wie bereits zuvor gesehen, dass $\Quad(2,n) = \Field_{2^n}$, weshalb es sich um eine Untergruppe handelt.
+      Im Falle $p \neq 2$ gilt $(p^n - 1)/2 + 1 \nmid p^n$, denn sonst würde
       \begin{align*}
             &\, \left. \frac{p^n - 1}{2} + 1 \,\middle|\, p^n \right.
         \iff    \frac{p^n - 1}{2} + 1 \equiv 0 \pmod{p^n}
@@ -883,7 +888,7 @@
         \iff    p^n \mid 1
       \end{align*}
       gelten.
-      Somit  ist $|{\Quad(p,n)}|$ in diesem Fall kein Teiler von $|\Field_{p^n}|$, und deshalb $\Quad(p,n)$ keine Untergruppe von $\Field_{p^n}$.
+      Somit  ist $|{\Quad(p,n)}|$ in diesem Fall kein Teiler von $|\Field_{p^n}|$, und deshalb $\Quad(p,n)$ keine Untergruppe der additiven Gruppe von $\Field_{p^n}$.
       
     \item
       Für $x, y \notin \Quad(p,n)$ gelten inbesondere $x, y \neq 0$ und somit $x, y \in \Field_{p^n}^\times$.
