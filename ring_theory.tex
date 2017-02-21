@@ -1179,17 +1179,18 @@
       Für $\overline{x}, \overline{y} \in \pi(J)$ kann $x, y \in J$ gewählt werden;
       dann ist auch $x + y \in J$ und somit $\overline{x} + \overline{y} = \overline{x + y} \in \pi(J)$.
       Für $\overline{x} \in \pi(J)$ und $\overline{r} \in R/I$ kann $x \in J$ gewählt werden;
-      dann ist auch $r x \in J$ und somit $\overline{r} \overline{x} = \overline{r x} \in \pi(J)$.
+      dann ist auch $r x \in J$ und somit $\overline{r} \cdot \overline{x} = \overline{r x} \in \pi(J)$.
       
       Das zeigt, dass die beiden Abbildungen wohldefiniert sind.
       
-      Wegen der Surjektivität von $\pi$ gilt $\pi(\pi^{-1}(K)) = K$ für jede Teilmenge $K \subseteq R/I$, inbesondere also für die Ideale.
+      Wegen der Surjektivität von $\pi$ gilt $\pi(\pi^{-1}(K)) = K$ für jede Teilmenge $K \subseteq R/I$, inbesondere also für die Ideale in $R/I$.
       
       Für jedes Ideal $J \subseteq R$ gilt $\pi^{-1}(\pi(J)) = J + I$:
-      Es gilt $J \subseteq \pi^{-1}(\pi(J)) \subseteq J$ und wie bereits gezeigt auch $I \subseteq \pi^{-1}(\pi(J))$, und somit $I + J \subseteq \pi^{-1}(\pi(J))$.
-      Ist andererseits $x \in \pi^{-1}(\pi(J))$, so gibt es $d \in J$ mit $\overline{x} = \overline{y}$.
-      Dann ist $\overline{x-y} = \overline{x} - \overline{y} = 0$, somit $x - y \in I$ und deshalb $x = (x-y) + y \in I + J$.
-      Gilt bereits $I \subseteq J$, so ist $I + J = J$ und somit $\pi^{-1}(\pi(J)) = J$.
+      Es gilt $J \subseteq \pi^{-1}(\pi(J))$ und wie bereits gezeigt auch $I \subseteq \pi^{-1}(\pi(J))$, und somit $I + J \subseteq \pi^{-1}(\pi(J))$.
+      Ist andererseits $x \in \pi^{-1}(\pi(J))$, so gibt es $y \in J$ mit $\overline{x} = \overline{y}$.
+      Dann ist $\overline{x-y} = \overline{x} - \overline{y} = 0$, somit $x - y \in I$, und deshalb $x = (x-y) + y \in I + J$.
+      
+      Gilt nun bereits $I \subseteq J$, so ist $I + J = J$ und somit $\pi^{-1}(\pi(J)) = J$.
       
       Das zeigt, dass beide Abbildungen invers zueinander sind.
     \item
@@ -1201,7 +1202,7 @@
         = J/I
       \]
       für jedes Ideal $J \subseteq R$ mit $J \supseteq I$.
-      Inbsbesondere gilt deshalb nach dem dritten Isomorphiesatz, dass $R/J \cong (R/I)/(J/I) \cong (R/I)/\pi(J)$.
+      Insbesondere gilt deshalb nach dem dritten Isomorphiesatz, dass $R/J \cong (R/I)/(J/I) \cong (R/I)/\pi(J)$.
       Es gilt somit
       \begin{align*}
               \text{$J$ ist prim}
@@ -1231,13 +1232,14 @@
     \item
       Es sei $J \subseteq R/I$ ein Ideal.
       Dann gibt es ein Ideal $J' \subseteq R$ mit $J' \supseteq I$ und $J = J'/I$ (siehe Übung~\ref{question: lattice isomorphism for quotients}).
-      Das Ideal $J'$ ist endlich erzeugt, da $R$ noethersch ist, also $J' = (a_1, \dotsc, a_n)$.
-      Damit gilt $J = J/I = (\overline{a_1}, \dotsc, \overline{a_n})$, weshalb auch $J$ endlich erzeugt ist.
+      Das Ideal $J'$ ist endlich erzeugt, also $J' = (a_1, \dotsc, a_n)$, da $R$ noethersch ist.
+      Damit gilt $J = J'/I = (\overline{a_1}, \dotsc, \overline{a_n})$, weshalb auch $J$ endlich erzeugt ist.
       Der Ring $R/I$ ist also noethersch, da jedes seiner Ideale endlich erzeugt ist.
     \item
       Analog zum Beweis des ersten Aussagenteiles ergibt sich, dass jedes Ideal in $R/I$ ein Hauptideal ist.
       Damit $R/I$ ein Integritätsbereich ist, muss allerdings noch zusätzlich gefordert werden, dass $I$ ein Primideal ist.
-      Ist etwa $K$ ein Körper, so ist in $K[X]/(X^2)$ zwar jedes Ideal ein Hauptideal, aber $0 \neq \overline{X} \in K[X]/(X^2)$ ist nilpotent, weshalb $K[X]/(X^2)$ kein Integritätsbereich, und somit auch kein Hauptidealring ist.
+      
+      Ist etwa $K$ ein Körper, so ist in dem Ring $K[X]/(X^2)$ zwar jedes Ideal ein Hauptideal, aber $0 \neq \overline{X} \in K[X]/(X^2)$ ist nilpotent, weshalb $K[X]/(X^2)$ kein Integritätsbereich, und somit auch kein Hauptidealring ist.
   \end{enumerate}
 \end{solution}
 
@@ -1246,10 +1248,10 @@
   \label{question: unit group of quotients}
   \begin{enumerate}
     \item
-      Zeigen Sie für $n \in \Integer$, dass $\overline{q} \in \Integer/n$ genau dann eine Einheit ist, wenn $n$ und $q$ teilerfremd sind.
+      Zeigen Sie für $n \in \Integer$ und $q \in \Integer$, dass $\overline{q} \in \Integer/n$ genau dann eine Einheit ist, wenn $n$ und $q$ teilerfremd sind.
     \item
       Zeigen Sie allgemeiner:
-      Ist $R$ ein kommutativer Ring und $I \subseteq R$ ein Ideal, so ist $\overline{x} \in R/I$ genau dann eine Einheit, wenn $(x) + I = R$.
+      Ist $R$ ein kommutativer Ring, $I \subseteq R$ ein Ideal und $x \in R$, so ist $\overline{x} \in R/I$ genau dann eine Einheit, wenn $(x) + I = R$.
   \end{enumerate}
 \end{question}
 
@@ -1296,32 +1298,33 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Es sei $I \coloneqq \{r \in R \mid r/1 \in J\}$.
+      Es sei $I \coloneqq \{x \in R \mid x/1 \in J\}$.
       Dies ist ein Ideal in $I$:
       
       Es gilt $0 \in I$, da $0/1 \in J$.
-      Für $r_1, r_2 \in I$ gelten $r_1/1, r_2/1 \in J$ und somit auch $(r_1 + r_2)/1 = r_1/1 + r_2/1 \in J$, also $r_1 + r_2 \in I$.
-      Für $r \in I$ und jedes $r' \in R$ gilt $r/1 \in J$ und somit auch $(r' r)/1 = (r'/1)(r/1) \in J$, also $r' r \in I$.
+      Für $x_1, x_2 \in I$ gelten $x_1/1, x_2/1 \in J$ und somit auch $(x_1 + x_2)/1 = x_1/1 + x_2/1 \in J$, also $x_1 + x_2 \in I$.
+      Für $x \in I$ und jedes $r \in R$ gilt $x/1 \in J$ und somit auch $(r x)/1 = (r/1)(x/1) \in J$, also $r x \in I$.
       Insgesamt zeigt dies, dass $I$ ein Ideal ist.
       
       Alternativ betrachte man den kanonischen Ringhomomorphismus $i \colon R \to R_S$, $r \mapsto r/1$.
-      Für diesen gilt $I = i^{-1}(J)$, also ist $I$ ein Ideal (siehe Übung~\ref{question: preimages of ideals}).
+      Für diesen gilt $I = i^{-1}(J)$, also ist $I$ ein Ideal in $R$ (siehe Übung~\ref{question: preimages of ideals}).
       
-      Für jedes $r \in I$ und $s \in S$ gilt $r/1 \in J$ und somit auch $r/s = (1/s)(r/1) \in J$, weshalb $I_S \subseteq J$.
-      Für jedes $r/s \in J$ gilt $r/1 = (s/1)(r/s) \in J$ und somit auch $r \in I$, also $r/s \in I_S$.
+      Für jedes $x \in I$ und $s \in S$ gilt $x/1 \in J$ und somit auch $x/s = (1/s)(x/1) \in J$, weshalb $I_S \subseteq J$ gilt.
+      Für jedes $x/s \in J$ gilt $x/1 = (s/1)(x/s) \in J$ und somit $x \in I$, also auch $x/s \in I_S$.
       Deshalb gilt auch $J \subseteq I_S$.
       
     \item
-      Es gilt $a_i \in I$ für alle $i \in I$, also $a_i/1 \in I_S$ für alle $i \in I$ und deshalb $(a_i/1 \mid i \in I) \subseteq I_S$.
-      Ist andererseits $r/s \in I_S$ mit $r \in R$, so gilt $r = \sum_{i \in I} r_i a_i$ mit $r_i = 0$ für fast alle $i \in I$.
-      Dann gilt $r/s = \sum_{i \in I} (r_i/s)(a_i/1) \in (a_i \mid i \in I)$.
+      Für alle $i \in I$ gilt wegen $a_i \in I$ auch $a_i/1 \in I_S$.
+      Deshalb gilt $(a_i/1 \mid i \in I) \subseteq I_S$.
+      Ist andererseits $x/s \in I_S$ mit $x \in I$, so gibt es eine Linearkombination $x = \sum_{i \in I} r_i a_i$ mit $r_i = 0$ für fast alle $i \in I$.
+      Deshalb gilt $x/s = \sum_{i \in I} (r_i/s)(a_i/1) \in (a_i \mid i \in I)$.
       Also gilt auch $I_S \subseteq (a_i/1 \mid i \in I)$.
     
     \item
-      Ist $J \subseteq R_S$ ein Ideal, so gilt nach dem ersten Aussagenteil $J = I_S$ für ein Ideal $I \subseteq J$.
-      Das Ideal $I$ ist endlich erzeugt, da $R$ noethersch ist, also $I = (a_1, \dotsc, a_n)$.
+      Ist $J \subseteq R_S$ ein Ideal, so gilt nach dem ersten Aussagenteil $J = I_S$ für ein Ideal $I \subseteq R$.
+      Das Ideal $I$ ist endlich erzeugt, also $I = (a_1, \dotsc, a_n)$, da $R$ noethersch ist.
       Nach dem zweiten Aussagenteil gilt deshalb $J = I_S = (a_1/1, \dotsc, a_n/1)$, weshalb $J$ endlich erzeugt.
-      Es ist also jedes Ideal in $R_S$ endlich erzeugt, also $R_S$ noethersch.
+      Es ist also jedes Ideal in $R_S$ endlich erzeugt, und $R_S$ somit noethersch.
     
     \item
       Gilt $0 \in S$, so ist $R_S = 0$ kein Hauptidealring.
@@ -1338,7 +1341,9 @@
   Es sei $R$ ein kommutativer Ring und $I \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
-      Definieren Sie das Radikal $\radicalideal{I}$ und zeigen Sie, dass $\radicalideal{I}$ ein Ideal mit $I \subseteq \sqrt{I}$ ist.
+      Definieren Sie das Radikal $\radicalideal{I}$.
+    \item
+      Zeigen Sie, dass $\radicalideal{I}$ ein Ideal ist, und dass $I \subseteq \sqrt{I}$ gilt.
     \item
       Zeigen Sie, dass $\radicalideal{\radicalideal{I}} = \radicalideal{I}$.
     \item
@@ -1346,12 +1351,12 @@
     \item
       Zeigen Sie für jedes weitere Ideal $J \subseteq R$ die Gleichheit $\radicalideal{I \cap J} = \radicalideal{I} \cap \radicalideal{J}$.
   \end{enumerate}
-  Ein Ideal $I$ ist ein \emph{Radikalideal}, wenn $I = \radicalideal{J}$ für ein Ideal $J \subseteq I$.
+  Das Ideal $I$ ist ein \emph{Radikalideal}, wenn es ein Ideal $J \subseteq R$ mit $I = \radicalideal{J}$ gibt.
   \begin{enumerate}[resume]
     \item
-      Zeigen Sie, dass $I$ genau dann ein Radikalideal ist, wenn $\radicalideal{I} = I$.
+      Zeigen Sie, dass $I$ genau dann ein Radikalideal ist, wenn $\radicalideal{I} = I$ gilt.
   \end{enumerate}
-  Ein Ring $S$ heißt \emph{reduziert}, falls $0$ das einzige nilpotente Element von $S$ ist.
+  Ein Ring $S$ heißt \emph{reduziert}, falls $0$ das einzige nilpotente Element in $S$ ist.
   \begin{enumerate}[resume]
     \item
       Zeigen Sie, dass $R/I$ genau dann reduziert ist, wenn $I$ ein Radikalideal ist.
@@ -1364,15 +1369,12 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Das Radikal $\radicalideal{I}$ ist als
-      \[
-          \radicalideal{I}
-        = \{ r \in R \mid \text{es gibt $n \in \Natural$ mit $r^n \in I$} \}
-      \]
-      definiert.
-      Für alle $x \in I$ gilt $x^1 = x \in I$, weshalb $I \subseteq \radicalideal{I}$.
+      Das Radikal $\radicalideal{I}$ ist als $\radicalideal{I} = \{ x \in R \mid \text{es gibt $n \in \Natural$ mit $x^n \in I$} \}$ definiert.
       
-      Insbesondere ist somit $0 \in \radicalideal{I}$, da $0 \in I$.
+    \item
+      Für alle $x \in I$ gilt $x^1 = x \in I$, weshalb $I \subseteq \radicalideal{I}$ gilt.
+      
+      Insbesondere ist somit $0 \in \radicalideal{I}$, da $0 \in I$ gilt.
       Für $x, y \in \radicalideal{I}$ gibt es $n, m \in \Natural$ mit $x^n, y^m \in I$.
       Für alle $k = 0, \dotsc, n+m$ gilt deshalb $x^k \in I$ oder $y^{n+m-k} \in I$, und somit auch
       \[
@@ -1380,50 +1382,42 @@
         = \sum_{k=0}^{n+m} \binom{n+m}{k} x^k y^{n+m-k} \in I.
       \]
       Deshalb ist auch $x + y \in \radicalideal{I}$.
-      Für $r \in R$ und $x \in I$ gibt es $n \in \Natural$ mit $x^n \in I$, weshalb auch
-      \[
-        (r x)^n = r^n x^n \in I.
-      \]
+      Für $r \in R$ und $x \in \radicalideal{I}$ gibt es $n \in \Natural$ mit $x^n \in I$, womit auch $(r x)^n = r^n x^n \in I$ gilt.
       Somit ist auch $r x \in \radicalideal{I}$.
       
     \item
       Wir wissen bereits, dass $\radicalideal{I} \subseteq \radicalideal{\radicalideal{I}}$.
       Für $x \in \radicalideal{\radicalideal{I}}$ gibt es $n \in \Natural$ mit $x^n \in \radicalideal{I}$, und somit auch noch $m \in \Natural$ mit $(x^n)^m \in I$.
-      Damit ist $x^{nm} \in I$, weshalb auch $\radicalideal{\radicalideal{I}} \subseteq \radicalideal{I}$.
+      Somit gilt $x^{nm} \in I$, also $x \in \radicalideal{I}$, weshalb auch $\radicalideal{\radicalideal{I}} \subseteq \radicalideal{I}$ gilt.
     
     \item
-      $I$ ist genau dann ein echtes Ideal, wenn $1 \notin I$.
-      Da $1^n = 1$ für alle $n \in \Natural$ ist genau dann $1 \notin I$, wenn $1 \notin \radicalideal{I}$.
+      $I$ ist genau dann ein echtes Ideal, wenn $1 \notin I$ gilt.
+      Für alle $n \in \Natural$ gilt $1^n = 1$, weshalb genau dann $1 \notin I$ gilt, wenn $1 \notin \radicalideal{I}$ gilt.
       Dies ist wiederum äquivalent dazu, dass $\radicalideal{I}$ ein echtes Ideal ist.
     
     \item
-      Aus den Inklusionen $I \cap J \subseteq I, J$ folgen die Inklusionen $\radicalideal{I \cap J} \subseteq \radicalideal{I}, \radicalideal{J}$ und damit die Inklusion $\radicalideal{I \cap J} \subseteq \radicalideal{I} \cap \radicalideal{J}$.
+      Aus den Inklusionen $I \cap J \subseteq I, J$ folgen die Inklusionen $\radicalideal{I \cap J} \subseteq \radicalideal{I}, \radicalideal{J}$ und hieraus die Inklusion $\radicalideal{I \cap J} \subseteq \radicalideal{I} \cap \radicalideal{J}$.
       
       Ist andererseits $x \in \radicalideal{I} \cap \radicalideal{J}$, so gibt es $n, m \in \Natural$ mit $x^n \in I$ und $x^m \in J$.
-      Dann ist $x^{n+m} = x^n x^m \in I \cap J$ (es gilt $x^n x^m \in I$ da $x^n \in I$, und $x^n x^m \in J$ da $x^m \in J$) und deshalb $x \in \radicalideal{I \cap J}$.
+      Deshalb gilt $x^{n+m} = x^n x^m \in I \cap J$ (es gilt $x^n x^m \in I$ da $x^n \in I$, und $x^n x^m \in J$ da $x^m \in J$) und somit $x \in \radicalideal{I \cap J}$.
     
     \item
       Gilt $I = \radicalideal{I}$ so erfüllt $I$ die definierende Eigenschaft eines Radikalideals (mit $J = I$).
-      Ist andererseits $I = \radicalideal{J}$ für ein Ideal $J \subseteq R$, so gilt
-      \[
-          \radicalideal{I}
-        = \radicalideal{\radicalideal{J}}
-        = \radicalideal{J}
-        = I.
-      \]
-
+      Ist andererseits $I = \radicalideal{J}$ für ein beliebiges Ideal $J \subseteq R$, so gilt $\radicalideal{I} = \radicalideal{\radicalideal{J}} = \radicalideal{J} = I$.
+      
     \item
-      Der Quotient $R/I$ ist genau reduziert, wenn
+      Der Quotient $R/I$ ist genau reduziert, wenn die Implikation
       \begin{equation}
         \label{eqn: reduced first equation}
         \text{es gibt $n \in \Natural$ mit $\overline{x}^n = 0$}
         \implies
         \overline{x} = 0
         \qquad
-        \text{für alle $x \in R$}.
+        \text{für alle $x \in R$}
       \end{equation}
+      gilt.
       Dabei gilt $\overline{x}^n = \overline{x^n}$ für alle $x \in R$ und $n \in \Natural$, und für alle $y \in R$ gilt genau dann $\overline{y} = 0$, wenn $y \in I$.
-      Daher ist \eqref{eqn: reduced first equation} äquivalent dazu, dass
+      Daher ist die Implikation \eqref{eqn: reduced first equation} äquivalent zu der Implikation
       \begin{equation}
         \label{eqn: reduced second equation}
         \text{es gibt $n \in \Natural$ mit $x^n \in I$}
@@ -1441,15 +1435,20 @@
         \text{für alle $x \in R$}.
       \]
       Dies bedeutet gerade, dass $\radicalideal{I} \subseteq I$.
-      Da $I \subseteq \radicalideal{I}$ ist dies äquivalent dazu, dass $I = \sqrt{I}$, dass also $I$ ein Radikalideal ist.
+      Da stets $I \subseteq \radicalideal{I}$ gilt, ist dies äquivalent dazu, dass $I = \sqrt{I}$, dass also $I$ ein Radikalideal ist.
       
     \item
-      Der Quotient $R/\pideal$ ist ein Integritätsbereich, da $\pideal$ ein Primideal ist.
-      Nach dem vorherigen Aufgabenteil genügt es zu zeigen, dass jeder Integritätsbereich $S$ reduziert ist.
-      Dies folgt direkt daraus, dass für jedes $x \in S$ mit $x^n = 0$ aus der Nullteilerfreiheit von $S$ folgt, dass $x = 0$.
-      
-      Alternativ lässt sich die Aussage auch direkt zeigen:
-      Für $x \in R$ und $n \geq 1$ mit $x^n \in \pideal$ gilt $x \dotsm x \in \pideal$, und da $\pideal$ prim ist, muss bereits einer der Faktoren in $\pideal$ enthalten sein.
+      Wir geben zwei mögliche (äquivalente) Argumentation an:
+      \begin{itemize}
+        \item
+          Für $x \in \radicalideal{\pideal}$ gibt es ein $n \geq 1$ mit $x^n \in \pideal$.
+          Da $\pideal$ ein Primideal ist, folgt aus $x^n \in \pideal$, dass bereits $x \in \pideal$ gilt.
+          Also gilt $\radicalideal{\pideal} \subseteq \pideal$ und somit $\pideal = \radicalideal{\pideal}$.
+        \item
+          Der Quotient $R/\pideal$ ist ein Integritätsbereich, da $\pideal$ ein Primideal ist.
+          Für jedes $x \in R/\pideal$ mit $x^n = 0$ folgt aus der Nullteilerfreiheit von $R/\pideal$, dass bereits $x = 0$ gilt.
+          Somit ist der Ring $R/\pideal$ reduziert, und deshalb $\pideal$ ein Radikalideal in $R$.
+      \end{itemize}
   \end{enumerate}
 \end{solution}
 
@@ -1469,21 +1468,19 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Wäre $(X,Y) = (f)$ für eine $f \in K[X,Y]$, so wäre $f \mid X$ und $f \mid Y$, also $f$ ein gemeinsamer Teiler von $X$ und $Y$ (sogar schon ein größter gemeinsamer Teiler, siehe Übung~\ref{question: greatest common divisor via generated ideal}).
-      Da $X$ und $Y$ teilerfremd sind, muss $f$ bereits eine Einheit in $K[X,Y]$ sein;
-      dann gilt aber $(X,Y) = (1) = K[X,Y]$, was nicht gilt (denn $K[X,Y]/(X,Y) \cong K$).
+      Wäre $(X,Y) = (f)$ für ein $f \in K[X,Y]$, so würde $f \mid X$ und $f \mid Y$ gelten, also $f$ ein gemeinsamer Teiler von $X$ und $Y$ sein (sogar schon ein größter gemeinsamer Teiler, siehe Übung~\ref{question: greatest common divisor via generated ideal}).
+      Da $X$ und $Y$ teilerfremd sind, müsste $f$ bereits eine Einheit in $K[X,Y]$ sein;
+      dann würde aber $(X,Y) = (f) = (1) = K[X,Y]$ gelten, was nicht der Fall ist (denn $K[X,Y]/(X,Y) \cong K \neq 0$).
     \item
       Es sei $R \coloneqq K[X_i \mid i = 1, 2, 3, \dotsc]$.
-      Wir nehmen an, dass $I \coloneqq (X_i \mid i \in \Natural)$ endlich erzeugt von $f_1, \dotsc, f_t \in I$ erzeugt wird.
-      Man bemerke, dass jedes der Polynome in $R$ nur endlich viele Variablen enthält, und dass $I$ aus all jenen Polynomen besteht, deren konstater Term verschwindet.
-      Es folgt, dass $I = \bigcup_{n \geq 1} (X_1, X_2, \dotsc, X_n)$;
-      inbesondere gibt es ein $N \geq 1$ mit $f_1, \dotsc, f_t \in (X_1, \dotsc, X_N)$.
+      Wir nehmen an, dass $I \coloneqq (X_i \mid i \in \Natural)$ von $f_1, \dotsc, f_t \in I$ erzeugt wird.
+      Es gilt $I = \bigcup_{n \geq 1} (X_1, X_2, \dotsc, X_n)$, weshalb es ein $N \geq 1$ mit $f_1, \dotsc, f_t \in (X_1, \dotsc, X_N)$ gibt.
       Es gilt also
       \[
         I = (f_1, \dotsc, f_t) \subseteq (X_1, \dotsc, X_N) \subseteq I
       \]
       und somit $I = (X_1, \dotsc, X_N)$.
-      Damit gilt aber auch
+      Deshalb würde
       \begin{align*}
                 K
          \cong  R/I
@@ -1493,7 +1490,7 @@
          \cong  K[X_1, X_2, X_3, \dotsc]
          =      R,
       \end{align*}
-      aber $R$ ist kein Körper.
+      gelten, aber $R$ ist kein Körper.
   \end{enumerate}
 \end{solution}
 
@@ -1506,37 +1503,40 @@
 
 \begin{solution}
   Als euklidischer Ring ist $R$ insbesondere ein Integritätsbereich.
-  Es sei $g \colon R \to \Natural$ die Gradabbildung und $I \subseteq R$ ein Ideal.
-  Ist $I = 0$ so ist $I = (0)$, wir betrachten daher den Fall $I \neq 0$.
+  
+  Es sei $g \setminus \{0\} \colon R \to \Natural$ die Gradabbildung und $I \subseteq R$ ein Ideal.
+  Im Fall $I = 0$ gilt $I = (0)$, wir betrachten daher im Folgenden nur den Fall $I \neq 0$.
+  
   Dann gibt es ein bezüglich $g$ minimales $a \in I$, d.h.\ $a \in I$ mit $a \neq 0$ und $g(a) \leq g(x)$ für alle $x \in I$ mit $x \neq 0$.
-  Es gilt $(a) \subseteq I$ und es handelt sich bereits um Gleichheit:
-  Ist $x \in I$ so gibt es $b, r \in R$ mit $x = ab + r$, und entweder $r = 0$ oder $g(r) < g(a)$.
-  Da $r = x - ab \in I$ kann $g(r) < g(a)$ wegen der Minimalität von $a$ nicht eintretten.
-  Also ist $r = 0$ und somit $x = ab \in (a)$.
+  Zum einen gilt $(a) \subseteq I$.
+  Für $x \in I$ gibt es andererseits $q, r \in R$ mit $x = qa + r$, so dass entweder $r = 0$ oder $g(r) < g(a)$ gilt.
+  Da $r = x - qa \in I$ gilt, kann der Fall $g(r) < g(a)$ wegen der Minimalität von $a$ nicht eintreten.
+  Also ist $r = 0$ und somit $x = qa \in (a)$.
+  Das zeigt, dass auch $I \subseteq (a)$ gilt, und somit insgesamt $I = (a)$.
 \end{solution}
 
 
 \begin{question}[subtitle = Primideale in Hauptidearingen]
   Es sei $R$ ein Hauptidealring.
-  Zeigen Sie, dass jedes Primideal $\pideal$ in $R$ mit $\pideal \neq 0$ bereits ein maximales Ideal ist.
+  Zeigen Sie, dass jedes Primideal $\mideal \subseteq R$ mit $\mideal \neq 0$ bereits ein maximales Ideal ist.
 \end{question}
 
 
 \begin{solution}
-  Es sei $\mideal \subseteq R$ ein Primideal und $p \in R$ mit $\mideal = (p)$, und wegen $\pideal \neq 0$ gilt $p \neq 0$;
-  inbesondere ist $p$ prim.
+  Es sei $p \in R$ mit $\mideal = (p)$.
+  Wegen $\mideal \neq 0$ gilt dabei $p \neq 0$, weshalb $p$ prim ist.
   Es sei $\aideal \subseteq R$ ein Ideal mit $\mideal \subseteq \aideal$ und $a \in R$ mit $\aideal = (a)$.
   Dass $(p) \subseteq (a)$ gilt, ist äquivalent dazu, dass $a \mid p$ gilt;
   es gibt also $b \in R$ mit $p = ab$.
-  Da $p$ prim ist, gilt bereits $p \mid a$ oder $p \mid b$.
+  Da $p$ prim ist, gilt dabei bereits $p \mid a$ oder $p \mid b$.
   
-  Gilt $p \mid b$, so gibt es $c \in R$ mit $b = pc$.
-  Dann gilt $p = ab = abp$ und somit $1 = ab$, da $R$ ein Integritätsbereich ist.
+  Gilt $p \mid b$, so gibt es $c \in R$ mit $b = cp$.
+  Dann gilt $p = ab = acp$ und somit $1 = ac$, da $R$ ein Integritätsbereich ist.
   In diesem Fall ist also $a$ eine Einheit und somit $\aideal = (a) = R$ kein echtes Ideal.
   
-  Gilt andererseits $p \mid a$, so ist $\aideal = (a) \subseteq (p) = \mideal$, und somit bereits $\mideal = \aideal$.
+  Gilt andererseits $p \mid a$, so gilt $\aideal = (a) \subseteq (p) = \mideal$, und somit bereits $\mideal = \aideal$.
   
-  Ingesamt zeigt dies, dass es kein echtes Ideal $\bideal \subsetneq R$ gibt, so dass $\mideal \subsetneq \bideal$.
+  Ingesamt zeigt dies, dass es kein echtes Zwischenideal $\mideal \subsetneq \aideal \subsetneq R$ gibt.
   Da $\mideal$ als Primideal inbesondere ein echtes Ideal ist, folgt daraus, dass $\mideal$ ein maximales Ideal ist.
 \end{solution}
 
@@ -1549,92 +1549,52 @@
 
 
 \begin{solution}
-  Wir geben zwei mögliche Beweise:  
-  \begin{enumerate}
-    \item
-      Es sei $a \in K$ mit $a \neq 0$.
-      Das Ideal $(a, X)$ ist nach Annahme ein Hauptideal.
-      Also gibt es ein Polynom $f \in K[X]$ mit
-      \begin{equation}
-        \label{eqn: ideal is principal}
-        (a, X) = (f).
-      \end{equation}
-      Wegen Gleichung \eqref{eqn: ideal is principal} gilt $f \mid a$, d.h.\ es gibt $g \in K[X]$ mit $fg = a$.
-      Entscheident ist nun die folgende Beobachtung:
-      
-      \begin{claim}
-        \label{claim: degree is additive}
-        Die übliche Gradabbildung $\deg \colon K[X] \to \Natural$ ist additiv.
-      \end{claim}
-      \begin{proof}
-        As Hauptidealring ist $K[X]$ inbesondere ein Integritätsbereich.
-        Also ist auch der Unterring $K \subseteq K[X]$ ein Integritätsbereich, woraus die Aussage folgt.
-      \end{proof}
-      Aus Behauptung~\ref{claim: degree is additive} erhalten wir, dass
-      \[
-          0
-        = \deg(a)
-        = \deg(fg)
-        = \deg(f) + \deg(g).
-      \]
-      Es muss $\deg(f) = \deg(g) = 0$ gelten und somit bereits $f, g \in K$.
-      
-      Da $f \in (a, X)$ gibt es $p, q \in K[X]$ mit $f = a p + X q$.
-      Da $f \in K$ und $\deg(X q) \geq 1$ ergibt sich durch Vergleich des $0$-ten Koeffizienten, dass $f = f_0 = a_0 p_0 = a p_0$.
-      Deshalb gilt bereits $f = a p_0 \in (a)$.
-      Wir haben also
-      \[
-                  (a, X)
-        =         (f)
-        \subseteq (a)
-        \subseteq (a, X)
-      \]
-      und somit $(a, X) = (a)$.
-      
-      Es gibt deshalb $h \in K[X]$ mit $X = a h$.
-      Durch Gradvergleich erhalten wir, dass
-      \[
-          1
-        = \deg(X)
-        = \deg(a h)
-        = \deg(a) + \deg(h)
-        = 0 + \deg(h)
-        = \deg(h)
-      \]
-      und deshalb $h(X) = b_1 X + b_0$ für $b_1, b_0 \in K$.
-      Durch Koeffizientenvergleich erhalten wir aus der Gleichung
-      \[
-          X
-        = a h(X)
-        = a (b_1 X + b_0)
-        = a b_1 X + a b_0,
-      \]
-      dass $a b_1 = 1$.
-      Das zeigt, dass $a \in A$ eine Einheit ist.
-      
-    \item
-      Der obige Beweis lässt sich leicht ändern.
-      Wir zeigen, dass das Ideal $(X)$ maximal ist.
-      Ansonsonsten gebe es $a \in K[X]$, so dass $(X) \subsetneq (a, X) \subsetneq K[X]$.
-      Da $(a, X) = (a_0, X)$ können o.B.d.A.\ davon ausgehen, dass $a \in K$.
-      Wie zuvor ergibt sich, dass $(a, X) = (X)$, was $(X) \subsetneq (a,X)$ widerspricht.
-      Also ist $(X)$ maximal, und $K \cong K[X]/(X)$ somit ein Körper.
-  \end{enumerate}
-  Der erste Beweis hat den Vorteil, dass er für einen beliebigen kommutativen Ring $R$ zeigt, dass $(a, X)$ für $a \in R$ genau dann ein Hauptidealring ist, wenn $a \in R^\times$.
-  Somit ist beispielsweise $(2, X) \subseteq \Integer[X]$ kein Hauptideal.
-\end{solution}
+  Wir bemerken zunächst, dass $K \neq 0$ gilt, da $0[X] = 0$ kein Hauptidealring ist.
+  Wir bemerken außerdem das Folgende:
+  
+  \begin{claim*}
+    \label{claim: degree is additive}
+    Die übliche Gradabbildung $\deg \colon K[X] \to \{-\infty\} \cup \Natural$ ist additiv.
+  \end{claim*}
+  \begin{proof}
+    As Hauptidealring ist $K[X]$ inbesondere ein Integritätsbereich.
+    Also ist auch der Unterring $K \subseteq K[X]$ ein Integritätsbereich, woraus die Aussage folgt.
+  \end{proof}
 
+  Es sei $a \in K$ mit $a \neq 0$.
+  Das Ideal $(a, X)$ ist nach Annahme ein Hauptideal.
+  Also gibt es ein Polynom $f \in K[X]$ mit $(a,X) = (f)$.
+  
+  Insbesondere gilt $f \mid a$.
+  Aus $\deg a = 0$ ergibt sich mit der Additivität des Grades, dass auch $\deg f = 0$ gilt, also $f \in K$ mit $f \neq 0$.
+  
+  Außerdem gilt $f \mid X$.
+  Wegen $f \in K$ erhalten wir aus der Additivität des Grades, dass es $bX+c \in K[X]$ mit $b \neq 0$ gibt, so dass $X = f \cdot (bX+c)$ gilt.
+  Dann gilt $1 = fb$, weshalb $f$ eine Einheit ist.
+  
+  Somit gilt $(a,X) = (f) = (1) = K[X]$.
+  Inbesondere gibt es $g, h \in K[X]$ mit $1 = ag + Xh$.
+  Somit gilt $1 = a g_0$, weshalb $a$ eine Einheit in $K$ ist.
+  
+  Das zeigt, dass jedes $a \in K$ mit $a \neq 0$ eine Einheit in $K$ ist;
+  also ist $K$ ein Körper.
+  
+  \begin{remark*}
+    Die obige Argumentation zeigt für einen beliebigen kommutativen Ring $R$, dass $(a, X)$ für $a \in R$ genau dann ein Hauptideal ist, wenn $a \in R^\times$ gilt.
+    Somit ist beispielsweise $(2, X) \subseteq \Integer[X]$ kein Hauptideal.
+  \end{remark*}
+\end{solution}
 
 
 \begin{question}[subtitle = Nilpotente zu Einheiten]
   Es sei $R$ ein kommutativer Ring.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 - n$ eine Einheit ist, und geben Sie $(1 - n)^{-1}$ an.
+      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 - n$ eine Einheit ist.
     \item
-      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 + n$ eine Einheit ist, und geben Sie $(1 + n)^{-1}$ an.
+      Zeigen Sie, dass für nilpotentes $n \in R$ das Element $1 + n$ eine Einheit ist.
     \item
-      Zeigen Sie, dass für nilpotentes $n \in R$ und jede Einheit $e \in R^\times$ das Element $e + n$ eine Einheit ist, und geben Sie $(e + n)^{-1}$ an.
+      Zeigen Sie, dass für nilpotentes $n \in R$ und jede Einheit $e \in R^\times$ das Element $e + n$ eine Einheit ist.
   \end{enumerate}
 \end{question}
 
@@ -1642,14 +1602,14 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Für $k \geq 0$ mit $n^k = 0$ gilt $(1 - n)(1 + n + \dotsb + n^{k-1}) = 1 - n^k = 1$.
+      Für $k \geq 1$ mit $n^k = 0$ gilt $(1 - n)(1 + n + \dotsb + n^{k-1}) = 1 - n^k = 1$.
       Also ist $1 - n$ eine Einheit mit $(1-n)^{-1} = \sum_{p=0}^{k-1} n^p = \sum_{p=0}^\infty n^p$.
     \item
       Da $n$ nilpotent ist, gilt dies auch für $-n$.
       Nach dem vorherigen Aufgabenteil ist deshalb $1 + n = 1 - (-n)$ eine Einheit mit $(1 + n)^{-1} = (1 - (-n))^{-1} = \sum_{p=0}^\infty (-1)^p n^p$.
     \item
       Es gilt $e + n = e(1 + e^{-1} n)$, und da $n$ nilpotent ist, gilt dies auch für $e^{-1} n$.
-      Nach dem vorherigen Teil ist $1 + e^{-1} n$ eine Einheit, und somit $e + n$ als Produkt zweier Einheiten ebenfalls eine Einheit; ferner gilt
+      Nach dem vorherigen Aussagenteil ist $1 + e^{-1} n$ eine Einheit, und somit $e + n$ als Produkt zweier Einheiten ebenfalls eine Einheit; ferner gilt
       \[
           (e + n)^{-1}
         = e^{-1} (1 + e^{-1} n)^{-1}
@@ -1682,7 +1642,7 @@
     = - \sum_{j=0}^{i-1} f_{i-j} g_j + \sum_{j=0}^{i-1} f_{i-j} g_j
     = 0
   \]
-  für alle $i \geq 1$, und somit $fg = 1$.
+  für alle $i \geq 1$, und somit insgesamt $fg = 1$.
 \end{solution}
 
 
@@ -1694,18 +1654,18 @@
 \begin{solution}
   Ein Element $z \in \Integer[i]$ ist genau dann eine Einheit in $\Integer[i]$, wenn $z \neq 0$ und $z^{-1} \in \Integer[i]$ (hier bezeichnet $z^{-1} = 1/z$ das Inverse von $z$ in $\Complex$).
   Für die Elemente $1, -1, i, -i \in \Integer[i]$ ist dies erfüllt.
-  Ist $z \in \Integer[i]$ mit $z \neq 0$ und $z^{-1} \in \Integer[i]$, so ist
+  Ist $z \in \Integer[i]$ mit $z \neq 0$ und $z^{-1} \in \Integer[i]$, so gilt
   \begin{equation}
     \label{eqn: units in the gaussian integers}
       1
     = |1|^2
     = |z z^{-1}|^2
-    = |z|^2 |z^{-1}|.
+    = |z|^2 |z^{-1}|^2.
   \end{equation}
-  Für alle $w \in \Integer[i]$ mit $w = a + ib$ gilt $a, b \in \Integer$ und deshalb $|w|^2 = a^2 + b^2 \in \Integer$.
+  Für alle $w \in \Integer[i]$ gilt $w = a + ib$ mit $a, b \in \Integer$, und deshalb $|w|^2 = a^2 + b^2 \in \Integer$.
   In \eqref{eqn: units in the gaussian integers} gilt deshalb, dass $|z|^2, |z^{-1}|^2 \in \Integer$, und somit $|z|^2 \in \Integer^\times = \{1,-1\}$.
   Also gilt $|z|^2 = 1$.
-  Ist $z = a + ib$ mit $a,b \in \Integer$ so ist also $a^2 + b^2 = 1$ und somit entweder $a = 0$ und $b = \pm 1$, oder $a = \pm 1$ und $b = 0$.
+  Ist $z = a + ib$ mit $a,b \in \Integer$, so ist also $a^2 + b^2 = 1$, und somit entweder $a = 0$ und $b = \pm 1$, oder $a = \pm 1$ und $b = 0$.
   Es ist also $z \in \{1, -1, i, -i\}$.
   Insgesamt zeigt dies, dass $\Integer[i]^\times = \{1, -1, i, -i\}$.
 \end{solution}
@@ -1717,19 +1677,20 @@
 \end{question}
 
 
-\begin{question}
+\begin{solution}
   Wir nehmen an, dass $fg$ nicht primitiv ist.
   Dann gibt es ein Primelement $p \in R$, dass alle Koeffizienten von $fg$ teilt.
   Für den von der kanonischen Projektion $R \to R/(p)$, $r \mapsto \overline{r}$ induzierten Ringhomomorphismus $\varphi \colon R[T] \to (R/(p))[T]$ gilt dann $0 = \varphi(fg) = \varphi(f) \varphi(g)$.
-  Der Quotient $R/(p)$ ist ein Integritätsbereich, da $p$ prim ist, und $(R/(p))[T]$ somit ebenfalls.
-  Also muss bereits $\varphi(f) = 0$ oder $\varphi(g) = 0$.
+  Der Quotient $R/(p)$ ist ein Integritätsbereich, da $p$ prim ist.
+  Deshalb ist auch $(R/(p))[T]$ ein Integritätsbereich.
+  Aus $0 = \varphi(f) \varphi(g)$ folgt deshalb, dass $\varphi(f) = 0$ oder $\varphi(g) = 0$ gilt.
   Dann sind aber alle Koeffizienten von $f$ durch $p$ teilbar, oder alle Koeffizienten von $g$ durch $p$ teilbar, was der Primitivität von $f$ und $g$ widerspricht.
-\end{question}
+\end{solution}
 
 
 \begin{question}[subtitle = Der Frobeniushomomorphismus]
   \label{question: the frobenius homomorphism}
-  Es sei $R$ ein kommutativer Ring mit $p \coloneqq \ringchar R > 0$ prim.
+  Es sei $R$ ein kommutativer Ring, so dass $p \coloneqq \ringchar R > 0$ prim ist.
   \begin{enumerate}
     \item
       Zeigen Sie, dass die Abbildung $\sigma \colon R \to R$, $x \mapsto x^p$ ein Ringhomomorphismus ist.
@@ -1749,10 +1710,10 @@
         \label{equation: Frobenis homomorphism without cancelation}
         \sigma(x+y) = (x+y)^p = \sum_{k=0}^p \binom{p}{k} x^k y^{p-k}
       \end{equation}
-      Für alle $k = 1, \dotsc, p-1$ gilt dabei $p \mid \binom{p}{k}$, denn in dem Ausdruck $\binom{p}{k} = p!/(k!(p-k)!)$ enthält dann zwar der Zähler $p$ als Primfaktor, der Nenner aber nicht, da $k, p-k < p$.
+      Für alle $k = 1, \dotsc, p-1$ gilt dabei $p \mid \binom{p}{k}$, denn der Zähler von $\binom{p}{k} = p!/(k!(p-k)!)$ enthält dann den Primfaktor $p$, der Nenner aber nicht.
       Folglich vereinfacht sich \eqref{equation: Frobenis homomorphism without cancelation} zu $\sigma(x+y) = x^p + y^p = \sigma(x) + \sigma(y)$.
     \item
-      Es gilt $\ker \sigma = 0$, denn für $x \in R$ mit $x^p = \sigma(x) = 0$ gilt wegen der Nullteilerfreiheit von $R$ bereits, dass $x = 0$.
+      Es gilt $\ker \sigma = 0$, denn für $x \in R$ mit $x^p = \sigma(x) = 0$ gilt wegen der Nullteilerfreiheit von $R$ bereits, dass $x = 0$ gilt.
       Also ist $\sigma$ injektiv, und wegen der Endlichkeit von $R$ damit auch schon bijektiv.
   \end{enumerate}
 \end{solution}
@@ -1762,7 +1723,7 @@
   Geben Sie ein Beispiel für einen kommutativen Ring $R$ und eine Teilmenge $S \subseteq R$ mit den folgenden Eigenschaften:
   \begin{itemize}
     \item
-      $S$ ist abgeschlossen unter der Addition und Multiplikation von $R$, d.h.\ für alle $s_1, s_2 \in S$ ist auch $s_1 + s_2 \in S$ und $s_1 s_2 \in S$.
+      $S$ ist abgeschlossen unter der Addition und Multiplikation von $R$, d.h.\ für alle $s_1, s_2 \in S$ gelten auch $s_1 + s_2 \in S$ und $s_1 s_2 \in S$.
     \item
       Zusammen mit der Einschränkung der Addition und Multiplikation aus $R$ ist $S$ ebenfalls ein (notwendigerweise kommutativer) Ring.
     \item
@@ -1773,9 +1734,8 @@
 
 \begin{solution}
   Es sei $R = \Integer \times \Integer$ und $S = \Integer \times 0 = \{(n,0) \mid n \in \Integer\}$.
-  Offenbar ist $S$ unter der Addition und Multiplikation abgeschlossen.
-  Zusammen mit der Einschränkung dieser Operationen bildet $S$ einen kommutativen Ring, für den $S \cong \Integer$ gilt.
-  Da $1_R = (1,1) \notin S$ ist $S$ allerdings kein Unterring von $R$.
+  Die Teilmenge $S \subseteq R$ ist abgeschlossen unter Addition und Multiplikation und bildet mit den Einschränkungen dieser Operationen einen kommutativen Ring, für den $S \cong \Integer$ gilt.
+  Da $1_R = (1,1) \notin S$ gilt, ist $S$ allerdings kein Unterring von $R$.
 \end{solution}
 
 
@@ -1784,7 +1744,7 @@
   Es sei $R$ ein kommutativer Ring und $\aideal \subseteq R$ ein Ideal.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass für jedes Ideal $\aideal \subseteq R$ die Teilmenge
+      Zeigen Sie, dass für jedes Ideal $\aideal \subseteq R$ die Menge
       \[
                   \aideal[X]
         \coloneqq \left\{
@@ -1799,7 +1759,7 @@
       \[
         R[X]/\aideal[X] \to (R/\aideal)[X],
         \quad
-        \overline{\sum_i a_i X^i} \mapsto \sum_i \overline{a_i} X^i
+        \overline{\sum_i f_i X^i} \mapsto \sum_i \overline{f_i} X^i
       \]
       ein wohldefinierter Isomorphismus ist.
     \item
@@ -1810,9 +1770,9 @@
   Das Ideal $\aideal[X]$ lässt sich auch noch anders durch $\aideal$ beschreiben.
   \begin{enumerate}[resume]
     \item
-      Zeigen Sie, dass $\aideal[X]$ das von $\aideal$ in $R[X]$ erzeugte Ideal ist, d.h.\ dass $(\aideal)_{R[X]} = \aideal[X]$.
+      Zeigen Sie, dass $\aideal[X]$ das von $\aideal$ in $R[X]$ erzeugte Ideal ist, d.h.\ dass $(\aideal)_{R[X]} = \aideal[X]$ gilt.
   \end{enumerate}
-  Damit erhalten wir für jedes Ideal $\aideal \subseteq R$ einen Ringisomorphismus $R[X]/(\aideal) \to (R/\aideal)[X]$, $\overline{\sum_i a_i X^i} \mapsto \sum_i \overline{a_i} X^i$.
+  Damit erhalten wir für jedes Ideal $\aideal \subseteq R$ einen Ringisomorphismus $R[X]/(\aideal) \to (R/\aideal)[X]$, $\overline{\sum_i f_i X^i} \mapsto \sum_i \overline{f_i} X^i$.
   \begin{enumerate}[resume]
     \item
       Veinfachen Sie für die folgenden Ringe $R$ und Ideale $I \subseteq R$ jeweils den Quotienten $R/I$.
@@ -1822,7 +1782,7 @@
         \quad
         (3, X^2 + 1)      \subseteq \Integer[X],
         \quad
-        (5, X^2 + X + 3)  \subseteq \Integer[X],
+        (5, X^2 + 6X - 2)  \subseteq \Integer[X],
         \quad
         (X^2 + 1)         \subseteq \Rational[X,Y].
       \]
@@ -1833,14 +1793,17 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Die kanonische Projektion $\pi \colon R \to R/\aideal$, $x \mapsto \overline{x}$ induziert nach der universellen Eigenschaft des Polynomrings $R[X]$ einen Ringhomomorphismus $\varphi \colon R[X] \to (R/\aideal)[X]$ mit $\varphi|_R = \pi$ und $\varphi(X) = \pi(X)$, und dieser ist gegeben durch
+      Die kanonische Projektion $\pi \colon R \to R/\aideal$, $x \mapsto \overline{x}$ induziert einen Ringhomomorphismus $\varphi \colon R[X] \to (R/\aideal)[X]$ mit
       \[
           \varphi\left( \sum_i f_i X^i \right)
         = \sum_i \pi(f_i) X^i
-        = \sum_i \overline{f_i} X^i.
+        = \sum_i \overline{f_i} X^i
+        \qquad
+        \text{für alle $\sum_i f_i X^i \in R[X]$}.
       \]
       Für $f = \sum_i f_i X^i \in R[X]$ ist genau dann $f \in \ker \varphi$, wenn $\overline{f_i} = 0$ für alle $i$, also genau dann, wenn $f_i \in \ker \pi = \aideal$ für alle $i$.
       Somit ist $\ker \varphi = \aideal[X]$ ein Ideal in $R[X]$.
+      
     \item
       Es seien $\pi$ und $\varphi$ wie zuvor.
       Wegen der Surjektivität von $\pi$ ist auch $\varphi$ surjektiv.
@@ -1850,19 +1813,23 @@
         \quad
         \overline{\sum_i f_i X^i} \mapsto \sum_i \overline{f_i} X^i.
       \]
-      Nach dem vorherigen Aussagenteil gilt $\ker \psi = \aideal[X]$, was die Aussage zeigt.
+      Nach dem vorherigen Aussagenteil gilt $\ker \varphi = \aideal[X]$, was die Aussage zeigt.
+      
     \item
       Der Quotient $R/\pideal$ ist ein Integritätsbereich, da $\pideal$ ein Primideal in $R$ ist.
-      Damit ist auch $(R/\pideal)[X] \cong R[X]/\pideal[X]$ ein Integritätsbereich ist, und deshalb $\pideal[X]$.
+      Damit ist auch $(R/\pideal)[X] \cong R[X]/\pideal[X]$ ein Integritätsbereich ist, und deshalb $\pideal[X]$ ein Primideal.
+      
     \item
       Ist $K$ ein Körper, so ist $0 \subseteq K$ ein maximales Ideal, und es gilt $\mideal[X] = 0$.
       Der Quotient $K[X]/\mideal[X] \cong (K/0)[X] \cong K[X]$ ist kein Körper, da $0 \neq X \in K[X]$ keine Einheit ist.
       Also ist $\mideal[X]$ nicht maximal in $K[X]$.
       
-      Tatsächlich kann $\mideal[X]$ nicht maximal in $R[X]$ sein, da $R[X]/\mideal[X] \cong (R/\mideal)[X]$, aber es keinen Ring $R'$ gibt, so dass $R'[X]$ ein Körper ist (siehe Übung~\ref{qst: polynomial rings are not fields}).
+      Tatsächlich kann $\mideal[X]$ nie maximal in $R[X]$ sein, da $R[X]/\mideal[X] \cong (R/\mideal)[X]$, aber es keinen Ring $R'$ gibt, so dass $R'[X]$ ein Körper ist (siehe Übung~\ref{qst: polynomial rings are not fields}).
+      
     \item
       Es gilt $\aideal \subseteq \aideal[X]$ und somit $(\aideal)_{R[X]} \subseteq \aideal[X]$.
-      Andererseits ist $a X^i \in (\aideal)_{R[X]}$ für jedes $a \in \aideal$ und $i \geq 0$ und somit $\sum_i a_i X^i \in \in (\aideal)_{R[X]}$ für jedes $\sum_i a_i X^i \in \aideal[X]$.
+      Andererseits gilt $a X^i \in (\aideal)_{R[X]}$ für jedes $a \in \aideal$ und $i \geq 0$ und somit $\sum_i a_i X^i \in (\aideal)_{R[X]}$ für jedes $\sum_i a_i X^i \in \aideal[X]$.
+      
     \item
       \begin{enumerate}[leftmargin=*]
         \item
@@ -1879,7 +1846,7 @@
              =      \Field_3[X] / (X^2 + 1).
           \end{align*}
           Das Polynom $X^2 +1 \in \Field_3[X]$ ist quadratisch und hat keine Nullstellen, ist also irreduzibel.
-          Der obige Quotient ist also eine Körpererweiterung von $\Field_3$ von Grad $2$, also $\Field_3[X] / (X^2 + 1) \cong \Field_9$.
+          Der obige Quotient ist also eine Körpererweiterung von $\Field_3$ von Grad $2$, weshalb $\Field_3[X] / (X^2 + 1) \cong \Field_9$ gilt.
           Inbesondere ist das Ideal maximal.
         \item
           Mithilfe des dritten Isomorphiesatzes erhält man, dass
@@ -1934,10 +1901,12 @@
   \begin{enumerate}
     \item
       Für jedes $i = 1, \dotsc, n$ sei $\pi_i \colon R_i \to R_i/\aideal_i$, $x \mapsto \overline{x}$ die kanonische Projektion.
-      Es ist
+      Dann ist
       \[
+        \pi
+        \colon
         R_1 \times \dotsb \times R_n
-        \xrightarrow{\pi \coloneqq \pi_1 \times \dotsb \times \pi_n}
+        \xrightarrow{\pi_1 \times \dotsb \times \pi_n}
         (R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)
       \]
       ein Ringhomomorphismus mit $\ker \pi = (\ker \pi_1) \times \dotsb \times (\ker \pi_n) = \aideal_1 \times \dotsb \times \aideal_n$.
@@ -1956,8 +1925,8 @@
       \end{align*}
       
     \item
-      Ist $\aideal_i \neq R_i$ und $\aideal_j \neq R_j$ für $i \neq j$, so sind in dem Produkt $(R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)$ mindestens zwei Faktoren nicht trivial, und der Ring somit nicht nullteilerfrei.
-      Es genügt daher, sich auf den Fall einzuschränken, dass $\aideal_i = R_i$ für alle $i = 1, \dotsc, n$ bis auf ein $1 \leq j \leq n$.
+      Gilt $\aideal_i \neq R_i$ und $\aideal_j \neq R_j$ für $i \neq j$, so sind in dem Produkt $(R_1/\aideal_1) \times \dotsb \times (R_n/\aideal_n)$ mindestens zwei Faktoren nicht trivial, weshalb der Ring nicht nullteilerfrei ist.
+      Es genügt daher, sich auf den Fall einzuschränken, dass $\aideal_i = R_i$ für alle $i = 1, \dotsc, n$ bis auf ein $1 \leq j \leq n$ gilt.
       Dann gilt
       \begin{gather*}
         \begin{aligned}
@@ -2022,11 +1991,11 @@
 
 
 \begin{question}[subtitle = Lokalisierung und Produkte]
-  Es seien $R$ und $R'$ zwei kommutative Ringe, und $S \subseteq R$ und $S' \subseteq R'$ multiplikative Mengen.
+  Es seien $R$ und $R'$ zwei kommutative Ringe, und $S \subseteq R$ und $S' \subseteq R'$ multiplikative Teilmengen.
   Es seien $i \colon R \to R_S$ und $i' \colon R' \to R'_{S'}$ die kanonischen Ringhomomorphismen.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $S \times S' \subseteq R \times R'$ eine multiplikative Menge ist.
+      Zeigen Sie, dass $S \times S' \subseteq R \times R'$ eine multiplikative Teilmenge ist.
   \end{enumerate}
   Es sei $j \colon R \times R' \to (R \times R')_{S \times S'}$ der kanonische Ringhomomorphismus.
   \begin{enumerate}[resume]
@@ -2055,21 +2024,23 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Es gelten $1 \in S$ und $1' \in S'$ und somit auch $1_{R \times R'} = (1_R, 1_{R'}) \in S \times S'$.
+      Es gelten $1_R \in S$ und $1_{R'} \in S'$, weshalb $1_{R \times R'} = (1_R, 1_{R'}) \in S \times S'$ gilt.
       
       Für $(s_1, s'_1), (s_2, s'_2) \in S \times S'$ gelten auch $s_1 s_1' \in S_1$ und $s_2 s_2' \in S_2$, und deshalb gilt $(s_1 s_1', s_2, s_2') \in S \times S'$.
       
     \item
       Für $(s, s') \in S \times S'$ gelten $i(s) = s/1 \in R_S^\times$ und $i'(s') = s'/1 \in R_{S'}^\times$ und somit $(i \times i')(s,s') = (s/1, s'/1) \in R_S^\times \times R_{S'}^\times = (R_S \times R_{S'})^\times$.
-      Nach der universellen Eigenschaft der Lokalisierung $(R \times R')_{S \times S'}$ setzt sich $i \times i'$ eindeutig zu einem Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ fort, so dass $\varphi \circ j = i \times i'$, d.h.\ so dass das gegebene Diagramm kommutiert.
+      Nach der universellen Eigenschaft der Lokalisierung $(R \times R')_{S \times S'}$ setzt sich $i \times i'$ eindeutig zu einem Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ fort, so dass $\varphi \circ j = i \times i'$ gilt, d.h.\ so dass das gegebene Diagramm kommutiert.
       Konkret gilt $\varphi((r,r')/(s,s')) = (r/s, r'/s')$ für alle $(r,r')/(s,s') \in (R \times R')_{S \times S'}$.
       
     \item
       Für jedes $(r/s, r'/s') \in R_S \times R'_{S'}$ gilt $(r/s, r'/s') = \varphi((r,r')/(s,s')) \in \im \varphi$, also ist $\varphi$ surjektiv.
+      
       Für $(r,r')/(s,s') \in \ker \varphi$ gilt $0 = \varphi((r,r')/(s,s')) = (r/s, r'/s')$.
-      Es ist also $r/s = 0/1$, es gibt also $t \in S$ mit $tr = 0$.
+      Da $r/s = 0/1$ gilt, gibt es $t \in S$ mit $tr = 0$.
       Analog gibt es auch $t' \in S'$ mit $t'r' = 0$.
-      Dann ist $(t,t') \in S \times S'$ mit $(t,t')(r,r') = (tr,t'r') = 0$, weshalb $(r,r')/(s,s') = 0$ gilt.
+      
+      Für $(t,t') \in S \times S'$ ist dann $(t,t')(r,r') = (tr,t'r') = 0$, weshalb $(r,r')/(s,s') = 0$ gilt.
       Also ist $\ker \varphi = 0$ und $\varphi$ somit auch injektiv.
   \end{enumerate}
 \end{solution}
@@ -2087,16 +2058,16 @@
         \begin{tikzcd}[ampersand replacement=\&]
               R
               \arrow{r}{f}
-              \arrow{d}
+              \arrow[swap]{d}{i}
           \&  R'
-              \arrow{d}
+              \arrow{d}{i'}
           \\
               R_S
               \arrow{r}{\hat{f}}
           \&  R'_{S'}
         \end{tikzcd}
       \]
-      Hierbei sind die unbenannten vertikalen Pfeile jeweils die kanonischen Ringhomomorphismen.
+      Hierbei bezeichnen $i$ und $i'$ jeweils die kanonischen Ringhomomorphismen.
   \end{enumerate}
 \end{question}
 
@@ -2104,10 +2075,16 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Da $1 \in S$ ist $1 = f(1) \in f(S) = S'$.
-      Für $s'_1, s'_2 \in S'$ gibt es $s_1, s_2 \in S$ mit $s'_1 = f(s_1)$ und $s'_2 = f(s_2)$, und damit ist auch $s'_1 s'_2 = f(s_1) f(s_2) = f(s_1 s_2) \in f(S) = S'$.
+      Da $1 \in S$ gilt, ist auch $1 = f(1) \in f(S) = S'$.
+      Für $s'_1, s'_2 \in S'$ gibt es $s_1, s_2 \in S$ mit $s'_1 = f(s_1)$ und $s'_2 = f(s_2)$.
+      Dann gilt auch $s_1 s_2 \in S$ und somit
+      \[
+          s'_1 s'_2
+        = f(s_1) f(s_2)
+        = f(s_1 s_2) \in f(S)
+        = S'. 
+      \]
     \item
-      Es seien $i \colon R \to R_S$, $r \mapsto r/1$ und $i' \colon R' \to R'_{S'}$, $r' \mapsto r'/1$ die kanonischen Ringhomomorphismen.
       Die Komposition $i' \circ f \colon R \mapsto R'_{S'}$ bildet $s \in S$ auf die Einheit $f(s)/1 \in R'_{S'}$
       ab.
       Nach der universellen Eigenschaft der Lokalisierung induziert $i' \circ f$ einen eindeutigen Ringhomomorphismus $\hat{f} \colon R_S \to R'_{S'}$ mit $\hat{f} i = i' f$, d.h.\ so dass das folgende Diagram kommutiert:
@@ -2115,7 +2092,7 @@
         \begin{tikzcd}[ampersand replacement = \&]
               R
               \arrow{r}{f}
-              \arrow{d}{i}
+              \arrow[swap]{d}{i}
           \&  R'
               \arrow{d}{i'}
           \\
@@ -2130,7 +2107,7 @@
 
 \begin{question}[subtitle = Lokalisierung durch Quotienten]
   Es sei $R$ ein kommutativer Ring und $f \in R$.
-  Zeigen Sie, dass $R_f \cong R[X]/(fX-1)$.
+  Zeigen Sie, dass $R_f \cong R[X]/(fX-1)$ gilt.
 \end{question}
 
 
@@ -2140,10 +2117,13 @@
       \overline{f} \, \overline{X}
     = \overline{fX}
     = \overline{1}
-    = 1.
+    = 1
   \]
-  Nach der universellen Eigenschaft der Lokalisierung $R_f$ induziert der Ringhomomorphismus $R \to R[X] \to R[X]/(fX-1)$ einen Ringhomomorphismus $\varphi \colon R_f \to R[X]/(fX-1)$ mit
+  gilt.
+  Nach der universellen Eigenschaft der Lokalisierung $R_f$ induziert der Ringhomomorphismus $R \to R[X] \to R[X]/(fX-1)$, $r \mapsto \overline{r}$ einen Ringhomomorphismus 
   \[
+      \varphi \colon R_f \to R[X]/(fX-1)
+    \quad\text{mit}\quad
       \varphi\left( \frac{r}{f^k} \right)
     = \frac{\overline{r}}{\overline{f}^k}
     = \overline{r} \overline{X}^k
@@ -2162,14 +2142,13 @@
     = \frac{f}{1} \frac{1}{f} - \frac{1}{1}
     = 0.
   \]
-  Also faktorisiert $\tilde{\psi}$ über einen eindeutigen Ringhomomorphismus $\psi \colon R[X]/(fX-1) \to R_f$ mit $\psi(\overline{p}) = \tilde{\psi}(p)$ für alle $p \in R[X]$, d.h.\ es ist
+  Also faktorisiert $\tilde{\psi}$ über einen eindeutigen Ringhomomorphismus $\psi \colon R[X]/(fX-1) \to R_f$ mit $\psi(\overline{p}) = \tilde{\psi}(p)$ für alle $p \in R[X]$, d.h.\ es gilt
   \[
       \psi\left( \overline{ \sum_i r_i X^i } \right)
     = \sum_i \frac{r_i}{f^i}
     \qquad
     \text{für alle $\sum_i r_i X^i \in R[X]$}.
   \]
-  
   Die beiden Ringhomomorphismen $\varphi$ und $\psi$ sind invers zueinander:
   Für alle $r/f^k \in R_f$ gilt
   \[
@@ -2193,14 +2172,14 @@
   Es sei $R$ ein kommutativer Ring, $(a_i)_{i \in I}$ eine Familie von Elementen $a_i \in R$ und $a \in R$.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $a$ ein größter gemeinsamer Teiler der $a_i$ ist, falls $(a_i \mid i \in I) = (a)$.
+      Zeigen Sie, dass $a$ ein größter gemeinsamer Teiler der $a_i$ ist, falls $(a_i \mid i \in I) = (a)$ gilt.
     \item
       Entscheiden Sie, ob auch die Umkehrung der obigen Aussage gilt.
   \end{enumerate}
 \end{question}
 
 
-\begin{question}
+\begin{solution}
   \begin{enumerate}
     \item
       Es ist $a$ ein gemeinsamer Teiler der $a_i$, denn es gilt
@@ -2209,14 +2188,14 @@
         \iff  \forall i \in I: a_i \in (a)
         \iff  \forall i \in I: a \mid a_i.
       \]
-      Da außerdem $a \in (a) \subseteq (a_i \mid i \in I)$ gilt, ergibt sich $a = \sum_{i \in I} r_i a_i$ für passende $r_i \in R$ mit $r_i = 0$ für fast alle $i \in I$.
+      Da außerdem $a \in (a) \subseteq (a_i \mid i \in I)$ gilt, gibt es eine Linearkombination $a = \sum_{i \in I} r_i a_i$ für passende $r_i \in R$ mit $r_i = 0$ für fast alle $i \in I$.
       Für jeden gemeinsamen Teiler $b \in R$ der $a_i$ gilt deshalb auch $b \mid a$.
       Somit ist $a$ bereits ein größter gemeinsamer Teiler der $a_i$.
     \item
       Die Umkehrung gilt im Allgemeinen nicht:
       Ist etwa $K$ ein Körper, so ist $1$ ein größter gemeinsamer Teiler von $X, Y \in K[X, Y]$, aber $(X, Y) \subsetneq (1)$.
   \end{enumerate}
-\end{question}
+\end{solution}
 
 
 \begin{question}[subtitle = Euklid]
@@ -2240,7 +2219,7 @@
 
 \begin{question}[subtitle = Zur Existenz von maximalen Idealen]
   Es sei $R$ ein Ring und $I \subseteq R$ ein echtes Ideal.
-  Zeigen Sie mithilfe des Lemmas von Zorn, dass es ein maximales Ideal $\mideal \subsetneq R$ gibt, so dass $I \subseteq \mideal$.
+  Zeigen Sie mithilfe des Lemmas von Zorn, dass es ein maximales Ideal $\mideal \subsetneq R$ gibt, so dass $I \subseteq \mideal$ gilt.
 \end{question}
 
 
@@ -2248,7 +2227,7 @@
   Es sei
   \[
               \mathcal{I}
-    \coloneqq \{J \subsetneq R \mid \text{$J$ ist ein echtes Ideal mit $I \subseteq J$}\}.
+    \coloneqq \{J \subsetneq R \mid \text{$J$ ist ein echtes Ideal mit $J \supseteq I$}\}.
   \]
   Die Menge $\mathcal{I}$ ist nicht leer, da sie $I$ enthält.
   Bezüglich der üblichen Teilmengeninklusion $\subseteq$ ist $\mathcal{I}$ partiell geordnet.
@@ -2258,10 +2237,11 @@
   somit gilt auch $1 \notin K$, weshalb $K$ ein echtes Ideal in $R$ ist.
   Ingesamt ist also $K \in \mathcal{I}$, und da $J \subseteq K$ für alle $J \in \mathcal{K}$ gilt, ist $K$ eine obere Schranke für $\mathcal{K}$ in $\mathcal{I}$.
   
-  Nach dem Lemma von Zorn besitzt nun $\mathcal{I}$ ein maximales Element $\mideal \in \mathcal{I}$;
+  Nach dem Lemma von Zorn besitzt $\mathcal{I}$ ein maximales Element $\mideal \in \mathcal{I}$;
   inbesondere ist $\mideal$ ein echtes Ideal in $R$ mit $I \subseteq \mideal$.
   Wäre $\mideal$ kein maximales Ideal in $R$, so gebe es ein echtes Ideal $\mideal' \subsetneq R$ mit $\mideal \subsetneq \mideal'$.
-  Dann wäre aber $I \subseteq \mideal \subsetneq \mideal'$ und somit $\mideal' \in \mathcal{I}$. Da $\mideal \subsetneq \mideal'$ stünde dies im Widerspruch zur Maximalität von $\mideal$ in $\mathcal{I}$.
+  Dann wäre aber $I \subseteq \mideal \subsetneq \mideal'$ und somit $\mideal' \in \mathcal{I}$.
+  Da $\mideal \subsetneq \mideal'$ gilt, stünde dies im Widerspruch zur Maximalität von $\mideal$ in $\mathcal{I}$.
   Also muss $\mideal$ bereits ein maximales Ideal in $R$ sein.
 \end{solution}
 
@@ -2274,36 +2254,28 @@
 
 \begin{solution}
   Der Hilbertsche Basissatz besagt, dass für einen noetherschen Ring $R$ auch der Polynomring $R[X]$ noethersch ist.
-  
   Zum Beweis des Satzes sei $I \subseteq R[X]$ ein Ideal.
   Für jedes $d \geq 0$ sei
   \[
               I_d
-    \coloneqq \{a \in R \mid \text{es gibt $f \in I$ mit $\deg f = d$ und Leitkoeffizienten $a$}\} \cup \{0\}.
+    \coloneqq \left\{
+                a \in R
+              \,\middle|\,
+                \text{es gibt ein Polynom $\sum_{i=0}^d a_i X^i \in I$ mit $a_d = a$}
+              \right\}.
   \]
+  Für jedes $d \geq 0$ ist $I_d$ ein Ideal in $R$.
   
-  \begin{claim*}
-    Für jedes $d \geq 0$ ist $I_d \subseteq R$ ein Ideal
-  \end{claim*}
-  \begin{proof}
-    Per Definition gilt $0 \in I_d$.
-    Sind $a_1, a_2 \in I_d$ so gibt es Polynome $f_1, f_2 \in I$ vom Grad $d$, so dass $a_i$ der Leitkoeffizient von $f_i$ ist.
-    Ist $a_1 = -a_2$, so gilt $a_1 + a_2\in I_d$;
-    andernfalls löschen sich in der Summe $f_1 + f_2 \in I$ die beiden Leitkoeffizienten nicht aus, weshalb $f_1 + f_2$ ein Polynom von Grad $d$ mit Leitkoeffizienten $a_1 + a_2$ ist.
-    In beiden Fällen gilt $a_1 + a_2 \in I_d$.
-    Ist $r \in R$ und $a \in I_d$, so gibt es ein Polynom $f \in I$ vom Grad $d$ mit Leitkoeffizienten $a$.
-    Ist $r \cdot a = 0$, so ist insbesondere $r \cdot a \in I_d$;
-    ist $r \cdot a \neq 0$, so ist auch $r f \in I$ wieder vom Grad $d$ und hat $ra$ als Leitkoeffizienten, weshalb auch $ra \in I_d$.
-  \end{proof}
-  
-  Ist $f \in I$ vom Grad $d$ mit Leitkoeffizietnen $a \in R$, so ist $X f \in I$ vom Grad $d+1$ mit Leitkoeffizienten $a$.
+  Für $a \in I_d$ gibt es $f = \sum_{i=0}^d a_i X^i \in I$ mit $a = a_d$.
+  Dann ist $X f = \sum_{i=1}^{d+1} a_{i+1} X^i \in I$, und somit $a \in I_{d+1}$.
   Deshalb ist $I_d \subseteq I_{d+1}$ für alle $d \geq 0$.
-  Da $R$ noethersch ist, stabiliert die aufsteigende Kette $0 \subseteq I_1 \subseteq I_2 \subseteq I_3 \subseteq \dotsb$; es gibt also ein $D \geq 0$ mit $I_D = I_{D+l}$ für alle $l \geq 0$.
-  Die Ideale $I_0, \dotsc, I_D$ sind endlich erzeugt, da $R$ noethersch sind;
+  Da $R$ noethersch ist, stabiliert die aufsteigende Kette $0 \subseteq I_1 \subseteq I_2 \subseteq I_3 \subseteq \dotsb$; es gibt also ein $D \geq 0$ mit $I_D = I_{D+k}$ für alle $k \geq 0$.
+  
+  Die Ideale $I_0, \dotsc, I_D$ sind endlich erzeugt, da $R$ noethersch sind.
   Für jedes $d = 0, \dotsc, D$ sei $I_d = (a^{(d)}_1, \dotsc, a^{(d)}_{s_d})$.
-  Für jedes $d = 0, \dotsc, D$ und $i = 1, \dotsc, s_d$ gibt es dann ein Polynom $f^{(d)}_i \in I$ vom Grad $d$ mit Leitkoeffizienten $a^{(d)}_i$;
-  man merke für $d = 0$, dass $f^{(0)}_i = a^{(0)}_i$ für alle $i = 0, \dotsc, d$, da ein konstantes Polynom mit seiem Leitkoeffizienten übereinstimmt.
-  Es sei $J \coloneqq (f^{(d)}_i \mid d = 0, \dotsc, D, i = 1, \dotsc, s_d) \subseteq I$.
+  Für jedes $d = 0, \dotsc, D$ und $i = 1, \dotsc, s_d$ gibt es dann ein Polynom $f^{(d)}_i = \sum_{j=0}^d a_i X^j \in I$ mit $a_d = a$.
+  Man merke für $d = 0$, dass $f^{(0)}_i = a^{(0)}_i$ für alle $i = 0, \dotsc, d$ gilt, da ein konstantes Polynom mit seiem Leitkoeffizienten übereinstimmt.
+  Es sei $J \coloneqq ( f^{(d)}_i \mid d = 0, \dotsc, D, i = 1, \dotsc, s_d ) \subseteq I$.
   
   Wir zeigen, dass bereits $J = I$ gilt, dass also $f \in J$ für jedes $f \in I$.
   Wir zeigen dies per Induktion über den Grad von $f$:
@@ -2312,16 +2284,16 @@
               I_0
     =         (a^{(0)}_1, \dotsc, a^{(0)}_{s_0})_R
     \subseteq (a^{(0)}_1, \dotsc, a^{(0)}_{s_0})_{R[X]}
-    =         (f^{(0)}_1, \dotsc, af^{(0)}_{s_0})_{R[X]}
+    =         (f^{(0)}_1, \dotsc, f^{(0)}_{s_0})_{R[X]}
     \subseteq J.
   \]
-  Es sei nun $f \in I$ mit $d \coloneqq \deg f \geq 1$ und es gelte $g \in J$ für alle $f \in I$ mit $\deg g \leq d-1$.
+  Es sei nun $f \in I$ mit $d \coloneqq \deg f \geq 1$ und es gelte $g \in J$ für alle $f \in I$ mit $\deg g < d$.
   Es sei $a \in I_d$ der Leitkoeffizient von $f$.
   Wir unterscheiden zwischen zwei Fällen:
   \begin{itemize}
     \item
       Gilt $d \leq D$, so gilt $a \in I_d = (a^{(d)}_1, \dotsc, a^{(d)}_{s_d})$, also $a = \sum_{i=1}^{s_d} r_i a^{(d)}_i$ für passende $r_i \in R$.
-      Das Polynom $g \coloneqq \sum_{i=1}^{s_d} r_i f^{(d)}_i \in J$ hat dann $a$ als Leitkoeffzienten und hat ebenfalls Grad $d$.
+      Das Polynom $g \coloneqq \sum_{i=1}^{s_d} r_i f^{(d)}_i \in J$ hat dann $a$ als Leitkoeffzienten und ebenfalls Grad $d$.
       Das Polynom $f - g \in I$ hat daher echt kleineren Grad als $f$, weshalb nach Induktionsvoraussetzung $f - g \in J$ gilt.
       Somit ist auch $f = (f - g) + g \in J$.
     \item
@@ -2329,10 +2301,10 @@
       Es gilt daher $a = \sum_{i=1}^{s_D} r_i a^{(D)}_i$ für passende $r_i \in R$.
       Das Polynom $g \coloneqq \sum_{i=1}^{s_D} r_i f^{(D)}_i \in J$ hat dann $a$ als Leitkoeffizienten und Grad $D \leq d$.
       Deshalb ist $X^{d-D} g \in J$ mit Leitkoeffizienten $a$ und Grad $d$.
-      Das Polynom $f - X^{d-D} g$ hat daher echt kleineren Grad als $f$, weshalb nach Induktionsvoraussetzung $f - X^{d-D} g \in J$ gilt.
+      Das Polynom $f - X^{d-D} g \in I$ hat daher echt kleineren Grad als $f$, weshalb nach Induktionsvoraussetzung $f - X^{d-D} g \in J$ gilt.
       Somit ist auch $f = (f - X^{d-D} g) + X^{d-D} g \in J$.
   \end{itemize}
-  In beiden Fällen erhalten wir also, dass auch $f \in J$.
+  In beiden Fällen erhalten wir also, dass $f \in J$ gilt.
   
   Ingesamt zeigt dies, dass $I = J$ endlich erzeugt ist.
   Der Ring $R[X]$ ist also noethersch, da jedes seiner Ideale endlich erzeugt ist.
@@ -2349,9 +2321,9 @@
   Wir geben zwei mögliche Beweise an:
   \begin{enumerate}
     \item
-      Der Ring $\powerseries{K}{X}$ ein ein euklidisch mit der üblichen Gradabbildung $\Deg$ und somit ein Hauptidealring.
+      Der Ring $\powerseries{K}{X}$ ist euklidisch mit der üblichen Gradabbildung $\Deg \colon \powerseries{K}{X} \to \Natural \cup \{\infty\}$ und somit ein Hauptidealring.
       Also ist jedes Ideal in $\powerseries{K}{X}$ von der Form $(f)$ für ein Element $f \in \powerseries{K}{X}$.
-      Ist $f \in \powerseries{K}{X}$ mit $f \neq 0$, so ist $f = \sum_{i=n}^\infty f_i X^i$ mit $f_n \neq 0$ für ein $n \geq 0$.
+      Ist $f \in \powerseries{K}{X}$ mit $f \neq 0$, so ist $f = \sum_{i=n}^\infty f_i X^i$ für ein $n \geq 0$ mit $f_n \neq 0$.
       Dann ist
       \[
           f
@@ -2360,11 +2332,11 @@
         = X^n \cdot g.
       \]
       für das Element $g \coloneqq \sum_{j=0}^\infty f_{n+j} X^j$.
-      Es gilt $g_0 \neq 0$, also $g_0 \in K^\times$, und somit $g \in \powerseries{K}{X}^\times$.
-      Also sind $f$ und $X^n$ assoziiert, und somit $(f) = (X^n)$.
+      Es gilt $g_0 = f_n \neq 0$, also $g_0 \in K^\times$, und somit $g \in \powerseries{K}{X}^\times$.
+      Also sind $f$ und $X^n$ assoziiert in $\powerseries{K}{X}$, und somit gilt $(f) = (X^n)$.
       
       Damit ist gezeigt, dass $0$ und die Ideale $(X^n)$ für $n \geq 0$ die einzigen Ideale in $\powerseries{K}{X}$ sind.
-      Falls $(X^n) = (X^m)$ mit $n \leq m$, so sind $X^n$ und $X^m$ assoziiert zueinander, und es gibt $g \in \powerseries{K}{X}^\times$ mit $X^n = g X^m$.
+      Falls $(X^n) = (X^m)$ mit $n \leq m$ gilt, so sind $X^n$ und $X^m$ assoziiert zueinander, und es gibt $g \in \powerseries{K}{X}^\times$ mit $X^n = g X^m$.
       Dann gilt $g_0 \neq 0$ und somit $\Deg g X^m = m$, weshalb $n = \Deg X^n = \Deg g X^m = m$.
       Die Ideale in $\powerseries{K}{X}$ bilden also eine echte absteigende Kette
       \[
@@ -2391,7 +2363,7 @@
       ein Körper ist, ist $\mideal$ bereits ein maximales Ideal.
 
       Gebe es ein maximales Ideal $\mideal' \subseteq \powerseries{K}{X}$ mit $\mideal' \neq \mideal$, so würde wegen der Maximalität von $\mideal'$ inbesondere $\mideal' \nsubseteq \mideal$ gelten.
-      Dann gebe es $f \in \mideal'$ mit $f \notin \mideal$, also $f_0 \neq 0$ und somit $f \in K^\times$.
+      Dann gebe es $f \in \mideal'$ mit $f \notin \mideal$, also $f_0 \neq 0$ und somit $f_0 \in K^\times$.
       Dann würde aber $f \in \powerseries{K}{X}^\times$ gelten, und somit $(1) = (f) \subseteq \mideal'$, was im Widerspruch dazu stünde, dass $\mideal'$ ein echtes Ideal in $\powerseries{K}{X}$ ist.
   \end{enumerate}
 \end{solution}
