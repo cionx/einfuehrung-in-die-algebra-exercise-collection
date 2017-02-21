@@ -26,8 +26,8 @@
     \item
       Ist $L/K$ ein Körperweiterung und $L$ der Zerfällungskörper eines Polynoms $f \in K[X]$ von Grad $n \coloneqq \deg f$, so gilt $|{\Gal(L/K)}| \mid n!$.
     \item
-      Es sei $L/K$ eine Körpererweiterung und $L_1, L_2 \subseteq L$ seien Unterkörper, so dass $L_1/K$ und $L_2/K$ Unterkörper sind.
-      Bezeichnet $L_1 L2 \subseteq L$ den kleinsten Unterkörper, der $L_1$ und $L_2$ enthält, so ist auch $L_1 L_2/K algebraisch$.
+      Es sei $L/K$ eine Körpererweiterung und $L_1, L_2 \subseteq L$ seien Unterkörper, so dass die Erweiterungen $L_1/K$ und $L_2/K$ algebraisch sind.
+      Bezeichnet $L_1 L_2 \subseteq L$ den kleinsten Unterkörper, der $L_1$ und $L_2$ enthält, so ist auch die Erweiterung $L_1 L_2/K$ algebraisch.
   \end{enumerate}
 \end{question}
 
@@ -81,7 +81,7 @@
     \item
       Die Aussage ist wahr:
       Sind $\alpha_1, \dotsc, \alpha_d \in L$ mit $d \leq n$ die paarweise verschiedenen Nullstellen von $f$, so muss jedes $\sigma \in \Gal(L/K)$ die Nullstellen von $f$ permutieren.
-      Also gibt es eine Einbettung $\varphi \colon \Gal(L/K) \to S_d$, $\sigma \mapsto \pi_\sigma$ wobei $\pi_\sigma \in S_d$ die eindeutige Permutation ist, so dass $\sigma(\alpha_i) = \alpha_{\pi_\sigma(i)}$ für alle $i = 1, \dotsc, d$.
+      Also gibt es eine Einbettung $\varphi \colon \Gal(L/K) \to S_d$, $\sigma \mapsto \pi_\sigma$ wobei $\pi_\sigma \in S_d$ die eindeutige Permutation ist, so dass $\sigma(\alpha_i) = \alpha_{\pi_\sigma(i)}$ für alle $i = 1, \dotsc, d$ gilt.
       Da $\im \varphi \subseteq S_d$ eine Untergruppe ist, erhalten wir, dass
       \[
               |{\Gal(L/K)}|
@@ -93,7 +93,14 @@
     
     \item
       Die Aussage ist wahr:
-      Da $L_1/K$ und $L_2/K$ algebraisch sind beide Erweiterungen von algebraischen ELementen erzeugt, also $L_1 = K(\alpha_i \mid i \in I)$ und $L_2 = K(\beta_j \mid j \in J)$ für algebraische Elemente $\alpha_i \in L_1$ und $\beta_j \in L_2$.
+      Da $L_1/K$ und $L_2/K$ algebraisch sind, werden beide Erweiterungen von algebraischen ELementen erzeugt.
+      Es gilt also
+      \[
+        L_1 = K(\alpha_i \mid i \in I)
+        \quad\text{und}\quad
+        L_2 = K(\beta_j \mid j \in J)
+      \]
+      für Elemente $\alpha_i \in L_1$ und $\beta_j \in L_2$, die jeweils algebraisch über $K$ sind.
       Dann gilt $L_1 L_2 = K(\alpha_i, \beta_j \mid i \in I, j \in J)$, weshalb auch $L_1 L_2/K$ von algebraischen Elementen erzeugt wird, also algebraisch ist.
   \end{enumerate}
 \end{solution}
@@ -198,52 +205,52 @@
     = [L : K(\alpha)] \underbrace{[K(\alpha) : K]}_{\neq 1}
   \]
   folgt, da $p$ prim ist, dass $[L : K(\alpha)] = 1$ (und $[K(\alpha) : K] = p$), und somit $K(\alpha) = L$.
-  Also ist $L$ eine zyklische Körpererweiterung, und die möglichen Elemente sind genau die $\alpha \in L$, für die $\alpha \notin K$.
+  Also ist $L$ eine zyklische Körpererweiterung, und die zyklischen Erzeuger sind genau die $\alpha \in L$, für die $\alpha \notin K$.
 \end{solution}
 
 
 \begin{question}[subtitle = Zum Grad]
-  Es sei $K(\alpha)/K$ eine endliche, zyklische Körpererweiterung von ungeraden Grad.
-  Zeigen Sie, dass $K(\alpha) = K(\alpha^2)$.
+  \begin{enumerate}
+    \item
+      Es sei $K(\alpha)/K$ eine endliche, zyklische Körpererweiterung von ungeraden Grad.
+      Zeigen Sie, dass $K(\alpha) = K(\alpha^2)$ gilt.
+    \item
+      Es sei $L/K$ eine endliche Körpererweiterung mit $[L : K] = 2^k$ für ein $k \geq 0$.
+      Es sei $P \in K[T]$ ein kubisches Polynom, das eine Nullstelle in $L$ hat.
+      Zeigen Sie, dass $f$ bereits eine Nullstelle in $K$ hat.
+  \end{enumerate}
 \end{question}
 
 
 \begin{solution}
-  Da $K(\alpha^2) \subseteq K(\alpha)$ gilt, genügt es zu zeigen, dass $\alpha^2 \in K(\alpha)$.
-  Wir nehmen an, dass $\alpha^2 \notin K(\alpha)$.
-  Dann ist das normierte quadratische Polynom $P(T) \coloneqq T^2 - \alpha^2 \in K(\alpha^2)[T]$ irreduzibel mit $P(\alpha) = 0$, und deshalb das Minimalpolynom von $\alpha$ über $K(\alpha^2)$.
-  Es ist also $[K(\alpha) : K(\alpha^2)] = 2$.
-  Damit gilt
-  \[
-      [K(\alpha) : K]
-    = [K(\alpha) : K(\alpha^2)] [K(\alpha^2) : K]
-    = 2 [K(\alpha^2) : K],
-  \]
-  was im Widerspruch dazu steht, dass $[K(\alpha) : K]$ ungerade ist.
-\end{solution}
-
-
-\begin{question}[subtitle = Mehr zum Grad]
-  Es sei $L/K$ eine endliche Körpererweiterung mit $[L : K] = 2^k$ für ein $k \geq 0$.
-  Es sei $P \in K[T]$ ein kubisches Polynom, das eine Nullstelle in $L$ hat.
-  Zeigen Sie, dass $f$ bereits eine Nullstelle in $K$ hat.
-\end{question}
-
-
-\begin{solution}
-  Wir können o.B.d.A.\ davon ausgehen, dass $P$ normiert ist.
-  Es sei $\alpha \in L$ eine Nullstelle von $P$.
-  Hätte $P$ keine Nullstelle in $K$, so wäre $P$ irreduzibel in $K[T]$, da $P$ kubisch ist.
-  Damit wäre dann $P$ das Minimalpolynom von $\alpha$ über $K$, und somit $[K(\alpha) : K] = \deg P = 3$.
-  Dann wäre aber
-  \[
-          3
-    =     [K(\alpha) : K]
-    \mid  [L : K(\alpha)] [K(\alpha) : K]
-    =     [L : K]
-    =     2^k,
-  \]
-  was nicht gilt.
+  \begin{enumerate}
+    \item
+      Da $K(\alpha^2) \subseteq K(\alpha)$ gilt, genügt es zu zeigen, dass $\alpha^2 \in K(\alpha)$.
+      Wir nehmen an, dass $\alpha^2 \notin K(\alpha)$.
+      Dann ist das normierte quadratische Polynom $P(T) \coloneqq T^2 - \alpha^2 \in K(\alpha^2)[T]$ irreduzibel mit $P(\alpha) = 0$, und deshalb das Minimalpolynom von $\alpha$ über $K(\alpha^2)$.
+      Es ist also $[K(\alpha) : K(\alpha^2)] = 2$.
+      Damit gilt
+      \[
+          [K(\alpha) : K]
+        = [K(\alpha) : K(\alpha^2)] [K(\alpha^2) : K]
+        = 2 [K(\alpha^2) : K],
+      \]
+      was im Widerspruch dazu steht, dass $[K(\alpha) : K]$ ungerade ist.
+      
+    \item
+      Wir können o.B.d.A.\ davon ausgehen, dass $P$ normiert ist.
+      Es sei $\alpha \in L$ eine Nullstelle von $P$.
+      Hätte $P$ keine Nullstelle in $K$, so wäre $P$ irreduzibel in $K[T]$, da $P$ kubisch ist.
+      Damit wäre dann $P$ das Minimalpolynom von $\alpha$ über $K$, und somit $[K(\alpha) : K] = \deg P = 3$.
+      Dann wäre aber
+      \[
+              2^k
+        =     [L : K]
+        =     [L : K(\alpha)] [K(\alpha) : K]
+        =     3[L : K(\alpha)]
+      \]
+      was nicht seien kann.
+  \end{enumerate}
 \end{solution}
 
 
@@ -255,7 +262,7 @@
 
 \begin{solution}
   Sind $\alpha$ und $\beta$ algebraisch über $K$, so ist $K(\alpha, \beta) / K$ eine algebraische Körpererweiterung.
-  Da $\alpha + \beta, \alpha \beta \in K(\alpha, \beta)$ sind $\alpha + \beta$ und $\alpha \beta$ dann algebraisch über $K$.
+  Da $\alpha + \beta, \alpha \beta \in K(\alpha, \beta)$ gilt, sind dann auch $\alpha + \beta$ und $\alpha \beta$ algebraisch über $K$.
   
   Es seien nun $\alpha + \beta$ und $\alpha \beta$ algebraisch über $K$.
   Dann ist $K(\alpha + \beta, \alpha \beta)/K$ eine algebraische Erweiterung.
@@ -275,7 +282,7 @@
   Es sei $L \coloneqq \Rational(\sqrt{2} + \sqrt{3})$.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $\sqrt{2}, \sqrt{3} \in L$ und folgern Sie, dass $L = \Rational(\sqrt{2}, \sqrt{3})$.
+      Zeigen Sie, dass $\sqrt{2}, \sqrt{3} \in L$ und folgern Sie, dass $L = \Rational(\sqrt{2}, \sqrt{3})$ gilt.
     \item
       Bestimmen Sie den Grad der Erweiterung $L/\Rational$.
     \item
@@ -296,7 +303,7 @@
         \in L.
       \]
       Somit gilt auch $\sqrt{3} = (\sqrt{2} + \sqrt{3}) - \sqrt{3} \in L$.
-      Dass $L \subseteq \Rational(\sqrt{2}, \sqrt{3})$ ist klar, und dass $\Rational(\sqrt{2}, \sqrt{3}) \subseteq L$ gilt, folgt aus $\Rational \subseteq L$ und $\sqrt{2}, \sqrt{3} \in L$.
+      Dass $L \subseteq \Rational(\sqrt{2}, \sqrt{3})$ gilt ist klar, und dass $\Rational(\sqrt{2}, \sqrt{3}) \subseteq L$ gilt, folgt aus $\Rational \subseteq L$ und $\sqrt{2}, \sqrt{3} \in L$.
       
     \item
       Wir betrachten die Zwischenerweiterung $\Rational \subseteq \Rational(\sqrt{2}) \subseteq L$.
@@ -305,7 +312,7 @@
       Deshalb gilt $[\Rational(\sqrt{2}) : \Rational] = 2$.
       
       Da $\sqrt{3}$ eine Nullstelle des Polynoms $g(X) = X^2 - 3 \in \Rational(\sqrt{2})[X]$ ist, gilt die Abschätzung $[L : \Rational(\sqrt{2})] \leq 2$.
-      Wäre $[L : \Rational(\sqrt{2})] < 2$, also $[L : \Rational(\sqrt{2})] = 1$ und somit $L = \Rational(\sqrt{2})$, so gebe es $a, b \in \Rational$ mit $\sqrt{3} = a + b \sqrt{2}$ (denn $\{1, \sqrt{2}\}$ ist eine $\Rational$-Basis von $\Rational(\sqrt{2})$, da $[\Rational(\sqrt{2}) : \Rational] = 2$).
+      Wäre $[L : \Rational(\sqrt{2})] < 2$, also $[L : \Rational(\sqrt{2})] = 1$ und somit $L = \Rational(\sqrt{2})$, so gebe es $a, b \in \Rational$ mit $\sqrt{3} = a + b \sqrt{2}$ (denn $\{1, \sqrt{2}\}$ ist eine $\Rational$-Basis von $\Rational(\sqrt{2})$, da $[\Rational(\sqrt{2}) : \Rational] = 2$ gilt).
       Deshalb würde dann
       \[
           3
@@ -329,12 +336,12 @@
       Es gilt $\Rational(\sqrt{2}, \sqrt{3}) = \Rational(\sqrt{2}, \sqrt{3}, -\sqrt{2}, -\sqrt{3})$, also wird $L/\Rational$ von den Nullstellen des Polynoms $f(X) = (X^2 - 2)(X^2 - 3) \in \Rational[X]$ erzeugt.
       Somit ist $L$ der Zerfällungskörper von $f$ über $\Rational$.
       Da die Nullstellen von $f$ paarweise verschieden sind, ist $f$ separabel.
-      Also ist $L$ als Zerfällungskörper des separablen Polynoms $f$ bereits galoisch.
+      Also ist $L$ als Zerfällungskörper des separablen Polynoms $f \in \Rational[X]$ bereits galoisch über $\Rational$.
     
     \item
-      Da $L/\Rational$ galoisch ist, wissen wir, dass $|{\Gal(L / \Rational)}| = [L : \Rational] = 4$.
+      Da $L/\Rational$ galoisch ist, wissen wir, dass $|{\Gal(L / \Rational)}| = [L : \Rational] = 4$ gilt.
       Außerdem muss jedes $\sigma \in \Gal(L : \Rational)$ die Nullstellen der rationalen Polynome $X^2 - 2, X^2 - 3 \in \Rational[X]$ permutieren;
-      es muss also $\sigma(\sqrt{2}) = \pm \sqrt{2}$ und $\sigma(\sqrt{3}) = \pm \sqrt{3}$.
+      es muss also $\sigma(\sqrt{2}) = \pm \sqrt{2}$ und $\sigma(\sqrt{3}) = \pm \sqrt{3}$ gelten.
       Da $L$ von $\sqrt{2}$ und $\sqrt{3}$ erzeugt wird, ist $\sigma$ durch die beiden Werte $\sigma(\sqrt{2})$ und $\sigma(\sqrt{3})$ auch schon eindeutig bestimmt.
       
       Zusammen mit $|{\Gal(L / \Rational)}| = 4$ erhalten wir hieraus, dass die vier Automorphismen $\sigma_1, \sigma_2, \sigma_3, \sigma_4 \colon \Gal(L / \Rational)$ durch
@@ -394,7 +401,7 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Es gilt $L = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}, \zeta^2 \sqrt[3]{3})$ da $\zeta = (\zeta \sqrt[3]{3}) / \sqrt[3]{3})$.
+      Es gilt $L = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}, \zeta^2 \sqrt[3]{3})$ da $\zeta = (\zeta \sqrt[3]{3}) / \sqrt[3]{3}$ gilt.
       Also wird $L$ über $\Rational$ von den Nullstellen des Polynoms $f(X) \coloneqq X^3 - 3 \in \Rational[X]$ erzeugt, ist also ein Zerfällungskörper von $f$.
       Die Nullstellen von $f$ sind paarweise verschieden, also ist $f$ separabel.
       Als Zerfällungskörper eines separablen Polynoms ist $L/\Rational$ galoisch.
@@ -409,7 +416,7 @@
         \item
           Aus $\zeta \notin \Rational(\sqrt[3]{3})$ ergibt sich, dass $[L : \Rational(\sqrt[3]{3})] \geq 2$.
           Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] \geq 6$ gilt.
-          Andererseits ist $L$ ein Zerfällungskörper eines kubischen Polynoms und somit $[L : \Rational] \leq 3! = 6$.
+          Andererseits ist $L$ ein Zerfällungskörper eines kubischen Polynoms, weshalb $[L : \Rational] \mid 3! = 6$ gilt.
           Zusammen erhalten wir, dass $[L : \Rational] = 2$.
         \item
           Es gilt $L = \Rational(\sqrt[3]{3}, \zeta) = \Rational(\sqrt[3]{3}, \zeta \sqrt[3]{3}) = \Rational(\sqrt[3]{3})(\zeta \sqrt[3]{3})$.
@@ -420,7 +427,7 @@
             =         f(X)/(X-\sqrt[3]{3})
             \in       \Rational(\sqrt[3]{3})[X]
           \]
-          ist irreduzibel, da wegen $\zeta \notin \Rational(\sqrt[3]{3})$ auch $\pm \zeta \sqrt[3]{3} \notin \Rational(\sqrt[3]{3})$.
+          ist irreduzibel, da wegen $\zeta \notin \Rational(\sqrt[3]{3})$ auch $\zeta \sqrt[3]{3}, \zeta \sqrt[3]{3} \notin \Rational(\sqrt[3]{3})$ gilt.
           Somit ist $g$ das Minimalpolynom von $\zeta \sqrt[3]{3}$ über $\Rational(\sqrt[3]{3})$ und deshalb $[L : \Rational(\sqrt[3]{3})] = 2$.
           Zusammen mit $[\Rational(\sqrt[3]{3}) : \Rational] = 3$ erhalten wir, dass $[L : \Rational] = 6$ gilt.
       \end{itemize}
@@ -442,7 +449,7 @@
   Es sei $L \coloneqq \Rational(\sqrt[4]{2}, i)$.
   \begin{enumerate}
     \item
-      Bestimmen Sie den Grad der Erweiterun $L/\Rational$.
+      Bestimmen Sie den Grad der Erweiterung $L/\Rational$.
     \item
       Zeigen Sie, dass $L/\Rational$ galoisch ist.
     \item
@@ -463,8 +470,8 @@
       
       Da $i$ eine Nullstelle des Polynoms $X^2 + 1 \in \Rational(\sqrt[4]{2})[X]$ ist, gilt $[L : \Rational(\sqrt[4]{2})] \leq 2$.
       Wäre $[L : \Rational(\sqrt[4]{2})] = 1$, also $L = \Rational(\sqrt[4]{2})$, so wäre $i \in \Rational(\sqrt[4]{2})$.
-      Dies ist aber nicht der Fall, da $\Rational(\sqrt[4]{2}) \subseteq \Real$.
-      also ist $[L : \Rational(\sqrt[4]{2})] = 2$.
+      Dies ist aber nicht der Fall, da $\Rational(\sqrt[4]{2}) \subseteq \Real$ gilt.
+      Also gilt $[L : \Rational(\sqrt[4]{2})] = 2$.
       
       Somit gilt $[L : \Rational] = [L : \Rational(\sqrt[4]{2})] [\Rational(\sqrt[4]{2}) : \Rational] = 4$.
       
@@ -479,7 +486,7 @@
       \]
       Also wird $L$ von den Nullstellen von $f$ erzeugt, ist also ein Zerfällungskörper von $f$.
       Da die Nullstellen von $f$ paarweise verschieden sind, ist $f$ separabel.
-      Also ist $L$ Zerfällungskörper eines separablen Polynoms, und somit galoisch.
+      Also ist $L$ ein Zerfällungskörper des separablen Polynoms $f \in \Rational[X]$, und $L/\Rational$ somit galoisch.
     
     \item
       Da $L/\Rational$ Galoisch ist gilt $|{\Gal(L / \Rational)}| = [L : \Rational] = 8$.
@@ -599,7 +606,7 @@
   \begin{enumerate}
     \item
       Durch Reduzieren bezüglich des Primelements $2 \in \Integer$ erhält man das kubische Polynom $\tilde{f}(X) = X^3 + X + 1 \in \Field_2[X]$.
-      Da $\tilde{f}(0) = \tilde{f}(1) = 1$ hat $\tilde{f}$ keine Nullstellen.
+      Da $\tilde{f}(0) = \tilde{f}(1) = 1$ gilt hat $\tilde{f}$ keine Nullstellen.
       Da $\tilde{f}$ kubisch ist, ist $\tilde{f}$ somit bereits irreduzibel.
       Also ist auch $f$ schon irreduzibel.
       Folglich ist $f$ bereits das Minimalpolynom von $\alpha$.
@@ -680,8 +687,7 @@
   \end{align*}
   Also ist $g$ invariant unter allen $\varphi_\sigma$ mit $\sigma \in G$.
   Da die $\varphi_\sigma$ koeffizientenweise agieren, erhalten wir, dass alle Koeffizienten von $g$ invariant unter allen $\sigma \in G$ sind.
-  Die Koeffizienten von $G$ liegen also im Fixkörper $L^G$;
-  somit gilt $g \in L^G[X]$.
+  Die Koeffizienten von $G$ liegen also im Fixkörper $L^G$, und $g$ somit in $L^G[X]$.
   Da $L/K$ galoisch ist, gilt dabei bereits $L^G = K$.
 \end{solution}
 
@@ -691,7 +697,7 @@
   Es sei $\sigma \in \Gal(\Real/\Rational)$.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass für alle $x \in \Real$ genau dann $x \geq 0$, wenn $\sigma(x) \geq 0$.
+      Zeigen Sie, dass für alle $x \in \Real$ genau dann $x \geq 0$ gilt, wenn $\sigma(x) \geq 0$ gilt.
     \item
       Folgern Sie, dass $\sigma$ streng monoton steigend ist.
     \item
@@ -721,9 +727,9 @@
       dass $\sigma$ bereits \emph{streng} monoton steigend ist ergibt sich aus der Injektivität von $\sigma$.
       
     \item
-      Für alle $x, y \in \Real$ mit $x < y$ gilt nach dem vorherigen Aussagenteil, dass genau dann $x < z < y$, wenn 
-      $\sigma(x) < \sigma(z) < \sigma(y)$; also bildet $\sigma$ offene Intervalle auf offene Intervalle ab.
-      Da eine jede offene Menge $U \subseteq \real$ eine Vereinigung offener Intervalle ist, folgt daraus, dass auch $\sigma(U) \subseteq \real$ offen ist.
+      Für alle $x, y \in \Real$ mit $x < y$ gilt nach dem vorherigen Aussagenteil, dass genau dann $x < z < y$ gilt, wenn 
+      $\sigma(x) < \sigma(z) < \sigma(y)$ gilt; also bildet $\sigma$ offene Intervalle auf offene Intervalle ab.
+      Da eine jede offene Menge $U \subseteq \Real$ eine Vereinigung offener Intervalle ist, folgt daraus, dass auch $\sigma(U) \subseteq \Real$ offen ist.
       Wendet man dieses Resultat auf $\sigma^{-1} \in \Gal(\Real/\Rational)$ an, so ergibt sich, dass für jede offene Teilmenge $U \subseteq \Real$ auch $\sigma^{-1}(U)$ offen ist.
     
     \item
@@ -742,15 +748,15 @@
     \item
       Folgern Sie, dass $L/\Rational$ galoisch ist.
     \item
-      Zeigen Sie, dass $[\Rational(\zeta) : \Rational] = p-1$.
+      Zeigen Sie, dass $[\Rational(\zeta) : \Rational] = p-1$ gilt.
       \\
       (\emph{Hinweis}:
        Man betrachte Übung~\ref{question: irreducibility of polynomials}.)
     \item
-      Folgern Sie, dass $[L : \Rational] = p(p-1)$.
+      Folgern Sie, dass $[L : \Rational] = p(p-1)$ gilt.
       \\
       (\emph{Hinweis}:
-       Zeigen Sie, dass $p, p-1 \mid [L : \Rational]$.
+       Zeigen Sie, dass $p, p-1 \mid [L : \Rational]$ gilt.)
     \item
       Bestimmen Sie $\Gal(L / \Rational)$.
     \item
@@ -772,7 +778,7 @@
       
     \item
       Das Polynom $f$ ist separabel, da alle Nullstellen paarweise verschieden sind.
-      Somit ist $L$ Zerfällungskörper des separablen Polynoms $f \in \Rational[X]$ galoisch über $\Rational$.
+      Somit ist $L$ als Zerfällungskörper des separablen Polynoms $f \in \Rational[X]$ galoisch über $\Rational$.
       
     \item
       Als $p$-te Einheitswurzel ist $\zeta$ eine Nullstelle des Polynoms $X^p - 1 \in \Rational[X]$.
@@ -797,30 +803,31 @@
       Da $L/\Rational$ galoisch ist, wissen wir bereits, dass $|{\Gal(L/\Rational)}| = [L : \Rational] = p(p-1)$ gilt.
       Jedes $\sigma \in \Gal(L/\Rational)$ permutiert die Nullstellen von $f$, weshalb $\sigma(\sqrt[p]{2}) = \zeta^k \sqrt[p]{2}$ für ein eindeutiges $k \in \{0, \dotsc, p-1\}$ gilt.
       Außerdem muss $\sigma$ die Nullstellen von $g$, also die $p$-ten Einheitswurzeln, die verschieden von $1$ sind, permutieren, weshalb $\sigma(\zeta) = \zeta^\ell$ für ein eindeutiges $\ell \in \{1, \dotsc, p-1\}$ gilt.
-      Da $\sigma$ durch die beiden Werte $\sigma(\sqrt[p]{2})$ und $\sigma(\zeta)$ bereits eindeutig bestimmt ist, erhalten wir zusammen mit $|{\Gal(L/\Rational)}| = p(p-1)$, dass $\Gal(L/\Rational) = \{\sigma_{k,\ell} \mid k = 1, \dotsc, p, \ell = 1, \dotsc, p-1\}$ gilt, wobei $\sigma_{k,\ell}$ durch
+      Da $\sigma$ durch die beiden Werte $\sigma(\sqrt[p]{2})$ und $\sigma(\zeta)$ bereits eindeutig bestimmt ist, erhalten wir zusammen mit $|{\Gal(L/\Rational)}| = p(p-1)$, dass $\Gal(L/\Rational) = \{\sigma_{k,\ell} \mid k = 0, \dotsc, p-1; \ell = 1, \dotsc, p-1\}$ gilt, wobei $\sigma_{k,\ell}$ durch
       \[
         \sigma_{k,\ell}
         \colon
         \left\{
           \begin{array}{rcl}
-            \sqrt[p]{2} & \mapsto & \zeta^{k-1} \sqrt[p]{2},
+            \sqrt[p]{2} & \mapsto & \zeta \sqrt[p]{2},
             \\
             \zeta       & \mapsto & \zeta^\ell,
           \end{array}
         \right.
       \]
       eindeutig bestimmt ist.
-    
+      (Wir wählen die Indizes so, dass man sich den Parameter $k$ als ein Element von $\Integer/p$ vorstellen kann, und den Parameter $\ell$ als ein Element von $(\Integer/p)^\times$.)
+      
     \item
       Für $p = 2$ gilt $|{\Gal(L/\Rational)}| = 2$ und $\Gal(L / \Rational) \cong \Integer/2$ ist abelsch.
-      Für $p \neq 3$ Gruppe ist nicht abelsch, denn dann gilt $\sigma_{2,1} \sigma_{1,2} \neq \sigma_{1,2} \sigma_{2,1}$ da
+      Für $p \neq 3$ Gruppe ist nicht abelsch, denn dann gilt $\sigma_{1,1} \sigma_{0,2} \neq \sigma_{0,2} \sigma_{1,1}$ da
       \[
-              \sigma_{2,1}( \sigma_{1,2}( \sqrt[p]{2} ) )
-        =     \sigma_{2,1}( \sqrt[p]{2} )
+              \sigma_{1,1}( \sigma_{0,2}( \sqrt[p]{2} ) )
+        =     \sigma_{1,1}( \sqrt[p]{2} )
         =     \zeta \sqrt[p]{2}
         \neq  \zeta^2 \sqrt[p]{2}
-        =     \sigma_{1,2}( \zeta \sqrt[p]{2} )
-        =     \sigma_{1,2}( \sigma_{2,1}( \sqrt[p]{2} ) ).
+        =     \sigma_{0,2}( \zeta \sqrt[p]{2} )
+        =     \sigma_{0,2}( \sigma_{1,1}( \sqrt[p]{2} ) ).
       \]
       
     \item
@@ -830,58 +837,49 @@
       \[
                   H
         \coloneqq \Gal(L / \Rational(\sqrt[p]{2}) )
-        =         \{ \sigma_{1,1}, \dotsc, \sigma_{1,p-1} \}
+        =         \{ \sigma_{0,1}, \dotsc, \sigma_{0,p-1} \}
       \]
       ist dann nicht normal in $\Gal(L / \Rational)$.
       Es gibt (mindestens) zwei Möglichkeiten dies einzusehen:
       \begin{itemize}
         \item
-          Es gilt $\sigma_{2,1}^{-1} = \sigma_{p,1}$ denn es gelten
+          Es gilt $\sigma_{1,1}^{-1} = \sigma_{p-1,1}$ denn es gelten
           \begin{align*}
-                \sigma_{2,1}( \sigma_{p,1}( \sqrt[p]{2} ) )
-             =  \sigma_{2,1}( \zeta^{p-1} \sqrt[p]{2} )
-            &=  \sigma_{2,1}( \zeta )^{p-1}  \sigma_{2,1}( \sqrt[p]{2} )
+                \sigma_{1,1}( \sigma_{p-1,1}( \sqrt[p]{2} ) )
+             =  \sigma_{1,1}( \zeta^{p-1} \sqrt[p]{2} )
+            &=  \sigma_{1,1}( \zeta )^{p-1}  \sigma_{1,1}( \sqrt[p]{2} )
             \\
             &=  \zeta^{p-1} \zeta \sqrt[p]{2}
              =  \zeta^p \sqrt[p]{2}
              =  \sqrt[p]{2}
           \end{align*}
-          sowie $\sigma_{2,1}(\sigma_{p,1}(\zeta))= \sigma_{2,1}(\zeta) = \zeta$, und somit $\sigma_{2,1} \sigma_{p,1} = \id_L$.
-          Für $\sigma_{1,2} \in H$ gilt somit $\sigma_{2,1} \sigma_{1,2} \sigma_{2,1}^{-1} = \sigma_{2,1} \sigma_{1,2} \sigma_{p,1} = \sigma_{p,2} \notin H$, denn
+          sowie $\sigma_{1,1}(\sigma_{p-1,1}(\zeta))= \sigma_{1,1}(\zeta) = \zeta$, und somit $\sigma_{1,1} \sigma_{p-1,1} = \id_L$.
+          Für $\sigma_{0,2} \in H$ gilt somit $\sigma_{1,1} \sigma_{0,2} \sigma_{1,1}^{-1} = \sigma_{1,1} \sigma_{0,2} \sigma_{p-1,1} = \sigma_{p-1,2} \notin H$, denn
           \begin{gather*}
             \begin{aligned}
-                  \sigma_{2,1}( \sigma_{1,2}( \sigma_{p,1}( \sqrt[p]{2} ) ) )
-              &=  \sigma_{2,1}( \sigma_{1,2}( \zeta^{p-1} \sqrt[p]{2} ) )
-               =  \sigma_{2,1}( \sigma_{1,2}(\zeta)^{p-1} \sigma_{1,2}(\sqrt[p]{2}) )
+                  \sigma_{1,1}( \sigma_{0,2}( \sigma_{p-1,1}( \sqrt[p]{2} ) ) )
+              &=  \sigma_{1,1}( \sigma_{0,2}( \zeta^{p-1} \sqrt[p]{2} ) )
+               =  \sigma_{1,1}( \sigma_{0,2}(\zeta)^{p-1} \sigma_{0,2}(\sqrt[p]{2}) )
               \\
-              &=  \sigma_{2,1}( ((\zeta)^2)^{p-1} \sqrt[p]{2} )
-               =  \sigma_{2,1}( \zeta^{2p-2} \sqrt[p]{2} )
+              &=  \sigma_{1,1}( ((\zeta)^2)^{p-1} \sqrt[p]{2} )
+               =  \sigma_{1,1}( \zeta^{2p-2} \sqrt[p]{2} )
               \\
-              &=  \sigma_{2,1}(\zeta)^{2p-2} \sigma_{2,1}(\sqrt[p]{2})
+              &=  \sigma_{1,1}(\zeta)^{2p-2} \sigma_{1,1}(\sqrt[p]{2})
                =  \zeta^{2p-2} \zeta \sqrt[p]{2}
               \\
               &=  \zeta^{2p-1} \sqrt[p]{2}
                =  \zeta^{p-1} \sqrt[p]{2}
             \end{aligned}
           \shortintertext{sowie}
-              \sigma_{2,1}( \sigma_{1,2}( \sigma_{p,1}( \zeta ) ) )
-            = \sigma_{2,1}( \sigma_{1,2}( \zeta ) )
-            = \sigma_{2,1}( \zeta^2 )
-            = \sigma_{2,1}(\zeta)^2
+              \sigma_{1,1}( \sigma_{0,2}( \sigma_{p-1,1}( \zeta ) ) )
+            = \sigma_{1,1}( \sigma_{0,2}( \zeta ) )
+            = \sigma_{1,1}( \zeta^2 )
+            = \sigma_{1,1}(\zeta)^2
             = \zeta^2.
           \end{gather*}
         \item
-          Wäre $H$ normal in $G$, so wäre nach dem Hauptsatz der Galoistheorie die Erweiterung $\Gal(\Rational(\sqrt[p]{2}) / \Rational)$ galoisch.
-          Die Erweiterung ist aber nicht normal, denn $f$ ist irreduzibel in $\Rational[X]$ und hat eine Nullstelle in $\Rational(\sqrt[p]{2})$, zerfällt aber in $\Rational(\sqrt[p]{2})[X]$ nicht in Linearfaktoren, denn
-          \begin{itemize}
-            \item
-              die Nullstellen $\zeta \sqrt[p]{2}, \dotsc, \zeta{p-1} \sqrt[p]{2}$ von $f$ liegen nicht in $\Real$ und somit auch nicht in $\Rational(\sqrt[p]{2})$,
-          \end{itemize}
-          bzw.\
-          \begin{itemize}[resume]
-            \item
-              $L$ ist ein Zerfällungskörper von $f$, und es gilt $\Rational(\sqrt[p]{2}) \subsetneq L$.
-          \end{itemize}
+          Wäre $H$ normal in $G$, so wäre nach dem Hauptsatz der Galoistheorie die Erweiterung $\Rational(\sqrt[p]{2})/\Rational$ galoisch.
+          Die Erweiterung ist aber nicht normal, denn $f$ ist irreduzibel in $\Rational[X]$ und hat eine Nullstelle in $\Rational(\sqrt[p]{2})$, zerfällt aber in $\Rational(\sqrt[p]{2})[X]$ nicht in Linearfaktoren, denn die weiteren Nullstellen $\zeta \sqrt[p]{2}, \dotsc, \zeta^{p-1} \sqrt[p]{2}$ von $f$ liegen nicht in $\Real$ und somit auch nicht in $\Rational(\sqrt[p]{2})$.
       \end{itemize}
       
     \item
@@ -889,7 +887,7 @@
       \[
                   N
         \coloneqq \Gal(L / \Rational(\zeta) )
-        =         \{ \sigma_{1,1}, \dotsc, \sigma_{p,1} \}
+        =         \{ \sigma_{0,1}, \dotsc, \sigma_{p-1,1} \}
       \]
       ist normal in $\Gal(L / \Rational)$.
       Es gibt (mindestens) zwei Möglichkeiten dies einzusehen:
@@ -906,7 +904,7 @@
             = \sigma_{k', \ell'}( \sigma_{k, \ell}( \zeta ) )
           \]
           gilt.
-          Obwohl $\Gal(L/\Rational)$ für $p \neq 2$ nicht abelsch ist, lassen sich die Elemente beim Auswerten an $\zeta$ deshalb dennoch vertauschen.
+          Obwohl $\Gal(L/\Rational)$ für $p \neq 2$ nicht abelsch ist, lassen sich die Gruppenelemente beim Auswerten an $\zeta$ deshalb dennoch vertauschen.
           Für $\sigma \in \Gal(L/\Rational)$ und $\sigma' \in N$ gilt deshalb auch $\sigma \sigma' \sigma^{-1} \in N$, denn es gilt
           \[
               \sigma( \sigma'( \sigma^{-1}( \zeta ) ) )
@@ -916,7 +914,7 @@
           \]
           
         \item
-          Nach dem Hauptsatz der Galoistheorie ist $N$ genau dann Normal in $\Gal(L/\Rational)$, wenn $\Rational(\zeta)/\Rational$ galoisch ist.
+          Nach dem Hauptsatz der Galoistheorie ist $N$ genau dann normal in $\Gal(L/\Rational)$, wenn $\Rational(\zeta)/\Rational$ galoisch ist.
           Hierfür bemerke man, dass $\Rational(\zeta)$ alle Potenzen $\zeta^k$ enthält, also alle $p$-ten Einheitswurzeln (denn $\zeta$ ist eine \emph{primitive} $p$-te Einheitswurzel).
           Also ist $\Rational(\zeta)$ der Zerfällungskörper des Kreisteilungspolynoms $X^p - 1 \in \Rational[X]$; dieses ist separabel, da die $p$-ten Einheitswurzeln paarweise verschieden sind.
           Somit ist $\Rational(\zeta)$ der Zerfällungskörper eines separablen Polynoms aus $\Rational[X]$, und $\Rational(\zeta)/\Rational$ somit galoisch.
@@ -925,9 +923,9 @@
   
   \begin{remark*}
     Für die Untergruppen $N, H \subseteq \Gal(L/\Rational)$ ist also $N$ normal und $H \cap N = 1$.
-    Es gilt außerdem $NH = G$, da $\sigma_{k,\ell} = \sigma_{k,1} \sigma_{1,\ell}$ für alle $k, \ell$ gilt, wobei $\sigma_{k,1} \in N$ und $\sigma_{1,\ell} \in N$ gilt.
+    Es gilt außerdem $NH = G$, da $\sigma_{k,\ell} = \sigma_{k,1} \sigma_{1,\ell}$ für alle $k, \ell$ gilt, wobei $\sigma_{k,1} \in N$ und $\sigma_{0,\ell} \in N$ gelten.
     Insgesamt erhält man hierdurch, dass $\Gal(L/\Rational) = N \rtimes H$.
-    Zusammen mit $N \cong \Integer/p$ und $H \cong (\Integer/p)^\times \cong \Integer/(p-1)$ erhält man somit, dass $\Gal(L/\Rational) \cong (\Integer/p) \rtimes (\Integer/(p-1)$.
+    Zusammen mit $N \cong \Integer/p$ und $H \cong (\Integer/p)^\times$ erhält man somit, dass $\Gal(L/\Rational) \cong (\Integer/p) \rtimes (\Integer/p)^\times$ gilt.
     
     Für $p = 2$ ergibt sich somit, dass $\Gal(L/\Rational) \cong \Integer/2$, und für $p = 3$ ergibt sich, dass $\Gal(L/\Rational) \cong (\Integer/3) \rtimes (\Integer/2) \cong S_3$.
   \end{remark*}  
@@ -965,7 +963,7 @@
   Also sind $0$ und $K$ die einzigen Ideale in $K$.
   
   (\ref{enum: K has exactly two ideals} $\implies$ \ref{enum: The zero ideal is maximal})
-  Es muss $0 \neq K$, denn sonst wäre $0$ das einzige Ideal in $K$.
+  Es gilt $0 \neq K$, denn sonst wäre $0$ das einzige Ideal in $K$.
   Also sind $0$ und $K$ die einzigen beiden Ideale in $K$.
   Ist $I \subseteq K$ ein Ideal mit $0 \subsetneq I$, so muss bereits $I = K$.
   Also ist $0$ ein maximales Ideal.
@@ -1001,7 +999,7 @@
 
 
 \begin{solution}
-  Wäre $p$ reduzibel, so gebe $q_1, q_2 \in K[T]$ mit $p = q_1 q_2$ und $\deg q_1, \deg q_2 \geq 1$.
+  Wäre $p$ es reduzibel, so gebe $q_1, q_2 \in K[T]$ mit $p = q_1 q_2$ und $\deg q_1, \deg q_2 \geq 1$.
   Es müsste dann $\deg p = \deg q_1 + \deg q_2$ und somit $\deg q_1 = 1$ oder $\deg q_2 = 1$.
   Also besäße $p$ einen Teiler vom Grad $1$;
   dieser wäre bis auf Normierung ein Linearfaktor, weshalb $p$ ein Nullstelle hätte.
@@ -1019,13 +1017,13 @@
   Es sei $\alpha \in L$.
   Da $L/K$ algebraisch ist, gibt es ein normiertes Polynom $P \in K[T]$ mit $P \neq 0$ und $P(\alpha) = 0$.
   Da $K$ algebraisch abgeschlossen ist zerfällt $P$ in Linearfaktoren, also $P(T) = (T - a_1) \dotsm (T - a_n)$ mit $a_1, \dotsc, a_n \in K$ und $n = \deg P$.
-  Da
+  Es gilt also
   \[
       0
     = P(\alpha)
-    = (\alpha - a_1) \dotsm (\alpha - a_n)
+    = (\alpha - a_1) \dotsm (\alpha - a_n),
   \]
-  muss bereits $\alpha = a_i$ für ein $1 \leq i \leq n$, und somit $\alpha \in K$.
+  weshalb bereits $\alpha = a_i$ für ein $1 \leq i \leq n$ gilt, und somit $\alpha \in K$.
 \end{solution}
 
 
@@ -1036,7 +1034,7 @@
     \item
       Zeigen Sie, dass $\overline{L}/K$ genau dann ein algebraischer Abschluss ist, wenn $L/K$ algebraisch ist.
     \item
-      Zeigen Sie, dass es einen Unterkörper $\overline{K} \subseteq L$ gibt, so dass $\overline{K} \supseteq K$ gilt und $\overline{K}/K$ ein algebraischer Abschluss ist.
+      Zeigen Sie, dass es einen Unterkörper $\overline{K} \subseteq \overline{L}$ gibt, so dass $\overline{K} \supseteq K$ gilt und $\overline{K}/K$ ein algebraischer Abschluss ist.
     \item
       Entscheiden Sie, ob der obige Körper $\overline{K}$ eindeutig ist.
   \end{enumerate}
@@ -1094,7 +1092,7 @@
     \coloneqq a_n T^n + \dotsb + a_1 T + a_0
     \in       K[T]
   \]
-  gilt also $P(x) = 0$, weshalb $x$ algebraisch über $K$ ist.
+  gilt also $P \neq 0$ und $P(x) = 0$, weshalb $x$ algebraisch über $K$ ist.
 \end{solution}
 
 
@@ -1104,18 +1102,18 @@
 \end{question}
 
 
-\begin{question}
+\begin{solution}
   Es sei $x \in M$.
-  Da $M/L$ algebraisch ist gibt es ein Polynom $p(T) \in L(T)$ mit $p \neq 0$ und $p(x) = 0$.
+  Da $M/L$ algebraisch ist gibt es ein Polynom $p(T) \in L[T]$ mit $p \neq 0$ und $p(x) = 0$.
   Es seien $a_0, \dotsc, a_n \in L$ die Koeffizienten von $p$.
   Da $L/K$ algebraisch ist sind $a_0, \dotsc, a_n$ algebraisch über $K$.
   Für $L' \coloneqq K(a_0, \dotsc, a_n)$ wird die Erweiterung $L'/K$ von endlich vielen algebraischen Elementen erzeugt und ist deshalb endlich.
-  Es gilt bereits $p(T) \in L'(T)$, weshalb $x$ algebraisch über $L'$ ist.
+  Es gilt bereits $p(T) \in L'[T]$, weshalb $x$ algebraisch über $L'$ ist.
   Insbesondere ist deshalb $L'(x)/L'$ endlich.
   Ingesamt gilt also $[K(x) : K] \leq [L'(x) : K] = [L'(x) : L'][L' : K] < \infty$.
   Die Erweiterung $K(x)/K$ ist also endlich, und damit algebraisch (siehe Übung~\ref{equation: finite extensions are algebraic}).
   Inbesondere ist $x$ algebraisch über $K$.
-\end{question}
+\end{solution}
 
 
 \begin{remark*}
@@ -1135,28 +1133,30 @@
 \end{question}
 
 
-\begin{enumerate}
-  \item
-    Wegen der Irreduziblität von $f$ gilt $\deg f \geq 1$.
-    Wegen $\ringchar K = 0$ folgt, dass $f' \neq 0$.
-    Da aber $\deg f' = \deg f - 1 < \deg f$ gilt, folgt aus der Irreduziblität von $f$, dass $f$ und $f'$ teilerfremd sind.
-    Also ist $f$ separabel.
-  \item
-    Ist $p \coloneqq \ringchar K > 0$, so ist das Polynom $f(X) \coloneqq X^p - t \in \Field_p(t)[X]$ nach Eisenstein irreduzibel.
-    Es gilt aber $f' = 0$, weshalb $f$ und $f'$ nicht teilerfremd, und $f$ somit nicht separabel ist.
-\end{enumerate}
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wegen der Irreduziblität von $f$ gilt $\deg f \geq 1$.
+      Wegen $\ringchar K = 0$ folgt, dass $f' \neq 0$.
+      Da aber $\deg f' = \deg f - 1 < \deg f$ gilt, folgt aus der Irreduziblität von $f$, dass $f$ und $f'$ teilerfremd sind.
+      Also ist $f$ separabel.
+    \item
+      Ist $p \coloneqq \ringchar K > 0$, so ist das Polynom $f(X) \coloneqq X^p - t \in \Field_p(t)[X]$ nach Eisenstein irreduzibel.
+      Es gilt aber $f' = 0$, weshalb $f$ und $f'$ nicht teilerfremd, und $f$ somit nicht separabel ist.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}[subtitle = Grad des Körperkompositums]
   Es sei $K$ ein Körper, $L/K$ eine endliche Körpererweiterung und es seien $K \subseteq L_1, L_2 \subseteq L$ zwei Zwischenkörper.
+  Es sei $L_1 L_2 \subseteq L$ der kleinste Unterkörper, der $L_1$ und $L_2$ enthält.
   \begin{enumerate}
     \item
       Zeigen Sie für alle $\alpha, \beta \in L$, dass $[K(\alpha, \beta) : K(\alpha)] \leq [K(\beta) : K]$ gilt.
     \item
-      Es sei $L_1 L_2 \subseteq L$ der kleinste Unterkörper, der $L_1$ und $L_2$ enthält.
-      Zeigen Sie, dass $[L_1 L_2 : L_2] \leq [L_1 : K]$.
+      Zeigen Sie, dass $[L_1 L_2 : L_2] \leq [L_1 : K]$ gilt.
     \item
-      Zeigen Sie, dass $[L_1 L_2 : K] = [L_1 : K] [L_2 : K]$ falls $[L_1 : K]$ und $[L_2 : K]$ teilerfremd sind.
+      Folgern Sie, dass $[L_1 L_2 : K] = [L_1 : K] [L_2 : K]$ gilt falls $[L_1 : K]$ und $[L_2 : K]$ teilerfremd sind.
   \end{enumerate}
 \end{question}
 
@@ -1171,8 +1171,8 @@
       Dabei gilt $\deg g = [K(\alpha, \beta) : K(\alpha)]$ und die Aussage folgt.
     
     \item
-      Da $L/K$ endlich erzeugt ist, sind es auch $L_1/K$ und $L_2/K$.
-      Inbesondere sind die beiden Erweiterungen sind endlich erzeugt, also $L_1 = K(\alpha_1, \dotsc, \alpha_n)$ und $L_2 = K(\beta_1, \dotsc, \beta_m)$.
+      Da $L/K$ endlich erzeugt ist, sind es auch die beiden Erweiterungen $L_1/K$ und $L_2/K$.
+      Deshalb gelten $L_1 = K(\alpha_1, \dotsc, \alpha_n)$ und $L_2 = K(\beta_1, \dotsc, \beta_m)$.
       Inbesondere gilt damit auch $L_1 L_2 = K(\alpha_1, \dotsc, \alpha_n, \beta_1, \dotsc, \beta_m)$.
       Aus dem vorherigen Aussagenteil erhalten wir, dass
       \begin{align*}
@@ -1227,15 +1227,15 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Ist $\alpha \in L$ mit $\alpha \neq K$, so gilt
+      Ist $\alpha \in L$ mit $\alpha \notin K$, so gilt
       \[
               2
-        =     [L : K)
+        =     [L : K]
         \geq  [K(\alpha) : K]
         \geq  2,
       \]
       also $[K(\alpha) : K] = 2$ und somit $L = K(\alpha)$.
-      Ist $f \in K[X]$ das Minimalpolynom von $\alpha$, so gilt deshalb $\deg f = [K(\alpha : K] = 2$ und $L = K(\alpha) \cong K[X](f)$.
+      Ist $f \in K[X]$ das Minimalpolynom von $\alpha$, so gilt deshalb $\deg f = [K(\alpha : K] = 2$ und $L = K(\alpha) \cong K[X]/(f)$.
       Wir können daher o.B.d.A.\ davon ausgehen, dass $L = K[X]/(f)$ für ein normiertes, irreduzibles quadratisches Polyom $f \in K[X]$ gilt.
       
       Da $\ringchar K \neq 2$ gilt, können wir
@@ -1246,10 +1246,10 @@
       \]
       schreiben.
       Der Automorphismus $K[X] \to K[X]$, $p(X) \mapsto p(X - a/2)$ induziert deshalb einen Isomorphismus $K[X]/(f) \to K[X]/(X^2 - (a^2/4 - b))$.
-      Wir können also auch o.B.d.A.\ davon ausgehen, dass $f$ von der Form $f(X) = X^2 - c$ ist, wobei $c \in K$ kein Quadrat ist.
+      Wir können also auch o.B.d.A.\ davon ausgehen, dass $f$ von der Form $f(X) = X^2 - c$ ist, wobei $c \in K$ wegen der Irreduziblität von $f$ kein Quadrat ist.
       
       Wir haben nun also $L = K[X]/(X^2 - c)$, wobei $c \in K$ kein Quadrat ist.
-      Nun leistet $\alpha = \overline{X}$ das Gewünschte.
+      Nun leistet $\alpha \coloneqq \overline{X}$ das Gewünschte.
     
     \item
       Es sei $\alpha \in L$ mit $\alpha \notin K$ und $\alpha^2 \in K$.
@@ -1301,7 +1301,7 @@
     \item
       Zeigen Sie, dass $M/L$ normal ist, falls $M/K$ normal ist.
     \item
-      Zeigen Sie, dass $L/M$ nicht notwendigerweise normal ist, falls $M/K$ normal ist.
+      Zeigen Sie, dass $L/K$ nicht notwendigerweise normal ist, falls $M/K$ normal ist.
     \item
       Zeigen Sie, dass $M/K$ nicht notwendigerweise normal ist, wenn $M/L$ und $L/K$ normal sind.
   \end{enumerate}
@@ -1312,7 +1312,7 @@
   \begin{enumerate}
     \item
       Jedes Polynom $f \in K[X]$ zerfällt über $\overline{K}$ bereits in Linearfaktoren;
-      inbesondere also jedes irreduzibel Polynom, das eine Nullstelle in $\overline{K}$ hat.
+      inbesondere also jedes irreduzibel Polynom.
       
     \item
       Nach Annahme gibt es eine Familie $(f_i)_{i \in I}$ von Polynomen $f_i \in K[X]$, so dass $M$ der Zerfällungskörper der $f_i$ über $K$ ist.
@@ -1320,14 +1320,14 @@
       
     \item
       Es sei $L/K$ eine algebraische, nicht normale Körpererweiterung, und $\overline{L}$ ein algebraischer Abschluss von $L$.
-      Dann ist $\overline{L}$ algebraisch abgeschlossen und $\overline{L}/K$ algebraisch, also $\overline{L}$ auch von $K$ ein algebraischer Abschluss.
+      Dann ist $\overline{L}$ algebraisch abgeschlossen und $\overline{L}/K$ algebraisch, also $\overline{L}$ auch von $K$ ein algebraischer Abschluss (siehe Übung~\ref{question: transitivity of algebraic closure}).
       Nach dem ersten Aussagenteil ist somit $\overline{L}/L/K$ ein Gegenbeispiel.
       
     \item
       Wir betrachten die Körpererweiterungen $\Rational(\sqrt[4]{2}) / \Rational(\sqrt{2}) / \Rational$.
       
       Es gilt $[\Rational(\sqrt[4]{2}) : \Rational] = 4$, denn das Minimalpolynom von $\sqrt[4]{2}$ über $\Rational$ ist $X^4 - 2$ (die Irreduziblität ergibt sich mit Eisenstein), und es gilt $[\Rational(\sqrt[4]{2}) : \Rational] = 2$, denn das Minimalpolynom von $\sqrt{2}$ über $\Rational$ ist $X^2 - 2$ (die Irreduziblität ergibt sich ebenfalls mit Eisenstein).
-      Somit gilt $[\Rational(\sqrt[4]{2}) : \Rational(\sqrt{2})] = 2$.
+      Somit gilt auch $[\Rational(\sqrt[4]{2}) : \Rational(\sqrt{2})] = 2$.
       
       Die beiden Erweiterungen $\Rational(\sqrt[4]{2}) / \Rational(\sqrt{2})$ und $\Rational(\sqrt{2}) / \Rational$ sind also beide vom Grad $2$;
       da $\ringchar \Rational \neq 2$ gilt, sind sie somit beide galoisch (siehe Übung~\ref{question: quadratic field extensions}) und damit insbesondere normal.
@@ -1344,7 +1344,7 @@
 \begin{solution}
   Es sei $L/K$ algebraisch und $K \subseteq R \subseteq L$ ein Zwischenring.
   Für $\alpha \in R$ ist dann $\alpha$ algebraisch über $K$, und somit $K(\alpha) = K[\alpha]$.
-  Da $R$ ein Ring ist, der $\alpha$ und $R$ enthält, gilt $K[\alpha] \subseteq R$.
+  Da $R$ ein Ring ist, der $\alpha$ und $K$ enthält, gilt $K[\alpha] \subseteq R$.
   Somit ist $K(\alpha) = K[\alpha] \subseteq R$.
   Ist $\alpha \neq 0$, so ist inbesondere $\alpha^{-1} \in K(\alpha) \subseteq R$.
   Das zeigt, dass jedes Element $\alpha \in R$ mit $\alpha \neq 0$ in $R$ invertierbar ist.
@@ -1394,9 +1394,9 @@
     \item
       Die Erweiterung $L/K$ ist separabel und normal, da sie Galoisch ist.
       Damit ist auch $L/E$ separabel;
-      es bleibt also nur zu zeigen, dass $L/E$ genau dann normal ist, wenn $\sigma(E) = E$ für alle $\sigma \in \Gal(L/K)$ gilt.
+      es bleibt also nur zu zeigen, dass $E/K$ genau dann normal ist, wenn $\sigma(E) = E$ für alle $\sigma \in \Gal(L/K)$ gilt.
       
-      Da $L/K$ algebraisch ist gibt es einen algebraischen Abschluss $\overline{K}$ von $K$, der $L$ enthält.
+      Da $L/K$ algebraisch ist gibt es einen algebraischen Abschluss $\overline{K}$ von $K$, der $L$ enthält (siehe Übung~\ref{question: transitivity of algebraic closure}).
       
       Es sei zunächst $E/K$ normal und $\sigma \in \Gal(L/K)$.
       Es seien $\iota_E \colon E \to \overline{K}$, $x \mapsto x$ und $\iota_L \colon L \to \overline{K}$, $x \mapsto x$ die kanonische Inklusionen.
