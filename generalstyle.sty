@@ -1,0 +1,120 @@
+%%% PACKAGES
+
+% XeLaTeX
+\usepackage{xltxtra}
+
+% German
+\usepackage[ngerman]{babel}
+
+% math stuff
+\usepackage{
+  amsmath,
+  amssymb,
+  amsthm,
+  mathtools
+}
+
+% more arrows
+\usepackage{stmaryrd} % for mapsfrom
+\usepackage{extarrows} % for xlongrightarrow
+
+% more flexible enumerations
+\usepackage{enumitem}
+
+% for commutative diagrams
+\usepackage{tikz-cd}
+\usetikzlibrary{babel} % otherwise babel fucks up tikzcd
+
+% for links
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+
+
+
+
+
+%%% GENERAL STYLE SETTINGS
+
+% enumerates are not indented
+\setlist[enumerate, 1]{leftmargin=*}
+
+% prevents breaking inline math around binary or relationship symbols
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+
+
+
+
+%%% FONTS
+
+% copied from the standard XeLaTeX template of kile
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+
+
+
+
+
+%%% THEOREMS AND COUNTERS
+
+\newcounter{everything}
+
+\theoremstyle{definition}
+\newtheorem{claim}[everything]{Behauptung}
+\newtheorem{corollary}[everything]{Korollar}
+\newtheorem{definition}[everything]{Definition}
+\newtheorem{example}[everything]{Beispiel}
+\newtheorem{lemma}[everything]{Lemma}
+\newtheorem{proposition}[everything]{Proposition}
+\newtheorem{theorem}[everything]{Theorem}
+\newtheorem{recall}[everything]{Erinnerung}
+\newtheorem{remark}[everything]{Bemerkung}
+\newtheorem{warning}[everything]{Warnung}
+
+
+
+
+
+%%% MACROS
+
+% shortcuts for already defined commands
+\newcommand{\from}{\longleftarrow}
+
+% common sets of numbers
+\newcommand{\Natural}{\ensuremath{\mathbb{N}}}
+\newcommand{\Integer}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Rational}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Real}{\ensuremath{\mathbb{R}}}
+\newcommand{\Complex}{\ensuremath{\mathbb{C}}}
+\newcommand{\Field}{\ensuremath{\mathbb{F}}}
+
+% common names for ideals
+\newcommand{\aideal}{\ensuremath{\mathfrak{a}}}
+\newcommand{\bideal}{\ensuremath{\mathfrak{b}}}
+\newcommand{\mideal}{\ensuremath{\mathfrak{m}}}
+\newcommand{\pideal}{\ensuremath{\mathfrak{p}}}
+\newcommand{\qideal}{\ensuremath{\mathfrak{q}}}
+
+% occuring spaces and sets
+\DeclareMathOperator{\annihilator}{Ann}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Center}{Z}
+\newcommand{\powerseries}[2]{#1[\![#2]\!]}
+\newcommand{\radicalideal}[1]{\sqrt{#1}}
+\newcommand{\torsion}{T}
+
+
+% functions
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\basismatrix}{M}
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\kgV}{kgV}
+\DeclareMathOperator{\ringchar}{char}
+
+% things with arguments
+\newcommand{\generate}[1]{\left\langle #1 \right\rangle}
