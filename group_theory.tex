@@ -90,6 +90,24 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Untergruppen von endlichen Gruppen]
+  Es sei $G$ eine endliche Gruppe.
+  Zeigen Sie, dass eine nichtleere Teilmenge $H \subseteq G$ genau dann eine Untergruppe ist, wenn $xy \in H$ für alle $x,y \in H$ gilt.
+\end{question}
+
+
+\begin{solution}
+  Ist $H$ eine Untergruppe, so gilt per Definition für alle $x, y \in H$ auch $xy \in H$.
+  
+  Andererseits sei nun $H \subseteq G$ eine entsprechende Teilmenge.
+  Es gibt ein Element $h \in H$, da $H$ nicht leer ist.
+  Da $G$ endlich ist, hat $h$ endliche Ordnung, d.h.\ es gibt $n \geq 1$ mit $h^n = 1$.
+  Inbesondere gilt $1 = h^n \in H$.
+  Ist $h \neq 1$, so gilt außerdem $n \geq 2$, und somit auch $h^{-1} = h^{n-1} \in H$.
+  Also ist $H$ eine Untergruppe.
+\end{solution}
+
+
 \begin{question}[subtitle = Innere Automorphismen]
   \label{question: inner automorphims}
   Es sei $G$ eine Gruppe.
