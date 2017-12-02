@@ -108,6 +108,44 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Zur Definition von Gruppen]
+  Es sei $G$ eine nichtleere Menge zusammen mit einer assoziativen binären Verknüpfung $G \times G \to G$, $(g_1, g_2) \mapsto g_1 g_2$.
+  Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}[label=\roman*)]
+    \item
+      \label{enum: its a group}
+      Es handelt sich bei $G$ um eine Gruppe.
+    \item
+      \label{enum: equations are uniquely solvable}
+      Für alle $a, b \in G$ sind die Gleichungen $ax = b$ und $xa = b$ jeweils eindeutig lösbar.
+    \item
+      \label{enum: equations are solvable}
+      Für alle $a, b \in G$ sind die Gleichungen $ax = b$ und $xa = b$ jeweils lösbar.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  (\ref{enum: its a group} $\implies$ \ref{enum: equations are uniquely solvable})
+  Ist $G$ eine Gruppe und sind $a, b \in G$, so gilt für alle $x \in G$, dass genau dann $ax = b$ gilt, wenn $x = a^{-1} b$ gilt, und genau dann $xa = b$ gilt, wenn $x = b^{-1} a$ gilt.
+  Also sind beide Gleichungen eindeutig lösbar.
+  
+  (\ref{enum: equations are solvable} $\implies$ \ref{enum: equations are uniquely solvable})
+  Andererseits seien nun die Gleichungen $ax = b$ und $xa = b$ für alle $a, b \in G$ eindeutig lösbar.
+  Es gibt ein Element $a \in G$, da $G$ nicht leer ist.
+  Nach Annahme gibt es ein Element $e \in G$ mit $ea = a$.
+  Für jedes $b \in G$ gilt dann ebenfalls $eb = b$, denn nach Annahme gibt es ein $c \in G$ mit $ac = b$, und somit gilt
+  \[
+      eb
+    = eac
+    = ac
+    = b\,.
+  \]
+  Das zeigt, dass $e$ linksneutral in $G$ ist.
+  Für jedes $a \in G$ gibt es nun nach Annahme ein $b \in G$ mit $ba = e$, also eine Linksinverses zu $a$.
+\end{solution}
+
+
 \begin{question}[subtitle = Innere Automorphismen]
   \label{question: inner automorphims}
   Es sei $G$ eine Gruppe.
