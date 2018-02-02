@@ -816,6 +816,32 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Das Zentrum der symmetrischen Gruppe]
+  Bestimmen Sie für alle natürlichen Zahlen $n \geq 1$ das Zentrum $\Center(S_n)$ der natürlichen Gruppe $S_n$.
+\end{question}
+
+
+\begin{solution}
+  Die Gruppen $S_1$ und $S_2$ sind abelsch, weshalb $\Center(S_1) = S_1$ und $\Center(S_2) = S_2$ gelten.
+  Für alle $n \geq 3$ gilt $\Center(S_n) = 1$:
+  Für jedes $\sigma \in \Center(S_n)$ sei
+  \[
+      F_\sigma
+    = \{ i \in \{1, \dotsc, n\} \mid \sigma(i) = i \}
+  \]
+  die Fixpunktmenge von $\sigma$.
+  Für jedes $i \in F_\sigma$ gilt auch $\pi(i) \in F_\sigma$, denn
+  \[
+      \sigma(\pi(i))
+    = \pi(\sigma(i))
+    = \pi(i) \,.
+  \]
+  Da $n \geq 3$ gilt, gibt es für jedes $i \in \{1, \dotsc, n\}$ eine Permutation $\sigma \in S_n$ mit $F_\sigma = \{i\}$, etwa den Zykel $\sigma \coloneqq (1 \, 2 \, \dotsb \, i \, (i+2) \, \dotsb \, n)$.
+  Dann gilt $\{\pi(i)\} = \pi(\{i\}) = \{i\}$ und somit $\pi(i)$.
+  Also gilt $\pi(i) = i$ für alle $i \in \{1, \dotsc, n\}$, und somit $\pi = \id$.
+\end{solution}
+
+
 \begin{question}[subtitle = Vereinigung von Untergruppen]
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
