@@ -567,6 +567,62 @@
 \end{solution}
 
 
+\begin{question}
+  Bestimmen Sie alle Körper $K$ und natürliche Zahlen $n \geq 1$, so dass die Gruppe $\GL_n(K)$ abelsch ist.
+\end{question}
+
+\begin{solution}
+  Für $n = 1$ ist die Gruppe $\GL_n(K) = \GL_1(K) \cong K^\times$ abelsch.
+  Für $n \geq 2$ ist die Gruppe $\GL_n(K)$ nie abelsch:
+  Für $n = 2$ gibt es das Gegenbeispiel
+  \[
+          \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+          \end{pmatrix}
+          \begin{pmatrix}
+            1 & 1 \\
+            0 & 1
+          \end{pmatrix}
+    =     \begin{pmatrix}
+            0 & 1 \\
+            1 & 1
+          \end{pmatrix}
+    \neq  \begin{pmatrix}
+            1 & 1 \\
+            1 & 0
+          \end{pmatrix}
+    =     \begin{pmatrix}
+            1 & 1 \\
+            0 & 1
+          \end{pmatrix}
+          \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+          \end{pmatrix} \,,
+  \]
+  und für alle $n \geq 2$ ergibt sich hieraus, dass $ST \neq TS$ für die beiden Matrizen $S, T \in \GL_n(K)$ mit
+  \[
+      S
+    = \begin{pmatrix}
+        0 & 1 &   &         &   \\
+        1 & 0 &   &         &   \\
+          &   & 1 &         &   \\
+          &   &   & \ddots  &   \\
+          &   &   &         & 1
+      \end{pmatrix} \,,
+      \quad
+      T
+    = \begin{pmatrix}
+        1 & 1 &   &         &   \\
+        0 & 0 &   &         &   \\
+          &   & 1 &         &   \\
+          &   &   & \ddots  &   \\
+          &   &   &         & 1
+      \end{pmatrix} \,.
+  \]
+\end{solution}
+
 
 \begin{question}[subtitle = Die oberen $2 \times 2$-Matrizen]
   Es sei $K$ ein Körper.
