@@ -102,7 +102,33 @@
 \end{question}
 
 
-% TODO: Add solutions.
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Da $H$ nichtleer ist, gibt es ein Element $x \in H$.
+      Deshalb $1 = x x^{-1} \in H$.
+      Für jedes $x \in H$ gilt somit auch $x^{-1} = 1 \cdot x^{-1} \in H$.
+      Für alle $x, y \in H$ gilt dann $y^{-1} \in H$, und somit auch $xy = x (y^{-1})^{-1} \in H$.
+      Ingesamt zeigt dies, dass $H$ eine Untergruppe von $G$ ist.
+    \item
+      Es sei $1_H \in H$ das neutrale Element von $H$, und es sei $x \in G$ das in $G$ inverse Element zu $1_H$.
+      Es gilt $1_H^2 = 1_H$, da $1_H$ neutral in $H$ ist, und somit
+      \[
+          1_H
+        = 1_H 1_G
+        = 1_H 1_H x
+        = 1_H^2 x
+        = 1_H x
+        = 1_G \,.
+      \]
+      Also besitzen $H$ und $G$ das gleiche neutrale Element.
+      (Hier nutzen wir, dass in einer Gruppe $K$ die Identität $1_K$ das einzige Element $k \in K$ mit $k^2 = k$ ist.)
+      Ist $x \in H$ und $y \in H$ das zu $x$ in $H$ inverse Element, so gilt deshalb $xy = 1_H = 1_G$, weshalb $y$ auch in $G$ invers zu $x$ ist.
+      
+      Zusammen zeigt dies, dass $H$ bereits eine Untergruppe von $G$ ist.
+  \end{enumerate}
+\end{solution}
+
 
 
 \begin{question}[subtitle = Untergruppen von endlichen Gruppen]
