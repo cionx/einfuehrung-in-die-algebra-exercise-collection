@@ -354,6 +354,20 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $G$ eine Gruppe.
+  Zeigen Sie, dass $G$ abelsch ist, wenn $G/{\Center(G)}$ zyklisch ist.
+\end{question}
+
+
+\begin{solution}
+  Es sei $\class{g} \in G/{\Center(G)}$ ein zyklischer Erzeuger.
+  Für alle $x, y \in G$ gibt es dann $n, m \in \Integer$ mit $\class{x} = \class{g}^m = \class{g^m}$ und $y = \class{g}^n = \class{g^n}$.
+  Es gibt dann $x', y' \in \Center(G)$ mit $x = g^m x'$ und $y = g^n y'$.
+  Die Element $x', y', g^n, g^m$ kommutieren paarweise miteinander, weshalb auch $x$ und $y$ kommutieren.
+\end{solution}
+
+
 \begin{question}[subtitle = Grundbegriffe der Gruppenwirkungen]
   Es sei $G$ eine Gruppe, die auf einer Menge $X$ vermöge $G \times X \to X$, $(g,x) \mapsto g.x$ wirkt.
   \begin{enumerate}
