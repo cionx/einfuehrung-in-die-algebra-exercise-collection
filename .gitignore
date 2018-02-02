@@ -1,7 +1,10 @@
 *.aux
 *.backup
+*.kilepr
 *.log
 *.out
 *.pdf
 *.synctex.gz
 *.toc
+
+.kile/*
