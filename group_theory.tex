@@ -363,6 +363,40 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Untergruppen von Ordnung $2$]
+  Es sei $G$ eine Gruppe und $N \subseteq G$ eine Untergruppe vom Index $2$.
+  Zeigen Sie, dass $N$ normal in $G$ ist.
+\end{question}
+
+
+\begin{solution}
+  Wir geben zwei Beweise:
+  \begin{itemize}
+    \item
+      Wir zeigen, dass $gN = Ng$ für alle $g \in G$ gilt, dass also für jedes $g \in G$ die entsprechenden Rechts- und Nebenklassen übereinstimmen.
+      Es gibt genau zwei Linksnebenklassen, von denen eine $N$ selbst ist;
+      da $G$ die disjunkte Vereinigung der beiden Nebenklassen ist, muss es sich bei der anderen Linksnebenklassen um das Komplement $G \smallsetminus N$ handeln.
+      Analog ergibt sich, dass $N$ und $G \smallsetminus N$ die beiden Rechtsnebenklassen sind.
+      Für $g \in G$ unterscheiden wir nun zwischen zwei Fällen:
+      \begin{itemize}
+        \item
+          Gilt $g \in N$, so gilt $gN = N = Ng$.
+        \item
+          Gilt $g \notin N$, so gelten $gN \neq N$ und $Ng \neq N$.
+          Dann gelten notwendigerwiese $gN = G \smallsetminus N = Ng$.
+      \end{itemize}
+    \item
+      Es sei $X \coloneqq G/N$ die Menge der Linknebenklassen und $x_0 \coloneqq N \in X$.
+      Die Gruppe $G$ wirkt auf der Menge der Linksnebenklassen  durch $g.(g'N) = (gg')N$.
+      Es sei $\varphi \colon G \to S(X)$ der entsprechende Gruppenhomomorphismus in die symmetrische Gruppe der Menge $X$.
+      Für $g \in G$ gilt genau dann $g \in \ker \varphi$, wenn $g.x = x$ für alle $x \in X$ gilt, d.h.\ wenn $g$ jedes Element aus $X$ fixiert.
+      Da $X$ nach Annahme zweielementig ist, ist dies äquivalent dazu, dass $g$ das Element $x_0$ fixiert, also $gN = N$ gilt.
+      Dies genau für $g \in N$.
+      Also gilt $\ker \varphi = N$, weshalb $N$ normal in $G$ ist.
+  \end{itemize}
+\end{solution}
+
+
 \begin{question}
   Es sei $G$ eine Gruppe.
   Zeigen Sie, dass $G$ abelsch ist, wenn $G/{\Center(G)}$ zyklisch ist.

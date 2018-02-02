@@ -38,8 +38,11 @@
 %%% GENERAL STYLE SETTINGS
 
 % enumerate and itemize are not indented
-\setlist[enumerate,1]{leftmargin=*}
-\setlist[itemize,1]{leftmargin=*}
+\setlist[enumerate, 1]{leftmargin=*}
+\setlist[enumerate, 2]{leftmargin=*}
+\setlist[itemize, 1]{leftmargin=*}
+\setlist[itemize, 2]{leftmargin=*, label={\textopenbullet}}
+\setlist[itemize, 3]{leftmargin=*}
 
 % prevents breaking inline math around binary or relationship symbols
 \binoppenalty=\maxdimen
