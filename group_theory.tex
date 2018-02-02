@@ -17,6 +17,8 @@
       Ist $G$ ein abelsche Gruppe und $H \subseteq G$ eine Untergruppe, so gilt $G \cong H \times (G/H)$.
     \item
       Ist $G$ eine Gruppe und $N \subseteq G$ eine normale Untergruppe, so dass $N$ und $G/N$ abelsch sind, so ist auch $G$ abelsch.
+    \item
+      Jede unendliche Gruppe $G$ enthält eine echte Untergruppe $H \subsetneq G$.
   \end{enumerate}
 \end{question}
 
@@ -24,34 +26,39 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Die Aussage ist wahr:
+      Die Aussage ist \emph{wahr}:
       Dass $C_n(K)$ eine Untergruppe von $K^\times$ ist, ergibt sich durch direktes Nachrechnen;
       alternativ erkennt man, dass die Abbildung $K^\times \to K^\times$, $x \mapsto x^n$ ein Gruppenhomomorphismus ist, und $C_n(K)$ ihr Kern ist.
       Die Gruppe $C_n(K)$ ist endlich, da sie die Nullstellenmenge des Polynoms $X^n - 1 \in K[X]$ ist.
       Als endliche Untergruppe der multiplikativen Gruppe eines Körpers ist $C_n(K)$ zyklisch.
     \item
-      Die Aussage ist wahr:
+      Die Aussage ist \emph{wahr}:
       Für jedes $g \in G$ gilt nach Annahme $g N_i g^{-1} \subseteq N_i$ für alle $i \in I$;
       somit gilt auch $g \left( \bigcap_{i \in I} N_i \right) g^{-1} \subseteq \bigcap_{i \in I} (g N_i g^{-1}) \subseteq \bigcap_{i \in I} N_i$.
     \item
-      Die Aussage ist wahr:
+      Die Aussage ist \emph{wahr}:
       Nach dem chinesischen Restklassensatz gilt $\Integer/2 \times \Integer/3 \cong \Integer/6$, und $\Integer/6$ ist zyklisch.
     \item
-      Die Aussage ist wahr:
+      Die Aussage ist \emph{wahr}:
       Ist $G$ eine abelsche Gruppe, so ist $0 \subseteq G$ eine normale Untergruppe, so dass $G/0 \cong G$ abelsch ist.
       Die Kette $0 \subseteq G$ leistet also das Gewünschte.
     \item
-      Die Aussage ist wahr:
+      Die Aussage ist \emph{wahr}:
       Jede Gruppe der Ordnung $101$ ist zyklisch (siehe Übung~\ref{question: basic calculatings with orders}) und somit abelsch (siehe Übung~\ref{question: classification of cyclic groups}).
     \item
-      Die Aussage ist falsch:
+      Die Aussage ist \emph{falsch}:
       Für die Gruppe $G = \Integer/4$ und Untergruppe $H = 2\Integer/4$ gelten $|H| = 2$ und $|G/H| = |G|/|H| = 4/2 = 2$ und somit $G/H \cong H \cong \Integer/2$.
       Es gilt aber $\Integer/4 \ncong \Integer/2 \times \Integer/2$.
       (Die rechte Seite enthält kein Element der Ordnung $4$.)
     \item
-      Die Aussage ist falsch:
+      Die Aussage ist \emph{falsch}:
       Die Untergruppe $A_3 \subseteq S_3$ ist normal, und da $|A_3| = 3$ und $|S_3/A_3| = |S_3|/|A_3| = 2$ gelten, sind $A_3 \cong \Integer/3$ und $S_3/A_3 \cong \Integer/2$ abelsch.
       Aber $S_3$ ist nicht abelsch.
+    \item
+      Die Aussage ist \emph{wahr}:
+      Falls es ein Element $g \in G$ unendlicher Ordnung gibt, so gilt $\Integer \cong \generated{g} \subseteq G$.
+      Dann entspricht die echte Untergruppe $2\Integer \subsetneq \Integer$ einer echten Untergruppe von $G$.
+      Ansonsten hat jedes Element $g \in G$ endliche Ordnung, weshalb dann $\generate{g}$ eine echte Untergruppe von $G$ ist.
   \end{enumerate}
 \end{solution}
 
@@ -900,83 +907,83 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Erste Sylowschritte]
-  \begin{enumerate}
-    \item
-      Es sei $G$ ein endliche Gruppe und $p$ eine Primzahl.
-      Zeigen Sie, dass eine $p$-Sylow\-un\-ter\-grup\-pe $H$ von $G$ genau dann normal ist, wenn sie die einzige $p$-Sylowuntergruppe von $G$ ist.
-    \item
-      Zeigen Sie, dass jede Gruppe der Ordnung $35$ einen Normalteiler der Ordnung $5$ besitzt.
-    \item
-      Zeigen Sie, dass jede Gruppe der Ordnung $279$ einen Normalteiler der Ordnung $9$ besitzt.
-    \item
-      Zeigen Sie, dass es keine einfachen Gruppen der Ordnung $275$ gibt.
-    \item
-      Zeigen Sie, dass jede Gruppe der Ordnung $21$ auflösbar ist.
-    \item
-      Zeigen Sie, dass jede Gruppe der Ordnung $22$ auflösbar ist.
-    \item
-      Es seien $p$ und $q$ zwei verschiedene Primzahlen.
-      Zeigen Sie, dass jede Gruppe der Ordnung $pq$ auflösbar ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Für jedes $g \in G$ ist auch $g H g^{-1}$ eine $p$-Sylowuntergruppe von $G$.
-      Ist $H$ die einzige $p$-Sylowuntergruppe von $G$, so ist deshalb $gHg^{-1} = H$ für alle $g \in G$, also $H$ normal in $G$.
-      
-      Ist andererseits $H$ normal in $G$ und $H'$ eine weitere $p$-Sylowuntergruppe von $G$, so gibt es nach den Sylowsätzen ein $g \in G$ mit $H' = g H g^{-1}$.
-      Da $H$ normal ist, gilt dabei bereits $g H g^{-1} = H$ und somit $H' = H$.
-  \end{enumerate}
-  Wir betrachten im folgenden jeweils eine beliebige Gruppe $G$ der gegebenen Ordnung.
-  \begin{enumerate}[resume]
-    \item
-      Es gilt $35 = 5 \cdot 7$.
-      Bezeichnet $n_5$ die Anzahl der $5$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_5 \equiv 1 \pmod{5}$ und $n_5 \mid 7$.
-      Da $7$ prim ist, folgt, dass $n_5 = 1$.
-      Die eindeutige $5$-Sylowgruppe $H$ von $G$ ist von Ordnung $5$ und nach dem ersten Aussagenteil normal.
-      
-    \item
-      Es gilt $279 = 3^2 \cdot 31$.
-      Bezeichnet $n_3$ die Anzahl der $3$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_3 \equiv 1 \pmod{3}$ und $n_5 \mid 31$.
-      Da $31$ prim ist, folgt, dass $n_3 = 1$.
-      Die eindeutige $3$-Sylowgruppe $H$ von $G$ ist von Ordnung $9$ und nach dem ersten Aussagenteil normal.
-      
-    \item
-      Es gilt $275 = 5^2 \cdot 11$.
-      Bezeichnet $n_{11}$ die Anzahl der $11$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_{11} \equiv 1 \pmod{11}$ und $n_{11} \mid 25$.
-      Es folgt, dass $n_{11}  = 1$.
-      Die eindeutige $11$-Sylowgruppe $H$ von $G$ ist von Ordnung $11$ und nach dem ersten Aussagenteil normal.
-      Somit besitzt $G$ einen nicht-trivialen Normalteiler und ist somit nicht einfach.
-      
-    \item
-      Es gilt $22 = 2 \cdot 11$.
-      Bezeichnet $n_{11}$ die Anzahl der $11$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_{11} \equiv 1 \pmod{11}$ und $n_{11} \mid 2$.
-      Es folgt, dass $n_{11}  = 1$.
-      Die eindeutige $11$-Sylowgruppe $H$ von $G$ ist von Ordnung $11$, also zyklisch (siehe Übung~\ref{question: basic calculatings with orders}) und somit abelsch (siehe Übung~\ref{question: classification of cyclic groups}).
-      Nach gleicher Argumentation ist der Quotient $G/H$ mit $|G/H| = |G|/|H| = 2$ abelsch.
-      Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
-      
-    \item
-      Es gilt $21 = 3 \cdot 7$.
-      Bezeichnet $n_7$ die Anzahl der $7$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_7 \equiv 1 \pmod{7}$ und $n_7 \mid 3$.
-      Es folgt, dass $n_7  = 1$.
-      Die eindeutige $7$-Sylowgruppe $H$ von $G$ ist von Ordnung $7$, also zyklisch und somit abelsch.
-      Nach gleicher Argumentation ist der Quotient $G/H$ mit $|G/H| = |G|/|H| = 3$ abelsch.
-      Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
-      
-    \item
-      Wir können o.B.d.A.\ davon ausgehen, dass $p < q$ gilt.
-      Bezeichnet $n_q$ die Anzahl der $q$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_q \equiv 1 \pmod{q}$ und $n_q \mid p$.
-      Es folgt, dass $n_q  = 1$, da $1 + q > p$.
-      Die eindeutige $q$-Sylowgruppe $H$ von $G$ ist von Ordnung $q$, also zyklisch und somit abelsch.
-      Nach gleicher Argumentation ist der Quotient $G/H$ mit $|G/H| = |G|/|H| = p$ abelsch.
-      Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
-  \end{enumerate}
-\end{solution}
+% \begin{question}[subtitle = Erste Sylowschritte]
+%   \begin{enumerate}
+%     \item
+%       Es sei $G$ ein endliche Gruppe und $p$ eine Primzahl.
+%       Zeigen Sie, dass eine $p$-Sylow\-un\-ter\-grup\-pe $H$ von $G$ genau dann normal ist, wenn sie die einzige $p$-Sylowuntergruppe von $G$ ist.
+%     \item
+%       Zeigen Sie, dass jede Gruppe der Ordnung $35$ einen Normalteiler der Ordnung $5$ besitzt.
+%     \item
+%       Zeigen Sie, dass jede Gruppe der Ordnung $279$ einen Normalteiler der Ordnung $9$ besitzt.
+%     \item
+%       Zeigen Sie, dass es keine einfachen Gruppen der Ordnung $275$ gibt.
+%     \item
+%       Zeigen Sie, dass jede Gruppe der Ordnung $21$ auflösbar ist.
+%     \item
+%       Zeigen Sie, dass jede Gruppe der Ordnung $22$ auflösbar ist.
+%     \item
+%       Es seien $p$ und $q$ zwei verschiedene Primzahlen.
+%       Zeigen Sie, dass jede Gruppe der Ordnung $pq$ auflösbar ist.
+%   \end{enumerate}
+% \end{question}
+% 
+% 
+% \begin{solution}
+%   \begin{enumerate}
+%     \item
+%       Für jedes $g \in G$ ist auch $g H g^{-1}$ eine $p$-Sylowuntergruppe von $G$.
+%       Ist $H$ die einzige $p$-Sylowuntergruppe von $G$, so ist deshalb $gHg^{-1} = H$ für alle $g \in G$, also $H$ normal in $G$.
+%       
+%       Ist andererseits $H$ normal in $G$ und $H'$ eine weitere $p$-Sylowuntergruppe von $G$, so gibt es nach den Sylowsätzen ein $g \in G$ mit $H' = g H g^{-1}$.
+%       Da $H$ normal ist, gilt dabei bereits $g H g^{-1} = H$ und somit $H' = H$.
+%   \end{enumerate}
+%   Wir betrachten im folgenden jeweils eine beliebige Gruppe $G$ der gegebenen Ordnung.
+%   \begin{enumerate}[resume]
+%     \item
+%       Es gilt $35 = 5 \cdot 7$.
+%       Bezeichnet $n_5$ die Anzahl der $5$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_5 \equiv 1 \pmod{5}$ und $n_5 \mid 7$.
+%       Da $7$ prim ist, folgt, dass $n_5 = 1$.
+%       Die eindeutige $5$-Sylowgruppe $H$ von $G$ ist von Ordnung $5$ und nach dem ersten Aussagenteil normal.
+%       
+%     \item
+%       Es gilt $279 = 3^2 \cdot 31$.
+%       Bezeichnet $n_3$ die Anzahl der $3$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_3 \equiv 1 \pmod{3}$ und $n_5 \mid 31$.
+%       Da $31$ prim ist, folgt, dass $n_3 = 1$.
+%       Die eindeutige $3$-Sylowgruppe $H$ von $G$ ist von Ordnung $9$ und nach dem ersten Aussagenteil normal.
+%       
+%     \item
+%       Es gilt $275 = 5^2 \cdot 11$.
+%       Bezeichnet $n_{11}$ die Anzahl der $11$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_{11} \equiv 1 \pmod{11}$ und $n_{11} \mid 25$.
+%       Es folgt, dass $n_{11}  = 1$.
+%       Die eindeutige $11$-Sylowgruppe $H$ von $G$ ist von Ordnung $11$ und nach dem ersten Aussagenteil normal.
+%       Somit besitzt $G$ einen nicht-trivialen Normalteiler und ist somit nicht einfach.
+%       
+%     \item
+%       Es gilt $22 = 2 \cdot 11$.
+%       Bezeichnet $n_{11}$ die Anzahl der $11$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_{11} \equiv 1 \pmod{11}$ und $n_{11} \mid 2$.
+%       Es folgt, dass $n_{11}  = 1$.
+%       Die eindeutige $11$-Sylowgruppe $H$ von $G$ ist von Ordnung $11$, also zyklisch (siehe Übung~\ref{question: basic calculatings with orders}) und somit abelsch (siehe Übung~\ref{question: classification of cyclic groups}).
+%       Nach gleicher Argumentation ist der Quotient $G/H$ mit $|G/H| = |G|/|H| = 2$ abelsch.
+%       Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
+%       
+%     \item
+%       Es gilt $21 = 3 \cdot 7$.
+%       Bezeichnet $n_7$ die Anzahl der $7$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_7 \equiv 1 \pmod{7}$ und $n_7 \mid 3$.
+%       Es folgt, dass $n_7  = 1$.
+%       Die eindeutige $7$-Sylowgruppe $H$ von $G$ ist von Ordnung $7$, also zyklisch und somit abelsch.
+%       Nach gleicher Argumentation ist der Quotient $G/H$ mit $|G/H| = |G|/|H| = 3$ abelsch.
+%       Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
+%       
+%     \item
+%       Wir können o.B.d.A.\ davon ausgehen, dass $p < q$ gilt.
+%       Bezeichnet $n_q$ die Anzahl der $q$-Sylowgruppen in $G$, so gilt nach den Sylowsätzen, dass $n_q \equiv 1 \pmod{q}$ und $n_q \mid p$.
+%       Es folgt, dass $n_q  = 1$, da $1 + q > p$.
+%       Die eindeutige $q$-Sylowgruppe $H$ von $G$ ist von Ordnung $q$, also zyklisch und somit abelsch.
+%       Nach gleicher Argumentation ist der Quotient $G/H$ mit $|G/H| = |G|/|H| = p$ abelsch.
+%       Somit erfüllt die Kette $1 \subseteq H \subseteq G$ das Gewünschte.
+%   \end{enumerate}
+% \end{solution}
 
 
 \begin{question}[subtitle = Quadrate in endlichen Körpern]
@@ -1054,3 +1061,23 @@
       Dann ist $a+b$ gerade und somit $xy = g^a g^b = g^{a+b} = (g^{(a+b)/2})^2$ ein Quadrat.
   \end{enumerate}
 \end{solution}
+
+
+\begin{question}
+  Es sei $K$ ein Körper.
+  Zeigen Sie, dass die Gruppen $(K,+)$ und $(K^\times, \cdot)$ nicht isomorph sind.
+\end{question}
+
+
+\begin{solution}
+  Gebe es einen solchen Isomorphismus, so gebe es genau so viele Elemente $x \in K$ mit $2x = 0$ wie Elemente $y \in K^\times$ mit $y^2 = 1$.
+  Wir unterscheiden zwischen zwei Fällen:
+  \begin{itemize}
+    \item 
+      Im Fall $\ringchar K = 2$ gilt $2x = 0$ für alle $x \in K$, aber das einzige Element $y \in K^\times$ mit $y^2 = 1$ ist $1$.
+    \item
+      Im Fall $\ringchar K \neq 2$ gibt es nur ein Element $x \in K$ mit $2x \neq 0$, aber es gibt zwei Elemente $y \in K^\times$ mit $y^2 = 1$ (nämlich $1$ und $-1$).
+  \end{itemize}
+\end{solution}
+
+
