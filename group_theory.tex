@@ -517,6 +517,48 @@
 \end{solution}
 
 
+\begin{question}
+  Eine endliche Gruppe $G$ wirke auf einer endlichen Menge $X$.
+  Für jedes $g \in G$ sei $\Fix(g) \coloneqq \{x \in X \mid g.x = x\}$ die Menge der Fixpunkte von $g$.
+  Zeigen Sie, dass
+  \[
+      \frac{1}{|G|} \sum_{g \in G} |\Fix(g)|
+    = |X/G|
+  \]
+  gilt.
+  (Die durchschnittliche Anzahl der Fixpunkte ist also die Anzahl der Bahnen.)
+\end{question}
+
+
+\begin{solution}
+  Für jedes $x \in X$ sei $\orbit_x \coloneqq \{g.x \mid g \in G\}$ die Bahn von $x$.
+  Wegen der Bijektion $G/G_x \to \orbit_x$, $g G_x \mapsto g.x$ gilt $|\orbit_x| = |G/G_x| = |G|/|G_x|$.
+  Für alle $g \in G$, $x \in X$ gilt
+  \[
+          g \in G_x
+    \iff  g.x = x
+    \iff  x \in \Fix(g) \,.
+  \]
+  Deshalb gilt
+  \[
+      \sum_{g \in G} |\Fix(g)|
+    = \sum_{x \in X} |G_x|
+    = \sum_{x \in X} \frac{|G|}{|\orbit_x|}
+    = |G| \sum_{x \in X} \frac{1}{|\orbit_x|} \,.
+  \]
+  Hieraus folgt, dass
+  \[
+      \frac{1}{|G|} \sum_{g \in G} |\Fix(g)|
+    = \sum_{x \in X} \frac{1}{|\orbit_x|}
+    = \sum_{\orbit \in X\!/G} \, \sum_{x \in \orbit} \frac{1}{|\orbit|}
+    = \sum_{\orbit \in X\!/G} 1
+    = |X/G| \,.
+  \]
+
+\end{solution}
+
+
+
 \begin{question}[subtitle = Die oberen $2 \times 2$-Matrizen]
   Es sei $K$ ein Körper.
   \begin{enumerate}
