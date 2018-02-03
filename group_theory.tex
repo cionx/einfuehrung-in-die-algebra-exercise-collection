@@ -581,7 +581,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Alles hat Primordnung]
+\begin{question}[subtitle = Grupen in denen alles prime Ordnung hat]
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
     \item
@@ -706,6 +706,35 @@
       dann gilt auch $y = g^{-1}.x \in G.x$ und somit $y \sim x$.
       Für $x, y, z \in X$ mit $x \sim y$ und $y \sim z$ gibt es $g, h \in G$ mit $x = g.y$ und $y = h.z$;
       dann gilt auch $x = g.y = g.h.z = (gh).z \in G.z$ und somit $x \sim z$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Genau zwei Konjugationsklassen]
+  Eine endliche Gruppe $G$ wirke auf einer Menge $X$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für jedes $x \in X$ die Kardinalität $|G.x|$ der Bahn $G.x$ ein Teiler der Gruppenordnung $|G|$ ist.
+    \item
+      Es sei $G$ eine Gruppe mit genau zwei Konjugationsklassen.
+      Zeigen Sie, dass bereits $G \cong \Integer/2$ gilt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Aufgrund der Bijektion $G/G_x \to G.x$, $gG_x \mapsto g.x$ gilt $|G.x| = |G/G_x| = |G|/|G_x|$.
+    \item
+      Die Gruppe $G$ wirke auf sich selbst vermöge Konjugation, d.h.\ für alle $g \in G$, $x \in G$ gelte $g.x \coloneqq gxg^{-1}$.
+      Die Konjugationsklassen von $G$ sind genau die Bahnen dieser Gruppenwirkung.
+      Nach dem vorherigen Aufgabenteil ist somit die Kardinalität jeder Konjugationsteiler ein Teiler der Gruppenordnung $|G|$.
+      
+      Die Konjugationsklasse des neutralen Elements $e \in G$ ist stets die einelementige Menge $\{e\}$.
+      Da $G$ die disjunkte Vereinigung beider Konjugationsklassen ist, muss es sich bei der anderen Konjugationsklasse um $G \smallsetminus \{e\}$ handeln.
+      Dann ist $|G \smallsetminus \{e\}| = |G|-1$ ein Teiler von $|G|$.
+      Dies ist nur für $|G| = 2$ möglich, wenn also $G \cong \Integer/2$ gilt.
   \end{enumerate}
 \end{solution}
 
