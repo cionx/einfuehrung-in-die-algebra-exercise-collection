@@ -375,6 +375,47 @@
 \end{solution}
 
 
+\begin{question}
+  Es sei $G$ eine Gruppe mit trivialer Automorphismengruppe $\Aut(G) = 1$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $G$ abelsch ist.
+    \item
+      Zeigen Sie, dass $2x = 0$ für alle $x \in G$ gilt.
+    \item
+      Folgern Sie, dass $G$ mit der Struktur eines $\Field_2$-Vektorraums versehen werden kann.
+    \item
+      Bestimmen Sie $G$ bis auf Isomorphie.
+      
+      (\emph{Hinweis}: Jeder Vektorraum hat eine Basis.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $g \in G$.
+      Die Konjugationsabbildung $c \colon G \to G$, $h \mapsto ghg^{-1}$ ist eine Gruppenautomorphismus.
+      Nach Annahme gilt somit $c = \id_G$, weshalb $g \in \Center(G)$ gilt.
+    \item
+      Die Invertierungsabbildung $i \colon G \to G$, $x \mapsto -x$ ist ein Gruppenhomomorphismus, da $G$ abelsch ist.
+      Da $i$ bijektiv ist, handelt es sich bereits um einen Gruppenautomorphismus, weshalb nach Annahme $i = \id_G$ gilt.
+      Für jedes $x \in G$ gilt somit $x = -x$, also $2x = 0$.
+    \item
+      Durch $\class{n} \cdot x = n \cdot x$ wird eine $\Field_2$-Vektorraumstruktur auf $G$ definiert.
+      Da $2x = 0$ für alle $x \in G$ gilt, ist die Verknüpfung wohldefinert, und die Vektorraumaxiome ergeben sich durch direktes Nachrechnen.
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $G$ als $\Field_2$-Vektorraum.
+      Gilt $\dim_{\Field_2} G \geq 2$, also $|I| \geq 2$, so gibt es für eine nicht-triviale Bijektion $\sigma \colon I \to I$, die wiederum einen nicht-trivialen $\Field_2$-Vektorraumautomorphismus $\varphi \colon G \to G$ induziert.
+      Dann ist $\varphi$ insbesondere additiv, und somit ein nicht-triviales Element von $\Aut(G)$.
+      
+      Es muss also $\dim_{\Field_2} G \in \{0, 1\}$ gelten, und somit $G = 0$ oder $G \cong \Integer/2$ als (abelsche) Gruppen.
+      Diese beiden Gruppen erfüllen auch die gewünschte Eigenschaft.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Ein Erzeugendensystem von $S_n$]
   Zeigen Sie, dass die symmetrische Gruppe $S_n$ von dem Zykel $\rho = (1 \, 2 \, \dotso \, n)$ und der Permutation $\tau = (1 \, 2)$ erzeugt wird.
 \end{question}
