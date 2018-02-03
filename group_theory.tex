@@ -246,6 +246,61 @@
 \end{solution}
 
 
+\begin{question}[subtitle={Die Gruppe $G^\op$}]
+  Es sei $(G,\cdot)$ eine Gruppe.
+  Die Gruppe $(G^\op, *)$ ist definiert als die zugrundeliegende Menge $G^\op \coloneqq G$ zusammen mit der binären Verknüpfung
+  \[
+              g_1 * g_2
+    \coloneqq g_2 \cdot g_2
+  \]
+  für alle $g_1, g_2 \in G^\op$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $(G^\op, *)$ tatsächlich eine Gruppe ist.
+    \item
+      Zeigen Sie, dass $G$ genau dann abelsch ist, wenn $G = G^\op$ gilt.
+    \item
+      Zeigen Sie, dass für jede Gruppe $G$ bereits $G \cong G^\op$ gilt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für alle $g \in G^\op$ gilt $g * 1_G = 1_G \cdot g = g$, sowie analog auch $1_G * g = g$.
+      Also ist $1_G$ neutral bezüglich $*$.
+      Für $g \in G$ bezeichne $g^{-1}$ das inverse Element von $g$ in $G$.
+      Dann gilt $g * g^{-1} = g^{-1} \cdot g = 1_G = 1_{G^\op}$, sowie analog auch $g^{-1} * g = 1_{G^\op}$.
+      Also ist $g^{-1}$ auch in $G^\op$ invers zu $G$.
+      Schließlich ist die binäre Verknüpfung $*$ ist assoziativ, da
+      \[
+          g_1 * (g_2 * g_3)
+        = g_1 * (g_3 \cdot g_2)
+        = (g_3 \cdot g_2) \cdot g_1
+        = g_3 \cdot (g_2 \cdot g_1)
+        = (g_2 \cdot g_1) * g_3
+        = (g_1 \cdot g_2) * g_3
+      \]
+      für alle $g_1, g_2, g_3 \in G^\op$ gilt.
+    \item
+      Die Gruppen $G$ und $G^\op$ haben bereits dieselbe zugrundeliegende Menge.
+      Sie sind also gleich, wenn $\cdot = *$ gilt, wenn also $g_1 \cdot g_2 = g_1 * g_2$ für alle $g_1, g_2 \in G$ gilt.
+      Per Definition von $*$ ist dies äquivalent dazu, dass $G$ abelsch ist.
+    \item
+      Die Abbildung $i \colon G \to G^\op$, $g \mapsto g^{-1}$ ist ein Gruppenisomorphismus, denn sie ist bijektiv mit
+      \[
+          i(g_1 \cdot g_2)
+        = (g_1 \cdot g_2)^{-1}
+        = g_2^{-1} \cdot g_1^{-1}
+        = i(g_2) \cdot i(g_1)
+        = i(g_1) * i(g_2)
+      \]
+      für alle $g_1, g_2 \in G$.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Innere Automorphismen]
   \label{question: inner automorphims}
   Es sei $G$ eine Gruppe.
