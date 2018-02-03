@@ -23,6 +23,14 @@
       Ist $p$ prim, so ist jede Gruppe der Ordnung $p^3$ abelsch.
     \item
       Die symmetrische Gruppe $S_n$ wird von dem Zykel $\rho = (1 \, 2 \, \dotso \, n)$ zusammen mit der Permutation $\tau = (1 \, 2)$ erzeugt.
+    \item
+      Die Gruppen $\Complex^\times$ und $\Real \times S^1$ sind isomorph.
+    \item
+      Es gibt eine Untergruppe $H \subseteq \Complex^\times$ mit $\Real^\times \cong \Complex^\times/H$.
+    \item
+      Für jede endliche abelsche Gruppe $A$ gilt für das Element $s \coloneqq \sum_{a \in A} a$, dass $2 s = 0$.
+    \item
+      Für die Gruppe $\GL_n(\Field_p)$ ist die Untergruppe $\Upper_n(\Field_p) \subseteq \GL_n(\Field_p)$ der oberen Dreiecksmatrizen mit $1$-en auf der Diagonalen eine $p$-Sylowuntergruppe.
   \end{enumerate}
 \end{question}
 
@@ -122,6 +130,38 @@
       \]
       Deshalb gilt $(1 \quad 2), (2 \quad 3), \dotsc, (n-1 \quad n) \in \generate{\rho, \tau}$.
       Da $S_n$ von diesen Elementartranspositionen erzeugt wird, gilt bereits $S_n = \generate{\rho, \tau}$.
+    \item
+      Die Aussage ist \emph{wahr}:
+      Mithilfe von Polarkoordinaten ergibt sich, dass $\Complex^\times \cong \Real_{> 0} \times S^1$ gilt.
+      Dabei gilt $(\Real, +) \cong (\Real_{>0}, \cdot)$ vermöge der Exponentialfunktion.
+    \item
+      Die Aussage ist \emph{falsch}:
+      In $\Complex^\times$ ist jedes Element ein Quadrat.
+      Gleiches gilt dann auch für $\Complex^\times/H$.
+      Aber $-1 \in \Real^\times$ ist kein Quadrat.
+    \item
+      Die Aussage ist \emph{wahr}:
+      Es gilt
+      \[
+          2 s
+        = s + s
+        = \sum_{a \in A} a + \sum_{a \in A} a
+        = \sum_{a \in A} a + \sum_{a \in A} (-a)
+        = \sum_{a \in A} a - \sum_{a \in A} a
+        = 0 \,.
+      \]
+    \item
+      Die Aussage ist \emph{wahr}:
+      Es gilt
+      \begin{align*}
+            |{\GL_n(\Field_p)}|
+        &=  (p^n - 1)(p^n - p) \dotsm (p^n - p^{n-1}) \\
+        &=  \underbrace{p^{1 + 2 + \dotsb + (n-1)}}_{= p^{n(n-1)/2}}
+            \underbrace{(p^n - 1)(p^{n-1} - 1) \dotsm (p - 1)}_{\eqqcolon m} \,.
+      \end{align*}
+      Dabei gilt $p \nmid (p^k - 1)$ für alle $k \geq 1$, und somit auch $p \nmid m$.
+      Die $p$-Sylowuntergruppen von $\GL_n(\Field_p)$ sind deshalb genau die $p$-Untergruppen der Ordnung $p^{n(n-1)/2}$.
+      Die Gruppe $\Upper_n(\Field_p)$ hat diese Ordnung.
   \end{enumerate}
 \end{solution}
 
@@ -200,7 +240,6 @@
       Zusammen zeigt dies, dass $H$ bereits eine Untergruppe von $G$ ist.
   \end{enumerate}
 \end{solution}
-
 
 
 \begin{question}[subtitle = Untergruppen von endlichen Gruppen]
@@ -388,7 +427,7 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Gruppen mit trivialer Automorphismengruppe]
   Es sei $G$ eine Gruppe mit trivialer Automorphismengruppe $\Aut(G) = 1$.
   \begin{enumerate}
     \item
@@ -426,6 +465,71 @@
       Es muss also $\dim_{\Field_2} G \in \{0, 1\}$ gelten, und somit $G = 0$ oder $G \cong \Integer/2$ als (abelsche) Gruppen.
       Diese beiden Gruppen erfüllen auch die gewünschte Eigenschaft.
   \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Multiplikativität des Index]
+  Es sei $G$ eine Untergruppe, und es seien $K \subseteq H \subseteq G$ Untergruppen.
+  Zeigen Sie, dass $[G : K] = [G : H][H : K]$ gilt.
+\end{question}
+
+
+\begin{solution}
+  Es sei $(a_i)_{i \in I}$ ein Repräsentantensystem der $H$-Linksnebenklassen in $G$, d.h.\ es sei $G$ die disjunkte Vereinigung der Linksnebenklassen $a_i H$, $i \in I$.
+  Analog sei $(b_j)_{j \in J}$ ein Repräsentantensystem der $K$-Linksnebenklassen in $H$, d.h.\ es sei $H$ die disjunkte Vereinigung der Linksnebenklassen $b_j K$, $j \in J$.
+  
+  Für jedes $i \in I$ ist die die Abbildung $H \to a_i H$, $h \mapsto a_i h$ eine Bijektion, weshalb dann auch $a_i H$ die disjunkte Vereinigung der Linknebenklassen $a_i b_j K$, $j \in J$ ist.
+  Insgesamt ist somit $G$ disunkte Vereinigung der Linksnebenklassen $a_i b_j K$, $(i,j) \in I \times J$.
+  Also ist $(a_i b_j)_{(i,j) \in I \times J}$ ein Repräsentantensystem der $K$-Nebenklassen in $G$.
+  Somit gilt
+  \[
+      [G : K]
+    = |I \times J|
+    = |I| |J|
+    = [G : H] [H : K] \,.
+  \]
+\end{solution}
+
+
+\begin{question}[subtitle = Abelsche Quotienten]
+  Es sei $G$ eine Gruppe und $N \subseteq G$ eine Untergruppe.
+  Zeigen Sie, dass $N$ genau dann normal in $G$ mit abelschen Quotienten $G/N$ ist, wenn $N \supseteq [G,G]$ gilt.
+\end{question}
+
+
+\begin{solution}
+  \begin{itemize}
+    \item
+      Es sei zunächst $N$ normal in $G$, so dass $G/N$ abelsch ist.
+      Für alle $g, h \in G$ kommutieren dann $\class{g}, \class{h} \in G/N$, weshalb
+      \[
+          [\class{g}, \class{h}]
+        = \class{g} \class{h} \class{g}^{-1} \class{h}^{-1}
+        = \class{g h g^{-1} h^{-1}}
+        = \class{[g,h]}
+      \]
+      trivial ist.
+      Es gilt also $[g,h] \in N$ für alle $g, h \in G$, und somit
+      \[
+                  [G,G]
+        =         \generate{ [g,h] \mid g, h \in G }
+        \subseteq N \,.
+      \]
+    \item
+      Es gelte nun andererseits $N \subseteq [G,G]$.
+      Die Untergruppe $[G,G] \subseteq G$ ist normal mit abelschen Quotienten $G/[G,G]$.
+      
+      Deshalb ist $N/[G,G]$ eine normale Untergruppe von $G/[G,G]$.
+      Aus der Vorlesung ist bekannt, dass durch $K \mapsto K/[G,G] = K'$ eine 1:1-Korrespondenz zwischen den Zwischengruppen $[G,G] \subseteq K \subseteq G$ und den Untergruppen $K' \subseteq G/[G,G]$ gegeben ist, die sich auch auf die jeweils normalen Untergruppen einschränkt.
+      
+      Insbesondere ist $N/[G,G]$ normal in $G$, da $N/[G,G]$ normal in $G/[G,G]$ ist.
+      Nach dem zweiten Isomorphiesatz gilt zudem, dass
+      \[
+              G/N
+        \cong (G/[G,G])/(N/[G,G])
+      \]
+      als Quotient der abelschen Gruppe $G/[G,G]$ ebenfalls abelsch ist.
+  \end{itemize}
 \end{solution}
 
 
@@ -511,36 +615,68 @@
 
 
 \begin{question}[subtitle = Untergruppen von Index $2$]
-  Es sei $G$ eine Gruppe und $N \subseteq G$ eine Untergruppe vom Index $2$.
-  Zeigen Sie, dass $N$ normal in $G$ ist.
+  Es sei $G$ eine Gruppe.
+  \begin{enumerate}
+    \item
+      Es sei $N \subseteq G$ eine Untergruppe vom Index $[G : H] = 2$.
+      Zeigen Sie, dass $N$ bereits normal in $G$ ist.
+    \item
+      Es sei $H \subseteq G$ eine Untergruppe deren Index $[G : H] \eqqcolon p$ prim ist.
+      Zeigen Sie, dass $H$ für $p \geq 3$ nicht notwendigerweise prim in $G$ ist.
+  \end{enumerate}
 \end{question}
 
 
 \begin{solution}
-  Wir geben zwei Beweise:
-  \begin{itemize}
+  \begin{enumerate}
     \item
-      Wir zeigen, dass $gN = Ng$ für alle $g \in G$ gilt, dass also für jedes $g \in G$ die entsprechenden Rechts- und Nebenklassen übereinstimmen.
-      Es gibt genau zwei Linksnebenklassen, von denen eine $N$ selbst ist;
-      da $G$ die disjunkte Vereinigung der beiden Nebenklassen ist, muss es sich bei der anderen Linksnebenklassen um das Komplement $G \smallsetminus N$ handeln.
-      Analog ergibt sich, dass $N$ und $G \smallsetminus N$ die beiden Rechtsnebenklassen sind.
-      Für $g \in G$ unterscheiden wir nun zwischen zwei Fällen:
+      Wir geben zwei Beweise:
       \begin{itemize}
         \item
-          Gilt $g \in N$, so gilt $gN = N = Ng$.
+          Wir zeigen, dass $gN = Ng$ für alle $g \in G$ gilt, dass also für jedes $g \in G$ die entsprechenden Rechts- und Nebenklassen übereinstimmen.
+          Es gibt genau zwei Linksnebenklassen, von denen eine $N$ selbst ist;
+          da $G$ die disjunkte Vereinigung der beiden Nebenklassen ist, muss es sich bei der anderen Linksnebenklassen um das Komplement $G \smallsetminus N$ handeln.
+          Analog ergibt sich, dass $N$ und $G \smallsetminus N$ die beiden Rechtsnebenklassen sind.
+          Für $g \in G$ unterscheiden wir nun zwischen zwei Fällen:
+          \begin{itemize}
+            \item
+              Gilt $g \in N$, so gilt $gN = N = Ng$.
+            \item
+              Gilt $g \notin N$, so gelten $gN \neq N$ und $Ng \neq N$.
+              Dann gelten notwendigerwiese $gN = G \smallsetminus N = Ng$.
+          \end{itemize}
         \item
-          Gilt $g \notin N$, so gelten $gN \neq N$ und $Ng \neq N$.
-          Dann gelten notwendigerwiese $gN = G \smallsetminus N = Ng$.
+          Es sei $X \coloneqq G/N$ die Menge der Linknebenklassen und $x_0 \coloneqq N \in X$.
+          Die Gruppe $G$ wirkt auf der Menge der Linksnebenklassen  durch $g.(g'N) = (gg')N$.
+          Es sei $\varphi \colon G \to S(X)$ der entsprechende Gruppenhomomorphismus in die symmetrische Gruppe der Menge $X$.
+          Für $g \in G$ gilt genau dann $g \in \ker \varphi$, wenn $g.x = x$ für alle $x \in X$ gilt, d.h.\ wenn $g$ jedes Element aus $X$ fixiert.
+          Da $X$ nach Annahme zweielementig ist, ist dies äquivalent dazu, dass $g$ das Element $x_0$ fixiert, also $gN = N$ gilt.
+          Dies genau für $g \in N$.
+          Also gilt $\ker \varphi = N$, weshalb $N$ normal in $G$ ist.
       \end{itemize}
     \item
-      Es sei $X \coloneqq G/N$ die Menge der Linknebenklassen und $x_0 \coloneqq N \in X$.
-      Die Gruppe $G$ wirkt auf der Menge der Linksnebenklassen  durch $g.(g'N) = (gg')N$.
-      Es sei $\varphi \colon G \to S(X)$ der entsprechende Gruppenhomomorphismus in die symmetrische Gruppe der Menge $X$.
-      Für $g \in G$ gilt genau dann $g \in \ker \varphi$, wenn $g.x = x$ für alle $x \in X$ gilt, d.h.\ wenn $g$ jedes Element aus $X$ fixiert.
-      Da $X$ nach Annahme zweielementig ist, ist dies äquivalent dazu, dass $g$ das Element $x_0$ fixiert, also $gN = N$ gilt.
-      Dies genau für $g \in N$.
-      Also gilt $\ker \varphi = N$, weshalb $N$ normal in $G$ ist.
-  \end{itemize}
+      Wir geben zwei Arten von Gegenbeispielen an:
+      \begin{itemize}
+        \item
+          Es sei $G \coloneqq S_p$ die symmetrische Gruppe und $H \coloneqq \{\sigma \in S_p \mid \sigma(1) = 1\}$.
+          Es gilt $H \cong S_{p-1}$ und somit $[G : H] = |G|/|H| = p!/(p-1)! = p$.
+          Die Untergruppe $H$ ist allerdings nicht normal in $G$, denn für den Zykel $\sigma = (2 \; 3 \; \dotsb \; p) \in H$ und die Transposition $\tau = (1 \; 2)$ gelten
+          \[
+              (\tau \sigma \tau^{-1})(1)
+            = (\tau \sigma \tau)(1)
+            = \tau(\sigma(\tau(1)))
+            = \tau(\sigma(2))
+            = \tau(3)
+            = 3 \,,
+          \]
+          und deshalb $\tau \rho \tau^{-1} \notin H$.
+        \item
+          Es sei $G \coloneqq D_p$ die Diedergruppe von Ordnung $2p$ und $\tau \in D_p$ eine Spiegelung.
+          Dann ist $H \coloneqq \generate{\tau} = \{1, \tau\}$ eine Untergruppe vom Index $p$.
+          Ist aber $\rho \in D_p$ eine Rotation um den Winkel $2\pi/p$, so gilt $\tau \rho \tau = \rho^{-1} \neq \rho$, weshalb $\tau$ und $\rho$ nicht kommutieren.
+          Dann gilt auch $\rho \tau \rho^{-1} \neq \tau$, und somit $\rho H \rho^{-1} \neq H$.
+      \end{itemize}
+  \end{enumerate}
 \end{solution}
 
 
