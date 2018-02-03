@@ -9,4 +9,4 @@ The first version of this exercise collection was created during the winter seme
 An up to date compiled version can be found [here][2].
 
 [1]: https://github.com/cionx/einfuehrung-in-die-algebra-tutorial-ws-16-17
-[2]: https://github.com/cionx/einfuehrung-in-die-algebra-exercise-collection/blob/gh-pages/exercises.pdf
+[2]: https://github.com/cionx/einfuehrung-in-die-algebra-exercise-collection/raw/gh-pages/exercises.pdf
