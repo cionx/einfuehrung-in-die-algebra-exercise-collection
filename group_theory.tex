@@ -820,7 +820,7 @@
   Für jedes $g \in G$ sei $\Fix(g) \coloneqq \{x \in X \mid g.x = x\}$ die Menge der Fixpunkte von $g$.
   Zeigen Sie, dass
   \[
-      \frac{1}{|G|} \sum_{g \in G} |\Fix(g)|
+      \frac{1}{|G|} \sum_{g \in G} |{\Fix(g)}|
     = |X/G|
   \]
   gilt.
@@ -839,14 +839,14 @@
   \]
   Deshalb gilt
   \[
-      \sum_{g \in G} |\Fix(g)|
+      \sum_{g \in G} |{\Fix(g)}|
     = \sum_{x \in X} |G_x|
     = \sum_{x \in X} \frac{|G|}{|\orbit_x|}
     = |G| \sum_{x \in X} \frac{1}{|\orbit_x|} \,.
   \]
   Hieraus folgt, dass
   \[
-      \frac{1}{|G|} \sum_{g \in G} |\Fix(g)|
+      \frac{1}{|G|} \sum_{g \in G} |{\Fix(g)}|
     = \sum_{x \in X} \frac{1}{|\orbit_x|}
     = \sum_{\orbit \in X\!/G} \, \sum_{x \in \orbit} \frac{1}{|\orbit|}
     = \sum_{\orbit \in X\!/G} 1
@@ -1436,12 +1436,12 @@
 
 \begin{question}
   Es sei $K$ ein Körper.
-  Zeigen Sie, dass die Gruppen $(K,+)$ und $(K^\times, \cdot)$ nicht isomorph sind.
+  Zeigen Sie, dass die Gruppen $(K,+)$ und $(K^\times, \cdot)$ nicht zueinander isomorph sind.
 \end{question}
 
 
 \begin{solution}
-  Gebe es einen solchen Isomorphismus, so gebe es genau so viele Elemente $x \in K$ mit $2x = 0$ wie Elemente $y \in K^\times$ mit $y^2 = 1$.
+  Wären die beiden Gruppen isomorph, so gäbe es genau so viele Elemente $x \in K$ mit $2x = 0$ wie Elemente $y \in K^\times$ mit $y^2 = 1$.
   Wir unterscheiden zwischen zwei Fällen:
   \begin{itemize}
     \item 
