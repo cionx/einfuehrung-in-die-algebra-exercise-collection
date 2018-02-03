@@ -815,6 +815,35 @@
 \end{solution}
 
 
+\begin{question}[subtitle ={Nicht-normale Untergruppen einer $p$-Gruppe}]
+  Es sei $G$ eine endliche $p$-Gruppe.
+  Zeigen Sie, dass die Anzahl der nicht-normalen Untergruppen von $G$ ein Vielfaches von $p$ ist.\\
+  (\emph{Hinweis}: Bertachten Sie eine passende Konjugationswirkung von $G$.)
+\end{question}
+
+
+\begin{solution}
+  Es sei $\mathcal{S}$ die Menge der Untergruppen von $G$.
+  Die Gruppe $G$ wirkt auf der Menge $\mathcal{S}$ durch Konjugation, d.h.\ vermöge $g.H = gHg^{-1}$ für alle $g \in G$, $H \in \mathcal{S}$.
+  Eine Untergruppe $N \in \mathcal{S}$ ist genau dann normal in $G$, wenn $N$ ein Fixpunkt dieser Wirkung ist.
+  Es gilt also zu zeigen, dass $|\mathcal{S}| - |\mathcal{S}^G|$ ein Vielfaches von $p$ ist.
+  
+  Ist $H_1, \dotsc, H_n \in \mathcal{S}$ ein Repräsentantensystem der nicht-trivialen Bahnen, so gilt nach der Bahnenformel
+  \[
+      |\mathcal{S}|
+    = |\mathcal{S}^G| + \sum_{i=1}^n \, [G : G_{H_i}]
+  \]
+  mit $G_{H_i} \neq G$ (da die Bahn $G.H_i \cong G/G_{H_i}$ nicht trivial ist.)
+  Es handelt sich bei $[G : G_{H_i}] \neq 1$ um einen Teiler von $|G|$, und da $G$ eine $p$-Gruppe ist somit um eine $p$-Potenz.
+  Also ist
+  \[
+      |\mathcal{S}| - |\mathcal{S}^G|
+    = \sum_{i=1}^n \, [G : G_{H_i}]
+  \]
+  ein Vielfaches von $p$.
+\end{solution}
+
+
 \begin{question}[subtitle = Bahnen zählen]
   Eine endliche Gruppe $G$ wirke auf einer endlichen Menge $X$.
   Für jedes $g \in G$ sei $\Fix(g) \coloneqq \{x \in X \mid g.x = x\}$ die Menge der Fixpunkte von $g$.
