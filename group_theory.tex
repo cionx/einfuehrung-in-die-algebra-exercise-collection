@@ -1443,6 +1443,76 @@
 \end{solution}
 
 
+\begin{question}[subtitle={Elemente von Ordnung $p$ in $p$-Gruppen}]
+  Es sei $p$ prim und $G$ eine endliche abelsche $p$-Gruppe.
+  \begin{enumerate}
+    \item
+      Zeigen Sie ohne Verwendung der Sylowsätze, dass es eine Untergruppe $H \subseteq G$ vom Index $[G : H] = p$ gibt, falls $G \neq 0$ gilt.
+    \item
+      Folgern Sie, dass es eine Normalenreihe
+      \[
+                    0
+        =           G_0
+        \subsetneq  G_1
+        \subsetneq  G_2
+        \subsetneq  \dotsb
+        \subsetneq  G_n
+        =           G
+      \]
+      mit Faktoren $G_i/G_{i-1} \cong \Integer/p$ für alle $i = 1, \dotsc, n$ gibt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  Im Folgenden sind alle auftretenden Gruppen abelsch.
+  Insbesondere sind jeweils alle betrachteten Untergruppen normal, weshalb sich jeweils die entsprechenden Quotientengruppen bilden lassen.
+  \begin{enumerate}
+    \item
+      Für $|G| = p^n$ zeigen wir die Aussage per Induktion über $n \geq 1$.
+      
+      Für $n = 1$ gilt $|G| = p$ und es lässt sich $H = 0$ wählen.
+      
+      Gilt $n \geq 2$, so gibt es ein Element $g \in G$ mit $g \neq 0$.
+      Dann ist $\generate{g} \subseteq G$ eine nicht-triviale Untergruppe.
+      Es sei $\pi \colon G \to G/\generate{g}$ die kanonische Projektion.
+      Es ist $G/\generate{g}$ eine $p$-Gruppe von Ordnung $|G/\generate{g}| < |G|$, weshalb es nach Induktionsvoraussetzung eine Untergruppe $H' \subseteq G/\generate{g}$ vom Index $p$ gibt.
+      
+      Aus der Vorlesung ist bekannt, dass durch $K \mapsto K'/\generate{g}$ eine 1:1-Korrespondenz zwischen den Zwischengruppen $\generate{g} \subseteq K \subseteq G$ und Untergruppen $K' \subseteq G/\generate{g}$ gegeben ist.
+      
+      Es gibt deshalb eine Untergruppe $H \subseteq G$ mit $H' = H/\generate{g}$.
+      Dann gilt
+      \[
+          [G : H]
+        = \frac{|G|}{|H|}
+        = \frac{|G|/|\generate{g}|}{|H|/|\generate{g}|}
+        = \frac{|G/\generate{g}|}{|H/\generate{g}|}
+        = \frac{|G/\generate{g}|}{H'}
+        = [G/\generate{g} : H']
+        = p \,,
+      \]
+      so dass $H$ eine Untergruppe von Index $p$ in $G$ ist.
+    \item
+      Für $|G| = p^n$ zeigen wir die Aussage per Induktion über $n \geq 0$:
+      
+      Für $n = 0$ ist nichts zu zeigen.
+      Für $n \geq 1$ gibt es nach dem vorherigen Aufgabenteil eine Untergruppe $G_{n-1} \subseteq G$ vom Index $[G : G_{n-1}] = p$.
+      Es gilt dann $|G/G_{n-1}| = p$ und somit $G/G_{n-1} \cong \Integer/p$.
+      Nach Induktionsvoraussetzung gibt es eine Normalenreihe
+      \[
+                    0
+        =           G_0
+        \subsetneq  G_1
+        \subsetneq  G_2
+        \subsetneq  \dotsb
+        \subsetneq  G_{n-1}
+      \]
+      mit Faktoren $G_i/G_{i-1} \cong \Integer/p$.
+      Ingesamt ergibt sich damit die gewünschte Normalenreihe.
+  \end{enumerate}
+\end{solution}
+
+
 % \begin{question}[subtitle = Erste Sylowschritte]
 %   \begin{enumerate}
 %     \item
