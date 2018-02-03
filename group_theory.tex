@@ -490,7 +490,50 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Alles hat Primordnung]
+  Es sei $G$ eine Gruppe.
+  \begin{enumerate}
+    \item
+      Es gelte $g^2 = 1$ für alle $g \in G$.
+      Zeigen Sie, dass $G$ bereits abelsch ist.
+    \item
+      Es sei $p$ prim mit $p \geq 3$ und es gelte $g^p = 1$ für alle $g \in G$.
+      Entscheiden Sie, ob $G$ notwendigerweise abelsch ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für jedes $g \in G$ gilt $g^{-1} = g$, und für alle $g, h \in G$ gilt somit
+      \[
+          g h
+        = g^{-1} h^{-1}
+        = (h g)^{-1}
+        = h g \,.
+      \]
+    \item
+      Die Gruppe
+      \[
+                  G
+        =         \left\{
+                    \begin{pmatrix}
+                      1 & *       & \cdots  & *       \\
+                        & \ddots  & \ddots  & \vdots  \\
+                        &         & \ddots  & *       \\
+                        &         &         & 1
+                    \end{pmatrix}
+                  \right\}
+        \subseteq \GL_n(\Field_p)
+      \]
+      ist nicht abelsch.
+      Es gilt aber $S^p = I$ für jede Matrix $S \in G$, denn das charakteristische Polynom von $S$ ist $\chi_S(t) = (t-1)^p = t^p - 1$, und nach dem Satz von Cayley--Hamilton gilt deshalb $0 = \chi_S(S) = S^p - I$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Quotient nach dem Zentrum]
   Es sei $G$ eine Gruppe.
   Zeigen Sie, dass $G$ abelsch ist, wenn $G/{\Center(G)}$ zyklisch ist.
 \end{question}
