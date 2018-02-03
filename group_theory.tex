@@ -469,11 +469,17 @@
     
     \item
       Es sei $\pi \colon G \to G/N$ die kanonische Projektion und $H \subseteq G$ eine Untergruppe von Ordnung $|N|$.
-      Dann ist $\pi(H) \subseteq G/N$ eine Untergruppe, weshalb $|\pi(H)| \mid |G/N| = [G : N]$ gilt.
-      Außerdem gilt $|H/(H \cap N)| = [H : H \cap N] \mid |H| = |N|$.
+      Wir betrachten die Ordnung $|\pi(H)|$:
       
-      Aus $\ker \pi|_H = H \cap \ker \pi = H \cap N$ erhalten wir, dass $\pi(H) \cong H / \ker \pi|_H \cong H / (H \cap N)$ gilt.
-      Somit erhalten wir, dass $\pi(H)$ sowohl $[G : N]$ als auch $|N|$ teilt.
+      Zum einen ist $\pi(H)$ eine Untergruppe von $G/N$, weshalb $|\pi(H)|$ ein Teiler von $|G/N| = [G : N]$ ist.
+      Zum anderen gilt $\ker \pi|_H = H \cap \ker \pi = H \cap N$ weshalb
+      \[
+        \pi(H) = \im \pi|_H \cong H / \ker \pi|_H \cong H / (H \cap N)
+      \]
+      gilt.
+      Dabei ist $|\pi(H)| = |H/(H \cap N)| = [H : H \cap N]$ ein Teiler von $|H| = |N|$.
+      
+      Somit erhalten wir, dass $|\pi(H)|$ sowohl $[G : N]$ als auch $|N|$ teilt.
       Da $[G : N]$ und $|N|$ teilerfremd sind folgt hieraus, dass $\pi(H) = 1$ gilt.
       Es gilt also $H \subseteq \ker \pi = N$, und wegen $|H| = |N|$ somit bereits $H = N$.
   \end{enumerate}
@@ -751,12 +757,12 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Ist $B \in X/G$ eine $G$-Bahn und $x \in X$ mit $B = G.x$, so gilt $|B| = |G.x| = [G : G_x] \mid |G|$.
-      Für die Ordnung von $G$ gilt $|G| = 77 = 7 \cdot 11$, also gilt $|B| \in \{1, 7, 11, 77\}$ für jede $G$-Bahn $B \in X/G$.
-      Dabei gilt genau dann $|B| = 1$, falls $B = \{x\}$ für einen Fixpunkt $x \in X$ gilt;
+      Ist $\orbit \in X/G$ eine $G$-Bahn und $x \in X$ mit $\orbit = G.x$, so ist $|\orbit| = |G.x| = [G : G_x]$ ein Teiler von $|G|$.
+      Für die Ordnung von $G$ gilt $|G| = 77 = 7 \cdot 11$, also gilt $|\orbit| \in \{1, 7, 11, 77\}$ für jede $G$-Bahn $\orbit \in X/G$.
+      Dabei gilt genau dann $|\orbit| = 1$, falls $\orbit = \{x\}$ für einen Fixpunkt $x \in X$ gilt;
       es gilt also zu zeigen, dass es mindestens drei einelementige $G$-Bahnen in $X$ gibt.
       
-      Nach der Bahnengleichung gilt $17 = |X| = \sum_{B \in X/G} |B|$.
+      Nach der Bahnengleichung gilt $17 = |X| = \sum_{\orbit \in X/G} |\orbit|$.
       Die einzigen Möglichkeiten, die Zahl $17$ als Summe der Zahlen $1$, $7$, $11$ und $77$ darzustellen, sind
       \[
           17
@@ -768,13 +774,13 @@
       In jeder der Möglichkeiten kommt der Summand $1$ mindestens dreimal vor, wodurch sich die Aussage ergibt.
       
     \item
-      Es sei $B \in X/G$ eine $G$-Bahn.
-      Es gilt genau dann $|B| = 1$, wenn $B = \{x\}$ für einen Fixpunkt $x \in X$ gilt.
-      Ist $|B| \neq 1$ und $x \in B$, so folgt aus $|B| = G.x = [G : G_x] \mid |G| = p^r$ mit $r \geq 0$, dass bereits $p \mid |B|$ gilt.
+      Es sei $\orbit \in X/G$ eine $G$-Bahn.
+      Es gilt genau dann $|\orbit| = 1$, wenn $\orbit = \{x\}$ für einen Fixpunkt $x \in X$ gilt.
+      Ist $|\orbit| \neq 1$ und $x \in \orbit$, so ist $|\orbit| = G.x = [G : G_x]$ ein Teiler von $|G| = p^r$ mit $r \geq 0$, weshalb bereits $p \mid |\orbit|$ gilt.
       
-      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{B \in X/G} |B|$.
-      Aus $p \nmid |X|$ erhalten wir, dass es eine $G$-Bahn $B \in X/G$ mit $p \nmid |B|$ gibt.
-      Nach den obigen Beobachtungen erhalten wir, dass diese Bahn von der Form $B = \{x\}$ für einen Fixpunkt $x \in X$ ist.
+      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{\orbit \in X/G} |\orbit|$.
+      Aus $p \nmid |X|$ erhalten wir, dass es eine $G$-Bahn $\orbit \in X/G$ mit $p \nmid |\orbit|$ gibt.
+      Nach den obigen Beobachtungen erhalten wir, dass diese Bahn von der Form $\orbit = \{x\}$ für einen Fixpunkt $x \in X$ ist.
   \end{enumerate}
 \end{solution}
 
@@ -1372,7 +1378,7 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Im Fall $p = 2$ ist der Frobenius-Homomorphismus $\Field_{2^n} \to \Field_{2^n}$, $x \mapsto x^2$ ein Automorphismus und somit $\Quad(2,n) = \Field_{p^n}$.
+      Im Fall $p = 2$ ist der Frobeniushomomorphismus $\Field_{2^n} \to \Field_{2^n}$, $x \mapsto x^2$ ein Körperautomorphismus, weshalb dann $\Quad(2,n) = \Field_{p^n}$ gilt.
       Inbesondere gilt dann $|{\Quad(2,n)}| = |\Field_{2^n}| = 2^n$.
       
       Im Fall $p \neq 2$ gilt
