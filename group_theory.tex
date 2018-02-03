@@ -363,7 +363,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Untergruppen von Ordnung $2$]
+\begin{question}[subtitle = Untergruppen von Index $2$]
   Es sei $G$ eine Gruppe und $N \subseteq G$ eine Untergruppe vom Index $2$.
   Zeigen Sie, dass $N$ normal in $G$ ist.
 \end{question}
@@ -394,6 +394,49 @@
       Dies genau für $g \in N$.
       Also gilt $\ker \varphi = N$, weshalb $N$ normal in $G$ ist.
   \end{itemize}
+\end{solution}
+
+
+\begin{question}[subtitle = Charakteristische Untergruppen]
+  Eine Untergruppe $H \subseteq G$ einer Gruppe $G$ heißt \emph{charakteristisch}, wenn $\varphi(H) = H$ für jeden Automorphismus $\varphi \colon G \to G$ gilt.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass jede charakteristische Untergruppe $H \subseteq G$ bereits normal ist.
+    \item
+      Zeigen Sie, dass die Untergruppen $\Center(G), [G,G] \subseteq G$ charakteristisch sind.
+    \item
+      Es sei $H \subseteq G$ eine charakteristische Untergruppe und $N \subseteq H$ eine normale Untergruppe.
+      Zeigen Sie, dass die Untergruppe $N$ bereits normal in $G$ ist.
+    \item
+      Folgern Sie, dass für jede normale Untergruppe $N \subseteq G$ auch das Zentrum $\Center(N)$ normal in $G$ ist.
+%     \item
+        %TODO: How to prove this?
+%       Es sei $N \subseteq G$ eine normale Untergruppe, so dass $|N|$ und $|G/N|$ teilerfremd sind.
+%       Folgern Sie, dass $N$ charakteristisch in $G$ ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für jedes $g \in G$ ist die Konjugationsabbildung $c \colon G \to G$, $h \mapsto ghg^{-1}$ ein Automorphismus.
+      Da $N$ charakteristisch ist, gilt deshalb $gNg^{-1} = c(N) = N$.
+    \item
+      Ist $\varphi \colon G \to G'$ ein Isomorphismus von Gruppen, so gilt $\varphi(\Center(G)) = \Center(G')$.
+      Insbesondere gilt für jeden Automorphismus $\varphi \in G \to G$, dass $\varphi(\Center(G)) = \Center(\varphi(G)) = \Center(G)$.
+      
+      Für jeden Gruppenhomomorphismus $\varphi \colon G \to G'$ gilt $\varphi([G,G]) = [\varphi(G), \varphi(G')]$.
+      Inbesondere gilt $\varphi([G,G]) = [\varphi(G), \varphi(G)] = [G,G]$ für jeden Automorphismus $\varphi \colon G \to G$.
+    \item
+      Es sei $g \in G$ und $c \colon G \to G$, $h \mapsto ghg^{-1}$ die Konjugationsabbildung.
+      Da $H$ normal ist, schränkt sich der Automorphismus $c_g$ zu einem Automorphismus $c_g|_H \colon H \to H$ ein (das Inverse ist durch die Einschränkung der Konjugation mit $g^{-1}$ gegeben).
+      Da $N$ charakteristisch in $H$ ist, gilt $g N g^{-1} = c_g(N) = c_g|_H(N) = N$.
+    \item
+      
+      Also ist $\Center(N)$ eine charakteristische Untergruppe von $N$.
+      Da $N$ normal ist in $G$ ist folgt deshalb auch dem vorherigen Aufgabenteil, dass auch $\Center(N)$ auch normal in $G$.
+  \end{enumerate}
 \end{solution}
 
 
