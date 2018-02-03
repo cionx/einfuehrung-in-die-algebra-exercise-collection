@@ -19,6 +19,8 @@
       Ist $G$ eine Gruppe und $N \subseteq G$ eine normale Untergruppe, so dass $N$ und $G/N$ abelsch sind, so ist auch $G$ abelsch.
     \item
       Jede unendliche Gruppe $G$ enthält eine echte Untergruppe $H \subsetneq G$.
+    \item
+      Ist $p$ prim, so ist jede Gruppe der Ordnung $p^3$ abelsch.
   \end{enumerate}
 \end{question}
 
@@ -59,6 +61,54 @@
       Falls es ein Element $g \in G$ unendlicher Ordnung gibt, so gilt $\Integer \cong \generate{g} \subseteq G$.
       Dann entspricht die echte Untergruppe $2\Integer \subsetneq \Integer$ einer echten Untergruppe von $G$.
       Ansonsten hat jedes Element $g \in G$ endliche Ordnung, weshalb dann $\generate{g}$ eine echte Untergruppe von $G$ ist.
+    \item
+      Die Aussage ist \emph{falsch}:
+      Die Heisenberg-Gruppe
+      \[
+          G
+        = \left\{
+            \begin{pmatrix}
+              1 & a & b \\
+                & 1 & c \\
+                &   & 1
+            \end{pmatrix}
+          \,\middle|\,
+            a, b, c \in \Field_p
+          \right\}
+      \]
+      ist nicht abelsch, da etwa
+      \[
+              \begin{psmallmatrix}
+                1 & 1 & 0 \\
+                  & 1 & 0 \\
+                  &   & 1
+              \end{psmallmatrix}
+              \begin{psmallmatrix}
+                1 & 0 & 0 \\
+                  & 1 & 1 \\
+                  &   & 1
+              \end{psmallmatrix}
+        =     \begin{psmallmatrix}
+                1 & 1 & 1 \\
+                  & 1 & 1 \\
+                  &   & 1
+              \end{psmallmatrix}
+        \neq  \begin{psmallmatrix}
+                1 & 1 & 0 \\
+                  & 1 & 1 \\
+                  &   & 1
+              \end{psmallmatrix}
+        =     \begin{psmallmatrix}
+                1 & 0 & 0 \\
+                  & 1 & 1 \\
+                  &   & 1
+              \end{psmallmatrix}
+              \begin{psmallmatrix}
+                1 & 1 & 0 \\
+                  & 1 & 0 \\
+                  &   & 1
+              \end{psmallmatrix} \,.
+      \]
   \end{enumerate}
 \end{solution}
 
