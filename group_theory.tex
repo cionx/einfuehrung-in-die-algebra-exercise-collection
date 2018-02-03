@@ -21,6 +21,8 @@
       Jede unendliche Gruppe $G$ enthält eine echte Untergruppe $H \subsetneq G$.
     \item
       Ist $p$ prim, so ist jede Gruppe der Ordnung $p^3$ abelsch.
+    \item
+      Die symmetrische Gruppe $S_n$ wird von dem Zykel $\rho = (1 \, 2 \, \dotso \, n)$ zusammen mit der Permutation $\tau = (1 \, 2)$ erzeugt.
   \end{enumerate}
 \end{question}
 
@@ -109,6 +111,17 @@
                   &   & 1
               \end{psmallmatrix} \,.
       \]
+    \item
+      Die Aussage ist \emph{wahr}:
+      Für alle $i = 1, \dotsc, n$ gelten $\rho^{i-1}(1) = i$ und $\rho^{i-1}(2) = i+1$, und somit
+      \[
+        \rho^{i-1} \, \tau \, (\rho^{i-1})^{-1}
+        = \rho^{i-1} (1,\, 2) (\rho^{i-1})^{-1}
+        = (\rho^{i-1}(1),\, \rho^{i-1}(2))
+        = (i\, i+1).
+      \]
+      Deshalb gilt $(1 \quad 2), (2 \quad 3), \dotsc, (n-1 \quad n) \in \generate{\rho, \tau}$.
+      Da $S_n$ von diesen Elementartranspositionen erzeugt wird, gilt bereits $S_n = \generate{\rho, \tau}$.
   \end{enumerate}
 \end{solution}
 
@@ -413,24 +426,6 @@
       Es muss also $\dim_{\Field_2} G \in \{0, 1\}$ gelten, und somit $G = 0$ oder $G \cong \Integer/2$ als (abelsche) Gruppen.
       Diese beiden Gruppen erfüllen auch die gewünschte Eigenschaft.
   \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Ein Erzeugendensystem von $S_n$]
-  Zeigen Sie, dass die symmetrische Gruppe $S_n$ von dem Zykel $\rho = (1 \, 2 \, \dotso \, n)$ und der Permutation $\tau = (1 \, 2)$ erzeugt wird.
-\end{question}
-
-
-\begin{solution}
-  Für alle $i = 1, \dotsc, n$ gilt $\rho^{i-1}(1) = i$ und $\rho^{i-1}(2) = i+1$, und somit
-  \[
-    \rho^{i-1} \, \tau \, (\rho^{i-1})^{-1}
-    = \rho^{i-1} (1 \quad 2) (\rho^{i-1})^{-1}
-    = (\rho^{i-1}(1) \quad \rho^{i-1}(2))
-    = (i \quad i+1).
-  \]
-  Deshalb gilt $(1 \quad 2), (2 \quad 3), \dotsc, (n-1 \quad n) \in \generate{\rho, \tau}$.
-  Da $S_n$ von diesen Elementartranspositionen erzeugt wird, gilt bereits $S_n \subseteq \generate{\rho, \tau} \subseteq S_n$, und somit $S_n = \generate{\rho, \tau}$.
 \end{solution}
 
 
