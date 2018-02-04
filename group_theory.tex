@@ -848,14 +848,27 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Genau zwei Konjugationsklassen]
-  Eine endliche Gruppe $G$ wirke auf einer Menge $X$.
+%%% ADDHERE
+
+\begin{question}[subtitle ={Wirkung von $p$-Grupppen}]
+  Eine endliche $p$-Gruppe $G$ wirke auf einer endlichen Menge $X$.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass für jedes $x \in X$ die Kardinalität $|G.x|$ der Bahn $G.x$ ein Teiler der Gruppenordnung $|G|$ ist.
+      Die Gruppe $G$ wirke auf einer endlichen Menge $X$.
+      Zeigen Sie, dass
+      \[
+        |X| \equiv |X^G| \pmod{p} \,.
+      \]
     \item
-      Es sei $G$ eine Gruppe mit genau zwei Konjugationsklassen.
-      Zeigen Sie, dass bereits $G \cong \Integer/2$ gilt.
+      Gilt $p \nmid |G|$, so besitzt die Wirkung einen Fixpunkt.
+    \item
+      Zeigen Sie, dass $\Center(G) \neq 1$ gilt, wenn $G \neq 1$ gilt.
+      
+      (\emph{Hinweis}: Betrachten Sie eine passende Wirkung von $G$ auf sich selbst.)
+    \item
+      Zeigen Sie, dass die Anzahl der nicht-normalen Untergruppen von $G$ ein Vielfaches von $p$ ist.
+      
+      (\emph{Hinweis}: Betrachten Sie eine passende Wirkung von $G$ auf einer passenden Menge.)
   \end{enumerate}
 \end{question}
 
@@ -863,120 +876,70 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Aufgrund der Bijektion $G/G_x \to G.x$, $gG_x \mapsto g.x$ gilt $|G.x| = |G/G_x| = |G|/|G_x|$.
+      Es seien $x_1, \dotsc, x_n \in X$ Repräsentanten der nicht-trivalen Bahnen.
+      Nach der Bahnenformel gilt dann
+      \[
+          |X|
+        = |X^G| + \sum_{i=1}^n \, |G.x_i|
+        = |X^G| + \sum_{i=1}^n \, [G : G_{x_i}] \,.
+      \]
+      Da die $G$-Mengen $G.x_i$ nicht trivial sind, gilt dabei $|G.x_i| = [G : G_{x_i}] \neq 1$, wobei $[G : G_{x_i}]$ ein Teiler der Gruppenordnung $|G|$ ist.
+      Es ist also $[G : G_{x_i}]$ jeweils eine nicht-triviale $p$-Potzenz, und somit $[G : G_{x_i}] \equiv 0 \pmod{p}$.
+      Somit gilt insgesamt
+      \[
+                |X|
+        =       |X^G| + \sum_{i=1}^n \, [G : G_{x_i}]
+        \equiv  |X^G| + 0
+        =       |X^G|
+        \pmod{p} \,.
+      \]
     \item
-      Die Gruppe $G$ wirke auf sich selbst vermöge Konjugation, d.h.\ für alle $g \in G$, $x \in G$ gelte $g.x \coloneqq gxg^{-1}$.
-      Die Konjugationsklassen von $G$ sind genau die Bahnen dieser Gruppenwirkung.
-      Nach dem vorherigen Aufgabenteil ist somit die Kardinalität jeder Konjugationsteiler ein Teiler der Gruppenordnung $|G|$.
-      
-      Die Konjugationsklasse des neutralen Elements $e \in G$ ist stets die einelementige Menge $\{e\}$.
-      Da $G$ die disjunkte Vereinigung beider Konjugationsklassen ist, muss es sich bei der anderen Konjugationsklasse um $G \smallsetminus \{e\}$ handeln.
-      Dann ist $|G \smallsetminus \{e\}| = |G|-1$ ein Teiler von $|G|$.
-      Dies ist nur für $|G| = 2$ möglich, wenn also $G \cong \Integer/2$ gilt.
+      Nach dem vorherigen Aufgabenteil gilt $|X^G| \equiv |X| \not\equiv 0 \pmod{p}$, und somit insbesondere $|X^G| \neq 0$.
+    \item
+      Die Gruppe $G$ wirke auf sich selbst, also auf $X = G$, durch Konjugation.
+      Dann gilt $X^G = \Center(G)$ und somit nach dem ersten Aufgabenteil
+      \[
+                |\Center(G)|
+        =       |X^G|
+        =       |X|
+        =       |G|
+        \equiv  0 \,.
+      \]
+      Also ist $|\Center(G)|$ ein Vielfaches von $p$.
+      Der Fall $|\Center(G)| = 0$ kann dabei nicht eintreten, da $\Center(G)$ als Untergruppe nicht leer ist.
+      Folglich gilt $|\Center(G)| \geq p$, weshalb $\Center(G)$ nicht trivial ist.
+    \item
+      Es sei $\mathcal{S}$ die Menge der Untergruppen von $G$.
+      Die Gruppe $G$ wirkt auf der Menge $\mathcal{S}$ durch Konjugation, d.h.\ vermöge $g.H = gHg^{-1}$ für alle $g \in G$, $H \in \mathcal{S}$.
+      Eine Untergruppe $N \in \mathcal{S}$ ist genau dann normal in $G$, wenn $N$ ein Fixpunkt dieser Wirkung ist.
+      Es gilt also zu zeigen, dass $|\mathcal{S}| - |\mathcal{S}^G|$ ein Vielfaches von $p$ ist, dass also $|\mathcal{S}| \equiv |\mathcal{S}^G| \pmod{p}$ gilt.
+      Dies ergibt sich aus dem vorherigen Aufgabenteil.
   \end{enumerate}
 \end{solution}
 
 
 \begin{question}[subtitle = Bahnenkombinatorik]
-  \begin{enumerate}
-    \item
-      Es sei $G$ eine Gruppe der Ordnung $77$, die auf einer $17$-elementigen Menge $X$ wirkt.
-      Zeigen Sie, dass die Wirkung mindestens $3$ Fixpunkte hat.
-    \item
-      Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe.
-      Es sei $X$ eine endliche Menge mit $p \nmid |X|$ und $G$ wirke auf $X$.
-      Zeigen Sie, dass die Wirkung einen Fixpunkt besitzt.
-  \end{enumerate}
+  Es sei $G$ eine Gruppe der Ordnung $77$, die auf einer $17$-elementigen Menge $X$ wirkt.
+  Zeigen Sie, dass die Wirkung mindestens $3$ Fixpunkte hat.
 \end{question}
 
 
 \begin{solution}
-  \begin{enumerate}
-    \item
-      Ist $\orbit \in X/G$ eine $G$-Bahn und $x \in X$ mit $\orbit = G.x$, so ist $|\orbit| = |G.x| = [G : G_x]$ ein Teiler von $|G|$.
-      Für die Ordnung von $G$ gilt $|G| = 77 = 7 \cdot 11$, also gilt $|\orbit| \in \{1, 7, 11, 77\}$ für jede $G$-Bahn $\orbit \in X/G$.
-      Dabei gilt genau dann $|\orbit| = 1$, falls $\orbit = \{x\}$ für einen Fixpunkt $x \in X$ gilt;
-      es gilt also zu zeigen, dass es mindestens drei einelementige $G$-Bahnen in $X$ gibt.
-      
-      Nach der Bahnengleichung gilt $17 = |X| = \sum_{\orbit \in X/G} |\orbit|$.
-      Die einzigen Möglichkeiten, die Zahl $17$ als Summe der Zahlen $1$, $7$, $11$ und $77$ darzustellen, sind
-      \[
-          17
-        = 11 + 6 \cdot 1
-        = 2 \cdot 7 + 3 \cdot 1
-        = 7 + 10 \cdot 1
-        = 17 \cdot 1.
-      \]
-      In jeder der Möglichkeiten kommt der Summand $1$ mindestens dreimal vor, wodurch sich die Aussage ergibt.
-      
-    \item
-      Es sei $\orbit \in X/G$ eine $G$-Bahn.
-      Es gilt genau dann $|\orbit| = 1$, wenn $\orbit = \{x\}$ für einen Fixpunkt $x \in X$ gilt.
-      Ist $|\orbit| \neq 1$ und $x \in \orbit$, so ist $|\orbit| = G.x = [G : G_x]$ ein Teiler von $|G| = p^r$ mit $r \geq 0$, weshalb bereits $p \mid |\orbit|$ gilt.
-      
-      Aus der Bahnengleichung erhalten wir, dass $|X| = \sum_{\orbit \in X/G} |\orbit|$.
-      Aus $p \nmid |X|$ erhalten wir, dass es eine $G$-Bahn $\orbit \in X/G$ mit $p \nmid |\orbit|$ gibt.
-      Nach den obigen Beobachtungen erhalten wir, dass diese Bahn von der Form $\orbit = \{x\}$ für einen Fixpunkt $x \in X$ ist.
-  \end{enumerate}
-\end{solution}
-
-
-\begin{question}[subtitle = Mehr Bahnenkombinatorik]
-  Es sei $p > 0$ prim und $G$ eine endliche $p$-Gruppe mit $G \neq 1$.
-  Zeigen Sie, dass auch $\Center(G) \neq 1$ gilt.
-  \\
-  (\emph{Hinweis}:
-   Lassen sich $G$ auf sich selbst durch Konjugation wirken.)
-\end{question}
-
-
-\begin{solution}
-  Es sei $X \coloneqq G$.
-  Die Gruppe $G$ wirkt auf $X$ durch Konjugation, also durch $g.x = g x g^{-1}$ für alle $g \in G$, $x \in X$
-  Ein Punkt $x \in X$ ist genau dann ein Fixpunkt, wenn $g x g^{-1} = x$ für alle $g \in G$ gilt, wenn also $x \in \Center(G)$ gilt.
+  Ist $\orbit \in X/G$ eine $G$-Bahn und $x \in X$ mit $\orbit = G.x$, so ist $|\orbit| = |G.x| = [G : G_x]$ ein Teiler von $|G|$.
+  Für die Ordnung von $G$ gilt $|G| = 77 = 7 \cdot 11$, also gilt $|\orbit| \in \{1, 7, 11, 77\}$ für jede $G$-Bahn $\orbit \in X/G$.
+  Dabei gilt genau dann $|\orbit| = 1$, falls $\orbit = \{x\}$ für einen Fixpunkt $x \in X$ gilt;
+  es gilt also zu zeigen, dass es mindestens drei einelementige $G$-Bahnen in $X$ gibt.
   
-  Ist $B \in X/G$ eine $G$-Bahn mit $|B| \neq 1$, so gibt es $x \in X$ mit $B = G.x$, und es folgt aus $|B| = |G.x| = [G : G_x] \mid |G|$, dass bereits $p \mid |B|$ gilt.
-  Damit erhalten wir für $x \in X$, dass genau dann $x \in \Center(G)$ gilt, wenn $p \nmid |G.x|$.
-  Da $|G| = p^r$ mit $r \geq 1$ gilt, erhalten wir aus der Bahnengleichung, dass
+  Nach der Bahnengleichung gilt $17 = |X| = \sum_{\orbit \in X/G} |\orbit|$.
+  Die einzigen Möglichkeiten, die Zahl $17$ als Summe der Zahlen $1$, $7$, $11$ und $77$ darzustellen, sind
   \[
-            0
-    \equiv  |G|
-    =       \sum_{B \in X/G} |B|
-    \equiv  \sum_{\substack{B \in X/G \\ |B| = 1}} |B|
-    =       |{\Center(G)}|
-    \mod    p.
+      17
+    = 11 + 6 \cdot 1
+    = 2 \cdot 7 + 3 \cdot 1
+    = 7 + 10 \cdot 1
+    = 17 \cdot 1.
   \]
-  Deshalb gilt $p \mid |{\Center(G)}|$.
-  Insbesondere ist $|{\Center(G)}| \neq 1$ und somit $\Center(G) \neq 1$.
-\end{solution}
-
-
-\begin{question}[subtitle ={Nicht-normale Untergruppen einer $p$-Gruppe}]
-  Es sei $G$ eine endliche $p$-Gruppe.
-  Zeigen Sie, dass die Anzahl der nicht-normalen Untergruppen von $G$ ein Vielfaches von $p$ ist.\\
-  (\emph{Hinweis}: Bertachten Sie eine passende Konjugationswirkung von $G$.)
-\end{question}
-
-
-\begin{solution}
-  Es sei $\mathcal{S}$ die Menge der Untergruppen von $G$.
-  Die Gruppe $G$ wirkt auf der Menge $\mathcal{S}$ durch Konjugation, d.h.\ vermöge $g.H = gHg^{-1}$ für alle $g \in G$, $H \in \mathcal{S}$.
-  Eine Untergruppe $N \in \mathcal{S}$ ist genau dann normal in $G$, wenn $N$ ein Fixpunkt dieser Wirkung ist.
-  Es gilt also zu zeigen, dass $|\mathcal{S}| - |\mathcal{S}^G|$ ein Vielfaches von $p$ ist.
-  
-  Ist $H_1, \dotsc, H_n \in \mathcal{S}$ ein Repräsentantensystem der nicht-trivialen Bahnen, so gilt nach der Bahnenformel
-  \[
-      |\mathcal{S}|
-    = |\mathcal{S}^G| + \sum_{i=1}^n \, [G : G_{H_i}]
-  \]
-  mit $G_{H_i} \neq G$ (da die Bahn $G.H_i \cong G/G_{H_i}$ nicht trivial ist.)
-  Es handelt sich bei $[G : G_{H_i}] \neq 1$ um einen Teiler von $|G|$, und da $G$ eine $p$-Gruppe ist somit um eine $p$-Potenz.
-  Also ist
-  \[
-      |\mathcal{S}| - |\mathcal{S}^G|
-    = \sum_{i=1}^n \, [G : G_{H_i}]
-  \]
-  ein Vielfaches von $p$.
+  In jeder der Möglichkeiten kommt der Summand $1$ mindestens dreimal vor, wodurch sich die Aussage ergibt.
 \end{solution}
 
 
@@ -1018,6 +981,35 @@
     = |X/G| \,.
   \]
 
+\end{solution}
+
+
+\begin{question}[subtitle = Genau zwei Konjugationsklassen]
+  Eine endliche Gruppe $G$ wirke auf einer Menge $X$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für jedes $x \in X$ die Kardinalität $|G.x|$ der Bahn $G.x$ ein Teiler der Gruppenordnung $|G|$ ist.
+    \item
+      Es sei $G$ eine Gruppe mit genau zwei Konjugationsklassen.
+      Zeigen Sie, dass bereits $G \cong \Integer/2$ gilt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Aufgrund der Bijektion $G/G_x \to G.x$, $gG_x \mapsto g.x$ gilt $|G.x| = |G/G_x| = |G|/|G_x|$.
+    \item
+      Die Gruppe $G$ wirke auf sich selbst vermöge Konjugation, d.h.\ für alle $g \in G$, $x \in G$ gelte $g.x \coloneqq gxg^{-1}$.
+      Die Konjugationsklassen von $G$ sind genau die Bahnen dieser Gruppenwirkung.
+      Nach dem vorherigen Aufgabenteil ist somit die Kardinalität jeder Konjugationsteiler ein Teiler der Gruppenordnung $|G|$.
+      
+      Die Konjugationsklasse des neutralen Elements $e \in G$ ist stets die einelementige Menge $\{e\}$.
+      Da $G$ die disjunkte Vereinigung beider Konjugationsklassen ist, muss es sich bei der anderen Konjugationsklasse um $G \smallsetminus \{e\}$ handeln.
+      Dann ist $|G \smallsetminus \{e\}| = |G|-1$ ein Teiler von $|G|$.
+      Dies ist nur für $|G| = 2$ möglich, wenn also $G \cong \Integer/2$ gilt.
+  \end{enumerate}
 \end{solution}
 
 
