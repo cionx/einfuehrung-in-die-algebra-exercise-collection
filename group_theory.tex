@@ -1423,11 +1423,6 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Das Zentrum der symmetrischen Gruppe]
-  Bestimmen Sie für alle natürlichen Zahlen $n \geq 1$ das Zentrum $\Center(S_n)$ der natürlichen Gruppe $S_n$.
-\end{question}
-
-
 \begin{solution}
   Die Gruppen $S_1$ und $S_2$ sind abelsch, weshalb $\Center(S_1) = S_1$ und $\Center(S_2) = S_2$ gelten.
   Für alle $n \geq 3$ gilt $\Center(S_n) = 1$:
@@ -1912,4 +1907,129 @@
   \end{itemize}
 \end{solution}
 
+
+\begin{question}[subtitle = Flaggen]
+  Es sei $K$ ein Körper und $n \geq 1$.
+  Eine \emph{Flagge} in $K^n$ ist eine Folge $(V_1, \dotsc, V_n)$ von Untervektorräumen $V_i \subseteq K^n$ mit
+  \[
+                0
+    \subsetneq  V_1
+    \subsetneq  V_2
+    \subsetneq  \dotsb
+    \subsetneq  V_n
+    =           K^n \,.
+  \]
+  Inbesondere gilt $\dim V_i = i$ für alle $i$.
+  Es sei $\mathcal{F}(n,K)$ die Menge alle Flaggen in $K^n$ und $S \coloneqq (\generate{e_1}, \generate{e_1, e_2}, \dotsc, \generate{e_1, \dotsc, e_n} = K^n)$ die \emph{Standardflagge} in $K^n$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie:
+      Die Gruppe $\GL_n(K)$ wirkt auf der Menge $\mathcal{F}(n,K)$ vermöge
+      \[
+          A.(V_1, \dotsc, V_n)
+        = (A V_1, \dotsc, A V_n)
+      \]
+      für alle $A \in G$, $(V_1, \dotsc, V_n) \in \mathcal{F}(n,K)$.
+      (Für alle $A \in \GL_n(K)$, $X \subseteq K^n$ ist dabei $SX = \{Sx \mid x \in X\}$.)
+    \item
+      Zeigen Sie, dass diese Wirkung transitiv ist.
+    \item
+      Zeigen Sie, dass der Stabilisator der Standardflagge $S$ durch die Gruppe der oberen Dreiecksmatrizen $\Borel_n(K)$ gegeben ist.
+    \item
+      Folgern Sie für den endlichen Körper $\Field_q$ mit $q$ Elementen, dass
+      \[
+          |\mathcal{F}(n,\Field_q)|
+        = \prod_{k=0}^{n-1} (1 + q + \dotsb + q^k) \,.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei $(V_1, \dotsc, V_n) \in \mathcal{F}(n,K)$.
+      
+      Für jede Matrix $A \in \GL_n(K) = G$ sind dann $A V_1, \dotsc, A V_n$ Untervektorräume von $V$.
+      Wegen der Invertierbarkeit der Matrix $A$ folgt dabei aus $V_1 \neq 0$ und $V_n = K^n$, dass $A V_1 \neq 0$ und $A V_n = K^n$, und aus $V_i \subseteq V_{i+1}$ folgt $A V_i \subsetneq A V_{i+1}$.
+      Somit ist $A.(V_1, \dotsc, V_n)$ eine Flagge in $K^n$.
+      
+      Für die Identitätsmatrix $I \in \GL_n(K)$ gilt
+      \[
+          I.(V_1, \dotsc, V_n)
+        = (I V_1, \dotsc, I V_n)
+        = (V_1, \dotsc, V_n) \,.
+      \]
+      Für alle $A, B \in \GL_n(K)$ gilt
+      \begin{align*}
+            A.(B.(V_1, \dotsc, V_n))
+        &=  A.(B V_1, \dotsc, B V_n)  \\
+        &=  (A B V_1, \dotsc, A B V_n)
+         =  (AB).(V_1, \dotsc, V_n) \,.
+      \end{align*}
+      
+    \item
+      Es genügt zu zeigen, dass die Bahn der Standardflagge $S$ bereits ganz $\mathcal{F}(n,K)$ ist.
+      Hierfür sei $(V_1, \dotsc, V_n) \in \mathcal{F}(n,K)$ und $(b_1, \dotsc, b_n)$ eine Basis von $K^n$ mit $V_i = \generate{b_1, \dotsc, b_i}$ für alle $i$.
+      Die Matrix $A$ mit Spalten $b_1, \dotsc, b_n$ ist dann invertierbar, also ein Element der Gruppe $\GL_n(K)$, und es gilt
+      \begin{align*}
+            A.S
+        &=  A.(\generate{e_1}, \generate{e_1, e_2}, \dotsc, \generate{e_1, \dotsc, e_n})    \\
+        &=  (A\generate{e_1}, A\generate{e_1, e_2}, \dotsc, A\generate{e_1, \dotsc, e_n})   \\
+        &=  (\generate{Ae_1}, \generate{Ae_1, Ae_2}, \dotsc, \generate{Ae_1, \dotsc, Ae_n}) \\
+        &=  (\generate{b_1}, \generate{b_1, b_2}, \dotsc, \generate{b_1, \dotsc, b_n})
+         =  (V_1, \dotsc, V_n) \,.
+      \end{align*}
+      
+    \item
+      Für $A \in \GL_n(K)$ gilt genau dann $A.S = S$, wenn
+      \[
+          \generate{A e_1, \dotsc, A e_i}
+        = A.\generate{e_1, \dotsc, e_i}
+        = \generate{e_1, \dotsc, e_i}
+      \]
+      für alle $i = 1, \dotsc, n$ gilt.
+      
+      Dabei ist für jedes $i = 1, \dotsc, n$ die Gleichheit $\generate{A e_1, \dotsc, A e_i} = \generate{e_1, \dotsc, e_i}$ wegen der Invertierbarkeit von $A$ (und daraus folgenden linearen Unabhängigkeit von $A e_1, \dotsc, A e_i$) äquivalent zu der Inklusion $\generate{A e_1, \dotsc, A e_i} \subseteq \generate{e_1, \dotsc, e_i}$.
+      Diese gilt genau dann, wenn $A e_1, \dotsc, A e_i \in \generate{e_1, \dotsc, e_i}$ gilt, wenn also die ersten $i$ Spalten von $A$ nur in den ersten $i$ Zeilen Einträgen haben.
+      
+      Dass dies für alle $i$ gilt, ist also äquivalent dazu, dass für alle $j = 1, \dotsc, n$ in der $j$-ten Spalte von $A$ nur Einträge in den ersten $j$ Zeilen stehen.
+      Dies bedeutet gerade, dass $A$ eine obere Dreiecksmatrix ist.
+      
+    \item
+      Unter der Wirkung $\GL_n(\Field_q)$ auf $\mathcal{F}(n,\Field_q)$ die Bahn von $S$ und $\Borel_n(\Field_q)$ der Stabilisator von $S$.
+      Also erhalten wir eine Bijektion (bzw.\ Isomorphismus von Links-$\GL_n(\Field_q)$-Mengen)
+      \[
+                \GL_n(\Field_q)/\Borel_n(\Field_q)
+        \to     \mathcal{F}(n,\Field_q) \,,
+        \quad   A \Borel_n(\Field_q)
+        \mapsto A.S \,.
+      \]
+      Insbesondere gilt
+      \[
+          |\mathcal{F}(n,\Field_q)|
+        = \frac{|{\GL_n(\Field_q)}|}{|{\Borel_n(\Field_q)}|} \,.
+      \]
+      Dabei gelten
+      \begin{gather*}
+        \begin{aligned}
+              |{\GL_n(\Field_q)}|
+          &=  (q^n - 1)(q^n - q) \dotsm (q^n - q^{n-1}) \\
+          &=  q^{1 + 2 + \dotsb + (n-1)} (q^n - 1)(q^{n-1} - 1) \dotsm (q-1)  \\
+          &=  q^{n(n-1)/2} (q^n - 1)(q^{n-1} - 1) \dotsm (q-1)
+        \end{aligned}
+      \shortintertext{und}
+        |{\Borel_n(\Field_q)}|
+        = (q-1)^n q^{1 + 2 + \dotsb + (n-1)}
+        = q^{n(n-1)/2} (q-1)^n \,.
+      \end{gather*}
+      Also gilt
+      \begin{align*}
+            |\mathcal{F}(n,\Field_q)|
+        &=  \frac{(q^n - 1)(q^{n-1} - 1) \dotsm (q-1)}{(q-1)^n} \\
+        &=  \prod_{k=0}^{n-1} \frac{q^k-1}{q-1}
+         =  \prod_{k=0}^{n-1} (1 + q + \dotsb + q^{k-1}) \,.
+      \end{align*}
+  \end{enumerate}
+\end{solution}
 
