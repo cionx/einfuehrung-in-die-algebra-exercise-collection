@@ -878,23 +878,26 @@
 %%% ADDHERE
 
 \begin{question}[subtitle ={Wirkung von $p$-Grupppen}]
-  Eine endliche $p$-Gruppe $G$ wirke auf einer endlichen Menge $X$.
+  Es sei $G$ eine endliche $p$-Gruppe.
   \begin{enumerate}
     \item
       Die Gruppe $G$ wirke auf einer endlichen Menge $X$.
       Zeigen Sie, dass
       \[
-        |X| \equiv |X^G| \pmod{p} \,.
+        |X| \equiv |X^G| \pmod{p}
       \]
+      gilt.
+      Folgern Sie ferner, dass diese Wirkung einen Fixpunkt besitzt, falls $p \nmid |X|$ gilt.
     \item
-      Gilt $p \nmid |G|$, so besitzt die Wirkung einen Fixpunkt.
+      \begin{enumerate}
+        \item
+          Zeigen Sie, dass $\Center(G) \neq 1$ gilt, wenn $G \neq 1$ gilt. \\
+          (\emph{Hinweis}: Betrachten Sie eine passende Wirkung von $G$ auf sich selbst.)
+        \item
+          Zeigen Sie allgemeiner, dass für jede normale Untergruppe $N \subseteq G$ bereits $N \cap \Center(G) \neq 1$ gilt, falls $G$ gilt.
+      \end{enumerate}
     \item
-      Zeigen Sie, dass $\Center(G) \neq 1$ gilt, wenn $G \neq 1$ gilt.
-      
-      (\emph{Hinweis}: Betrachten Sie eine passende Wirkung von $G$ auf sich selbst.)
-    \item
-      Zeigen Sie, dass die Anzahl der nicht-normalen Untergruppen von $G$ ein Vielfaches von $p$ ist.
-      
+      Zeigen Sie, dass die Anzahl der nicht-normalen Untergruppen von $G$ ein Vielfaches von $p$ ist. \\
       (\emph{Hinweis}: Betrachten Sie eine passende Wirkung von $G$ auf einer passenden Menge.)
   \end{enumerate}
 \end{question}
@@ -920,21 +923,26 @@
         =       |X^G|
         \pmod{p} \,.
       \]
+      Gilt $p \nmid |X|$, so folgt aus $|X^G| \equiv |X| \not\equiv 0 \pmod{p}$, dass $|X^G| \neq 0$, also $X^G \neq \emptyset$.
     \item
-      Nach dem vorherigen Aufgabenteil gilt $|X^G| \equiv |X| \not\equiv 0 \pmod{p}$, und somit insbesondere $|X^G| \neq 0$.
-    \item
-      Die Gruppe $G$ wirke auf sich selbst, also auf $X = G$, durch Konjugation.
-      Dann gilt $X^G = \Center(G)$ und somit nach dem ersten Aufgabenteil
-      \[
-                |\Center(G)|
-        =       |X^G|
-        =       |X|
-        =       |G|
-        \equiv  0 \,.
-      \]
-      Also ist $|\Center(G)|$ ein Vielfaches von $p$.
-      Der Fall $|\Center(G)| = 0$ kann dabei nicht eintreten, da $\Center(G)$ als Untergruppe nicht leer ist.
-      Folglich gilt $|\Center(G)| \geq p$, weshalb $\Center(G)$ nicht trivial ist.
+      \begin{enumerate}
+        \item
+          Die Gruppe $G$ wirke auf sich selbst, also auf $X = G$, durch Konjugation.
+          Dann gilt $X^G = \Center(G)$ und somit nach dem ersten Aufgabenteil
+          \[
+                    |{\Center(G)}|
+            =       |X^G|
+            =       |X|
+            =       |G|
+            \equiv  0 \,.
+          \]
+          Also ist $|{\Center(G)}|$ ein Vielfaches von $p$.
+          Der Fall $|{\Center(G)}| = 0$ kann dabei nicht eintreten, da $\Center(G)$ als Untergruppe nicht leer ist.
+          Folglich gilt $|\Center(G)| \geq p$, weshalb $\Center(G)$ nicht trivial ist.
+        \item
+          Da $N$ normal in $G$ ist, wirkt $G$ durch Konjugation auf $Y = N$.
+          Ersetzt man nun in der obigen Argumentation $X$ durch $Y$ und $X^G$ durch $Y^G = N \cap \Center(G)$, so ergibt sich, dass $N \cap \Center(G)$ nicht trivial ist.
+      \end{enumerate}
     \item
       Es sei $\mathcal{S}$ die Menge der Untergruppen von $G$.
       Die Gruppe $G$ wirkt auf der Menge $\mathcal{S}$ durch Konjugation, d.h.\ vermöge $g.H = gHg^{-1}$ für alle $g \in G$, $H \in \mathcal{S}$.
