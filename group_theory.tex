@@ -30,7 +30,7 @@
     \item
       Für jede endliche abelsche Gruppe $A$ gilt für das Element $s \coloneqq \sum_{a \in A} a$, dass $2 s = 0$.
     \item
-      Für die Gruppe $\GL_n(\Field_p)$ ist die Untergruppe $\Upper_n(\Field_p) \subseteq \GL_n(\Field_p)$ der oberen Dreiecksmatrizen mit $1$-en auf der Diagonalen eine $p$-Sylowuntergruppe.
+      Für die Gruppe $\GL_n(\Field_p)$ ist die Untergruppe $\Upper_n(\Field_p) \subseteq \GL_n(\Field_p)$ der oberen Dreiecksmatrizen mit $1$-en auf der Diagonalen eine $p$-Sylow\-unter\-gruppe.
   \end{enumerate}
 \end{question}
 
@@ -160,7 +160,7 @@
             \underbrace{(p^n - 1)(p^{n-1} - 1) \dotsm (p - 1)}_{\eqqcolon m} \,.
       \end{align*}
       Dabei gilt $p \nmid (p^k - 1)$ für alle $k \geq 1$, und somit auch $p \nmid m$.
-      Die $p$-Sylowuntergruppen von $\GL_n(\Field_p)$ sind deshalb genau die $p$-Untergruppen der Ordnung $p^{n(n-1)/2}$.
+      Die $p$-Sylow\-unter\-gruppen von $\GL_n(\Field_p)$ sind deshalb genau die $p$-Untergruppen der Ordnung $p^{n(n-1)/2}$.
       Die Gruppe $\Upper_n(\Field_p)$ hat diese Ordnung.
   \end{enumerate}
 \end{solution}
@@ -994,6 +994,86 @@
 \end{solution}
 
 
+\begin{question}[subtitle = Ein wenig Sylow]
+  Es sei $G$ eine endliche Gruppe, $H \subseteq G$ eine Untergruppe und $p$ prim.
+  \begin{enumerate}
+    \item
+      Es sei $P$ eine $p$-Sylow\-unter\-gruppe von $G$ mit $P \subseteq H$.
+      Zeigen Sie, dass $P$ auch eine $p$-Sylow\-un\-ter\-gruppe von $H$.
+    \item
+      Es sei $P$ eine $p$-Sylow\-unter\-gruppe von $H$.
+      Zeigen Sie, dass es eine $p$-Sylow\-un\-ter\-gruppe $P'$ von $G$ mit $P = H \cap P'$ gibt.
+    \item
+      Folgern Sie:
+      Falls $G$ eine normale $p$-Sylow\-unter\-gruppe enthält, so enthält auch $H$ eine normale $P$-Sylow\-unter\-gruppe.
+    \item
+      Folgern Sie außerdem:
+      Ist $H$ normal in $G$ und $P$ eine $p$-Sylow\-unter\-gruppe von $G$, so ist $H \cap P$ eine $p$-Sylow\-unter\-gruppe von $H$ ist.
+    \item
+      Es seien $P, P' \subseteq G$ zwei $p$-Sylow\-unter\-gruppen mit $P' \subseteq N_G(P)$.
+      Zeigen Sie, dass bereits $P = P'$ gilt.
+    \item
+      Es sei $P$ eine $p$-Sylow\-unter\-gruppe von $G$ mit $N_G(P) \subseteq H$.
+      Zeigen Sie, dass dann $N_G(H) = H$ gilt.
+      Folgern Sie, dass $N_G(N_G(P')) = N_G(P')$ für jede $p$-Sylow\-un\-ter\-gruppe $P'$ von $G$ gilt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Jede $p$-Untergruppe von $H$ ist auch eine $p$-Untergruppe von $G$.
+      Da $P$ eine maximale $p$-Untergruppe von $G$ ist, handelt es sich deshalb auch um eine maximale $p$-Untergruppe von $G$.
+    \item
+      Die Gruppe $H$ ist eine $p$-Untergruppe von $G$.
+      Somit gibt es eine $p$-Sylow\-unter\-gruppe $P'$ von $G$ mit $P \subseteq P'$.
+      Dann ist $H \cap P'$ eine Untergruppe von $H$ mit $P \subseteq H \cap P'$.
+      Dabei ist $H \cap P'$ eine $p$-Gruppe, da $P'$ eine $p$-Gruppe ist.
+      Da $P$ maximal unter allen $p$-Untergruppen von $H$ ist, gilt bereits $P = H \cap P'$.
+    \item
+      Es sei $P'$ eine $p$-Sylow\-unter\-gruppe von $G$ mit $P = H \cap P'$.
+      Die normale $p$-Sylow\-unter\-gruppe von $G$ ist bereits die eindeutige $p$-Sylow\-unter\-gruppe von $G$ (denn alle $p$-Sylow\-unter\-gruppen von $G$ sind konjugiert zueinander).
+      Also ist $P'$ bereits diese eindeutige $p$-Sylow\-unter\-gruppe von $G$.
+      Inbesondere ist $P = H \cap P'$ bereits eindeutig bestimmt.
+      Also ist $P$ die eindeutige $p$-Sylow\-unter\-gruppe von $H$.
+      Damit ist $P$ normal in $H$ (denn alle $H$-Konjugierten von $P$ sind ebenfalls $p$-Sylow\-unter\-gruppen von $H$).
+    \item
+      Es sei $P'$  eine $p$-Sylow\-unter\-gruppe.
+      Dann gibt es eine $p$-Sylow\-unter\-gruppe $P''$ von $G$ mit $P' = H \cap P''$.
+      Die beiden $p$-Sylow\-unter\-gruppen $P$ und $P''$ von $G$ sind konjugiert zueinander, weshalb es ein Gruppenelement $g \in G$ mit $gPg^{-1} = P''$ gibt.
+      Dann gilt
+      \[
+          g(H \cap P)g^{-1}
+        = (gHg^{-1}) \cap (gPg^{-1})
+        = H \cap P''
+        = P' \,.
+      \]
+      Inbesondere gilt somit $|H \cap P| = |P'|$, weshalb auch $H \cap P$ eine maximale $p$-Untergruppe von $H$ ist, und somit eine $p$-Sylow\-unter\-gruppe von $H$.
+    \item
+      Es gilt $P, P' \subseteq N_G(P)$.
+      Nach dem ersten Aufgabenteil sind $P$ und $P'$ bereits $p$-Sylow\-unter\-gruppen von $N_G(P)$.
+      Da $P$ normal in $N_G(P)$ ist, besitzt $N_G(P)$ allerdings eine eindeutige $p$-Sylow\-unter\-gruppe (denn alle anderen $p$-Sylow\-unter\-gruppen von $N_G(P)$ sind in $N_G(P)$ konjugiert zu $P$).
+      Folglich muss bereits $P = P'$ gelten.
+    \item
+      Die Inklusion $K \subseteq N_G(K)$ gilt für jede Untergruppe $K \subseteq G$, also insbesondere für $K = H$.
+      
+      Andererseits sei $a \in N_G(H)$.
+      Nach dem ersten Aufgabenteil ist $P$ eine $p$-Sylow\-un\-ter\-gruppe von $H$, weshalb $aPa^{-1}$ eine $P$-Sylow\-unter\-gruppe von $aHa^{-1} = H$ ist.
+      Die $p$-Sylow\-unter\-gruppen $P$ und $aPa^{-1}$ von $H$ sind in $H$ konjugiert zueinander, weshalb es ein Gruppenelement $b \in H$ mit
+      \[
+          P
+        = baPa^{-1}b^{-1}
+        = (ba)P(ba)^{-1}
+      \]
+      gibt.
+      Dann ist $ba \in N_G(P) \subseteq H$ und wegen $b \in H$ somit auch $a = b^{-1} ba \in H$.
+      
+      Mit $H = N_G(P)$ ergibt sich, dass $N_G(N_G(P)) = N_G(P)$.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{question}[subtitle = Bahnenkombinatorik]
   Es sei $G$ eine Gruppe der Ordnung $77$, die auf einer $17$-elementigen Menge $X$ wirkt.
   Zeigen Sie, dass die Wirkung mindestens $3$ Fixpunkte hat.
@@ -1585,7 +1665,7 @@
 %   \begin{enumerate}
 %     \item
 %       Es sei $G$ ein endliche Gruppe und $p$ eine Primzahl.
-%       Zeigen Sie, dass eine $p$-Sylow\-un\-ter\-grup\-pe $H$ von $G$ genau dann normal ist, wenn sie die einzige $p$-Sylowuntergruppe von $G$ ist.
+%       Zeigen Sie, dass eine $p$-Sylow\-un\-ter\-grup\-pe $H$ von $G$ genau dann normal ist, wenn sie die einzige $p$-Sylow\-unter\-gruppe von $G$ ist.
 %     \item
 %       Zeigen Sie, dass jede Gruppe der Ordnung $35$ einen Normalteiler der Ordnung $5$ besitzt.
 %     \item
@@ -1606,10 +1686,10 @@
 % \begin{solution}
 %   \begin{enumerate}
 %     \item
-%       Für jedes $g \in G$ ist auch $g H g^{-1}$ eine $p$-Sylowuntergruppe von $G$.
-%       Ist $H$ die einzige $p$-Sylowuntergruppe von $G$, so ist deshalb $gHg^{-1} = H$ für alle $g \in G$, also $H$ normal in $G$.
+%       Für jedes $g \in G$ ist auch $g H g^{-1}$ eine $p$-Sylow\-unter\-gruppe von $G$.
+%       Ist $H$ die einzige $p$-Sylow\-unter\-gruppe von $G$, so ist deshalb $gHg^{-1} = H$ für alle $g \in G$, also $H$ normal in $G$.
 %       
-%       Ist andererseits $H$ normal in $G$ und $H'$ eine weitere $p$-Sylowuntergruppe von $G$, so gibt es nach den Sylowsätzen ein $g \in G$ mit $H' = g H g^{-1}$.
+%       Ist andererseits $H$ normal in $G$ und $H'$ eine weitere $p$-Sylow\-unter\-gruppe von $G$, so gibt es nach den Sylowsätzen ein $g \in G$ mit $H' = g H g^{-1}$.
 %       Da $H$ normal ist, gilt dabei bereits $g H g^{-1} = H$ und somit $H' = H$.
 %   \end{enumerate}
 %   Wir betrachten im folgenden jeweils eine beliebige Gruppe $G$ der gegebenen Ordnung.
