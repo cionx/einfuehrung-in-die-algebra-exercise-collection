@@ -8,11 +8,11 @@
     \item
       Ist $G$ ein Gruppe und $(N_i)_{i \in I}$ eine Familie normaler Untergruppen $N_i \subseteq G$, so ist auch $\bigcap_{i \in I} N_i \subseteq G$ normal.
     \item
-      Die Gruppe $\Integer/2 \times \Integer/3$ ist zyklisch.
-    \item
-      Jede abelsche Gruppe ist auflösbar.
+      Die Gruppe $\Integer/11 \times \Integer/13$ ist zyklisch.
     \item
       Jede Gruppe der Ordnung $101$ ist abelsch.
+    \item
+      Ist $p$ prim, so ist jede Gruppe der Ordnung $p$ auflösbar.
     \item
       Ist $G$ ein abelsche Gruppe und $H \subseteq G$ eine Untergruppe, so gilt $G \cong H \times (G/H)$.
     \item
@@ -49,14 +49,19 @@
       somit gilt auch $g \left( \bigcap_{i \in I} N_i \right) g^{-1} \subseteq \bigcap_{i \in I} (g N_i g^{-1}) \subseteq \bigcap_{i \in I} N_i$.
     \item
       Die Aussage ist \emph{wahr}:
-      Nach dem chinesischen Restklassensatz gilt $\Integer/2 \times \Integer/3 \cong \Integer/6$, und $\Integer/6$ ist zyklisch.
-    \item
-      Die Aussage ist \emph{wahr}:
-      Ist $G$ eine abelsche Gruppe, so ist $0 \subseteq G$ eine normale Untergruppe, so dass $G/0 \cong G$ abelsch ist.
-      Die Kette $0 \subseteq G$ leistet also das Gewünschte.
+      Nach dem chinesischen Restklassensatz gilt
+      \[
+              \Integer/11 \times \Integer/13
+        \cong \Integer/(11 \cdot 13)
+        =     \Integer/143
+      \]
+      als Ringe, und somit inbesondere auch als abelsche Gruppen.
     \item
       Die Aussage ist \emph{wahr}:
       Jede Gruppe der Ordnung $101$ ist zyklisch (siehe Übung~\ref{question: basic calculatings with orders}) und somit abelsch (siehe Übung~\ref{question: classification of cyclic groups}).
+    \item
+      Die Aussage ist \emph{wahr}:
+      Es gilt $G \cong \Integer/p$, weshalb $G$ abelsch und somit auflösbar ist.
     \item
       Die Aussage ist \emph{falsch}:
       Für die Gruppe $G = \Integer/4$ und Untergruppe $H = 2\Integer/4$ gelten $|H| = 2$ und $|G/H| = |G|/|H| = 4/2 = 2$ und somit $G/H \cong H \cong \Integer/2$.
@@ -1483,6 +1488,79 @@
         H_3 &= \generate{ (0,1) } = \{ (0,0), (0,1) \}.
       \end{align*}
       Dann gilt $H_i \nsubseteq H_j$ für alle $1 \leq i \neq j \leq 3$, aber $H_1 \cup H_2 \cup H_3 = G$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}[subtitle = Zur Auflösbarkeit von Gruppen]
+  \begin{enumerate}
+    \item
+      Es sei $G$ eine Gruppe und $N \subseteq G$ eine normale Untergruppe.
+      Zeigen Sie, dass die $G$ genau dann auflösbar ist, wenn die beiden Gruppen $N$ und $G/N$ auflösbar sind.
+    \item
+      Folgern Sie, dass jede Gruppe der Ordnung $pq$ mit $p \neq q$ prim auflösbar ist.
+    \item
+      Folgern Sie damit ferner, dass jede Gruppe der Ordnung $30$ auflösbar ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Für jede Gruppe $H$ notieren wir die iterierten Kommutatoren mit $D^1(H) \coloneqq H$ und $D^{i+1} \coloneqq [D^i(H), D^i(H)]$.
+      
+      Es gilt $D^1(H) = H \subseteq G = D^1(G)$ und somit induktiv $D^i(H) \subseteq D^i(G)$ für alle $i \geq 1$.
+      
+      Für die kanonische Projektion $\pi \colon G \to G/N$ gilt
+      \[
+          \pi(D^1(G))
+        = \pi(G)
+        = G/N
+        = D^1(G/N) \,.
+      \]
+      Gilt $\pi(D^i(G)) = D^i(G/N)$ für ein $i \geq 1$, so gilt auch
+      \begin{align*}
+            \pi(D^{i+1}(G))
+          =  \pi( [D^i(G), D^i(G)] )
+        &=  [ \pi(D^i(G)), \pi(D^i(G)) ]  \\
+        &=  [ D^i(G/N), D^i(G/N) ]
+          =  D^{i+1}(G/N) \,.
+      \end{align*}
+      Induktiv ergibt sich also, dass $\pi(D^i(G)) = D^i(G/N)$ für alle $i \geq 1$ gilt.
+      
+      Es sei nun $G$ auflösbar, d.h.\ es gebe $n \geq 1$ mit $D^n(G) = 1$.
+      Dann gilt auch $D^n(N) \subseteq D^n(G) = 1$, also $D^n(N) = 1$, weshalb $N$ auflösbar ist.
+      Es gilt auch $D^n(G/N) = \pi(D^n(G)) = \pi(1) = 1$, weshalb $G/N$ auflösbar ist.
+      
+      Es seien nun die Gruppen $N$ und $G/N$ beide auflösbar.
+      Dann gibt es $n, m \geq 1$ mit $D^n(N) = 1$ und $D^m(G/N) = 1$.
+      Dann gilt $\pi(D^m(G)) = D^m(G/N) = 1$ und somit $D^m(G) \subseteq \ker \pi = N$.
+      Damit gilt ferner $D^{n+m}(G) = D^n(D^m(G)) \subseteq D^n(N) = 1$, also $D^{n+m}(G) = 1$.
+      Also ist $G$ auflösbar.
+    \item
+      Es sei $G$ eine Gruppe der Ordnung $pq$ wobei o.B.d.A.\ $p < q$ gelte.
+      Bezeichnet $n_q$ die Anzahl der $q$-Sylow\-unter\-gruppen von $G$, so gilt $n_q \mid p$ und $n_q \equiv 1 \pmod{p}$.
+      Also muss $n_q = 1$ gelten.
+      Die somit eindeutige $q$-Sylow\-unter\-gruppe $N$ von $G$ ist normal in $G$ (denn die Konjugate von $N$ sind ebenfalls $q$-Sylow\-unter\-gruppen von $G$).
+      Es gilt $|N| = q$, also $N \cong \Integer/q$, weshalb $N$ abelsch und somit auflösbar ist.
+      Es gilt auch $|G/N| = p$, also $G/N \cong \Integer/p$, weshalb $G/N$ abelsch und somit auflösbar ist.
+      Da $N$ und $G/N$ beide auflösbar sind, ist auch $G$ auflösbar.
+    \item
+      Die Primfaktoren von $30$ sind $2, 3, 5$.
+      Für jeden Primfaktor $p \in \{2, 3, 5\}$ sei $n_p$ die Anzahl der $p$-Sylow\-unter\-gruppen von $G$.
+      Es gelten $n_3 \mid 10$ und $n_3 \equiv 1 \pmod{3}$ und somit $n_3 \in \{1, 10\}$.
+      Analog ergibt sich, dass $n_5 \in \{1, 6\}$.
+      
+      Wären $n_3 = 10$ und $n_5 = 6$, so gäbe es in $G$ mindestens $20$ Elemente der Ordnung $3$ und $25$ Elemente der Ordnung $5$ (denn jede $3$-Sylow\-unter\-gruppe von $G$ ist isomorph zu $\Integer/3$, und jede $5$-Sylow\-unter\-gruppe von $G$ ist isomorph zu $\Integer/5$).
+      Dann wäre aber $30 = |G| \leq 20 + 25 = 45$.
+      
+      Es gilt also $n_3 = 1$ oder $n_5 = 1$.
+      Gilt $n_3 = 1$, so besitzt $G$ eine $3$-Sylow\-unter\-gruppe $N$.
+      Dann gilt $|N| = 3$, also $N \cong \Integer/3$, weshalb $N$ abelsch und somit auflösbar sind.
+      Außerdem gilt dann $|G/N| = 10 = 2 \cdot 5$, weshalb $G/N$ nach dem vorherigen Aufgabenteil ebenfalls auflösbar ist.
+      Dann sind $N$ und $G/N$ auflösbar, weshalb dann auch $G$ auflösbar ist.
+      Analog ergibt sich die Auflösbarkeit von $G$ im Fall $n_5 = 1$.
   \end{enumerate}
 \end{solution}
 
