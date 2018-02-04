@@ -614,6 +614,33 @@
 \end{solution}
 
 
+\begin{question}[subtitle = {Untergruppen vom endlichen Index}]
+  Es sei $G$ eine Gruppe und $H \subseteq G$ eine Untergruppe von endlichen Index.
+  Zeigen Sie, dass es eine normale Untergruppe $N \subseteq G$ von endlichen Index mit $N \subseteq H$ gibt. \\
+  (\emph{Hinweis}: Konstruieren Sie für $n = [G : H]$ einen Gruppenhomomorhpismus $G \to S_n$.)
+\end{question}
+
+
+\begin{solution}
+  Es sei $n \coloneqq [G : H]$.
+  Die Gruppe $G$ wirkt auf der Menge der Nebenklassen $X \coloneqq G/H$ vermöge $g.(g'H) = (gg)H$.
+  Diese Wirkung entspricht einem Gruppenhomomorphismus $\varphi \colon G \to S(X)$ in die symmetrische Gruppe $S(X)$.
+  Der Stabilisator des Elements $N \in X$ ist dabei genau die Untergruppe $N$ selbst, denn für alle $g \in G$ gilt
+  \[
+          g.N = N
+    \iff  gN = N
+    \iff  gN = 1N
+    \iff  1^{-1} g \in N
+    \iff  g \in N \,.
+  \]
+  Für $g \in G$ gilt genau dann $g \in \ker \varphi \eqqcolon K$, wenn $g.x = x$ für alle $x \in X$ gilt, wenn also $g \in \bigcap_{x \in X} G_x$ gilt.
+  Es gilt also $K = \bigcap_{x \in X} G_x \subseteq H$.
+  Dabei ist $K$ normal, da es sich um den Kern eines Gruppenhomomorphismus handelt.
+  Außerdem hat $K$ endlichen Index in $G$, denn es gilt $G/K = G/\ker \varphi \cong \im \varphi \subseteq S_n$ und somit $[G : K] = |G/K| = |{\im \varphi}| \leq |S_n| = n! < \infty$.
+  Somit lässt sich $N = K$ wählen.
+\end{solution}
+
+
 \begin{question}[subtitle = Untergruppen von Index $2$]
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
