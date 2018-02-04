@@ -875,7 +875,48 @@
 \end{solution}
 
 
-%%% ADDHERE
+\begin{question}[subtitle = Vereinigung von Konjugaten]
+  Es sei $G$ eine endliche Gruppeu und $H \subsetneq G$ eine echte Untergruppe.
+  Zeigen Sie, dass $G$ nicht die Vereinigung der Konjugate von $H$ ist, d.h.\ dass $G \neq \bigcup_{g \in G} gHg^{-1}$ gilt.
+\end{question}
+
+
+\begin{solution}
+  Es sei $N_G(H) = \{g \in G \mid gHg^{-1} = H\}$ der Normalisator der Untergruppe $H$.
+  Die Anzahl der Konjugate der Untergruppe $H$ ist durch den Index $[G : N_G(H)]$ gegeben:
+  
+  Die Gruppe $G$ wirkt auf der Menge $\mathcal{S}$ der Untergruppen von $G$ durch Konjugation.
+  Die Bahn $G.H$ der Untergruppe $H \in \mathcal{S}$ sind genau die Menge der Konjugate $\{gHg^{-1} \mid g \in G\}$, und der Stabilisator $G_H$ der Untergruppe $H \in \mathcal{S}$ ist genau der Normalisator $N_G(H)$.
+  Durch die induzierte Bijektion
+  \[
+            G/N_G(H)
+    =       G/G_H 
+    \to     G.H
+    =       \{gHg^{-1} \mid g \in G\} \,,
+    \quad   g N_G(H)
+    \mapsto g.H = gHg^{-1}
+  \]
+  ergibt sich mit $|G/N_G(H)| = [G : N_G(H)]$ die gewünschte Gleichheit.
+  
+  Es seien $n \coloneqq [G : N_G(H)]$ und $g_1 H g_1^{-1}, \dotsc, g_n H g_n^{-1}$ die paarweise verschiedenen Konjugate von $H$.
+  Dabei gilt $n = [G : N_G(H)] \leq [G : H]$, da $H \subseteq N_G(H)$ eine Untergruppe ist.
+  Außerdem sind die Konjugate $g_i H g_i^{-1}$ jeweils Untergruppen von $G$, und enthalten somit alle das neutrale Element $1 \in G$.
+  Damit ergibt sich, dass
+  \begin{align*}
+          \left|
+            \bigcup_{g \in G} gHg^{-1}
+          \right|
+     =    \left|
+            \bigcup_{i=1}^n g_i H g_i^{-1}
+          \right|
+    &\leq [G : N_G(H)] \cdot |H| - (n-1)  \\
+    &\leq [G : H] \cdot |H| - (n-1)
+     =    |G| + (1-n) \,.
+  \end{align*}
+  Die Gleichheit $G = \bigcup_{g \in G} gHg^{-1}$ kann deshalb nur für $n = 1$ gelten.
+  Dann wäre aber bereits $G = g_1 H g_1^{-1}$, also $|G| = |g_1 H g_1^{-1}| = |H|$, und somit $H$ keine echte Untergruppe von $G$.
+\end{solution}
+
 
 \begin{question}[subtitle ={Wirkung von $p$-Grupppen}]
   Es sei $G$ eine endliche $p$-Gruppe.
