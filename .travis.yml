@@ -13,6 +13,8 @@ script:
 - xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
 - xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
 - xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
+- xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
+- xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
 
 deploy:
   provider: pages
