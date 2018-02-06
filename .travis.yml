@@ -1,10 +1,9 @@
 sudo: required
 dist: trusty
-group: deprecated-2017Q4
 language: generic
 before_install:
 - sudo apt-get -qq update
-- git clone https://github.com/cryptofuture/install-tl-ubuntu.git
+- git clone https://github.com/flaviomartins/install-tl-ubuntu.git
 - cd install-tl-ubuntu
 - sudo ./install-tl-ubuntu
 - eval "$(sed 's/^/export /' /etc/environment)"
