@@ -61,7 +61,7 @@
     \item
       Die Aussage ist wahr:
       Wir bezeichnen die gegebene Potenzreihe mit $f$.
-      Sind $g, h \in \powerseries{\Integer}{X}$ mit $g = \sum_{i=0}^\infty g_i X^i$, $h = \sum_{i=0}^\infty h_i X^i$ und $f = gh$, so ist inbesondere $2 = g_0 h_0$.
+      Sind dann $g, h \in \powerseries{\Integer}{X}$ mit $g = \sum_{i=0}^\infty g_i X^i$, $h = \sum_{i=0}^\infty h_i X^i$ und $f = gh$, so gilt inbesondere $2 = g_0 h_0$.
       Aus der Irreduziblität von $2 \in \Integer$ folgt, dass $g_0 = \pm 1$ oder $h_0 = \pm 1$, und somit $g \in \powerseries{\Integer}{X}^\times$ oder $h \in \powerseries{\Integer}{X}^\times$ (siehe Übung~\ref{question: unit group of the power series ring}).
     \item
       Die Aussage ist wahr:
@@ -122,7 +122,14 @@
       Dies ist aber nicht der Fall, denn für alle $(a_1, a_2, a_3) \in \im \varphi$ gilt $a_1 = a_2$.
     \item
       Die Aussage ist falsch:
-      Die Abbildung $\sigma$ ist ein Ringhomomorphismus (siehe Übung~\ref{question: the frobenius homomorphism}), aber betrachtet man etwa den Fall $R = \Field_p[X]/(X^p)$, so gilt $\sigma(\overline{X}) = \overline{X}^p = \overline{X^p} = 0$ aber $\overline{X} \neq 0$, und somit $\ker \sigma = \{x \in R \mid x^p = 0\} \neq 0$.
+      Die Abbildung $\sigma$ ist zwar ein Ringhomomorphismus (siehe Übung~\ref{question: the frobenius homomorphism}), aber betrachtet man etwa den Fall $R = \Field_p[X]/(X^p)$, so gilt
+      \[
+          \sigma(\overline{X})
+        = \overline{X}^p
+        = \overline{X^p}
+        = 0
+      \]
+      aber $\overline{X} \neq 0$, und somit $\ker \sigma = \{x \in R \mid x^p = 0\} \neq 0$.
       (Besitzt $R$ keine nichttrivialen nilpotenten Elemente, etwa falls $R$ ein Integritätsbereich oder sogar ein Körper ist, so ist $\sigma$ hingegen ein Automorphismus:
       Dann gilt $\ker \sigma = 0$, und wegen der Endlichkeit von $R$ ist $\sigma$ damit schon bijektiv.)
   \end{enumerate}
@@ -492,7 +499,15 @@
 
 \begin{solution}
   Wir bezeichnen die Ring in der gegebenen Reihenfolge mit $R_1, \dotsc, R_7$.
-  Wir zeigen, dass die Isomorphieklassen der gegebenen Moduln durch $\{R_1\}, \{R_2, R_5\}, \{R_3, R_6\}, \{R_4\}, \{R_7\}$ gegeben sind.
+  Wir zeigen, dass die Isomorphieklassen der gegebenen Ringe durch
+  \[
+    \{R_1\},
+    \{R_2, R_5\},
+    \{R_3, R_6\},
+    \{R_4\},
+    \{R_7\}
+  \]
+  gegeben sind.
   
   Das Polynom $X^2 + 2 \in \Field_5[X]$ hat keine Nullstellen und ist deshalb irreduzibel (da quadratisch).
   Folglich ist $R_5$ eine quadratische Körpererweiterung von $\Field_5$, also $R_5 \cong \Field_{25} = R_2$.
@@ -1617,7 +1632,15 @@
 \begin{question}[subtitle = Die Einheitengruppe des Potenzreihenrings]
   \label{question: unit group of the power series ring}
   Es sei $R$ ein kommutativer Ring.
-  Zeigen Sie, dass $\powerseries{R}{T}^\times = \{\sum_{i=0}^\infty f_i T^i \in \powerseries{R}{T} \mid f_0 \in R^\times\}$.
+  Zeigen Sie, dass
+  \[
+      \powerseries{R}{T}^\times
+    = \left\{
+        \sum_{i=0}^\infty f_i T^i \in \powerseries{R}{T}
+      \,\middle|\,
+        f_0 \in R^\times
+      \right\} \,.
+  \]
 \end{question}
 
 
@@ -1673,7 +1696,7 @@
 
 \begin{solution}
   Wir nehmen an, dass $fg$ nicht primitiv ist.
-  Dann gibt es ein Primelement $p \in R$, dass alle Koeffizienten von $fg$ teilt.
+  Da $R$ faktoriell ist, gibt es dann ein Primelement $p \in R$, dass alle Koeffizienten von $fg$ teilt.
   Für den von der kanonischen Projektion $R \to R/(p)$, $r \mapsto \overline{r}$ induzierten Ringhomomorphismus $\varphi \colon R[T] \to (R/(p))[T]$ gilt dann $0 = \varphi(fg) = \varphi(f) \varphi(g)$.
   Der Quotient $R/(p)$ ist ein Integritätsbereich, da $p$ prim ist.
   Deshalb ist auch $(R/(p))[T]$ ein Integritätsbereich.
@@ -1766,11 +1789,18 @@
     \item
       Zeigen Sie, dass $\aideal[X]$ das von $\aideal$ in $R[X]$ erzeugte Ideal ist, d.h.\ dass $(\aideal)_{R[X]} = \aideal[X]$ gilt.
   \end{enumerate}
-  Damit erhalten wir für jedes Ideal $\aideal \subseteq R$ einen Ringisomorphismus $R[X]/(\aideal) \to (R/\aideal)[X]$, $\overline{\sum_i f_i X^i} \mapsto \sum_i \overline{f_i} X^i$.
+  Damit erhalten wir für jedes Ideal $\aideal \subseteq R$ einen Ringisomorphismus
+  \[
+            R[X]/(\aideal)
+    \to     (R/\aideal)[X] \,,
+    \quad   \overline{\sum_i f_i X^i}
+    \mapsto \sum_i \overline{f_i} X^i \,.
+  \]
+  
   \begin{enumerate}[resume]
     \item
       Veinfachen Sie für die folgenden Ringe $R$ und Ideale $I \subseteq R$ jeweils den Quotienten $R/I$.
-      Entscheiden Sie jeweils, ob das Ideal prim oder maximal ist.
+      Entscheiden Sie jeweils anschließend, ob das Ideal prim oder maximal ist.
       \[
         (7)               \subseteq \Integer[X],
         \quad
@@ -1994,7 +2024,13 @@
   Es sei $j \colon R \times R' \to (R \times R')_{S \times S'}$ der kanonische Ringhomomorphismus.
   \begin{enumerate}[resume]
     \item
-      Zeigen Sie, dass es eine eindeutigen Ringhomomorphismus $\varphi \colon (R \times R')_{S \times S'} \to R_S \times R'_{S'}$ gibt, so dass das folgende Diagram kommutiert:
+      Zeigen Sie, dass es eine eindeutigen Ringhomomorphismus
+      \[
+                \varphi
+        \colon  (R \times R')_{S \times S'}
+        \to     R_S \times R'_{S'}
+      \]
+      gibt, so dass das folgende Diagram kommutiert:
       \[
         \begin{tikzcd}[ampersand replacement = \&]
               {}
@@ -2102,6 +2138,7 @@
 \begin{question}[subtitle = Lokalisierung durch Quotienten]
   Es sei $R$ ein kommutativer Ring und $f \in R$.
   Zeigen Sie, dass $R_f \cong R[X]/(fX-1)$ gilt.
+  (Dabei ist $R_f = S_f^{-1} R$ für die multiplikative Menge $S_f = \{1, f, f^2, \dotsc\} = \{f^n \mid n \in \Natural\}$.)
 \end{question}
 
 
@@ -2136,7 +2173,7 @@
     = \frac{f}{1} \frac{1}{f} - \frac{1}{1}
     = 0.
   \]
-  Also faktorisiert $\tilde{\psi}$ über einen eindeutigen Ringhomomorphismus $\psi \colon R[X]/(fX-1) \to R_f$ mit $\psi(\overline{p}) = \tilde{\psi}(p)$ für alle $p \in R[X]$, d.h.\ es gilt
+  Also faktorisiert $\tilde{\psi}$ über einen Ringhomomorphismus $\psi \colon R[X]/(fX-1) \to R_f$ mit $\psi(\overline{p}) = \tilde{\psi}(p)$ für alle $p \in R[X]$, d.h.\ es gilt
   \[
       \psi\left( \overline{ \sum_i r_i X^i } \right)
     = \sum_i \frac{r_i}{f^i}

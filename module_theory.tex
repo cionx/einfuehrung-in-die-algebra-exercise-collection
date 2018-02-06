@@ -52,7 +52,7 @@
       Es gilt $(15,36) = (\ggT(15,36)) = (\ggT(3 \cdot 5, 2^2 \cdot 3^2)) = (3)$ sowie analog $(30,192)  = (\ggT(30,192)) = (\ggT(2 \cdot 3 \cdot 5, 2^6 \cdot 3)) = (2 \cdot 3) = (6)$.
       Also gilt $\Integer/(15,36) = \Integer/3$ und $\Integer/(30,192) = \Integer/6$.
       
-      Eine $\Integer/n$-Modulstruktur auf einer abelschen Gruppe $A$ entspricht einer $\Integer$-Modulstruktur auf $A$, so dass $n \cdot A = 0$ (siehe Übung~\ref{question: extension of module structures onto quotients and localizations}).
+      Eine $\Integer/n$-Modulstruktur auf einer abelschen Gruppe $A$ entspricht einer $\Integer$-Mo\-dul\-struk\-tur auf $A$, so dass $n \cdot A = 0$ (siehe Übung~\ref{question: extension of module structures onto quotients and localizations}).
       Jede abelsche Gruppe trägt eine eindeutige $\Integer$-Modulstruktur (siehe Übung~\ref{question: abelian groups are the same as modules over Z}), also gilt es nur zu überprüfen, dass aus $3 \cdot A = 0$ bereits $6 \cdot A = 0$ folgt.
       Dies ist klar, da $3 \mid 6$.
 
@@ -401,14 +401,13 @@
             8 & 8 & -2 \\
           10 & 2 &  2
         \end{pmatrix*},
-      \quad
+      \\
         A_4 =
         \begin{pmatrix*}[r]
            1  & 2 & 3 \\
           -2  & 3 & 1 \\
            3  & 2 & 1
         \end{pmatrix*},
-      \\
         A_5 =
         \begin{pmatrix*}[r]
            2  &  4  & 6 \\
@@ -422,7 +421,7 @@
            3  &  2  & -2 \\
           15  & 10  & 11
         \end{pmatrix*},
-      \quad
+      \\
         A_7 = 
         \begin{pmatrix*}[r]
            -1 &  1  & 0 \\
@@ -592,7 +591,7 @@
 \begin{solution}
   Wir zeigen, dass die Abbildung $\varphi \colon \Hom_R(R, M) \to M$, $f \mapsto f(1)$ ein Isomorphismus von $R$-Moduln ist:
   Dass $\varphi$ ein Homomorphismus von $R$-Moduln ist, ergibt sich direkt daraus, dass die $R$-Modulstruktur auf $\Hom_R(R, M)$ punktweise definiert ist.
-  Die Injektivität von $\varphi$ ergibt sich daraus, dass $R = \generate{1}_R$, und somit jeder $R$-Modulhomomorphismus $f \colon R \to M$ durch den Funktionswert $f(1)$ bereits eindeutig bestimmt ist.
+  Die Injektivität von $\varphi$ ergibt sich daraus, dass $R = \generate{1}_R$, und somit jeder $R$-Mo\-dul\-homo\-mor\-phis\-mus $f \colon R \to M$ durch den Funktionswert $f(1)$ bereits eindeutig bestimmt ist.
   Für jedes $m \in M$ ist $f_m \colon R \to M$, $r \mapsto rm$ ein Homomorphismus von $R$-Moduln.
   Es gilt $\varphi(f_m) = f_m(1) = m$, was die Surjektivität von $\varphi$ zeigt.
 \end{solution}
@@ -795,10 +794,10 @@
   Es sei $I \subseteq R$ ein Ideal und $S \subseteq R$ eine multiplikative Teilmenge.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R/I$-Modulstruktur fortsetzen lässt, wenn $IM =  0$ gilt (d.h.\ wenn $am = 0$ für alle $a \in I$ und $m \in M$ gilt).
+      Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R/I$-Mo\-dul\-struk\-tur fortsetzen lässt, wenn $IM =  0$ gilt (d.h.\ wenn $am = 0$ für alle $a \in I$ und $m \in M$ gilt).
       Entscheiden Sie auch, ob diese Fortsetzung eindeutig ist.
     \item
-      Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R_S$-Modulstruktur fortsetzen lässt, wenn für jedes $s \in S$ die Abbildung $\lambda_s \colon M \to M$, $m \mapsto sm$ bijektiv ist.
+      Zeigen Sie, dass sich die $R$-Modulstruktur auf $M$ genau dann zu einer $R_S$-Mo\-dul\-struk\-tur fortsetzen lässt, wenn für jedes $s \in S$ die Abbildung $\lambda_s \colon M \to M$, $m \mapsto sm$ bijektiv ist.
       Entscheiden Sie auch, ob diese Fortsetzung eindeutig ist.
   \end{enumerate}
 \end{question}
@@ -1275,7 +1274,8 @@
   \[
     0 \to f^{-1}(M') \xrightarrow{f'} M' \xrightarrow{g'} g(M') \to 0
   \]
-  eine kurze exakte Sequenz ist, wobei $f' \colon f^{-1}(M') \to M'$, $m \mapsto f(m)$ und $g' \colon M' \to g(M')$, $m \mapsto g(m)$ die entsprechenden Einschränkungen von $f$ und $g$ bezeichnen.
+  eine kurze exakte Sequenz ist.
+  Dabei bezeichnen $f' \colon f^{-1}(M') \to M'$, $m \mapsto f(m)$ und $g' \colon M' \to g(M')$, $m \mapsto g(m)$ die jeweiligen Einschränkungen von $f$ und $g$.
 \end{question}
 
 
@@ -1317,7 +1317,7 @@
       Es seien $n_1, \dotsc, n_s \in N$ und $p_{s+1}, \dotsc, p_t \in P$ endliche Erzeugendensysteme.
       Für alle $i = 1, \dotsc, s$ sei $m_i \coloneqq f(n_i) \in M$;
       wegen der Surjektivität gibt es für jedes $i = s+1, \dotsc, t$ ein $m_i \in M$ mit $g(m_i) = p_i$.
-      Dann gilt bereits $\generate{m_1, \dotsc, m_s, m_{s+1}, \dotsc, m_t}_R = M$:
+      Wir zeigen, dass dann bereits $\generate{m_1, \dotsc, m_s, m_{s+1}, \dotsc, m_t}_R = M$ gilt:
       
       Für $m \in M$ ist $g(m) \in P$ und deshalb $g(m) = r_{s+1} p_{s+1} + \dotsb + r_t p_t$ für passende $r_{s+1}, \dotsc, r_t \in R$.
       Es sei $m' \coloneqq r_{s+1} m_{s+1} + \dotsb + r_t m_t \in M$.
@@ -1704,11 +1704,18 @@
     
     \item
       Wegen der Injektivität von $f$ ist auch $\torsion(f)$ injektiv, die Sequenze also exakt an $\torsion(N)$.
-      Für die Exaktheit an $\torsion(M)$ bemerken wir zunächst, dass $\torsion(g) \circ \torsion(f) = \torsion(g \circ f) = \torsion(0) = 0$ gilt, und somit $\im \torsion(f) \subseteq \ker \torsion(g)$ gilt.
+      Für die Exaktheit an $\torsion(M)$ bemerken wir zunächst, dass
+      \[
+          \torsion(g) \circ \torsion(f)
+        = \torsion(g \circ f)
+        = \torsion(0)
+        = 0
+      \]
+      gilt, und somit $\im \torsion(f) \subseteq \ker \torsion(g)$ gilt.
       Ist andererseits $m \in \ker \torsion(g) = \ker g \cap \torsion(M)$, so ist $m \in \ker g = \im f$, weshalb es ein $n \in N$ mit $m = f(n)$ gibt.
       Da $m \in \torsion(M)$ gilt, gibt es $r \in R$ mit $r \neq 0$ und $0 = rm = r f(n) = f(rn)$.
       Wegen der Injektivität von $f$ gilt bereits $rn = 0$ und somit $n \in \torsion(N)$.
-      Also gilt bereits $m = f(n) = \torsion(f)(n) \in \im \torsion(f)$ und somit auch $\ker \torsion(g) \subseteq \im \torsion(f)$.
+      Also gilt $m = f(n) = \torsion(f)(n) \in \im \torsion(f)$ und somit auch $\ker \torsion(g) \subseteq \im \torsion(f)$.
     
     \item
       Wir betrachten das folgende Gegenbeispiel von $\Integer$—Moduln:
@@ -1910,7 +1917,13 @@
       
     \item
       Für $R \neq 0$ betrachte man $M = R \oplus R$ mit den Untermoduln $M_1 = R \oplus 0$ und $M_2 = 0 \oplus R$.
-      Dann gilt $M_1 \cong M_2 \cong R$ und somit $\annihilator(M_1) = \annihilator(M_2) = \annihilator(R) = 0$.
+      Dann gilt $M_1 \cong M_2 \cong R$ und somit
+      \[
+          \annihilator(M_1)
+        = \annihilator(M_2)
+        = \annihilator(R)
+        = 0 \,.
+      \]
       Deshalb gilt $\annihilator(M_1) + \annihilator(M_2) = 0$.
       Andererseits gilt $M_1 \cap M_2 = 0$ und somit $\annihilator(M_1 \cap M_2) = \annihilator(0) = R \neq 0$.
   \end{enumerate}
@@ -1937,16 +1950,25 @@
   Für die ersten beiden Beispiele sei $R$ ein beliebiger kommutativer Ring mit $R \neq 0$.
   \begin{enumerate}
     \item
-      Wir betrachten $M_1 = M_2 = \bigoplus_{n \geq 0} R = R \oplus R \oplus R \oplus \dotsb$ und die Untermoduln $N_1 = 0 \oplus \bigoplus_{n \geq 1} R = 0 \oplus R \oplus R \oplus \dotsb$ und $N_2 = 0 \oplus 0 \oplus \bigoplus_{n \geq 2} R = 0 \oplus 0 \oplus R \oplus \dotsb$;
-      dann gilt $M_1 = M_2 \cong N_1 \cong N_2$, aber
+      Wir betrachten $M_1 = M_2 = \bigoplus_{n \geq 0} R = R \oplus R \oplus R \oplus \dotsb$ und die Untermoduln
+      \begin{align*}
+        N_1 &= 0 \oplus \bigoplus_{n \geq 1} R = 0 \oplus R \oplus R \oplus \dotsb \,.  \\
+        N_2 &= 0 \oplus 0 \oplus \bigoplus_{n \geq 2} R = 0 \oplus 0 \oplus R \oplus \dotsb
+      \end{align*}
+      
+      Dann gilt $M_1 = M_2 \cong N_1 \cong N_2$, aber
       \[
         M_1/N_1 \cong R \ncong R^2 \cong M_2/N_2.
       \]
       (Hier nutzen wir, dass wegen $R \neq 0$ und der Kommutativität von $R$ der Rang eines freien $R$-Moduls wohldefiniert ist.)
     
     \item
-      Wir betrachten erneut $M_1 = M_2 = \bigoplus_{n \geq 0} R$, dieses Mal mit den jeweiligen Untermoduln $N_1 = R \oplus \bigoplus_{n \geq 1} 0 = R \oplus 0 \oplus 0 \oplus \dotsb$ und $N_2 = R \oplus R \oplus \bigoplus_{n \geq 2} 0 = R \oplus R \oplus 0 \oplus 0 \oplus \dotsb$;
-      dann gelten $M_1 = M_2$ und
+      Wir betrachten erneut $M_1 = M_2 = \bigoplus_{n \geq 0} R$, dieses Mal mit den jeweiligen Untermoduln
+      \begin{align*}
+        N_1 &= R \oplus \bigoplus_{n \geq 1} 0 = R \oplus 0 \oplus 0 \oplus \dotsb \,,  \\
+        N_2 &= R \oplus R \oplus \bigoplus_{n \geq 2} 0 = R \oplus R \oplus 0 \oplus 0 \oplus \dotsb
+      \end{align*}
+      Dann gelten $M_1 = M_2$ und
       \[
               M_1/N_1
         \cong \bigoplus_{n \geq 1} R
