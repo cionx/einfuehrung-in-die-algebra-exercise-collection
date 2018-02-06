@@ -799,17 +799,59 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Quotient nach dem Zentrum]
+\begin{question}[subtitle = {$5/8$ an Kommutativität}]
   Es sei $G$ eine Gruppe.
-  Zeigen Sie, dass $G$ abelsch ist, wenn $G/{\Center(G)}$ zyklisch ist.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $G$ abelsch ist, wenn $G/{\Center(G)}$ zyklisch ist.
+      (Insbesondere gilt dann bereits $\Center(G) = G$ und somit tatsächlich schon $G/{\Center(G)} = 1$.)
+  \end{enumerate}
+  Von nun an sei $G$ endlich.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass mindestens $3/4$ aller $x \in G$ nicht zentral sind, wenn $G$ nicht abelsch ist.
+      (Ein Element $x \in G$ heißt \emph{zentral \textup(in $G$\textup)}, wenn $x \in \Center(G)$ gilt.)
+    \item
+      Zeigen Sie, dass für jedes $x \in G$ der Zentralisator $Z_G(x) = \{y \in G \mid yx = xy\}$ eine Untergruppe von $G$ ist.
+      Folgern Sie, dass mindestens die Hälfte aller $y \in G$ nicht mit $x$ kommutiert, wenn $x$ nicht zentral ist.
+    \item
+      Folgern Sie, dass mindestens $3/8$ aller Paare $(x,y) \in G \times G$ nicht kommutieren (d.h.\ dass $xy \neq yx$ gilt) wenn $G$ nicht abelsch ist.
+  \end{enumerate}
+  Kommutieren zwei (gleichverteilt) zufällige Elemente $x, y \in G$ mit einer Wahrscheinlichkeit von mehr als $5/8$, so ist $G$ also bereits abelsch.
 \end{question}
 
 
 \begin{solution}
-  Es sei $\class{g} \in G/{\Center(G)}$ ein zyklischer Erzeuger.
-  Für alle $x, y \in G$ gibt es dann $n, m \in \Integer$ mit $\class{x} = \class{g}^m = \class{g^m}$ und $y = \class{g}^n = \class{g^n}$.
-  Es gibt dann $x', y' \in \Center(G)$ mit $x = g^m x'$ und $y = g^n y'$.
-  Die Element $x', y', g^n, g^m$ kommutieren paarweise miteinander, weshalb auch $x$ und $y$ kommutieren.
+  \begin{enumerate}
+    \item
+      Es sei $\class{g} \in G/{\Center(G)}$ ein zyklischer Erzeuger.
+      Für alle $x, y \in G$ gibt es dann $n, m \in \Integer$ mit $\class{x} = \class{g}^m = \class{g^m}$ und $y = \class{g}^n = \class{g^n}$.
+      Es gibt dann $x', y' \in \Center(G)$ mit $x = g^m x'$ und $y = g^n y'$.
+      Die Element $x', y', g^n, g^m$ kommutieren paarweise miteinander, weshalb auch $x$ und $y$ kommutieren.
+    \item
+      Da $G$ nicht abelsch ist, kann $G/{\Center(G)}$ nach dem vorherigen Aufgabenteil nicht zyklisch sein.
+      Deshalb muss $[G : \Center(G)] \geq 4$ gelten (denn Gruppen der Ordnung $< 4$ sind stets zyklisch).
+      Es gilt also $|{\Center(G)}| \leq |G|/4$, bzw.\ $|G \smallsetminus \Center(G)| \geq (3/4)|G|$.
+    \item
+      Es gilt $1 x = x = x 1$ und somit $1 \in Z_G(x)$.
+      Für alle $y, z \in x$ gilt $yzx = yxz = xyz$ und somit auch $yz \in Z_G(x)$.
+      Für jedes $y \in Z_G(x)$ gilt außerdem
+      \[
+          y^{-1} x
+        = y^{-1} x y y^{-1}
+        = y^{-1} y x y^{-1}
+        = x y^{-1}
+      \]
+      und somit auch $y^{-1} \in Z_G(x)$.
+      Dies zeigt, dass $Z_G(x)$ eine Untergruppe von $G$ ist.
+      
+      Ist $x$ nicht zentral, so ist $Z_G(x)$ bereits eine echte Untergruppe von $G$.
+      Dann gilt $[G : Z_G(x)] \geq 2$ und somit $|Z_G(x)| \leq |G|/2$, bzw.\ $|G \smallsetminus Z_G(x)| \geq |G|/2$.
+    \item
+      Da $G$ nicht abelsch ist, sind mindestens $3/4$ aller Gruppenelemente $x \in G$ nicht zentral.
+      Für jedes solche $x$ kommutiert das Paar $(x,y)$ dann für mindestens die Hälfte aller $y \in G$ nicht.
+      Insgesamt ergeben sich somit mindestens $(3/4) \cdot (1/2) = 3/8$ nicht kommutierende Paare.
+  \end{enumerate}
 \end{solution}
 
 
