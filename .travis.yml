@@ -1,5 +1,6 @@
 sudo: required
 dist: trusty
+group: deprecated-2017Q4
 language: generic
 before_install:
 - sudo apt-get -qq update
@@ -10,6 +11,8 @@ before_install:
 - cd ..
 script:
 - mkdir github-pages
+- xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
+- xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
 - xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
 - xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
 - xelatex -interaction=nonstopmode -halt-on-error -output-dir=github-pages exercises.tex
