@@ -33,6 +33,8 @@
       Für die Gruppe $\GL_n(\Field_p)$ ist die Untergruppe $\Upper_n(\Field_p) \subseteq \GL_n(\Field_p)$ der oberen Dreiecksmatrizen mit $1$-en auf der Diagonalen eine $p$-Sylow\-unter\-gruppe.
     \item
       Ist $G$ ein Gruppe, so haben $gh$ und $hg$ für alle $g, h \in G$ dieselbe Ordnung.
+    \item
+      Wird eine Gruppe $G$ von endlich vielen Elementen endlicher Ordnung erzeugt, so ist $G$ endlich.
   \end{enumerate}
 \end{question}
 
@@ -172,6 +174,66 @@
     \item
       Die Aussage ist \emph{wahr}:
       Die Elemente $gh$ und $hg$ sind konjugiert zueinander durch $g (hg) g^{-1} = gh$.
+    \item
+      Die Aussage ist \emph{falsch}:
+      Wir geben zwei Gegenbeispiele:
+      \begin{enumerate}
+        \item
+          Für alle $\alpha \in \Real$ sei
+          \[
+                      r_\alpha
+            \coloneqq \begin{pmatrix*}[r]
+                        \cos(\alpha)  & -\sin(\alpha) \\
+                        \sin(\alpha)  &  \cos(\alpha)
+                      \end{pmatrix*}
+            \in       \GL_2(\Real)
+          \]
+          die Drehung der Ebene $\Real^2$ um den Winkel $\alpha$, und
+          \[
+                      s_\alpha
+            \coloneqq \begin{pmatrix*}[r]
+                        \cos(2\alpha) &  \sin(2\alpha)  \\
+                        \sin(2\alpha) & -\cos(2\alpha)
+                      \end{pmatrix*}.
+          \]
+          die Spiegelung der Ebene $\Real^2$ an der Achse, die zur $x$-Achse den Winkel $\alpha$ hat.
+          Für alle $\alpha, \beta \in \Real$ ist dann
+          \[
+              s_\alpha s_\beta
+            = r_{2(\alpha-\beta)}
+          \]
+          die Rotation um den Winkel $2(\alpha - \beta)$.
+          
+          Es sei $\alpha \in \Real$ irrational und es seien $\beta_1, \beta_2 \in \Real$ mit $2(\beta_1 - \beta_2) = 2\pi\alpha$, und es sei $G \coloneqq \generate{s_{\beta_1}, s_{\beta_2}}$ die von $s_{\beta_1}, s_{\beta_2}$ erzeugte Untergruppe von $\GL_2(\Real)$.
+          Dann wird $G$ von zwei Elementen von Ordnung $2$ erzeugt.
+          Aber $r_{2\pi\alpha} = s_{\beta_1} s_{\beta_2} \in G$ hat unendliche Ordnung, da $2\pi\alpha$ ein nicht-rationales Vielfaches von $2\pi$ ist.
+          Somit kann $G$ nicht endlich sein.
+        \item
+          Es sei $S(\Integer)$ die Symmetriegruppe der Menge der natürlichen Zahlen $\Integer$.
+          Es sei $\tau_0, \tau_1 \in S(\Integer)$ durch
+          \[
+              \tau_0(n)
+            = -n
+            \quad\text{und}\quad
+              \tau_1(n)
+            = 2-n
+          \]
+          gegeben.
+          (Man stelle sich einen unendlichen ungerichteten Graphen vor mit Knotenmenge $\Integer$ vor, bei dem es für jeden Knoten $n \in \Integer$ genau zwischen $n$ und $n \pm 1$ eine Kante gibt.
+          Dann entsprechen $\tau_0$ und $\tau_1$ die Spiegelungen an den Knoten $0$ und $1$.)
+          Dann gilt
+          \[
+              (\tau_1 \circ \tau_0)(n)
+            = \tau_1(\tau_0(n))
+            = \tau_1(-n)
+            = 2-(-n)
+            = n+2 \,,
+          \]
+          weshalb $\tau_0 \tau_1$ unendliche Ordnung hat.
+          (Anschaulich gesehen ist $\tau_0 \tau_1$ die Verschiebung um zwei Knoten.)
+          Es bezeichne $G \coloneqq \generate{\tau_0, \tau_1}$ die von $\tau_0$ und $\tau_1$ erzeugte Untergruppe von $S(\Integer)$.
+          Dann hat $\tau_1 \tau_0 \in G$ unendliche Ordnung, weshalb $G$ unendlich ist.
+      \end{enumerate}
   \end{enumerate}
 \end{solution}
 
