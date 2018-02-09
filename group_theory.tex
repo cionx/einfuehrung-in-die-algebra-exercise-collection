@@ -623,6 +623,8 @@
       Zeigen Sie, dass $N$ die einzige Untergruppe von $G$ von Ordnung $|N|$ ist. \\
       (\emph{Hinweis}:
        Betrachten Sie das Bild einer entsprechenden Untergruppe $H \subseteq G$ unter der kanonische Projektion $G \to G/N$.)
+    \item
+      Entscheiden Sie, ob die vorherige Aussage auch dann noch gilt, wenn $N$ nicht normal in $G$ ist.
   \end{enumerate}
 \end{question}
 
@@ -660,6 +662,10 @@
       Somit erhalten wir, dass $|\pi(H)|$ sowohl $[G : N]$ als auch $|N|$ teilt.
       Da $[G : N]$ und $|N|$ teilerfremd sind folgt hieraus, dass $\pi(H) = 1$ gilt.
       Es gilt also $H \subseteq \ker \pi = N$, und wegen $|H| = |N|$ somit bereits $H = N$.
+      
+    \item
+      Ist $N$ nicht normal in $G$, so kann es auch noch andere Untergruppen von Ordnung $|N|$ geben.
+      Man betrachte etwa die symmetrische Gruppe $G = S_3$ und die Untergruppen $H_1 = \generate{(1\;2)}$, $H_2 = \generate{(1\;3)}$, $H_3 = \generate{(2\;3)}$ mit $|H_i| = 2$ und $[G : H_i] = 3$.
   \end{enumerate}
 \end{solution}
 
