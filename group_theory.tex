@@ -216,7 +216,7 @@
   Es sei $G$ eine Gruppe und $H \subseteq G$ eine nichtleere Teilmenge.
   \begin{enumerate}
     \item
-      Zeigen Sie, dass $H$ genau dann eine Untergruppe ist, wenn für alle $x, y \in G$ auch $x y^{-1} \in G$ gilt.
+      Zeigen Sie, dass $H$ genau dann eine Untergruppe ist, wenn für alle $x, y \in H$ auch $x y^{-1} \in H$ gilt.
     \item
       Für alle $x, y \in H$ gelte $xy \in H$, und $H$ sei zusammen mit der (Einschränkung der) Multiplikation von $G$ ebenfalls eine Gruppe.
       Zeigen Sie, dass $H$ bereits eine Untergruppe von $G$ ist.
@@ -313,7 +313,7 @@
   Die Gruppe $(G^\op, *)$ ist definiert als die zugrundeliegende Menge $G^\op \coloneqq G$ zusammen mit der binären Verknüpfung
   \[
               g_1 * g_2
-    \coloneqq g_2 \cdot g_2
+    \coloneqq g_2 \cdot g_1
   \]
   für alle $g_1, g_2 \in G^\op$.
   \begin{enumerate}
@@ -627,7 +627,7 @@
 \begin{question}[subtitle = {Untergruppen vom endlichen Index}]
   Es sei $G$ eine Gruppe und $H \subseteq G$ eine Untergruppe von endlichen Index.
   Zeigen Sie, dass es eine normale Untergruppe $N \subseteq G$ von endlichen Index mit $N \subseteq H$ gibt. \\
-  (\emph{Hinweis}: Konstruieren Sie für $n = [G : H]$ einen Gruppenhomomorhpismus $G \to S_n$.)
+  (\emph{Hinweis}: Konstruieren Sie für $n = [G : H]$ einen Gruppenhomomorphismus $G \to S_n$.)
 \end{question}
 
 
@@ -756,7 +756,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = Grupen in denen alles prime Ordnung hat]
+\begin{question}[subtitle = Gruppen in denen alles Primordnung hat]
   Es sei $G$ eine Gruppe.
   \begin{enumerate}
     \item
@@ -982,12 +982,13 @@
       gilt.
       Folgern Sie ferner, dass diese Wirkung einen Fixpunkt besitzt, falls $p \nmid |X|$ gilt.
     \item
+      Es sei $G \neq 1$.
       \begin{enumerate}
         \item
-          Zeigen Sie, dass $\Center(G) \neq 1$ gilt, wenn $G \neq 1$ gilt. \\
+          Zeigen Sie, dass $\Center(G) \neq 1$ gilt. \\
           (\emph{Hinweis}: Betrachten Sie eine passende Wirkung von $G$ auf sich selbst.)
         \item
-          Zeigen Sie allgemeiner, dass für jede normale Untergruppe $N \subseteq G$ bereits $N \cap \Center(G) \neq 1$ gilt, falls $G$ gilt.
+          Zeigen Sie allgemeiner, dass für jede normale Untergruppe $N \subseteq G$ mit $N \neq 1$ bereits $N \cap \Center(G) \neq 1$ gilt.
       \end{enumerate}
     \item
       Zeigen Sie, dass die Anzahl der nicht-normalen Untergruppen von $G$ ein Vielfaches von $p$ ist. \\
