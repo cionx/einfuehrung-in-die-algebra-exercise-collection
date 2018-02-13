@@ -10,5 +10,5 @@ An up to date compiled version can be found [here][3].
 
 [1]: https://travis-ci.org/cionx/einfuehrung-in-die-algebra-exercise-collection/builds
 [2]: https://github.com/cionx/einfuehrung-in-die-algebra-tutorial-ws-16-17
-[3]: https://uni-bonn.sciebo.de/s/LQAazOPuDfaSgnp/download
+[3]: https://github.com/cionx/einfuehrung-in-die-algebra-exercise-collection/raw/gh-pages/exercises.pdf
 
