@@ -73,8 +73,46 @@
       
     \item
       Die Aussage ist wahr:
-      Sie wurde auf einem der Übungszettel gezeigt.
+      Sie wurde auf einem der Übungszettel gezeigt, wir geben hier der Vollständigkeit halber dennoch einen Beweis an:
       
+      Wir zeigen die Aussage per Induktion über $n$.
+      Für $n = 1$ gilt $L = K$ und die Aussage gilt.
+      Es sei nun $n \geq 2$, und die Aussage gelte für alle Polynome vom Grad $< n$.
+      
+      Wir betrachten zunächst den Fall, dass $f(t)$ irreduzibel ist.
+      Dann sei $a \in L$ eine Nullstelle von $f(t)$.
+      Dann ist $f(t)$ das Minimalpolynom von $a$ über $K$ und deshalb $[K(a) : K] = n$.
+      Über $K(a)$ lässt sich von $f(t)$ der Linearfaktor $(t-a)$ abspalten, d.h.\ es gibt ein Polynom $g(t) \in K(a)[t]$ mit $f(t) = g(t) (t-a)$.
+      Dabei gilt insbesondere $\deg g(t) = \deg f(t) - 1 = n - 1$.
+      Dann ist $L$ auch von $g(t)$ ein Zerfällungskörper, und nach Induktionsvoraussetzung gilt deshalb $[L : K(a)] \mid (n-1)!$.
+      Zusammen mit $[K(a) : K] = n$ erhalten wir, dass
+      \[
+              [L : K]
+        =     [L : K(a)] [K(a) : K]
+        \mid  (n-1)! \, n
+        =     n! \,.
+      \]
+
+      Allgemeiner sei $g(t)$ ein irreduzibler Faktor von $f(t)$, und es sei $h(t) \in K[t]$ mit $f(t) = g(t)h(t)$.
+      Sind dabei $d_1 \coloneqq \deg g(t)$ und $d_2 \coloneqq \deg h(t)$, so gilt $n = d_1 + d_2$.
+      Es enthält $L$ einen Zerfällungskörper $L'$ von $g(t)$.
+      Fassen wir $h(t)$ als ein Polynom über $L'$ auf, also als $h(t) \in L'[t]$, so ist $L$ ein Zerfällungskörper von $h(t)$ über $L'$.
+      Nach Induktionsvoraussetzung gelten nun
+      \begin{gather*}
+              [L' : K]
+        \mid  d_1!
+        \quad\text{and}\quad
+              [L : L']
+        \mid  d_2! \,,
+      \shortintertext{und somit}
+              [L : K]
+        =     [L : L'][L' : K]
+        \mid  d_1! \, d_2!
+        \mid  (d_1 + d_2)!
+        =     n!  \,.
+      \end{gather*}
+      (Es ist $d_1! \, d_2!$ ein Teiler von $(d_1 + d_2)!$, da $(d_1 + d_2)!/(d_1! d_2!) = \binom{d_1 + d_2}{d_1}$ ganzzahlig ist.)
+
     \item
       Die Aussage ist wahr:
       Sind $\alpha_1, \dotsc, \alpha_d \in L$ mit $d \leq n$ die paarweise verschiedenen Nullstellen von $f$, so muss jedes $\sigma \in \Gal(L/K)$ die Nullstellen von $f$ permutieren.
