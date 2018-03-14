@@ -1,0 +1,6 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Gruppentheorie}{2}{section.1}
+\contentsline {section}{\numberline {2}Ringtheorie}{11}{section.2}
+\contentsline {section}{\numberline {3}Körpertheorie}{22}{section.3}
+\contentsline {section}{\numberline {4}Modultheorie}{28}{section.4}
+\contentsline {section}{\numberline {5}Lösungen}{37}{section.5}
